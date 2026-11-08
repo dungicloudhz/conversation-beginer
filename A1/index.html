@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tiếng Anh A1</title>
+<style>
+  :root{--bg:#0f0f15;--card:#1a1a24;--border:#2e2e3c;--text:#e8e8ef;--muted:#8a8aa0;--accent:#6f8cff}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+  main{max-width:1000px;margin:0 auto;padding:40px 16px 80px}
+  h1{margin:0 0 4px;font-size:28px}
+  .sub{color:var(--muted);margin:0 0 28px}
+  h2{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:32px 0 12px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+  a.card{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--card);border:1px solid var(--border);border-radius:12px;color:inherit;text-decoration:none;transition:border-color .15s,transform .15s}
+  a.card:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .e{font-size:22px}
+</style>
+</head>
+<body>
+<main>
+  <h1>📘 Tiếng Anh giao tiếp A1</h1>
+  <p class="sub">Chọn một chủ đề để bắt đầu học.</p>
+  <div id="list"></div>
+</main>
+<script src="nav.js"></script>
+<script>
+  var out = "";
+  (window.A1_PAGES || []).forEach(function (g) {
+    out += "<h2>" + g.group + "</h2><div class=grid>";
+    g.items.forEach(function (p) {
+      out += '<a class=card href="' + encodeURI(p[0]) + '"><span class=e>' + p[1] + "</span>" + p[2] + "</a>";
+    });
+    out += "</div>";
+  });
+  document.getElementById("list").innerHTML = out;
+</script>
+</body>
+</html>

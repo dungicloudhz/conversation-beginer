@@ -1,0 +1,532 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Tiếng Anh Shopping</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: sidebar mục lục cố định + cột bài học, cùng theme tối của bộ "Hỏi đường & Hỏi giờ" (nhấn xanh ngọc – tím cho chủ đề mua sắm) */
+:root{color-scheme:dark;
+--bg:#080810;--s1:#0e0e1c;--s2:#131326;--s3:#18182e;--border:#222240;--border2:#2c2c50;--text:#e6e6f2;--muted:#8a8ab8;--faint:#4a4a78;
+--acc:#ffd060;--acc-dim:rgba(255,208,96,.11);--oc:#38bdf8;--oc-dim:rgba(56,189,248,.13);--ins:#40d88e;--ins-dim:rgba(64,216,142,.12);
+--sk:#a07af4;--sk-dim:rgba(160,122,244,.12);--au:#ff6584;--au-dim:rgba(255,101,132,.12);--teal:#30d8c0;--code-bg:#05050e;
+--tip-bg:rgba(91,168,255,.10);--tip-bd:rgba(91,168,255,.25);--tip-fg:#8ab8f0;--warn-fg:#e0bc58;--ok-fg:#5ccf98;--line:rgba(255,255,255,.05);
+--font:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+--gl:max(64px,env(safe-area-inset-left,0px));--gr:max(64px,env(safe-area-inset-right,0px))}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 60px)}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.7;font-size:15px;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:600;background:var(--s1)}
+.sidebar{position:fixed;left:0;top:0;width:260px;height:100%;background:var(--s1);border-right:1px solid var(--border);overflow-y:auto;z-index:400;padding-top:env(safe-area-inset-top,0px);padding-left:env(safe-area-inset-left,0px)}
+.sb-logo{padding:20px 18px 16px;border-bottom:1px solid var(--border)}
+.sb-brand{display:flex;align-items:center;gap:11px;margin-bottom:12px}
+.logo-icon{width:44px;height:44px;border-radius:11px;background:linear-gradient(135deg,var(--teal),var(--sk));display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 0 26px rgba(48,216,192,.28)}
+.logo-text h2{font-size:15px;font-weight:800}.logo-text p{font-size:10.5px;color:var(--muted)}
+.prog-wrap{height:3px;background:var(--border);border-radius:2px;overflow:hidden}
+.prog-bar{height:100%;width:0;background:linear-gradient(90deg,var(--acc),var(--ins),var(--oc),var(--sk),var(--au))}
+.nav-label{padding:14px 18px 4px;font-size:9.5px;font-weight:700;letter-spacing:1.6px;color:var(--faint)}
+.nav-link{display:flex;align-items:center;gap:9px;padding:7px 18px;color:var(--muted);text-decoration:none;font-size:12.5px;font-weight:600;border-left:2px solid transparent}
+.nav-link:hover,.nav-link.active{color:var(--text);background:rgba(255,208,96,.07);border-left-color:var(--acc)}
+.main{margin-left:260px}
+.hero{padding-block:80px 60px;padding-left:var(--gl);padding-right:var(--gr);border-bottom:1px solid var(--border);background:radial-gradient(ellipse 65% 55% at 75% 22%,rgba(48,216,192,.09),transparent 60%),radial-gradient(ellipse 50% 55% at 10% 82%,rgba(160,122,244,.08),transparent 55%),var(--bg)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--acc-dim);border:1px solid rgba(255,208,96,.38);color:var(--acc);padding:5px 16px;border-radius:100px;font-size:11.5px;font-weight:700;margin-bottom:24px}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--acc);animation:p 2s infinite}
+@keyframes p{50%{opacity:.35;transform:scale(.7)}}
+@media(prefers-reduced-motion:reduce){.eyebrow i{animation:none}html{scroll-behavior:auto}}
+.hero h1{font-size:50px;font-weight:900;letter-spacing:-2.4px;line-height:1.06;margin-bottom:18px;text-wrap:balance}
+.grad{background:linear-gradient(135deg,var(--teal),var(--sk));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-desc{font-size:16px;color:var(--muted);max-width:620px;margin-bottom:28px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{padding:5px 14px;border-radius:7px;font-size:12px;font-weight:700}
+.c1{background:var(--oc-dim);color:var(--oc)}.c2{background:var(--ins-dim);color:var(--ins)}.c3{background:var(--acc-dim);color:var(--acc)}.c4{background:var(--sk-dim);color:var(--sk)}.c5{background:var(--au-dim);color:var(--au)}
+.content{padding-block:56px;padding-left:var(--gl);padding-right:var(--gr);max-width:calc(1020px + 64px)}
+.section{margin-bottom:68px}
+.sec-head{display:flex;gap:14px;align-items:flex-start;margin-bottom:28px;padding-bottom:18px;border-bottom:1px solid var(--border)}
+.sec-tag{font-family:var(--mono);font-size:10px;font-weight:600;padding:3px 10px;border-radius:5px;margin-top:6px;flex-shrink:0;letter-spacing:.5px}
+.t1{color:var(--oc);background:var(--oc-dim)}.t2{color:var(--ins);background:var(--ins-dim)}.t3{color:var(--acc);background:var(--acc-dim)}.t4{color:var(--sk);background:var(--sk-dim)}.t5{color:var(--au);background:var(--au-dim)}
+.sec-title{font-size:23px;font-weight:800;letter-spacing:-.6px;text-wrap:balance}.sec-sub{font-size:13px;color:var(--muted)}
+.sub-title{font-size:14.5px;font-weight:700;margin:26px 0 12px;display:flex;align-items:center;gap:10px}
+.sub-title::before{content:'';width:14px;height:3px;background:var(--acc);border-radius:2px}
+p.t{color:var(--muted);font-size:13.5px;margin-bottom:11px;max-width:68ch}p.t strong,li strong{color:var(--text)}
+.ex-box{background:var(--s1);border:1px solid var(--border2);border-radius:11px;overflow:hidden;margin:13px 0}
+.ex-head{display:flex;align-items:center;gap:8px;padding:9px 16px;background:var(--s2);border-bottom:1px solid var(--border);font-family:var(--mono);font-size:10px;font-weight:600;color:var(--muted);letter-spacing:.5px}
+.ex-tag{margin-left:auto;font-size:9px;font-weight:700;padding:2px 9px;border-radius:100px;font-family:var(--font)}
+.ex-body{padding:10px 20px}
+.ex-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:13.5px}
+.ex-row:last-child{border-bottom:none}
+.ex-en{color:var(--text);font-weight:600;min-width:280px}.ex-vn{color:var(--muted)}
+.info{display:flex;gap:12px;padding:14px 16px;border-radius:9px;margin:13px 0;font-size:13px;line-height:1.6}
+.i-tip{background:var(--tip-bg);border:1px solid var(--tip-bd);color:var(--tip-fg)}
+.i-warn{background:var(--acc-dim);border:1px solid rgba(255,208,96,.25);color:var(--warn-fg)}
+.i-ok{background:var(--ins-dim);border:1px solid rgba(64,216,142,.25);color:var(--ok-fg)}
+.tbl{width:100%;border-collapse:collapse;font-size:13px;margin:13px 0;display:block;overflow-x:auto}
+.tbl th{background:var(--s3);padding:10px 14px;text-align:left;font-size:10px;color:var(--muted);border-bottom:1px solid var(--border2);white-space:nowrap;letter-spacing:.5px}
+.tbl td{padding:10px 14px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:top}
+.tbl td:first-child{color:var(--text);font-weight:600}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}
+.card{background:var(--s1);border:1px solid var(--border);border-radius:11px;padding:16px;min-width:0}
+.card:hover{border-color:var(--acc)}
+.card-icon{font-size:24px}.card-title{font-size:13px;font-weight:700}.card-desc{font-size:12px;color:var(--muted)}
+.cmp{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);border-radius:11px;overflow:hidden;margin:13px 0}
+.bad{background:rgba(255,101,132,.07);padding:14px 16px;border-right:1px solid var(--border)}.good{background:rgba(64,216,142,.07);padding:14px 16px}
+.cmp b{display:block;font-size:10px;margin-bottom:6px;letter-spacing:.5px}.bad b{color:var(--au)}.good b{color:var(--ins)}
+.cmp div div{font-size:13.5px}
+.dlg{display:grid;gap:8px;margin:12px 0;background:var(--s1);border:1px solid var(--border2);border-radius:12px;padding:16px 18px}
+.dlg-t{font-size:10px;font-weight:800;color:var(--acc);margin-bottom:2px;letter-spacing:.6px}
+.turn{display:flex;gap:10px;align-items:baseline}
+.turn>div{min-width:0}
+.who{flex-shrink:0;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+.wa{background:var(--oc-dim);color:var(--oc)}.wb{background:var(--ins-dim);color:var(--ins)}
+.turn .say{font-weight:600}.turn small{display:block;color:var(--muted);font-size:12px;font-weight:400}
+.gen{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0}
+.gen label{font-size:11.5px;color:var(--muted);font-weight:600;display:block;min-width:0}
+.gen select{width:100%;margin-top:4px;background:var(--code-bg);border:1px solid var(--border2);border-radius:8px;padding:9px 12px;color:var(--text);font:inherit;font-size:13px}
+select:focus-visible,button:focus-visible,.say:focus-visible,.exi input:focus-visible,.chk input:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.btns{display:flex;flex-wrap:wrap;gap:6px}
+.btn{background:var(--acc-dim);color:var(--acc);border:1px solid var(--acc);border-radius:8px;padding:8px 16px;font:inherit;font-weight:700;font-size:13px;cursor:pointer}
+.btn.alt{background:var(--ins-dim);color:var(--ins);border-color:var(--ins)}
+.out{margin-top:14px;min-height:60px;background:var(--s2);border:1px dashed var(--border2);border-radius:10px;padding:14px 16px;font-size:14px;line-height:1.9}
+.big{font-size:21px;font-weight:800;color:var(--acc);letter-spacing:-.3px;line-height:1.4;margin-bottom:4px}
+.out .why{display:block;color:var(--muted);font-size:12.5px}
+.out .why b{color:var(--teal);font-family:var(--mono);font-weight:600}
+.timeline{display:grid;gap:0;margin:14px 0;border-left:2px solid var(--border2);padding-left:18px}
+.tl{position:relative;padding:8px 0 12px}
+.tl::before{content:'';position:absolute;left:-24px;top:16px;width:10px;height:10px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 3px var(--bg)}
+.tl time{font-family:var(--mono);font-size:12px;color:var(--acc);font-variant-numeric:tabular-nums;font-weight:600}
+.tl .say{font-weight:600;font-size:13.5px}
+.tl small{display:block;color:var(--muted);font-size:12px}
+.freq{display:grid;gap:7px;margin:14px 0}
+.fq{display:grid;grid-template-columns:110px 1fr 54px;gap:12px;align-items:center;font-size:13px}
+.fq .say{font-weight:700}
+.fq .track{height:8px;background:var(--s3);border-radius:4px;overflow:hidden}
+.fq .fill{height:100%;background:linear-gradient(90deg,var(--ins),var(--acc))}
+.fq span:last-child{font-family:var(--mono);font-size:11.5px;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+.plan{display:grid;gap:8px;margin:12px 0}
+.day{display:flex;gap:14px;align-items:baseline;background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:12px 16px;font-size:13px;color:var(--muted)}
+.day b{color:var(--acc);font-family:var(--mono);font-size:12px;flex-shrink:0;width:52px}.day strong{color:var(--text)}
+.chk{list-style:none;margin:10px 0}.chk li{padding:6px 0;font-size:13.5px;color:var(--muted);border-bottom:1px solid rgba(255,255,255,.04)}
+.chk input{accent-color:var(--ins);margin-right:10px;width:15px;height:15px;vertical-align:-2px}
+.gr{border:1px solid rgba(160,122,244,.38);background:linear-gradient(180deg,var(--sk-dim),transparent 110px),var(--s1);border-radius:12px;margin:28px 0;overflow:hidden}
+.gr-head{padding:10px 18px;font-size:12px;font-weight:800;color:var(--sk);border-bottom:1px solid var(--border);display:flex;gap:10px;flex-wrap:wrap;align-items:baseline;letter-spacing:.4px}
+.gr-head em{font-style:normal;color:var(--muted);font-weight:600;letter-spacing:0}
+.gr-body{padding:14px 18px;font-size:13.5px;color:var(--muted)}
+.gr-body p{margin-bottom:10px}.gr-body b{color:var(--text)}.gr-body ul{padding-left:20px;margin-bottom:8px}.gr-body li{margin-bottom:4px}
+.gr-body .tbl{margin:8px 0 12px}
+.fm{display:inline-block;font-family:var(--mono);font-size:12px;background:var(--code-bg);color:var(--teal);padding:3px 9px;border-radius:6px;margin:2px 0}
+.say{cursor:pointer;border-bottom:1px dotted var(--oc)}
+.say:hover{color:var(--acc);background:var(--acc-dim);border-radius:4px}
+.say::after{content:"🔊";font-size:.68em;margin-left:3px;opacity:.5}
+.say.playing{color:var(--ins);background:var(--ins-dim);border-radius:4px}.say.playing::after{opacity:1}
+.exi{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:13.5px;color:var(--text)}
+.exi input{width:220px;max-width:100%;background:var(--code-bg);border:1px solid var(--border2);border-radius:6px;padding:4px 8px;color:var(--text);font:inherit;font-size:13px;text-align:center}
+.exi input.ok{border-color:var(--ins);color:var(--ins)}.exi input.no{border-color:var(--au);color:var(--au)}
+.exi small{color:var(--muted);font-size:11.5px}
+.exi .key{color:var(--ins);font-size:12px;width:100%}
+.footer{border-top:1px solid var(--border);padding-block:28px 90px;padding-left:var(--gl);padding-right:var(--gr);font-size:12px;color:var(--muted)}
+.audio-bar{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:500;display:flex;gap:10px;align-items:center;background:var(--s2);border:1px solid var(--border2);border-radius:12px;padding:8px 12px;box-shadow:0 8px 28px rgba(0,0,0,.5);font-size:12px;color:var(--muted)}
+.audio-bar b{color:var(--acc)}.ab-g{display:flex;gap:4px}
+.audio-bar button{background:var(--s3);color:var(--muted);border:1px solid var(--border);border-radius:7px;padding:4px 10px;font:inherit;font-weight:700;cursor:pointer}
+.audio-bar button.on{background:var(--acc-dim);color:var(--acc);border-color:var(--acc)}
+.topnav{display:none}
+@media(max-width:900px){
+:root{--gl:max(18px,env(safe-area-inset-left,0px));--gr:max(18px,env(safe-area-inset-right,0px))}
+.sidebar{display:none}.main{margin-left:0}.hero h1{font-size:32px;letter-spacing:-1.4px}.hero{padding-block:48px 40px}
+.grid-3,.cmp{grid-template-columns:1fr}.gen{grid-template-columns:1fr 1fr}.bad{border-right:none;border-bottom:1px solid var(--border)}
+.topnav{display:flex;overflow-x:auto;position:sticky;top:env(safe-area-inset-top,0px);z-index:500;background:var(--s1);border-bottom:2px solid var(--border2);scrollbar-width:none;padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+.topnav a{flex-shrink:0;padding:10px 14px;color:var(--muted);text-decoration:none;font-size:12px;font-weight:700;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-2px}
+.topnav a.active{color:var(--acc);border-bottom-color:var(--acc);background:var(--acc-dim)}
+.ex-en{min-width:0}
+.fq{grid-template-columns:90px 1fr 46px}
+.audio-bar{left:calc(8px + env(safe-area-inset-left,0px));right:calc(8px + env(safe-area-inset-right,0px));justify-content:center;flex-wrap:wrap}
+}
+@media(max-width:480px){.gen{grid-template-columns:1fr}}
+</style>
+
+<aside class="sidebar">
+  <div class="sb-logo">
+    <div class="sb-brand"><div class="logo-icon">🛍️</div><div class="logo-text"><h2>Shopping</h2><p>Tiếng Anh cho người mới</p></div></div>
+    <div class="prog-wrap"><div class="prog-bar" id="pbar"></div></div>
+  </div>
+  <div class="nav-label">BÀI HỌC</div>
+  <a class="nav-link" href="#s1">🏬 Cửa hàng &amp; món đồ</a>
+  <a class="nav-link" href="#s2">🔍 Tìm và hỏi hàng</a>
+  <a class="nav-link" href="#s3">👕 Cỡ, màu &amp; thử đồ</a>
+  <a class="nav-link" href="#s4">🏷️ Giá cả &amp; mặc cả</a>
+  <a class="nav-link" href="#s5">💳 Thanh toán &amp; đổi trả</a>
+  <div class="nav-label">THỰC HÀNH</div>
+  <a class="nav-link" href="#s6">💬 Hội thoại mẫu</a>
+  <a class="nav-link" href="#s7">🛠️ Máy ghép câu &amp; bài tập</a>
+  <a class="nav-link" href="#s8">🚀 Từ vựng nâng cao</a>
+</aside>
+
+<div class="main">
+<nav class="topnav">
+  <a href="#s1">1 Cửa hàng</a><a href="#s2">2 Hỏi hàng</a><a href="#s3">3 Thử đồ</a><a href="#s4">4 Giá cả</a><a href="#s5">5 Thanh toán</a><a href="#s6">6 Hội thoại</a><a href="#s7">7 Bài tập</a><a href="#s8">8 Nâng cao</a>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow"><i></i>Dành cho người mới bắt đầu</div>
+  <h1>Đi mua sắm<br><span class="grad">bằng tiếng Anh</span></h1>
+  <p class="hero-desc">Học cách hỏi hàng, chọn cỡ và màu, thử đồ, hỏi giá, mặc cả, thanh toán và đổi trả. Bấm vào câu có biểu tượng loa để nghe, nói theo, rồi luyện với máy ghép câu ở phần thực hành.</p>
+  <div class="chips"><span class="chip c2">Cửa hàng</span><span class="chip c1">Hỏi hàng</span><span class="chip c4">Thử đồ</span><span class="chip c3">Giá cả</span><span class="chip c5">Từ vựng nâng cao</span></div>
+</header>
+
+<div class="content">
+
+<section class="section" id="s1">
+  <div class="sec-head"><span class="sec-tag t2">BÀI 1</span><div><div class="sec-title">Cửa hàng và món đồ</div><div class="sec-sub">Biết mình đang ở đâu và đang tìm gì</div></div></div>
+  <div class="grid-3">
+    <div class="card"><div class="card-icon">🛒</div><div class="card-title say">supermarket</div><div class="card-desc">siêu thị</div></div>
+    <div class="card"><div class="card-icon">🏬</div><div class="card-title say">shopping mall</div><div class="card-desc">trung tâm thương mại</div></div>
+    <div class="card"><div class="card-icon">🧺</div><div class="card-title say">market</div><div class="card-desc">chợ</div></div>
+    <div class="card"><div class="card-icon">👗</div><div class="card-title say">clothes shop</div><div class="card-desc">cửa hàng quần áo</div></div>
+    <div class="card"><div class="card-icon">📱</div><div class="card-title say">electronics store</div><div class="card-desc">cửa hàng điện tử</div></div>
+    <div class="card"><div class="card-icon">🏪</div><div class="card-title say">convenience store</div><div class="card-desc">cửa hàng tiện lợi</div></div>
+  </div>
+  <div class="sub-title">Quần áo và phụ kiện</div>
+  <table class="tbl"><thead><tr><th>Số ít (this / that)</th><th>Nghĩa</th><th>Luôn số nhiều (these / those)</th><th>Nghĩa</th></tr></thead><tbody>
+  <tr><td class="say">a shirt</td><td>áo sơ mi</td><td class="say">jeans</td><td>quần bò</td></tr>
+  <tr><td class="say">a T-shirt</td><td>áo phông</td><td class="say">trousers / pants</td><td>quần dài</td></tr>
+  <tr><td class="say">a dress</td><td>váy liền</td><td class="say">shorts</td><td>quần đùi</td></tr>
+  <tr><td class="say">a jacket</td><td>áo khoác</td><td class="say">shoes</td><td>giày</td></tr>
+  <tr><td class="say">a bag</td><td>túi xách</td><td class="say">sandals</td><td>dép quai hậu</td></tr>
+  <tr><td class="say">a hat</td><td>mũ</td><td class="say">glasses</td><td>kính mắt</td></tr></tbody></table>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>this / that / these / those</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Từ</th><th>Dùng khi</th><th>Ví dụ</th></tr></thead><tbody>
+<tr><td><span class="fm">this</span></td><td>một món, ở gần</td><td><span class="say">I like this bag.</span></td></tr>
+<tr><td><span class="fm">that</span></td><td>một món, ở xa</td><td><span class="say">How much is that hat?</span></td></tr>
+<tr><td><span class="fm">these</span></td><td>nhiều món, ở gần</td><td><span class="say">These shoes are nice.</span></td></tr>
+<tr><td><span class="fm">those</span></td><td>nhiều món, ở xa</td><td><span class="say">Can I see those sunglasses?</span></td></tr></tbody></table>
+<p><b>jeans, trousers, shorts, shoes, glasses</b> luôn ở dạng số nhiều, nên đi với <b>these / those / are / them</b>.</p>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>This jeans is nice.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">These jeans are nice.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s2">
+  <div class="sec-head"><span class="sec-tag t1">BÀI 2</span><div><div class="sec-title">Tìm và hỏi hàng</div><div class="sec-sub">Trả lời nhân viên và hỏi món mình cần</div></div></div>
+  <div class="ex-box"><div class="ex-head">NHÂN VIÊN HỎI<span class="ex-tag t1">Nghe hiểu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Can I help you?</span><span class="ex-vn">Tôi giúp gì được cho anh chị?</span></div>
+    <div class="ex-row"><span class="ex-en say">Are you looking for anything special?</span><span class="ex-vn">Anh chị đang tìm gì đặc biệt không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Let me know if you need anything.</span><span class="ex-vn">Cần gì cứ gọi tôi nhé</span></div>
+  </div></div>
+  <div class="ex-box"><div class="ex-head">KHÁCH HÀNG NÓI<span class="ex-tag t2">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">I’m just looking, thanks.</span><span class="ex-vn">Tôi chỉ xem thôi, cảm ơn</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m looking for a jacket.</span><span class="ex-vn">Tôi đang tìm một cái áo khoác</span></div>
+    <div class="ex-row"><span class="ex-en say">Do you sell phone chargers?</span><span class="ex-vn">Ở đây có bán sạc điện thoại không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Where can I find the shoes?</span><span class="ex-vn">Giày ở khu nào vậy?</span></div>
+    <div class="ex-row"><span class="ex-en say">Can I see that one, please?</span><span class="ex-vn">Cho tôi xem cái kia được không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Do you have any other colors?</span><span class="ex-vn">Có màu khác không?</span></div>
+  </div></div>
+  <div class="info i-tip"><span>💡</span><span><strong>Mẹo:</strong> khi chưa muốn mua mà nhân viên hỏi, chỉ cần cười và nói <strong>I’m just looking, thanks.</strong> Câu này lịch sự và rất tự nhiên.</span></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>one / ones để không lặp lại tên món</em></div><div class="gr-body">
+<ul><li><span class="say">I don’t like the red one. Can I see the blue one?</span></li><li><span class="say">These shoes are too small. Do you have bigger ones?</span></li></ul>
+<p><b>one</b> thay cho một món, <b>ones</b> thay cho nhiều món.</p>
+<div class="cmp"><div class="bad"><b>❌ NGHE LẶP</b><div>I like the black bag, not the white bag.</div></div><div class="good"><b>✔ TỰ NHIÊN</b><div class="say">I like the black bag, not the white one.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s3">
+  <div class="sec-head"><span class="sec-tag t4">BÀI 3</span><div><div class="sec-title">Cỡ, màu và thử đồ</div><div class="sec-sub">Chọn đúng size, đúng màu, và nói đồ có vừa không</div></div></div>
+  <div class="grid-3">
+    <div class="card"><div class="card-icon">🔹</div><div class="card-title say">small</div><div class="card-desc">cỡ S</div></div>
+    <div class="card"><div class="card-icon">🔷</div><div class="card-title say">medium</div><div class="card-desc">cỡ M</div></div>
+    <div class="card"><div class="card-icon">🟦</div><div class="card-title say">large</div><div class="card-desc">cỡ L</div></div>
+  </div>
+  <table class="tbl"><thead><tr><th>Màu</th><th>Nghĩa</th><th>Màu</th><th>Nghĩa</th></tr></thead><tbody>
+  <tr><td class="say">black</td><td>đen</td><td class="say">white</td><td>trắng</td></tr>
+  <tr><td class="say">red</td><td>đỏ</td><td class="say">blue</td><td>xanh dương</td></tr>
+  <tr><td class="say">green</td><td>xanh lá</td><td class="say">yellow</td><td>vàng</td></tr>
+  <tr><td class="say">pink</td><td>hồng</td><td class="say">grey / gray</td><td>xám</td></tr>
+  <tr><td class="say">brown</td><td>nâu</td><td class="say">beige</td><td>be</td></tr></tbody></table>
+  <div class="ex-box"><div class="ex-head">CHỌN CỠ VÀ THỬ ĐỒ<span class="ex-tag t4">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">What size are you?</span><span class="ex-vn">Anh chị mặc cỡ nào?</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m a medium.</span><span class="ex-vn">Tôi mặc cỡ M</span></div>
+    <div class="ex-row"><span class="ex-en say">Do you have this in a small?</span><span class="ex-vn">Cái này có cỡ S không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Do you have this in black?</span><span class="ex-vn">Cái này có màu đen không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Can I try it on?</span><span class="ex-vn">Tôi mặc thử được không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Where is the fitting room?</span><span class="ex-vn">Phòng thử đồ ở đâu?</span></div>
+    <div class="ex-row"><span class="ex-en say">It fits well.</span><span class="ex-vn">Vừa vặn lắm</span></div>
+    <div class="ex-row"><span class="ex-en say">It’s too big. Do you have a smaller size?</span><span class="ex-vn">Rộng quá. Có cỡ nhỏ hơn không?</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>So sánh hơn: bigger, smaller, cheaper</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Quy tắc</th><th>Ví dụ</th><th>Câu mẫu</th></tr></thead><tbody>
+<tr><td><span class="fm">tính từ ngắn + -er</span></td><td>small → smaller, cheap → cheaper</td><td><span class="say">Do you have a cheaper one?</span></td></tr>
+<tr><td><span class="fm">gấp đôi phụ âm cuối</span></td><td>big → bigger</td><td><span class="say">I need a bigger size.</span></td></tr>
+<tr><td><span class="fm">more + tính từ dài</span></td><td>expensive → more expensive</td><td><span class="say">This one is more expensive.</span></td></tr>
+<tr><td><span class="fm">bất quy tắc</span></td><td>good → better</td><td><span class="say">This color is better.</span></td></tr></tbody></table>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>Do you have more small size?</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">Do you have a smaller size?</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s4">
+  <div class="sec-head"><span class="sec-tag t3">BÀI 4</span><div><div class="sec-title">Giá cả và mặc cả</div><div class="sec-sub">Hỏi giá, nghe giá, xin giảm giá một cách lịch sự</div></div></div>
+  <div class="ex-box"><div class="ex-head">HỎI GIÁ<span class="ex-tag t3">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">How much is this?</span><span class="ex-vn">Cái này bao nhiêu tiền?</span></div>
+    <div class="ex-row"><span class="ex-en say">How much are these?</span><span class="ex-vn">Mấy cái này bao nhiêu tiền?</span></div>
+    <div class="ex-row"><span class="ex-en say">It’s two hundred thousand dong.</span><span class="ex-vn">200 nghìn đồng</span></div>
+    <div class="ex-row"><span class="ex-en say">Is it on sale?</span><span class="ex-vn">Cái này có đang giảm giá không?</span></div>
+    <div class="ex-row"><span class="ex-en say">It’s twenty percent off.</span><span class="ex-vn">Đang giảm 20%</span></div>
+  </div></div>
+  <div class="ex-box"><div class="ex-head">MẶC CẢ Ở CHỢ<span class="ex-tag t5">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">That’s a bit expensive.</span><span class="ex-vn">Hơi đắt một chút</span></div>
+    <div class="ex-row"><span class="ex-en say">Can you give me a discount?</span><span class="ex-vn">Bớt cho tôi một chút được không?</span></div>
+    <div class="ex-row"><span class="ex-en say">How about one hundred fifty thousand?</span><span class="ex-vn">150 nghìn được không?</span></div>
+    <div class="ex-row"><span class="ex-en say">If I buy two, can you make it cheaper?</span><span class="ex-vn">Nếu tôi mua hai cái, bớt thêm được không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Okay, it’s a deal!</span><span class="ex-vn">Được, chốt nhé!</span></div>
+  </div></div>
+  <div class="sub-title">Đọc giá tiền</div>
+  <table class="tbl"><thead><tr><th>Giá</th><th>Cách đọc</th></tr></thead><tbody>
+  <tr><td>50.000đ</td><td><span class="say">fifty thousand dong</span></td></tr>
+  <tr><td>120.000đ</td><td><span class="say">one hundred and twenty thousand dong</span></td></tr>
+  <tr><td>1.500.000đ</td><td><span class="say">one million five hundred thousand dong</span></td></tr>
+  <tr><td>$9.99</td><td><span class="say">nine ninety-nine</span></td></tr>
+  <tr><td>$25.50</td><td><span class="say">twenty-five dollars fifty</span></td></tr></tbody></table>
+  <div class="info i-warn"><span>⚠️</span><span><strong>Nhớ:</strong> sau số, <strong>hundred, thousand, million</strong> không thêm -s: <em>two hundred thousand</em>, không phải <em>two hundreds thousands</em>. Mặc cả là bình thường ở chợ, nhưng ở siêu thị và trung tâm thương mại giá thường cố định.</span></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>How much is / How much are</em></div><div class="gr-body">
+<ul><li><span class="fm">How much is + this / that / món số ít?</span> → <span class="say">How much is this dress?</span></li>
+<li><span class="fm">How much are + these / those / món số nhiều?</span> → <span class="say">How much are those sandals?</span></li></ul>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>How much is these shoes?</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">How much are these shoes?</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s5">
+  <div class="sec-head"><span class="sec-tag t1">BÀI 5</span><div><div class="sec-title">Thanh toán, đổi và trả hàng</div><div class="sec-sub">Ở quầy thu ngân và khi cần đổi món đã mua</div></div></div>
+  <div class="ex-box"><div class="ex-head">THANH TOÁN<span class="ex-tag t1">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">I’ll take it.</span><span class="ex-vn">Tôi lấy cái này</span></div>
+    <div class="ex-row"><span class="ex-en say">I’ll take them.</span><span class="ex-vn">Tôi lấy mấy cái này</span></div>
+    <div class="ex-row"><span class="ex-en say">Can I pay by card?</span><span class="ex-vn">Tôi trả bằng thẻ được không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Cash or card?</span><span class="ex-vn">Tiền mặt hay thẻ?</span></div>
+    <div class="ex-row"><span class="ex-en say">Do you need a bag?</span><span class="ex-vn">Anh chị có cần túi không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Could I have the receipt, please?</span><span class="ex-vn">Cho tôi xin hóa đơn</span></div>
+  </div></div>
+  <div class="ex-box"><div class="ex-head">ĐỔI VÀ TRẢ HÀNG<span class="ex-tag t2">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">I bought this yesterday.</span><span class="ex-vn">Tôi mua cái này hôm qua</span></div>
+    <div class="ex-row"><span class="ex-en say">It doesn’t fit.</span><span class="ex-vn">Nó không vừa</span></div>
+    <div class="ex-row"><span class="ex-en say">Can I exchange it for a bigger size?</span><span class="ex-vn">Tôi đổi sang cỡ lớn hơn được không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Can I get a refund?</span><span class="ex-vn">Tôi được hoàn tiền không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Do you have the receipt?</span><span class="ex-vn">Anh chị còn giữ hóa đơn không?</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>it / them và I’ll khi quyết định mua</em></div><div class="gr-body">
+<p>Dùng <span class="fm">I’ll + V</span> cho quyết định vừa đưa ra ngay lúc nói: <span class="say">I’ll take it.</span></p>
+<p><b>it</b> thay cho một món, <b>them</b> thay cho món số nhiều như jeans, shoes.</p>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>I like these shoes. I take it.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">I like these shoes. I’ll take them.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s6">
+  <div class="sec-head"><span class="sec-tag t3">BÀI 6</span><div><div class="sec-title">Hội thoại mẫu</div><div class="sec-sub">Bấm từng câu để nghe, rồi đóng vai cả hai người</div></div></div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 1: MUA ÁO Ở CỬA HÀNG</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Hi, can I help you?</span><small>Chào anh chị, tôi giúp gì được ạ?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Yes, I’m looking for a shirt. Do you have this one in blue?</span><small>Vâng, tôi đang tìm áo sơ mi. Cái này có màu xanh không?</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Yes, we do. What size are you?</span><small>Có ạ. Anh chị mặc cỡ nào?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Medium, I think. Can I try it on?</span><small>Chắc là cỡ M. Tôi thử được không?</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Sure. The fitting room is over there.</span><small>Dạ được. Phòng thử đồ ở đằng kia.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">It fits well. How much is it?</span><small>Vừa lắm. Bao nhiêu tiền vậy?</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">It’s three hundred thousand dong.</span><small>300 nghìn đồng ạ.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Great, I’ll take it.</span><small>Tốt quá, tôi lấy cái này.</small></div></div>
+  </div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 2: MẶC CẢ Ở CHỢ</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">How much are these sandals?</span><small>Đôi dép này bao nhiêu?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Two hundred thousand.</span><small>200 nghìn.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">That’s a bit expensive. How about one hundred fifty?</span><small>Hơi đắt. 150 được không?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Sorry, I can’t. One hundred eighty is my best price.</span><small>Xin lỗi, không được. 180 là giá thấp nhất rồi.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Okay, it’s a deal. Can I pay by bank transfer?</span><small>Thôi được, chốt. Tôi chuyển khoản được không?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Of course. Here’s the QR code.</span><small>Được chứ. Mã QR đây.</small></div></div>
+  </div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 3: ĐỔI HÀNG</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Excuse me. I bought these jeans yesterday, but they’re too small.</span><small>Xin lỗi. Hôm qua tôi mua quần bò này nhưng nó chật quá.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">I’m sorry about that. Do you have the receipt?</span><small>Rất tiếc. Anh chị còn hóa đơn không?</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Yes, here it is. Can I exchange them for a bigger size?</span><small>Có, đây ạ. Tôi đổi sang cỡ lớn hơn được không?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Sure. Here you are. These are one size bigger.</span><small>Được ạ. Của anh chị đây. Cái này lớn hơn một cỡ.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Thank you so much!</span><small>Cảm ơn bạn nhiều!</small></div></div>
+  </div>
+  <div class="info i-ok"><span>✅</span><span><strong>Cách luyện:</strong> nghe một lượt, nói theo từng câu, rồi che phần tiếng Việt và tự đóng vai A hoặc B. Lần sau thay món đồ, cỡ, màu và giá tiền.</span></div>
+</section>
+
+<section class="section" id="s7">
+  <div class="sec-head"><span class="sec-tag t2">BÀI 7</span><div><div class="sec-title">Máy ghép câu &amp; bài tập</div><div class="sec-sub">Chọn món đồ và việc muốn làm, xem câu đúng với this hay these</div></div></div>
+  <div class="gen">
+    <label for="g-i">Món đồ<select id="g-i"></select></label>
+    <label for="g-a">Bạn muốn<select id="g-a"></select></label>
+    <label for="g-d">Gần hay xa<select id="g-d"></select></label>
+  </div>
+  <div class="btns"><button class="btn" id="gen-btn">Ghép câu</button><button class="btn alt" id="rnd-btn">Chọn ngẫu nhiên</button></div>
+  <div class="out" id="gen-out" aria-live="polite"></div>
+
+  <div class="sub-title">Bài tập: điền câu trả lời</div>
+  <p class="t">Câu 1–4: điền một từ vào chỗ trống. Câu 5–8: dịch sang tiếng Anh, gõ cả câu. Không phân biệt hoa thường.</p>
+  <div id="exlist">
+    <div class="exi">1. How much ___ these shoes? →<input id="ex1" data-a="are" aria-label="Câu 1"><small>is hay are?</small></div>
+    <div class="exi">2. ___ jeans are too long. (gần) →<input id="ex2" data-a="these" aria-label="Câu 2"><small>số nhiều, gần</small></div>
+    <div class="exi">3. Do you have a ___ size? (big) →<input id="ex3" data-a="bigger" aria-label="Câu 3"><small>so sánh hơn</small></div>
+    <div class="exi">4. I like the red bag, not the black ___. →<input id="ex4" data-a="one" aria-label="Câu 4"><small>thay cho bag</small></div>
+    <div class="exi">5. Tôi chỉ xem thôi, cảm ơn →<input id="ex5" data-a="i'm just looking, thanks|i'm just looking, thank you|i am just looking, thanks|i am just looking, thank you|i'm just looking thanks|i'm just looking" aria-label="Câu 5"><small>just looking</small></div>
+    <div class="exi">6. Tôi mặc thử được không? →<input id="ex6" data-a="can i try it on?|could i try it on?|can i try this on?|could i try this on?" aria-label="Câu 6"><small>try … on</small></div>
+    <div class="exi">7. Tôi trả bằng thẻ được không? →<input id="ex7" data-a="can i pay by card?|could i pay by card?|can i pay by credit card?" aria-label="Câu 7"><small>pay by…</small></div>
+    <div class="exi">8. Bớt cho tôi một chút được không? →<input id="ex8" data-a="can you give me a discount?|could you give me a discount?" aria-label="Câu 8"><small>discount</small></div>
+  </div>
+  <div class="btns" style="margin-top:12px"><button class="btn" id="ex-check">Kiểm tra đáp án</button><button class="btn alt" id="ex-show">Xem đáp án</button><button class="btn alt" id="ex-reset">Làm lại</button></div>
+  <div class="out" id="ex-out" style="min-height:0" aria-live="polite"></div>
+
+  <div class="sub-title">Lộ trình luyện 7 ngày</div>
+  <div class="plan">
+    <div class="day"><b>Ngày 1</b><span><strong>Cửa hàng và món đồ:</strong> học tên đồ, luyện this / that / these / those</span></div>
+    <div class="day"><b>Ngày 2</b><span><strong>Hỏi hàng:</strong> luyện <em>I’m looking for…</em> và <em>I’m just looking</em></span></div>
+    <div class="day"><b>Ngày 3</b><span><strong>Cỡ và màu:</strong> mô tả quần áo bạn đang mặc bằng màu và cỡ</span></div>
+    <div class="day"><b>Ngày 4</b><span><strong>Giá cả:</strong> đọc to 10 giá tiền, luyện câu mặc cả</span></div>
+    <div class="day"><b>Ngày 5</b><span><strong>Thanh toán và đổi trả:</strong> luyện I’ll take it / them và exchange, refund</span></div>
+    <div class="day"><b>Ngày 6</b><span><strong>Hội thoại:</strong> đóng vai 3 tình huống, dùng máy ghép câu để đổi món đồ</span></div>
+    <div class="day"><b>Ngày 7</b><span><strong>Ôn tổng hợp:</strong> thu âm 1 phút đóng vai mua một món từ lúc vào đến lúc trả tiền</span></div>
+  </div>
+</section>
+
+<section class="section" id="s8">
+  <div class="sec-head"><span class="sec-tag t5">NÂNG CAO</span><div><div class="sec-title">Từ vựng mới để hội thoại tự nhiên hơn</div><div class="sec-sub">Thêm vài từ này, câu chuyện mua sắm của bạn sẽ giống người bản xứ hơn</div></div></div>
+  <div class="sub-title">Trong cửa hàng</div>
+  <table class="tbl"><thead><tr><th>Từ / cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">cashier / checkout</td><td>thu ngân / quầy tính tiền</td><td><span class="say">Please pay at the checkout.</span></td></tr>
+  <tr><td class="say">out of stock</td><td>hết hàng</td><td><span class="say">Sorry, that size is out of stock.</span></td></tr>
+  <tr><td class="say">in stock</td><td>còn hàng</td><td><span class="say">Is this model in stock?</span></td></tr>
+  <tr><td class="say">brand</td><td>thương hiệu</td><td><span class="say">What brand is this?</span></td></tr>
+  <tr><td class="say">price tag</td><td>nhãn giá</td><td><span class="say">There’s no price tag on this one.</span></td></tr>
+  <tr><td class="say">buy one, get one free</td><td>mua một tặng một</td><td><span class="say">These T-shirts are buy one, get one free.</span></td></tr>
+  <tr><td class="say">loyalty card</td><td>thẻ thành viên</td><td><span class="say">Do you have a loyalty card?</span></td></tr>
+  <tr><td class="say">return policy</td><td>chính sách đổi trả</td><td><span class="say">What’s your return policy?</span></td></tr></tbody></table>
+  <div class="sub-title">Thói quen và cảm nhận khi mua sắm</div>
+  <table class="tbl"><thead><tr><th>Từ / cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">window shopping</td><td>đi ngắm đồ, không mua</td><td><span class="say">We just went window shopping.</span></td></tr>
+  <tr><td class="say">a good deal / a bargain</td><td>món hời</td><td><span class="say">Only ninety thousand? That’s a bargain!</span></td></tr>
+  <tr><td class="say">a rip-off</td><td>bị chặt chém, quá đắt</td><td><span class="say">Five dollars for water? What a rip-off!</span></td></tr>
+  <tr><td class="say">afford</td><td>đủ tiền mua</td><td><span class="say">I can’t afford it right now.</span></td></tr>
+  <tr><td class="say">impulse buy</td><td>mua theo cảm hứng</td><td><span class="say">This bag was an impulse buy.</span></td></tr>
+  <tr><td class="say">shop online</td><td>mua sắm trực tuyến</td><td><span class="say">I usually shop online.</span></td></tr></tbody></table>
+  <div class="sub-title">Cụm giúp cuộc trò chuyện trôi chảy</div>
+  <div class="ex-box"><div class="ex-head">LÀM CHO HỘI THOẠI TỰ NHIÊN<span class="ex-tag t5">Nâng cao</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">I’ll think about it.</span><span class="ex-vn">Để tôi suy nghĩ thêm (từ chối nhẹ nhàng)</span></div>
+    <div class="ex-row"><span class="ex-en say">It’s not really my style.</span><span class="ex-vn">Không hợp gu tôi lắm</span></div>
+    <div class="ex-row"><span class="ex-en say">Does it suit me?</span><span class="ex-vn">Cái này có hợp với tôi không?</span></div>
+    <div class="ex-row"><span class="ex-en say">That looks great on you!</span><span class="ex-vn">Bạn mặc cái đó đẹp lắm!</span></div>
+    <div class="ex-row"><span class="ex-en say">Is this the final price?</span><span class="ex-vn">Đây là giá cuối chưa?</span></div>
+    <div class="ex-row"><span class="ex-en say">Could you wrap it as a gift?</span><span class="ex-vn">Gói quà giúp tôi được không?</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m on a budget.</span><span class="ex-vn">Tôi đang phải tiết kiệm</span></div>
+  </div></div>
+  <div class="cmp"><div class="bad"><b>❌ NGHE CỨNG</b><div>No. Expensive. I don’t buy.</div></div><div class="good"><b>✔ TỰ NHIÊN HƠN</b><div class="say">It’s a bit out of my budget. I’ll think about it, thanks.</div></div></div>
+  <div class="info i-tip"><span>💡</span><span><strong>Mẹo:</strong> <strong>I’ll think about it</strong> là cách từ chối lịch sự khi bạn không muốn mua. Người bán sẽ hiểu và không ép thêm.</span></div>
+
+  <div class="sub-title">Tự kiểm tra</div>
+  <ul class="chk">
+    <li><label><input type="checkbox" id="c1">Tôi nói được tên 6 loại cửa hàng và 10 món đồ</label></li>
+    <li><label><input type="checkbox" id="c2">Tôi dùng đúng <strong>this / that / these / those</strong></label></li>
+    <li><label><input type="checkbox" id="c3">Tôi hỏi được cỡ, màu và xin thử đồ</label></li>
+    <li><label><input type="checkbox" id="c4">Tôi dùng đúng <strong>How much is / How much are</strong></label></li>
+    <li><label><input type="checkbox" id="c5">Tôi đọc được giá tiền và mặc cả lịch sự</label></li>
+    <li><label><input type="checkbox" id="c6">Tôi nói được <strong>I’ll take it / them</strong> và hỏi đổi, trả hàng</label></li>
+    <li><label><input type="checkbox" id="c7">Tôi dùng được ít nhất 5 từ vựng nâng cao</label></li>
+  </ul>
+</section>
+
+</div>
+<div class="footer">🛍️ Giao tiếp tiếng Anh: Shopping · Dành cho người mới bắt đầu · 2026</div>
+</div>
+
+<div class="audio-bar">
+  <b>🔊 Audio</b>
+  <div class="ab-g"><button data-acc="en-GB" class="on">Anh-Anh</button><button data-acc="en-US">Anh-Mỹ</button></div>
+  <div class="ab-g"><button data-rate="0.6">Chậm</button><button data-rate="0.85" class="on">Vừa</button><button data-rate="1">Nhanh</button></div>
+</div>
+
+<script>
+(function(){
+var doc=document.documentElement,bar=document.getElementById('pbar');
+addEventListener('scroll',function(){bar.style.width=(doc.scrollTop/Math.max(1,doc.scrollHeight-doc.clientHeight)*100)+'%'});
+var links=document.querySelectorAll('.nav-link,.topnav a');
+if('IntersectionObserver' in window)document.querySelectorAll('.section[id]').forEach(function(s){
+  new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;
+    links.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id)});
+  })},{rootMargin:'-20% 0px -70% 0px'}).observe(s);
+});
+
+/* Audio */
+var S=window.speechSynthesis,st={acc:'en-GB',rate:.85},cur=null;
+function voice(){if(!S)return null;var v=S.getVoices().filter(function(x){return x.lang.replace('_','-').toLowerCase()===st.acc.toLowerCase()});
+  return v.find(function(x){return /google|natural|premium|enhanced/i.test(x.name)})||v[0]||null}
+function say(el){
+  if(cur)cur.classList.remove('playing');
+  if(!S){el.title='Trình duyệt này không hỗ trợ đọc audio';return}
+  S.cancel();cur=el;el.classList.add('playing');
+  var t=el.textContent.replace(/\s+/g,' ').replace(/\s*\/\s*/g,'. ').replace(/→/g,'. ').trim();
+  var u=new SpeechSynthesisUtterance(t);u.lang=st.acc;u.rate=st.rate;var v=voice();if(v)u.voice=v;
+  u.onend=u.onerror=function(){el.classList.remove('playing')};S.speak(u);
+}
+function prep(root){root.querySelectorAll('.say').forEach(function(e){e.tabIndex=0;e.setAttribute('role','button')})}
+prep(document);
+document.addEventListener('click',function(e){var el=e.target.closest('.say');if(el)say(el)});
+document.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.classList&&e.target.classList.contains('say')){e.preventDefault();say(e.target)}});
+document.querySelectorAll('.audio-bar button').forEach(function(b){b.addEventListener('click',function(){
+  b.parentElement.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');
+  if(b.dataset.acc)st.acc=b.dataset.acc;if(b.dataset.rate)st.rate=+b.dataset.rate;
+})});
+
+/* Máy ghép câu: [món, nghĩa, số nhiều?] */
+var ITEM=[['shirt','áo sơ mi',0],['T-shirt','áo phông',0],['dress','váy',0],['jacket','áo khoác',0],['bag','túi xách',0],['hat','mũ',0],
+  ['jeans','quần bò',1],['trousers','quần dài',1],['shorts','quần đùi',1],['shoes','giày',1],['sandals','dép quai hậu',1],['sunglasses','kính râm',1]];
+var ACT=[['price','hỏi giá'],['size','hỏi cỡ nhỏ hơn'],['color','hỏi màu khác'],['try','xin mặc thử'],['like','khen món đồ'],['buy','quyết định mua']];
+var DIST=[['near','ở gần (this / these)'],['far','ở xa (that / those)']];
+function fill(id,arr,lab){var s=document.getElementById(id);arr.forEach(function(x,i){s.add(new Option(lab(x),i))});return s}
+var gi=fill('g-i',ITEM,function(x){return x[0]+' ('+x[1]+')'}),ga=fill('g-a',ACT,function(x){return x[1]}),gd=fill('g-d',DIST,function(x){return x[1]});
+gi.value=9;ga.value=0;gd.value=0;
+var COLORS=['black','white','blue','red','green','brown'];
+var out=document.getElementById('gen-out');
+function cap(s){return s.charAt(0).toUpperCase()+s.slice(1)}
+function show(){
+  var it=ITEM[+gi.value],a=ACT[+ga.value][0],near=+gd.value===0,pl=it[2];
+  var dem=pl?(near?'these':'those'):(near?'this':'that'),be=pl?'are':'is',pro=pl?'them':'it',pro2=pl?'they':'it';
+  var col=COLORS[Math.floor(Math.random()*COLORS.length)],en,vn;
+  var N=dem+' '+it[0];
+  if(a==='price'){en='How much '+be+' '+N+'?';vn='Món '+it[1]+' này bao nhiêu tiền?'}
+  else if(a==='size'){en=cap(N)+' '+be+' too big. Do you have a smaller size?';vn=cap(it[1])+' '+(near?'này':'kia')+' rộng quá. Có cỡ nhỏ hơn không?'}
+  else if(a==='color'){en='Do you have '+N+' in '+col+'?';vn='Món '+it[1]+' này có màu '+({black:'đen',white:'trắng',blue:'xanh dương',red:'đỏ',green:'xanh lá',brown:'nâu'}[col])+' không?'}
+  else if(a==='try'){en='Can I try '+N+' on?';vn='Tôi mặc / đi thử '+it[1]+' này được không?'}
+  else if(a==='like'){en=cap(N)+' '+be+' really nice. Where '+be+' '+pro2+' from?';vn=cap(it[1])+' '+(near?'này':'kia')+' đẹp thật. Hàng ở đâu vậy?'}
+  else{en='I like '+N+'. I’ll take '+pro+'.';vn='Tôi thích '+it[1]+' này. Tôi lấy nhé.'}
+  if(!near)vn=vn.replace(' này ',' kia ');
+  out.innerHTML='';
+  var big=document.createElement('div');big.className='big';var sp=document.createElement('span');sp.className='say';sp.textContent=en;big.append(sp);out.append(big);
+  var v=document.createElement('div');v.style.color='var(--muted)';v.style.fontSize='13px';v.textContent='Nghĩa: '+vn;out.append(v);
+  var w=document.createElement('span');w.className='why';
+  w.innerHTML='<b>'+it[0]+'</b> là '+(pl?'danh từ luôn số nhiều':'danh từ số ít')+', ở '+(near?'gần':'xa')+' → <b>'+dem+'</b>, động từ <b>'+be+'</b>, đại từ thay thế <b>'+pro+'</b>.';
+  out.append(w);
+  prep(out);
+}
+document.getElementById('gen-btn').addEventListener('click',show);
+document.getElementById('rnd-btn').addEventListener('click',function(){
+  gi.value=Math.floor(Math.random()*ITEM.length);ga.value=Math.floor(Math.random()*ACT.length);gd.value=Math.floor(Math.random()*DIST.length);show();
+});
+show();
+
+/* Bài tập */
+var inputs=document.querySelectorAll('#exlist input'),exo=document.getElementById('ex-out');
+function norm(s){return s.toLowerCase().replace(/[’‘`]/g,"'").replace(/[.!?]+$/,'').replace(/,/g,'').replace(/\s+/g,' ').trim()}
+document.getElementById('ex-check').addEventListener('click',function(){
+  var ok=0;
+  inputs.forEach(function(i){
+    var good=i.dataset.a.split('|').some(function(a){return norm(a)===norm(i.value)});
+    i.classList.remove('ok','no');i.classList.add(good?'ok':'no');if(good)ok++;
+  });
+  exo.style.minHeight='';
+  exo.textContent=ok===inputs.length?'🎉 Chính xác '+ok+'/'+inputs.length+'. Bạn mua sắm bằng tiếng Anh rất tốt!':'Đúng '+ok+'/'+inputs.length+'. Các ô viền đỏ cần xem lại; đọc lại phần ngữ pháp ở Bài 1 đến 5, hoặc bấm “Xem đáp án”.';
+});
+document.getElementById('ex-show').addEventListener('click',function(){
+  inputs.forEach(function(i){
+    var k=i.parentElement.querySelector('.key');
+    if(!k){k=document.createElement('span');k.className='key';i.parentElement.append(k)}
+    var a=i.dataset.a.split('|')[0].replace(/'/g,'’');k.textContent='Đáp án: '+(a.length>6?a.charAt(0).toUpperCase()+a.slice(1):a);
+  });
+});
+document.getElementById('ex-reset').addEventListener('click',function(){
+  inputs.forEach(function(i){i.value='';i.classList.remove('ok','no')});
+  document.querySelectorAll('#exlist .key').forEach(function(k){k.remove()});
+  exo.textContent='';exo.style.minHeight='0';
+});
+})();
+</script>
+
+<script src="nav.js" defer></script>
+</body></html>

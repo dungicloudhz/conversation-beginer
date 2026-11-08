@@ -1,0 +1,528 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Tiếng Anh Asking for Help</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: sidebar mục lục cố định + cột bài học, cùng theme tối của bộ "Hỏi đường & Hỏi giờ" (nhấn vàng – xanh dương cho chủ đề nhờ giúp đỡ) */
+:root{color-scheme:dark;
+--bg:#080810;--s1:#0e0e1c;--s2:#131326;--s3:#18182e;--border:#222240;--border2:#2c2c50;--text:#e6e6f2;--muted:#8a8ab8;--faint:#4a4a78;
+--acc:#ffd060;--acc-dim:rgba(255,208,96,.11);--oc:#38bdf8;--oc-dim:rgba(56,189,248,.13);--ins:#40d88e;--ins-dim:rgba(64,216,142,.12);
+--sk:#a07af4;--sk-dim:rgba(160,122,244,.12);--au:#ff6584;--au-dim:rgba(255,101,132,.12);--teal:#30d8c0;--code-bg:#05050e;
+--tip-bg:rgba(91,168,255,.10);--tip-bd:rgba(91,168,255,.25);--tip-fg:#8ab8f0;--warn-fg:#e0bc58;--ok-fg:#5ccf98;--line:rgba(255,255,255,.05);
+--font:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+--gl:max(64px,env(safe-area-inset-left,0px));--gr:max(64px,env(safe-area-inset-right,0px))}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 60px)}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.7;font-size:15px;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:600;background:var(--s1)}
+.sidebar{position:fixed;left:0;top:0;width:260px;height:100%;background:var(--s1);border-right:1px solid var(--border);overflow-y:auto;z-index:400;padding-top:env(safe-area-inset-top,0px);padding-left:env(safe-area-inset-left,0px)}
+.sb-logo{padding:20px 18px 16px;border-bottom:1px solid var(--border)}
+.sb-brand{display:flex;align-items:center;gap:11px;margin-bottom:12px}
+.logo-icon{width:44px;height:44px;border-radius:11px;background:linear-gradient(135deg,var(--acc),var(--oc));display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 0 26px rgba(255,208,96,.28)}
+.logo-text h2{font-size:15px;font-weight:800}.logo-text p{font-size:10.5px;color:var(--muted)}
+.prog-wrap{height:3px;background:var(--border);border-radius:2px;overflow:hidden}
+.prog-bar{height:100%;width:0;background:linear-gradient(90deg,var(--acc),var(--ins),var(--oc),var(--sk),var(--au))}
+.nav-label{padding:14px 18px 4px;font-size:9.5px;font-weight:700;letter-spacing:1.6px;color:var(--faint)}
+.nav-link{display:flex;align-items:center;gap:9px;padding:7px 18px;color:var(--muted);text-decoration:none;font-size:12.5px;font-weight:600;border-left:2px solid transparent}
+.nav-link:hover,.nav-link.active{color:var(--text);background:rgba(255,208,96,.07);border-left-color:var(--acc)}
+.main{margin-left:260px}
+.hero{padding-block:80px 60px;padding-left:var(--gl);padding-right:var(--gr);border-bottom:1px solid var(--border);background:radial-gradient(ellipse 65% 55% at 75% 22%,rgba(255,208,96,.09),transparent 60%),radial-gradient(ellipse 50% 55% at 10% 82%,rgba(56,189,248,.08),transparent 55%),var(--bg)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--acc-dim);border:1px solid rgba(255,208,96,.38);color:var(--acc);padding:5px 16px;border-radius:100px;font-size:11.5px;font-weight:700;margin-bottom:24px}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--acc);animation:p 2s infinite}
+@keyframes p{50%{opacity:.35;transform:scale(.7)}}
+@media(prefers-reduced-motion:reduce){.eyebrow i{animation:none}html{scroll-behavior:auto}}
+.hero h1{font-size:50px;font-weight:900;letter-spacing:-2.4px;line-height:1.06;margin-bottom:18px;text-wrap:balance}
+.grad{background:linear-gradient(135deg,var(--acc),var(--oc));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-desc{font-size:16px;color:var(--muted);max-width:620px;margin-bottom:28px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{padding:5px 14px;border-radius:7px;font-size:12px;font-weight:700}
+.c1{background:var(--oc-dim);color:var(--oc)}.c2{background:var(--ins-dim);color:var(--ins)}.c3{background:var(--acc-dim);color:var(--acc)}.c4{background:var(--sk-dim);color:var(--sk)}.c5{background:var(--au-dim);color:var(--au)}
+.content{padding-block:56px;padding-left:var(--gl);padding-right:var(--gr);max-width:calc(1020px + 64px)}
+.section{margin-bottom:68px}
+.sec-head{display:flex;gap:14px;align-items:flex-start;margin-bottom:28px;padding-bottom:18px;border-bottom:1px solid var(--border)}
+.sec-tag{font-family:var(--mono);font-size:10px;font-weight:600;padding:3px 10px;border-radius:5px;margin-top:6px;flex-shrink:0;letter-spacing:.5px}
+.t1{color:var(--oc);background:var(--oc-dim)}.t2{color:var(--ins);background:var(--ins-dim)}.t3{color:var(--acc);background:var(--acc-dim)}.t4{color:var(--sk);background:var(--sk-dim)}.t5{color:var(--au);background:var(--au-dim)}
+.sec-title{font-size:23px;font-weight:800;letter-spacing:-.6px;text-wrap:balance}.sec-sub{font-size:13px;color:var(--muted)}
+.sub-title{font-size:14.5px;font-weight:700;margin:26px 0 12px;display:flex;align-items:center;gap:10px}
+.sub-title::before{content:'';width:14px;height:3px;background:var(--acc);border-radius:2px}
+p.t{color:var(--muted);font-size:13.5px;margin-bottom:11px;max-width:68ch}p.t strong,li strong{color:var(--text)}
+.ex-box{background:var(--s1);border:1px solid var(--border2);border-radius:11px;overflow:hidden;margin:13px 0}
+.ex-head{display:flex;align-items:center;gap:8px;padding:9px 16px;background:var(--s2);border-bottom:1px solid var(--border);font-family:var(--mono);font-size:10px;font-weight:600;color:var(--muted);letter-spacing:.5px}
+.ex-tag{margin-left:auto;font-size:9px;font-weight:700;padding:2px 9px;border-radius:100px;font-family:var(--font)}
+.ex-body{padding:10px 20px}
+.ex-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:13.5px}
+.ex-row:last-child{border-bottom:none}
+.ex-en{color:var(--text);font-weight:600;min-width:280px}.ex-vn{color:var(--muted)}
+.info{display:flex;gap:12px;padding:14px 16px;border-radius:9px;margin:13px 0;font-size:13px;line-height:1.6}
+.i-tip{background:var(--tip-bg);border:1px solid var(--tip-bd);color:var(--tip-fg)}
+.i-warn{background:var(--acc-dim);border:1px solid rgba(255,208,96,.25);color:var(--warn-fg)}
+.i-ok{background:var(--ins-dim);border:1px solid rgba(64,216,142,.25);color:var(--ok-fg)}
+.tbl{width:100%;border-collapse:collapse;font-size:13px;margin:13px 0;display:block;overflow-x:auto}
+.tbl th{background:var(--s3);padding:10px 14px;text-align:left;font-size:10px;color:var(--muted);border-bottom:1px solid var(--border2);white-space:nowrap;letter-spacing:.5px}
+.tbl td{padding:10px 14px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:top}
+.tbl td:first-child{color:var(--text);font-weight:600}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}
+.card{background:var(--s1);border:1px solid var(--border);border-radius:11px;padding:16px;min-width:0}
+.card:hover{border-color:var(--acc)}
+.card-icon{font-size:24px}.card-title{font-size:13px;font-weight:700}.card-desc{font-size:12px;color:var(--muted)}
+.cmp{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);border-radius:11px;overflow:hidden;margin:13px 0}
+.bad{background:rgba(255,101,132,.07);padding:14px 16px;border-right:1px solid var(--border)}.good{background:rgba(64,216,142,.07);padding:14px 16px}
+.cmp b{display:block;font-size:10px;margin-bottom:6px;letter-spacing:.5px}.bad b{color:var(--au)}.good b{color:var(--ins)}
+.cmp div div{font-size:13.5px}
+.dlg{display:grid;gap:8px;margin:12px 0;background:var(--s1);border:1px solid var(--border2);border-radius:12px;padding:16px 18px}
+.dlg-t{font-size:10px;font-weight:800;color:var(--acc);margin-bottom:2px;letter-spacing:.6px}
+.turn{display:flex;gap:10px;align-items:baseline}
+.turn>div{min-width:0}
+.who{flex-shrink:0;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+.wa{background:var(--oc-dim);color:var(--oc)}.wb{background:var(--ins-dim);color:var(--ins)}
+.turn .say{font-weight:600}.turn small{display:block;color:var(--muted);font-size:12px;font-weight:400}
+.gen{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0}
+.gen label{font-size:11.5px;color:var(--muted);font-weight:600;display:block;min-width:0}
+.gen select{width:100%;margin-top:4px;background:var(--code-bg);border:1px solid var(--border2);border-radius:8px;padding:9px 12px;color:var(--text);font:inherit;font-size:13px}
+select:focus-visible,button:focus-visible,.say:focus-visible,.exi input:focus-visible,.chk input:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.btns{display:flex;flex-wrap:wrap;gap:6px}
+.btn{background:var(--acc-dim);color:var(--acc);border:1px solid var(--acc);border-radius:8px;padding:8px 16px;font:inherit;font-weight:700;font-size:13px;cursor:pointer}
+.btn.alt{background:var(--ins-dim);color:var(--ins);border-color:var(--ins)}
+.out{margin-top:14px;min-height:60px;background:var(--s2);border:1px dashed var(--border2);border-radius:10px;padding:14px 16px;font-size:14px;line-height:1.9}
+.big{font-size:21px;font-weight:800;color:var(--acc);letter-spacing:-.3px;line-height:1.4;margin-bottom:4px}
+.out .why{display:block;color:var(--muted);font-size:12.5px}
+.out .why b{color:var(--teal);font-family:var(--mono);font-weight:600}
+.timeline{display:grid;gap:0;margin:14px 0;border-left:2px solid var(--border2);padding-left:18px}
+.tl{position:relative;padding:8px 0 12px}
+.tl::before{content:'';position:absolute;left:-24px;top:16px;width:10px;height:10px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 3px var(--bg)}
+.tl time{font-family:var(--mono);font-size:12px;color:var(--acc);font-variant-numeric:tabular-nums;font-weight:600}
+.tl .say{font-weight:600;font-size:13.5px}
+.tl small{display:block;color:var(--muted);font-size:12px}
+.freq{display:grid;gap:7px;margin:14px 0}
+.fq{display:grid;grid-template-columns:110px 1fr 54px;gap:12px;align-items:center;font-size:13px}
+.fq .say{font-weight:700}
+.fq .track{height:8px;background:var(--s3);border-radius:4px;overflow:hidden}
+.fq .fill{height:100%;background:linear-gradient(90deg,var(--ins),var(--acc))}
+.fq span:last-child{font-family:var(--mono);font-size:11.5px;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+.plan{display:grid;gap:8px;margin:12px 0}
+.day{display:flex;gap:14px;align-items:baseline;background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:12px 16px;font-size:13px;color:var(--muted)}
+.day b{color:var(--acc);font-family:var(--mono);font-size:12px;flex-shrink:0;width:52px}.day strong{color:var(--text)}
+.chk{list-style:none;margin:10px 0}.chk li{padding:6px 0;font-size:13.5px;color:var(--muted);border-bottom:1px solid rgba(255,255,255,.04)}
+.chk input{accent-color:var(--ins);margin-right:10px;width:15px;height:15px;vertical-align:-2px}
+.gr{border:1px solid rgba(160,122,244,.38);background:linear-gradient(180deg,var(--sk-dim),transparent 110px),var(--s1);border-radius:12px;margin:28px 0;overflow:hidden}
+.gr-head{padding:10px 18px;font-size:12px;font-weight:800;color:var(--sk);border-bottom:1px solid var(--border);display:flex;gap:10px;flex-wrap:wrap;align-items:baseline;letter-spacing:.4px}
+.gr-head em{font-style:normal;color:var(--muted);font-weight:600;letter-spacing:0}
+.gr-body{padding:14px 18px;font-size:13.5px;color:var(--muted)}
+.gr-body p{margin-bottom:10px}.gr-body b{color:var(--text)}.gr-body ul{padding-left:20px;margin-bottom:8px}.gr-body li{margin-bottom:4px}
+.gr-body .tbl{margin:8px 0 12px}
+.fm{display:inline-block;font-family:var(--mono);font-size:12px;background:var(--code-bg);color:var(--teal);padding:3px 9px;border-radius:6px;margin:2px 0}
+.say{cursor:pointer;border-bottom:1px dotted var(--oc)}
+.say:hover{color:var(--acc);background:var(--acc-dim);border-radius:4px}
+.say::after{content:"🔊";font-size:.68em;margin-left:3px;opacity:.5}
+.say.playing{color:var(--ins);background:var(--ins-dim);border-radius:4px}.say.playing::after{opacity:1}
+.exi{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:13.5px;color:var(--text)}
+.exi input{width:220px;max-width:100%;background:var(--code-bg);border:1px solid var(--border2);border-radius:6px;padding:4px 8px;color:var(--text);font:inherit;font-size:13px;text-align:center}
+.exi input.ok{border-color:var(--ins);color:var(--ins)}.exi input.no{border-color:var(--au);color:var(--au)}
+.exi small{color:var(--muted);font-size:11.5px}
+.exi .key{color:var(--ins);font-size:12px;width:100%}
+.footer{border-top:1px solid var(--border);padding-block:28px 90px;padding-left:var(--gl);padding-right:var(--gr);font-size:12px;color:var(--muted)}
+.audio-bar{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:500;display:flex;gap:10px;align-items:center;background:var(--s2);border:1px solid var(--border2);border-radius:12px;padding:8px 12px;box-shadow:0 8px 28px rgba(0,0,0,.5);font-size:12px;color:var(--muted)}
+.audio-bar b{color:var(--acc)}.ab-g{display:flex;gap:4px}
+.audio-bar button{background:var(--s3);color:var(--muted);border:1px solid var(--border);border-radius:7px;padding:4px 10px;font:inherit;font-weight:700;cursor:pointer}
+.audio-bar button.on{background:var(--acc-dim);color:var(--acc);border-color:var(--acc)}
+.topnav{display:none}
+@media(max-width:900px){
+:root{--gl:max(18px,env(safe-area-inset-left,0px));--gr:max(18px,env(safe-area-inset-right,0px))}
+.sidebar{display:none}.main{margin-left:0}.hero h1{font-size:32px;letter-spacing:-1.4px}.hero{padding-block:48px 40px}
+.grid-3,.cmp{grid-template-columns:1fr}.gen{grid-template-columns:1fr 1fr}.bad{border-right:none;border-bottom:1px solid var(--border)}
+.topnav{display:flex;overflow-x:auto;position:sticky;top:env(safe-area-inset-top,0px);z-index:500;background:var(--s1);border-bottom:2px solid var(--border2);scrollbar-width:none;padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+.topnav a{flex-shrink:0;padding:10px 14px;color:var(--muted);text-decoration:none;font-size:12px;font-weight:700;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-2px}
+.topnav a.active{color:var(--acc);border-bottom-color:var(--acc);background:var(--acc-dim)}
+.ex-en{min-width:0}
+.fq{grid-template-columns:90px 1fr 46px}
+.audio-bar{left:calc(8px + env(safe-area-inset-left,0px));right:calc(8px + env(safe-area-inset-right,0px));justify-content:center;flex-wrap:wrap}
+}
+@media(max-width:480px){.gen{grid-template-columns:1fr}}
+.lbl{font-family:var(--mono);font-size:10px;font-weight:600;color:var(--faint);letter-spacing:1px;min-width:110px}
+.rl{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;padding:3px 0}
+.rl .say{font-weight:700;font-size:15px}
+</style>
+
+<aside class="sidebar">
+  <div class="sb-logo">
+    <div class="sb-brand"><div class="logo-icon">🙏</div><div class="logo-text"><h2>Asking for Help</h2><p>Tiếng Anh cho người mới</p></div></div>
+    <div class="prog-wrap"><div class="prog-bar" id="pbar"></div></div>
+  </div>
+  <div class="nav-label">BÀI HỌC</div>
+  <a class="nav-link" href="#s1">🙋 Mở lời nhờ giúp</a>
+  <a class="nav-link" href="#s2">🧩 Nói rõ vấn đề</a>
+  <a class="nav-link" href="#s3">🚨 Khẩn cấp</a>
+  <a class="nav-link" href="#s4">💼 Nhờ ở chỗ làm, chỗ học</a>
+  <a class="nav-link" href="#s5">🤝 Trả lời &amp; cảm ơn</a>
+  <div class="nav-label">THỰC HÀNH</div>
+  <a class="nav-link" href="#s6">💬 Hội thoại mẫu</a>
+  <a class="nav-link" href="#s7">🛠️ Máy nhờ giúp &amp; bài tập</a>
+  <a class="nav-link" href="#s8">🚀 Từ vựng nâng cao</a>
+</aside>
+
+<div class="main">
+<nav class="topnav">
+  <a href="#s1">1 Mở lời</a><a href="#s2">2 Vấn đề</a><a href="#s3">3 Khẩn cấp</a><a href="#s4">4 Chỗ làm</a><a href="#s5">5 Cảm ơn</a><a href="#s6">6 Hội thoại</a><a href="#s7">7 Luyện tập</a><a href="#s8">8 Nâng cao</a>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow"><i></i>Dành cho người mới bắt đầu</div>
+  <h1>Nhờ giúp đỡ<br><span class="grad">bằng tiếng Anh</span></h1>
+  <p class="hero-desc">Ai cũng có lúc cần người giúp: bị lạc, mất đồ, máy móc trục trặc, không hiểu một từ, hay chỉ cần nhờ chụp một tấm ảnh. Bài này dạy bạn mở lời lịch sự, nói rõ mình gặp chuyện gì, xử lý tình huống khẩn cấp, nhờ đồng nghiệp hay thầy cô, và cảm ơn sao cho chân thành. Bấm vào câu có biểu tượng loa để nghe, rồi luyện với máy nhờ giúp ở phần thực hành.</p>
+  <div class="chips"><span class="chip c3">Mở lời</span><span class="chip c1">Nói rõ vấn đề</span><span class="chip c5">Khẩn cấp</span><span class="chip c2">Cảm ơn</span><span class="chip c4">Từ vựng nâng cao</span></div>
+</header>
+
+<div class="content">
+
+<section class="section" id="s1">
+  <div class="sec-head"><span class="sec-tag t3">BÀI 1</span><div><div class="sec-title">Mở lời nhờ giúp</div><div class="sec-sub">Từ câu ngắn với bạn bè đến câu rất lịch sự với người lạ</div></div></div>
+  <table class="tbl"><thead><tr><th>Mức độ</th><th>Câu nhờ</th><th>Dùng với</th></tr></thead><tbody>
+  <tr><td>Thân mật</td><td><span class="say">Can you help me?</span></td><td>bạn bè, người thân</td></tr>
+  <tr><td>Lịch sự</td><td><span class="say">Could you help me, please?</span></td><td>người lạ, nhân viên</td></tr>
+  <tr><td>Rất lịch sự</td><td><span class="say">Would you mind helping me?</span></td><td>người lớn tuổi, cấp trên</td></tr>
+  <tr><td>Trang trọng nhất</td><td><span class="say">I was wondering if you could help me.</span></td><td>khi nhờ việc lớn</td></tr></tbody></table>
+  <div class="ex-box"><div class="ex-head">CÂU MỞ ĐẦU<span class="ex-tag t3">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Excuse me, sorry to bother you.</span><span class="ex-vn">Xin lỗi, phiền bạn một chút</span></div>
+    <div class="ex-row"><span class="ex-en say">Could you do me a favor?</span><span class="ex-vn">Bạn giúp tôi một việc được không?</span></div>
+    <div class="ex-row"><span class="ex-en say">I need some help, please.</span><span class="ex-vn">Tôi cần giúp đỡ một chút</span></div>
+    <div class="ex-row"><span class="ex-en say">Do you have a minute?</span><span class="ex-vn">Bạn có rảnh một phút không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Do you speak English?</span><span class="ex-vn">Bạn có nói tiếng Anh không?</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Would you mind + V-ing? và cách trả lời “ngược”</em></div><div class="gr-body">
+<p><span class="fm">Would you mind + V-ing?</span> nghĩa đen là “Bạn có phiền khi… không?”. Vì vậy:</p>
+<ul><li>Đồng ý giúp → trả lời <b>No</b>: <span class="say">No, not at all.</span> <span class="say">Of course not.</span></li>
+<li>Không giúp được → <span class="say">Sorry, I’m afraid I can’t right now.</span></li></ul>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>Would you mind to open the window? — Yes, sure! (ý là đồng ý)</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">Would you mind opening the window? No, not at all.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s2">
+  <div class="sec-head"><span class="sec-tag t1">BÀI 2</span><div><div class="sec-title">Nói rõ vấn đề</div><div class="sec-sub">Mô tả bạn đang gặp chuyện gì để người khác biết cách giúp</div></div></div>
+  <div class="ex-box"><div class="ex-head">MÔ TẢ VẤN ĐỀ<span class="ex-tag t1">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">I’m having trouble with this ticket machine.</span><span class="ex-vn">Tôi đang gặp khó với máy bán vé này</span></div>
+    <div class="ex-row"><span class="ex-en say">I don’t know how to use this.</span><span class="ex-vn">Tôi không biết dùng cái này</span></div>
+    <div class="ex-row"><span class="ex-en say">I can’t find my hotel.</span><span class="ex-vn">Tôi không tìm thấy khách sạn của mình</span></div>
+    <div class="ex-row"><span class="ex-en say">My phone isn’t working.</span><span class="ex-vn">Điện thoại của tôi không hoạt động</span></div>
+    <div class="ex-row"><span class="ex-en say">I don’t understand this word. What does it mean?</span><span class="ex-vn">Tôi không hiểu từ này. Nó nghĩa là gì?</span></div>
+    <div class="ex-row"><span class="ex-en say">The door is locked and I can’t get in.</span><span class="ex-vn">Cửa bị khóa và tôi không vào được</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>have trouble + V-ing / don’t know how to + V</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Cấu trúc</th><th>Ví dụ</th></tr></thead><tbody>
+<tr><td><span class="fm">I’m having trouble + V-ing</span></td><td><span class="say">I’m having trouble connecting to the Wi-Fi.</span></td></tr>
+<tr><td><span class="fm">I’m having trouble with + N</span></td><td><span class="say">I’m having trouble with my laptop.</span></td></tr>
+<tr><td><span class="fm">I don’t know how to + V</span></td><td><span class="say">I don’t know how to get to the airport.</span></td></tr>
+<tr><td><span class="fm">S + isn’t / doesn’t work(ing)</span></td><td><span class="say">The lift doesn’t work.</span></td></tr></tbody></table>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>I have trouble to connect Wi-Fi.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">I’m having trouble connecting to the Wi-Fi.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s3">
+  <div class="sec-head"><span class="sec-tag t5">BÀI 3</span><div><div class="sec-title">Tình huống khẩn cấp</div><div class="sec-sub">Những câu ngắn, rõ ràng khi cần giúp gấp</div></div></div>
+  <div class="grid-3">
+    <div class="card"><div class="card-icon">🆘</div><div class="card-title say">Help!</div><div class="card-desc">Cứu với!</div></div>
+    <div class="card"><div class="card-icon">🚑</div><div class="card-title say">Call an ambulance!</div><div class="card-desc">Gọi xe cấp cứu!</div></div>
+    <div class="card"><div class="card-icon">👮</div><div class="card-title say">Call the police!</div><div class="card-desc">Gọi cảnh sát!</div></div>
+    <div class="card"><div class="card-icon">🔥</div><div class="card-title say">Fire!</div><div class="card-desc">Cháy!</div></div>
+    <div class="card"><div class="card-icon">🩺</div><div class="card-title say">I need a doctor.</div><div class="card-desc">Tôi cần bác sĩ</div></div>
+    <div class="card"><div class="card-icon">⚠️</div><div class="card-title say">It’s an emergency.</div><div class="card-desc">Đây là trường hợp khẩn cấp</div></div>
+  </div>
+  <div class="ex-box"><div class="ex-head">MÔ TẢ SỰ VIỆC<span class="ex-tag t5">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">I’ve lost my passport.</span><span class="ex-vn">Tôi bị mất hộ chiếu</span></div>
+    <div class="ex-row"><span class="ex-en say">Someone has stolen my bag.</span><span class="ex-vn">Có người lấy cắp túi của tôi</span></div>
+    <div class="ex-row"><span class="ex-en say">My friend has fainted.</span><span class="ex-vn">Bạn tôi bị ngất</span></div>
+    <div class="ex-row"><span class="ex-en say">I’ve had an accident on my motorbike.</span><span class="ex-vn">Tôi bị tai nạn xe máy</span></div>
+    <div class="ex-row"><span class="ex-en say">Where is the nearest hospital?</span><span class="ex-vn">Bệnh viện gần nhất ở đâu?</span></div>
+    <div class="ex-row"><span class="ex-en say">Can you call this number for me?</span><span class="ex-vn">Bạn gọi số này giúp tôi được không?</span></div>
+  </div></div>
+  <div class="info i-warn"><span>⚠️</span><span><strong>Số khẩn cấp ở Việt Nam:</strong> <strong>113</strong> cảnh sát, <strong>114</strong> cứu hỏa, <strong>115</strong> cấp cứu y tế. Khi đi nước ngoài, hãy tra trước số khẩn cấp của nước đó và lưu vào điện thoại.</span></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Hiện tại hoàn thành cho chuyện vừa xảy ra</em></div><div class="gr-body">
+<p>Sự việc vừa xảy ra và còn ảnh hưởng ngay lúc này: <span class="fm">S + have/has + V3</span></p>
+<ul><li><span class="say">I’ve lost my wallet.</span> (giờ tôi không có ví)</li><li><span class="say">My phone has died.</span> (giờ điện thoại tắt nguồn)</li><li><span class="say">I’ve missed my bus.</span></li></ul>
+<div class="cmp"><div class="bad"><b>❌ NGHE LẠ</b><div>I lose my passport!</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">I’ve lost my passport!</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s4">
+  <div class="sec-head"><span class="sec-tag t2">BÀI 4</span><div><div class="sec-title">Nhờ ở chỗ làm, chỗ học</div><div class="sec-sub">Nhờ đồng nghiệp chỉ cách làm, nhờ thầy cô giải thích</div></div></div>
+  <div class="ex-box"><div class="ex-head">NHỜ CHỈ, NHỜ GIẢI THÍCH<span class="ex-tag t2">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Could you give me a hand with this?</span><span class="ex-vn">Bạn giúp tôi một tay việc này được không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Can you show me how to use the printer?</span><span class="ex-vn">Bạn chỉ tôi cách dùng máy in được không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Could you explain this part again?</span><span class="ex-vn">Thầy/cô giải thích lại phần này được không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Would you mind checking my email before I send it?</span><span class="ex-vn">Bạn xem giúp email của tôi trước khi gửi được không?</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m stuck on this question.</span><span class="ex-vn">Tôi bí câu này rồi</span></div>
+    <div class="ex-row"><span class="ex-en say">Who should I ask about this?</span><span class="ex-vn">Việc này tôi nên hỏi ai?</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>show / explain / tell + how to + V</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Cấu trúc</th><th>Ví dụ</th></tr></thead><tbody>
+<tr><td><span class="fm">show + O + how to + V</span></td><td><span class="say">Can you show me how to do this?</span></td></tr>
+<tr><td><span class="fm">explain + N + to + O</span></td><td><span class="say">Could you explain the rules to me?</span></td></tr>
+<tr><td><span class="fm">tell + O + how / where / when…</span></td><td><span class="say">Can you tell me where the meeting room is?</span></td></tr></tbody></table>
+<p>Chú ý: <b>explain</b> không đi thẳng với người. Không nói <i>explain me</i>.</p>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>Can you explain me this word?</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">Can you explain this word to me?</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s5">
+  <div class="sec-head"><span class="sec-tag t4">BÀI 5</span><div><div class="sec-title">Trả lời lời nhờ và cảm ơn</div><div class="sec-sub">Đồng ý, từ chối khéo, cảm ơn, và đáp lại lời cảm ơn</div></div></div>
+  <div class="ex-box"><div class="ex-head">TRẢ LỜI KHI ĐƯỢC NHỜ<span class="ex-tag t4">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Sure, no problem.</span><span class="ex-vn">Được chứ, không vấn đề gì</span></div>
+    <div class="ex-row"><span class="ex-en say">Of course. What do you need?</span><span class="ex-vn">Tất nhiên. Bạn cần gì?</span></div>
+    <div class="ex-row"><span class="ex-en say">I’d be happy to help.</span><span class="ex-vn">Tôi rất sẵn lòng giúp</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m afraid I can’t right now. Maybe ask the staff?</span><span class="ex-vn">E là giờ tôi không giúp được. Bạn thử hỏi nhân viên xem?</span></div>
+    <div class="ex-row"><span class="ex-en say">Sorry, I’m not sure. I’m not from here.</span><span class="ex-vn">Xin lỗi, tôi không chắc. Tôi không phải người ở đây</span></div>
+  </div></div>
+  <div class="ex-box"><div class="ex-head">CẢM ƠN VÀ ĐÁP LẠI<span class="ex-tag t2">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Thank you so much!</span><span class="ex-vn">Cảm ơn bạn rất nhiều!</span></div>
+    <div class="ex-row"><span class="ex-en say">Thanks for helping me.</span><span class="ex-vn">Cảm ơn đã giúp tôi</span></div>
+    <div class="ex-row"><span class="ex-en say">I really appreciate it.</span><span class="ex-vn">Tôi thật sự biết ơn</span></div>
+    <div class="ex-row"><span class="ex-en say">You’re welcome.</span><span class="ex-vn">Không có gì</span></div>
+    <div class="ex-row"><span class="ex-en say">No worries!</span><span class="ex-vn">Không sao đâu!</span></div>
+    <div class="ex-row"><span class="ex-en say">Anytime!</span><span class="ex-vn">Lúc nào cần cứ nói!</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Thank you for + V-ing / N</em></div><div class="gr-body">
+<ul><li><span class="fm">Thank you for + N</span> → <span class="say">Thank you for your help.</span></li>
+<li><span class="fm">Thank you for + V-ing</span> → <span class="say">Thank you for showing me the way.</span></li>
+<li>Cảm ơn sâu sắc hơn: <span class="say">I really appreciate your help.</span> (appreciate + việc, không + người)</li></ul>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>Thank you for help me. / I appreciate you.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">Thank you for helping me. I really appreciate it.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s6">
+  <div class="sec-head"><span class="sec-tag t3">BÀI 6</span><div><div class="sec-title">Hội thoại mẫu</div><div class="sec-sub">Bấm từng câu để nghe, rồi đóng vai cả hai người</div></div></div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 1: MẤT HỘ CHIẾU Ở KHÁCH SẠN</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Excuse me, I need some help. I think I’ve lost my passport.</span><small>Xin lỗi, tôi cần giúp đỡ. Hình như tôi mất hộ chiếu.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Oh no. When did you last see it?</span><small>Ôi không. Lần cuối anh thấy nó là khi nào?</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">This morning, at breakfast. I left my bag on the chair for a few minutes.</span><small>Sáng nay, lúc ăn sáng. Tôi để túi trên ghế vài phút.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Let me check with the restaurant staff. Would you mind waiting here?</span><small>Để tôi hỏi nhân viên nhà hàng. Anh vui lòng đợi ở đây nhé?</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">No, not at all. Thank you so much.</span><small>Không sao. Cảm ơn bạn nhiều.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Good news! They found it. Here you are.</span><small>Tin tốt! Họ tìm thấy rồi. Của anh đây.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">What a relief! I really appreciate your help.</span><small>Nhẹ cả người! Tôi thật sự biết ơn bạn.</small></div></div>
+  </div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 2: NHỜ ĐỒNG NGHIỆP</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Hi Sam, do you have a minute?</span><small>Chào Sam, anh có rảnh một phút không?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Sure. What’s up?</span><small>Được chứ. Có chuyện gì thế?</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">I’m having trouble with this spreadsheet. Could you show me how to make a chart?</span><small>Tôi đang gặp khó với bảng tính này. Anh chỉ tôi cách tạo biểu đồ được không?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Of course. Select the data first, then click “Insert” and choose “Chart”.</span><small>Được. Chọn dữ liệu trước, rồi bấm “Insert” và chọn “Chart”.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Oh, that’s easy! Thanks a lot. I owe you one.</span><small>Ồ, dễ thế! Cảm ơn nhiều. Tôi nợ anh một lần nhé.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">No worries. Anytime!</span><small>Không có gì. Lúc nào cần cứ hỏi!</small></div></div>
+  </div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 3: NHỜ NGƯỜI LẠ CHỤP ẢNH</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Excuse me, sorry to bother you. Would you mind taking a photo of us?</span><small>Xin lỗi, phiền bạn chút. Bạn chụp giúp chúng tôi một tấm được không?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Not at all. Just press this button?</span><small>Không sao. Chỉ cần bấm nút này à?</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Yes. Could you get the lake in the background, please?</span><small>Vâng. Lấy giúp cái hồ phía sau nhé?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Sure. Ready? One, two, three… smile!</span><small>Được. Sẵn sàng chưa? Một, hai, ba… cười nào!</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Perfect! Thank you for taking it.</span><small>Đẹp quá! Cảm ơn bạn đã chụp giúp.</small></div></div>
+  </div>
+  <div class="info i-ok"><span>✅</span><span><strong>Cách luyện:</strong> nghe một lượt, nói theo từng câu, rồi che phần tiếng Việt và tự đóng vai A hoặc B. Lần sau thay bằng một việc bạn thật sự cần nhờ.</span></div>
+</section>
+
+<section class="section" id="s7">
+  <div class="sec-head"><span class="sec-tag t2">BÀI 7</span><div><div class="sec-title">Máy nhờ giúp &amp; bài tập</div><div class="sec-sub">Chọn người bạn nhờ, việc cần nhờ và mức lịch sự, xem câu nhờ, câu đáp lại và câu cảm ơn</div></div></div>
+  <div class="gen">
+    <label for="g-w">Bạn nhờ ai<select id="g-w"></select></label>
+    <label for="g-t">Việc cần nhờ<select id="g-t"></select></label>
+    <label for="g-l">Mức lịch sự<select id="g-l"></select></label>
+  </div>
+  <div class="btns"><button class="btn" id="gen-btn">Tạo lời nhờ</button><button class="btn alt" id="rnd-btn">Chọn ngẫu nhiên</button></div>
+  <div class="out" id="gen-out" aria-live="polite"></div>
+
+  <div class="sub-title">Bài tập: điền câu trả lời</div>
+  <p class="t">Câu 1–4: điền một từ vào chỗ trống. Câu 5–8: dịch sang tiếng Anh, gõ cả câu. Không phân biệt hoa thường.</p>
+  <div id="exlist">
+    <div class="exi">1. Would you mind ___ (open) the door? →<input id="ex1" data-a="opening" aria-label="Câu 1"><small>mind + ?</small></div>
+    <div class="exi">2. I’m having trouble ___ (log) in. →<input id="ex2" data-a="logging" aria-label="Câu 2"><small>trouble + ?</small></div>
+    <div class="exi">3. I’ve ___ my wallet. (mất) →<input id="ex3" data-a="lost" aria-label="Câu 3"><small>V3</small></div>
+    <div class="exi">4. Can you explain this word ___ me? →<input id="ex4" data-a="to" aria-label="Câu 4"><small>explain … ? me</small></div>
+    <div class="exi">5. Xin lỗi, phiền bạn một chút →<input id="ex5" data-a="excuse me sorry to bother you|sorry to bother you" aria-label="Câu 5"><small>bother</small></div>
+    <div class="exi">6. Bạn chỉ tôi cách dùng cái này được không? →<input id="ex6" data-a="can you show me how to use this?|could you show me how to use this?" aria-label="Câu 6"><small>show me how to</small></div>
+    <div class="exi">7. Gọi xe cấp cứu! →<input id="ex7" data-a="call an ambulance|call an ambulance please" aria-label="Câu 7"><small>ambulance</small></div>
+    <div class="exi">8. Tôi thật sự biết ơn →<input id="ex8" data-a="i really appreciate it|i really appreciate your help" aria-label="Câu 8"><small>appreciate</small></div>
+  </div>
+  <div class="btns" style="margin-top:12px"><button class="btn" id="ex-check">Kiểm tra đáp án</button><button class="btn alt" id="ex-show">Xem đáp án</button><button class="btn alt" id="ex-reset">Làm lại</button></div>
+  <div class="out" id="ex-out" style="min-height:0" aria-live="polite"></div>
+
+  <div class="sub-title">Lộ trình luyện 7 ngày</div>
+  <div class="plan">
+    <div class="day"><b>Ngày 1</b><span><strong>Mở lời:</strong> luyện 4 mức nhờ giúp, chú ý Would you mind + V-ing</span></div>
+    <div class="day"><b>Ngày 2</b><span><strong>Nói vấn đề:</strong> mô tả 5 trục trặc bạn từng gặp bằng have trouble / don’t know how to</span></div>
+    <div class="day"><b>Ngày 3</b><span><strong>Khẩn cấp:</strong> học thuộc các câu ngắn và số 113, 114, 115</span></div>
+    <div class="day"><b>Ngày 4</b><span><strong>Chỗ làm, chỗ học:</strong> luyện show me how to và explain … to me</span></div>
+    <div class="day"><b>Ngày 5</b><span><strong>Cảm ơn:</strong> luyện Thank you for + V-ing và các cách đáp lại</span></div>
+    <div class="day"><b>Ngày 6</b><span><strong>Máy nhờ giúp:</strong> tạo 5 lời nhờ ở các mức khác nhau và nói to</span></div>
+    <div class="day"><b>Ngày 7</b><span><strong>Thực tế:</strong> thử nhờ một người nước ngoài một việc nhỏ, như chụp ảnh hoặc hỏi một từ</span></div>
+  </div>
+</section>
+
+<section class="section" id="s8">
+  <div class="sec-head"><span class="sec-tag t5">NÂNG CAO</span><div><div class="sec-title">Từ vựng mới để hội thoại tự nhiên hơn</div><div class="sec-sub">Thêm vài từ này, lời nhờ và lời cảm ơn của bạn sẽ tự nhiên hơn</div></div></div>
+  <div class="sub-title">Nhờ vả và giúp đỡ</div>
+  <table class="tbl"><thead><tr><th>Từ / cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">give someone a hand</td><td>giúp ai một tay</td><td><span class="say">Can you give me a hand with these boxes?</span></td></tr>
+  <tr><td class="say">do someone a favor</td><td>giúp ai một việc</td><td><span class="say">Could you do me a big favor?</span></td></tr>
+  <tr><td class="say">figure out</td><td>tìm ra cách, hiểu ra</td><td><span class="say">I can’t figure out how this works.</span></td></tr>
+  <tr><td class="say">sort out</td><td>giải quyết ổn thỏa</td><td><span class="say">Don’t worry, we’ll sort it out.</span></td></tr>
+  <tr><td class="say">get stuck</td><td>bị kẹt, bí</td><td><span class="say">I got stuck on the last question.</span></td></tr>
+  <tr><td class="say">out of order</td><td>hỏng, không hoạt động (máy công cộng)</td><td><span class="say">The ticket machine is out of order.</span></td></tr>
+  <tr><td class="say">walk someone through</td><td>hướng dẫn ai từng bước</td><td><span class="say">Could you walk me through it?</span></td></tr>
+  <tr><td class="say">look after</td><td>trông giúp</td><td><span class="say">Could you look after my bag for a minute?</span></td></tr></tbody></table>
+  <div class="sub-title">Cảm ơn và đáp lại</div>
+  <table class="tbl"><thead><tr><th>Từ / cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">I owe you one</td><td>tôi nợ bạn một lần</td><td><span class="say">Thanks for covering for me. I owe you one.</span></td></tr>
+  <tr><td class="say">You’re a lifesaver</td><td>bạn đúng là cứu tinh</td><td><span class="say">You found my keys? You’re a lifesaver!</span></td></tr>
+  <tr><td class="say">That’s very kind of you</td><td>bạn tốt quá</td><td><span class="say">That’s very kind of you. Thank you.</span></td></tr>
+  <tr><td class="say">Don’t mention it</td><td>có gì đâu mà</td><td><span class="say">Don’t mention it. Happy to help.</span></td></tr>
+  <tr><td class="say">My pleasure</td><td>rất hân hạnh (lịch sự)</td><td><span class="say">It was my pleasure.</span></td></tr></tbody></table>
+  <div class="sub-title">Cụm giúp cuộc trò chuyện trôi chảy</div>
+  <div class="ex-box"><div class="ex-head">LÀM CHO HỘI THOẠI TỰ NHIÊN<span class="ex-tag t5">Nâng cao</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">I hate to ask, but could you…?</span><span class="ex-vn">Ngại nhờ quá, nhưng bạn có thể…?</span></div>
+    <div class="ex-row"><span class="ex-en say">It’ll only take a minute.</span><span class="ex-vn">Chỉ mất một phút thôi</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m at a loss here.</span><span class="ex-vn">Tôi bó tay rồi</span></div>
+    <div class="ex-row"><span class="ex-en say">Is there anything I can do to help?</span><span class="ex-vn">Tôi có thể giúp gì không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Don’t hesitate to ask.</span><span class="ex-vn">Cứ hỏi đừng ngại</span></div>
+    <div class="ex-row"><span class="ex-en say">Two heads are better than one.</span><span class="ex-vn">Hai người nghĩ vẫn hơn một</span></div>
+    <div class="ex-row"><span class="ex-en say">Let me know if there’s anything else.</span><span class="ex-vn">Còn gì cần thì báo tôi nhé</span></div>
+  </div></div>
+  <div class="cmp"><div class="bad"><b>❌ NGHE CỨNG</b><div>You! Help me. Machine broken.</div></div><div class="good"><b>✔ TỰ NHIÊN HƠN</b><div class="say">Excuse me, sorry to bother you. This machine doesn’t seem to work. Could you help me?</div></div></div>
+  <div class="info i-tip"><span>💡</span><span><strong>Mẹo:</strong> công thức nhờ giúp hiệu quả là <strong>xin lỗi làm phiền + nói vấn đề + nhờ một việc cụ thể</strong>. Người nghe sẽ hiểu ngay bạn cần gì, và thường sẵn lòng giúp hơn.</span></div>
+
+  <div class="sub-title">Tự kiểm tra</div>
+  <ul class="chk">
+    <li><label><input type="checkbox" id="c1">Tôi nhờ giúp được ở 4 mức lịch sự</label></li>
+    <li><label><input type="checkbox" id="c2">Tôi dùng đúng <strong>Would you mind + V-ing</strong> và trả lời “No, not at all”</label></li>
+    <li><label><input type="checkbox" id="c3">Tôi mô tả vấn đề bằng <strong>have trouble / don’t know how to</strong></label></li>
+    <li><label><input type="checkbox" id="c4">Tôi nói được các câu khẩn cấp và nhớ số 113, 114, 115</label></li>
+    <li><label><input type="checkbox" id="c5">Tôi dùng đúng <strong>show me how to</strong> và <strong>explain … to me</strong></label></li>
+    <li><label><input type="checkbox" id="c6">Tôi cảm ơn bằng <strong>Thank you for + V-ing</strong> và đáp lại lời cảm ơn</label></li>
+    <li><label><input type="checkbox" id="c7">Tôi dùng được ít nhất 5 từ vựng nâng cao</label></li>
+  </ul>
+</section>
+
+</div>
+<div class="footer">🙏 Giao tiếp tiếng Anh: Asking for Help · Dành cho người mới bắt đầu · 2026</div>
+</div>
+
+<div class="audio-bar">
+  <b>🔊 Audio</b>
+  <div class="ab-g"><button data-acc="en-GB" class="on">Anh-Anh</button><button data-acc="en-US">Anh-Mỹ</button></div>
+  <div class="ab-g"><button data-rate="0.6">Chậm</button><button data-rate="0.85" class="on">Vừa</button><button data-rate="1">Nhanh</button></div>
+</div>
+
+<script>
+(function(){
+var doc=document.documentElement,bar=document.getElementById('pbar');
+addEventListener('scroll',function(){bar.style.width=(doc.scrollTop/Math.max(1,doc.scrollHeight-doc.clientHeight)*100)+'%'});
+var links=document.querySelectorAll('.nav-link,.topnav a');
+if('IntersectionObserver' in window)document.querySelectorAll('.section[id]').forEach(function(s){
+  new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;
+    links.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id)});
+  })},{rootMargin:'-20% 0px -70% 0px'}).observe(s);
+});
+
+/* Audio */
+var S=window.speechSynthesis,st={acc:'en-GB',rate:.85},cur=null;
+function voice(){if(!S)return null;var v=S.getVoices().filter(function(x){return x.lang.replace('_','-').toLowerCase()===st.acc.toLowerCase()});
+  return v.find(function(x){return /google|natural|premium|enhanced/i.test(x.name)})||v[0]||null}
+function say(el){
+  if(cur)cur.classList.remove('playing');
+  if(!S){el.title='Trình duyệt này không hỗ trợ đọc audio';return}
+  S.cancel();cur=el;el.classList.add('playing');
+  var t=el.textContent.replace(/\s+/g,' ').replace(/\s*\/\s*/g,'. ').replace(/→/g,'. ').trim();
+  var u=new SpeechSynthesisUtterance(t);u.lang=st.acc;u.rate=st.rate;var v=voice();if(v)u.voice=v;
+  u.onend=u.onerror=function(){el.classList.remove('playing')};S.speak(u);
+}
+function prep(root){root.querySelectorAll('.say').forEach(function(e){e.tabIndex=0;e.setAttribute('role','button')})}
+prep(document);
+document.addEventListener('click',function(e){var el=e.target.closest('.say');if(el)say(el)});
+document.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.classList&&e.target.classList.contains('say')){e.preventDefault();say(e.target)}});
+document.querySelectorAll('.audio-bar button').forEach(function(b){b.addEventListener('click',function(){
+  b.parentElement.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');
+  if(b.dataset.acc)st.acc=b.dataset.acc;if(b.dataset.rate)st.rate=+b.dataset.rate;
+})});
+
+/* ===== Máy nhờ giúp =====
+   WHO: [nhãn, câu mở đầu, câu đáp “đồng ý”, nghĩa]
+   TASK: [động từ nguyên mẫu, V-ing, nghĩa, lý do (để thêm vào câu), câu cảm ơn với for + V-ing] */
+var WHO=[['a stranger','Excuse me, sorry to bother you.','Sure, no problem.','người lạ'],
+  ['a friend','Hey, can I ask you something?','Of course! What do you need?','bạn bè'],
+  ['a colleague','Hi, do you have a minute?','Sure, I’d be happy to help.','đồng nghiệp'],
+  ['a teacher','Excuse me, could I ask you a question?','Of course. Go ahead.','thầy cô'],
+  ['shop or hotel staff','Excuse me, could you help me, please?','Certainly. How can I help?','nhân viên']];
+var TASK=[['take a photo of us','taking a photo of us','chụp giúp một tấm ảnh','',''],
+  ['look after my bag for a minute','looking after my bag for a minute','trông giúp túi một phút','I need to go to the restroom.',''],
+  ['show me how to use this machine','showing me how to use this machine','chỉ cách dùng cái máy này','I’m having trouble with it.',''],
+  ['explain this word to me','explaining this word to me','giải thích từ này','I don’t understand it.',''],
+  ['lend me a pen','lending me a pen','cho mượn cây bút','I forgot mine.',''],
+  ['help me carry this box','helping me carry this box','giúp khiêng cái thùng này','It’s really heavy.',''],
+  ['call a taxi for me','calling a taxi for me','gọi giúp một chiếc taxi','My phone has died.',''],
+  ['check my email before I send it','checking my email before I send it','xem giúp email trước khi gửi','I want to make sure it’s correct.','']];
+var LEV=[['casual','Thân mật: Can you…?'],['polite','Lịch sự: Could you…, please?'],['vpolite','Rất lịch sự: Would you mind + V-ing?'],['formal','Trang trọng: I was wondering if you could…']];
+function fill(id,arr,lab){var s=document.getElementById(id);arr.forEach(function(x,i){s.add(new Option(lab(x),i))});return s}
+var gw=fill('g-w',WHO,function(x){return x[0]+' ('+x[3]+')'}),gt=fill('g-t',TASK,function(x){return x[2]}),gl=fill('g-l',LEV,function(x){return x[1]});
+gw.value=0;gt.value=0;gl.value=2;
+var out=document.getElementById('gen-out');
+function cap(s){return s.charAt(0).toUpperCase()+s.slice(1)}
+function line(label,text){var d=document.createElement('div');d.className='rl';var lb=document.createElement('span');lb.className='lbl';lb.textContent=label;var sp=document.createElement('span');sp.className='say';sp.textContent=text;d.append(lb,sp);out.append(d)}
+function show(){
+  var w=WHO[+gw.value],t=TASK[+gt.value],l=LEV[+gl.value][0];
+  var req;
+  if(l==='casual')req='Can you '+t[0]+'?';
+  else if(l==='polite')req='Could you '+t[0]+', please?';
+  else if(l==='vpolite')req='Would you mind '+t[1]+'?';
+  else req='I was wondering if you could '+t[0]+'.';
+  var opener=(l==='casual'&&w[0]==='a stranger')?'Excuse me.':w[1];
+  var reply=l==='vpolite'?'No, not at all.':w[2];
+  var thanks='Thank you for '+t[1].replace(/ for a minute$/,'').replace(/ before I send it$/,'')+'. '+(l==='casual'?'You’re the best!':'I really appreciate it.');
+  var back=l==='casual'?'Anytime!':(l==='formal'?'It was my pleasure.':'You’re welcome.');
+  out.innerHTML='';
+  line('MỞ LỜI',opener);
+  line('NHỜ',(t[3]?t[3]+' ':'')+req);
+  line('HỌ ĐÁP',reply);
+  line('BẠN CẢM ƠN',thanks);
+  line('HỌ ĐÁP LẠI',back);
+  var v=document.createElement('div');v.style.color='var(--muted)';v.style.fontSize='13px';v.textContent='Nghĩa: Nhờ '+w[3]+' '+t[2]+'.';out.append(v);
+  var notes={casual:'<b>Can you + V?</b> dùng với người thân quen. Với người lạ, nên nâng lên ít nhất mức <b>Could you…, please?</b>',
+    polite:'<b>Could you + V, please?</b> an toàn với hầu hết mọi người.',
+    vpolite:'Sau <b>Would you mind</b> là <b>V-ing</b>: <b>'+t[1]+'</b>. Người đồng ý sẽ trả lời <b>No, not at all</b>, nghĩa là “không phiền gì”.',
+    formal:'<b>I was wondering if you could + V</b> rất lịch sự, hợp khi nhờ cấp trên, thầy cô, hoặc nhờ việc lớn.'};
+  var note=notes[l];
+  if(l==='casual'&&/teacher|staff|stranger/.test(w[0]))note+=' Bạn đang nhờ <b>'+w[3]+'</b>, nên hãy thử mức lịch sự hơn.';
+  if(t[0].indexOf('explain')===0)note+=' Nhớ: <b>explain this word to me</b>, không nói <i>explain me</i>.';
+  note+=' Cảm ơn: <b>Thank you for + V-ing</b>.';
+  var x=document.createElement('span');x.className='why';x.innerHTML=note;out.append(x);
+  prep(out);
+}
+document.getElementById('gen-btn').addEventListener('click',show);
+[gw,gt,gl].forEach(function(s){s.addEventListener('change',show)});
+document.getElementById('rnd-btn').addEventListener('click',function(){
+  [[gw,WHO],[gt,TASK],[gl,LEV]].forEach(function(x){x[0].value=Math.floor(Math.random()*x[1].length)});show();
+});
+show();
+
+/* Bài tập */
+var inputs=document.querySelectorAll('#exlist input'),exo=document.getElementById('ex-out');
+function norm(s){return s.toLowerCase().replace(/[’‘`]/g,"'").replace(/[.!?]+$/,'').replace(/,/g,'').replace(/\s+/g,' ').trim()}
+document.getElementById('ex-check').addEventListener('click',function(){
+  var ok=0;
+  inputs.forEach(function(i){
+    var good=i.dataset.a.split('|').some(function(a){return norm(a)===norm(i.value)});
+    i.classList.remove('ok','no');i.classList.add(good?'ok':'no');if(good)ok++;
+  });
+  exo.style.minHeight='';
+  exo.textContent=ok===inputs.length?'🎉 Chính xác '+ok+'/'+inputs.length+'. Bạn đã biết cách nhờ giúp thật lịch sự!':'Đúng '+ok+'/'+inputs.length+'. Các ô viền đỏ cần xem lại; đọc lại phần ngữ pháp ở Bài 1 đến 5, hoặc bấm “Xem đáp án”.';
+});
+document.getElementById('ex-show').addEventListener('click',function(){
+  inputs.forEach(function(i){
+    var k=i.parentElement.querySelector('.key');
+    if(!k){k=document.createElement('span');k.className='key';i.parentElement.append(k)}
+    var a=i.dataset.a.split('|')[0].replace(/'/g,'’').replace(/\bi\b/g,'I').replace('excuse me sorry','excuse me, sorry');k.textContent='Đáp án: '+(a.indexOf(' ')>-1?cap(a):a);
+  });
+});
+document.getElementById('ex-reset').addEventListener('click',function(){
+  inputs.forEach(function(i){i.value='';i.classList.remove('ok','no')});
+  document.querySelectorAll('#exlist .key').forEach(function(k){k.remove()});
+  exo.textContent='';exo.style.minHeight='0';
+});
+})();
+</script>
+
+<script src="nav.js" defer></script>
+</body></html>

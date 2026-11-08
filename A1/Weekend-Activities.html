@@ -1,0 +1,523 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Tiếng Anh Weekend Activities</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: sidebar mục lục cố định + cột bài học, cùng theme tối của bộ "Hỏi đường & Hỏi giờ" (nhấn hồng – xanh ngọc cho chủ đề cuối tuần) */
+:root{color-scheme:dark;
+--bg:#080810;--s1:#0e0e1c;--s2:#131326;--s3:#18182e;--border:#222240;--border2:#2c2c50;--text:#e6e6f2;--muted:#8a8ab8;--faint:#4a4a78;
+--acc:#ffd060;--acc-dim:rgba(255,208,96,.11);--oc:#38bdf8;--oc-dim:rgba(56,189,248,.13);--ins:#40d88e;--ins-dim:rgba(64,216,142,.12);
+--sk:#a07af4;--sk-dim:rgba(160,122,244,.12);--au:#ff6584;--au-dim:rgba(255,101,132,.12);--teal:#30d8c0;--code-bg:#05050e;
+--tip-bg:rgba(91,168,255,.10);--tip-bd:rgba(91,168,255,.25);--tip-fg:#8ab8f0;--warn-fg:#e0bc58;--ok-fg:#5ccf98;--line:rgba(255,255,255,.05);
+--font:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+--gl:max(64px,env(safe-area-inset-left,0px));--gr:max(64px,env(safe-area-inset-right,0px))}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 60px)}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.7;font-size:15px;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:600;background:var(--s1)}
+.sidebar{position:fixed;left:0;top:0;width:260px;height:100%;background:var(--s1);border-right:1px solid var(--border);overflow-y:auto;z-index:400;padding-top:env(safe-area-inset-top,0px);padding-left:env(safe-area-inset-left,0px)}
+.sb-logo{padding:20px 18px 16px;border-bottom:1px solid var(--border)}
+.sb-brand{display:flex;align-items:center;gap:11px;margin-bottom:12px}
+.logo-icon{width:44px;height:44px;border-radius:11px;background:linear-gradient(135deg,var(--au),var(--teal));display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 0 26px rgba(255,101,132,.28)}
+.logo-text h2{font-size:15px;font-weight:800}.logo-text p{font-size:10.5px;color:var(--muted)}
+.prog-wrap{height:3px;background:var(--border);border-radius:2px;overflow:hidden}
+.prog-bar{height:100%;width:0;background:linear-gradient(90deg,var(--acc),var(--ins),var(--oc),var(--sk),var(--au))}
+.nav-label{padding:14px 18px 4px;font-size:9.5px;font-weight:700;letter-spacing:1.6px;color:var(--faint)}
+.nav-link{display:flex;align-items:center;gap:9px;padding:7px 18px;color:var(--muted);text-decoration:none;font-size:12.5px;font-weight:600;border-left:2px solid transparent}
+.nav-link:hover,.nav-link.active{color:var(--text);background:rgba(255,208,96,.07);border-left-color:var(--acc)}
+.main{margin-left:260px}
+.hero{padding-block:80px 60px;padding-left:var(--gl);padding-right:var(--gr);border-bottom:1px solid var(--border);background:radial-gradient(ellipse 65% 55% at 75% 22%,rgba(255,101,132,.09),transparent 60%),radial-gradient(ellipse 50% 55% at 10% 82%,rgba(48,216,192,.07),transparent 55%),var(--bg)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--acc-dim);border:1px solid rgba(255,208,96,.38);color:var(--acc);padding:5px 16px;border-radius:100px;font-size:11.5px;font-weight:700;margin-bottom:24px}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--acc);animation:p 2s infinite}
+@keyframes p{50%{opacity:.35;transform:scale(.7)}}
+@media(prefers-reduced-motion:reduce){.eyebrow i{animation:none}html{scroll-behavior:auto}}
+.hero h1{font-size:50px;font-weight:900;letter-spacing:-2.4px;line-height:1.06;margin-bottom:18px;text-wrap:balance}
+.grad{background:linear-gradient(135deg,var(--au),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-desc{font-size:16px;color:var(--muted);max-width:620px;margin-bottom:28px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{padding:5px 14px;border-radius:7px;font-size:12px;font-weight:700}
+.c1{background:var(--oc-dim);color:var(--oc)}.c2{background:var(--ins-dim);color:var(--ins)}.c3{background:var(--acc-dim);color:var(--acc)}.c4{background:var(--sk-dim);color:var(--sk)}.c5{background:var(--au-dim);color:var(--au)}
+.content{padding-block:56px;padding-left:var(--gl);padding-right:var(--gr);max-width:calc(1020px + 64px)}
+.section{margin-bottom:68px}
+.sec-head{display:flex;gap:14px;align-items:flex-start;margin-bottom:28px;padding-bottom:18px;border-bottom:1px solid var(--border)}
+.sec-tag{font-family:var(--mono);font-size:10px;font-weight:600;padding:3px 10px;border-radius:5px;margin-top:6px;flex-shrink:0;letter-spacing:.5px}
+.t1{color:var(--oc);background:var(--oc-dim)}.t2{color:var(--ins);background:var(--ins-dim)}.t3{color:var(--acc);background:var(--acc-dim)}.t4{color:var(--sk);background:var(--sk-dim)}.t5{color:var(--au);background:var(--au-dim)}
+.sec-title{font-size:23px;font-weight:800;letter-spacing:-.6px;text-wrap:balance}.sec-sub{font-size:13px;color:var(--muted)}
+.sub-title{font-size:14.5px;font-weight:700;margin:26px 0 12px;display:flex;align-items:center;gap:10px}
+.sub-title::before{content:'';width:14px;height:3px;background:var(--acc);border-radius:2px}
+p.t{color:var(--muted);font-size:13.5px;margin-bottom:11px;max-width:68ch}p.t strong,li strong{color:var(--text)}
+.ex-box{background:var(--s1);border:1px solid var(--border2);border-radius:11px;overflow:hidden;margin:13px 0}
+.ex-head{display:flex;align-items:center;gap:8px;padding:9px 16px;background:var(--s2);border-bottom:1px solid var(--border);font-family:var(--mono);font-size:10px;font-weight:600;color:var(--muted);letter-spacing:.5px}
+.ex-tag{margin-left:auto;font-size:9px;font-weight:700;padding:2px 9px;border-radius:100px;font-family:var(--font)}
+.ex-body{padding:10px 20px}
+.ex-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:13.5px}
+.ex-row:last-child{border-bottom:none}
+.ex-en{color:var(--text);font-weight:600;min-width:280px}.ex-vn{color:var(--muted)}
+.info{display:flex;gap:12px;padding:14px 16px;border-radius:9px;margin:13px 0;font-size:13px;line-height:1.6}
+.i-tip{background:var(--tip-bg);border:1px solid var(--tip-bd);color:var(--tip-fg)}
+.i-warn{background:var(--acc-dim);border:1px solid rgba(255,208,96,.25);color:var(--warn-fg)}
+.i-ok{background:var(--ins-dim);border:1px solid rgba(64,216,142,.25);color:var(--ok-fg)}
+.tbl{width:100%;border-collapse:collapse;font-size:13px;margin:13px 0;display:block;overflow-x:auto}
+.tbl th{background:var(--s3);padding:10px 14px;text-align:left;font-size:10px;color:var(--muted);border-bottom:1px solid var(--border2);white-space:nowrap;letter-spacing:.5px}
+.tbl td{padding:10px 14px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:top}
+.tbl td:first-child{color:var(--text);font-weight:600}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}
+.card{background:var(--s1);border:1px solid var(--border);border-radius:11px;padding:16px;min-width:0}
+.card:hover{border-color:var(--acc)}
+.card-icon{font-size:24px}.card-title{font-size:13px;font-weight:700}.card-desc{font-size:12px;color:var(--muted)}
+.cmp{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);border-radius:11px;overflow:hidden;margin:13px 0}
+.bad{background:rgba(255,101,132,.07);padding:14px 16px;border-right:1px solid var(--border)}.good{background:rgba(64,216,142,.07);padding:14px 16px}
+.cmp b{display:block;font-size:10px;margin-bottom:6px;letter-spacing:.5px}.bad b{color:var(--au)}.good b{color:var(--ins)}
+.cmp div div{font-size:13.5px}
+.dlg{display:grid;gap:8px;margin:12px 0;background:var(--s1);border:1px solid var(--border2);border-radius:12px;padding:16px 18px}
+.dlg-t{font-size:10px;font-weight:800;color:var(--acc);margin-bottom:2px;letter-spacing:.6px}
+.turn{display:flex;gap:10px;align-items:baseline}
+.turn>div{min-width:0}
+.who{flex-shrink:0;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+.wa{background:var(--oc-dim);color:var(--oc)}.wb{background:var(--ins-dim);color:var(--ins)}
+.turn .say{font-weight:600}.turn small{display:block;color:var(--muted);font-size:12px;font-weight:400}
+.gen{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:12px 0}
+.gen label{font-size:11.5px;color:var(--muted);font-weight:600;display:block;min-width:0}
+.gen select{width:100%;margin-top:4px;background:var(--code-bg);border:1px solid var(--border2);border-radius:8px;padding:9px 12px;color:var(--text);font:inherit;font-size:13px}
+select:focus-visible,button:focus-visible,.say:focus-visible,.exi input:focus-visible,.chk input:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.btns{display:flex;flex-wrap:wrap;gap:6px}
+.btn{background:var(--acc-dim);color:var(--acc);border:1px solid var(--acc);border-radius:8px;padding:8px 16px;font:inherit;font-weight:700;font-size:13px;cursor:pointer}
+.btn.alt{background:var(--ins-dim);color:var(--ins);border-color:var(--ins)}
+.out{margin-top:14px;min-height:60px;background:var(--s2);border:1px dashed var(--border2);border-radius:10px;padding:14px 16px;font-size:14px;line-height:1.9}
+.big{font-size:21px;font-weight:800;color:var(--acc);letter-spacing:-.3px;line-height:1.4;margin-bottom:4px}
+.out .why{display:block;color:var(--muted);font-size:12.5px}
+.out .why b{color:var(--teal);font-family:var(--mono);font-weight:600}
+.timeline{display:grid;gap:0;margin:14px 0;border-left:2px solid var(--border2);padding-left:18px}
+.tl{position:relative;padding:8px 0 12px}
+.tl::before{content:'';position:absolute;left:-24px;top:16px;width:10px;height:10px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 3px var(--bg)}
+.tl time{font-family:var(--mono);font-size:12px;color:var(--acc);font-variant-numeric:tabular-nums;font-weight:600}
+.tl .say{font-weight:600;font-size:13.5px}
+.tl small{display:block;color:var(--muted);font-size:12px}
+.freq{display:grid;gap:7px;margin:14px 0}
+.fq{display:grid;grid-template-columns:110px 1fr 54px;gap:12px;align-items:center;font-size:13px}
+.fq .say{font-weight:700}
+.fq .track{height:8px;background:var(--s3);border-radius:4px;overflow:hidden}
+.fq .fill{height:100%;background:linear-gradient(90deg,var(--ins),var(--acc))}
+.fq span:last-child{font-family:var(--mono);font-size:11.5px;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+.plan{display:grid;gap:8px;margin:12px 0}
+.day{display:flex;gap:14px;align-items:baseline;background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:12px 16px;font-size:13px;color:var(--muted)}
+.day b{color:var(--acc);font-family:var(--mono);font-size:12px;flex-shrink:0;width:52px}.day strong{color:var(--text)}
+.chk{list-style:none;margin:10px 0}.chk li{padding:6px 0;font-size:13.5px;color:var(--muted);border-bottom:1px solid rgba(255,255,255,.04)}
+.chk input{accent-color:var(--ins);margin-right:10px;width:15px;height:15px;vertical-align:-2px}
+.gr{border:1px solid rgba(160,122,244,.38);background:linear-gradient(180deg,var(--sk-dim),transparent 110px),var(--s1);border-radius:12px;margin:28px 0;overflow:hidden}
+.gr-head{padding:10px 18px;font-size:12px;font-weight:800;color:var(--sk);border-bottom:1px solid var(--border);display:flex;gap:10px;flex-wrap:wrap;align-items:baseline;letter-spacing:.4px}
+.gr-head em{font-style:normal;color:var(--muted);font-weight:600;letter-spacing:0}
+.gr-body{padding:14px 18px;font-size:13.5px;color:var(--muted)}
+.gr-body p{margin-bottom:10px}.gr-body b{color:var(--text)}.gr-body ul{padding-left:20px;margin-bottom:8px}.gr-body li{margin-bottom:4px}
+.gr-body .tbl{margin:8px 0 12px}
+.fm{display:inline-block;font-family:var(--mono);font-size:12px;background:var(--code-bg);color:var(--teal);padding:3px 9px;border-radius:6px;margin:2px 0}
+.say{cursor:pointer;border-bottom:1px dotted var(--oc)}
+.say:hover{color:var(--acc);background:var(--acc-dim);border-radius:4px}
+.say::after{content:"🔊";font-size:.68em;margin-left:3px;opacity:.5}
+.say.playing{color:var(--ins);background:var(--ins-dim);border-radius:4px}.say.playing::after{opacity:1}
+.exi{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:13.5px;color:var(--text)}
+.exi input{width:220px;max-width:100%;background:var(--code-bg);border:1px solid var(--border2);border-radius:6px;padding:4px 8px;color:var(--text);font:inherit;font-size:13px;text-align:center}
+.exi input.ok{border-color:var(--ins);color:var(--ins)}.exi input.no{border-color:var(--au);color:var(--au)}
+.exi small{color:var(--muted);font-size:11.5px}
+.exi .key{color:var(--ins);font-size:12px;width:100%}
+.footer{border-top:1px solid var(--border);padding-block:28px 90px;padding-left:var(--gl);padding-right:var(--gr);font-size:12px;color:var(--muted)}
+.audio-bar{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:500;display:flex;gap:10px;align-items:center;background:var(--s2);border:1px solid var(--border2);border-radius:12px;padding:8px 12px;box-shadow:0 8px 28px rgba(0,0,0,.5);font-size:12px;color:var(--muted)}
+.audio-bar b{color:var(--acc)}.ab-g{display:flex;gap:4px}
+.audio-bar button{background:var(--s3);color:var(--muted);border:1px solid var(--border);border-radius:7px;padding:4px 10px;font:inherit;font-weight:700;cursor:pointer}
+.audio-bar button.on{background:var(--acc-dim);color:var(--acc);border-color:var(--acc)}
+.topnav{display:none}
+@media(max-width:900px){
+:root{--gl:max(18px,env(safe-area-inset-left,0px));--gr:max(18px,env(safe-area-inset-right,0px))}
+.sidebar{display:none}.main{margin-left:0}.hero h1{font-size:32px;letter-spacing:-1.4px}.hero{padding-block:48px 40px}
+.grid-3,.cmp{grid-template-columns:1fr}.gen{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}.bad{border-right:none;border-bottom:1px solid var(--border)}
+.topnav{display:flex;overflow-x:auto;position:sticky;top:env(safe-area-inset-top,0px);z-index:500;background:var(--s1);border-bottom:2px solid var(--border2);scrollbar-width:none;padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+.topnav a{flex-shrink:0;padding:10px 14px;color:var(--muted);text-decoration:none;font-size:12px;font-weight:700;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-2px}
+.topnav a.active{color:var(--acc);border-bottom-color:var(--acc);background:var(--acc-dim)}
+.ex-en{min-width:0}
+.fq{grid-template-columns:90px 1fr 46px}
+.audio-bar{left:calc(8px + env(safe-area-inset-left,0px));right:calc(8px + env(safe-area-inset-right,0px));justify-content:center;flex-wrap:wrap}
+}
+@media(max-width:480px){.gen{grid-template-columns:1fr}}
+.lbl{font-family:var(--mono);font-size:10px;font-weight:600;color:var(--faint);letter-spacing:1px;min-width:110px}
+.rl{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;padding:4px 0}
+.rl .say{font-weight:700;font-size:15px}
+.rl.q .say{font-weight:500;color:var(--muted)}
+</style>
+
+<aside class="sidebar">
+  <div class="sb-logo">
+    <div class="sb-brand"><div class="logo-icon">🧺</div><div class="logo-text"><h2>Weekend Activities</h2><p>Tiếng Anh cho người mới</p></div></div>
+    <div class="prog-wrap"><div class="prog-bar" id="pbar"></div></div>
+  </div>
+  <div class="nav-label">BÀI HỌC</div>
+  <a class="nav-link" href="#s1">🌳 Hoạt động cuối tuần</a>
+  <a class="nav-link" href="#s2">🔁 Thói quen cuối tuần</a>
+  <a class="nav-link" href="#s3">⏪ Cuối tuần vừa qua</a>
+  <a class="nav-link" href="#s4">⏩ Kế hoạch cuối tuần tới</a>
+  <a class="nav-link" href="#s5">😌 Nhận xét &amp; cảm xúc</a>
+  <div class="nav-label">THỰC HÀNH</div>
+  <a class="nav-link" href="#s6">💬 Hội thoại mẫu</a>
+  <a class="nav-link" href="#s7">🛠️ Small talk thứ Hai &amp; bài tập</a>
+  <a class="nav-link" href="#s8">🚀 Từ vựng nâng cao</a>
+</aside>
+
+<div class="main">
+<nav class="topnav">
+  <a href="#s1">1 Hoạt động</a><a href="#s2">2 Thói quen</a><a href="#s3">3 Vừa qua</a><a href="#s4">4 Sắp tới</a><a href="#s5">5 Cảm xúc</a><a href="#s6">6 Hội thoại</a><a href="#s7">7 Luyện tập</a><a href="#s8">8 Nâng cao</a>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow"><i></i>Dành cho người mới bắt đầu</div>
+  <h1>Cuối tuần làm gì<br><span class="grad">bằng tiếng Anh</span></h1>
+  <p class="hero-desc">“How was your weekend?” là câu hỏi bạn sẽ nghe mỗi sáng thứ Hai. Bài này giúp bạn gọi tên các hoạt động cuối tuần, kể lại cuối tuần vừa qua bằng thì quá khứ, nói kế hoạch cuối tuần tới khi chắc chắn và khi chưa chắc, và tả cảm giác của mình. Bấm vào câu có biểu tượng loa để nghe, rồi luyện small talk sáng thứ Hai ở phần thực hành.</p>
+  <div class="chips"><span class="chip c2">Hoạt động</span><span class="chip c3">Quá khứ đơn</span><span class="chip c1">going to / might</span><span class="chip c4">Small talk</span><span class="chip c5">Từ vựng nâng cao</span></div>
+</header>
+
+<div class="content">
+
+<section class="section" id="s1">
+  <div class="sec-head"><span class="sec-tag t2">BÀI 1</span><div><div class="sec-title">Các hoạt động cuối tuần</div><div class="sec-sub">Ở nhà nghỉ ngơi hay ra ngoài vui chơi</div></div></div>
+  <div class="sub-title">Ở nhà (stay in)</div>
+  <div class="grid-3">
+    <div class="card"><div class="card-icon">😴</div><div class="card-title say">sleep in</div><div class="card-desc">ngủ nướng</div></div>
+    <div class="card"><div class="card-icon">📺</div><div class="card-title say">watch a series</div><div class="card-desc">xem phim bộ</div></div>
+    <div class="card"><div class="card-icon">🍳</div><div class="card-title say">cook something new</div><div class="card-desc">nấu món mới</div></div>
+    <div class="card"><div class="card-icon">🧹</div><div class="card-title say">do the housework</div><div class="card-desc">làm việc nhà</div></div>
+    <div class="card"><div class="card-icon">📖</div><div class="card-title say">read a book</div><div class="card-desc">đọc sách</div></div>
+    <div class="card"><div class="card-icon">🎮</div><div class="card-title say">play video games</div><div class="card-desc">chơi game</div></div>
+  </div>
+  <div class="sub-title">Ra ngoài (go out)</div>
+  <div class="grid-3">
+    <div class="card"><div class="card-icon">🧺</div><div class="card-title say">go for a picnic</div><div class="card-desc">đi dã ngoại</div></div>
+    <div class="card"><div class="card-icon">🥾</div><div class="card-title say">go hiking</div><div class="card-desc">đi leo núi, đi bộ đường dài</div></div>
+    <div class="card"><div class="card-icon">☕</div><div class="card-title say">go to a café</div><div class="card-desc">đi cà phê</div></div>
+    <div class="card"><div class="card-icon">👵</div><div class="card-title say">visit my grandparents</div><div class="card-desc">thăm ông bà</div></div>
+    <div class="card"><div class="card-icon">🏕️</div><div class="card-title say">go camping</div><div class="card-desc">đi cắm trại</div></div>
+    <div class="card"><div class="card-icon">🍻</div><div class="card-title say">hang out with friends</div><div class="card-desc">đi chơi với bạn bè</div></div>
+  </div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>go + V-ing / go to + nơi chốn / go for a + N</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Cấu trúc</th><th>Ví dụ</th></tr></thead><tbody>
+<tr><td><span class="fm">go + V-ing</span> (hoạt động)</td><td><span class="say">go shopping, go swimming, go camping</span></td></tr>
+<tr><td><span class="fm">go to + the + nơi chốn</span></td><td><span class="say">go to the park, go to the cinema</span></td></tr>
+<tr><td><span class="fm">go for a + N</span></td><td><span class="say">go for a walk, go for a drive, go for a picnic</span></td></tr>
+<tr><td><span class="fm">go out</span> / <span class="fm">stay in</span></td><td><span class="say">I didn’t go out. I stayed in.</span></td></tr></tbody></table>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>I go to shopping. I go to walk.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">I go shopping. I go for a walk.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s2">
+  <div class="sec-head"><span class="sec-tag t3">BÀI 2</span><div><div class="sec-title">Thói quen cuối tuần</div><div class="sec-sub">Bạn thường làm gì vào thứ Bảy, Chủ nhật</div></div></div>
+  <div class="ex-box"><div class="ex-head">HỎI VÀ ĐÁP<span class="ex-tag t3">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">What do you usually do at the weekend?</span><span class="ex-vn">Cuối tuần bạn thường làm gì?</span></div>
+    <div class="ex-row"><span class="ex-en say">I usually sleep in on Saturdays.</span><span class="ex-vn">Thứ Bảy tôi thường ngủ nướng</span></div>
+    <div class="ex-row"><span class="ex-en say">On Sundays, I always visit my parents.</span><span class="ex-vn">Chủ nhật nào tôi cũng về thăm bố mẹ</span></div>
+    <div class="ex-row"><span class="ex-en say">I sometimes go hiking if the weather is nice.</span><span class="ex-vn">Thỉnh thoảng tôi đi leo núi nếu trời đẹp</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m a homebody. I prefer staying in.</span><span class="ex-vn">Tôi là người thích ở nhà</span></div>
+    <div class="ex-row"><span class="ex-en say">Do you work at the weekend?</span><span class="ex-vn">Cuối tuần bạn có làm việc không?</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>at the weekend / on weekends / on Saturday(s)</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Cụm</th><th>Dùng ở</th><th>Ví dụ</th></tr></thead><tbody>
+<tr><td><span class="fm">at the weekend</span></td><td>Anh</td><td><span class="say">What are you doing at the weekend?</span></td></tr>
+<tr><td><span class="fm">on the weekend / on weekends</span></td><td>Mỹ</td><td><span class="say">I go running on weekends.</span></td></tr>
+<tr><td><span class="fm">on Saturday</span></td><td>một thứ Bảy cụ thể</td><td><span class="say">I’m busy on Saturday.</span></td></tr>
+<tr><td><span class="fm">on Saturdays</span></td><td>mọi thứ Bảy (thói quen)</td><td><span class="say">I swim on Saturdays.</span></td></tr></tbody></table>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>In weekend I usually go to café.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">At the weekend, I usually go to a café.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s3">
+  <div class="sec-head"><span class="sec-tag t1">BÀI 3</span><div><div class="sec-title">Kể cuối tuần vừa qua</div><div class="sec-sub">Trả lời câu “How was your weekend?” mỗi sáng thứ Hai</div></div></div>
+  <div class="ex-box"><div class="ex-head">HỎI VÀ KỂ<span class="ex-tag t1">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">How was your weekend?</span><span class="ex-vn">Cuối tuần của bạn thế nào?</span></div>
+    <div class="ex-row"><span class="ex-en say">It was great, thanks! How about yours?</span><span class="ex-vn">Tuyệt lắm, cảm ơn! Còn bạn?</span></div>
+    <div class="ex-row"><span class="ex-en say">Did you do anything fun?</span><span class="ex-vn">Bạn có làm gì vui không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Not much. I just stayed home and relaxed.</span><span class="ex-vn">Không có gì nhiều. Tôi chỉ ở nhà nghỉ ngơi</span></div>
+    <div class="ex-row"><span class="ex-en say">I went to Ba Vi with some friends. We had a picnic.</span><span class="ex-vn">Tôi đi Ba Vì với mấy người bạn. Bọn tôi đi dã ngoại</span></div>
+    <div class="ex-row"><span class="ex-en say">I saw a really good movie on Saturday night.</span><span class="ex-vn">Tối thứ Bảy tôi xem một bộ phim rất hay</span></div>
+  </div></div>
+  <div class="sub-title">Động từ bất quy tắc hay dùng khi kể cuối tuần</div>
+  <table class="tbl"><thead><tr><th>Nguyên mẫu</th><th>Quá khứ</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">go</td><td class="say">went</td><td><span class="say">I went to the beach.</span></td></tr>
+  <tr><td class="say">have</td><td class="say">had</td><td><span class="say">We had a barbecue.</span></td></tr>
+  <tr><td class="say">see</td><td class="say">saw</td><td><span class="say">I saw my cousins.</span></td></tr>
+  <tr><td class="say">meet</td><td class="say">met</td><td><span class="say">I met an old friend.</span></td></tr>
+  <tr><td class="say">eat</td><td class="say">ate</td><td><span class="say">We ate seafood.</span></td></tr>
+  <tr><td class="say">buy</td><td class="say">bought</td><td><span class="say">I bought new shoes.</span></td></tr>
+  <tr><td class="say">sleep</td><td class="say">slept</td><td><span class="say">I slept until ten.</span></td></tr>
+  <tr><td class="say">take</td><td class="say">took</td><td><span class="say">I took my dog to the park.</span></td></tr></tbody></table>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Quá khứ đơn: câu hỏi Did you…? và câu phủ định didn’t</em></div><div class="gr-body">
+<ul><li><span class="fm">Did + S + V nguyên mẫu?</span> → <span class="say">Did you go out?</span></li>
+<li><span class="fm">S + didn’t + V nguyên mẫu</span> → <span class="say">I didn’t do much.</span></li>
+<li>Sau <b>did / didn’t</b>, động từ trở về nguyên mẫu: <i>Did you went</i> là sai.</li></ul>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>Did you went out? I didn’t went anywhere.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">Did you go out? I didn’t go anywhere.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s4">
+  <div class="sec-head"><span class="sec-tag t4">BÀI 4</span><div><div class="sec-title">Kế hoạch cuối tuần tới</div><div class="sec-sub">Khi đã chắc chắn, và khi còn tùy</div></div></div>
+  <div class="ex-box"><div class="ex-head">NÓI KẾ HOẠCH<span class="ex-tag t4">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Any plans for the weekend?</span><span class="ex-vn">Cuối tuần có kế hoạch gì không?</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m going to visit my grandparents in the countryside.</span><span class="ex-vn">Tôi sẽ về quê thăm ông bà</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m meeting some friends for brunch on Sunday.</span><span class="ex-vn">Chủ nhật tôi hẹn bạn đi ăn sáng muộn</span></div>
+    <div class="ex-row"><span class="ex-en say">I might go camping, but it depends on the weather.</span><span class="ex-vn">Có thể tôi đi cắm trại, nhưng còn tùy thời tiết</span></div>
+    <div class="ex-row"><span class="ex-en say">Nothing special. I just want to rest.</span><span class="ex-vn">Không có gì đặc biệt. Tôi chỉ muốn nghỉ ngơi</span></div>
+    <div class="ex-row"><span class="ex-en say">I haven’t decided yet.</span><span class="ex-vn">Tôi chưa quyết định</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Mức độ chắc chắn: be + V-ing → going to → might</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Cấu trúc</th><th>Mức chắc chắn</th><th>Ví dụ</th></tr></thead><tbody>
+<tr><td><span class="fm">be + V-ing</span></td><td>đã hẹn, đã đặt</td><td><span class="say">I’m having dinner with my sister on Saturday.</span></td></tr>
+<tr><td><span class="fm">be going to + V</span></td><td>đã định sẵn</td><td><span class="say">I’m going to clean my room.</span></td></tr>
+<tr><td><span class="fm">might + V</span></td><td>chưa chắc, có thể</td><td><span class="say">I might go to the gym.</span></td></tr></tbody></table>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>Maybe I will might go swimming.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">I might go swimming.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s5">
+  <div class="sec-head"><span class="sec-tag t5">BÀI 5</span><div><div class="sec-title">Nhận xét và cảm xúc</div><div class="sec-sub">Cuối tuần của bạn thư giãn, bận rộn hay mệt nhoài?</div></div></div>
+  <div class="grid-3">
+    <div class="card"><div class="card-icon">😌</div><div class="card-title say">relaxing</div><div class="card-desc">thư giãn</div></div>
+    <div class="card"><div class="card-icon">🥳</div><div class="card-title say">fun</div><div class="card-desc">vui</div></div>
+    <div class="card"><div class="card-icon">🏃</div><div class="card-title say">busy</div><div class="card-desc">bận rộn</div></div>
+    <div class="card"><div class="card-icon">😮‍💨</div><div class="card-title say">exhausting</div><div class="card-desc">mệt nhoài</div></div>
+    <div class="card"><div class="card-icon">🛋️</div><div class="card-title say">lazy</div><div class="card-desc">lười biếng, uể oải</div></div>
+    <div class="card"><div class="card-icon">✅</div><div class="card-title say">productive</div><div class="card-desc">làm được nhiều việc</div></div>
+  </div>
+  <div class="ex-box"><div class="ex-head">NHẬN XÉT<span class="ex-tag t5">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">It was so relaxing. I really needed that.</span><span class="ex-vn">Thư giãn thật. Tôi đang rất cần điều đó</span></div>
+    <div class="ex-row"><span class="ex-en say">It was such a busy weekend!</span><span class="ex-vn">Cuối tuần bận rộn quá!</span></div>
+    <div class="ex-row"><span class="ex-en say">The weekend went by so fast.</span><span class="ex-vn">Cuối tuần trôi qua nhanh quá</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m still tired. I need another weekend!</span><span class="ex-vn">Tôi vẫn mệt. Cần thêm một cuối tuần nữa!</span></div>
+    <div class="ex-row"><span class="ex-en say">That sounds lovely!</span><span class="ex-vn">Nghe tuyệt quá!</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>so + tính từ / such a + tính từ + danh từ</em></div><div class="gr-body">
+<ul><li><span class="fm">so + adj</span> → <span class="say">It was so fun.</span> <span class="say">I was so tired.</span></li>
+<li><span class="fm">such a / an + adj + N</span> → <span class="say">It was such a nice day.</span> <span class="say">It was such an exhausting weekend.</span></li></ul>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>It was so a relaxing weekend.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">It was such a relaxing weekend.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s6">
+  <div class="sec-head"><span class="sec-tag t3">BÀI 6</span><div><div class="sec-title">Hội thoại mẫu</div><div class="sec-sub">Bấm từng câu để nghe, rồi đóng vai cả hai người</div></div></div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 1: SÁNG THỨ HAI Ở CÔNG TY</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Morning, Lan! How was your weekend?</span><small>Chào buổi sáng, Lan! Cuối tuần thế nào?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">It was great, thanks! I went to Ninh Binh with my family.</span><small>Tuyệt lắm, cảm ơn! Mình đi Ninh Bình với gia đình.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Oh, nice! What did you do there?</span><small>Ồ, hay quá! Ở đó bạn làm gì?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">We took a boat trip and climbed up to a viewpoint. It was exhausting but beautiful. How about you?</span><small>Bọn mình đi thuyền và leo lên điểm ngắm cảnh. Mệt nhưng đẹp lắm. Còn bạn?</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Not much. I slept in and watched a series. It was such a lazy weekend.</span><small>Không có gì nhiều. Mình ngủ nướng và xem phim bộ. Cuối tuần lười quá.</small></div></div>
+  </div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 2: HỎI KẾ HOẠCH VỚI BẠN</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Any plans for the weekend?</span><small>Cuối tuần có kế hoạch gì không?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">I’m meeting my cousin on Saturday. On Sunday, I might go hiking, but it depends on the weather.</span><small>Thứ Bảy mình gặp em họ. Chủ nhật có thể mình đi leo núi, nhưng còn tùy thời tiết.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">If it rains, do you want to go to a café instead?</span><small>Nếu trời mưa, đi cà phê thay thế nhé?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Sounds good! Text me on Sunday morning.</span><small>Được đấy! Sáng Chủ nhật nhắn mình nhé.</small></div></div>
+  </div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 3: CUỐI TUẦN BẬN RỘN</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">You look tired. Did you have a busy weekend?</span><small>Trông bạn mệt thế. Cuối tuần bận lắm à?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Yes! I moved to a new apartment. I didn’t sleep much.</span><small>Ừ! Mình chuyển sang căn hộ mới. Mình ngủ chẳng được bao nhiêu.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Oh, congratulations! Did anyone help you?</span><small>Ồ, chúc mừng! Có ai giúp bạn không?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">My brother did. But I still need another weekend to rest!</span><small>Em trai mình giúp. Nhưng mình vẫn cần thêm một cuối tuần nữa để nghỉ!</small></div></div>
+  </div>
+  <div class="info i-ok"><span>✅</span><span><strong>Cách luyện:</strong> nghe một lượt, nói theo từng câu, rồi che phần tiếng Việt và tự đóng vai A hoặc B. Thứ Hai tuần này, hãy thử trả lời “How was your weekend?” bằng chuyện thật của bạn.</span></div>
+</section>
+
+<section class="section" id="s7">
+  <div class="sec-head"><span class="sec-tag t2">BÀI 7</span><div><div class="sec-title">Small talk sáng thứ Hai &amp; bài tập</div><div class="sec-sub">Chọn việc bạn đã làm và việc định làm, xem câu trả lời hoàn chỉnh cho hai câu hỏi quen thuộc</div></div></div>
+  <div class="gen">
+    <label for="g-sa">Thứ Bảy vừa rồi<select id="g-sa"></select></label>
+    <label for="g-su">Chủ nhật vừa rồi<select id="g-su"></select></label>
+    <label for="g-fe">Cảm nhận<select id="g-fe"></select></label>
+    <label for="g-nx">Cuối tuần tới định<select id="g-nx"></select></label>
+    <label for="g-ce">Mức chắc chắn<select id="g-ce"><option value="0">Đã hẹn, đã đặt (be + V-ing)</option><option value="1">Đã định (going to)</option><option value="2">Chưa chắc (might)</option></select></label>
+  </div>
+  <div class="btns"><button class="btn" id="gen-btn">Tạo câu trả lời</button><button class="btn alt" id="rnd-btn">Chọn ngẫu nhiên</button></div>
+  <div class="out" id="gen-out" aria-live="polite"></div>
+
+  <div class="sub-title">Bài tập: điền câu trả lời</div>
+  <p class="t">Câu 1–4: điền một từ vào chỗ trống. Câu 5–8: dịch sang tiếng Anh, gõ cả câu. Không phân biệt hoa thường.</p>
+  <div id="exlist">
+    <div class="exi">1. Did you ___ out last night? (go) →<input id="ex1" data-a="go" aria-label="Câu 1"><small>sau did</small></div>
+    <div class="exi">2. I ___ until ten on Sunday. (sleep) →<input id="ex2" data-a="slept" aria-label="Câu 2"><small>quá khứ</small></div>
+    <div class="exi">3. Let’s go ___ a walk. →<input id="ex3" data-a="for" aria-label="Câu 3"><small>go ? a walk</small></div>
+    <div class="exi">4. It was ___ a relaxing weekend. →<input id="ex4" data-a="such" aria-label="Câu 4"><small>so / such</small></div>
+    <div class="exi">5. Cuối tuần của bạn thế nào? →<input id="ex5" data-a="how was your weekend?" aria-label="Câu 5"><small>How was…</small></div>
+    <div class="exi">6. Không có gì nhiều, tôi chỉ ở nhà →<input id="ex6" data-a="not much i just stayed home|not much i just stayed at home|not much. i just stayed home|nothing much i just stayed home" aria-label="Câu 6"><small>stayed</small></div>
+    <div class="exi">7. Có thể tôi sẽ đi cắm trại →<input id="ex7" data-a="i might go camping|maybe i'll go camping|maybe i will go camping" aria-label="Câu 7"><small>might</small></div>
+    <div class="exi">8. Cuối tuần trôi qua nhanh quá →<input id="ex8" data-a="the weekend went by so fast|the weekend went so fast|the weekend flew by" aria-label="Câu 8"><small>went by</small></div>
+  </div>
+  <div class="btns" style="margin-top:12px"><button class="btn" id="ex-check">Kiểm tra đáp án</button><button class="btn alt" id="ex-show">Xem đáp án</button><button class="btn alt" id="ex-reset">Làm lại</button></div>
+  <div class="out" id="ex-out" style="min-height:0" aria-live="polite"></div>
+
+  <div class="sub-title">Lộ trình luyện 7 ngày</div>
+  <div class="plan">
+    <div class="day"><b>Ngày 1</b><span><strong>Hoạt động:</strong> học 12 hoạt động, xếp vào nhóm ở nhà và ra ngoài</span></div>
+    <div class="day"><b>Ngày 2</b><span><strong>go + …:</strong> luyện go shopping / go to the park / go for a walk</span></div>
+    <div class="day"><b>Ngày 3</b><span><strong>Thói quen:</strong> nói 5 việc bạn thường làm cuối tuần với trạng từ tần suất</span></div>
+    <div class="day"><b>Ngày 4</b><span><strong>Quá khứ:</strong> học 8 động từ bất quy tắc, kể cuối tuần vừa rồi</span></div>
+    <div class="day"><b>Ngày 5</b><span><strong>Kế hoạch:</strong> nói kế hoạch tới bằng 3 mức chắc chắn</span></div>
+    <div class="day"><b>Ngày 6</b><span><strong>Small talk:</strong> dùng máy luyện, đọc to cả hai câu trả lời</span></div>
+    <div class="day"><b>Ngày 7</b><span><strong>Thực tế:</strong> thứ Hai hỏi một đồng nghiệp “How was your weekend?” và kể lại của bạn</span></div>
+  </div>
+</section>
+
+<section class="section" id="s8">
+  <div class="sec-head"><span class="sec-tag t5">NÂNG CAO</span><div><div class="sec-title">Từ vựng mới để hội thoại tự nhiên hơn</div><div class="sec-sub">Thêm vài từ này, câu chuyện cuối tuần của bạn sẽ sinh động hơn</div></div></div>
+  <div class="sub-title">Nghỉ ngơi và vui chơi</div>
+  <table class="tbl"><thead><tr><th>Từ / cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">have a lie-in</td><td>ngủ nướng (kiểu Anh)</td><td><span class="say">I had a long lie-in on Sunday.</span></td></tr>
+  <tr><td class="say">chill out</td><td>xả hơi, thư giãn</td><td><span class="say">I just chilled out at home.</span></td></tr>
+  <tr><td class="say">recharge</td><td>nạp lại năng lượng</td><td><span class="say">I need a quiet weekend to recharge.</span></td></tr>
+  <tr><td class="say">me-time</td><td>thời gian cho riêng mình</td><td><span class="say">Sunday morning is my me-time.</span></td></tr>
+  <tr><td class="say">brunch</td><td>bữa sáng muộn gộp bữa trưa</td><td><span class="say">Let’s meet for brunch on Sunday.</span></td></tr>
+  <tr><td class="say">staycation</td><td>kỳ nghỉ ở ngay thành phố mình</td><td><span class="say">We had a staycation at a nice hotel in town.</span></td></tr>
+  <tr><td class="say">weekend getaway</td><td>chuyến đi ngắn cuối tuần</td><td><span class="say">Tam Dao is perfect for a weekend getaway.</span></td></tr>
+  <tr><td class="say">long weekend</td><td>cuối tuần dài (có thêm ngày nghỉ)</td><td><span class="say">It’s a long weekend, so we’re going to the beach.</span></td></tr></tbody></table>
+  <div class="sub-title">Việc vặt và tâm trạng</div>
+  <table class="tbl"><thead><tr><th>Từ / cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">run errands</td><td>chạy việc vặt</td><td><span class="say">I spent Saturday running errands.</span></td></tr>
+  <tr><td class="say">catch up on sleep</td><td>ngủ bù</td><td><span class="say">I caught up on sleep this weekend.</span></td></tr>
+  <tr><td class="say">couch potato</td><td>người chỉ nằm dài xem TV</td><td><span class="say">I was a total couch potato on Sunday.</span></td></tr>
+  <tr><td class="say">Monday blues</td><td>uể oải đầu tuần</td><td><span class="say">I’ve got the Monday blues today.</span></td></tr>
+  <tr><td class="say">TGIF</td><td>ơn trời, thứ Sáu rồi! (Thank God it’s Friday)</td><td><span class="say">TGIF! Any plans?</span></td></tr>
+  <tr><td class="say">fly by</td><td>trôi qua rất nhanh</td><td><span class="say">The weekend flew by.</span></td></tr></tbody></table>
+  <div class="sub-title">Cụm giúp cuộc trò chuyện trôi chảy</div>
+  <div class="ex-box"><div class="ex-head">LÀM CHO HỘI THOẠI TỰ NHIÊN<span class="ex-tag t5">Nâng cao</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Did you get up to anything fun?</span><span class="ex-vn">Bạn có làm gì vui không?</span></div>
+    <div class="ex-row"><span class="ex-en say">I didn’t do much, to be honest.</span><span class="ex-vn">Nói thật là tôi chẳng làm gì nhiều</span></div>
+    <div class="ex-row"><span class="ex-en say">It was nice to have a quiet one.</span><span class="ex-vn">Được một cuối tuần yên tĩnh cũng hay</span></div>
+    <div class="ex-row"><span class="ex-en say">I needed that break.</span><span class="ex-vn">Tôi đang cần được nghỉ như vậy</span></div>
+    <div class="ex-row"><span class="ex-en say">Can’t wait for the weekend!</span><span class="ex-vn">Mong đến cuối tuần quá!</span></div>
+    <div class="ex-row"><span class="ex-en say">Have a great weekend!</span><span class="ex-vn">Cuối tuần vui vẻ nhé!</span></div>
+    <div class="ex-row"><span class="ex-en say">You too!</span><span class="ex-vn">Bạn cũng vậy nhé!</span></div>
+  </div></div>
+  <div class="cmp"><div class="bad"><b>❌ NGHE CỨNG</b><div>Weekend? I at home. Nothing.</div></div><div class="good"><b>✔ TỰ NHIÊN HƠN</b><div class="say">I didn’t do much, to be honest. I had a lie-in and caught up on my favorite series. It was nice to have a quiet one.</div></div></div>
+  <div class="info i-tip"><span>💡</span><span><strong>Mẹo:</strong> khi được hỏi “How was your weekend?”, đừng chỉ trả lời “Good”. Thêm <strong>một việc cụ thể</strong> và hỏi lại <strong>“How about yours?”</strong>, cuộc trò chuyện sẽ tự nhiên tiếp tục.</span></div>
+
+  <div class="sub-title">Tự kiểm tra</div>
+  <ul class="chk">
+    <li><label><input type="checkbox" id="c1">Tôi gọi tên được 12 hoạt động cuối tuần</label></li>
+    <li><label><input type="checkbox" id="c2">Tôi dùng đúng <strong>go + V-ing / go to / go for a</strong></label></li>
+    <li><label><input type="checkbox" id="c3">Tôi dùng đúng <strong>at the weekend / on Saturdays</strong></label></li>
+    <li><label><input type="checkbox" id="c4">Tôi kể cuối tuần vừa qua bằng quá khứ đơn, đúng 8 động từ bất quy tắc</label></li>
+    <li><label><input type="checkbox" id="c5">Tôi nói kế hoạch với 3 mức: <strong>be + V-ing / going to / might</strong></label></li>
+    <li><label><input type="checkbox" id="c6">Tôi dùng đúng <strong>so</strong> và <strong>such a</strong> khi nhận xét</label></li>
+    <li><label><input type="checkbox" id="c7">Tôi dùng được ít nhất 5 từ vựng nâng cao</label></li>
+  </ul>
+</section>
+
+</div>
+<div class="footer">🧺 Giao tiếp tiếng Anh: Weekend Activities · Dành cho người mới bắt đầu · 2026</div>
+</div>
+
+<div class="audio-bar">
+  <b>🔊 Audio</b>
+  <div class="ab-g"><button data-acc="en-GB" class="on">Anh-Anh</button><button data-acc="en-US">Anh-Mỹ</button></div>
+  <div class="ab-g"><button data-rate="0.6">Chậm</button><button data-rate="0.85" class="on">Vừa</button><button data-rate="1">Nhanh</button></div>
+</div>
+
+<script>
+(function(){
+var doc=document.documentElement,bar=document.getElementById('pbar');
+addEventListener('scroll',function(){bar.style.width=(doc.scrollTop/Math.max(1,doc.scrollHeight-doc.clientHeight)*100)+'%'});
+var links=document.querySelectorAll('.nav-link,.topnav a');
+if('IntersectionObserver' in window)document.querySelectorAll('.section[id]').forEach(function(s){
+  new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;
+    links.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id)});
+  })},{rootMargin:'-20% 0px -70% 0px'}).observe(s);
+});
+
+/* Audio */
+var S=window.speechSynthesis,st={acc:'en-GB',rate:.85},cur=null;
+function voice(){if(!S)return null;var v=S.getVoices().filter(function(x){return x.lang.replace('_','-').toLowerCase()===st.acc.toLowerCase()});
+  return v.find(function(x){return /google|natural|premium|enhanced/i.test(x.name)})||v[0]||null}
+function say(el){
+  if(cur)cur.classList.remove('playing');
+  if(!S){el.title='Trình duyệt này không hỗ trợ đọc audio';return}
+  S.cancel();cur=el;el.classList.add('playing');
+  var t=el.textContent.replace(/\s+/g,' ').replace(/\s*\/\s*/g,'. ').replace(/→/g,'. ').replace(/Ba Vi/g,'Ba Vee').replace(/Ninh Binh/g,'Ning Bing').replace(/Tam Dao/g,'Tam Zao').trim();
+  var u=new SpeechSynthesisUtterance(t);u.lang=st.acc;u.rate=st.rate;var v=voice();if(v)u.voice=v;
+  u.onend=u.onerror=function(){el.classList.remove('playing')};S.speak(u);
+}
+function prep(root){root.querySelectorAll('.say').forEach(function(e){e.tabIndex=0;e.setAttribute('role','button')})}
+prep(document);
+document.addEventListener('click',function(e){var el=e.target.closest('.say');if(el)say(el)});
+document.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.classList&&e.target.classList.contains('say')){e.preventDefault();say(e.target)}});
+document.querySelectorAll('.audio-bar button').forEach(function(b){b.addEventListener('click',function(){
+  b.parentElement.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');
+  if(b.dataset.acc)st.acc=b.dataset.acc;if(b.dataset.rate)st.rate=+b.dataset.rate;
+})});
+
+/* ===== Small talk thứ Hai =====
+   PAST: [quá khứ, nghĩa, động từ quá khứ để giải thích]
+   NEXT: [V nguyên mẫu, V-ing, nghĩa] */
+var PAST=[['slept in and watched a series','ngủ nướng và xem phim bộ','slept, watched'],['went to the park with my dog','đi công viên với chó','went'],
+  ['had brunch with some friends','ăn sáng muộn với bạn bè','had'],['visited my grandparents','thăm ông bà','visited'],['went hiking near the city','đi leo núi gần thành phố','went'],
+  ['did the housework and ran some errands','làm việc nhà và chạy việc vặt','did, ran'],['saw a movie at the cinema','xem phim ở rạp','saw'],['cooked a big dinner for my family','nấu bữa tối thịnh soạn cho gia đình','cooked'],
+  ['went shopping and bought new shoes','đi mua sắm và mua giày mới','went, bought'],['stayed in and read a book','ở nhà đọc sách','stayed, read']];
+var FEEL=[['relaxing','thư giãn',1],['fun','vui',1],['busy','bận rộn',0],['exhausting','mệt nhoài',0],['lazy','lười biếng',1],['productive','làm được nhiều việc',1]];
+var NEXT=[['go camping','going camping','đi cắm trại'],['visit my parents','visiting my parents','thăm bố mẹ'],['have dinner with my cousin','having dinner with my cousin','ăn tối với em họ'],
+  ['go to the beach','going to the beach','đi biển'],['clean my apartment','cleaning my apartment','dọn căn hộ'],['go to a concert','going to a concert','đi xem ca nhạc'],['try a new café','trying a new café','thử quán cà phê mới']];
+function fill(id,arr,lab){var s=document.getElementById(id);arr.forEach(function(x,i){s.add(new Option(lab(x),i))});return s}
+var gsa=fill('g-sa',PAST,function(x){return x[1]}),gsu=fill('g-su',PAST,function(x){return x[1]}),gfe=fill('g-fe',FEEL,function(x){return x[0]+' ('+x[1]+')'}),
+    gnx=fill('g-nx',NEXT,function(x){return x[2]}),gce=document.getElementById('g-ce');
+gsa.value=0;gsu.value=2;gfe.value=0;gnx.value=0;gce.value='2';
+var out=document.getElementById('gen-out');
+function cap(s){return s.charAt(0).toUpperCase()+s.slice(1)}
+function line(label,text,cls){var d=document.createElement('div');d.className='rl'+(cls?' '+cls:'');var lb=document.createElement('span');lb.className='lbl';lb.textContent=label;var sp=document.createElement('span');sp.className='say';sp.textContent=text;d.append(lb,sp);out.append(d)}
+function show(){
+  var sa=PAST[+gsa.value],su=PAST[+gsu.value],f=FEEL[+gfe.value],nx=NEXT[+gnx.value],ce=+gce.value;
+  if(sa===su)su=PAST[(+gsu.value+1)%PAST.length];
+  var art=/^[aeiou]/.test(f[0])?'an':'a';
+  var opener=f[2]?'It was great, thanks!':'It was okay, thanks.';
+  var ans=opener+' On Saturday, I '+sa[0]+'. On Sunday, I '+su[0]+'. It was such '+art+' '+f[0]+' weekend.';
+  var plan;
+  if(ce===0)plan='I’m '+nx[1]+' on Saturday. I booked it last week.';
+  else if(ce===1)plan='I’m going to '+nx[0]+'.';
+  else plan='I might '+nx[0]+', but it depends on the weather.';
+  out.innerHTML='';
+  line('ĐỒNG NGHIỆP','Morning! How was your weekend?','q');
+  line('BẠN',ans+' How about yours?');
+  line('ĐỒNG NGHIỆP','Nice! Any plans for next weekend?','q');
+  line('BẠN',plan);
+  line('ĐỒNG NGHIỆP','Sounds good. Have a great week!','q');
+  var vn=document.createElement('div');vn.style.color='var(--muted)';vn.style.fontSize='13px';
+  vn.textContent='Nghĩa: Thứ Bảy '+sa[1]+', Chủ nhật '+su[1]+'. Cuối tuần '+f[1]+'. Cuối tuần tới '+['đã hẹn','định','có thể'][ce]+' '+nx[2]+'.';out.append(vn);
+  var w=document.createElement('span');w.className='why';
+  w.innerHTML='Kể chuyện đã qua: quá khứ đơn (<b>'+sa[2]+'</b>; <b>'+su[2]+'</b>). Nhận xét: <b>such '+art+' '+f[0]+' weekend</b> (vì có danh từ). Kế hoạch: '+['<b>be + V-ing</b> vì đã hẹn hoặc đã đặt','<b>be going to + V</b> vì đã định sẵn','<b>might + V</b> vì chưa chắc'][ce]+'.';
+  out.append(w);prep(out);
+}
+document.getElementById('gen-btn').addEventListener('click',show);
+[gsa,gsu,gfe,gnx,gce].forEach(function(s){s.addEventListener('change',show)});
+document.getElementById('rnd-btn').addEventListener('click',function(){
+  var i=Math.floor(Math.random()*PAST.length),j;do{j=Math.floor(Math.random()*PAST.length)}while(j===i);
+  gsa.value=i;gsu.value=j;gfe.value=Math.floor(Math.random()*FEEL.length);gnx.value=Math.floor(Math.random()*NEXT.length);gce.value=String(Math.floor(Math.random()*3));show();
+});
+show();
+
+/* Bài tập */
+var inputs=document.querySelectorAll('#exlist input'),exo=document.getElementById('ex-out');
+function norm(s){return s.toLowerCase().replace(/[’‘`]/g,"'").replace(/[.!?]+$/,'').replace(/[,.]/g,'').replace(/\s+/g,' ').trim()}
+document.getElementById('ex-check').addEventListener('click',function(){
+  var ok=0;
+  inputs.forEach(function(i){
+    var good=i.dataset.a.split('|').some(function(a){return norm(a)===norm(i.value)});
+    i.classList.remove('ok','no');i.classList.add(good?'ok':'no');if(good)ok++;
+  });
+  exo.style.minHeight='';
+  exo.textContent=ok===inputs.length?'🎉 Chính xác '+ok+'/'+inputs.length+'. Sáng thứ Hai bạn sẵn sàng small talk rồi!':'Đúng '+ok+'/'+inputs.length+'. Các ô viền đỏ cần xem lại; đọc lại phần ngữ pháp ở Bài 1 đến 5, hoặc bấm “Xem đáp án”.';
+});
+document.getElementById('ex-show').addEventListener('click',function(){
+  inputs.forEach(function(i){
+    var k=i.parentElement.querySelector('.key');
+    if(!k){k=document.createElement('span');k.className='key';i.parentElement.append(k)}
+    var a=i.dataset.a.split('|')[0].replace(/'/g,'’').replace(/\bi\b/g,'I').replace('not much I','not much. I');k.textContent='Đáp án: '+(a.indexOf(' ')>-1?cap(a):a);
+  });
+});
+document.getElementById('ex-reset').addEventListener('click',function(){
+  inputs.forEach(function(i){i.value='';i.classList.remove('ok','no')});
+  document.querySelectorAll('#exlist .key').forEach(function(k){k.remove()});
+  exo.textContent='';exo.style.minHeight='0';
+});
+})();
+</script>
+
+<script src="nav.js" defer></script>
+</body></html>

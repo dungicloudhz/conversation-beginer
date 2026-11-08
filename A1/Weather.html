@@ -1,0 +1,527 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Tiếng Anh Weather</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: sidebar mục lục cố định + cột bài học, cùng theme tối của bộ "Hỏi đường & Hỏi giờ" (nhấn xanh trời – vàng nắng cho chủ đề thời tiết) */
+:root{color-scheme:dark;
+--bg:#080810;--s1:#0e0e1c;--s2:#131326;--s3:#18182e;--border:#222240;--border2:#2c2c50;--text:#e6e6f2;--muted:#8a8ab8;--faint:#4a4a78;
+--acc:#ffd060;--acc-dim:rgba(255,208,96,.11);--oc:#38bdf8;--oc-dim:rgba(56,189,248,.13);--ins:#40d88e;--ins-dim:rgba(64,216,142,.12);
+--sk:#a07af4;--sk-dim:rgba(160,122,244,.12);--au:#ff6584;--au-dim:rgba(255,101,132,.12);--teal:#30d8c0;--code-bg:#05050e;
+--tip-bg:rgba(91,168,255,.10);--tip-bd:rgba(91,168,255,.25);--tip-fg:#8ab8f0;--warn-fg:#e0bc58;--ok-fg:#5ccf98;--line:rgba(255,255,255,.05);
+--font:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+--gl:max(64px,env(safe-area-inset-left,0px));--gr:max(64px,env(safe-area-inset-right,0px))}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 60px)}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.7;font-size:15px;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:600;background:var(--s1)}
+.sidebar{position:fixed;left:0;top:0;width:260px;height:100%;background:var(--s1);border-right:1px solid var(--border);overflow-y:auto;z-index:400;padding-top:env(safe-area-inset-top,0px);padding-left:env(safe-area-inset-left,0px)}
+.sb-logo{padding:20px 18px 16px;border-bottom:1px solid var(--border)}
+.sb-brand{display:flex;align-items:center;gap:11px;margin-bottom:12px}
+.logo-icon{width:44px;height:44px;border-radius:11px;background:linear-gradient(135deg,var(--oc),var(--acc));display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 0 26px rgba(56,189,248,.3)}
+.logo-text h2{font-size:15px;font-weight:800}.logo-text p{font-size:10.5px;color:var(--muted)}
+.prog-wrap{height:3px;background:var(--border);border-radius:2px;overflow:hidden}
+.prog-bar{height:100%;width:0;background:linear-gradient(90deg,var(--acc),var(--ins),var(--oc),var(--sk),var(--au))}
+.nav-label{padding:14px 18px 4px;font-size:9.5px;font-weight:700;letter-spacing:1.6px;color:var(--faint)}
+.nav-link{display:flex;align-items:center;gap:9px;padding:7px 18px;color:var(--muted);text-decoration:none;font-size:12.5px;font-weight:600;border-left:2px solid transparent}
+.nav-link:hover,.nav-link.active{color:var(--text);background:rgba(255,208,96,.07);border-left-color:var(--acc)}
+.main{margin-left:260px}
+.hero{padding-block:80px 60px;padding-left:var(--gl);padding-right:var(--gr);border-bottom:1px solid var(--border);background:radial-gradient(ellipse 65% 55% at 75% 22%,rgba(56,189,248,.11),transparent 60%),radial-gradient(ellipse 50% 55% at 10% 82%,rgba(255,208,96,.07),transparent 55%),var(--bg)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--acc-dim);border:1px solid rgba(255,208,96,.38);color:var(--acc);padding:5px 16px;border-radius:100px;font-size:11.5px;font-weight:700;margin-bottom:24px}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--acc);animation:p 2s infinite}
+@keyframes p{50%{opacity:.35;transform:scale(.7)}}
+@media(prefers-reduced-motion:reduce){.eyebrow i{animation:none}html{scroll-behavior:auto}}
+.hero h1{font-size:50px;font-weight:900;letter-spacing:-2.4px;line-height:1.06;margin-bottom:18px;text-wrap:balance}
+.grad{background:linear-gradient(135deg,var(--oc),var(--acc));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-desc{font-size:16px;color:var(--muted);max-width:620px;margin-bottom:28px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{padding:5px 14px;border-radius:7px;font-size:12px;font-weight:700}
+.c1{background:var(--oc-dim);color:var(--oc)}.c2{background:var(--ins-dim);color:var(--ins)}.c3{background:var(--acc-dim);color:var(--acc)}.c4{background:var(--sk-dim);color:var(--sk)}.c5{background:var(--au-dim);color:var(--au)}
+.content{padding-block:56px;padding-left:var(--gl);padding-right:var(--gr);max-width:calc(1020px + 64px)}
+.section{margin-bottom:68px}
+.sec-head{display:flex;gap:14px;align-items:flex-start;margin-bottom:28px;padding-bottom:18px;border-bottom:1px solid var(--border)}
+.sec-tag{font-family:var(--mono);font-size:10px;font-weight:600;padding:3px 10px;border-radius:5px;margin-top:6px;flex-shrink:0;letter-spacing:.5px}
+.t1{color:var(--oc);background:var(--oc-dim)}.t2{color:var(--ins);background:var(--ins-dim)}.t3{color:var(--acc);background:var(--acc-dim)}.t4{color:var(--sk);background:var(--sk-dim)}.t5{color:var(--au);background:var(--au-dim)}
+.sec-title{font-size:23px;font-weight:800;letter-spacing:-.6px;text-wrap:balance}.sec-sub{font-size:13px;color:var(--muted)}
+.sub-title{font-size:14.5px;font-weight:700;margin:26px 0 12px;display:flex;align-items:center;gap:10px}
+.sub-title::before{content:'';width:14px;height:3px;background:var(--acc);border-radius:2px}
+p.t{color:var(--muted);font-size:13.5px;margin-bottom:11px;max-width:68ch}p.t strong,li strong{color:var(--text)}
+.ex-box{background:var(--s1);border:1px solid var(--border2);border-radius:11px;overflow:hidden;margin:13px 0}
+.ex-head{display:flex;align-items:center;gap:8px;padding:9px 16px;background:var(--s2);border-bottom:1px solid var(--border);font-family:var(--mono);font-size:10px;font-weight:600;color:var(--muted);letter-spacing:.5px}
+.ex-tag{margin-left:auto;font-size:9px;font-weight:700;padding:2px 9px;border-radius:100px;font-family:var(--font)}
+.ex-body{padding:10px 20px}
+.ex-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:13.5px}
+.ex-row:last-child{border-bottom:none}
+.ex-en{color:var(--text);font-weight:600;min-width:280px}.ex-vn{color:var(--muted)}
+.info{display:flex;gap:12px;padding:14px 16px;border-radius:9px;margin:13px 0;font-size:13px;line-height:1.6}
+.i-tip{background:var(--tip-bg);border:1px solid var(--tip-bd);color:var(--tip-fg)}
+.i-warn{background:var(--acc-dim);border:1px solid rgba(255,208,96,.25);color:var(--warn-fg)}
+.i-ok{background:var(--ins-dim);border:1px solid rgba(64,216,142,.25);color:var(--ok-fg)}
+.tbl{width:100%;border-collapse:collapse;font-size:13px;margin:13px 0;display:block;overflow-x:auto}
+.tbl th{background:var(--s3);padding:10px 14px;text-align:left;font-size:10px;color:var(--muted);border-bottom:1px solid var(--border2);white-space:nowrap;letter-spacing:.5px}
+.tbl td{padding:10px 14px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:top}
+.tbl td:first-child{color:var(--text);font-weight:600}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}
+.card{background:var(--s1);border:1px solid var(--border);border-radius:11px;padding:16px;min-width:0}
+.card:hover{border-color:var(--acc)}
+.card-icon{font-size:24px}.card-title{font-size:13px;font-weight:700}.card-desc{font-size:12px;color:var(--muted)}
+.cmp{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);border-radius:11px;overflow:hidden;margin:13px 0}
+.bad{background:rgba(255,101,132,.07);padding:14px 16px;border-right:1px solid var(--border)}.good{background:rgba(64,216,142,.07);padding:14px 16px}
+.cmp b{display:block;font-size:10px;margin-bottom:6px;letter-spacing:.5px}.bad b{color:var(--au)}.good b{color:var(--ins)}
+.cmp div div{font-size:13.5px}
+.dlg{display:grid;gap:8px;margin:12px 0;background:var(--s1);border:1px solid var(--border2);border-radius:12px;padding:16px 18px}
+.dlg-t{font-size:10px;font-weight:800;color:var(--acc);margin-bottom:2px;letter-spacing:.6px}
+.turn{display:flex;gap:10px;align-items:baseline}
+.turn>div{min-width:0}
+.who{flex-shrink:0;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+.wa{background:var(--oc-dim);color:var(--oc)}.wb{background:var(--ins-dim);color:var(--ins)}
+.turn .say{font-weight:600}.turn small{display:block;color:var(--muted);font-size:12px;font-weight:400}
+.gen{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0}
+.gen label{font-size:11.5px;color:var(--muted);font-weight:600;display:block;min-width:0}
+.gen select{width:100%;margin-top:4px;background:var(--code-bg);border:1px solid var(--border2);border-radius:8px;padding:9px 12px;color:var(--text);font:inherit;font-size:13px}
+select:focus-visible,button:focus-visible,.say:focus-visible,.exi input:focus-visible,.chk input:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.btns{display:flex;flex-wrap:wrap;gap:6px}
+.btn{background:var(--acc-dim);color:var(--acc);border:1px solid var(--acc);border-radius:8px;padding:8px 16px;font:inherit;font-weight:700;font-size:13px;cursor:pointer}
+.btn.alt{background:var(--ins-dim);color:var(--ins);border-color:var(--ins)}
+.out{margin-top:14px;min-height:60px;background:var(--s2);border:1px dashed var(--border2);border-radius:10px;padding:14px 16px;font-size:14px;line-height:1.9}
+.big{font-size:21px;font-weight:800;color:var(--acc);letter-spacing:-.3px;line-height:1.4;margin-bottom:4px}
+.out .why{display:block;color:var(--muted);font-size:12.5px}
+.out .why b{color:var(--teal);font-family:var(--mono);font-weight:600}
+.timeline{display:grid;gap:0;margin:14px 0;border-left:2px solid var(--border2);padding-left:18px}
+.tl{position:relative;padding:8px 0 12px}
+.tl::before{content:'';position:absolute;left:-24px;top:16px;width:10px;height:10px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 3px var(--bg)}
+.tl time{font-family:var(--mono);font-size:12px;color:var(--acc);font-variant-numeric:tabular-nums;font-weight:600}
+.tl .say{font-weight:600;font-size:13.5px}
+.tl small{display:block;color:var(--muted);font-size:12px}
+.freq{display:grid;gap:7px;margin:14px 0}
+.fq{display:grid;grid-template-columns:110px 1fr 54px;gap:12px;align-items:center;font-size:13px}
+.fq .say{font-weight:700}
+.fq .track{height:8px;background:var(--s3);border-radius:4px;overflow:hidden}
+.fq .fill{height:100%;background:linear-gradient(90deg,var(--ins),var(--acc))}
+.fq span:last-child{font-family:var(--mono);font-size:11.5px;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+.plan{display:grid;gap:8px;margin:12px 0}
+.day{display:flex;gap:14px;align-items:baseline;background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:12px 16px;font-size:13px;color:var(--muted)}
+.day b{color:var(--acc);font-family:var(--mono);font-size:12px;flex-shrink:0;width:52px}.day strong{color:var(--text)}
+.chk{list-style:none;margin:10px 0}.chk li{padding:6px 0;font-size:13.5px;color:var(--muted);border-bottom:1px solid rgba(255,255,255,.04)}
+.chk input{accent-color:var(--ins);margin-right:10px;width:15px;height:15px;vertical-align:-2px}
+.gr{border:1px solid rgba(160,122,244,.38);background:linear-gradient(180deg,var(--sk-dim),transparent 110px),var(--s1);border-radius:12px;margin:28px 0;overflow:hidden}
+.gr-head{padding:10px 18px;font-size:12px;font-weight:800;color:var(--sk);border-bottom:1px solid var(--border);display:flex;gap:10px;flex-wrap:wrap;align-items:baseline;letter-spacing:.4px}
+.gr-head em{font-style:normal;color:var(--muted);font-weight:600;letter-spacing:0}
+.gr-body{padding:14px 18px;font-size:13.5px;color:var(--muted)}
+.gr-body p{margin-bottom:10px}.gr-body b{color:var(--text)}.gr-body ul{padding-left:20px;margin-bottom:8px}.gr-body li{margin-bottom:4px}
+.gr-body .tbl{margin:8px 0 12px}
+.fm{display:inline-block;font-family:var(--mono);font-size:12px;background:var(--code-bg);color:var(--teal);padding:3px 9px;border-radius:6px;margin:2px 0}
+.say{cursor:pointer;border-bottom:1px dotted var(--oc)}
+.say:hover{color:var(--acc);background:var(--acc-dim);border-radius:4px}
+.say::after{content:"🔊";font-size:.68em;margin-left:3px;opacity:.5}
+.say.playing{color:var(--ins);background:var(--ins-dim);border-radius:4px}.say.playing::after{opacity:1}
+.exi{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:13.5px;color:var(--text)}
+.exi input{width:220px;max-width:100%;background:var(--code-bg);border:1px solid var(--border2);border-radius:6px;padding:4px 8px;color:var(--text);font:inherit;font-size:13px;text-align:center}
+.exi input.ok{border-color:var(--ins);color:var(--ins)}.exi input.no{border-color:var(--au);color:var(--au)}
+.exi small{color:var(--muted);font-size:11.5px}
+.exi .key{color:var(--ins);font-size:12px;width:100%}
+.footer{border-top:1px solid var(--border);padding-block:28px 90px;padding-left:var(--gl);padding-right:var(--gr);font-size:12px;color:var(--muted)}
+.audio-bar{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:500;display:flex;gap:10px;align-items:center;background:var(--s2);border:1px solid var(--border2);border-radius:12px;padding:8px 12px;box-shadow:0 8px 28px rgba(0,0,0,.5);font-size:12px;color:var(--muted)}
+.audio-bar b{color:var(--acc)}.ab-g{display:flex;gap:4px}
+.audio-bar button{background:var(--s3);color:var(--muted);border:1px solid var(--border);border-radius:7px;padding:4px 10px;font:inherit;font-weight:700;cursor:pointer}
+.audio-bar button.on{background:var(--acc-dim);color:var(--acc);border-color:var(--acc)}
+.topnav{display:none}
+@media(max-width:900px){
+:root{--gl:max(18px,env(safe-area-inset-left,0px));--gr:max(18px,env(safe-area-inset-right,0px))}
+.sidebar{display:none}.main{margin-left:0}.hero h1{font-size:32px;letter-spacing:-1.4px}.hero{padding-block:48px 40px}
+.grid-3,.cmp{grid-template-columns:1fr}.gen{grid-template-columns:1fr 1fr}.bad{border-right:none;border-bottom:1px solid var(--border)}
+.topnav{display:flex;overflow-x:auto;position:sticky;top:env(safe-area-inset-top,0px);z-index:500;background:var(--s1);border-bottom:2px solid var(--border2);scrollbar-width:none;padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+.topnav a{flex-shrink:0;padding:10px 14px;color:var(--muted);text-decoration:none;font-size:12px;font-weight:700;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-2px}
+.topnav a.active{color:var(--acc);border-bottom-color:var(--acc);background:var(--acc-dim)}
+.ex-en{min-width:0}
+.fq{grid-template-columns:90px 1fr 46px}
+.audio-bar{left:calc(8px + env(safe-area-inset-left,0px));right:calc(8px + env(safe-area-inset-right,0px));justify-content:center;flex-wrap:wrap}
+}
+@media(max-width:480px){.gen{grid-template-columns:1fr}}
+.temp{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin:14px 0}
+.tp{background:var(--s1);border:1px solid var(--border);border-top:3px solid var(--c);border-radius:10px;padding:10px 12px;display:grid;gap:2px;min-width:0}
+.tp b{color:var(--c);font-size:14px}.tp span{font-family:var(--mono);font-size:11px;color:var(--text);font-variant-numeric:tabular-nums}.tp em{font-style:normal;font-size:12px;color:var(--muted)}
+.clock{font-family:var(--mono);font-size:28px;font-weight:600;color:var(--oc);letter-spacing:1px;margin-bottom:6px;font-variant-numeric:tabular-nums}
+@media(max-width:900px){.temp{grid-template-columns:repeat(3,1fr)}}
+</style>
+
+<aside class="sidebar">
+  <div class="sb-logo">
+    <div class="sb-brand"><div class="logo-icon">🌤️</div><div class="logo-text"><h2>Weather</h2><p>Tiếng Anh cho người mới</p></div></div>
+    <div class="prog-wrap"><div class="prog-bar" id="pbar"></div></div>
+  </div>
+  <div class="nav-label">BÀI HỌC</div>
+  <a class="nav-link" href="#s1">☁️ Các kiểu thời tiết</a>
+  <a class="nav-link" href="#s2">🌡️ Nhiệt độ</a>
+  <a class="nav-link" href="#s3">❓ Hỏi về thời tiết</a>
+  <a class="nav-link" href="#s4">🍂 Mùa &amp; khí hậu</a>
+  <a class="nav-link" href="#s5">📡 Dự báo &amp; kế hoạch</a>
+  <div class="nav-label">THỰC HÀNH</div>
+  <a class="nav-link" href="#s6">💬 Hội thoại mẫu</a>
+  <a class="nav-link" href="#s7">🛠️ Máy báo thời tiết &amp; bài tập</a>
+  <a class="nav-link" href="#s8">🚀 Từ vựng nâng cao</a>
+</aside>
+
+<div class="main">
+<nav class="topnav">
+  <a href="#s1">1 Thời tiết</a><a href="#s2">2 Nhiệt độ</a><a href="#s3">3 Hỏi</a><a href="#s4">4 Mùa</a><a href="#s5">5 Dự báo</a><a href="#s6">6 Hội thoại</a><a href="#s7">7 Bài tập</a><a href="#s8">8 Nâng cao</a>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow"><i></i>Dành cho người mới bắt đầu</div>
+  <h1>Nói về thời tiết<br><span class="grad">bằng tiếng Anh</span></h1>
+  <p class="hero-desc">Thời tiết là chủ đề bắt chuyện dễ nhất với người nước ngoài. Học cách tả trời nắng, mưa, nóng, lạnh, nói nhiệt độ, kể về các mùa ở Việt Nam và bàn kế hoạch theo dự báo. Bấm vào câu có biểu tượng loa để nghe, nói theo, rồi luyện với máy báo thời tiết ở phần thực hành.</p>
+  <div class="chips"><span class="chip c1">Thời tiết</span><span class="chip c3">Nhiệt độ</span><span class="chip c2">Hỏi &amp; đáp</span><span class="chip c4">Mùa &amp; dự báo</span><span class="chip c5">Từ vựng nâng cao</span></div>
+</header>
+
+<div class="content">
+
+<section class="section" id="s1">
+  <div class="sec-head"><span class="sec-tag t1">BÀI 1</span><div><div class="sec-title">Các kiểu thời tiết</div><div class="sec-sub">Từ cơ bản để tả bầu trời hôm nay</div></div></div>
+  <div class="grid-3">
+    <div class="card"><div class="card-icon">☀️</div><div class="card-title say">sunny</div><div class="card-desc">nắng</div></div>
+    <div class="card"><div class="card-icon">☁️</div><div class="card-title say">cloudy</div><div class="card-desc">nhiều mây</div></div>
+    <div class="card"><div class="card-icon">🌧️</div><div class="card-title say">rainy</div><div class="card-desc">mưa</div></div>
+    <div class="card"><div class="card-icon">💨</div><div class="card-title say">windy</div><div class="card-desc">nhiều gió</div></div>
+    <div class="card"><div class="card-icon">🌫️</div><div class="card-title say">foggy</div><div class="card-desc">có sương mù</div></div>
+    <div class="card"><div class="card-icon">⛈️</div><div class="card-title say">stormy</div><div class="card-desc">có bão, giông</div></div>
+  </div>
+  <div class="sub-title">Danh từ → tính từ</div>
+  <table class="tbl"><thead><tr><th>Danh từ</th><th>Tính từ</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">sun</td><td class="say">sunny</td><td>mặt trời → nắng</td><td><span class="say">It’s sunny today.</span></td></tr>
+  <tr><td class="say">cloud</td><td class="say">cloudy</td><td>mây → nhiều mây</td><td><span class="say">It’s a bit cloudy.</span></td></tr>
+  <tr><td class="say">rain</td><td class="say">rainy</td><td>mưa → có mưa</td><td><span class="say">It’s a rainy day.</span></td></tr>
+  <tr><td class="say">wind</td><td class="say">windy</td><td>gió → nhiều gió</td><td><span class="say">It’s very windy outside.</span></td></tr>
+  <tr><td class="say">fog</td><td class="say">foggy</td><td>sương mù</td><td><span class="say">It’s foggy this morning.</span></td></tr>
+  <tr><td class="say">storm</td><td class="say">stormy</td><td>bão → giông bão</td><td><span class="say">It’s stormy tonight.</span></td></tr></tbody></table>
+  <div class="info i-tip"><span>💡</span><span><strong>Mẹo:</strong> thêm <strong>-y</strong> vào danh từ là ra tính từ thời tiết. Nhớ gấp đôi chữ cuối với <em>sun → sunny</em> và <em>fog → foggy</em>.</span></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>It’s + tính từ / It’s + V-ing</em></div><div class="gr-body">
+<p>Tiếng Anh luôn dùng <b>It</b> làm chủ ngữ khi nói về thời tiết.</p>
+<table class="tbl"><thead><tr><th>Cấu trúc</th><th>Ví dụ</th><th>Dùng khi</th></tr></thead><tbody>
+<tr><td><span class="fm">It’s + tính từ</span></td><td><span class="say">It’s sunny.</span> <span class="say">It’s cold.</span></td><td>Tả trạng thái</td></tr>
+<tr><td><span class="fm">It’s + V-ing</span></td><td><span class="say">It’s raining.</span> <span class="say">It’s snowing.</span></td><td>Đang mưa, đang có tuyết lúc này</td></tr></tbody></table>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>Today is rain.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">It’s raining today.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s2">
+  <div class="sec-head"><span class="sec-tag t3">BÀI 2</span><div><div class="sec-title">Nhiệt độ</div><div class="sec-sub">Nói nóng hay lạnh, và đọc số độ</div></div></div>
+  <div class="temp" aria-label="Thang nhiệt độ">
+    <div class="tp" style="--c:#7dd3fc"><b>freezing</b><span>dưới 0°C</span><em>lạnh cóng</em></div>
+    <div class="tp" style="--c:#38bdf8"><b>cold</b><span>0–12°C</span><em>lạnh</em></div>
+    <div class="tp" style="--c:#30d8c0"><b>cool</b><span>13–20°C</span><em>mát</em></div>
+    <div class="tp" style="--c:#40d88e"><b>warm</b><span>21–27°C</span><em>ấm</em></div>
+    <div class="tp" style="--c:#ffd060"><b>hot</b><span>28–34°C</span><em>nóng</em></div>
+    <div class="tp" style="--c:#ff6584"><b>boiling</b><span>trên 35°C</span><em>nóng như thiêu</em></div>
+  </div>
+  <div class="ex-box"><div class="ex-head">NÓI NHIỆT ĐỘ<span class="ex-tag t3">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">It’s thirty-two degrees today.</span><span class="ex-vn">Hôm nay 32 độ</span></div>
+    <div class="ex-row"><span class="ex-en say">It’s about twenty degrees Celsius.</span><span class="ex-vn">Khoảng 20 độ C</span></div>
+    <div class="ex-row"><span class="ex-en say">It’s minus five in Seoul.</span><span class="ex-vn">Ở Seoul âm 5 độ</span></div>
+    <div class="ex-row"><span class="ex-en say">It’s getting colder.</span><span class="ex-vn">Trời đang lạnh dần</span></div>
+    <div class="ex-row"><span class="ex-en say">It’s warmer than yesterday.</span><span class="ex-vn">Ấm hơn hôm qua</span></div>
+    <div class="ex-row"><span class="ex-en say">What’s the temperature today?</span><span class="ex-vn">Hôm nay bao nhiêu độ?</span></div>
+  </div></div>
+  <div class="info i-warn"><span>⚠️</span><span><strong>Nhớ:</strong> người Mỹ dùng độ F (<strong>Fahrenheit</strong>). 30°C ≈ 86°F, 20°C = 68°F. Nếu người Mỹ nói “It’s ninety degrees”, nghĩa là khoảng 32°C, rất nóng chứ không phải sôi!</span></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>So sánh hơn với thời tiết</em></div><div class="gr-body">
+<ul><li><span class="fm">tính từ ngắn + -er + than</span> → <span class="say">Today is hotter than yesterday.</span> (hot → hotter)</li>
+<li><span class="fm">-y → -ier</span> → <span class="say">It’s windier in the afternoon.</span></li>
+<li><span class="fm">get + -er</span> (đang dần) → <span class="say">It’s getting warmer.</span></li></ul>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>Today is more hot than yesterday.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">Today is hotter than yesterday.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s3">
+  <div class="sec-head"><span class="sec-tag t2">BÀI 3</span><div><div class="sec-title">Hỏi và trả lời về thời tiết</div><div class="sec-sub">Câu mở đầu cuộc trò chuyện quen thuộc nhất</div></div></div>
+  <div class="ex-box"><div class="ex-head">CÂU HỎI<span class="ex-tag t2">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">What’s the weather like today?</span><span class="ex-vn">Hôm nay thời tiết thế nào?</span></div>
+    <div class="ex-row"><span class="ex-en say">How’s the weather in Hanoi?</span><span class="ex-vn">Thời tiết ở Hà Nội thế nào?</span></div>
+    <div class="ex-row"><span class="ex-en say">Is it raining outside?</span><span class="ex-vn">Ngoài trời có đang mưa không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Is it cold there now?</span><span class="ex-vn">Bên đó giờ có lạnh không?</span></div>
+    <div class="ex-row"><span class="ex-en say">What’s the weather like in your country?</span><span class="ex-vn">Thời tiết ở nước bạn thế nào?</span></div>
+  </div></div>
+  <div class="ex-box"><div class="ex-head">TRẢ LỜI<span class="ex-tag t1">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">It’s sunny and hot.</span><span class="ex-vn">Trời nắng và nóng</span></div>
+    <div class="ex-row"><span class="ex-en say">It’s cloudy, but it isn’t raining.</span><span class="ex-vn">Trời nhiều mây nhưng không mưa</span></div>
+    <div class="ex-row"><span class="ex-en say">It’s raining heavily.</span><span class="ex-vn">Trời đang mưa to</span></div>
+    <div class="ex-row"><span class="ex-en say">It’s nice and cool.</span><span class="ex-vn">Trời mát mẻ dễ chịu</span></div>
+    <div class="ex-row"><span class="ex-en say">It’s a beautiful day!</span><span class="ex-vn">Hôm nay đẹp trời quá!</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>What’s … like? hỏi tính chất</em></div><div class="gr-body">
+<p><span class="fm">What + is + S + like?</span> nghĩa là “… thế nào?”. Từ <b>like</b> ở đây không có nghĩa là “thích”.</p>
+<ul><li><span class="say">What’s the weather like in Da Lat?</span></li><li><span class="say">What was the weather like yesterday?</span></li></ul>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>How is the weather like?</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">What’s the weather like?</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s4">
+  <div class="sec-head"><span class="sec-tag t4">BÀI 4</span><div><div class="sec-title">Mùa và khí hậu</div><div class="sec-sub">Kể về các mùa ở Việt Nam cho người nước ngoài</div></div></div>
+  <div class="grid-3">
+    <div class="card"><div class="card-icon">🌸</div><div class="card-title say">spring</div><div class="card-desc">mùa xuân</div></div>
+    <div class="card"><div class="card-icon">🌞</div><div class="card-title say">summer</div><div class="card-desc">mùa hè</div></div>
+    <div class="card"><div class="card-icon">🍁</div><div class="card-title say">autumn / fall</div><div class="card-desc">mùa thu (Anh / Mỹ)</div></div>
+    <div class="card"><div class="card-icon">❄️</div><div class="card-title say">winter</div><div class="card-desc">mùa đông</div></div>
+    <div class="card"><div class="card-icon">🏜️</div><div class="card-title say">the dry season</div><div class="card-desc">mùa khô</div></div>
+    <div class="card"><div class="card-icon">☔</div><div class="card-title say">the rainy season</div><div class="card-desc">mùa mưa</div></div>
+  </div>
+  <div class="ex-box"><div class="ex-head">KHÍ HẬU VIỆT NAM<span class="ex-tag t4">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">The north of Vietnam has four seasons.</span><span class="ex-vn">Miền Bắc Việt Nam có bốn mùa</span></div>
+    <div class="ex-row"><span class="ex-en say">The south has two seasons: the dry season and the rainy season.</span><span class="ex-vn">Miền Nam có hai mùa: mùa khô và mùa mưa</span></div>
+    <div class="ex-row"><span class="ex-en say">In Hanoi, it’s very hot in summer.</span><span class="ex-vn">Ở Hà Nội, mùa hè rất nóng</span></div>
+    <div class="ex-row"><span class="ex-en say">Autumn is the best time to visit Hanoi.</span><span class="ex-vn">Mùa thu là lúc đẹp nhất để đến Hà Nội</span></div>
+    <div class="ex-row"><span class="ex-en say">It sometimes drizzles in spring.</span><span class="ex-vn">Mùa xuân thỉnh thoảng có mưa phùn</span></div>
+    <div class="ex-row"><span class="ex-en say">My favorite season is autumn because it’s cool.</span><span class="ex-vn">Mùa tôi thích nhất là mùa thu vì trời mát</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Hiện tại đơn cho khí hậu, tiếp diễn cho lúc này</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Thì</th><th>Dùng khi</th><th>Ví dụ</th></tr></thead><tbody>
+<tr><td><span class="fm">It rains / It is + adj</span></td><td>chuyện thường xảy ra, khí hậu</td><td><span class="say">It rains a lot in July.</span></td></tr>
+<tr><td><span class="fm">It’s raining</span></td><td>đang xảy ra ngay lúc này</td><td><span class="say">Look! It’s raining.</span></td></tr>
+<tr><td><span class="fm">in + mùa / tháng</span></td><td>giới từ đi với mùa, tháng</td><td><span class="say">It’s cold in December.</span></td></tr></tbody></table>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>It is raining a lot in Ho Chi Minh City every July.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">It rains a lot in Ho Chi Minh City in July.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s5">
+  <div class="sec-head"><span class="sec-tag t1">BÀI 5</span><div><div class="sec-title">Dự báo thời tiết và kế hoạch</div><div class="sec-sub">Nói về thời tiết ngày mai và quyết định nên làm gì</div></div></div>
+  <div class="ex-box"><div class="ex-head">DỰ BÁO<span class="ex-tag t1">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">What’s the forecast for tomorrow?</span><span class="ex-vn">Dự báo ngày mai thế nào?</span></div>
+    <div class="ex-row"><span class="ex-en say">It’s going to rain this afternoon.</span><span class="ex-vn">Chiều nay trời sẽ mưa</span></div>
+    <div class="ex-row"><span class="ex-en say">It will be sunny at the weekend.</span><span class="ex-vn">Cuối tuần sẽ nắng</span></div>
+    <div class="ex-row"><span class="ex-en say">Look at those dark clouds. It’s going to storm.</span><span class="ex-vn">Nhìn mây đen kìa. Sắp có giông</span></div>
+    <div class="ex-row"><span class="ex-en say">There’s a typhoon coming.</span><span class="ex-vn">Có bão đang đến</span></div>
+  </div></div>
+  <div class="ex-box"><div class="ex-head">KẾ HOẠCH THEO THỜI TIẾT<span class="ex-tag t2">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">If it rains, we’ll stay at home.</span><span class="ex-vn">Nếu trời mưa, chúng ta sẽ ở nhà</span></div>
+    <div class="ex-row"><span class="ex-en say">If it’s sunny, let’s go to the beach.</span><span class="ex-vn">Nếu trời nắng, mình đi biển nhé</span></div>
+    <div class="ex-row"><span class="ex-en say">Don’t forget your umbrella.</span><span class="ex-vn">Đừng quên ô nhé</span></div>
+    <div class="ex-row"><span class="ex-en say">Wear a warm jacket. It’s cold outside.</span><span class="ex-vn">Mặc áo khoác ấm vào. Ngoài trời lạnh</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>will / going to, và câu điều kiện loại 1</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Cấu trúc</th><th>Dùng khi</th><th>Ví dụ</th></tr></thead><tbody>
+<tr><td><span class="fm">It’s going to + V</span></td><td>có dấu hiệu rõ (mây đen…)</td><td><span class="say">It’s going to rain.</span></td></tr>
+<tr><td><span class="fm">It will + V</span></td><td>dự báo, dự đoán chung</td><td><span class="say">It will be cold tomorrow.</span></td></tr>
+<tr><td><span class="fm">If + hiện tại đơn, will + V</span></td><td>điều kiện có thể xảy ra</td><td><span class="say">If it’s cold, I’ll wear a coat.</span></td></tr></tbody></table>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>If it will rain, we stay home.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">If it rains, we’ll stay home.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s6">
+  <div class="sec-head"><span class="sec-tag t3">BÀI 6</span><div><div class="sec-title">Hội thoại mẫu</div><div class="sec-sub">Bấm từng câu để nghe, rồi đóng vai cả hai người</div></div></div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 1: BẮT CHUYỆN VỚI HÀNG XÓM</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Good morning! Hot today, isn’t it?</span><small>Chào buổi sáng! Hôm nay nóng nhỉ?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Yes, it’s really hot. I think it’s about thirty-five degrees.</span><small>Ừ, nóng thật. Chắc khoảng 35 độ.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Wow. Is it going to rain later?</span><small>Ồ. Lát nữa có mưa không?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">The forecast says there will be a storm this evening.</span><small>Dự báo nói tối nay sẽ có giông.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Good. It will be cooler after the rain.</span><small>Tốt quá. Mưa xong trời sẽ mát hơn.</small></div></div>
+  </div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 2: LÊN KẾ HOẠCH CUỐI TUẦN</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Let’s go to Ha Long Bay this weekend!</span><small>Cuối tuần này đi Hạ Long đi!</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Good idea. What’s the weather going to be like?</span><small>Ý hay đấy. Thời tiết sẽ thế nào?</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">It will be sunny on Saturday, but it might rain on Sunday.</span><small>Thứ Bảy nắng, nhưng Chủ nhật có thể mưa.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Then let’s go on Saturday. If it rains on Sunday, we’ll come back early.</span><small>Vậy đi thứ Bảy. Nếu Chủ nhật mưa thì mình về sớm.</small></div></div>
+  </div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 3: KỂ VỀ THỜI TIẾT QUÊ NHÀ</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">What’s the weather like in Vietnam?</span><small>Thời tiết ở Việt Nam thế nào?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">It depends. In the north, we have four seasons. Winter can be quite cold.</span><small>Còn tùy. Miền Bắc có bốn mùa. Mùa đông có thể khá lạnh.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Really? I thought it was always hot.</span><small>Thật à? Mình tưởng lúc nào cũng nóng.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">The south is hot all year. It’s only dry or rainy.</span><small>Miền Nam thì nóng quanh năm. Chỉ có mùa khô và mùa mưa.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">When is the best time to visit?</span><small>Khi nào đi là đẹp nhất?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">I’d say autumn. It’s cool and sunny in Hanoi.</span><small>Mình nghĩ là mùa thu. Hà Nội mát và nắng nhẹ.</small></div></div>
+  </div>
+  <div class="info i-ok"><span>✅</span><span><strong>Cách luyện:</strong> nghe một lượt, nói theo từng câu, rồi che phần tiếng Việt và tự đóng vai A hoặc B. Lần sau thay bằng thời tiết thật ở nơi bạn sống hôm nay.</span></div>
+</section>
+
+<section class="section" id="s7">
+  <div class="sec-head"><span class="sec-tag t2">BÀI 7</span><div><div class="sec-title">Máy báo thời tiết &amp; bài tập</div><div class="sec-sub">Chọn kiểu trời, nhiệt độ và thời điểm, xem câu đúng thì kèm lời khuyên</div></div></div>
+  <div class="gen">
+    <label for="g-w">Kiểu thời tiết<select id="g-w"></select></label>
+    <label for="g-t">Nhiệt độ<select id="g-t"></select></label>
+    <label for="g-when">Thời điểm<select id="g-when"></select></label>
+  </div>
+  <div class="btns"><button class="btn" id="gen-btn">Ghép câu</button><button class="btn alt" id="rnd-btn">Chọn ngẫu nhiên</button></div>
+  <div class="out" id="gen-out" aria-live="polite"></div>
+
+  <div class="sub-title">Bài tập: điền câu trả lời</div>
+  <p class="t">Câu 1–4: điền một từ vào chỗ trống. Câu 5–8: dịch sang tiếng Anh, gõ cả câu. Không phân biệt hoa thường.</p>
+  <div id="exlist">
+    <div class="exi">1. Look! It’s ___ (rain). →<input id="ex1" data-a="raining" aria-label="Câu 1"><small>đang mưa</small></div>
+    <div class="exi">2. There are many clouds. It’s ___. →<input id="ex2" data-a="cloudy" aria-label="Câu 2"><small>cloud + y</small></div>
+    <div class="exi">3. Today is ___ than yesterday. (hot) →<input id="ex3" data-a="hotter" aria-label="Câu 3"><small>so sánh hơn</small></div>
+    <div class="exi">4. It’s very cold ___ winter. →<input id="ex4" data-a="in" aria-label="Câu 4"><small>giới từ</small></div>
+    <div class="exi">5. Hôm nay thời tiết thế nào? →<input id="ex5" data-a="what's the weather like today?|what is the weather like today?|how's the weather today?|how is the weather today?" aria-label="Câu 5"><small>What’s … like</small></div>
+    <div class="exi">6. Hôm nay 30 độ →<input id="ex6" data-a="it's thirty degrees today|it's 30 degrees today|it is thirty degrees today|it is 30 degrees today" aria-label="Câu 6"><small>degrees</small></div>
+    <div class="exi">7. Chiều nay trời sẽ mưa →<input id="ex7" data-a="it's going to rain this afternoon|it is going to rain this afternoon|it will rain this afternoon" aria-label="Câu 7"><small>going to</small></div>
+    <div class="exi">8. Nếu trời mưa, tôi sẽ ở nhà →<input id="ex8" data-a="if it rains, i'll stay at home|if it rains, i will stay at home|if it rains, i'll stay home|if it rains, i will stay home" aria-label="Câu 8"><small>If + hiện tại</small></div>
+  </div>
+  <div class="btns" style="margin-top:12px"><button class="btn" id="ex-check">Kiểm tra đáp án</button><button class="btn alt" id="ex-show">Xem đáp án</button><button class="btn alt" id="ex-reset">Làm lại</button></div>
+  <div class="out" id="ex-out" style="min-height:0" aria-live="polite"></div>
+
+  <div class="sub-title">Lộ trình luyện 7 ngày</div>
+  <div class="plan">
+    <div class="day"><b>Ngày 1</b><span><strong>Kiểu thời tiết:</strong> mỗi sáng nhìn ra cửa sổ và nói <em>It’s…</em></span></div>
+    <div class="day"><b>Ngày 2</b><span><strong>Nhiệt độ:</strong> xem nhiệt độ trên điện thoại và đọc to bằng tiếng Anh</span></div>
+    <div class="day"><b>Ngày 3</b><span><strong>Hỏi và đáp:</strong> luyện <em>What’s the weather like…?</em> với 5 thành phố</span></div>
+    <div class="day"><b>Ngày 4</b><span><strong>Mùa:</strong> kể về 4 mùa ở quê bạn, dùng hiện tại đơn</span></div>
+    <div class="day"><b>Ngày 5</b><span><strong>Dự báo:</strong> đọc dự báo ngày mai, nói bằng going to / will</span></div>
+    <div class="day"><b>Ngày 6</b><span><strong>Hội thoại:</strong> đóng vai 3 tình huống, dùng máy báo thời tiết để đổi số liệu</span></div>
+    <div class="day"><b>Ngày 7</b><span><strong>Ôn tổng hợp:</strong> thu âm 1 phút “bản tin thời tiết” cho thành phố của bạn</span></div>
+  </div>
+</section>
+
+<section class="section" id="s8">
+  <div class="sec-head"><span class="sec-tag t5">NÂNG CAO</span><div><div class="sec-title">Từ vựng mới để hội thoại tự nhiên hơn</div><div class="sec-sub">Thêm vài từ này, câu nói về thời tiết của bạn sẽ giống người bản xứ hơn</div></div></div>
+  <div class="sub-title">Tả thời tiết chính xác hơn</div>
+  <table class="tbl"><thead><tr><th>Từ / cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">humid</td><td>ẩm, nồm</td><td><span class="say">Hanoi is very humid in spring.</span></td></tr>
+  <tr><td class="say">muggy</td><td>oi bức</td><td><span class="say">It’s so muggy before the storm.</span></td></tr>
+  <tr><td class="say">chilly</td><td>se lạnh</td><td><span class="say">It’s a bit chilly this morning.</span></td></tr>
+  <tr><td class="say">mild</td><td>ôn hòa, dễ chịu</td><td><span class="say">The weather is mild in Da Lat.</span></td></tr>
+  <tr><td class="say">drizzle</td><td>mưa phùn</td><td><span class="say">It’s only drizzling. You don’t need an umbrella.</span></td></tr>
+  <tr><td class="say">pour down</td><td>mưa như trút</td><td><span class="say">It’s pouring down outside!</span></td></tr>
+  <tr><td class="say">breeze</td><td>gió nhẹ</td><td><span class="say">There’s a nice breeze by the lake.</span></td></tr>
+  <tr><td class="say">thunder / lightning</td><td>sấm / chớp</td><td><span class="say">Did you hear the thunder?</span></td></tr></tbody></table>
+  <div class="sub-title">Hiện tượng và tin thời tiết</div>
+  <table class="tbl"><thead><tr><th>Từ / cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">heatwave</td><td>đợt nắng nóng</td><td><span class="say">There’s a heatwave this week.</span></td></tr>
+  <tr><td class="say">cold front</td><td>đợt gió mùa, không khí lạnh</td><td><span class="say">A cold front is coming tomorrow.</span></td></tr>
+  <tr><td class="say">typhoon</td><td>bão nhiệt đới</td><td><span class="say">The typhoon will hit the coast tonight.</span></td></tr>
+  <tr><td class="say">flood</td><td>lũ lụt, ngập</td><td><span class="say">Some streets are flooded after the rain.</span></td></tr>
+  <tr><td class="say">air quality</td><td>chất lượng không khí</td><td><span class="say">The air quality is bad today. Wear a mask.</span></td></tr>
+  <tr><td class="say">UV index</td><td>chỉ số tia UV</td><td><span class="say">The UV index is very high at noon.</span></td></tr></tbody></table>
+  <div class="sub-title">Cụm giúp cuộc trò chuyện trôi chảy</div>
+  <div class="ex-box"><div class="ex-head">LÀM CHO HỘI THOẠI TỰ NHIÊN<span class="ex-tag t5">Nâng cao</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Lovely weather, isn’t it?</span><span class="ex-vn">Trời đẹp quá nhỉ? (câu bắt chuyện kinh điển)</span></div>
+    <div class="ex-row"><span class="ex-en say">It’s boiling today!</span><span class="ex-vn">Hôm nay nóng như thiêu!</span></div>
+    <div class="ex-row"><span class="ex-en say">It’s freezing out there.</span><span class="ex-vn">Ngoài kia lạnh cóng</span></div>
+    <div class="ex-row"><span class="ex-en say">It’s raining cats and dogs.</span><span class="ex-vn">Mưa như trút nước (thành ngữ)</span></div>
+    <div class="ex-row"><span class="ex-en say">I got caught in the rain.</span><span class="ex-vn">Tôi bị dính mưa</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m soaked!</span><span class="ex-vn">Tôi ướt sũng rồi!</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m feeling a bit under the weather.</span><span class="ex-vn">Tôi thấy hơi mệt, không khỏe (thành ngữ)</span></div>
+  </div></div>
+  <div class="cmp"><div class="bad"><b>❌ NGHE CỨNG</b><div>Weather is hot. Very hot.</div></div><div class="good"><b>✔ TỰ NHIÊN HƠN</b><div class="say">It’s boiling today, isn’t it? I hope it cools down a bit this evening.</div></div></div>
+  <div class="info i-tip"><span>💡</span><span><strong>Mẹo:</strong> thêm <strong>isn’t it?</strong> vào cuối câu để mời người khác đồng ý: <em>Cold today, isn’t it?</em> Đây là cách bắt chuyện rất tự nhiên với người lạ.</span></div>
+
+  <div class="sub-title">Tự kiểm tra</div>
+  <ul class="chk">
+    <li><label><input type="checkbox" id="c1">Tôi nói được 6 kiểu thời tiết bằng <strong>It’s + tính từ</strong></label></li>
+    <li><label><input type="checkbox" id="c2">Tôi phân biệt <strong>It’s rainy</strong> và <strong>It’s raining</strong></label></li>
+    <li><label><input type="checkbox" id="c3">Tôi đọc được nhiệt độ và dùng hot / warm / cool / cold đúng mức</label></li>
+    <li><label><input type="checkbox" id="c4">Tôi hỏi được <strong>What’s the weather like?</strong></label></li>
+    <li><label><input type="checkbox" id="c5">Tôi kể được về các mùa ở Việt Nam</label></li>
+    <li><label><input type="checkbox" id="c6">Tôi nói được dự báo bằng <strong>will / going to</strong> và câu <strong>If it rains…</strong></label></li>
+    <li><label><input type="checkbox" id="c7">Tôi dùng được ít nhất 5 từ vựng nâng cao</label></li>
+  </ul>
+</section>
+
+</div>
+<div class="footer">🌤️ Giao tiếp tiếng Anh: Weather · Dành cho người mới bắt đầu · 2026</div>
+</div>
+
+<div class="audio-bar">
+  <b>🔊 Audio</b>
+  <div class="ab-g"><button data-acc="en-GB" class="on">Anh-Anh</button><button data-acc="en-US">Anh-Mỹ</button></div>
+  <div class="ab-g"><button data-rate="0.6">Chậm</button><button data-rate="0.85" class="on">Vừa</button><button data-rate="1">Nhanh</button></div>
+</div>
+
+<script>
+(function(){
+var doc=document.documentElement,bar=document.getElementById('pbar');
+addEventListener('scroll',function(){bar.style.width=(doc.scrollTop/Math.max(1,doc.scrollHeight-doc.clientHeight)*100)+'%'});
+var links=document.querySelectorAll('.nav-link,.topnav a');
+if('IntersectionObserver' in window)document.querySelectorAll('.section[id]').forEach(function(s){
+  new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;
+    links.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id)});
+  })},{rootMargin:'-20% 0px -70% 0px'}).observe(s);
+});
+
+/* Audio */
+var S=window.speechSynthesis,st={acc:'en-GB',rate:.85},cur=null;
+function voice(){if(!S)return null;var v=S.getVoices().filter(function(x){return x.lang.replace('_','-').toLowerCase()===st.acc.toLowerCase()});
+  return v.find(function(x){return /google|natural|premium|enhanced/i.test(x.name)})||v[0]||null}
+function say(el){
+  if(cur)cur.classList.remove('playing');
+  if(!S){el.title='Trình duyệt này không hỗ trợ đọc audio';return}
+  S.cancel();cur=el;el.classList.add('playing');
+  var t=el.textContent.replace(/\s+/g,' ').replace(/\s*\/\s*/g,'. ').replace(/→/g,'. ').trim();
+  var u=new SpeechSynthesisUtterance(t);u.lang=st.acc;u.rate=st.rate;var v=voice();if(v)u.voice=v;
+  u.onend=u.onerror=function(){el.classList.remove('playing')};S.speak(u);
+}
+function prep(root){root.querySelectorAll('.say').forEach(function(e){e.tabIndex=0;e.setAttribute('role','button')})}
+prep(document);
+document.addEventListener('click',function(e){var el=e.target.closest('.say');if(el)say(el)});
+document.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.classList&&e.target.classList.contains('say')){e.preventDefault();say(e.target)}});
+document.querySelectorAll('.audio-bar button').forEach(function(b){b.addEventListener('click',function(){
+  b.parentElement.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');
+  if(b.dataset.acc)st.acc=b.dataset.acc;if(b.dataset.rate)st.rate=+b.dataset.rate;
+})});
+
+/* Máy báo thời tiết: [tên, nghĩa, bây giờ, sắp tới, thường xuyên, lời khuyên, nghĩa lời khuyên] */
+var W=[['sunny','nắng','It’s sunny','it’s going to be sunny','it’s usually sunny','Wear a hat and sunscreen.','Đội mũ và bôi kem chống nắng.'],
+  ['cloudy','nhiều mây','It’s cloudy','it’s going to be cloudy','it’s often cloudy','It’s a good day for a walk.','Hợp để đi dạo.'],
+  ['rain','mưa','It’s raining','it’s going to rain','it rains a lot','Take an umbrella.','Mang theo ô.'],
+  ['drizzle','mưa phùn','It’s drizzling','it’s going to drizzle','it often drizzles','Bring a light raincoat.','Mang áo mưa mỏng.'],
+  ['windy','gió','It’s windy','it’s going to be windy','it’s usually windy','Be careful on your motorbike.','Đi xe máy cẩn thận nhé.'],
+  ['storm','giông bão','It’s stormy','there’s going to be a storm','there are often storms','Stay indoors if you can.','Ở trong nhà nếu có thể.'],
+  ['foggy','sương mù','It’s foggy','it’s going to be foggy','it’s often foggy','Drive slowly.','Lái xe chậm thôi.']];
+var WHEN=[['now','bây giờ'],['tomorrow','ngày mai'],['usually','thường ngày (khí hậu)']];
+var NUM=['zero','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen'];
+var TENS=['','','twenty','thirty','forty'];
+function nw(n){if(n<0)return'minus '+nw(-n);if(n<20)return NUM[n];var t=TENS[Math.floor(n/10)],u=n%10;return u?t+'-'+NUM[u]:t}
+function feel(t){return t<0?['freezing','lạnh cóng']:t<=12?['cold','lạnh']:t<=20?['cool','mát']:t<=27?['warm','ấm']:t<=34?['hot','nóng']:['boiling hot','nóng như thiêu']}
+var TEMPS=[-5,0,5,10,15,18,20,22,25,28,30,32,35,38];
+function fill(id,arr,lab){var s=document.getElementById(id);arr.forEach(function(x,i){s.add(new Option(lab(x),i))});return s}
+var gw=fill('g-w',W,function(x){return x[0]+' ('+x[1]+')'}),gt=fill('g-t',TEMPS,function(x){return x+'°C'}),gwh=fill('g-when',WHEN,function(x){return x[0]+' ('+x[1]+')'});
+gw.value=2;gt.value=5;gwh.value=0;
+var out=document.getElementById('gen-out');
+function cap(s){return s.charAt(0).toUpperCase()+s.slice(1)}
+function show(){
+  var w=W[+gw.value],t=TEMPS[+gt.value],wh=WHEN[+gwh.value][0],f=feel(t),en,note;
+  var deg=nw(t)+' degree'+(Math.abs(t)===1?'':'s');
+  var F=Math.round(t*9/5+32);
+  if(wh==='now'){en=w[2]+' and it’s '+f[0]+'. It’s '+deg+'.';note='Đang xảy ra lúc này: <b>It’s + tính từ</b> hoặc <b>It’s + V-ing</b>.'}
+  else if(wh==='tomorrow'){en='Tomorrow '+w[3]+'. It will be '+f[0]+', about '+deg+'.';note='Nói về ngày mai: <b>going to</b> khi có dấu hiệu, <b>will</b> khi dự báo.'}
+  else{en='In this season, '+w[4]+'. It’s usually '+f[0]+', around '+deg+'.';note='Nói về khí hậu, chuyện thường xảy ra: dùng <b>hiện tại đơn</b> với <b>usually / often</b>.'}
+  out.innerHTML='';
+  var top=document.createElement('div');top.className='clock';top.textContent=t+'°C · '+F+'°F';out.append(top);
+  var big=document.createElement('div');big.className='big';
+  [en,w[5]].forEach(function(x,i){var sp=document.createElement('span');sp.className='say';sp.textContent=x;big.append(sp);if(!i)big.append(' ')});
+  out.append(big);
+  var v=document.createElement('div');v.style.color='var(--muted)';v.style.fontSize='13px';
+  v.textContent='Nghĩa: '+({now:'Bây giờ',tomorrow:'Ngày mai',usually:'Mùa này thường'}[wh])+' trời '+w[1]+', '+f[1]+', '+t+' độ. '+w[6];out.append(v);
+  var why=document.createElement('span');why.className='why';why.innerHTML=note+' '+t+'°C được tả là <b>'+f[0]+'</b>. Người Mỹ sẽ nói khoảng <b>'+F+' degrees Fahrenheit</b>.';out.append(why);
+  prep(out);
+}
+document.getElementById('gen-btn').addEventListener('click',show);
+document.getElementById('rnd-btn').addEventListener('click',function(){
+  gw.value=Math.floor(Math.random()*W.length);gt.value=Math.floor(Math.random()*TEMPS.length);gwh.value=Math.floor(Math.random()*WHEN.length);show();
+});
+show();
+
+/* Bài tập */
+var inputs=document.querySelectorAll('#exlist input'),exo=document.getElementById('ex-out');
+function norm(s){return s.toLowerCase().replace(/[’‘`]/g,"'").replace(/[.!?]+$/,'').replace(/,/g,'').replace(/\s+/g,' ').trim()}
+document.getElementById('ex-check').addEventListener('click',function(){
+  var ok=0;
+  inputs.forEach(function(i){
+    var good=i.dataset.a.split('|').some(function(a){return norm(a)===norm(i.value)});
+    i.classList.remove('ok','no');i.classList.add(good?'ok':'no');if(good)ok++;
+  });
+  exo.style.minHeight='';
+  exo.textContent=ok===inputs.length?'🎉 Chính xác '+ok+'/'+inputs.length+'. Bạn nói về thời tiết rất tốt!':'Đúng '+ok+'/'+inputs.length+'. Các ô viền đỏ cần xem lại; đọc lại phần ngữ pháp ở Bài 1 đến 5, hoặc bấm “Xem đáp án”.';
+});
+document.getElementById('ex-show').addEventListener('click',function(){
+  inputs.forEach(function(i){
+    var k=i.parentElement.querySelector('.key');
+    if(!k){k=document.createElement('span');k.className='key';i.parentElement.append(k)}
+    var a=i.dataset.a.split('|')[0].replace(/'/g,'’').replace(/\bi'll\b|\bi’ll\b/,'I’ll');k.textContent='Đáp án: '+(a.length>8?cap(a):a);
+  });
+});
+document.getElementById('ex-reset').addEventListener('click',function(){
+  inputs.forEach(function(i){i.value='';i.classList.remove('ok','no')});
+  document.querySelectorAll('#exlist .key').forEach(function(k){k.remove()});
+  exo.textContent='';exo.style.minHeight='0';
+});
+})();
+</script>
+
+<script src="nav.js" defer></script>
+</body></html>

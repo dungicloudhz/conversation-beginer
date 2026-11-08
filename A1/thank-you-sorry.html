@@ -1,0 +1,541 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Thank You &amp; Sorry</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: sidebar mục lục cố định + cột bài học, cùng theme tối của bộ "Hỏi đường & Hỏi giờ" (nhấn xanh lá – hồng cho chủ đề cảm ơn, xin lỗi) */
+:root{color-scheme:dark;
+--bg:#080810;--s1:#0e0e1c;--s2:#131326;--s3:#18182e;--border:#222240;--border2:#2c2c50;--text:#e6e6f2;--muted:#8a8ab8;--faint:#4a4a78;
+--acc:#ffd060;--acc-dim:rgba(255,208,96,.11);--oc:#38bdf8;--oc-dim:rgba(56,189,248,.13);--ins:#40d88e;--ins-dim:rgba(64,216,142,.12);
+--sk:#a07af4;--sk-dim:rgba(160,122,244,.12);--au:#ff6584;--au-dim:rgba(255,101,132,.12);--teal:#30d8c0;--code-bg:#05050e;
+--tip-bg:rgba(91,168,255,.10);--tip-bd:rgba(91,168,255,.25);--tip-fg:#8ab8f0;--warn-fg:#e0bc58;--ok-fg:#5ccf98;--line:rgba(255,255,255,.05);
+--font:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+--gl:max(64px,env(safe-area-inset-left,0px));--gr:max(64px,env(safe-area-inset-right,0px))}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 60px)}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.7;font-size:15px;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:600;background:var(--s1)}
+.sidebar{position:fixed;left:0;top:0;width:260px;height:100%;background:var(--s1);border-right:1px solid var(--border);overflow-y:auto;z-index:400;padding-top:env(safe-area-inset-top,0px);padding-left:env(safe-area-inset-left,0px)}
+.sb-logo{padding:20px 18px 16px;border-bottom:1px solid var(--border)}
+.sb-brand{display:flex;align-items:center;gap:11px;margin-bottom:12px}
+.logo-icon{width:44px;height:44px;border-radius:11px;background:linear-gradient(135deg,var(--ins),var(--au));display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 0 26px rgba(64,216,142,.28)}
+.logo-text h2{font-size:15px;font-weight:800}.logo-text p{font-size:10.5px;color:var(--muted)}
+.prog-wrap{height:3px;background:var(--border);border-radius:2px;overflow:hidden}
+.prog-bar{height:100%;width:0;background:linear-gradient(90deg,var(--acc),var(--ins),var(--oc),var(--sk),var(--au))}
+.nav-label{padding:14px 18px 4px;font-size:9.5px;font-weight:700;letter-spacing:1.6px;color:var(--faint)}
+.nav-link{display:flex;align-items:center;gap:9px;padding:7px 18px;color:var(--muted);text-decoration:none;font-size:12.5px;font-weight:600;border-left:2px solid transparent}
+.nav-link:hover,.nav-link.active{color:var(--text);background:rgba(255,208,96,.07);border-left-color:var(--acc)}
+.main{margin-left:260px}
+.hero{padding-block:80px 60px;padding-left:var(--gl);padding-right:var(--gr);border-bottom:1px solid var(--border);background:radial-gradient(ellipse 65% 55% at 75% 22%,rgba(64,216,142,.09),transparent 60%),radial-gradient(ellipse 50% 55% at 10% 82%,rgba(255,101,132,.07),transparent 55%),var(--bg)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--acc-dim);border:1px solid rgba(255,208,96,.38);color:var(--acc);padding:5px 16px;border-radius:100px;font-size:11.5px;font-weight:700;margin-bottom:24px}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--acc);animation:p 2s infinite}
+@keyframes p{50%{opacity:.35;transform:scale(.7)}}
+@media(prefers-reduced-motion:reduce){.eyebrow i{animation:none}html{scroll-behavior:auto}}
+.hero h1{font-size:50px;font-weight:900;letter-spacing:-2.4px;line-height:1.06;margin-bottom:18px;text-wrap:balance}
+.grad{background:linear-gradient(135deg,var(--ins),var(--au));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-desc{font-size:16px;color:var(--muted);max-width:620px;margin-bottom:28px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{padding:5px 14px;border-radius:7px;font-size:12px;font-weight:700}
+.c1{background:var(--oc-dim);color:var(--oc)}.c2{background:var(--ins-dim);color:var(--ins)}.c3{background:var(--acc-dim);color:var(--acc)}.c4{background:var(--sk-dim);color:var(--sk)}.c5{background:var(--au-dim);color:var(--au)}
+.content{padding-block:56px;padding-left:var(--gl);padding-right:var(--gr);max-width:calc(1020px + 64px)}
+.section{margin-bottom:68px}
+.sec-head{display:flex;gap:14px;align-items:flex-start;margin-bottom:28px;padding-bottom:18px;border-bottom:1px solid var(--border)}
+.sec-tag{font-family:var(--mono);font-size:10px;font-weight:600;padding:3px 10px;border-radius:5px;margin-top:6px;flex-shrink:0;letter-spacing:.5px}
+.t1{color:var(--oc);background:var(--oc-dim)}.t2{color:var(--ins);background:var(--ins-dim)}.t3{color:var(--acc);background:var(--acc-dim)}.t4{color:var(--sk);background:var(--sk-dim)}.t5{color:var(--au);background:var(--au-dim)}
+.sec-title{font-size:23px;font-weight:800;letter-spacing:-.6px;text-wrap:balance}.sec-sub{font-size:13px;color:var(--muted)}
+.sub-title{font-size:14.5px;font-weight:700;margin:26px 0 12px;display:flex;align-items:center;gap:10px}
+.sub-title::before{content:'';width:14px;height:3px;background:var(--acc);border-radius:2px}
+p.t{color:var(--muted);font-size:13.5px;margin-bottom:11px;max-width:68ch}p.t strong,li strong{color:var(--text)}
+.ex-box{background:var(--s1);border:1px solid var(--border2);border-radius:11px;overflow:hidden;margin:13px 0}
+.ex-head{display:flex;align-items:center;gap:8px;padding:9px 16px;background:var(--s2);border-bottom:1px solid var(--border);font-family:var(--mono);font-size:10px;font-weight:600;color:var(--muted);letter-spacing:.5px}
+.ex-tag{margin-left:auto;font-size:9px;font-weight:700;padding:2px 9px;border-radius:100px;font-family:var(--font)}
+.ex-body{padding:10px 20px}
+.ex-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:13.5px}
+.ex-row:last-child{border-bottom:none}
+.ex-en{color:var(--text);font-weight:600;min-width:280px}.ex-vn{color:var(--muted)}
+.info{display:flex;gap:12px;padding:14px 16px;border-radius:9px;margin:13px 0;font-size:13px;line-height:1.6}
+.i-tip{background:var(--tip-bg);border:1px solid var(--tip-bd);color:var(--tip-fg)}
+.i-warn{background:var(--acc-dim);border:1px solid rgba(255,208,96,.25);color:var(--warn-fg)}
+.i-ok{background:var(--ins-dim);border:1px solid rgba(64,216,142,.25);color:var(--ok-fg)}
+.tbl{width:100%;border-collapse:collapse;font-size:13px;margin:13px 0;display:block;overflow-x:auto}
+.tbl th{background:var(--s3);padding:10px 14px;text-align:left;font-size:10px;color:var(--muted);border-bottom:1px solid var(--border2);white-space:nowrap;letter-spacing:.5px}
+.tbl td{padding:10px 14px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:top}
+.tbl td:first-child{color:var(--text);font-weight:600}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}
+.card{background:var(--s1);border:1px solid var(--border);border-radius:11px;padding:16px;min-width:0}
+.card:hover{border-color:var(--acc)}
+.card-icon{font-size:24px}.card-title{font-size:13px;font-weight:700}.card-desc{font-size:12px;color:var(--muted)}
+.cmp{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);border-radius:11px;overflow:hidden;margin:13px 0}
+.bad{background:rgba(255,101,132,.07);padding:14px 16px;border-right:1px solid var(--border)}.good{background:rgba(64,216,142,.07);padding:14px 16px}
+.cmp b{display:block;font-size:10px;margin-bottom:6px;letter-spacing:.5px}.bad b{color:var(--au)}.good b{color:var(--ins)}
+.cmp div div{font-size:13.5px}
+.dlg{display:grid;gap:8px;margin:12px 0;background:var(--s1);border:1px solid var(--border2);border-radius:12px;padding:16px 18px}
+.dlg-t{font-size:10px;font-weight:800;color:var(--acc);margin-bottom:2px;letter-spacing:.6px}
+.turn{display:flex;gap:10px;align-items:baseline}
+.turn>div{min-width:0}
+.who{flex-shrink:0;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+.wa{background:var(--oc-dim);color:var(--oc)}.wb{background:var(--ins-dim);color:var(--ins)}
+.turn .say{font-weight:600}.turn small{display:block;color:var(--muted);font-size:12px;font-weight:400}
+.gen{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0}
+.gen label{font-size:11.5px;color:var(--muted);font-weight:600;display:block;min-width:0}
+.gen select{width:100%;margin-top:4px;background:var(--code-bg);border:1px solid var(--border2);border-radius:8px;padding:9px 12px;color:var(--text);font:inherit;font-size:13px}
+select:focus-visible,button:focus-visible,.say:focus-visible,.exi input:focus-visible,.chk input:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.btns{display:flex;flex-wrap:wrap;gap:6px}
+.btn{background:var(--acc-dim);color:var(--acc);border:1px solid var(--acc);border-radius:8px;padding:8px 16px;font:inherit;font-weight:700;font-size:13px;cursor:pointer}
+.btn.alt{background:var(--ins-dim);color:var(--ins);border-color:var(--ins)}
+.out{margin-top:14px;min-height:60px;background:var(--s2);border:1px dashed var(--border2);border-radius:10px;padding:14px 16px;font-size:14px;line-height:1.9}
+.big{font-size:21px;font-weight:800;color:var(--acc);letter-spacing:-.3px;line-height:1.4;margin-bottom:4px}
+.out .why{display:block;color:var(--muted);font-size:12.5px}
+.out .why b{color:var(--teal);font-family:var(--mono);font-weight:600}
+.timeline{display:grid;gap:0;margin:14px 0;border-left:2px solid var(--border2);padding-left:18px}
+.tl{position:relative;padding:8px 0 12px}
+.tl::before{content:'';position:absolute;left:-24px;top:16px;width:10px;height:10px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 3px var(--bg)}
+.tl time{font-family:var(--mono);font-size:12px;color:var(--acc);font-variant-numeric:tabular-nums;font-weight:600}
+.tl .say{font-weight:600;font-size:13.5px}
+.tl small{display:block;color:var(--muted);font-size:12px}
+.freq{display:grid;gap:7px;margin:14px 0}
+.fq{display:grid;grid-template-columns:110px 1fr 54px;gap:12px;align-items:center;font-size:13px}
+.fq .say{font-weight:700}
+.fq .track{height:8px;background:var(--s3);border-radius:4px;overflow:hidden}
+.fq .fill{height:100%;background:linear-gradient(90deg,var(--ins),var(--acc))}
+.fq span:last-child{font-family:var(--mono);font-size:11.5px;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+.plan{display:grid;gap:8px;margin:12px 0}
+.day{display:flex;gap:14px;align-items:baseline;background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:12px 16px;font-size:13px;color:var(--muted)}
+.day b{color:var(--acc);font-family:var(--mono);font-size:12px;flex-shrink:0;width:52px}.day strong{color:var(--text)}
+.chk{list-style:none;margin:10px 0}.chk li{padding:6px 0;font-size:13.5px;color:var(--muted);border-bottom:1px solid rgba(255,255,255,.04)}
+.chk input{accent-color:var(--ins);margin-right:10px;width:15px;height:15px;vertical-align:-2px}
+.gr{border:1px solid rgba(160,122,244,.38);background:linear-gradient(180deg,var(--sk-dim),transparent 110px),var(--s1);border-radius:12px;margin:28px 0;overflow:hidden}
+.gr-head{padding:10px 18px;font-size:12px;font-weight:800;color:var(--sk);border-bottom:1px solid var(--border);display:flex;gap:10px;flex-wrap:wrap;align-items:baseline;letter-spacing:.4px}
+.gr-head em{font-style:normal;color:var(--muted);font-weight:600;letter-spacing:0}
+.gr-body{padding:14px 18px;font-size:13.5px;color:var(--muted)}
+.gr-body p{margin-bottom:10px}.gr-body b{color:var(--text)}.gr-body ul{padding-left:20px;margin-bottom:8px}.gr-body li{margin-bottom:4px}
+.gr-body .tbl{margin:8px 0 12px}
+.fm{display:inline-block;font-family:var(--mono);font-size:12px;background:var(--code-bg);color:var(--teal);padding:3px 9px;border-radius:6px;margin:2px 0}
+.say{cursor:pointer;border-bottom:1px dotted var(--oc)}
+.say:hover{color:var(--acc);background:var(--acc-dim);border-radius:4px}
+.say::after{content:"🔊";font-size:.68em;margin-left:3px;opacity:.5}
+.say.playing{color:var(--ins);background:var(--ins-dim);border-radius:4px}.say.playing::after{opacity:1}
+.exi{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:13.5px;color:var(--text)}
+.exi input{width:220px;max-width:100%;background:var(--code-bg);border:1px solid var(--border2);border-radius:6px;padding:4px 8px;color:var(--text);font:inherit;font-size:13px;text-align:center}
+.exi input.ok{border-color:var(--ins);color:var(--ins)}.exi input.no{border-color:var(--au);color:var(--au)}
+.exi small{color:var(--muted);font-size:11.5px}
+.exi .key{color:var(--ins);font-size:12px;width:100%}
+.footer{border-top:1px solid var(--border);padding-block:28px 90px;padding-left:var(--gl);padding-right:var(--gr);font-size:12px;color:var(--muted)}
+.audio-bar{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:500;display:flex;gap:10px;align-items:center;background:var(--s2);border:1px solid var(--border2);border-radius:12px;padding:8px 12px;box-shadow:0 8px 28px rgba(0,0,0,.5);font-size:12px;color:var(--muted)}
+.audio-bar b{color:var(--acc)}.ab-g{display:flex;gap:4px}
+.audio-bar button{background:var(--s3);color:var(--muted);border:1px solid var(--border);border-radius:7px;padding:4px 10px;font:inherit;font-weight:700;cursor:pointer}
+.audio-bar button.on{background:var(--acc-dim);color:var(--acc);border-color:var(--acc)}
+.topnav{display:none}
+@media(max-width:900px){
+:root{--gl:max(18px,env(safe-area-inset-left,0px));--gr:max(18px,env(safe-area-inset-right,0px))}
+.sidebar{display:none}.main{margin-left:0}.hero h1{font-size:32px;letter-spacing:-1.4px}.hero{padding-block:48px 40px}
+.grid-3,.cmp{grid-template-columns:1fr}.gen{grid-template-columns:1fr 1fr}.bad{border-right:none;border-bottom:1px solid var(--border)}
+.topnav{display:flex;overflow-x:auto;position:sticky;top:env(safe-area-inset-top,0px);z-index:500;background:var(--s1);border-bottom:2px solid var(--border2);scrollbar-width:none;padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+.topnav a{flex-shrink:0;padding:10px 14px;color:var(--muted);text-decoration:none;font-size:12px;font-weight:700;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-2px}
+.topnav a.active{color:var(--acc);border-bottom-color:var(--acc);background:var(--acc-dim)}
+.ex-en{min-width:0}
+.fq{grid-template-columns:90px 1fr 46px}
+.audio-bar{left:calc(8px + env(safe-area-inset-left,0px));right:calc(8px + env(safe-area-inset-right,0px));justify-content:center;flex-wrap:wrap}
+}
+@media(max-width:480px){.gen{grid-template-columns:1fr}}
+.lbl{font-family:var(--mono);font-size:10px;font-weight:600;color:var(--faint);letter-spacing:1px;min-width:90px}
+.rl{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;padding:3px 0}
+.rl .say{font-weight:700;font-size:15px}
+.msg{background:var(--s3);border:1px solid var(--border2);border-radius:14px 14px 14px 4px;padding:10px 14px;margin:6px 0 10px;max-width:560px;font-size:14px;line-height:1.7}
+.scale{display:grid;gap:8px;margin:14px 0}
+.sc{display:grid;grid-template-columns:minmax(0,1fr);gap:2px;position:relative;padding:8px 14px;background:var(--s1);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.sc::before{content:'';position:absolute;left:0;top:0;bottom:0;width:var(--w);background:linear-gradient(90deg,var(--ins-dim),rgba(64,216,142,.22));z-index:0}
+.sc>*{position:relative;z-index:1}.sc .say{font-weight:700;font-size:14px;justify-self:start}.sc em{font-style:normal;font-size:12px;color:var(--muted)}
+.steps4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0}
+.st{background:var(--s1);border:1px solid var(--border);border-radius:11px;padding:14px;display:grid;gap:4px;min-width:0}
+.st b{font-family:var(--mono);color:var(--au);font-size:20px}.st span{font-size:12px;color:var(--muted);font-weight:600}.st em{font-style:normal;font-weight:700;font-size:13.5px}
+@media(max-width:900px){.steps4{grid-template-columns:repeat(2,1fr)}}
+</style>
+
+<aside class="sidebar">
+  <div class="sb-logo">
+    <div class="sb-brand"><div class="logo-icon">💐</div><div class="logo-text"><h2>Thank You &amp; Sorry</h2><p>Tiếng Anh cho người mới</p></div></div>
+    <div class="prog-wrap"><div class="prog-bar" id="pbar"></div></div>
+  </div>
+  <div class="nav-label">BÀI HỌC</div>
+  <a class="nav-link" href="#s1">🙏 Nói cảm ơn</a>
+  <a class="nav-link" href="#s2">😊 Đáp lại lời cảm ơn</a>
+  <a class="nav-link" href="#s3">😔 Nói xin lỗi</a>
+  <a class="nav-link" href="#s4">🧩 Xin lỗi trọn vẹn</a>
+  <a class="nav-link" href="#s5">🤗 Đáp lại &amp; chia buồn</a>
+  <div class="nav-label">THỰC HÀNH</div>
+  <a class="nav-link" href="#s6">💬 Hội thoại mẫu</a>
+  <a class="nav-link" href="#s7">🛠️ Máy cảm ơn, xin lỗi &amp; bài tập</a>
+  <a class="nav-link" href="#s8">🚀 Từ vựng nâng cao</a>
+</aside>
+
+<div class="main">
+<nav class="topnav">
+  <a href="#s1">1 Cảm ơn</a><a href="#s2">2 Đáp lại</a><a href="#s3">3 Xin lỗi</a><a href="#s4">4 Trọn vẹn</a><a href="#s5">5 Chia buồn</a><a href="#s6">6 Hội thoại</a><a href="#s7">7 Luyện tập</a><a href="#s8">8 Nâng cao</a>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow"><i></i>Dành cho người mới bắt đầu</div>
+  <h1>Cảm ơn và xin lỗi<br><span class="grad">bằng tiếng Anh</span></h1>
+  <p class="hero-desc">Hai lời nói nhỏ nhưng quyết định người khác nhìn bạn thế nào. Bài này giúp bạn cảm ơn đúng mức, đáp lại tự nhiên, xin lỗi chân thành và trọn vẹn, tha thứ cho người khác, và phân biệt “sorry” để xin lỗi với “sorry” để chia buồn. Bấm vào câu có biểu tượng loa để nghe, rồi luyện với máy cảm ơn, xin lỗi ở phần thực hành.</p>
+  <div class="chips"><span class="chip c2">Cảm ơn</span><span class="chip c3">Đáp lại</span><span class="chip c5">Xin lỗi</span><span class="chip c1">Chia buồn</span><span class="chip c4">Từ vựng nâng cao</span></div>
+</header>
+
+<div class="content">
+
+<section class="section" id="s1">
+  <div class="sec-head"><span class="sec-tag t2">BÀI 1</span><div><div class="sec-title">Nói cảm ơn</div><div class="sec-sub">Từ một lời cảm ơn nhanh đến lời biết ơn sâu sắc</div></div></div>
+  <div class="scale">
+    <div class="sc" style="--w:20%"><span class="say">Thanks!</span><em>nhanh, thân mật</em></div>
+    <div class="sc" style="--w:35%"><span class="say">Thank you.</span><em>chuẩn, dùng mọi lúc</em></div>
+    <div class="sc" style="--w:50%"><span class="say">Thanks a lot!</span><em>nhiệt tình hơn</em></div>
+    <div class="sc" style="--w:65%"><span class="say">Thank you so much.</span><em>rất cảm ơn</em></div>
+    <div class="sc" style="--w:82%"><span class="say">I really appreciate it.</span><em>trân trọng, chân thành</em></div>
+    <div class="sc" style="--w:100%"><span class="say">I can’t thank you enough.</span><em>biết ơn vô cùng</em></div>
+  </div>
+  <div class="ex-box"><div class="ex-head">CẢM ƠN VỀ ĐIỀU CỤ THỂ<span class="ex-tag t2">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Thank you for the lovely gift.</span><span class="ex-vn">Cảm ơn món quà xinh xắn</span></div>
+    <div class="ex-row"><span class="ex-en say">Thanks for inviting me.</span><span class="ex-vn">Cảm ơn đã mời mình</span></div>
+    <div class="ex-row"><span class="ex-en say">Thank you for your patience.</span><span class="ex-vn">Cảm ơn vì đã kiên nhẫn</span></div>
+    <div class="ex-row"><span class="ex-en say">Thanks for waiting.</span><span class="ex-vn">Cảm ơn đã đợi</span></div>
+    <div class="ex-row"><span class="ex-en say">It’s very kind of you.</span><span class="ex-vn">Bạn thật tốt bụng</span></div>
+    <div class="ex-row"><span class="ex-en say">Thank you, I couldn’t have done it without you.</span><span class="ex-vn">Cảm ơn, không có bạn tôi không làm được</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Thank you for + N / V-ing, và appreciate + it</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Cấu trúc</th><th>Ví dụ</th></tr></thead><tbody>
+<tr><td><span class="fm">Thank you for + danh từ</span></td><td><span class="say">Thank you for the flowers.</span></td></tr>
+<tr><td><span class="fm">Thank you for + V-ing</span></td><td><span class="say">Thank you for coming.</span></td></tr>
+<tr><td><span class="fm">I appreciate + it / việc</span></td><td><span class="say">I appreciate your advice.</span></td></tr>
+<tr><td><span class="fm">It’s kind of you to + V</span></td><td><span class="say">It’s kind of you to help.</span></td></tr></tbody></table>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>Thank you for come. / Thanks you!</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">Thank you for coming. Thanks!</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s2">
+  <div class="sec-head"><span class="sec-tag t3">BÀI 2</span><div><div class="sec-title">Đáp lại lời cảm ơn</div><div class="sec-sub">Không chỉ có “You’re welcome”</div></div></div>
+  <table class="tbl"><thead><tr><th>Câu đáp</th><th>Nghĩa</th><th>Mức độ</th></tr></thead><tbody>
+  <tr><td><span class="say">You’re welcome.</span></td><td>Không có gì</td><td>chuẩn, dùng mọi lúc</td></tr>
+  <tr><td><span class="say">No problem.</span></td><td>Không vấn đề gì</td><td>thân mật</td></tr>
+  <tr><td><span class="say">No worries!</span></td><td>Không sao đâu!</td><td>thân mật (rất phổ biến ở Úc, Anh)</td></tr>
+  <tr><td><span class="say">Anytime!</span></td><td>Lúc nào cần cứ nói!</td><td>thân mật, ấm áp</td></tr>
+  <tr><td><span class="say">Glad I could help.</span></td><td>Vui vì giúp được</td><td>thân thiện</td></tr>
+  <tr><td><span class="say">Don’t mention it.</span></td><td>Có gì đâu mà</td><td>khiêm tốn</td></tr>
+  <tr><td><span class="say">It was my pleasure.</span></td><td>Rất hân hạnh</td><td>lịch sự, dịch vụ</td></tr></tbody></table>
+  <div class="info i-tip"><span>💡</span><span><strong>Mẹo:</strong> khi được khen hay được cảm ơn, đừng phủ nhận kiểu “No, no, it’s nothing” quá nhiều lần. Một câu <strong>“Glad you liked it!”</strong> hoặc <strong>“Happy to help!”</strong> nghe tự tin và dễ chịu hơn.</span></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Glad / Happy + to V hoặc + (that) + câu</em></div><div class="gr-body">
+<ul><li><span class="fm">Happy to + V</span> → <span class="say">Happy to help!</span></li>
+<li><span class="fm">Glad + (that) + câu</span> → <span class="say">I’m glad you liked it.</span></li>
+<li><span class="fm">Glad I could + V</span> → <span class="say">Glad I could help.</span></li></ul>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>Welcome! (để đáp lời cảm ơn)</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">You’re welcome!</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s3">
+  <div class="sec-head"><span class="sec-tag t5">BÀI 3</span><div><div class="sec-title">Nói xin lỗi</div><div class="sec-sub">Sorry, Excuse me, Pardon và các mức độ xin lỗi</div></div></div>
+  <table class="tbl"><thead><tr><th>Từ</th><th>Dùng khi</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td><span class="say">Excuse me.</span></td><td><b>trước</b> khi làm phiền: gọi người lạ, xin đi qua</td><td><span class="say">Excuse me, can I get past?</span></td></tr>
+  <tr><td><span class="say">Sorry.</span></td><td><b>sau</b> khi lỡ làm gì đó: va phải, nói nhầm</td><td><span class="say">Oh, sorry! Are you okay?</span></td></tr>
+  <tr><td><span class="say">Sorry? / Pardon?</span></td><td>nghe không rõ, nhờ nói lại</td><td><span class="say">Sorry? Could you say that again?</span></td></tr>
+  <tr><td><span class="say">I apologize.</span></td><td>trang trọng, công việc</td><td><span class="say">I apologize for the delay.</span></td></tr></tbody></table>
+  <div class="ex-box"><div class="ex-head">XIN LỖI THƯỜNG NGÀY<span class="ex-tag t5">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Sorry I’m late.</span><span class="ex-vn">Xin lỗi tôi đến muộn</span></div>
+    <div class="ex-row"><span class="ex-en say">Sorry for the confusion.</span><span class="ex-vn">Xin lỗi vì sự nhầm lẫn</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m so sorry. I didn’t mean to.</span><span class="ex-vn">Tôi rất xin lỗi. Tôi không cố ý</span></div>
+    <div class="ex-row"><span class="ex-en say">Sorry to keep you waiting.</span><span class="ex-vn">Xin lỗi đã để bạn đợi</span></div>
+    <div class="ex-row"><span class="ex-en say">Sorry about the mess.</span><span class="ex-vn">Xin lỗi vì bừa bộn</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m really sorry I forgot your birthday.</span><span class="ex-vn">Thật xin lỗi tôi quên sinh nhật bạn</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>sorry for / sorry about / sorry (that) / sorry to</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Cấu trúc</th><th>Ví dụ</th></tr></thead><tbody>
+<tr><td><span class="fm">sorry for + V-ing / N</span></td><td><span class="say">Sorry for being late.</span></td></tr>
+<tr><td><span class="fm">sorry about + N</span></td><td><span class="say">Sorry about yesterday.</span></td></tr>
+<tr><td><span class="fm">sorry (that) + câu</span></td><td><span class="say">I’m sorry I didn’t call you.</span></td></tr>
+<tr><td><span class="fm">sorry to + V</span> (đang/sắp làm phiền)</td><td><span class="say">Sorry to interrupt.</span></td></tr></tbody></table>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>Sorry for late. / Sorry for I forgot.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">Sorry for being late. Sorry I forgot.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s4">
+  <div class="sec-head"><span class="sec-tag t1">BÀI 4</span><div><div class="sec-title">Xin lỗi trọn vẹn</div><div class="sec-sub">Khi lỗi lớn hơn, một chữ “sorry” chưa đủ</div></div></div>
+  <div class="steps4">
+    <div class="st"><b>1</b><span>Xin lỗi</span><em class="say">I’m really sorry.</em></div>
+    <div class="st"><b>2</b><span>Nhận trách nhiệm</span><em class="say">It was my fault.</em></div>
+    <div class="st"><b>3</b><span>Đề nghị sửa sai</span><em class="say">Let me fix it.</em></div>
+    <div class="st"><b>4</b><span>Hứa lần sau</span><em class="say">It won’t happen again.</em></div>
+  </div>
+  <div class="ex-box"><div class="ex-head">CÁC CÂU TRONG LỜI XIN LỖI ĐẦY ĐỦ<span class="ex-tag t1">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">I owe you an apology.</span><span class="ex-vn">Tôi nợ bạn một lời xin lỗi</span></div>
+    <div class="ex-row"><span class="ex-en say">I shouldn’t have said that.</span><span class="ex-vn">Lẽ ra tôi không nên nói vậy</span></div>
+    <div class="ex-row"><span class="ex-en say">I should have told you earlier.</span><span class="ex-vn">Lẽ ra tôi nên nói với bạn sớm hơn</span></div>
+    <div class="ex-row"><span class="ex-en say">I’ll pay for a new one.</span><span class="ex-vn">Tôi sẽ đền cái mới</span></div>
+    <div class="ex-row"><span class="ex-en say">Let me make it up to you.</span><span class="ex-vn">Để tôi bù đắp cho bạn</span></div>
+    <div class="ex-row"><span class="ex-en say">I’ll be more careful next time.</span><span class="ex-vn">Lần sau tôi sẽ cẩn thận hơn</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>should have + V3: hối tiếc chuyện đã qua</em></div><div class="gr-body">
+<ul><li><span class="fm">I should have + V3</span> = lẽ ra tôi nên làm (nhưng đã không làm) → <span class="say">I should have called you.</span></li>
+<li><span class="fm">I shouldn’t have + V3</span> = lẽ ra tôi không nên làm (nhưng đã làm) → <span class="say">I shouldn’t have shouted.</span></li>
+<li>Hứa: <span class="fm">I’ll + V</span> / <span class="fm">It won’t + V</span> → <span class="say">It won’t happen again.</span></li></ul>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>I should call you yesterday.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">I should have called you yesterday.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s5">
+  <div class="sec-head"><span class="sec-tag t4">BÀI 5</span><div><div class="sec-title">Đáp lại lời xin lỗi và chia buồn</div><div class="sec-sub">Tha thứ nhẹ nhàng, và khi “sorry” không phải là xin lỗi</div></div></div>
+  <div class="ex-box"><div class="ex-head">KHI ĐƯỢC XIN LỖI<span class="ex-tag t4">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">That’s okay.</span><span class="ex-vn">Không sao đâu</span></div>
+    <div class="ex-row"><span class="ex-en say">Don’t worry about it.</span><span class="ex-vn">Đừng bận tâm</span></div>
+    <div class="ex-row"><span class="ex-en say">It’s not a big deal.</span><span class="ex-vn">Chuyện nhỏ thôi</span></div>
+    <div class="ex-row"><span class="ex-en say">No harm done.</span><span class="ex-vn">Không có gì thiệt hại cả</span></div>
+    <div class="ex-row"><span class="ex-en say">Thanks for saying that. I appreciate it.</span><span class="ex-vn">Cảm ơn bạn đã nói vậy. Mình trân trọng điều đó</span></div>
+    <div class="ex-row"><span class="ex-en say">It’s fine, but please let me know next time.</span><span class="ex-vn">Không sao, nhưng lần sau báo mình trước nhé</span></div>
+  </div></div>
+  <div class="ex-box"><div class="ex-head">“SORRY” ĐỂ CHIA BUỒN, THÔNG CẢM<span class="ex-tag t3">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">I’m sorry to hear that.</span><span class="ex-vn">Tôi rất tiếc khi nghe vậy</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m so sorry for your loss.</span><span class="ex-vn">Tôi rất tiếc về mất mát của bạn (chia buồn)</span></div>
+    <div class="ex-row"><span class="ex-en say">That must be really hard.</span><span class="ex-vn">Chắc là khó khăn lắm</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m here if you need anything.</span><span class="ex-vn">Có mình ở đây nếu bạn cần gì</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Sorry để xin lỗi hay sorry để thông cảm?</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Câu</th><th>Ý nghĩa</th></tr></thead><tbody>
+<tr><td><span class="say">I’m sorry for breaking your cup.</span></td><td><b>xin lỗi</b>: mình có lỗi</td></tr>
+<tr><td><span class="say">I’m sorry to hear about your grandmother.</span></td><td><b>thông cảm</b>: mình không có lỗi, chỉ chia buồn</td></tr></tbody></table>
+<div class="cmp"><div class="bad"><b>❌ NGHE LẠ</b><div>(bạn bị ốm) I apologize for your illness.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">I’m sorry to hear you’re sick. Get well soon!</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s6">
+  <div class="sec-head"><span class="sec-tag t3">BÀI 6</span><div><div class="sec-title">Hội thoại mẫu</div><div class="sec-sub">Bấm từng câu để nghe, rồi đóng vai cả hai người</div></div></div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 1: CẢM ƠN CHỦ NHÀ SAU BỮA TỐI</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Thank you so much for having me. Dinner was amazing!</span><small>Cảm ơn bạn đã mời mình. Bữa tối tuyệt lắm!</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">I’m so glad you enjoyed it. Thanks for coming!</span><small>Mình vui vì bạn thích. Cảm ơn đã đến!</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">And thanks for the recipe. I’ll try it at home.</span><small>Và cảm ơn công thức nhé. Mình sẽ thử nấu ở nhà.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Anytime! Let me know how it goes.</span><small>Lúc nào cũng được! Nấu xong kể mình nghe nhé.</small></div></div>
+  </div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 2: XIN LỖI VÌ ĐẾN MUỘN</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">I’m so sorry I’m late. The traffic was terrible, but I should have left earlier.</span><small>Thật xin lỗi mình đến muộn. Kẹt xe kinh khủng, nhưng lẽ ra mình nên đi sớm hơn.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Don’t worry about it. We just started.</span><small>Đừng lo. Bọn mình vừa bắt đầu thôi.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Thanks for waiting. Let me buy the coffee to make it up to you.</span><small>Cảm ơn đã đợi. Để mình mời cà phê bù lại nhé.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Deal! Apology accepted.</span><small>Chốt! Tha lỗi cho bạn đấy.</small></div></div>
+  </div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 3: LÀM VỠ ĐỒ CỦA BẠN</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Oh no! I’m really sorry. I broke your mug. It was an accident.</span><small>Ôi không! Mình thật sự xin lỗi. Mình làm vỡ cốc của bạn rồi. Mình lỡ tay.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Are you okay? Did you cut yourself?</span><small>Bạn có sao không? Có bị đứt tay không?</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">I’m fine. I’ll buy you a new one, I promise.</span><small>Mình không sao. Mình sẽ mua cho bạn cái mới, hứa đấy.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">It’s not a big deal. As long as you’re okay.</span><small>Chuyện nhỏ thôi. Miễn bạn không sao là được.</small></div></div>
+  </div>
+  <div class="info i-ok"><span>✅</span><span><strong>Cách luyện:</strong> nghe một lượt, nói theo từng câu, rồi che phần tiếng Việt và tự đóng vai A hoặc B. Chú ý giọng nói: lời xin lỗi cần chậm và chân thành, lời cảm ơn cần vui vẻ.</span></div>
+</section>
+
+<section class="section" id="s7">
+  <div class="sec-head"><span class="sec-tag t2">BÀI 7</span><div><div class="sec-title">Máy cảm ơn, xin lỗi &amp; bài tập</div><div class="sec-sub">Chọn tình huống và người nhận, xem lời nói trực tiếp, tin nhắn và cách người kia đáp lại</div></div></div>
+  <div class="gen">
+    <label for="g-m">Bạn muốn<select id="g-m"><option value="0">Cảm ơn</option><option value="1">Xin lỗi</option></select></label>
+    <label for="g-s">Tình huống<select id="g-s"></select></label>
+    <label for="g-r">Người nhận<select id="g-r"></select></label>
+  </div>
+  <div class="btns"><button class="btn" id="gen-btn">Tạo lời nói</button><button class="btn alt" id="rnd-btn">Chọn ngẫu nhiên</button></div>
+  <div class="out" id="gen-out" aria-live="polite"></div>
+
+  <div class="sub-title">Bài tập: điền câu trả lời</div>
+  <p class="t">Câu 1–4: điền một từ vào chỗ trống. Câu 5–8: dịch sang tiếng Anh, gõ cả câu. Không phân biệt hoa thường.</p>
+  <div id="exlist">
+    <div class="exi">1. Thank you for ___ (come). →<input id="ex1" data-a="coming" aria-label="Câu 1"><small>for + ?</small></div>
+    <div class="exi">2. Sorry for ___ late. →<input id="ex2" data-a="being" aria-label="Câu 2"><small>be → ?</small></div>
+    <div class="exi">3. I should have ___ you. (call) →<input id="ex3" data-a="called" aria-label="Câu 3"><small>V3</small></div>
+    <div class="exi">4. ___ me, can I get past? (trước khi làm phiền) →<input id="ex4" data-a="excuse" aria-label="Câu 4"><small>sorry hay excuse?</small></div>
+    <div class="exi">5. Tôi thật sự trân trọng điều đó →<input id="ex5" data-a="i really appreciate it" aria-label="Câu 5"><small>appreciate</small></div>
+    <div class="exi">6. Đừng bận tâm →<input id="ex6" data-a="don't worry about it|don't worry" aria-label="Câu 6"><small>worry</small></div>
+    <div class="exi">7. Tôi rất tiếc khi nghe vậy →<input id="ex7" data-a="i'm sorry to hear that|i am sorry to hear that|sorry to hear that" aria-label="Câu 7"><small>chia buồn</small></div>
+    <div class="exi">8. Chuyện này sẽ không xảy ra nữa →<input id="ex8" data-a="it won't happen again|it will not happen again" aria-label="Câu 8"><small>won’t</small></div>
+  </div>
+  <div class="btns" style="margin-top:12px"><button class="btn" id="ex-check">Kiểm tra đáp án</button><button class="btn alt" id="ex-show">Xem đáp án</button><button class="btn alt" id="ex-reset">Làm lại</button></div>
+  <div class="out" id="ex-out" style="min-height:0" aria-live="polite"></div>
+
+  <div class="sub-title">Lộ trình luyện 7 ngày</div>
+  <div class="plan">
+    <div class="day"><b>Ngày 1</b><span><strong>Cảm ơn:</strong> luyện 6 mức cảm ơn, mỗi lần cảm ơn hãy nói rõ vì điều gì</span></div>
+    <div class="day"><b>Ngày 2</b><span><strong>Đáp lại:</strong> mỗi ngày dùng một câu khác ngoài You’re welcome</span></div>
+    <div class="day"><b>Ngày 3</b><span><strong>Xin lỗi:</strong> phân biệt Excuse me / Sorry / Pardon, luyện sorry for + V-ing</span></div>
+    <div class="day"><b>Ngày 4</b><span><strong>Xin lỗi trọn vẹn:</strong> viết lời xin lỗi 4 bước cho một lỗi bạn từng mắc</span></div>
+    <div class="day"><b>Ngày 5</b><span><strong>Hối tiếc:</strong> nói 5 câu với should have / shouldn’t have</span></div>
+    <div class="day"><b>Ngày 6</b><span><strong>Máy luyện tập:</strong> tạo 3 lời cảm ơn và 3 lời xin lỗi, đọc to cả bản nói và bản nhắn tin</span></div>
+    <div class="day"><b>Ngày 7</b><span><strong>Thực tế:</strong> gửi một tin nhắn cảm ơn bằng tiếng Anh cho người đã giúp bạn gần đây</span></div>
+  </div>
+</section>
+
+<section class="section" id="s8">
+  <div class="sec-head"><span class="sec-tag t5">NÂNG CAO</span><div><div class="sec-title">Từ vựng mới để hội thoại tự nhiên hơn</div><div class="sec-sub">Thêm vài từ này, lời cảm ơn và xin lỗi của bạn sẽ giàu cảm xúc hơn</div></div></div>
+  <div class="sub-title">Về lòng biết ơn</div>
+  <table class="tbl"><thead><tr><th>Từ / cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">grateful</td><td>biết ơn</td><td><span class="say">I’m so grateful for your support.</span></td></tr>
+  <tr><td class="say">thankful</td><td>thấy may mắn, biết ơn</td><td><span class="say">I’m thankful to have friends like you.</span></td></tr>
+  <tr><td class="say">Thanks a million!</td><td>cảm ơn rất rất nhiều</td><td><span class="say">You fixed my laptop? Thanks a million!</span></td></tr>
+  <tr><td class="say">You shouldn’t have!</td><td>bạn không cần làm vậy đâu (khi nhận quà)</td><td><span class="say">Flowers for me? Oh, you shouldn’t have!</span></td></tr>
+  <tr><td class="say">I owe you big time</td><td>tôi nợ bạn lớn rồi</td><td><span class="say">Thanks for covering my shift. I owe you big time.</span></td></tr>
+  <tr><td class="say">heartfelt thanks</td><td>lời cảm ơn chân thành (viết)</td><td><span class="say">My heartfelt thanks to everyone who helped.</span></td></tr></tbody></table>
+  <div class="sub-title">Về lỗi lầm và tha thứ</div>
+  <table class="tbl"><thead><tr><th>Từ / cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">My bad!</td><td>lỗi tôi! (rất thân mật)</td><td><span class="say">Oops, my bad! I sent the wrong file.</span></td></tr>
+  <tr><td class="say">misunderstanding</td><td>sự hiểu lầm</td><td><span class="say">I think it was just a misunderstanding.</span></td></tr>
+  <tr><td class="say">make it up to someone</td><td>bù đắp cho ai</td><td><span class="say">I’ll make it up to you, I promise.</span></td></tr>
+  <tr><td class="say">forgive</td><td>tha thứ</td><td><span class="say">Can you forgive me?</span></td></tr>
+  <tr><td class="say">No hard feelings</td><td>không giận gì đâu</td><td><span class="say">No hard feelings. We’re still friends.</span></td></tr>
+  <tr><td class="say">hold a grudge</td><td>để bụng, thù dai</td><td><span class="say">Don’t worry, I don’t hold grudges.</span></td></tr>
+  <tr><td class="say">put it behind us</td><td>cho qua chuyện cũ</td><td><span class="say">Let’s put it behind us.</span></td></tr></tbody></table>
+  <div class="sub-title">Cụm giúp cuộc trò chuyện trôi chảy</div>
+  <div class="ex-box"><div class="ex-head">LÀM CHO HỘI THOẠI TỰ NHIÊN<span class="ex-tag t5">Nâng cao</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">You made my day!</span><span class="ex-vn">Bạn làm ngày của mình vui hẳn lên!</span></div>
+    <div class="ex-row"><span class="ex-en say">That means a lot to me.</span><span class="ex-vn">Điều đó rất có ý nghĩa với mình</span></div>
+    <div class="ex-row"><span class="ex-en say">I didn’t mean to hurt your feelings.</span><span class="ex-vn">Mình không cố ý làm bạn buồn</span></div>
+    <div class="ex-row"><span class="ex-en say">I feel terrible about it.</span><span class="ex-vn">Mình thấy áy náy quá</span></div>
+    <div class="ex-row"><span class="ex-en say">It slipped my mind.</span><span class="ex-vn">Mình quên mất</span></div>
+    <div class="ex-row"><span class="ex-en say">Apology accepted.</span><span class="ex-vn">Mình chấp nhận lời xin lỗi</span></div>
+    <div class="ex-row"><span class="ex-en say">Water under the bridge.</span><span class="ex-vn">Chuyện cũ bỏ qua đi</span></div>
+  </div></div>
+  <div class="cmp"><div class="bad"><b>❌ NGHE HỜI HỢT</b><div>Sorry, sorry. Okay?</div></div><div class="good"><b>✔ CHÂN THÀNH</b><div class="say">I’m really sorry I forgot. It slipped my mind, but that’s no excuse. Let me make it up to you.</div></div></div>
+  <div class="info i-tip"><span>💡</span><span><strong>Mẹo:</strong> người Việt hay nói “sorry” và “thank you” ít hơn người Anh, Mỹ. Trong môi trường quốc tế, hãy dùng cả hai thường xuyên hơn bạn nghĩ, kể cả với việc nhỏ như được rót nước hay được nhường đường.</span></div>
+
+  <div class="sub-title">Tự kiểm tra</div>
+  <ul class="chk">
+    <li><label><input type="checkbox" id="c1">Tôi cảm ơn được ở nhiều mức và nói rõ vì điều gì</label></li>
+    <li><label><input type="checkbox" id="c2">Tôi đáp lại lời cảm ơn bằng ít nhất 4 cách</label></li>
+    <li><label><input type="checkbox" id="c3">Tôi phân biệt <strong>Excuse me / Sorry / Pardon</strong></label></li>
+    <li><label><input type="checkbox" id="c4">Tôi dùng đúng <strong>sorry for / about / to / that</strong></label></li>
+    <li><label><input type="checkbox" id="c5">Tôi xin lỗi trọn vẹn 4 bước và dùng <strong>should have + V3</strong></label></li>
+    <li><label><input type="checkbox" id="c6">Tôi phân biệt “sorry” để xin lỗi và “sorry” để chia buồn</label></li>
+    <li><label><input type="checkbox" id="c7">Tôi dùng được ít nhất 5 từ vựng nâng cao</label></li>
+  </ul>
+</section>
+
+</div>
+<div class="footer">💐 Giao tiếp tiếng Anh: Saying Thank You and Sorry · Dành cho người mới bắt đầu · 2026</div>
+</div>
+
+<div class="audio-bar">
+  <b>🔊 Audio</b>
+  <div class="ab-g"><button data-acc="en-GB" class="on">Anh-Anh</button><button data-acc="en-US">Anh-Mỹ</button></div>
+  <div class="ab-g"><button data-rate="0.6">Chậm</button><button data-rate="0.85" class="on">Vừa</button><button data-rate="1">Nhanh</button></div>
+</div>
+
+<script>
+(function(){
+var doc=document.documentElement,bar=document.getElementById('pbar');
+addEventListener('scroll',function(){bar.style.width=(doc.scrollTop/Math.max(1,doc.scrollHeight-doc.clientHeight)*100)+'%'});
+var links=document.querySelectorAll('.nav-link,.topnav a');
+if('IntersectionObserver' in window)document.querySelectorAll('.section[id]').forEach(function(s){
+  new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;
+    links.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id)});
+  })},{rootMargin:'-20% 0px -70% 0px'}).observe(s);
+});
+
+/* Audio */
+var S=window.speechSynthesis,st={acc:'en-GB',rate:.85},cur=null;
+function voice(){if(!S)return null;var v=S.getVoices().filter(function(x){return x.lang.replace('_','-').toLowerCase()===st.acc.toLowerCase()});
+  return v.find(function(x){return /google|natural|premium|enhanced/i.test(x.name)})||v[0]||null}
+function say(el){
+  if(cur)cur.classList.remove('playing');
+  if(!S){el.title='Trình duyệt này không hỗ trợ đọc audio';return}
+  S.cancel();cur=el;el.classList.add('playing');
+  var t=el.textContent.replace(/\s+/g,' ').replace(/\s*\/\s*/g,'. ').replace(/→/g,'. ').trim();
+  var u=new SpeechSynthesisUtterance(t);u.lang=st.acc;u.rate=st.rate;var v=voice();if(v)u.voice=v;
+  u.onend=u.onerror=function(){el.classList.remove('playing')};S.speak(u);
+}
+function prep(root){root.querySelectorAll('.say').forEach(function(e){e.tabIndex=0;e.setAttribute('role','button')})}
+prep(document);
+document.addEventListener('click',function(e){var el=e.target.closest('.say');if(el)say(el)});
+document.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.classList&&e.target.classList.contains('say')){e.preventDefault();say(e.target)}});
+document.querySelectorAll('.audio-bar button').forEach(function(b){b.addEventListener('click',function(){
+  b.parentElement.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');
+  if(b.dataset.acc)st.acc=b.dataset.acc;if(b.dataset.rate)st.rate=+b.dataset.rate;
+})});
+
+/* ===== Máy cảm ơn, xin lỗi =====
+   THANKS: [nhãn, for + V-ing/N, chi tiết thêm, nghĩa]
+   SORRY:  [nhãn, for + V-ing, nhận trách nhiệm / should have, sửa sai, hứa, nghĩa] */
+var THX=[['Giúp chuyển nhà','helping me move','I couldn’t have done it without you.','giúp mình chuyển nhà'],
+ ['Tặng quà sinh nhật','the beautiful birthday present','It’s exactly what I wanted.','món quà sinh nhật'],
+ ['Mời ăn tối','inviting me to dinner','The food was amazing.','mời ăn tối'],
+ ['Làm thay ca','covering my shift yesterday','You really saved me.','làm thay ca hôm qua'],
+ ['Góp ý bài thuyết trình','your feedback on my presentation','It helped me a lot.','góp ý bài thuyết trình'],
+ ['Đón ở sân bay','picking me up from the airport','It was so nice to see a friendly face.','đón ở sân bay']];
+var SOR=[['Đến muộn','being late','I should have left earlier.','Let me buy you a coffee.','It won’t happen again.','đến muộn'],
+ ['Quên sinh nhật','forgetting your birthday','It completely slipped my mind, but that’s no excuse.','Let me take you out for dinner this weekend.','I’ve put it in my calendar now.','quên sinh nhật'],
+ ['Làm vỡ cốc','breaking your mug','It was my fault. I wasn’t being careful.','I’ll buy you a new one.','I’ll be more careful next time.','làm vỡ cốc'],
+ ['Không nghe máy','missing your call','I should have called you back sooner.','Is now a good time to talk?','I’ll keep my phone on me.','không nghe máy'],
+ ['Sai sót trong báo cáo','the mistake in the report','I should have checked it more carefully.','I’ve already sent a corrected version.','I’ll double-check everything from now on.','sai sót trong báo cáo'],
+ ['Nói lời khó nghe','what I said yesterday','I shouldn’t have said that. I was stressed, but it wasn’t fair to you.','Can we talk about it?','I’ll try to be more patient.','những lời đã nói hôm qua']];
+/* [nhãn, cường độ cảm ơn, cường độ xin lỗi, phản hồi cảm ơn, phản hồi xin lỗi, chào tin nhắn, ký tên] */
+var REL=[['a close friend','Thanks so much for','I’m so sorry for','Anytime! That’s what friends are for.','Don’t worry about it. No hard feelings.','Hey','x'],
+ ['a colleague','Thank you so much for','I’m really sorry for','No problem at all. Happy to help.','That’s okay. Thanks for letting me know.','Hi',''],
+ ['your manager','Thank you very much for','I sincerely apologize for','You’re welcome. Keep up the good work.','I appreciate you taking responsibility. Let’s move forward.','Dear',''],
+ ['a family member','Thank you so much for','I’m really sorry for','Of course, sweetheart.','It’s okay. I know you didn’t mean it.','Hi','Love,']];
+var gm=document.getElementById('g-m'),gs=document.getElementById('g-s'),gr=document.getElementById('g-r'),out=document.getElementById('gen-out');
+REL.forEach(function(r,i){gr.add(new Option(r[0],i))});
+function fillSit(){var arr=gm.value==='0'?THX:SOR;gs.innerHTML='';arr.forEach(function(x,i){gs.add(new Option(x[0],i))})}
+fillSit();
+function cap(s){return s.charAt(0).toUpperCase()+s.slice(1)}
+function sign(r,dflt){return r[6]==='x'?'Linh x':r[6]?r[6]+' Linh':(dflt?dflt+' Linh':'Linh')}
+function line(label,text){var d=document.createElement('div');d.className='rl';var lb=document.createElement('span');lb.className='lbl';lb.textContent=label;var sp=document.createElement('span');sp.className='say';sp.textContent=text;d.append(lb,sp);out.append(d)}
+function show(){
+  var thank=gm.value==='0',r=REL[+gr.value],x=(thank?THX:SOR)[+gs.value]||(thank?THX:SOR)[0];
+  var spoken,text,reply,note,vn;
+  if(thank){
+    spoken=r[1]+' '+x[1]+'. '+x[2]+(r[0]==='your manager'?' I really appreciate it.':' I really appreciate it!');
+    reply=r[3];
+    var greet=r[5]+(r[0]==='your manager'?' Mr. Brown,':' Sam,');
+    text=greet+' just wanted to say thank you for '+x[1]+'. '+x[2]+' '+sign(r,'Best,');
+    if(r[0]==='your manager')text='Dear Mr. Brown, thank you very much for '+x[1]+'. '+x[2]+' Best regards, Linh';
+    vn='Cảm ơn '+x[3]+'.';
+    note='Cấu trúc: <b>Thank you for + '+(/^(the|your)/.test(x[1])?'danh từ':'V-ing')+'</b> → <b>'+x[1]+'</b>. Thêm một câu nói rõ điều đó có ý nghĩa thế nào để lời cảm ơn chân thành hơn.';
+  }else{
+    spoken=r[2]+' '+x[1]+'. '+x[2]+' '+x[3]+' '+x[4];
+    reply=r[4];
+    text=(r[0]==='your manager'?'Dear Mr. Brown, I sincerely apologize for ':r[5]+' Sam, I’m really sorry about ')+x[1]+'. '+x[2]+' '+x[3]+(r[0]==='your manager'?' Best regards, Linh':' '+sign(r,''));
+    vn='Xin lỗi vì '+x[5]+'.';
+    note='Lời xin lỗi 4 bước: <b>xin lỗi</b> (sorry for + '+x[1]+') → <b>nhận trách nhiệm</b> → <b>sửa sai</b> → <b>hứa lần sau</b>.'+(r[0]==='your manager'?' Với cấp trên, <b>I sincerely apologize</b> trang trọng hơn <b>I’m sorry</b>.':'');
+  }
+  out.innerHTML='';
+  line('BẠN NÓI',spoken);
+  line('HỌ ĐÁP',reply);
+  var lb=document.createElement('div');lb.className='lbl';lb.style.marginTop='10px';lb.textContent=r[0]==='your manager'?'BẢN EMAIL / TIN NHẮN':'BẢN TIN NHẮN';out.append(lb);
+  var msg=document.createElement('div');msg.className='msg';var sp=document.createElement('span');sp.className='say';sp.textContent=text;msg.append(sp);out.append(msg);
+  var v=document.createElement('div');v.style.color='var(--muted)';v.style.fontSize='13px';v.textContent='Nghĩa: '+vn+' Người nhận: '+({'a close friend':'bạn thân','a colleague':'đồng nghiệp','your manager':'cấp trên','a family member':'người nhà'}[r[0]])+'.';out.append(v);
+  var w=document.createElement('span');w.className='why';w.innerHTML=note;out.append(w);
+  prep(out);
+}
+document.getElementById('gen-btn').addEventListener('click',show);
+gm.addEventListener('change',function(){fillSit();show()});
+[gs,gr].forEach(function(s){s.addEventListener('change',show)});
+document.getElementById('rnd-btn').addEventListener('click',function(){
+  gm.value=Math.random()<.5?'0':'1';fillSit();gs.value=Math.floor(Math.random()*gs.options.length);gr.value=Math.floor(Math.random()*REL.length);show();
+});
+show();
+
+/* Bài tập */
+var inputs=document.querySelectorAll('#exlist input'),exo=document.getElementById('ex-out');
+function norm(s){return s.toLowerCase().replace(/[’‘`]/g,"'").replace(/[.!?]+$/,'').replace(/,/g,'').replace(/\s+/g,' ').trim()}
+document.getElementById('ex-check').addEventListener('click',function(){
+  var ok=0;
+  inputs.forEach(function(i){
+    var good=i.dataset.a.split('|').some(function(a){return norm(a)===norm(i.value)});
+    i.classList.remove('ok','no');i.classList.add(good?'ok':'no');if(good)ok++;
+  });
+  exo.style.minHeight='';
+  exo.textContent=ok===inputs.length?'🎉 Chính xác '+ok+'/'+inputs.length+'. Lời cảm ơn và xin lỗi của bạn đã rất chuẩn!':'Đúng '+ok+'/'+inputs.length+'. Các ô viền đỏ cần xem lại; đọc lại phần ngữ pháp ở Bài 1 đến 5, hoặc bấm “Xem đáp án”.';
+});
+document.getElementById('ex-show').addEventListener('click',function(){
+  inputs.forEach(function(i){
+    var k=i.parentElement.querySelector('.key');
+    if(!k){k=document.createElement('span');k.className='key';i.parentElement.append(k)}
+    var a=i.dataset.a.split('|')[0].replace(/'/g,'’').replace(/\bi\b/g,'I').replace(/^excuse$/,'Excuse');k.textContent='Đáp án: '+(a.indexOf(' ')>-1?cap(a):a);
+  });
+});
+document.getElementById('ex-reset').addEventListener('click',function(){
+  inputs.forEach(function(i){i.value='';i.classList.remove('ok','no')});
+  document.querySelectorAll('#exlist .key').forEach(function(k){k.remove()});
+  exo.textContent='';exo.style.minHeight='0';
+});
+})();
+</script>
+
+<script src="nav.js" defer></script>
+</body></html>

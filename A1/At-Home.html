@@ -1,0 +1,523 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Tiếng Anh At Home</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: sidebar mục lục cố định + cột bài học, cùng theme tối của bộ "Hỏi đường & Hỏi giờ" (nhấn xanh lá – vàng ấm cho chủ đề nhà cửa) */
+:root{color-scheme:dark;
+--bg:#080810;--s1:#0e0e1c;--s2:#131326;--s3:#18182e;--border:#222240;--border2:#2c2c50;--text:#e6e6f2;--muted:#8a8ab8;--faint:#4a4a78;
+--acc:#ffd060;--acc-dim:rgba(255,208,96,.11);--oc:#38bdf8;--oc-dim:rgba(56,189,248,.13);--ins:#40d88e;--ins-dim:rgba(64,216,142,.12);
+--sk:#a07af4;--sk-dim:rgba(160,122,244,.12);--au:#ff6584;--au-dim:rgba(255,101,132,.12);--teal:#30d8c0;--code-bg:#05050e;
+--tip-bg:rgba(91,168,255,.10);--tip-bd:rgba(91,168,255,.25);--tip-fg:#8ab8f0;--warn-fg:#e0bc58;--ok-fg:#5ccf98;--line:rgba(255,255,255,.05);
+--font:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+--gl:max(64px,env(safe-area-inset-left,0px));--gr:max(64px,env(safe-area-inset-right,0px))}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 60px)}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.7;font-size:15px;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:600;background:var(--s1)}
+.sidebar{position:fixed;left:0;top:0;width:260px;height:100%;background:var(--s1);border-right:1px solid var(--border);overflow-y:auto;z-index:400;padding-top:env(safe-area-inset-top,0px);padding-left:env(safe-area-inset-left,0px)}
+.sb-logo{padding:20px 18px 16px;border-bottom:1px solid var(--border)}
+.sb-brand{display:flex;align-items:center;gap:11px;margin-bottom:12px}
+.logo-icon{width:44px;height:44px;border-radius:11px;background:linear-gradient(135deg,var(--ins),var(--acc));display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 0 26px rgba(255,208,96,.28)}
+.logo-text h2{font-size:15px;font-weight:800}.logo-text p{font-size:10.5px;color:var(--muted)}
+.prog-wrap{height:3px;background:var(--border);border-radius:2px;overflow:hidden}
+.prog-bar{height:100%;width:0;background:linear-gradient(90deg,var(--acc),var(--ins),var(--oc),var(--sk),var(--au))}
+.nav-label{padding:14px 18px 4px;font-size:9.5px;font-weight:700;letter-spacing:1.6px;color:var(--faint)}
+.nav-link{display:flex;align-items:center;gap:9px;padding:7px 18px;color:var(--muted);text-decoration:none;font-size:12.5px;font-weight:600;border-left:2px solid transparent}
+.nav-link:hover,.nav-link.active{color:var(--text);background:rgba(255,208,96,.07);border-left-color:var(--acc)}
+.main{margin-left:260px}
+.hero{padding-block:80px 60px;padding-left:var(--gl);padding-right:var(--gr);border-bottom:1px solid var(--border);background:radial-gradient(ellipse 65% 55% at 75% 22%,rgba(64,216,142,.09),transparent 60%),radial-gradient(ellipse 50% 55% at 10% 82%,rgba(255,208,96,.07),transparent 55%),var(--bg)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--acc-dim);border:1px solid rgba(255,208,96,.38);color:var(--acc);padding:5px 16px;border-radius:100px;font-size:11.5px;font-weight:700;margin-bottom:24px}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--acc);animation:p 2s infinite}
+@keyframes p{50%{opacity:.35;transform:scale(.7)}}
+@media(prefers-reduced-motion:reduce){.eyebrow i{animation:none}html{scroll-behavior:auto}}
+.hero h1{font-size:50px;font-weight:900;letter-spacing:-2.4px;line-height:1.06;margin-bottom:18px;text-wrap:balance}
+.grad{background:linear-gradient(135deg,var(--ins),var(--acc));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-desc{font-size:16px;color:var(--muted);max-width:620px;margin-bottom:28px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{padding:5px 14px;border-radius:7px;font-size:12px;font-weight:700}
+.c1{background:var(--oc-dim);color:var(--oc)}.c2{background:var(--ins-dim);color:var(--ins)}.c3{background:var(--acc-dim);color:var(--acc)}.c4{background:var(--sk-dim);color:var(--sk)}.c5{background:var(--au-dim);color:var(--au)}
+.content{padding-block:56px;padding-left:var(--gl);padding-right:var(--gr);max-width:calc(1020px + 64px)}
+.section{margin-bottom:68px}
+.sec-head{display:flex;gap:14px;align-items:flex-start;margin-bottom:28px;padding-bottom:18px;border-bottom:1px solid var(--border)}
+.sec-tag{font-family:var(--mono);font-size:10px;font-weight:600;padding:3px 10px;border-radius:5px;margin-top:6px;flex-shrink:0;letter-spacing:.5px}
+.t1{color:var(--oc);background:var(--oc-dim)}.t2{color:var(--ins);background:var(--ins-dim)}.t3{color:var(--acc);background:var(--acc-dim)}.t4{color:var(--sk);background:var(--sk-dim)}.t5{color:var(--au);background:var(--au-dim)}
+.sec-title{font-size:23px;font-weight:800;letter-spacing:-.6px;text-wrap:balance}.sec-sub{font-size:13px;color:var(--muted)}
+.sub-title{font-size:14.5px;font-weight:700;margin:26px 0 12px;display:flex;align-items:center;gap:10px}
+.sub-title::before{content:'';width:14px;height:3px;background:var(--acc);border-radius:2px}
+p.t{color:var(--muted);font-size:13.5px;margin-bottom:11px;max-width:68ch}p.t strong,li strong{color:var(--text)}
+.ex-box{background:var(--s1);border:1px solid var(--border2);border-radius:11px;overflow:hidden;margin:13px 0}
+.ex-head{display:flex;align-items:center;gap:8px;padding:9px 16px;background:var(--s2);border-bottom:1px solid var(--border);font-family:var(--mono);font-size:10px;font-weight:600;color:var(--muted);letter-spacing:.5px}
+.ex-tag{margin-left:auto;font-size:9px;font-weight:700;padding:2px 9px;border-radius:100px;font-family:var(--font)}
+.ex-body{padding:10px 20px}
+.ex-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:13.5px}
+.ex-row:last-child{border-bottom:none}
+.ex-en{color:var(--text);font-weight:600;min-width:280px}.ex-vn{color:var(--muted)}
+.info{display:flex;gap:12px;padding:14px 16px;border-radius:9px;margin:13px 0;font-size:13px;line-height:1.6}
+.i-tip{background:var(--tip-bg);border:1px solid var(--tip-bd);color:var(--tip-fg)}
+.i-warn{background:var(--acc-dim);border:1px solid rgba(255,208,96,.25);color:var(--warn-fg)}
+.i-ok{background:var(--ins-dim);border:1px solid rgba(64,216,142,.25);color:var(--ok-fg)}
+.tbl{width:100%;border-collapse:collapse;font-size:13px;margin:13px 0;display:block;overflow-x:auto}
+.tbl th{background:var(--s3);padding:10px 14px;text-align:left;font-size:10px;color:var(--muted);border-bottom:1px solid var(--border2);white-space:nowrap;letter-spacing:.5px}
+.tbl td{padding:10px 14px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:top}
+.tbl td:first-child{color:var(--text);font-weight:600}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}
+.card{background:var(--s1);border:1px solid var(--border);border-radius:11px;padding:16px;min-width:0}
+.card:hover{border-color:var(--acc)}
+.card-icon{font-size:24px}.card-title{font-size:13px;font-weight:700}.card-desc{font-size:12px;color:var(--muted)}
+.cmp{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);border-radius:11px;overflow:hidden;margin:13px 0}
+.bad{background:rgba(255,101,132,.07);padding:14px 16px;border-right:1px solid var(--border)}.good{background:rgba(64,216,142,.07);padding:14px 16px}
+.cmp b{display:block;font-size:10px;margin-bottom:6px;letter-spacing:.5px}.bad b{color:var(--au)}.good b{color:var(--ins)}
+.cmp div div{font-size:13.5px}
+.dlg{display:grid;gap:8px;margin:12px 0;background:var(--s1);border:1px solid var(--border2);border-radius:12px;padding:16px 18px}
+.dlg-t{font-size:10px;font-weight:800;color:var(--acc);margin-bottom:2px;letter-spacing:.6px}
+.turn{display:flex;gap:10px;align-items:baseline}
+.turn>div{min-width:0}
+.who{flex-shrink:0;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+.wa{background:var(--oc-dim);color:var(--oc)}.wb{background:var(--ins-dim);color:var(--ins)}
+.turn .say{font-weight:600}.turn small{display:block;color:var(--muted);font-size:12px;font-weight:400}
+.gen{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:12px 0}
+.gen label{font-size:11.5px;color:var(--muted);font-weight:600;display:block;min-width:0}
+.gen select{width:100%;margin-top:4px;background:var(--code-bg);border:1px solid var(--border2);border-radius:8px;padding:9px 12px;color:var(--text);font:inherit;font-size:13px}
+select:focus-visible,button:focus-visible,.say:focus-visible,.exi input:focus-visible,.chk input:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.btns{display:flex;flex-wrap:wrap;gap:6px}
+.btn{background:var(--acc-dim);color:var(--acc);border:1px solid var(--acc);border-radius:8px;padding:8px 16px;font:inherit;font-weight:700;font-size:13px;cursor:pointer}
+.btn.alt{background:var(--ins-dim);color:var(--ins);border-color:var(--ins)}
+.out{margin-top:14px;min-height:60px;background:var(--s2);border:1px dashed var(--border2);border-radius:10px;padding:14px 16px;font-size:14px;line-height:1.9}
+.big{font-size:21px;font-weight:800;color:var(--acc);letter-spacing:-.3px;line-height:1.4;margin-bottom:4px}
+.out .why{display:block;color:var(--muted);font-size:12.5px}
+.out .why b{color:var(--teal);font-family:var(--mono);font-weight:600}
+.timeline{display:grid;gap:0;margin:14px 0;border-left:2px solid var(--border2);padding-left:18px}
+.tl{position:relative;padding:8px 0 12px}
+.tl::before{content:'';position:absolute;left:-24px;top:16px;width:10px;height:10px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 3px var(--bg)}
+.tl time{font-family:var(--mono);font-size:12px;color:var(--acc);font-variant-numeric:tabular-nums;font-weight:600}
+.tl .say{font-weight:600;font-size:13.5px}
+.tl small{display:block;color:var(--muted);font-size:12px}
+.freq{display:grid;gap:7px;margin:14px 0}
+.fq{display:grid;grid-template-columns:110px 1fr 54px;gap:12px;align-items:center;font-size:13px}
+.fq .say{font-weight:700}
+.fq .track{height:8px;background:var(--s3);border-radius:4px;overflow:hidden}
+.fq .fill{height:100%;background:linear-gradient(90deg,var(--ins),var(--acc))}
+.fq span:last-child{font-family:var(--mono);font-size:11.5px;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+.plan{display:grid;gap:8px;margin:12px 0}
+.day{display:flex;gap:14px;align-items:baseline;background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:12px 16px;font-size:13px;color:var(--muted)}
+.day b{color:var(--acc);font-family:var(--mono);font-size:12px;flex-shrink:0;width:52px}.day strong{color:var(--text)}
+.chk{list-style:none;margin:10px 0}.chk li{padding:6px 0;font-size:13.5px;color:var(--muted);border-bottom:1px solid rgba(255,255,255,.04)}
+.chk input{accent-color:var(--ins);margin-right:10px;width:15px;height:15px;vertical-align:-2px}
+.gr{border:1px solid rgba(160,122,244,.38);background:linear-gradient(180deg,var(--sk-dim),transparent 110px),var(--s1);border-radius:12px;margin:28px 0;overflow:hidden}
+.gr-head{padding:10px 18px;font-size:12px;font-weight:800;color:var(--sk);border-bottom:1px solid var(--border);display:flex;gap:10px;flex-wrap:wrap;align-items:baseline;letter-spacing:.4px}
+.gr-head em{font-style:normal;color:var(--muted);font-weight:600;letter-spacing:0}
+.gr-body{padding:14px 18px;font-size:13.5px;color:var(--muted)}
+.gr-body p{margin-bottom:10px}.gr-body b{color:var(--text)}.gr-body ul{padding-left:20px;margin-bottom:8px}.gr-body li{margin-bottom:4px}
+.gr-body .tbl{margin:8px 0 12px}
+.fm{display:inline-block;font-family:var(--mono);font-size:12px;background:var(--code-bg);color:var(--teal);padding:3px 9px;border-radius:6px;margin:2px 0}
+.say{cursor:pointer;border-bottom:1px dotted var(--oc)}
+.say:hover{color:var(--acc);background:var(--acc-dim);border-radius:4px}
+.say::after{content:"🔊";font-size:.68em;margin-left:3px;opacity:.5}
+.say.playing{color:var(--ins);background:var(--ins-dim);border-radius:4px}.say.playing::after{opacity:1}
+.exi{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:13.5px;color:var(--text)}
+.exi input{width:220px;max-width:100%;background:var(--code-bg);border:1px solid var(--border2);border-radius:6px;padding:4px 8px;color:var(--text);font:inherit;font-size:13px;text-align:center}
+.exi input.ok{border-color:var(--ins);color:var(--ins)}.exi input.no{border-color:var(--au);color:var(--au)}
+.exi small{color:var(--muted);font-size:11.5px}
+.exi .key{color:var(--ins);font-size:12px;width:100%}
+.footer{border-top:1px solid var(--border);padding-block:28px 90px;padding-left:var(--gl);padding-right:var(--gr);font-size:12px;color:var(--muted)}
+.audio-bar{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:500;display:flex;gap:10px;align-items:center;background:var(--s2);border:1px solid var(--border2);border-radius:12px;padding:8px 12px;box-shadow:0 8px 28px rgba(0,0,0,.5);font-size:12px;color:var(--muted)}
+.audio-bar b{color:var(--acc)}.ab-g{display:flex;gap:4px}
+.audio-bar button{background:var(--s3);color:var(--muted);border:1px solid var(--border);border-radius:7px;padding:4px 10px;font:inherit;font-weight:700;cursor:pointer}
+.audio-bar button.on{background:var(--acc-dim);color:var(--acc);border-color:var(--acc)}
+.topnav{display:none}
+@media(max-width:900px){
+:root{--gl:max(18px,env(safe-area-inset-left,0px));--gr:max(18px,env(safe-area-inset-right,0px))}
+.sidebar{display:none}.main{margin-left:0}.hero h1{font-size:32px;letter-spacing:-1.4px}.hero{padding-block:48px 40px}
+.grid-3,.cmp{grid-template-columns:1fr}.gen{grid-template-columns:1fr 1fr}.bad{border-right:none;border-bottom:1px solid var(--border)}
+.topnav{display:flex;overflow-x:auto;position:sticky;top:env(safe-area-inset-top,0px);z-index:500;background:var(--s1);border-bottom:2px solid var(--border2);scrollbar-width:none;padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+.topnav a{flex-shrink:0;padding:10px 14px;color:var(--muted);text-decoration:none;font-size:12px;font-weight:700;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-2px}
+.topnav a.active{color:var(--acc);border-bottom-color:var(--acc);background:var(--acc-dim)}
+.ex-en{min-width:0}
+.fq{grid-template-columns:90px 1fr 46px}
+.audio-bar{left:calc(8px + env(safe-area-inset-left,0px));right:calc(8px + env(safe-area-inset-right,0px));justify-content:center;flex-wrap:wrap}
+}
+@media(max-width:480px){.gen{grid-template-columns:1fr}}
+.lbl{font-family:var(--mono);font-size:10px;font-weight:600;color:var(--faint);letter-spacing:1px;min-width:90px}
+.rl{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;padding:3px 0}
+.rl .say{font-weight:700;font-size:15px}
+.tbl small{color:var(--muted);font-size:11.5px}
+</style>
+
+<aside class="sidebar">
+  <div class="sb-logo">
+    <div class="sb-brand"><div class="logo-icon">🏠</div><div class="logo-text"><h2>At Home</h2><p>Tiếng Anh cho người mới</p></div></div>
+    <div class="prog-wrap"><div class="prog-bar" id="pbar"></div></div>
+  </div>
+  <div class="nav-label">BÀI HỌC</div>
+  <a class="nav-link" href="#s1">🏡 Nhà &amp; các phòng</a>
+  <a class="nav-link" href="#s2">🛋️ Đồ đạc &amp; vị trí</a>
+  <a class="nav-link" href="#s3">📝 Mô tả nhà bạn</a>
+  <a class="nav-link" href="#s4">🧹 Nhờ việc &amp; giúp đỡ</a>
+  <a class="nav-link" href="#s5">🚪 Đón khách</a>
+  <div class="nav-label">THỰC HÀNH</div>
+  <a class="nav-link" href="#s6">💬 Hội thoại mẫu</a>
+  <a class="nav-link" href="#s7">🛠️ Tìm đồ &amp; bài tập</a>
+  <a class="nav-link" href="#s8">🚀 Từ vựng nâng cao</a>
+</aside>
+
+<div class="main">
+<nav class="topnav">
+  <a href="#s1">1 Các phòng</a><a href="#s2">2 Đồ đạc</a><a href="#s3">3 Mô tả</a><a href="#s4">4 Nhờ việc</a><a href="#s5">5 Đón khách</a><a href="#s6">6 Hội thoại</a><a href="#s7">7 Bài tập</a><a href="#s8">8 Nâng cao</a>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow"><i></i>Dành cho người mới bắt đầu</div>
+  <h1>Ở nhà, nói gì<br><span class="grad">bằng tiếng Anh</span></h1>
+  <p class="hero-desc">Học tên các phòng và đồ đạc, nói đồ vật nằm ở đâu, giới thiệu ngôi nhà của bạn, nhờ người khác làm việc nhà và đón khách đến chơi. Bấm vào câu có biểu tượng loa để nghe, nói theo, rồi luyện hỏi "Đồ của tôi đâu?" ở phần thực hành.</p>
+  <div class="chips"><span class="chip c2">Các phòng</span><span class="chip c3">Đồ đạc</span><span class="chip c1">Mô tả nhà</span><span class="chip c4">Đón khách</span><span class="chip c5">Từ vựng nâng cao</span></div>
+</header>
+
+<div class="content">
+
+<section class="section" id="s1">
+  <div class="sec-head"><span class="sec-tag t2">BÀI 1</span><div><div class="sec-title">Ngôi nhà và các phòng</div><div class="sec-sub">Loại nhà bạn ở và tên từng phòng</div></div></div>
+  <div class="grid-3">
+    <div class="card"><div class="card-icon">🛋️</div><div class="card-title say">living room</div><div class="card-desc">phòng khách</div></div>
+    <div class="card"><div class="card-icon">🛏️</div><div class="card-title say">bedroom</div><div class="card-desc">phòng ngủ</div></div>
+    <div class="card"><div class="card-icon">🍳</div><div class="card-title say">kitchen</div><div class="card-desc">bếp</div></div>
+    <div class="card"><div class="card-icon">🛁</div><div class="card-title say">bathroom</div><div class="card-desc">phòng tắm</div></div>
+    <div class="card"><div class="card-icon">🍽️</div><div class="card-title say">dining room</div><div class="card-desc">phòng ăn</div></div>
+    <div class="card"><div class="card-icon">🪴</div><div class="card-title say">balcony</div><div class="card-desc">ban công</div></div>
+  </div>
+  <table class="tbl"><thead><tr><th>Loại nhà</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">house</td><td>nhà riêng</td><td><span class="say">My parents live in a house.</span></td></tr>
+  <tr><td class="say">apartment / flat</td><td>căn hộ (Mỹ / Anh)</td><td><span class="say">I live in an apartment on the tenth floor.</span></td></tr>
+  <tr><td class="say">townhouse</td><td>nhà phố, nhà ống</td><td><span class="say">Many families in Hanoi live in townhouses.</span></td></tr>
+  <tr><td class="say">studio</td><td>căn hộ một phòng</td><td><span class="say">I rent a small studio near my office.</span></td></tr>
+  <tr><td class="say">dormitory / dorm</td><td>ký túc xá</td><td><span class="say">I live in a dorm at university.</span></td></tr></tbody></table>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>There is / There are</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Cấu trúc</th><th>Ví dụ</th><th>Dùng khi</th></tr></thead><tbody>
+<tr><td><span class="fm">There is (There’s) + a/an + N</span></td><td><span class="say">There’s a big kitchen.</span></td><td>Một thứ</td></tr>
+<tr><td><span class="fm">There are + số / some + N số nhiều</span></td><td><span class="say">There are three bedrooms.</span></td><td>Nhiều thứ</td></tr>
+<tr><td><span class="fm">Is there / Are there…?</span></td><td><span class="say">Is there a balcony?</span> <span class="say">Are there any windows?</span></td><td>Câu hỏi</td></tr>
+<tr><td><span class="fm">There isn’t / There aren’t</span></td><td><span class="say">There isn’t a garden.</span></td><td>Phủ định</td></tr></tbody></table>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>My house have two bedroom.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">There are two bedrooms in my house.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s2">
+  <div class="sec-head"><span class="sec-tag t3">BÀI 2</span><div><div class="sec-title">Đồ đạc và vị trí</div><div class="sec-sub">Gọi tên đồ trong từng phòng và nói nó nằm ở đâu</div></div></div>
+  <table class="tbl"><thead><tr><th>Phòng</th><th>Đồ đạc thường có</th></tr></thead><tbody>
+  <tr><td class="say">living room</td><td><span class="say">sofa, armchair, coffee table, TV, lamp, bookshelf</span><br><small>ghế sofa, ghế bành, bàn trà, tivi, đèn, giá sách</small></td></tr>
+  <tr><td class="say">bedroom</td><td><span class="say">bed, pillow, blanket, wardrobe, desk, mirror</span><br><small>giường, gối, chăn, tủ quần áo, bàn học, gương</small></td></tr>
+  <tr><td class="say">kitchen</td><td><span class="say">fridge, stove, sink, rice cooker, microwave, cupboard</span><br><small>tủ lạnh, bếp, bồn rửa, nồi cơm, lò vi sóng, tủ bếp</small></td></tr>
+  <tr><td class="say">bathroom</td><td><span class="say">shower, toilet, towel, washing machine, toothbrush</span><br><small>vòi sen, bồn cầu, khăn tắm, máy giặt, bàn chải</small></td></tr></tbody></table>
+  <div class="sub-title">Giới từ chỉ vị trí trong nhà</div>
+  <div class="grid-3">
+    <div class="card"><div class="card-icon">📦</div><div class="card-title say">in the drawer</div><div class="card-desc">trong ngăn kéo</div></div>
+    <div class="card"><div class="card-icon">🍽️</div><div class="card-title say">on the table</div><div class="card-desc">trên mặt bàn</div></div>
+    <div class="card"><div class="card-icon">🛏️</div><div class="card-title say">under the bed</div><div class="card-desc">dưới gầm giường</div></div>
+    <div class="card"><div class="card-icon">🛋️</div><div class="card-title say">next to the sofa</div><div class="card-desc">cạnh ghế sofa</div></div>
+    <div class="card"><div class="card-icon">🚪</div><div class="card-title say">behind the door</div><div class="card-desc">sau cánh cửa</div></div>
+    <div class="card"><div class="card-icon">🖼️</div><div class="card-title say">on the wall</div><div class="card-desc">trên tường</div></div>
+  </div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>in / on / under: bên trong, trên mặt, bên dưới</em></div><div class="gr-body">
+<ul><li><span class="fm">in</span> = bên trong một không gian: <span class="say">The milk is in the fridge.</span></li>
+<li><span class="fm">on</span> = nằm trên bề mặt, kể cả tường: <span class="say">The picture is on the wall.</span></li>
+<li><span class="fm">under</span> = bên dưới: <span class="say">The cat is under the table.</span></li></ul>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>The clock is in the wall.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">The clock is on the wall.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s3">
+  <div class="sec-head"><span class="sec-tag t1">BÀI 3</span><div><div class="sec-title">Mô tả ngôi nhà của bạn</div><div class="sec-sub">Giới thiệu nơi bạn sống khi có người hỏi</div></div></div>
+  <div class="grid-3">
+    <div class="card"><div class="card-icon">🧸</div><div class="card-title say">cozy</div><div class="card-desc">ấm cúng</div></div>
+    <div class="card"><div class="card-icon">💡</div><div class="card-title say">bright</div><div class="card-desc">sáng sủa</div></div>
+    <div class="card"><div class="card-icon">🤫</div><div class="card-title say">quiet</div><div class="card-desc">yên tĩnh</div></div>
+    <div class="card"><div class="card-icon">📢</div><div class="card-title say">noisy</div><div class="card-desc">ồn ào</div></div>
+    <div class="card"><div class="card-icon">✨</div><div class="card-title say">modern</div><div class="card-desc">hiện đại</div></div>
+    <div class="card"><div class="card-icon">📐</div><div class="card-title say">small but tidy</div><div class="card-desc">nhỏ nhưng gọn gàng</div></div>
+  </div>
+  <div class="ex-box"><div class="ex-head">GIỚI THIỆU NHÀ<span class="ex-tag t1">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Where do you live?</span><span class="ex-vn">Bạn sống ở đâu?</span></div>
+    <div class="ex-row"><span class="ex-en say">I live in an apartment in Cau Giay.</span><span class="ex-vn">Tôi sống ở một căn hộ ở Cầu Giấy</span></div>
+    <div class="ex-row"><span class="ex-en say">I live with my parents and my younger brother.</span><span class="ex-vn">Tôi sống với bố mẹ và em trai</span></div>
+    <div class="ex-row"><span class="ex-en say">It has two bedrooms and one bathroom.</span><span class="ex-vn">Nhà có hai phòng ngủ và một phòng tắm</span></div>
+    <div class="ex-row"><span class="ex-en say">My room is small but very cozy.</span><span class="ex-vn">Phòng tôi nhỏ nhưng rất ấm cúng</span></div>
+    <div class="ex-row"><span class="ex-en say">My favorite place is the balcony. I have lots of plants there.</span><span class="ex-vn">Chỗ tôi thích nhất là ban công. Ở đó tôi trồng nhiều cây</span></div>
+    <div class="ex-row"><span class="ex-en say">What’s your home like?</span><span class="ex-vn">Nhà bạn thế nào?</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Sở hữu cách ’s và tính từ sở hữu</em></div><div class="gr-body">
+<ul><li><span class="fm">Tên người + ’s + đồ vật</span> → <span class="say">This is Lan’s room.</span> <span class="say">My parents’ bedroom is upstairs.</span></li>
+<li><span class="fm">my / your / his / her / our / their</span> → <span class="say">Our kitchen is small.</span></li></ul>
+<p>Số nhiều tận cùng bằng -s chỉ thêm dấu <b>’</b>: <i>my parents’ room</i>.</p>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>This is room of my sister.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">This is my sister’s room.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s4">
+  <div class="sec-head"><span class="sec-tag t4">BÀI 4</span><div><div class="sec-title">Nhờ việc và giúp đỡ trong nhà</div><div class="sec-sub">Nói chuyện với gia đình, bạn cùng phòng về việc nhà</div></div></div>
+  <div class="ex-box"><div class="ex-head">NHỜ AI ĐÓ LÀM VIỆC<span class="ex-tag t4">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Can you take out the trash?</span><span class="ex-vn">Bạn đổ rác giúp được không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Could you turn off the light, please?</span><span class="ex-vn">Bạn tắt đèn giúp tôi được không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Can you turn on the air conditioner?</span><span class="ex-vn">Bật điều hòa giúp tôi nhé?</span></div>
+    <div class="ex-row"><span class="ex-en say">Please close the window. It’s cold.</span><span class="ex-vn">Đóng cửa sổ giúp nhé. Lạnh quá</span></div>
+    <div class="ex-row"><span class="ex-en say">Could you help me move this table?</span><span class="ex-vn">Bạn giúp tôi kê lại cái bàn này được không?</span></div>
+  </div></div>
+  <div class="ex-box"><div class="ex-head">ĐỀ NGHỊ GIÚP ĐỠ<span class="ex-tag t2">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Let me help you.</span><span class="ex-vn">Để tôi giúp bạn</span></div>
+    <div class="ex-row"><span class="ex-en say">Shall I wash the dishes?</span><span class="ex-vn">Để tôi rửa bát nhé?</span></div>
+    <div class="ex-row"><span class="ex-en say">I’ll do the laundry today.</span><span class="ex-vn">Hôm nay tôi giặt đồ cho</span></div>
+    <div class="ex-row"><span class="ex-en say">Don’t worry, I’ll clean it up.</span><span class="ex-vn">Đừng lo, để tôi dọn</span></div>
+  </div></div>
+  <div class="info i-tip"><span>💡</span><span><strong>Mẹo:</strong> <strong>turn on / turn off</strong> dùng cho đồ dùng điện: đèn, quạt, tivi, điều hòa. Với cửa thì dùng <strong>open / close</strong>.</span></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Nhờ vả và đề nghị: Can you / Could you / Shall I / I’ll</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Cấu trúc</th><th>Dùng khi</th><th>Ví dụ</th></tr></thead><tbody>
+<tr><td><span class="fm">Can you + V?</span></td><td>nhờ người thân, thân mật</td><td><span class="say">Can you open the door?</span></td></tr>
+<tr><td><span class="fm">Could you + V, please?</span></td><td>nhờ lịch sự hơn</td><td><span class="say">Could you pass me the remote, please?</span></td></tr>
+<tr><td><span class="fm">Shall I + V?</span></td><td>hỏi xem mình có nên giúp không</td><td><span class="say">Shall I make some tea?</span></td></tr>
+<tr><td><span class="fm">I’ll + V</span></td><td>tự nhận làm ngay</td><td><span class="say">I’ll get it.</span></td></tr></tbody></table>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>Can you to close the door?</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">Can you close the door?</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s5">
+  <div class="sec-head"><span class="sec-tag t5">BÀI 5</span><div><div class="sec-title">Đón khách đến nhà</div><div class="sec-sub">Từ lúc mở cửa đến lúc chào tạm biệt</div></div></div>
+  <div class="ex-box"><div class="ex-head">CHỦ NHÀ NÓI<span class="ex-tag t5">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Hi! Come in, please.</span><span class="ex-vn">Chào bạn! Mời vào</span></div>
+    <div class="ex-row"><span class="ex-en say">Welcome to my home.</span><span class="ex-vn">Chào mừng bạn đến nhà tôi</span></div>
+    <div class="ex-row"><span class="ex-en say">You can leave your shoes here.</span><span class="ex-vn">Bạn để giày ở đây nhé</span></div>
+    <div class="ex-row"><span class="ex-en say">Please have a seat.</span><span class="ex-vn">Mời bạn ngồi</span></div>
+    <div class="ex-row"><span class="ex-en say">Would you like something to drink?</span><span class="ex-vn">Bạn uống gì không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Let me show you around.</span><span class="ex-vn">Để tôi dẫn bạn đi xem nhà</span></div>
+    <div class="ex-row"><span class="ex-en say">This is the kitchen, and the bathroom is over there.</span><span class="ex-vn">Đây là bếp, còn phòng tắm ở đằng kia</span></div>
+    <div class="ex-row"><span class="ex-en say">Thanks for coming!</span><span class="ex-vn">Cảm ơn bạn đã đến!</span></div>
+  </div></div>
+  <div class="ex-box"><div class="ex-head">KHÁCH NÓI<span class="ex-tag t1">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Thanks for having me.</span><span class="ex-vn">Cảm ơn đã mời tôi đến</span></div>
+    <div class="ex-row"><span class="ex-en say">What a lovely home!</span><span class="ex-vn">Nhà đẹp quá!</span></div>
+    <div class="ex-row"><span class="ex-en say">Should I take off my shoes?</span><span class="ex-vn">Tôi có cần cởi giày không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Just water, please.</span><span class="ex-vn">Cho tôi nước lọc thôi</span></div>
+    <div class="ex-row"><span class="ex-en say">Can I use your bathroom?</span><span class="ex-vn">Tôi dùng nhà vệ sinh được không?</span></div>
+    <div class="ex-row"><span class="ex-en say">I should get going. Thanks for everything!</span><span class="ex-vn">Tôi phải về rồi. Cảm ơn vì tất cả nhé!</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Would you like…? để mời</em></div><div class="gr-body">
+<ul><li><span class="fm">Would you like + N?</span> → <span class="say">Would you like some tea?</span></li>
+<li><span class="fm">Would you like to + V?</span> → <span class="say">Would you like to stay for dinner?</span></li>
+<li>Trả lời: <span class="say">Yes, please.</span> / <span class="say">No, thank you. I’m fine.</span></li></ul>
+<div class="cmp"><div class="bad"><b>❌ NGHE CỘC</b><div>You want drink?</div></div><div class="good"><b>✔ LỊCH SỰ</b><div class="say">Would you like something to drink?</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s6">
+  <div class="sec-head"><span class="sec-tag t3">BÀI 6</span><div><div class="sec-title">Hội thoại mẫu</div><div class="sec-sub">Bấm từng câu để nghe, rồi đóng vai cả hai người</div></div></div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 1: KỂ VỀ NHÀ MÌNH</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Do you live in a house or an apartment?</span><small>Bạn ở nhà riêng hay chung cư?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">An apartment. It’s on the fifteenth floor.</span><small>Chung cư. Ở tầng 15.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Nice! Is it big?</span><small>Hay đấy! Có rộng không?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Not really. There are two bedrooms, a kitchen and a small living room. But it’s very bright.</span><small>Không lắm. Có hai phòng ngủ, một bếp và phòng khách nhỏ. Nhưng rất sáng.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Is there a balcony?</span><small>Có ban công không?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Yes, there is. The view is amazing at night.</span><small>Có. Buổi tối nhìn ra đẹp lắm.</small></div></div>
+  </div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 2: KHÁCH ĐẾN CHƠI</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Hi, Tom! Come in, please.</span><small>Chào Tom! Mời vào.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Thanks for having me. Should I take off my shoes?</span><small>Cảm ơn đã mời. Mình có cần cởi giày không?</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Yes, you can leave them here. Please have a seat. Would you like some tea?</span><small>Có, bạn để ở đây nhé. Mời ngồi. Bạn uống trà không?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Yes, please. What a lovely home!</span><small>Có, cảm ơn. Nhà đẹp quá!</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Thank you! Let me show you around after tea.</span><small>Cảm ơn bạn! Uống trà xong mình dẫn bạn đi xem nhà.</small></div></div>
+  </div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 3: TÌM ĐỒ VÀ NHỜ VIỆC</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Mom, where are my keys?</span><small>Mẹ ơi, chìa khóa của con đâu?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">They’re on the table next to the door.</span><small>Trên bàn cạnh cửa ấy.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Got them. Thanks! Shall I take out the trash on my way?</span><small>Thấy rồi. Cảm ơn mẹ! Con mang rác xuống luôn nhé?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Yes, please. And could you turn off the fan in your room?</span><small>Ừ, con mang giúp mẹ. Và tắt quạt phòng con đi nhé.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Sure. I’ll do it now.</span><small>Vâng. Con làm ngay.</small></div></div>
+  </div>
+  <div class="info i-ok"><span>✅</span><span><strong>Cách luyện:</strong> nghe một lượt, nói theo từng câu, rồi che phần tiếng Việt và tự đóng vai A hoặc B. Lần sau thay bằng thông tin thật về nhà bạn.</span></div>
+</section>
+
+<section class="section" id="s7">
+  <div class="sec-head"><span class="sec-tag t2">BÀI 7</span><div><div class="sec-title">Tìm đồ trong nhà &amp; bài tập</div><div class="sec-sub">Chọn món đồ và vị trí, xem câu hỏi và câu trả lời đúng ngữ pháp</div></div></div>
+  <div class="gen">
+    <label for="g-o">Món đồ<select id="g-o"></select></label>
+    <label for="g-p">Vị trí<select id="g-p"></select></label>
+    <label for="g-f">Đồ đạc<select id="g-f"></select></label>
+    <label for="g-r">Phòng<select id="g-r"></select></label>
+  </div>
+  <div class="btns"><button class="btn" id="gen-btn">Ghép câu</button><button class="btn alt" id="rnd-btn">Chọn ngẫu nhiên</button></div>
+  <div class="out" id="gen-out" aria-live="polite"></div>
+
+  <div class="sub-title">Bài tập: điền câu trả lời</div>
+  <p class="t">Câu 1–4: điền một từ vào chỗ trống. Câu 5–8: dịch sang tiếng Anh, gõ cả câu. Không phân biệt hoa thường.</p>
+  <div id="exlist">
+    <div class="exi">1. There ___ three bedrooms. →<input id="ex1" data-a="are" aria-label="Câu 1"><small>is hay are?</small></div>
+    <div class="exi">2. The milk is ___ the fridge. →<input id="ex2" data-a="in" aria-label="Câu 2"><small>bên trong</small></div>
+    <div class="exi">3. The picture is ___ the wall. →<input id="ex3" data-a="on" aria-label="Câu 3"><small>trên tường</small></div>
+    <div class="exi">4. Could you turn ___ the light? (tắt) →<input id="ex4" data-a="off" aria-label="Câu 4"><small>tắt đèn</small></div>
+    <div class="exi">5. Tôi sống ở một căn hộ →<input id="ex5" data-a="i live in an apartment|i live in a flat" aria-label="Câu 5"><small>an apartment</small></div>
+    <div class="exi">6. Chìa khóa của tôi đâu? →<input id="ex6" data-a="where are my keys?" aria-label="Câu 6"><small>keys số nhiều</small></div>
+    <div class="exi">7. Bạn uống gì không? →<input id="ex7" data-a="would you like something to drink?|would you like anything to drink?|do you want something to drink?" aria-label="Câu 7"><small>Would you like…</small></div>
+    <div class="exi">8. Đây là phòng của chị tôi →<input id="ex8" data-a="this is my sister's room|this is my older sister's room" aria-label="Câu 8"><small>’s</small></div>
+  </div>
+  <div class="btns" style="margin-top:12px"><button class="btn" id="ex-check">Kiểm tra đáp án</button><button class="btn alt" id="ex-show">Xem đáp án</button><button class="btn alt" id="ex-reset">Làm lại</button></div>
+  <div class="out" id="ex-out" style="min-height:0" aria-live="polite"></div>
+
+  <div class="sub-title">Lộ trình luyện 7 ngày</div>
+  <div class="plan">
+    <div class="day"><b>Ngày 1</b><span><strong>Các phòng:</strong> đi quanh nhà, gọi tên từng phòng bằng tiếng Anh</span></div>
+    <div class="day"><b>Ngày 2</b><span><strong>Đồ đạc:</strong> gọi tên 5 món trong mỗi phòng, luyện in / on / under</span></div>
+    <div class="day"><b>Ngày 3</b><span><strong>Mô tả nhà:</strong> nói 5 câu với There is / There are về nhà bạn</span></div>
+    <div class="day"><b>Ngày 4</b><span><strong>Nhờ việc:</strong> nhờ người nhà 3 việc bằng Can you / Could you</span></div>
+    <div class="day"><b>Ngày 5</b><span><strong>Đón khách:</strong> luyện cả vai chủ nhà và vai khách</span></div>
+    <div class="day"><b>Ngày 6</b><span><strong>Hội thoại:</strong> đóng vai 3 tình huống, dùng máy tìm đồ để đổi đồ vật</span></div>
+    <div class="day"><b>Ngày 7</b><span><strong>Ôn tổng hợp:</strong> thu âm 1 phút dẫn một người bạn “đi xem nhà” bằng tiếng Anh</span></div>
+  </div>
+</section>
+
+<section class="section" id="s8">
+  <div class="sec-head"><span class="sec-tag t5">NÂNG CAO</span><div><div class="sec-title">Từ vựng mới để hội thoại tự nhiên hơn</div><div class="sec-sub">Thêm vài từ này, câu nói về nhà cửa của bạn sẽ giống người bản xứ hơn</div></div></div>
+  <div class="sub-title">Thuê nhà và chuyển nhà</div>
+  <table class="tbl"><thead><tr><th>Từ / cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">rent</td><td>tiền thuê, thuê nhà</td><td><span class="say">The rent is five million dong a month.</span></td></tr>
+  <tr><td class="say">landlord</td><td>chủ nhà cho thuê</td><td><span class="say">My landlord is very friendly.</span></td></tr>
+  <tr><td class="say">roommate / flatmate</td><td>bạn cùng phòng (Mỹ / Anh)</td><td><span class="say">I share an apartment with two roommates.</span></td></tr>
+  <tr><td class="say">move in / move out</td><td>chuyển đến / chuyển đi</td><td><span class="say">We’re moving in next week.</span></td></tr>
+  <tr><td class="say">bills / utilities</td><td>các hóa đơn điện nước</td><td><span class="say">The rent doesn’t include utilities.</span></td></tr>
+  <tr><td class="say">neighborhood</td><td>khu phố, hàng xóm xung quanh</td><td><span class="say">It’s a quiet neighborhood.</span></td></tr>
+  <tr><td class="say">housewarming party</td><td>tiệc tân gia</td><td><span class="say">Come to our housewarming party on Saturday!</span></td></tr></tbody></table>
+  <div class="sub-title">Tả nhà và sự cố trong nhà</div>
+  <table class="tbl"><thead><tr><th>Từ / cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">spacious</td><td>rộng rãi</td><td><span class="say">The living room is really spacious.</span></td></tr>
+  <tr><td class="say">cramped</td><td>chật chội</td><td><span class="say">My old room was a bit cramped.</span></td></tr>
+  <tr><td class="say">messy / tidy</td><td>bừa bộn / gọn gàng</td><td><span class="say">Sorry, my room is a bit messy.</span></td></tr>
+  <tr><td class="say">leak</td><td>rò rỉ, dột</td><td><span class="say">The kitchen sink is leaking.</span></td></tr>
+  <tr><td class="say">broken / doesn’t work</td><td>hỏng / không chạy</td><td><span class="say">The air conditioner doesn’t work.</span></td></tr>
+  <tr><td class="say">power cut</td><td>mất điện</td><td><span class="say">There was a power cut last night.</span></td></tr>
+  <tr><td class="say">renovate</td><td>sửa sang, cải tạo</td><td><span class="say">We’re renovating the bathroom.</span></td></tr></tbody></table>
+  <div class="sub-title">Cụm giúp cuộc trò chuyện trôi chảy</div>
+  <div class="ex-box"><div class="ex-head">LÀM CHO HỘI THOẠI TỰ NHIÊN<span class="ex-tag t5">Nâng cao</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Make yourself at home.</span><span class="ex-vn">Cứ tự nhiên như ở nhà nhé</span></div>
+    <div class="ex-row"><span class="ex-en say">Sorry about the mess.</span><span class="ex-vn">Xin lỗi nhà hơi bừa</span></div>
+    <div class="ex-row"><span class="ex-en say">Help yourself to some fruit.</span><span class="ex-vn">Cứ tự nhiên lấy hoa quả ăn nhé</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m a homebody. I love staying in.</span><span class="ex-vn">Tôi là người thích ở nhà</span></div>
+    <div class="ex-row"><span class="ex-en say">It’s good to be home.</span><span class="ex-vn">Về nhà thật dễ chịu</span></div>
+    <div class="ex-row"><span class="ex-en say">There’s no place like home.</span><span class="ex-vn">Không đâu bằng nhà mình</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m feeling a bit homesick.</span><span class="ex-vn">Tôi hơi nhớ nhà</span></div>
+  </div></div>
+  <div class="cmp"><div class="bad"><b>❌ NGHE CỨNG</b><div>My house small. Have two room.</div></div><div class="good"><b>✔ TỰ NHIÊN HƠN</b><div class="say">My apartment is a bit small, but it’s cozy. There are two bedrooms and a lovely balcony.</div></div></div>
+  <div class="info i-tip"><span>💡</span><span><strong>Mẹo:</strong> <strong>house</strong> là ngôi nhà (công trình), <strong>home</strong> là nơi bạn thuộc về. Nói <em>I’m going home</em>, không nói <em>I’m going to house</em>.</span></div>
+
+  <div class="sub-title">Tự kiểm tra</div>
+  <ul class="chk">
+    <li><label><input type="checkbox" id="c1">Tôi gọi được tên các phòng và loại nhà</label></li>
+    <li><label><input type="checkbox" id="c2">Tôi gọi được tên ít nhất 15 món đồ trong nhà</label></li>
+    <li><label><input type="checkbox" id="c3">Tôi dùng đúng <strong>There is / There are</strong></label></li>
+    <li><label><input type="checkbox" id="c4">Tôi nói vị trí đồ vật bằng <strong>in / on / under / next to / behind</strong></label></li>
+    <li><label><input type="checkbox" id="c5">Tôi nhờ việc và đề nghị giúp bằng <strong>Can you / Could you / Shall I</strong></label></li>
+    <li><label><input type="checkbox" id="c6">Tôi đón khách được bằng <strong>Come in, Would you like…</strong></label></li>
+    <li><label><input type="checkbox" id="c7">Tôi dùng được ít nhất 5 từ vựng nâng cao</label></li>
+  </ul>
+</section>
+
+</div>
+<div class="footer">🏠 Giao tiếp tiếng Anh: At Home · Dành cho người mới bắt đầu · 2026</div>
+</div>
+
+<div class="audio-bar">
+  <b>🔊 Audio</b>
+  <div class="ab-g"><button data-acc="en-GB" class="on">Anh-Anh</button><button data-acc="en-US">Anh-Mỹ</button></div>
+  <div class="ab-g"><button data-rate="0.6">Chậm</button><button data-rate="0.85" class="on">Vừa</button><button data-rate="1">Nhanh</button></div>
+</div>
+
+<script>
+(function(){
+var doc=document.documentElement,bar=document.getElementById('pbar');
+addEventListener('scroll',function(){bar.style.width=(doc.scrollTop/Math.max(1,doc.scrollHeight-doc.clientHeight)*100)+'%'});
+var links=document.querySelectorAll('.nav-link,.topnav a');
+if('IntersectionObserver' in window)document.querySelectorAll('.section[id]').forEach(function(s){
+  new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;
+    links.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id)});
+  })},{rootMargin:'-20% 0px -70% 0px'}).observe(s);
+});
+
+/* Audio */
+var S=window.speechSynthesis,st={acc:'en-GB',rate:.85},cur=null;
+function voice(){if(!S)return null;var v=S.getVoices().filter(function(x){return x.lang.replace('_','-').toLowerCase()===st.acc.toLowerCase()});
+  return v.find(function(x){return /google|natural|premium|enhanced/i.test(x.name)})||v[0]||null}
+function say(el){
+  if(cur)cur.classList.remove('playing');
+  if(!S){el.title='Trình duyệt này không hỗ trợ đọc audio';return}
+  S.cancel();cur=el;el.classList.add('playing');
+  var t=el.textContent.replace(/\s+/g,' ').replace(/\s*\/\s*/g,'. ').replace(/→/g,'. ').replace(/Cau Giay/g,'Cow Zay').trim();
+  var u=new SpeechSynthesisUtterance(t);u.lang=st.acc;u.rate=st.rate;var v=voice();if(v)u.voice=v;
+  u.onend=u.onerror=function(){el.classList.remove('playing')};S.speak(u);
+}
+function prep(root){root.querySelectorAll('.say').forEach(function(e){e.tabIndex=0;e.setAttribute('role','button')})}
+prep(document);
+document.addEventListener('click',function(e){var el=e.target.closest('.say');if(el)say(el)});
+document.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.classList&&e.target.classList.contains('say')){e.preventDefault();say(e.target)}});
+document.querySelectorAll('.audio-bar button').forEach(function(b){b.addEventListener('click',function(){
+  b.parentElement.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');
+  if(b.dataset.acc)st.acc=b.dataset.acc;if(b.dataset.rate)st.rate=+b.dataset.rate;
+})});
+
+/* Tìm đồ: [món, nghĩa, số nhiều?, sở hữu (my/the)] */
+var OBJ=[['keys','chìa khóa',1,'my'],['phone','điện thoại',0,'my'],['glasses','kính',1,'my'],['remote','điều khiển',0,'the'],['wallet','ví',0,'my'],
+  ['shoes','giày',1,'my'],['cat','con mèo',0,'the'],['books','sách',1,'my'],['charger','sạc',0,'my'],['umbrella','ô',0,'the']];
+var PREP=[['on','trên'],['in','trong'],['under','dưới'],['next to','cạnh'],['behind','sau']];
+/* [đồ đạc, nghĩa, phòng mặc định, có thể 'in'?] */
+var FURN=[['table','bàn'],['sofa','ghế sofa'],['bed','giường'],['shelf','giá'],['desk','bàn học'],['drawer','ngăn kéo'],['wardrobe','tủ quần áo'],['fridge','tủ lạnh'],['door','cửa'],['box','hộp']];
+var ROOM=[['living room','phòng khách'],['bedroom','phòng ngủ'],['kitchen','bếp'],['bathroom','phòng tắm'],['hall','hành lang']];
+function fill(id,arr,lab){var s=document.getElementById(id);arr.forEach(function(x,i){s.add(new Option(lab(x),i))});return s}
+var go=fill('g-o',OBJ,function(x){return x[0]+' ('+x[1]+')'}),gp=fill('g-p',PREP,function(x){return x[0]+' ('+x[1]+')'}),
+    gf=fill('g-f',FURN,function(x){return x[0]+' ('+x[1]+')'}),gr=fill('g-r',ROOM,function(x){return x[0]+' ('+x[1]+')'});
+go.value=0;gp.value=0;gf.value=0;gr.value=0;
+var out=document.getElementById('gen-out');
+function cap(s){return s.charAt(0).toUpperCase()+s.slice(1)}
+function show(){
+  var o=OBJ[+go.value],p=PREP[+gp.value],f=FURN[+gf.value],r=ROOM[+gr.value],pl=o[2];
+  var be=pl?'are':'is',pro=pl?'They’re':'It’s',N=o[3]+' '+o[0];
+  var q='Where '+be+' '+N+'?';
+  var a=pro+' '+p[0]+' the '+f[0]+' in the '+r[0]+'.';
+  var a2='I can’t find '+N+'. Have you seen '+(pl?'them':'it')+'?';
+  out.innerHTML='';
+  [['HỎI',q],['TRẢ LỜI',a],['HOẶC NÓI',a2]].forEach(function(l){var d=document.createElement('div');d.className='rl';var lb=document.createElement('span');lb.className='lbl';lb.textContent=l[0];var sp=document.createElement('span');sp.className='say';sp.textContent=l[1];d.append(lb,sp);out.append(d)});
+  var v=document.createElement('div');v.style.color='var(--muted)';v.style.fontSize='13px';
+  v.textContent='Nghĩa: '+cap(o[1])+(o[3]==='my'?' của tôi':'')+' đâu? → Ở '+p[1]+' '+f[1]+' trong '+r[1]+'.';out.append(v);
+  var note='<b>'+o[0]+'</b> là '+(pl?'số nhiều → <b>Where are</b>, trả lời <b>They’re</b>, đại từ <b>them</b>.':'số ít → <b>Where is</b>, trả lời <b>It’s</b>, đại từ <b>it</b>.');
+  if(p[0]==='in'&&['table','sofa','bed','shelf','desk','door'].indexOf(f[0])>-1)note+=' Lưu ý: với <b>'+f[0]+'</b>, thường dùng <b>on</b> (trên mặt) hơn là <b>in</b>.';
+  if(p[0]==='on'&&['drawer','wardrobe','fridge','box'].indexOf(f[0])>-1)note+=' Lưu ý: đồ để bên trong <b>'+f[0]+'</b> thì dùng <b>in</b>; <b>on</b> nghĩa là nằm trên nóc.';
+  var w=document.createElement('span');w.className='why';w.innerHTML=note;out.append(w);
+  prep(out);
+}
+document.getElementById('gen-btn').addEventListener('click',show);
+document.getElementById('rnd-btn').addEventListener('click',function(){
+  [[go,OBJ],[gp,PREP],[gf,FURN],[gr,ROOM]].forEach(function(x){x[0].value=Math.floor(Math.random()*x[1].length)});show();
+});
+show();
+
+/* Bài tập */
+var inputs=document.querySelectorAll('#exlist input'),exo=document.getElementById('ex-out');
+function norm(s){return s.toLowerCase().replace(/[’‘`]/g,"'").replace(/[.!?]+$/,'').replace(/,/g,'').replace(/\s+/g,' ').trim()}
+document.getElementById('ex-check').addEventListener('click',function(){
+  var ok=0;
+  inputs.forEach(function(i){
+    var good=i.dataset.a.split('|').some(function(a){return norm(a)===norm(i.value)});
+    i.classList.remove('ok','no');i.classList.add(good?'ok':'no');if(good)ok++;
+  });
+  exo.style.minHeight='';
+  exo.textContent=ok===inputs.length?'🎉 Chính xác '+ok+'/'+inputs.length+'. Bạn nói về nhà cửa rất tốt!':'Đúng '+ok+'/'+inputs.length+'. Các ô viền đỏ cần xem lại; đọc lại phần ngữ pháp ở Bài 1 đến 5, hoặc bấm “Xem đáp án”.';
+});
+document.getElementById('ex-show').addEventListener('click',function(){
+  inputs.forEach(function(i){
+    var k=i.parentElement.querySelector('.key');
+    if(!k){k=document.createElement('span');k.className='key';i.parentElement.append(k)}
+    var a=i.dataset.a.split('|')[0].replace(/'/g,'’').replace(/^i /,'I ');k.textContent='Đáp án: '+(a.length>4?cap(a):a);
+  });
+});
+document.getElementById('ex-reset').addEventListener('click',function(){
+  inputs.forEach(function(i){i.value='';i.classList.remove('ok','no')});
+  document.querySelectorAll('#exlist .key').forEach(function(k){k.remove()});
+  exo.textContent='';exo.style.minHeight='0';
+});
+})();
+</script>
+
+<script src="nav.js" defer></script>
+</body></html>

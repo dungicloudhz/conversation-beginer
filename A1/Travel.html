@@ -1,0 +1,524 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Tiếng Anh Travel</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: sidebar mục lục cố định + cột bài học, cùng theme tối của bộ "Hỏi đường & Hỏi giờ" (nhấn xanh ngọc – xanh lá cho chủ đề du lịch) */
+:root{color-scheme:dark;
+--bg:#080810;--s1:#0e0e1c;--s2:#131326;--s3:#18182e;--border:#222240;--border2:#2c2c50;--text:#e6e6f2;--muted:#8a8ab8;--faint:#4a4a78;
+--acc:#ffd060;--acc-dim:rgba(255,208,96,.11);--oc:#38bdf8;--oc-dim:rgba(56,189,248,.13);--ins:#40d88e;--ins-dim:rgba(64,216,142,.12);
+--sk:#a07af4;--sk-dim:rgba(160,122,244,.12);--au:#ff6584;--au-dim:rgba(255,101,132,.12);--teal:#30d8c0;--code-bg:#05050e;
+--tip-bg:rgba(91,168,255,.10);--tip-bd:rgba(91,168,255,.25);--tip-fg:#8ab8f0;--warn-fg:#e0bc58;--ok-fg:#5ccf98;--line:rgba(255,255,255,.05);
+--font:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+--gl:max(64px,env(safe-area-inset-left,0px));--gr:max(64px,env(safe-area-inset-right,0px))}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 60px)}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.7;font-size:15px;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:600;background:var(--s1)}
+.sidebar{position:fixed;left:0;top:0;width:260px;height:100%;background:var(--s1);border-right:1px solid var(--border);overflow-y:auto;z-index:400;padding-top:env(safe-area-inset-top,0px);padding-left:env(safe-area-inset-left,0px)}
+.sb-logo{padding:20px 18px 16px;border-bottom:1px solid var(--border)}
+.sb-brand{display:flex;align-items:center;gap:11px;margin-bottom:12px}
+.logo-icon{width:44px;height:44px;border-radius:11px;background:linear-gradient(135deg,var(--teal),var(--ins));display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 0 26px rgba(48,216,192,.3)}
+.logo-text h2{font-size:15px;font-weight:800}.logo-text p{font-size:10.5px;color:var(--muted)}
+.prog-wrap{height:3px;background:var(--border);border-radius:2px;overflow:hidden}
+.prog-bar{height:100%;width:0;background:linear-gradient(90deg,var(--acc),var(--ins),var(--oc),var(--sk),var(--au))}
+.nav-label{padding:14px 18px 4px;font-size:9.5px;font-weight:700;letter-spacing:1.6px;color:var(--faint)}
+.nav-link{display:flex;align-items:center;gap:9px;padding:7px 18px;color:var(--muted);text-decoration:none;font-size:12.5px;font-weight:600;border-left:2px solid transparent}
+.nav-link:hover,.nav-link.active{color:var(--text);background:rgba(255,208,96,.07);border-left-color:var(--acc)}
+.main{margin-left:260px}
+.hero{padding-block:80px 60px;padding-left:var(--gl);padding-right:var(--gr);border-bottom:1px solid var(--border);background:radial-gradient(ellipse 65% 55% at 75% 22%,rgba(48,216,192,.10),transparent 60%),radial-gradient(ellipse 50% 55% at 10% 82%,rgba(64,216,142,.07),transparent 55%),var(--bg)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--acc-dim);border:1px solid rgba(255,208,96,.38);color:var(--acc);padding:5px 16px;border-radius:100px;font-size:11.5px;font-weight:700;margin-bottom:24px}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--acc);animation:p 2s infinite}
+@keyframes p{50%{opacity:.35;transform:scale(.7)}}
+@media(prefers-reduced-motion:reduce){.eyebrow i{animation:none}html{scroll-behavior:auto}}
+.hero h1{font-size:50px;font-weight:900;letter-spacing:-2.4px;line-height:1.06;margin-bottom:18px;text-wrap:balance}
+.grad{background:linear-gradient(135deg,var(--teal),var(--ins));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-desc{font-size:16px;color:var(--muted);max-width:620px;margin-bottom:28px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{padding:5px 14px;border-radius:7px;font-size:12px;font-weight:700}
+.c1{background:var(--oc-dim);color:var(--oc)}.c2{background:var(--ins-dim);color:var(--ins)}.c3{background:var(--acc-dim);color:var(--acc)}.c4{background:var(--sk-dim);color:var(--sk)}.c5{background:var(--au-dim);color:var(--au)}
+.content{padding-block:56px;padding-left:var(--gl);padding-right:var(--gr);max-width:calc(1020px + 64px)}
+.section{margin-bottom:68px}
+.sec-head{display:flex;gap:14px;align-items:flex-start;margin-bottom:28px;padding-bottom:18px;border-bottom:1px solid var(--border)}
+.sec-tag{font-family:var(--mono);font-size:10px;font-weight:600;padding:3px 10px;border-radius:5px;margin-top:6px;flex-shrink:0;letter-spacing:.5px}
+.t1{color:var(--oc);background:var(--oc-dim)}.t2{color:var(--ins);background:var(--ins-dim)}.t3{color:var(--acc);background:var(--acc-dim)}.t4{color:var(--sk);background:var(--sk-dim)}.t5{color:var(--au);background:var(--au-dim)}
+.sec-title{font-size:23px;font-weight:800;letter-spacing:-.6px;text-wrap:balance}.sec-sub{font-size:13px;color:var(--muted)}
+.sub-title{font-size:14.5px;font-weight:700;margin:26px 0 12px;display:flex;align-items:center;gap:10px}
+.sub-title::before{content:'';width:14px;height:3px;background:var(--acc);border-radius:2px}
+p.t{color:var(--muted);font-size:13.5px;margin-bottom:11px;max-width:68ch}p.t strong,li strong{color:var(--text)}
+.ex-box{background:var(--s1);border:1px solid var(--border2);border-radius:11px;overflow:hidden;margin:13px 0}
+.ex-head{display:flex;align-items:center;gap:8px;padding:9px 16px;background:var(--s2);border-bottom:1px solid var(--border);font-family:var(--mono);font-size:10px;font-weight:600;color:var(--muted);letter-spacing:.5px}
+.ex-tag{margin-left:auto;font-size:9px;font-weight:700;padding:2px 9px;border-radius:100px;font-family:var(--font)}
+.ex-body{padding:10px 20px}
+.ex-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:13.5px}
+.ex-row:last-child{border-bottom:none}
+.ex-en{color:var(--text);font-weight:600;min-width:280px}.ex-vn{color:var(--muted)}
+.info{display:flex;gap:12px;padding:14px 16px;border-radius:9px;margin:13px 0;font-size:13px;line-height:1.6}
+.i-tip{background:var(--tip-bg);border:1px solid var(--tip-bd);color:var(--tip-fg)}
+.i-warn{background:var(--acc-dim);border:1px solid rgba(255,208,96,.25);color:var(--warn-fg)}
+.i-ok{background:var(--ins-dim);border:1px solid rgba(64,216,142,.25);color:var(--ok-fg)}
+.tbl{width:100%;border-collapse:collapse;font-size:13px;margin:13px 0;display:block;overflow-x:auto}
+.tbl th{background:var(--s3);padding:10px 14px;text-align:left;font-size:10px;color:var(--muted);border-bottom:1px solid var(--border2);white-space:nowrap;letter-spacing:.5px}
+.tbl td{padding:10px 14px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:top}
+.tbl td:first-child{color:var(--text);font-weight:600}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}
+.card{background:var(--s1);border:1px solid var(--border);border-radius:11px;padding:16px;min-width:0}
+.card:hover{border-color:var(--acc)}
+.card-icon{font-size:24px}.card-title{font-size:13px;font-weight:700}.card-desc{font-size:12px;color:var(--muted)}
+.cmp{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);border-radius:11px;overflow:hidden;margin:13px 0}
+.bad{background:rgba(255,101,132,.07);padding:14px 16px;border-right:1px solid var(--border)}.good{background:rgba(64,216,142,.07);padding:14px 16px}
+.cmp b{display:block;font-size:10px;margin-bottom:6px;letter-spacing:.5px}.bad b{color:var(--au)}.good b{color:var(--ins)}
+.cmp div div{font-size:13.5px}
+.dlg{display:grid;gap:8px;margin:12px 0;background:var(--s1);border:1px solid var(--border2);border-radius:12px;padding:16px 18px}
+.dlg-t{font-size:10px;font-weight:800;color:var(--acc);margin-bottom:2px;letter-spacing:.6px}
+.turn{display:flex;gap:10px;align-items:baseline}
+.turn>div{min-width:0}
+.who{flex-shrink:0;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+.wa{background:var(--oc-dim);color:var(--oc)}.wb{background:var(--ins-dim);color:var(--ins)}
+.turn .say{font-weight:600}.turn small{display:block;color:var(--muted);font-size:12px;font-weight:400}
+.gen{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin:12px 0}
+.gen label{font-size:11.5px;color:var(--muted);font-weight:600;display:block;min-width:0}
+.gen select{width:100%;margin-top:4px;background:var(--code-bg);border:1px solid var(--border2);border-radius:8px;padding:9px 12px;color:var(--text);font:inherit;font-size:13px}
+select:focus-visible,button:focus-visible,.say:focus-visible,.exi input:focus-visible,.chk input:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.btns{display:flex;flex-wrap:wrap;gap:6px}
+.btn{background:var(--acc-dim);color:var(--acc);border:1px solid var(--acc);border-radius:8px;padding:8px 16px;font:inherit;font-weight:700;font-size:13px;cursor:pointer}
+.btn.alt{background:var(--ins-dim);color:var(--ins);border-color:var(--ins)}
+.out{margin-top:14px;min-height:60px;background:var(--s2);border:1px dashed var(--border2);border-radius:10px;padding:14px 16px;font-size:14px;line-height:1.9}
+.big{font-size:21px;font-weight:800;color:var(--acc);letter-spacing:-.3px;line-height:1.4;margin-bottom:4px}
+.out .why{display:block;color:var(--muted);font-size:12.5px}
+.out .why b{color:var(--teal);font-family:var(--mono);font-weight:600}
+.timeline{display:grid;gap:0;margin:14px 0;border-left:2px solid var(--border2);padding-left:18px}
+.tl{position:relative;padding:8px 0 12px}
+.tl::before{content:'';position:absolute;left:-24px;top:16px;width:10px;height:10px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 3px var(--bg)}
+.tl time{font-family:var(--mono);font-size:12px;color:var(--acc);font-variant-numeric:tabular-nums;font-weight:600}
+.tl .say{font-weight:600;font-size:13.5px}
+.tl small{display:block;color:var(--muted);font-size:12px}
+.freq{display:grid;gap:7px;margin:14px 0}
+.fq{display:grid;grid-template-columns:110px 1fr 54px;gap:12px;align-items:center;font-size:13px}
+.fq .say{font-weight:700}
+.fq .track{height:8px;background:var(--s3);border-radius:4px;overflow:hidden}
+.fq .fill{height:100%;background:linear-gradient(90deg,var(--ins),var(--acc))}
+.fq span:last-child{font-family:var(--mono);font-size:11.5px;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+.plan{display:grid;gap:8px;margin:12px 0}
+.day{display:flex;gap:14px;align-items:baseline;background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:12px 16px;font-size:13px;color:var(--muted)}
+.day b{color:var(--acc);font-family:var(--mono);font-size:12px;flex-shrink:0;width:52px}.day strong{color:var(--text)}
+.chk{list-style:none;margin:10px 0}.chk li{padding:6px 0;font-size:13.5px;color:var(--muted);border-bottom:1px solid rgba(255,255,255,.04)}
+.chk input{accent-color:var(--ins);margin-right:10px;width:15px;height:15px;vertical-align:-2px}
+.gr{border:1px solid rgba(160,122,244,.38);background:linear-gradient(180deg,var(--sk-dim),transparent 110px),var(--s1);border-radius:12px;margin:28px 0;overflow:hidden}
+.gr-head{padding:10px 18px;font-size:12px;font-weight:800;color:var(--sk);border-bottom:1px solid var(--border);display:flex;gap:10px;flex-wrap:wrap;align-items:baseline;letter-spacing:.4px}
+.gr-head em{font-style:normal;color:var(--muted);font-weight:600;letter-spacing:0}
+.gr-body{padding:14px 18px;font-size:13.5px;color:var(--muted)}
+.gr-body p{margin-bottom:10px}.gr-body b{color:var(--text)}.gr-body ul{padding-left:20px;margin-bottom:8px}.gr-body li{margin-bottom:4px}
+.gr-body .tbl{margin:8px 0 12px}
+.fm{display:inline-block;font-family:var(--mono);font-size:12px;background:var(--code-bg);color:var(--teal);padding:3px 9px;border-radius:6px;margin:2px 0}
+.say{cursor:pointer;border-bottom:1px dotted var(--oc)}
+.say:hover{color:var(--acc);background:var(--acc-dim);border-radius:4px}
+.say::after{content:"🔊";font-size:.68em;margin-left:3px;opacity:.5}
+.say.playing{color:var(--ins);background:var(--ins-dim);border-radius:4px}.say.playing::after{opacity:1}
+.exi{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:13.5px;color:var(--text)}
+.exi input{width:220px;max-width:100%;background:var(--code-bg);border:1px solid var(--border2);border-radius:6px;padding:4px 8px;color:var(--text);font:inherit;font-size:13px;text-align:center}
+.exi input.ok{border-color:var(--ins);color:var(--ins)}.exi input.no{border-color:var(--au);color:var(--au)}
+.exi small{color:var(--muted);font-size:11.5px}
+.exi .key{color:var(--ins);font-size:12px;width:100%}
+.footer{border-top:1px solid var(--border);padding-block:28px 90px;padding-left:var(--gl);padding-right:var(--gr);font-size:12px;color:var(--muted)}
+.audio-bar{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:500;display:flex;gap:10px;align-items:center;background:var(--s2);border:1px solid var(--border2);border-radius:12px;padding:8px 12px;box-shadow:0 8px 28px rgba(0,0,0,.5);font-size:12px;color:var(--muted)}
+.audio-bar b{color:var(--acc)}.ab-g{display:flex;gap:4px}
+.audio-bar button{background:var(--s3);color:var(--muted);border:1px solid var(--border);border-radius:7px;padding:4px 10px;font:inherit;font-weight:700;cursor:pointer}
+.audio-bar button.on{background:var(--acc-dim);color:var(--acc);border-color:var(--acc)}
+.topnav{display:none}
+@media(max-width:900px){
+:root{--gl:max(18px,env(safe-area-inset-left,0px));--gr:max(18px,env(safe-area-inset-right,0px))}
+.sidebar{display:none}.main{margin-left:0}.hero h1{font-size:32px;letter-spacing:-1.4px}.hero{padding-block:48px 40px}
+.grid-3,.cmp{grid-template-columns:1fr}.gen{grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}.bad{border-right:none;border-bottom:1px solid var(--border)}
+.topnav{display:flex;overflow-x:auto;position:sticky;top:env(safe-area-inset-top,0px);z-index:500;background:var(--s1);border-bottom:2px solid var(--border2);scrollbar-width:none;padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+.topnav a{flex-shrink:0;padding:10px 14px;color:var(--muted);text-decoration:none;font-size:12px;font-weight:700;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-2px}
+.topnav a.active{color:var(--acc);border-bottom-color:var(--acc);background:var(--acc-dim)}
+.ex-en{min-width:0}
+.fq{grid-template-columns:90px 1fr 46px}
+.audio-bar{left:calc(8px + env(safe-area-inset-left,0px));right:calc(8px + env(safe-area-inset-right,0px));justify-content:center;flex-wrap:wrap}
+}
+@media(max-width:480px){.gen{grid-template-columns:1fr}}
+.lbl{font-family:var(--mono);font-size:10px;font-weight:600;color:var(--faint);letter-spacing:1px;margin-bottom:4px}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0}
+.tcol{background:var(--s1);border:1px solid var(--border2);border-radius:11px;padding:12px 14px;display:grid;gap:4px;min-width:0;font-size:14px;font-weight:600}
+.tcol.fut{border-top:3px solid var(--teal)}.tcol.past{border-top:3px solid var(--acc)}
+@media(max-width:700px){.twocol{grid-template-columns:1fr}}
+</style>
+
+<aside class="sidebar">
+  <div class="sb-logo">
+    <div class="sb-brand"><div class="logo-icon">🧳</div><div class="logo-text"><h2>Travel</h2><p>Tiếng Anh cho người mới</p></div></div>
+    <div class="prog-wrap"><div class="prog-bar" id="pbar"></div></div>
+  </div>
+  <div class="nav-label">BÀI HỌC</div>
+  <a class="nav-link" href="#s1">🗺️ Lên kế hoạch</a>
+  <a class="nav-link" href="#s2">🏨 Ở khách sạn</a>
+  <a class="nav-link" href="#s3">📸 Tham quan</a>
+  <a class="nav-link" href="#s4">✈️ Kể chuyện chuyến đi</a>
+  <a class="nav-link" href="#s5">🆘 Sự cố khi du lịch</a>
+  <div class="nav-label">THỰC HÀNH</div>
+  <a class="nav-link" href="#s6">💬 Hội thoại mẫu</a>
+  <a class="nav-link" href="#s7">🛠️ Máy chuyến đi &amp; bài tập</a>
+  <a class="nav-link" href="#s8">🚀 Từ vựng nâng cao</a>
+</aside>
+
+<div class="main">
+<nav class="topnav">
+  <a href="#s1">1 Kế hoạch</a><a href="#s2">2 Khách sạn</a><a href="#s3">3 Tham quan</a><a href="#s4">4 Kể chuyện</a><a href="#s5">5 Sự cố</a><a href="#s6">6 Hội thoại</a><a href="#s7">7 Luyện tập</a><a href="#s8">8 Nâng cao</a>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow"><i></i>Dành cho người mới bắt đầu</div>
+  <h1>Đi du lịch<br><span class="grad">bằng tiếng Anh</span></h1>
+  <p class="hero-desc">Từ lúc lên kế hoạch đến lúc về nhà kể lại: nói về chuyến đi sắp tới, nhận và trả phòng khách sạn, hỏi thông tin tham quan, kể chuyện du lịch, và xử lý khi mất hành lý hay phòng có vấn đề. Bấm vào câu có biểu tượng loa để nghe, rồi luyện với máy chuyến đi ở phần thực hành.</p>
+  <div class="chips"><span class="chip c2">Kế hoạch</span><span class="chip c1">Khách sạn</span><span class="chip c3">Tham quan</span><span class="chip c4">Kể chuyện</span><span class="chip c5">Từ vựng nâng cao</span></div>
+</header>
+
+<div class="content">
+
+<section class="section" id="s1">
+  <div class="sec-head"><span class="sec-tag t2">BÀI 1</span><div><div class="sec-title">Lên kế hoạch chuyến đi</div><div class="sec-sub">Đi đâu, bao lâu, với ai, chuẩn bị những gì</div></div></div>
+  <div class="ex-box"><div class="ex-head">NÓI VỀ KẾ HOẠCH<span class="ex-tag t2">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Do you have any plans for the holiday?</span><span class="ex-vn">Kỳ nghỉ này bạn có kế hoạch gì không?</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m going to Da Nang for five days.</span><span class="ex-vn">Tôi sẽ đi Đà Nẵng năm ngày</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m traveling with my family.</span><span class="ex-vn">Tôi đi cùng gia đình</span></div>
+    <div class="ex-row"><span class="ex-en say">We’ve already booked our flights and hotel.</span><span class="ex-vn">Chúng tôi đặt vé máy bay và khách sạn rồi</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m going to visit Hoi An and the Marble Mountains.</span><span class="ex-vn">Tôi định đi Hội An và Ngũ Hành Sơn</span></div>
+    <div class="ex-row"><span class="ex-en say">What should I pack?</span><span class="ex-vn">Tôi nên mang theo gì?</span></div>
+    <div class="ex-row"><span class="ex-en say">Do I need a visa?</span><span class="ex-vn">Tôi có cần visa không?</span></div>
+  </div></div>
+  <div class="grid-3">
+    <div class="card"><div class="card-icon">🛂</div><div class="card-title say">passport</div><div class="card-desc">hộ chiếu</div></div>
+    <div class="card"><div class="card-icon">🧳</div><div class="card-title say">suitcase / backpack</div><div class="card-desc">vali / ba lô</div></div>
+    <div class="card"><div class="card-icon">🔌</div><div class="card-title say">adapter / charger</div><div class="card-desc">ổ cắm chuyển / sạc</div></div>
+    <div class="card"><div class="card-icon">💵</div><div class="card-title say">cash / credit card</div><div class="card-desc">tiền mặt / thẻ tín dụng</div></div>
+    <div class="card"><div class="card-icon">🧴</div><div class="card-title say">sunscreen</div><div class="card-desc">kem chống nắng</div></div>
+    <div class="card"><div class="card-icon">🩹</div><div class="card-title say">travel insurance</div><div class="card-desc">bảo hiểm du lịch</div></div>
+  </div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>be going to và hiện tại tiếp diễn cho kế hoạch</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Cấu trúc</th><th>Dùng khi</th><th>Ví dụ</th></tr></thead><tbody>
+<tr><td><span class="fm">be going to + V</span></td><td>dự định đã nghĩ trước</td><td><span class="say">I’m going to try the local food.</span></td></tr>
+<tr><td><span class="fm">be + V-ing</span></td><td>đã sắp xếp (đặt vé, hẹn giờ)</td><td><span class="say">We’re flying to Hue on Friday.</span></td></tr>
+<tr><td><span class="fm">will + V</span></td><td>quyết định ngay lúc nói</td><td><span class="say">It’s cold there? I’ll bring a jacket.</span></td></tr></tbody></table>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>Next week I go to Da Nang with my family.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">Next week I’m going to Da Nang with my family.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s2">
+  <div class="sec-head"><span class="sec-tag t1">BÀI 2</span><div><div class="sec-title">Ở khách sạn</div><div class="sec-sub">Nhận phòng, hỏi tiện ích, nhờ hỗ trợ, trả phòng</div></div></div>
+  <div class="ex-box"><div class="ex-head">NHẬN VÀ TRẢ PHÒNG<span class="ex-tag t1">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Hi, I’d like to check in. I have a reservation under the name Tran.</span><span class="ex-vn">Chào bạn, tôi muốn nhận phòng. Tôi đặt dưới tên Trần</span></div>
+    <div class="ex-row"><span class="ex-en say">Is breakfast included?</span><span class="ex-vn">Có bao gồm bữa sáng không?</span></div>
+    <div class="ex-row"><span class="ex-en say">What time is checkout?</span><span class="ex-vn">Mấy giờ phải trả phòng?</span></div>
+    <div class="ex-row"><span class="ex-en say">What’s the Wi-Fi password?</span><span class="ex-vn">Mật khẩu Wi-Fi là gì?</span></div>
+    <div class="ex-row"><span class="ex-en say">Could I have a late checkout?</span><span class="ex-vn">Cho tôi trả phòng muộn được không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Can I leave my luggage here after checkout?</span><span class="ex-vn">Trả phòng xong tôi gửi hành lý ở đây được không?</span></div>
+    <div class="ex-row"><span class="ex-en say">I’d like to check out, please.</span><span class="ex-vn">Tôi muốn trả phòng</span></div>
+  </div></div>
+  <table class="tbl"><thead><tr><th>Loại phòng</th><th>Nghĩa</th></tr></thead><tbody>
+  <tr><td class="say">single room</td><td>phòng đơn, 1 giường nhỏ</td></tr>
+  <tr><td class="say">double room</td><td>phòng đôi, 1 giường lớn</td></tr>
+  <tr><td class="say">twin room</td><td>phòng 2 giường đơn</td></tr>
+  <tr><td class="say">dormitory (dorm)</td><td>phòng tập thể ở hostel</td></tr>
+  <tr><td class="say">room with a sea view</td><td>phòng nhìn ra biển</td></tr></tbody></table>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Is … included? / Could I have…? / Is there…?</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Cấu trúc</th><th>Ví dụ</th></tr></thead><tbody>
+<tr><td><span class="fm">Is + N + included?</span></td><td><span class="say">Is parking included?</span></td></tr>
+<tr><td><span class="fm">Could I have + N?</span></td><td><span class="say">Could I have an extra towel?</span></td></tr>
+<tr><td><span class="fm">Is there a / an + N?</span></td><td><span class="say">Is there a pool?</span></td></tr></tbody></table>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>Breakfast include? / Have pool?</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">Is breakfast included? Is there a pool?</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s3">
+  <div class="sec-head"><span class="sec-tag t3">BÀI 3</span><div><div class="sec-title">Tham quan</div><div class="sec-sub">Hỏi điểm đến, giờ mở cửa, giá vé, tour và chụp ảnh</div></div></div>
+  <div class="ex-box"><div class="ex-head">Ở QUẦY THÔNG TIN DU LỊCH<span class="ex-tag t3">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">What are the must-see places around here?</span><span class="ex-vn">Quanh đây có chỗ nào nhất định phải xem?</span></div>
+    <div class="ex-row"><span class="ex-en say">What time does the museum open?</span><span class="ex-vn">Bảo tàng mở cửa lúc mấy giờ?</span></div>
+    <div class="ex-row"><span class="ex-en say">How much is the entrance fee?</span><span class="ex-vn">Vé vào cửa bao nhiêu?</span></div>
+    <div class="ex-row"><span class="ex-en say">Is there a guided tour in English?</span><span class="ex-vn">Có tour hướng dẫn bằng tiếng Anh không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Are we allowed to take photos inside?</span><span class="ex-vn">Chúng tôi có được chụp ảnh bên trong không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Can I have a map of the city, please?</span><span class="ex-vn">Cho tôi một tấm bản đồ thành phố</span></div>
+  </div></div>
+  <div class="info i-tip"><span>💡</span><span><strong>Mẹo:</strong> khi muốn biết chỗ nào người địa phương thực sự hay đến, hỏi <strong>“Where do locals usually go?”</strong>. Câu trả lời thường hay hơn danh sách trong sách hướng dẫn.</span></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Hỏi xin phép: Are we allowed to…? / Is it possible to…? / Can I…?</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Cấu trúc</th><th>Ví dụ</th></tr></thead><tbody>
+<tr><td><span class="fm">Are we allowed to + V?</span></td><td><span class="say">Are we allowed to swim here?</span></td></tr>
+<tr><td><span class="fm">Is it possible to + V?</span></td><td><span class="say">Is it possible to buy tickets online?</span></td></tr>
+<tr><td><span class="fm">You’re not allowed to + V</span></td><td><span class="say">You’re not allowed to touch the paintings.</span></td></tr></tbody></table>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>Can I allowed take photo?</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">Are we allowed to take photos?</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s4">
+  <div class="sec-head"><span class="sec-tag t4">BÀI 4</span><div><div class="sec-title">Kể chuyện chuyến đi</div><div class="sec-sub">Bạn từng đi đâu, ở đó làm gì, thấy thế nào</div></div></div>
+  <div class="ex-box"><div class="ex-head">HỎI VÀ KỂ<span class="ex-tag t4">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Have you ever been to Japan?</span><span class="ex-vn">Bạn đã bao giờ đến Nhật chưa?</span></div>
+    <div class="ex-row"><span class="ex-en say">Yes, I went there last spring.</span><span class="ex-vn">Rồi, mình đi hồi mùa xuân năm ngoái</span></div>
+    <div class="ex-row"><span class="ex-en say">How was your trip?</span><span class="ex-vn">Chuyến đi của bạn thế nào?</span></div>
+    <div class="ex-row"><span class="ex-en say">It was amazing! The food was incredible.</span><span class="ex-vn">Tuyệt vời! Đồ ăn ngon không tưởng</span></div>
+    <div class="ex-row"><span class="ex-en say">What did you do there?</span><span class="ex-vn">Ở đó bạn đã làm gì?</span></div>
+    <div class="ex-row"><span class="ex-en say">We stayed in a homestay and went hiking every day.</span><span class="ex-vn">Bọn mình ở homestay và ngày nào cũng đi leo núi</span></div>
+    <div class="ex-row"><span class="ex-en say">I’d love to go back someday.</span><span class="ex-vn">Mình rất muốn quay lại một ngày nào đó</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>been hay gone? và hiện tại hoàn thành hay quá khứ đơn?</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Câu</th><th>Ý nghĩa</th></tr></thead><tbody>
+<tr><td><span class="say">She has been to Paris.</span></td><td>đã từng đến Paris và <b>đã về</b></td></tr>
+<tr><td><span class="say">She has gone to Paris.</span></td><td>đã đi Paris và <b>đang ở đó</b>, chưa về</td></tr>
+<tr><td><span class="say">Have you ever been to Thailand?</span></td><td>hỏi trải nghiệm, không có mốc thời gian</td></tr>
+<tr><td><span class="say">I went to Thailand in 2024.</span></td><td>có mốc thời gian → quá khứ đơn</td></tr></tbody></table>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>I have been to Thailand last year.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">I went to Thailand last year.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s5">
+  <div class="sec-head"><span class="sec-tag t5">BÀI 5</span><div><div class="sec-title">Sự cố khi du lịch</div><div class="sec-sub">Mất hành lý, phòng có vấn đề, đổi tiền, bị ốm</div></div></div>
+  <div class="ex-box"><div class="ex-head">BÁO SỰ CỐ<span class="ex-tag t5">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">My luggage didn’t arrive.</span><span class="ex-vn">Hành lý của tôi không đến</span></div>
+    <div class="ex-row"><span class="ex-en say">I think my wallet was stolen.</span><span class="ex-vn">Hình như ví của tôi bị lấy cắp</span></div>
+    <div class="ex-row"><span class="ex-en say">The air conditioner in my room isn’t working.</span><span class="ex-vn">Điều hòa phòng tôi không chạy</span></div>
+    <div class="ex-row"><span class="ex-en say">Could I change rooms? It’s very noisy.</span><span class="ex-vn">Tôi đổi phòng được không? Ồn quá</span></div>
+    <div class="ex-row"><span class="ex-en say">Where can I exchange money?</span><span class="ex-vn">Tôi có thể đổi tiền ở đâu?</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m not feeling well. Is there a pharmacy nearby?</span><span class="ex-vn">Tôi thấy không khỏe. Gần đây có hiệu thuốc không?</span></div>
+    <div class="ex-row"><span class="ex-en say">I missed my train. What should I do?</span><span class="ex-vn">Tôi lỡ tàu rồi. Tôi nên làm gì?</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Câu bị động khi kể sự cố: was / were + V3</em></div><div class="gr-body">
+<p>Khi không biết ai gây ra, hoặc điều quan trọng là món đồ: <span class="fm">S + was / were + V3</span></p>
+<ul><li><span class="say">My bag was stolen.</span> (túi bị lấy cắp)</li><li><span class="say">Our flight was cancelled.</span> (chuyến bay bị hủy)</li><li><span class="say">My suitcase was damaged.</span> (vali bị hỏng)</li></ul>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>My phone stolen. Flight cancel.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">My phone was stolen. Our flight was cancelled.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s6">
+  <div class="sec-head"><span class="sec-tag t3">BÀI 6</span><div><div class="sec-title">Hội thoại mẫu</div><div class="sec-sub">Bấm từng câu để nghe, rồi đóng vai cả hai người</div></div></div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 1: NHẬN PHÒNG KHÁCH SẠN</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Good afternoon. Welcome to Sea Breeze Hotel.</span><small>Chào buổi chiều. Chào mừng đến khách sạn Sea Breeze.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Hi, I’d like to check in. I have a reservation under the name Tran.</span><small>Chào bạn, tôi muốn nhận phòng. Tôi đặt dưới tên Trần.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Yes, a double room for three nights. Can I see your passport, please?</span><small>Vâng, phòng đôi ba đêm. Cho tôi xem hộ chiếu nhé?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Here you are. Is breakfast included?</span><small>Đây ạ. Có bao gồm bữa sáng không?</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Yes, it’s served from six thirty to ten on the second floor. Here’s your key card. Room 508.</span><small>Có ạ, phục vụ từ 6 rưỡi đến 10 giờ ở tầng hai. Thẻ phòng của chị đây. Phòng 508.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Thank you. And what’s the Wi-Fi password?</span><small>Cảm ơn. Mật khẩu Wi-Fi là gì vậy?</small></div></div>
+  </div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 2: Ở QUẦY THÔNG TIN</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Hi, it’s our first time in Hue. What are the must-see places?</span><small>Chào bạn, đây là lần đầu chúng tôi đến Huế. Có chỗ nào nhất định phải xem không?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">You should visit the Imperial City and take a boat trip on the Perfume River.</span><small>Anh chị nên thăm Đại Nội và đi thuyền trên sông Hương.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Is there a guided tour in English?</span><small>Có tour hướng dẫn bằng tiếng Anh không?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Yes, there’s one every morning at nine. You can book it here.</span><small>Có ạ, sáng nào cũng có lúc 9 giờ. Anh chị đặt ở đây được.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Great. And where do locals usually go for dinner?</span><small>Tuyệt. Người địa phương thường ăn tối ở đâu?</small></div></div>
+  </div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 3: KỂ CHUYỆN CHUYẾN ĐI</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Have you ever been to Sa Pa?</span><small>Bạn đã bao giờ đến Sa Pa chưa?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Yes! I went there last December. It was freezing, but so beautiful.</span><small>Rồi! Mình đi hồi tháng Mười hai năm ngoái. Lạnh cóng mà đẹp lắm.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">What did you do there?</span><small>Ở đó bạn làm gì?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">We stayed in a homestay, went trekking, and tried lots of local food.</span><small>Bọn mình ở homestay, đi trekking và thử nhiều món địa phương.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">That sounds like the trip of a lifetime!</span><small>Nghe như chuyến đi đáng nhớ nhất đời ấy!</small></div></div>
+  </div>
+  <div class="info i-ok"><span>✅</span><span><strong>Cách luyện:</strong> nghe một lượt, nói theo từng câu, rồi che phần tiếng Việt và tự đóng vai A hoặc B. Lần sau thay bằng chuyến đi thật bạn đã có hoặc đang mơ ước.</span></div>
+</section>
+
+<section class="section" id="s7">
+  <div class="sec-head"><span class="sec-tag t2">BÀI 7</span><div><div class="sec-title">Máy chuyến đi &amp; bài tập</div><div class="sec-sub">Chọn thông tin một chuyến đi, xem cùng lúc bản kế hoạch (tương lai) và bản kể lại (quá khứ)</div></div></div>
+  <div class="gen">
+    <label for="g-d">Điểm đến<select id="g-d"></select></label>
+    <label for="g-n">Số ngày<select id="g-n"></select></label>
+    <label for="g-w">Đi cùng<select id="g-w"></select></label>
+    <label for="g-s">Chỗ ở<select id="g-s"></select></label>
+    <label for="g-a1">Hoạt động 1<select id="g-a1"></select></label>
+    <label for="g-a2">Hoạt động 2<select id="g-a2"></select></label>
+  </div>
+  <div class="btns"><button class="btn" id="gen-btn">Tạo chuyến đi</button><button class="btn alt" id="rnd-btn">Chọn ngẫu nhiên</button></div>
+  <div class="out" id="gen-out" aria-live="polite"></div>
+
+  <div class="sub-title">Bài tập: điền câu trả lời</div>
+  <p class="t">Câu 1–4: điền một từ vào chỗ trống. Câu 5–8: dịch sang tiếng Anh, gõ cả câu. Không phân biệt hoa thường.</p>
+  <div id="exlist">
+    <div class="exi">1. Have you ever ___ to Japan? →<input id="ex1" data-a="been" aria-label="Câu 1"><small>been / gone</small></div>
+    <div class="exi">2. I ___ to Thailand last year. (go) →<input id="ex2" data-a="went" aria-label="Câu 2"><small>có mốc thời gian</small></div>
+    <div class="exi">3. Is breakfast ___? (bao gồm) →<input id="ex3" data-a="included" aria-label="Câu 3"><small>include → ?</small></div>
+    <div class="exi">4. My bag ___ stolen. →<input id="ex4" data-a="was" aria-label="Câu 4"><small>bị động</small></div>
+    <div class="exi">5. Tôi muốn nhận phòng →<input id="ex5" data-a="i'd like to check in|i would like to check in" aria-label="Câu 5"><small>check in</small></div>
+    <div class="exi">6. Vé vào cửa bao nhiêu? →<input id="ex6" data-a="how much is the entrance fee?|how much is the ticket?|how much is a ticket?|how much does it cost to get in?" aria-label="Câu 6"><small>entrance fee</small></div>
+    <div class="exi">7. Chúng tôi có được chụp ảnh không? →<input id="ex7" data-a="are we allowed to take photos?|are we allowed to take pictures?|can we take photos?|can we take pictures?" aria-label="Câu 7"><small>allowed</small></div>
+    <div class="exi">8. Tôi sẽ đi Đà Nẵng năm ngày →<input id="ex8" data-a="i'm going to da nang for five days|i am going to da nang for five days|i'm going to da nang for 5 days|i will go to da nang for five days" aria-label="Câu 8"><small>for + thời gian</small></div>
+  </div>
+  <div class="btns" style="margin-top:12px"><button class="btn" id="ex-check">Kiểm tra đáp án</button><button class="btn alt" id="ex-show">Xem đáp án</button><button class="btn alt" id="ex-reset">Làm lại</button></div>
+  <div class="out" id="ex-out" style="min-height:0" aria-live="polite"></div>
+
+  <div class="sub-title">Lộ trình luyện 7 ngày</div>
+  <div class="plan">
+    <div class="day"><b>Ngày 1</b><span><strong>Kế hoạch:</strong> nói chuyến đi tới của bạn bằng going to và hiện tại tiếp diễn</span></div>
+    <div class="day"><b>Ngày 2</b><span><strong>Khách sạn:</strong> đóng vai nhận phòng, hỏi tiện ích, trả phòng</span></div>
+    <div class="day"><b>Ngày 3</b><span><strong>Tham quan:</strong> luyện hỏi giờ mở cửa, giá vé, Are we allowed to…</span></div>
+    <div class="day"><b>Ngày 4</b><span><strong>Kể chuyện:</strong> kể chuyến đi gần nhất, chú ý been / gone và quá khứ đơn</span></div>
+    <div class="day"><b>Ngày 5</b><span><strong>Sự cố:</strong> luyện báo sự cố bằng câu bị động was / were + V3</span></div>
+    <div class="day"><b>Ngày 6</b><span><strong>Máy chuyến đi:</strong> tạo 3 chuyến đi, đọc to bản kế hoạch rồi bản kể lại</span></div>
+    <div class="day"><b>Ngày 7</b><span><strong>Ôn tổng hợp:</strong> thu âm 1 phút giới thiệu một điểm du lịch ở quê bạn cho khách nước ngoài</span></div>
+  </div>
+</section>
+
+<section class="section" id="s8">
+  <div class="sec-head"><span class="sec-tag t5">NÂNG CAO</span><div><div class="sec-title">Từ vựng mới để hội thoại tự nhiên hơn</div><div class="sec-sub">Thêm vài từ này, bạn sẽ nói chuyện du lịch như một người hay đi xa</div></div></div>
+  <div class="sub-title">Kiểu du lịch</div>
+  <table class="tbl"><thead><tr><th>Từ / cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">itinerary</td><td>lịch trình</td><td><span class="say">Can you send me the itinerary?</span></td></tr>
+  <tr><td class="say">backpacking</td><td>du lịch bụi</td><td><span class="say">I went backpacking around Southeast Asia.</span></td></tr>
+  <tr><td class="say">budget travel</td><td>du lịch tiết kiệm</td><td><span class="say">Hostels are great for budget travel.</span></td></tr>
+  <tr><td class="say">homestay</td><td>ở nhà dân</td><td><span class="say">We stayed at a homestay in Ha Giang.</span></td></tr>
+  <tr><td class="say">all-inclusive</td><td>trọn gói (ăn uống, dịch vụ)</td><td><span class="say">It’s an all-inclusive resort.</span></td></tr>
+  <tr><td class="say">travel light</td><td>đi gọn nhẹ</td><td><span class="say">I always travel light with just a backpack.</span></td></tr>
+  <tr><td class="say">day trip</td><td>chuyến đi trong ngày</td><td><span class="say">We took a day trip to Ninh Binh.</span></td></tr></tbody></table>
+  <div class="sub-title">Trải nghiệm và cảm nhận</div>
+  <table class="tbl"><thead><tr><th>Từ / cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">hidden gem</td><td>nơi đẹp ít người biết</td><td><span class="say">This little café is a hidden gem.</span></td></tr>
+  <tr><td class="say">tourist trap</td><td>nơi chặt chém khách du lịch</td><td><span class="say">Avoid that street. It’s a tourist trap.</span></td></tr>
+  <tr><td class="say">off the beaten track</td><td>nơi ít khách du lịch</td><td><span class="say">I prefer places off the beaten track.</span></td></tr>
+  <tr><td class="say">culture shock</td><td>sốc văn hóa</td><td><span class="say">I had a bit of culture shock at first.</span></td></tr>
+  <tr><td class="say">bucket list</td><td>danh sách điều muốn làm trong đời</td><td><span class="say">Visiting Iceland is on my bucket list.</span></td></tr>
+  <tr><td class="say">wanderlust</td><td>niềm khao khát đi xa</td><td><span class="say">I have serious wanderlust.</span></td></tr></tbody></table>
+  <div class="sub-title">Cụm giúp cuộc trò chuyện trôi chảy</div>
+  <div class="ex-box"><div class="ex-head">LÀM CHO HỘI THOẠI TỰ NHIÊN<span class="ex-tag t5">Nâng cao</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">It was the trip of a lifetime.</span><span class="ex-vn">Đó là chuyến đi đáng nhớ nhất đời</span></div>
+    <div class="ex-row"><span class="ex-en say">I’ve caught the travel bug.</span><span class="ex-vn">Tôi nghiện đi du lịch mất rồi</span></div>
+    <div class="ex-row"><span class="ex-en say">Is it very touristy?</span><span class="ex-vn">Chỗ đó có đông khách du lịch quá không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Any tips for first-time visitors?</span><span class="ex-vn">Có mẹo gì cho người lần đầu đến không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Where do locals usually eat?</span><span class="ex-vn">Người địa phương hay ăn ở đâu?</span></div>
+    <div class="ex-row"><span class="ex-en say">Have a safe trip and enjoy yourself!</span><span class="ex-vn">Đi đường bình an và vui vẻ nhé!</span></div>
+    <div class="ex-row"><span class="ex-en say">Send me some photos!</span><span class="ex-vn">Gửi ảnh cho mình xem với!</span></div>
+  </div></div>
+  <div class="cmp"><div class="bad"><b>❌ NGHE CỨNG</b><div>Last year I have go Japan. Very good.</div></div><div class="good"><b>✔ TỰ NHIÊN HƠN</b><div class="say">I went to Japan last year. It was the trip of a lifetime. I’ve definitely caught the travel bug!</div></div></div>
+  <div class="info i-tip"><span>💡</span><span><strong>Mẹo:</strong> <strong>travel</strong> thường là động từ hoặc nói chung về việc đi lại, còn <strong>trip</strong> là một chuyến đi cụ thể. Nói <em>How was your trip?</em>, không nói <em>How was your travel?</em></span></div>
+
+  <div class="sub-title">Tự kiểm tra</div>
+  <ul class="chk">
+    <li><label><input type="checkbox" id="c1">Tôi nói được kế hoạch du lịch bằng <strong>going to</strong> và hiện tại tiếp diễn</label></li>
+    <li><label><input type="checkbox" id="c2">Tôi nhận phòng, hỏi tiện ích và trả phòng khách sạn được</label></li>
+    <li><label><input type="checkbox" id="c3">Tôi hỏi thông tin tham quan và xin phép bằng <strong>Are we allowed to…?</strong></label></li>
+    <li><label><input type="checkbox" id="c4">Tôi phân biệt <strong>been / gone</strong> và hiện tại hoàn thành với quá khứ đơn</label></li>
+    <li><label><input type="checkbox" id="c5">Tôi báo sự cố bằng câu bị động <strong>was / were + V3</strong></label></li>
+    <li><label><input type="checkbox" id="c6">Tôi kể lại được một chuyến đi trong khoảng 1 phút</label></li>
+    <li><label><input type="checkbox" id="c7">Tôi dùng được ít nhất 5 từ vựng nâng cao</label></li>
+  </ul>
+</section>
+
+</div>
+<div class="footer">🧳 Giao tiếp tiếng Anh: Travel · Dành cho người mới bắt đầu · 2026</div>
+</div>
+
+<div class="audio-bar">
+  <b>🔊 Audio</b>
+  <div class="ab-g"><button data-acc="en-GB" class="on">Anh-Anh</button><button data-acc="en-US">Anh-Mỹ</button></div>
+  <div class="ab-g"><button data-rate="0.6">Chậm</button><button data-rate="0.85" class="on">Vừa</button><button data-rate="1">Nhanh</button></div>
+</div>
+
+<script>
+(function(){
+var doc=document.documentElement,bar=document.getElementById('pbar');
+addEventListener('scroll',function(){bar.style.width=(doc.scrollTop/Math.max(1,doc.scrollHeight-doc.clientHeight)*100)+'%'});
+var links=document.querySelectorAll('.nav-link,.topnav a');
+if('IntersectionObserver' in window)document.querySelectorAll('.section[id]').forEach(function(s){
+  new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;
+    links.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id)});
+  })},{rootMargin:'-20% 0px -70% 0px'}).observe(s);
+});
+
+/* Audio */
+var S=window.speechSynthesis,st={acc:'en-GB',rate:.85},cur=null;
+function voice(){if(!S)return null;var v=S.getVoices().filter(function(x){return x.lang.replace('_','-').toLowerCase()===st.acc.toLowerCase()});
+  return v.find(function(x){return /google|natural|premium|enhanced/i.test(x.name)})||v[0]||null}
+function say(el){
+  if(cur)cur.classList.remove('playing');
+  if(!S){el.title='Trình duyệt này không hỗ trợ đọc audio';return}
+  S.cancel();cur=el;el.classList.add('playing');
+  var t=el.textContent.replace(/\s+/g,' ').replace(/\s*\/\s*/g,'. ').replace(/→/g,'. ')
+    .replace(/Da Nang/g,'Da Nahng').replace(/Hoi An/g,'Hoy Ahn').replace(/\bHue\b/g,'Hway').replace(/Sa Pa/g,'Sah Pah').replace(/Ha Giang/g,'Ha Zahng').replace(/Ninh Binh/g,'Ning Bing').replace(/Phu Quoc/g,'Foo Kwok').replace(/Ha Long/g,'Ha Long').trim();
+  var u=new SpeechSynthesisUtterance(t);u.lang=st.acc;u.rate=st.rate;var v=voice();if(v)u.voice=v;
+  u.onend=u.onerror=function(){el.classList.remove('playing')};S.speak(u);
+}
+function prep(root){root.querySelectorAll('.say').forEach(function(e){e.tabIndex=0;e.setAttribute('role','button')})}
+prep(document);
+document.addEventListener('click',function(e){var el=e.target.closest('.say');if(el)say(el)});
+document.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.classList&&e.target.classList.contains('say')){e.preventDefault();say(e.target)}});
+document.querySelectorAll('.audio-bar button').forEach(function(b){b.addEventListener('click',function(){
+  b.parentElement.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');
+  if(b.dataset.acc)st.acc=b.dataset.acc;if(b.dataset.rate)st.rate=+b.dataset.rate;
+})});
+
+/* ===== Máy chuyến đi =====
+   ACT: [tương lai (nguyên mẫu), quá khứ, nghĩa] */
+var DEST=[['Da Nang','Đà Nẵng','🏖️'],['Hoi An','Hội An','🏮'],['Sa Pa','Sa Pa','⛰️'],['Ha Long Bay','vịnh Hạ Long','🚢'],['Phu Quoc','Phú Quốc','🏝️'],['Bangkok','Bangkok','🛕'],['Seoul','Seoul','🏙️'],['Tokyo','Tokyo','🗼']];
+var DAYS=[2,3,4,5,7,10];
+var WHO=[['alone','một mình','I’m','I'],['with my family','cùng gia đình','We’re','We'],['with my best friend','cùng bạn thân','We’re','We'],['with my colleagues','cùng đồng nghiệp','We’re','We']];
+var STAY=[['a beach resort','resort ven biển','stay at'],['a cheap hostel','hostel giá rẻ','stay at'],['a homestay','homestay','stay at'],['a hotel in the city center','khách sạn trung tâm','stay at']];
+var ACT=[['try the local food','tried the local food','thử đồ ăn địa phương'],['go swimming','went swimming','đi bơi'],['go hiking','went hiking','leo núi'],['visit old temples','visited old temples','thăm chùa cổ'],
+  ['take a boat trip','took a boat trip','đi thuyền'],['go shopping at the night market','went shopping at the night market','mua sắm ở chợ đêm'],['take lots of photos','took lots of photos','chụp thật nhiều ảnh'],['learn to cook a local dish','learned to cook a local dish','học nấu một món địa phương']];
+var NUMW={2:'two',3:'three',4:'four',5:'five',7:'seven',10:'ten'};
+function fill(id,arr,lab){var s=document.getElementById(id);arr.forEach(function(x,i){s.add(new Option(lab(x),i))});return s}
+var gd=fill('g-d',DEST,function(x){return x[2]+' '+x[0]}),gn=fill('g-n',DAYS,function(x){return x+' ngày'}),gw=fill('g-w',WHO,function(x){return x[1]}),
+    gs=fill('g-s',STAY,function(x){return x[1]}),ga1=fill('g-a1',ACT,function(x){return x[2]}),ga2=fill('g-a2',ACT,function(x){return x[2]});
+gd.value=0;gn.value=3;gw.value=1;gs.value=0;ga1.value=0;ga2.value=1;
+var out=document.getElementById('gen-out');
+function col(title,cls,lines){var c=document.createElement('div');c.className='tcol '+cls;var h=document.createElement('div');h.className='lbl';h.textContent=title;c.append(h);
+  lines.forEach(function(t){var d=document.createElement('div');var sp=document.createElement('span');sp.className='say';sp.textContent=t;d.append(sp);c.append(d)});return c}
+function show(){
+  var d=DEST[+gd.value],n=DAYS[+gn.value],w=WHO[+gw.value],s=STAY[+gs.value],a1=ACT[+ga1.value],a2=ACT[+ga2.value];
+  if(a1===a2)a2=ACT[(+ga2.value+1)%ACT.length];
+  var I=w[3],sub=w[2];
+  var plan=[sub+' going to '+d[0]+' next month for '+NUMW[n]+' days.',
+    (I==='I'?'I’m traveling ':'We’re traveling ')+w[0]+'.',
+    sub+' going to '+s[2]+' '+s[0]+'.',
+    sub+' going to '+a1[0]+' and '+a2[0]+'.',
+    'I can’t wait!'];
+  var story=[I+' went to '+d[0]+' last month for '+NUMW[n]+' days.',
+    (I==='I'?'I traveled ':'We traveled ')+w[0]+'.',
+    I+' stayed at '+s[0]+'.',
+    I+' '+a1[1]+' and '+a2[1]+'.',
+    'It was the trip of a lifetime!'];
+  out.innerHTML='';
+  var top=document.createElement('div');top.className='big';top.textContent=d[2]+' '+d[0]+' · '+n+' days';out.append(top);
+  var g=document.createElement('div');g.className='twocol';
+  g.append(col('KẾ HOẠCH (TƯƠNG LAI)','fut',plan),col('KỂ LẠI (QUÁ KHỨ)','past',story));out.append(g);
+  var ask=document.createElement('div');ask.className='lbl';ask.style.marginTop='10px';ask.textContent='CÂU HỎI GỢI CHUYỆN';out.append(ask);
+  ['Have you ever been to '+d[0]+'?','Where are you going for your next holiday?','How was your trip?'].forEach(function(q){var x=document.createElement('div');var sp=document.createElement('span');sp.className='say';sp.textContent=q;x.append(sp);out.append(x)});
+  var vn=document.createElement('div');vn.style.color='var(--muted)';vn.style.fontSize='13px';vn.style.marginTop='6px';
+  vn.textContent='Nghĩa: Đi '+d[1]+' '+n+' ngày, '+w[1]+', ở '+s[1]+', '+a1[2]+' và '+a2[2]+'.';out.append(vn);
+  var why=document.createElement('span');why.className='why';
+  why.innerHTML='So sánh hai cột: tương lai dùng <b>be going to + V</b> (<b>'+a1[0].split(' ')[0]+'</b>), kể lại dùng <b>quá khứ đơn</b> (<b>'+a1[1].split(' ')[0]+'</b>, <b>'+a2[1].split(' ')[0]+'</b>). Mốc thời gian đổi từ <b>next month</b> sang <b>last month</b>.';
+  out.append(why);prep(out);
+}
+document.getElementById('gen-btn').addEventListener('click',show);
+[gd,gn,gw,gs,ga1,ga2].forEach(function(s){s.addEventListener('change',show)});
+document.getElementById('rnd-btn').addEventListener('click',function(){
+  [[gd,DEST],[gn,DAYS],[gw,WHO],[gs,STAY],[ga1,ACT]].forEach(function(x){x[0].value=Math.floor(Math.random()*x[1].length)});
+  var j;do{j=Math.floor(Math.random()*ACT.length)}while(j===+ga1.value);ga2.value=j;show();
+});
+show();
+
+/* Bài tập */
+function cap(s){return s.charAt(0).toUpperCase()+s.slice(1)}
+var inputs=document.querySelectorAll('#exlist input'),exo=document.getElementById('ex-out');
+function norm(s){return s.toLowerCase().replace(/[’‘`]/g,"'").replace(/[.!?]+$/,'').replace(/,/g,'').replace(/\s+/g,' ').trim()}
+document.getElementById('ex-check').addEventListener('click',function(){
+  var ok=0;
+  inputs.forEach(function(i){
+    var good=i.dataset.a.split('|').some(function(a){return norm(a)===norm(i.value)});
+    i.classList.remove('ok','no');i.classList.add(good?'ok':'no');if(good)ok++;
+  });
+  exo.style.minHeight='';
+  exo.textContent=ok===inputs.length?'🎉 Chính xác '+ok+'/'+inputs.length+'. Bạn sẵn sàng xách vali lên và đi rồi!':'Đúng '+ok+'/'+inputs.length+'. Các ô viền đỏ cần xem lại; đọc lại phần ngữ pháp ở Bài 1 đến 5, hoặc bấm “Xem đáp án”.';
+});
+document.getElementById('ex-show').addEventListener('click',function(){
+  inputs.forEach(function(i){
+    var k=i.parentElement.querySelector('.key');
+    if(!k){k=document.createElement('span');k.className='key';i.parentElement.append(k)}
+    var a=i.dataset.a.split('|')[0].replace(/'/g,'’').replace(/^i’/,'I’').replace('da nang','Da Nang');k.textContent='Đáp án: '+(a.indexOf(' ')>-1?cap(a):a);
+  });
+});
+document.getElementById('ex-reset').addEventListener('click',function(){
+  inputs.forEach(function(i){i.value='';i.classList.remove('ok','no')});
+  document.querySelectorAll('#exlist .key').forEach(function(k){k.remove()});
+  exo.textContent='';exo.style.minHeight='0';
+});
+})();
+</script>
+
+<script src="nav.js" defer></script>
+</body></html>

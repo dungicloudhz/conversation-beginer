@@ -1,0 +1,524 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Tiếng Anh Music</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: sidebar mục lục cố định + cột bài học, cùng theme tối của bộ "Hỏi đường & Hỏi giờ" (nhấn tím – xanh ngọc cho chủ đề âm nhạc) */
+:root{color-scheme:dark;
+--bg:#080810;--s1:#0e0e1c;--s2:#131326;--s3:#18182e;--border:#222240;--border2:#2c2c50;--text:#e6e6f2;--muted:#8a8ab8;--faint:#4a4a78;
+--acc:#ffd060;--acc-dim:rgba(255,208,96,.11);--oc:#38bdf8;--oc-dim:rgba(56,189,248,.13);--ins:#40d88e;--ins-dim:rgba(64,216,142,.12);
+--sk:#a07af4;--sk-dim:rgba(160,122,244,.12);--au:#ff6584;--au-dim:rgba(255,101,132,.12);--teal:#30d8c0;--code-bg:#05050e;
+--tip-bg:rgba(91,168,255,.10);--tip-bd:rgba(91,168,255,.25);--tip-fg:#8ab8f0;--warn-fg:#e0bc58;--ok-fg:#5ccf98;--line:rgba(255,255,255,.05);
+--font:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+--gl:max(64px,env(safe-area-inset-left,0px));--gr:max(64px,env(safe-area-inset-right,0px))}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 60px)}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.7;font-size:15px;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:600;background:var(--s1)}
+.sidebar{position:fixed;left:0;top:0;width:260px;height:100%;background:var(--s1);border-right:1px solid var(--border);overflow-y:auto;z-index:400;padding-top:env(safe-area-inset-top,0px);padding-left:env(safe-area-inset-left,0px)}
+.sb-logo{padding:20px 18px 16px;border-bottom:1px solid var(--border)}
+.sb-brand{display:flex;align-items:center;gap:11px;margin-bottom:12px}
+.logo-icon{width:44px;height:44px;border-radius:11px;background:linear-gradient(135deg,var(--sk),var(--teal));display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 0 26px rgba(160,122,244,.3)}
+.logo-text h2{font-size:15px;font-weight:800}.logo-text p{font-size:10.5px;color:var(--muted)}
+.prog-wrap{height:3px;background:var(--border);border-radius:2px;overflow:hidden}
+.prog-bar{height:100%;width:0;background:linear-gradient(90deg,var(--acc),var(--ins),var(--oc),var(--sk),var(--au))}
+.nav-label{padding:14px 18px 4px;font-size:9.5px;font-weight:700;letter-spacing:1.6px;color:var(--faint)}
+.nav-link{display:flex;align-items:center;gap:9px;padding:7px 18px;color:var(--muted);text-decoration:none;font-size:12.5px;font-weight:600;border-left:2px solid transparent}
+.nav-link:hover,.nav-link.active{color:var(--text);background:rgba(255,208,96,.07);border-left-color:var(--acc)}
+.main{margin-left:260px}
+.hero{padding-block:80px 60px;padding-left:var(--gl);padding-right:var(--gr);border-bottom:1px solid var(--border);background:radial-gradient(ellipse 65% 55% at 75% 22%,rgba(160,122,244,.11),transparent 60%),radial-gradient(ellipse 50% 55% at 10% 82%,rgba(48,216,192,.07),transparent 55%),var(--bg)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--acc-dim);border:1px solid rgba(255,208,96,.38);color:var(--acc);padding:5px 16px;border-radius:100px;font-size:11.5px;font-weight:700;margin-bottom:24px}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--acc);animation:p 2s infinite}
+@keyframes p{50%{opacity:.35;transform:scale(.7)}}
+@media(prefers-reduced-motion:reduce){.eyebrow i{animation:none}html{scroll-behavior:auto}}
+.hero h1{font-size:50px;font-weight:900;letter-spacing:-2.4px;line-height:1.06;margin-bottom:18px;text-wrap:balance}
+.grad{background:linear-gradient(135deg,var(--sk),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-desc{font-size:16px;color:var(--muted);max-width:620px;margin-bottom:28px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{padding:5px 14px;border-radius:7px;font-size:12px;font-weight:700}
+.c1{background:var(--oc-dim);color:var(--oc)}.c2{background:var(--ins-dim);color:var(--ins)}.c3{background:var(--acc-dim);color:var(--acc)}.c4{background:var(--sk-dim);color:var(--sk)}.c5{background:var(--au-dim);color:var(--au)}
+.content{padding-block:56px;padding-left:var(--gl);padding-right:var(--gr);max-width:calc(1020px + 64px)}
+.section{margin-bottom:68px}
+.sec-head{display:flex;gap:14px;align-items:flex-start;margin-bottom:28px;padding-bottom:18px;border-bottom:1px solid var(--border)}
+.sec-tag{font-family:var(--mono);font-size:10px;font-weight:600;padding:3px 10px;border-radius:5px;margin-top:6px;flex-shrink:0;letter-spacing:.5px}
+.t1{color:var(--oc);background:var(--oc-dim)}.t2{color:var(--ins);background:var(--ins-dim)}.t3{color:var(--acc);background:var(--acc-dim)}.t4{color:var(--sk);background:var(--sk-dim)}.t5{color:var(--au);background:var(--au-dim)}
+.sec-title{font-size:23px;font-weight:800;letter-spacing:-.6px;text-wrap:balance}.sec-sub{font-size:13px;color:var(--muted)}
+.sub-title{font-size:14.5px;font-weight:700;margin:26px 0 12px;display:flex;align-items:center;gap:10px}
+.sub-title::before{content:'';width:14px;height:3px;background:var(--acc);border-radius:2px}
+p.t{color:var(--muted);font-size:13.5px;margin-bottom:11px;max-width:68ch}p.t strong,li strong{color:var(--text)}
+.ex-box{background:var(--s1);border:1px solid var(--border2);border-radius:11px;overflow:hidden;margin:13px 0}
+.ex-head{display:flex;align-items:center;gap:8px;padding:9px 16px;background:var(--s2);border-bottom:1px solid var(--border);font-family:var(--mono);font-size:10px;font-weight:600;color:var(--muted);letter-spacing:.5px}
+.ex-tag{margin-left:auto;font-size:9px;font-weight:700;padding:2px 9px;border-radius:100px;font-family:var(--font)}
+.ex-body{padding:10px 20px}
+.ex-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:13.5px}
+.ex-row:last-child{border-bottom:none}
+.ex-en{color:var(--text);font-weight:600;min-width:280px}.ex-vn{color:var(--muted)}
+.info{display:flex;gap:12px;padding:14px 16px;border-radius:9px;margin:13px 0;font-size:13px;line-height:1.6}
+.i-tip{background:var(--tip-bg);border:1px solid var(--tip-bd);color:var(--tip-fg)}
+.i-warn{background:var(--acc-dim);border:1px solid rgba(255,208,96,.25);color:var(--warn-fg)}
+.i-ok{background:var(--ins-dim);border:1px solid rgba(64,216,142,.25);color:var(--ok-fg)}
+.tbl{width:100%;border-collapse:collapse;font-size:13px;margin:13px 0;display:block;overflow-x:auto}
+.tbl th{background:var(--s3);padding:10px 14px;text-align:left;font-size:10px;color:var(--muted);border-bottom:1px solid var(--border2);white-space:nowrap;letter-spacing:.5px}
+.tbl td{padding:10px 14px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:top}
+.tbl td:first-child{color:var(--text);font-weight:600}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}
+.card{background:var(--s1);border:1px solid var(--border);border-radius:11px;padding:16px;min-width:0}
+.card:hover{border-color:var(--acc)}
+.card-icon{font-size:24px}.card-title{font-size:13px;font-weight:700}.card-desc{font-size:12px;color:var(--muted)}
+.cmp{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);border-radius:11px;overflow:hidden;margin:13px 0}
+.bad{background:rgba(255,101,132,.07);padding:14px 16px;border-right:1px solid var(--border)}.good{background:rgba(64,216,142,.07);padding:14px 16px}
+.cmp b{display:block;font-size:10px;margin-bottom:6px;letter-spacing:.5px}.bad b{color:var(--au)}.good b{color:var(--ins)}
+.cmp div div{font-size:13.5px}
+.dlg{display:grid;gap:8px;margin:12px 0;background:var(--s1);border:1px solid var(--border2);border-radius:12px;padding:16px 18px}
+.dlg-t{font-size:10px;font-weight:800;color:var(--acc);margin-bottom:2px;letter-spacing:.6px}
+.turn{display:flex;gap:10px;align-items:baseline}
+.turn>div{min-width:0}
+.who{flex-shrink:0;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+.wa{background:var(--oc-dim);color:var(--oc)}.wb{background:var(--ins-dim);color:var(--ins)}
+.turn .say{font-weight:600}.turn small{display:block;color:var(--muted);font-size:12px;font-weight:400}
+.gen{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin:12px 0}
+.gen label{font-size:11.5px;color:var(--muted);font-weight:600;display:block;min-width:0}
+.gen select{width:100%;margin-top:4px;background:var(--code-bg);border:1px solid var(--border2);border-radius:8px;padding:9px 12px;color:var(--text);font:inherit;font-size:13px}
+select:focus-visible,button:focus-visible,.say:focus-visible,.exi input:focus-visible,.chk input:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.btns{display:flex;flex-wrap:wrap;gap:6px}
+.btn{background:var(--acc-dim);color:var(--acc);border:1px solid var(--acc);border-radius:8px;padding:8px 16px;font:inherit;font-weight:700;font-size:13px;cursor:pointer}
+.btn.alt{background:var(--ins-dim);color:var(--ins);border-color:var(--ins)}
+.out{margin-top:14px;min-height:60px;background:var(--s2);border:1px dashed var(--border2);border-radius:10px;padding:14px 16px;font-size:14px;line-height:1.9}
+.big{font-size:21px;font-weight:800;color:var(--acc);letter-spacing:-.3px;line-height:1.4;margin-bottom:4px}
+.out .why{display:block;color:var(--muted);font-size:12.5px}
+.out .why b{color:var(--teal);font-family:var(--mono);font-weight:600}
+.timeline{display:grid;gap:0;margin:14px 0;border-left:2px solid var(--border2);padding-left:18px}
+.tl{position:relative;padding:8px 0 12px}
+.tl::before{content:'';position:absolute;left:-24px;top:16px;width:10px;height:10px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 3px var(--bg)}
+.tl time{font-family:var(--mono);font-size:12px;color:var(--acc);font-variant-numeric:tabular-nums;font-weight:600}
+.tl .say{font-weight:600;font-size:13.5px}
+.tl small{display:block;color:var(--muted);font-size:12px}
+.freq{display:grid;gap:7px;margin:14px 0}
+.fq{display:grid;grid-template-columns:110px 1fr 54px;gap:12px;align-items:center;font-size:13px}
+.fq .say{font-weight:700}
+.fq .track{height:8px;background:var(--s3);border-radius:4px;overflow:hidden}
+.fq .fill{height:100%;background:linear-gradient(90deg,var(--ins),var(--acc))}
+.fq span:last-child{font-family:var(--mono);font-size:11.5px;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+.plan{display:grid;gap:8px;margin:12px 0}
+.day{display:flex;gap:14px;align-items:baseline;background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:12px 16px;font-size:13px;color:var(--muted)}
+.day b{color:var(--acc);font-family:var(--mono);font-size:12px;flex-shrink:0;width:52px}.day strong{color:var(--text)}
+.chk{list-style:none;margin:10px 0}.chk li{padding:6px 0;font-size:13.5px;color:var(--muted);border-bottom:1px solid rgba(255,255,255,.04)}
+.chk input{accent-color:var(--ins);margin-right:10px;width:15px;height:15px;vertical-align:-2px}
+.gr{border:1px solid rgba(160,122,244,.38);background:linear-gradient(180deg,var(--sk-dim),transparent 110px),var(--s1);border-radius:12px;margin:28px 0;overflow:hidden}
+.gr-head{padding:10px 18px;font-size:12px;font-weight:800;color:var(--sk);border-bottom:1px solid var(--border);display:flex;gap:10px;flex-wrap:wrap;align-items:baseline;letter-spacing:.4px}
+.gr-head em{font-style:normal;color:var(--muted);font-weight:600;letter-spacing:0}
+.gr-body{padding:14px 18px;font-size:13.5px;color:var(--muted)}
+.gr-body p{margin-bottom:10px}.gr-body b{color:var(--text)}.gr-body ul{padding-left:20px;margin-bottom:8px}.gr-body li{margin-bottom:4px}
+.gr-body .tbl{margin:8px 0 12px}
+.fm{display:inline-block;font-family:var(--mono);font-size:12px;background:var(--code-bg);color:var(--teal);padding:3px 9px;border-radius:6px;margin:2px 0}
+.say{cursor:pointer;border-bottom:1px dotted var(--oc)}
+.say:hover{color:var(--acc);background:var(--acc-dim);border-radius:4px}
+.say::after{content:"🔊";font-size:.68em;margin-left:3px;opacity:.5}
+.say.playing{color:var(--ins);background:var(--ins-dim);border-radius:4px}.say.playing::after{opacity:1}
+.exi{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:13.5px;color:var(--text)}
+.exi input{width:220px;max-width:100%;background:var(--code-bg);border:1px solid var(--border2);border-radius:6px;padding:4px 8px;color:var(--text);font:inherit;font-size:13px;text-align:center}
+.exi input.ok{border-color:var(--ins);color:var(--ins)}.exi input.no{border-color:var(--au);color:var(--au)}
+.exi small{color:var(--muted);font-size:11.5px}
+.exi .key{color:var(--ins);font-size:12px;width:100%}
+.footer{border-top:1px solid var(--border);padding-block:28px 90px;padding-left:var(--gl);padding-right:var(--gr);font-size:12px;color:var(--muted)}
+.audio-bar{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:500;display:flex;gap:10px;align-items:center;background:var(--s2);border:1px solid var(--border2);border-radius:12px;padding:8px 12px;box-shadow:0 8px 28px rgba(0,0,0,.5);font-size:12px;color:var(--muted)}
+.audio-bar b{color:var(--acc)}.ab-g{display:flex;gap:4px}
+.audio-bar button{background:var(--s3);color:var(--muted);border:1px solid var(--border);border-radius:7px;padding:4px 10px;font:inherit;font-weight:700;cursor:pointer}
+.audio-bar button.on{background:var(--acc-dim);color:var(--acc);border-color:var(--acc)}
+.topnav{display:none}
+@media(max-width:900px){
+:root{--gl:max(18px,env(safe-area-inset-left,0px));--gr:max(18px,env(safe-area-inset-right,0px))}
+.sidebar{display:none}.main{margin-left:0}.hero h1{font-size:32px;letter-spacing:-1.4px}.hero{padding-block:48px 40px}
+.grid-3,.cmp{grid-template-columns:1fr}.gen{grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}.bad{border-right:none;border-bottom:1px solid var(--border)}
+.topnav{display:flex;overflow-x:auto;position:sticky;top:env(safe-area-inset-top,0px);z-index:500;background:var(--s1);border-bottom:2px solid var(--border2);scrollbar-width:none;padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+.topnav a{flex-shrink:0;padding:10px 14px;color:var(--muted);text-decoration:none;font-size:12px;font-weight:700;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-2px}
+.topnav a.active{color:var(--acc);border-bottom-color:var(--acc);background:var(--acc-dim)}
+.ex-en{min-width:0}
+.fq{grid-template-columns:90px 1fr 46px}
+.audio-bar{left:calc(8px + env(safe-area-inset-left,0px));right:calc(8px + env(safe-area-inset-right,0px));justify-content:center;flex-wrap:wrap}
+}
+@media(max-width:480px){.gen{grid-template-columns:1fr}}
+.lbl{font-family:var(--mono);font-size:10px;font-weight:600;color:var(--faint);letter-spacing:1px}
+.rl{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;padding:3px 0}
+.rl .lbl{min-width:14px;color:var(--sk)}
+.rl .say{font-weight:700;font-size:15px}
+.para{font-size:16px;font-weight:600;line-height:1.9;margin:4px 0 6px;max-width:68ch}
+</style>
+
+<aside class="sidebar">
+  <div class="sb-logo">
+    <div class="sb-brand"><div class="logo-icon">🎧</div><div class="logo-text"><h2>Music</h2><p>Tiếng Anh cho người mới</p></div></div>
+    <div class="prog-wrap"><div class="prog-bar" id="pbar"></div></div>
+  </div>
+  <div class="nav-label">BÀI HỌC</div>
+  <a class="nav-link" href="#s1">🎼 Thể loại nhạc</a>
+  <a class="nav-link" href="#s2">🎶 Sở thích nghe nhạc</a>
+  <a class="nav-link" href="#s3">🎸 Nhạc cụ &amp; chơi nhạc</a>
+  <a class="nav-link" href="#s4">💭 Mô tả bài hát</a>
+  <a class="nav-link" href="#s5">🎤 Concert &amp; karaoke</a>
+  <div class="nav-label">THỰC HÀNH</div>
+  <a class="nav-link" href="#s6">💬 Hội thoại mẫu</a>
+  <a class="nav-link" href="#s7">🛠️ Hồ sơ âm nhạc &amp; bài tập</a>
+  <a class="nav-link" href="#s8">🚀 Từ vựng nâng cao</a>
+</aside>
+
+<div class="main">
+<nav class="topnav">
+  <a href="#s1">1 Thể loại</a><a href="#s2">2 Sở thích</a><a href="#s3">3 Nhạc cụ</a><a href="#s4">4 Mô tả</a><a href="#s5">5 Concert</a><a href="#s6">6 Hội thoại</a><a href="#s7">7 Luyện tập</a><a href="#s8">8 Nâng cao</a>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow"><i></i>Dành cho người mới bắt đầu</div>
+  <h1>Nói về âm nhạc<br><span class="grad">bằng tiếng Anh</span></h1>
+  <p class="hero-desc">Âm nhạc là chủ đề giúp hai người lạ nhanh chóng tìm thấy điểm chung. Học tên các thể loại, cách nói bạn thích nghe gì và nghe lúc nào, chơi nhạc cụ nào, tả một bài hát làm bạn cảm thấy thế nào, đi xem concert và hát karaoke. Bấm vào câu có biểu tượng loa để nghe, rồi tạo hồ sơ âm nhạc của bạn ở phần thực hành.</p>
+  <div class="chips"><span class="chip c4">Thể loại</span><span class="chip c2">Nghe nhạc</span><span class="chip c3">Nhạc cụ</span><span class="chip c1">Karaoke</span><span class="chip c5">Từ vựng nâng cao</span></div>
+</header>
+
+<div class="content">
+
+<section class="section" id="s1">
+  <div class="sec-head"><span class="sec-tag t4">BÀI 1</span><div><div class="sec-title">Các thể loại nhạc</div><div class="sec-sub">Gọi đúng tên dòng nhạc bạn thích</div></div></div>
+  <div class="grid-3">
+    <div class="card"><div class="card-icon">🎤</div><div class="card-title say">pop</div><div class="card-desc">nhạc pop, nhạc thịnh hành</div></div>
+    <div class="card"><div class="card-icon">🎸</div><div class="card-title say">rock</div><div class="card-desc">nhạc rock</div></div>
+    <div class="card"><div class="card-icon">🎷</div><div class="card-title say">jazz</div><div class="card-desc">nhạc jazz</div></div>
+    <div class="card"><div class="card-icon">🎻</div><div class="card-title say">classical music</div><div class="card-desc">nhạc cổ điển</div></div>
+    <div class="card"><div class="card-icon">🎧</div><div class="card-title say">hip-hop / rap</div><div class="card-desc">hip-hop, rap</div></div>
+    <div class="card"><div class="card-icon">🪩</div><div class="card-title say">EDM</div><div class="card-desc">nhạc điện tử</div></div>
+    <div class="card"><div class="card-icon">💜</div><div class="card-title say">K-pop</div><div class="card-desc">nhạc pop Hàn Quốc</div></div>
+    <div class="card"><div class="card-icon">🌙</div><div class="card-title say">ballad</div><div class="card-desc">nhạc trữ tình, chậm</div></div>
+    <div class="card"><div class="card-icon">🪕</div><div class="card-title say">folk music</div><div class="card-desc">nhạc dân gian</div></div>
+  </div>
+  <div class="ex-box"><div class="ex-head">GIỚI THIỆU NHẠC VIỆT<span class="ex-tag t4">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">V-pop is Vietnamese pop music.</span><span class="ex-vn">V-pop là nhạc pop Việt Nam</span></div>
+    <div class="ex-row"><span class="ex-en say">Bolero is a type of slow, emotional Vietnamese music. My parents love it.</span><span class="ex-vn">Bolero là dòng nhạc Việt chậm, nhiều cảm xúc. Bố mẹ tôi rất thích</span></div>
+    <div class="ex-row"><span class="ex-en say">Quan ho is traditional folk singing from Bac Ninh.</span><span class="ex-vn">Quan họ là lối hát dân ca truyền thống ở Bắc Ninh</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>kind of / type of music, và I’m into…</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Cấu trúc</th><th>Ví dụ</th></tr></thead><tbody>
+<tr><td><span class="fm">What kind of music do you like?</span></td><td>Hỏi thể loại yêu thích</td></tr>
+<tr><td><span class="fm">I’m into + thể loại</span></td><td><span class="say">I’m really into jazz.</span> (thân mật, “mê”)</td></tr>
+<tr><td><span class="fm">I’m not a big fan of + thể loại</span></td><td><span class="say">I’m not a big fan of rock.</span> (từ chối nhẹ nhàng)</td></tr></tbody></table>
+<p><b>music</b> không đếm được: không nói <i>a music</i>, <i>musics</i>. Muốn đếm, dùng <b>a song</b>, <b>a piece of music</b>.</p>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>I like listening musics. This is a good music.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">I like listening to music. This is a good song.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s2">
+  <div class="sec-head"><span class="sec-tag t2">BÀI 2</span><div><div class="sec-title">Sở thích và thói quen nghe nhạc</div><div class="sec-sub">Nghe gì, nghe ai, nghe ở đâu và khi nào</div></div></div>
+  <div class="ex-box"><div class="ex-head">HỎI VÀ ĐÁP<span class="ex-tag t2">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">What kind of music are you into?</span><span class="ex-vn">Bạn mê thể loại nhạc nào?</span></div>
+    <div class="ex-row"><span class="ex-en say">Who’s your favorite singer?</span><span class="ex-vn">Ca sĩ bạn thích nhất là ai?</span></div>
+    <div class="ex-row"><span class="ex-en say">What are you listening to these days?</span><span class="ex-vn">Dạo này bạn đang nghe gì?</span></div>
+    <div class="ex-row"><span class="ex-en say">I listen to music on my phone every day.</span><span class="ex-vn">Ngày nào tôi cũng nghe nhạc trên điện thoại</span></div>
+    <div class="ex-row"><span class="ex-en say">I always listen to music while I’m working.</span><span class="ex-vn">Tôi luôn nghe nhạc khi làm việc</span></div>
+    <div class="ex-row"><span class="ex-en say">I like all kinds of music, except heavy metal.</span><span class="ex-vn">Tôi thích mọi thể loại, trừ heavy metal</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>listen to hay hear?</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Động từ</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+<tr><td><span class="fm">listen to + N</span></td><td>chủ động lắng nghe</td><td><span class="say">I listen to podcasts on the bus.</span></td></tr>
+<tr><td><span class="fm">hear + N</span></td><td>nghe thấy (tự nhiên lọt vào tai)</td><td><span class="say">Did you hear that song on the radio?</span></td></tr>
+<tr><td><span class="fm">listen</span> (không có tân ngữ)</td><td>“nghe này!”</td><td><span class="say">Listen! This is my favorite part.</span></td></tr></tbody></table>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>I listen music every day.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">I listen to music every day.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s3">
+  <div class="sec-head"><span class="sec-tag t3">BÀI 3</span><div><div class="sec-title">Nhạc cụ và chơi nhạc</div><div class="sec-sub">Bạn chơi được nhạc cụ nào, đang học gì, có biết hát không</div></div></div>
+  <div class="grid-3">
+    <div class="card"><div class="card-icon">🎸</div><div class="card-title say">guitar</div><div class="card-desc">đàn guitar</div></div>
+    <div class="card"><div class="card-icon">🎹</div><div class="card-title say">piano</div><div class="card-desc">đàn piano</div></div>
+    <div class="card"><div class="card-icon">🥁</div><div class="card-title say">drums</div><div class="card-desc">trống</div></div>
+    <div class="card"><div class="card-icon">🎻</div><div class="card-title say">violin</div><div class="card-desc">vĩ cầm</div></div>
+    <div class="card"><div class="card-icon">🪈</div><div class="card-title say">flute</div><div class="card-desc">sáo</div></div>
+    <div class="card"><div class="card-icon">🪕</div><div class="card-title say">monochord (dan bau)</div><div class="card-desc">đàn bầu</div></div>
+  </div>
+  <div class="ex-box"><div class="ex-head">NÓI VỀ CHƠI NHẠC<span class="ex-tag t3">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Do you play any instruments?</span><span class="ex-vn">Bạn có chơi nhạc cụ nào không?</span></div>
+    <div class="ex-row"><span class="ex-en say">I play the guitar a little.</span><span class="ex-vn">Tôi chơi guitar một chút</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m learning the piano. I’m still a beginner.</span><span class="ex-vn">Tôi đang học piano. Vẫn mới bắt đầu thôi</span></div>
+    <div class="ex-row"><span class="ex-en say">I can’t play anything, but I love singing.</span><span class="ex-vn">Tôi không chơi được nhạc cụ nào, nhưng rất thích hát</span></div>
+    <div class="ex-row"><span class="ex-en say">I used to play the violin when I was a child.</span><span class="ex-vn">Hồi nhỏ tôi từng chơi vĩ cầm</span></div>
+    <div class="ex-row"><span class="ex-en say">She sings in a band.</span><span class="ex-vn">Cô ấy hát trong một ban nhạc</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>play the + nhạc cụ (khác với play + môn thể thao)</em></div><div class="gr-body">
+<ul><li><span class="fm">play the + nhạc cụ</span> → <span class="say">play the guitar, play the piano</span></li>
+<li><span class="fm">play + môn thể thao</span> (không có the) → <span class="say">play football</span></li>
+<li><span class="fm">used to + V</span> = trước đây từng làm, giờ không còn → <span class="say">I used to play the drums.</span></li></ul>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>I play piano and I play the badminton.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">I play the piano and I play badminton.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s4">
+  <div class="sec-head"><span class="sec-tag t1">BÀI 4</span><div><div class="sec-title">Mô tả bài hát và cảm xúc</div><div class="sec-sub">Bài hát nghe thế nào, khiến bạn cảm thấy ra sao, gợi nhớ điều gì</div></div></div>
+  <table class="tbl"><thead><tr><th>Tính từ</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">catchy</td><td>bắt tai, dễ nhớ</td><td><span class="say">The chorus is so catchy.</span></td></tr>
+  <tr><td class="say">upbeat</td><td>vui tươi, sôi động</td><td><span class="say">I love upbeat songs in the morning.</span></td></tr>
+  <tr><td class="say">relaxing</td><td>thư giãn</td><td><span class="say">Jazz is really relaxing.</span></td></tr>
+  <tr><td class="say">emotional</td><td>nhiều cảm xúc</td><td><span class="say">This ballad is so emotional.</span></td></tr>
+  <tr><td class="say">energetic</td><td>tràn năng lượng</td><td><span class="say">EDM is great for the gym because it’s energetic.</span></td></tr>
+  <tr><td class="say">romantic</td><td>lãng mạn</td><td><span class="say">It’s a romantic love song.</span></td></tr></tbody></table>
+  <table class="tbl"><thead><tr><th>Danh từ</th><th>Nghĩa</th></tr></thead><tbody>
+  <tr><td class="say">lyrics</td><td>lời bài hát</td></tr><tr><td class="say">melody / tune</td><td>giai điệu</td></tr>
+  <tr><td class="say">beat / rhythm</td><td>nhịp, tiết tấu</td></tr><tr><td class="say">chorus</td><td>điệp khúc</td></tr>
+  <tr><td class="say">voice</td><td>giọng hát</td></tr></tbody></table>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>make + O + tính từ, và remind + O + of + N</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Cấu trúc</th><th>Ví dụ</th></tr></thead><tbody>
+<tr><td><span class="fm">make + me + adj</span></td><td><span class="say">This song makes me happy.</span></td></tr>
+<tr><td><span class="fm">make + me + want to + V</span></td><td><span class="say">It makes me want to dance.</span></td></tr>
+<tr><td><span class="fm">remind + me + of + N</span></td><td><span class="say">It reminds me of my school days.</span></td></tr></tbody></table>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>This song makes me to feel happy. It reminds me my hometown.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">This song makes me feel happy. It reminds me of my hometown.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s5">
+  <div class="sec-head"><span class="sec-tag t5">BÀI 5</span><div><div class="sec-title">Đi xem concert và hát karaoke</div><div class="sec-sub">Rủ nhau đi xem nhạc sống, và những câu dùng trong phòng karaoke</div></div></div>
+  <div class="ex-box"><div class="ex-head">CONCERT<span class="ex-tag t5">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Have you ever been to a live concert?</span><span class="ex-vn">Bạn đã bao giờ đi xem nhạc sống chưa?</span></div>
+    <div class="ex-row"><span class="ex-en say">My favorite band is coming to Hanoi next month!</span><span class="ex-vn">Ban nhạc tôi thích sẽ đến Hà Nội tháng sau!</span></div>
+    <div class="ex-row"><span class="ex-en say">Are you going to get tickets?</span><span class="ex-vn">Bạn có định mua vé không?</span></div>
+    <div class="ex-row"><span class="ex-en say">The tickets sold out in ten minutes.</span><span class="ex-vn">Vé bán hết trong mười phút</span></div>
+    <div class="ex-row"><span class="ex-en say">The whole crowd was singing along.</span><span class="ex-vn">Cả khán giả cùng hát theo</span></div>
+  </div></div>
+  <div class="ex-box"><div class="ex-head">KARAOKE<span class="ex-tag t1">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">What song are you going to sing?</span><span class="ex-vn">Bạn định hát bài gì?</span></div>
+    <div class="ex-row"><span class="ex-en say">It’s your turn!</span><span class="ex-vn">Đến lượt bạn rồi!</span></div>
+    <div class="ex-row"><span class="ex-en say">Can you pick a song for me?</span><span class="ex-vn">Chọn giúp mình một bài được không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Let’s sing a duet!</span><span class="ex-vn">Song ca đi!</span></div>
+    <div class="ex-row"><span class="ex-en say">I can’t sing, but I’ll try!</span><span class="ex-vn">Mình hát dở lắm, nhưng sẽ thử!</span></div>
+    <div class="ex-row"><span class="ex-en say">You have a great voice!</span><span class="ex-vn">Giọng bạn hay quá!</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>be going to cho kế hoạch, và Have you ever…?</em></div><div class="gr-body">
+<ul><li><span class="fm">be going to + V</span> (dự định) → <span class="say">I’m going to see them live in December.</span></li>
+<li><span class="fm">Have you ever + V3?</span> (đã từng bao giờ) → <span class="say">Have you ever played in a band?</span></li>
+<li>Trả lời: <span class="say">Yes, I have.</span> / <span class="say">No, never.</span></li></ul>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>Did you ever go concert? I going to buy ticket.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">Have you ever been to a concert? I’m going to buy a ticket.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s6">
+  <div class="sec-head"><span class="sec-tag t3">BÀI 6</span><div><div class="sec-title">Hội thoại mẫu</div><div class="sec-sub">Bấm từng câu để nghe, rồi đóng vai cả hai người</div></div></div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 1: NÓI VỀ GU ÂM NHẠC</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">What kind of music are you into?</span><small>Bạn mê thể loại nhạc nào?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Mostly pop and some jazz. How about you?</span><small>Chủ yếu là pop với một ít jazz. Còn bạn?</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">I’m really into K-pop. The songs are so catchy and the dancing is amazing.</span><small>Mình mê K-pop lắm. Bài nào cũng bắt tai, nhảy lại đỉnh.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Do you play any instruments?</span><small>Bạn có chơi nhạc cụ nào không?</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">I’m learning the guitar, but I’m still a beginner.</span><small>Mình đang học guitar, nhưng vẫn mới tập.</small></div></div>
+  </div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 2: Ở PHÒNG KARAOKE</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Okay, it’s your turn! What song are you going to sing?</span><small>Rồi, đến lượt bạn! Bạn định hát bài gì?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">I’m not a good singer. Can you pick a song for me?</span><small>Mình hát không hay. Chọn giúp mình một bài nhé?</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">How about an easy ballad? Or let’s sing a duet!</span><small>Một bản ballad dễ thì sao? Hay mình song ca đi!</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">A duet sounds less scary. Let’s do it!</span><small>Song ca nghe đỡ sợ hơn. Hát thôi!</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">See? You have a great voice!</span><small>Thấy chưa? Giọng bạn hay mà!</small></div></div>
+  </div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 3: RỦ ĐI XEM CONCERT</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Have you ever been to a live concert?</span><small>Bạn đã bao giờ đi xem nhạc sống chưa?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Only once, a long time ago. Why?</span><small>Mới một lần, lâu lắm rồi. Sao thế?</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">There’s a music festival next Saturday. I’m going to buy two tickets. Do you want to come?</span><small>Thứ Bảy tới có lễ hội âm nhạc. Mình định mua hai vé. Bạn đi cùng không?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">I’d love to! Live music always makes me feel so alive.</span><small>Đi chứ! Nhạc sống lúc nào cũng làm mình thấy tràn đầy sức sống.</small></div></div>
+  </div>
+  <div class="info i-ok"><span>✅</span><span><strong>Cách luyện:</strong> nghe một lượt, nói theo từng câu, rồi che phần tiếng Việt và tự đóng vai A hoặc B. Lần sau thay bằng thể loại và nghệ sĩ bạn thật sự thích.</span></div>
+</section>
+
+<section class="section" id="s7">
+  <div class="sec-head"><span class="sec-tag t4">BÀI 7</span><div><div class="sec-title">Hồ sơ âm nhạc &amp; bài tập</div><div class="sec-sub">Chọn gu âm nhạc của bạn, xem đoạn tự giới thiệu và câu để hỏi lại người kia</div></div></div>
+  <div class="gen">
+    <label for="g-g">Thể loại yêu thích<select id="g-g"></select></label>
+    <label for="g-w">Nghe khi nào<select id="g-w"></select></label>
+    <label for="g-m">Cảm xúc<select id="g-m"></select></label>
+    <label for="g-i">Nhạc cụ<select id="g-i"></select></label>
+    <label for="g-l">Trình độ nhạc cụ<select id="g-l"></select></label>
+  </div>
+  <div class="btns"><button class="btn" id="gen-btn">Tạo hồ sơ</button><button class="btn alt" id="rnd-btn">Chọn ngẫu nhiên</button></div>
+  <div class="out" id="gen-out" aria-live="polite"></div>
+
+  <div class="sub-title">Bài tập: điền câu trả lời</div>
+  <p class="t">Câu 1–4: điền một từ vào chỗ trống. Câu 5–8: dịch sang tiếng Anh, gõ cả câu. Không phân biệt hoa thường.</p>
+  <div id="exlist">
+    <div class="exi">1. I listen ___ music every day. →<input id="ex1" data-a="to" aria-label="Câu 1"><small>listen + ?</small></div>
+    <div class="exi">2. She plays ___ piano. →<input id="ex2" data-a="the" aria-label="Câu 2"><small>nhạc cụ</small></div>
+    <div class="exi">3. This song reminds me ___ my childhood. →<input id="ex3" data-a="of" aria-label="Câu 3"><small>remind + O + ?</small></div>
+    <div class="exi">4. It makes me ___ happy. (feel) →<input id="ex4" data-a="feel" aria-label="Câu 4"><small>make + O + V</small></div>
+    <div class="exi">5. Bạn thích thể loại nhạc nào? →<input id="ex5" data-a="what kind of music do you like?|what kind of music are you into?|what type of music do you like?" aria-label="Câu 5"><small>kind of</small></div>
+    <div class="exi">6. Tôi đang học guitar →<input id="ex6" data-a="i'm learning the guitar|i am learning the guitar|i'm learning guitar|i am learning guitar" aria-label="Câu 6"><small>learning</small></div>
+    <div class="exi">7. Đến lượt bạn rồi! →<input id="ex7" data-a="it's your turn|it is your turn|your turn" aria-label="Câu 7"><small>turn</small></div>
+    <div class="exi">8. Bạn đã bao giờ đi xem concert chưa? →<input id="ex8" data-a="have you ever been to a concert?|have you ever been to a live concert?|have you ever gone to a concert?" aria-label="Câu 8"><small>Have you ever…</small></div>
+  </div>
+  <div class="btns" style="margin-top:12px"><button class="btn" id="ex-check">Kiểm tra đáp án</button><button class="btn alt" id="ex-show">Xem đáp án</button><button class="btn alt" id="ex-reset">Làm lại</button></div>
+  <div class="out" id="ex-out" style="min-height:0" aria-live="polite"></div>
+
+  <div class="sub-title">Lộ trình luyện 7 ngày</div>
+  <div class="plan">
+    <div class="day"><b>Ngày 1</b><span><strong>Thể loại:</strong> học tên 9 thể loại, giới thiệu 2 dòng nhạc Việt</span></div>
+    <div class="day"><b>Ngày 2</b><span><strong>Nghe nhạc:</strong> luyện listen to / hear, nói bạn nghe nhạc lúc nào</span></div>
+    <div class="day"><b>Ngày 3</b><span><strong>Nhạc cụ:</strong> luyện play the + nhạc cụ và used to</span></div>
+    <div class="day"><b>Ngày 4</b><span><strong>Mô tả:</strong> tả 3 bài hát bạn thích bằng tính từ và make me / remind me of</span></div>
+    <div class="day"><b>Ngày 5</b><span><strong>Concert, karaoke:</strong> luyện câu trong phòng karaoke với một người bạn</span></div>
+    <div class="day"><b>Ngày 6</b><span><strong>Hồ sơ âm nhạc:</strong> dùng máy tạo hồ sơ, đọc to đoạn của bạn và các câu hỏi lại</span></div>
+    <div class="day"><b>Ngày 7</b><span><strong>Ôn tổng hợp:</strong> thu âm 1 phút giới thiệu bài hát bạn thích nhất và vì sao</span></div>
+  </div>
+</section>
+
+<section class="section" id="s8">
+  <div class="sec-head"><span class="sec-tag t5">NÂNG CAO</span><div><div class="sec-title">Từ vựng mới để hội thoại tự nhiên hơn</div><div class="sec-sub">Thêm vài từ này, bạn sẽ nói về âm nhạc như một người mê nhạc thật sự</div></div></div>
+  <div class="sub-title">Nghe nhạc thời nay</div>
+  <table class="tbl"><thead><tr><th>Từ / cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">playlist</td><td>danh sách phát</td><td><span class="say">I made a playlist for our road trip.</span></td></tr>
+  <tr><td class="say">stream</td><td>nghe trực tuyến</td><td><span class="say">I usually stream music on my phone.</span></td></tr>
+  <tr><td class="say">a hit / the charts</td><td>bài hit / bảng xếp hạng</td><td><span class="say">Her new song is number one on the charts.</span></td></tr>
+  <tr><td class="say">release</td><td>phát hành</td><td><span class="say">They released a new album last week.</span></td></tr>
+  <tr><td class="say">cover</td><td>bản hát lại</td><td><span class="say">I prefer the cover to the original.</span></td></tr>
+  <tr><td class="say">gig</td><td>buổi diễn nhỏ</td><td><span class="say">My friend’s band has a gig on Friday.</span></td></tr>
+  <tr><td class="say">acoustic</td><td>mộc, không dùng điện</td><td><span class="say">I love acoustic versions of pop songs.</span></td></tr></tbody></table>
+  <div class="sub-title">Khả năng và cảm nhận âm nhạc</div>
+  <table class="tbl"><thead><tr><th>Từ / cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">earworm</td><td>giai điệu cứ lởn vởn trong đầu</td><td><span class="say">That song is a real earworm.</span></td></tr>
+  <tr><td class="say">tone-deaf</td><td>mù âm, nghe không ra cao độ</td><td><span class="say">Don’t ask me to sing. I’m tone-deaf!</span></td></tr>
+  <tr><td class="say">out of tune / in tune</td><td>lạc tông / đúng tông</td><td><span class="say">The guitar is a bit out of tune.</span></td></tr>
+  <tr><td class="say">have an ear for music</td><td>có năng khiếu nghe nhạc</td><td><span class="say">She has a great ear for music.</span></td></tr>
+  <tr><td class="say">sing along</td><td>hát theo</td><td><span class="say">Everyone sang along to the chorus.</span></td></tr>
+  <tr><td class="say">goosebumps</td><td>nổi da gà (vì cảm xúc)</td><td><span class="say">Her voice gave me goosebumps.</span></td></tr></tbody></table>
+  <div class="sub-title">Cụm giúp cuộc trò chuyện trôi chảy</div>
+  <div class="ex-box"><div class="ex-head">LÀM CHO HỘI THOẠI TỰ NHIÊN<span class="ex-tag t5">Nâng cao</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">This song is stuck in my head.</span><span class="ex-vn">Bài này cứ lởn vởn trong đầu tôi</span></div>
+    <div class="ex-row"><span class="ex-en say">This is my jam!</span><span class="ex-vn">Đây là bài ruột của tôi!</span></div>
+    <div class="ex-row"><span class="ex-en say">Turn it up!</span><span class="ex-vn">Vặn to lên!</span></div>
+    <div class="ex-row"><span class="ex-en say">It’s not really my cup of tea.</span><span class="ex-vn">Không hợp gu tôi lắm</span></div>
+    <div class="ex-row"><span class="ex-en say">I have it on repeat.</span><span class="ex-vn">Tôi nghe đi nghe lại bài này</span></div>
+    <div class="ex-row"><span class="ex-en say">Have you heard their new song?</span><span class="ex-vn">Bạn nghe bài mới của họ chưa?</span></div>
+    <div class="ex-row"><span class="ex-en say">Can you send me the link?</span><span class="ex-vn">Gửi link cho mình được không?</span></div>
+  </div></div>
+  <div class="cmp"><div class="bad"><b>❌ NGHE CỨNG</b><div>I like music. Music good. I listen.</div></div><div class="good"><b>✔ TỰ NHIÊN HƠN</b><div class="say">I’m really into acoustic pop. I have one song on repeat right now. It always gives me goosebumps.</div></div></div>
+  <div class="info i-tip"><span>💡</span><span><strong>Mẹo:</strong> khi ai đó kể về nghệ sĩ họ thích mà bạn chưa biết, đừng ngại nói <strong>“I haven’t heard of them. What should I listen to first?”</strong>. Đây là câu hỏi giúp cuộc trò chuyện kéo dài rất tự nhiên.</span></div>
+
+  <div class="sub-title">Tự kiểm tra</div>
+  <ul class="chk">
+    <li><label><input type="checkbox" id="c1">Tôi gọi tên được 9 thể loại và giới thiệu được nhạc Việt</label></li>
+    <li><label><input type="checkbox" id="c2">Tôi dùng đúng <strong>listen to</strong> và <strong>hear</strong></label></li>
+    <li><label><input type="checkbox" id="c3">Tôi dùng đúng <strong>play the + nhạc cụ</strong></label></li>
+    <li><label><input type="checkbox" id="c4">Tôi tả bài hát bằng tính từ và <strong>make me feel / remind me of</strong></label></li>
+    <li><label><input type="checkbox" id="c5">Tôi nói được các câu trong phòng karaoke</label></li>
+    <li><label><input type="checkbox" id="c6">Tôi dùng <strong>Have you ever…?</strong> và <strong>be going to</strong> khi rủ đi concert</label></li>
+    <li><label><input type="checkbox" id="c7">Tôi dùng được ít nhất 5 từ vựng nâng cao</label></li>
+  </ul>
+</section>
+
+</div>
+<div class="footer">🎧 Giao tiếp tiếng Anh: Music · Dành cho người mới bắt đầu · 2026</div>
+</div>
+
+<div class="audio-bar">
+  <b>🔊 Audio</b>
+  <div class="ab-g"><button data-acc="en-GB" class="on">Anh-Anh</button><button data-acc="en-US">Anh-Mỹ</button></div>
+  <div class="ab-g"><button data-rate="0.6">Chậm</button><button data-rate="0.85" class="on">Vừa</button><button data-rate="1">Nhanh</button></div>
+</div>
+
+<script>
+(function(){
+var doc=document.documentElement,bar=document.getElementById('pbar');
+addEventListener('scroll',function(){bar.style.width=(doc.scrollTop/Math.max(1,doc.scrollHeight-doc.clientHeight)*100)+'%'});
+var links=document.querySelectorAll('.nav-link,.topnav a');
+if('IntersectionObserver' in window)document.querySelectorAll('.section[id]').forEach(function(s){
+  new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;
+    links.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id)});
+  })},{rootMargin:'-20% 0px -70% 0px'}).observe(s);
+});
+
+/* Audio */
+var S=window.speechSynthesis,st={acc:'en-GB',rate:.85},cur=null;
+function voice(){if(!S)return null;var v=S.getVoices().filter(function(x){return x.lang.replace('_','-').toLowerCase()===st.acc.toLowerCase()});
+  return v.find(function(x){return /google|natural|premium|enhanced/i.test(x.name)})||v[0]||null}
+function say(el){
+  if(cur)cur.classList.remove('playing');
+  if(!S){el.title='Trình duyệt này không hỗ trợ đọc audio';return}
+  S.cancel();cur=el;el.classList.add('playing');
+  var t=el.textContent.replace(/\s+/g,' ').replace(/\s*\/\s*/g,'. ').replace(/→/g,'. ').replace(/Quan ho/g,'Kwan haw').replace(/Bac Ninh/g,'Back Ning').replace(/dan bau/g,'dan bow').trim();
+  var u=new SpeechSynthesisUtterance(t);u.lang=st.acc;u.rate=st.rate;var v=voice();if(v)u.voice=v;
+  u.onend=u.onerror=function(){el.classList.remove('playing')};S.speak(u);
+}
+function prep(root){root.querySelectorAll('.say').forEach(function(e){e.tabIndex=0;e.setAttribute('role','button')})}
+prep(document);
+document.addEventListener('click',function(e){var el=e.target.closest('.say');if(el)say(el)});
+document.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.classList&&e.target.classList.contains('say')){e.preventDefault();say(e.target)}});
+document.querySelectorAll('.audio-bar button').forEach(function(b){b.addEventListener('click',function(){
+  b.parentElement.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');
+  if(b.dataset.acc)st.acc=b.dataset.acc;if(b.dataset.rate)st.rate=+b.dataset.rate;
+})});
+
+/* ===== Hồ sơ âm nhạc =====
+   [thể loại, nghĩa, tính từ hợp, biểu tượng] */
+var GEN=[['pop','pop','catchy','🎤'],['rock','rock','energetic','🎸'],['jazz','jazz','relaxing','🎷'],['classical music','nhạc cổ điển','calming','🎻'],
+  ['hip-hop','hip-hop','powerful','🎧'],['K-pop','K-pop','catchy','💜'],['V-pop','V-pop','fun','🇻🇳'],['ballads','ballad','emotional','🌙'],['EDM','EDM','energetic','🪩']];
+var WHEN=[['while I’m working','khi làm việc'],['on my way to work','trên đường đi làm'],['at the gym','khi tập gym'],['before I go to sleep','trước khi ngủ'],['when I’m cooking','khi nấu ăn']];
+/* [cảm xúc: câu make me, nghĩa] */
+var MOOD=[['feel happy','thấy vui'],['feel relaxed','thấy thư giãn'],['want to dance','muốn nhảy'],['feel more focused','tập trung hơn'],['feel a bit nostalgic','thấy hoài niệm']];
+var INS=[['','không chơi nhạc cụ nào'],['guitar','guitar'],['piano','piano'],['drums','trống'],['violin','vĩ cầm'],['ukulele','ukulele']];
+var LEV=[['learning','đang học'],['play','chơi được'],['used','hồi trước từng chơi']];
+function fill(id,arr,lab){var s=document.getElementById(id);arr.forEach(function(x,i){s.add(new Option(lab(x),i))});return s}
+var gg=fill('g-g',GEN,function(x){return x[3]+' '+x[0]}),gw=fill('g-w',WHEN,function(x){return x[1]}),gm=fill('g-m',MOOD,function(x){return x[1]}),
+    gi=fill('g-i',INS,function(x){return x[0]?x[0]+' ('+x[1]+')':x[1]}),gl=fill('g-l',LEV,function(x){return x[1]});
+gg.value=5;gw.value=1;gm.value=2;gi.value=1;gl.value=0;
+var out=document.getElementById('gen-out');
+function line(label,text){var d=document.createElement('div');d.className='rl';var lb=document.createElement('span');lb.className='lbl';lb.textContent=label;var sp=document.createElement('span');sp.className='say';sp.textContent=text;d.append(lb,sp);out.append(d)}
+function show(){
+  var g=GEN[+gg.value],w=WHEN[+gw.value],m=MOOD[+gm.value],ins=INS[+gi.value],lv=LEV[+gl.value];
+  var p=[];
+  p.push('I’m really into '+g[0]+'.');
+  var pl=g[0]==='ballads';
+  p.push('I usually listen to '+(pl?'them':'it')+' '+w[0]+'.');
+  p.push('I love '+(pl?'them':'it')+' because '+(pl?'they’re':'it’s')+' so '+g[2]+', and '+(pl?'they make':'it makes')+' me '+m[0]+'.');
+  var insLine;
+  if(!ins[0])insLine='I can’t play any instruments, but I love singing along.';
+  else if(lv[0]==='learning')insLine='I’m learning the '+ins[0]+' at the moment. I’m still a beginner.';
+  else if(lv[0]==='play')insLine='I play the '+ins[0]+' a little.';
+  else insLine='I used to play the '+ins[0]+' when I was a kid.';
+  p.push(insLine);
+  out.innerHTML='';
+  var top=document.createElement('div');top.className='big';top.textContent=g[3]+' '+g[0]+(ins[0]?'  ·  '+ins[0]:'');out.append(top);
+  var lb=document.createElement('div');lb.className='lbl';lb.textContent='ĐOẠN TỰ GIỚI THIỆU';out.append(lb);
+  var para=document.createElement('div');para.className='para';p.forEach(function(x,i){var sp=document.createElement('span');sp.className='say';sp.textContent=x;para.append(sp);if(i<p.length-1)para.append(' ')});out.append(para);
+  var vn=document.createElement('div');vn.style.color='var(--muted)';vn.style.fontSize='13px';
+  vn.textContent='Nghĩa: Mình mê '+g[1]+', thường nghe '+w[1]+'. Nhạc làm mình '+m[1]+'. '+(ins[0]?'Nhạc cụ: '+ins[1]+' ('+lv[1]+').':'Mình không chơi nhạc cụ nào nhưng thích hát theo.');out.append(vn);
+  var lb2=document.createElement('div');lb2.className='lbl';lb2.style.marginTop='10px';lb2.textContent='HỎI LẠI NGƯỜI KIA';out.append(lb2);
+  ['What kind of music are you into?','Who’s your favorite '+(g[0]==='classical music'?'composer':'singer')+'?','Do you play any instruments?'].forEach(function(x){line('?',x)});
+  var w2=document.createElement('span');w2.className='why';
+  w2.innerHTML='<b>listen to</b> + nhạc; <b>it makes me + '+m[0].split(' ')[0]+'</b> (động từ nguyên mẫu, không có to); '+(ins[0]?'<b>play the '+ins[0]+'</b> có <b>the</b> trước nhạc cụ'+(lv[0]==='used'?'; <b>used to + V</b> cho thói quen trong quá khứ':'')+'.':'<b>sing along</b> = hát theo.');
+  out.append(w2);prep(out);
+}
+document.getElementById('gen-btn').addEventListener('click',show);
+[gg,gw,gm,gi,gl].forEach(function(s){s.addEventListener('change',show)});
+document.getElementById('rnd-btn').addEventListener('click',function(){
+  [[gg,GEN],[gw,WHEN],[gm,MOOD],[gi,INS],[gl,LEV]].forEach(function(x){x[0].value=Math.floor(Math.random()*x[1].length)});show();
+});
+show();
+
+/* Bài tập */
+function cap(s){return s.charAt(0).toUpperCase()+s.slice(1)}
+var inputs=document.querySelectorAll('#exlist input'),exo=document.getElementById('ex-out');
+function norm(s){return s.toLowerCase().replace(/[’‘`]/g,"'").replace(/[.!?]+$/,'').replace(/,/g,'').replace(/\s+/g,' ').trim()}
+document.getElementById('ex-check').addEventListener('click',function(){
+  var ok=0;
+  inputs.forEach(function(i){
+    var good=i.dataset.a.split('|').some(function(a){return norm(a)===norm(i.value)});
+    i.classList.remove('ok','no');i.classList.add(good?'ok':'no');if(good)ok++;
+  });
+  exo.style.minHeight='';
+  exo.textContent=ok===inputs.length?'🎉 Chính xác '+ok+'/'+inputs.length+'. Bạn nói về âm nhạc rất hay!':'Đúng '+ok+'/'+inputs.length+'. Các ô viền đỏ cần xem lại; đọc lại phần ngữ pháp ở Bài 1 đến 5, hoặc bấm “Xem đáp án”.';
+});
+document.getElementById('ex-show').addEventListener('click',function(){
+  inputs.forEach(function(i){
+    var k=i.parentElement.querySelector('.key');
+    if(!k){k=document.createElement('span');k.className='key';i.parentElement.append(k)}
+    var a=i.dataset.a.split('|')[0].replace(/'/g,'’').replace(/^i’m/,'I’m');k.textContent='Đáp án: '+(a.indexOf(' ')>-1?cap(a):a);
+  });
+});
+document.getElementById('ex-reset').addEventListener('click',function(){
+  inputs.forEach(function(i){i.value='';i.classList.remove('ok','no')});
+  document.querySelectorAll('#exlist .key').forEach(function(k){k.remove()});
+  exo.textContent='';exo.style.minHeight='0';
+});
+})();
+</script>
+
+<script src="nav.js" defer></script>
+</body></html>

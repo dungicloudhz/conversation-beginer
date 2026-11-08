@@ -1,0 +1,554 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Tiếng Anh Time &amp; Date</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: sidebar mục lục cố định + cột bài học, cùng theme tối của bộ "Hỏi đường & Hỏi giờ" (nhấn vàng – hồng cho chủ đề ngày tháng) */
+:root{color-scheme:dark;
+--bg:#080810;--s1:#0e0e1c;--s2:#131326;--s3:#18182e;--border:#222240;--border2:#2c2c50;--text:#e6e6f2;--muted:#8a8ab8;--faint:#4a4a78;
+--acc:#ffd060;--acc-dim:rgba(255,208,96,.11);--oc:#38bdf8;--oc-dim:rgba(56,189,248,.13);--ins:#40d88e;--ins-dim:rgba(64,216,142,.12);
+--sk:#a07af4;--sk-dim:rgba(160,122,244,.12);--au:#ff6584;--au-dim:rgba(255,101,132,.12);--teal:#30d8c0;--code-bg:#05050e;
+--tip-bg:rgba(91,168,255,.10);--tip-bd:rgba(91,168,255,.25);--tip-fg:#8ab8f0;--warn-fg:#e0bc58;--ok-fg:#5ccf98;--line:rgba(255,255,255,.05);
+--font:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+--gl:max(64px,env(safe-area-inset-left,0px));--gr:max(64px,env(safe-area-inset-right,0px))}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 60px)}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.7;font-size:15px;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:600;background:var(--s1)}
+.sidebar{position:fixed;left:0;top:0;width:260px;height:100%;background:var(--s1);border-right:1px solid var(--border);overflow-y:auto;z-index:400;padding-top:env(safe-area-inset-top,0px);padding-left:env(safe-area-inset-left,0px)}
+.sb-logo{padding:20px 18px 16px;border-bottom:1px solid var(--border)}
+.sb-brand{display:flex;align-items:center;gap:11px;margin-bottom:12px}
+.logo-icon{width:44px;height:44px;border-radius:11px;background:linear-gradient(135deg,var(--acc),var(--au));display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 0 26px rgba(255,208,96,.28)}
+.logo-text h2{font-size:15px;font-weight:800}.logo-text p{font-size:10.5px;color:var(--muted)}
+.prog-wrap{height:3px;background:var(--border);border-radius:2px;overflow:hidden}
+.prog-bar{height:100%;width:0;background:linear-gradient(90deg,var(--acc),var(--ins),var(--oc),var(--sk),var(--au))}
+.nav-label{padding:14px 18px 4px;font-size:9.5px;font-weight:700;letter-spacing:1.6px;color:var(--faint)}
+.nav-link{display:flex;align-items:center;gap:9px;padding:7px 18px;color:var(--muted);text-decoration:none;font-size:12.5px;font-weight:600;border-left:2px solid transparent}
+.nav-link:hover,.nav-link.active{color:var(--text);background:rgba(255,208,96,.07);border-left-color:var(--acc)}
+.main{margin-left:260px}
+.hero{padding-block:80px 60px;padding-left:var(--gl);padding-right:var(--gr);border-bottom:1px solid var(--border);background:radial-gradient(ellipse 65% 55% at 75% 22%,rgba(255,208,96,.09),transparent 60%),radial-gradient(ellipse 50% 55% at 10% 82%,rgba(255,101,132,.07),transparent 55%),var(--bg)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--acc-dim);border:1px solid rgba(255,208,96,.38);color:var(--acc);padding:5px 16px;border-radius:100px;font-size:11.5px;font-weight:700;margin-bottom:24px}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--acc);animation:p 2s infinite}
+@keyframes p{50%{opacity:.35;transform:scale(.7)}}
+@media(prefers-reduced-motion:reduce){.eyebrow i{animation:none}html{scroll-behavior:auto}}
+.hero h1{font-size:50px;font-weight:900;letter-spacing:-2.4px;line-height:1.06;margin-bottom:18px;text-wrap:balance}
+.grad{background:linear-gradient(135deg,var(--acc),var(--au));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-desc{font-size:16px;color:var(--muted);max-width:620px;margin-bottom:28px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{padding:5px 14px;border-radius:7px;font-size:12px;font-weight:700}
+.c1{background:var(--oc-dim);color:var(--oc)}.c2{background:var(--ins-dim);color:var(--ins)}.c3{background:var(--acc-dim);color:var(--acc)}.c4{background:var(--sk-dim);color:var(--sk)}.c5{background:var(--au-dim);color:var(--au)}
+.content{padding-block:56px;padding-left:var(--gl);padding-right:var(--gr);max-width:calc(1020px + 64px)}
+.section{margin-bottom:68px}
+.sec-head{display:flex;gap:14px;align-items:flex-start;margin-bottom:28px;padding-bottom:18px;border-bottom:1px solid var(--border)}
+.sec-tag{font-family:var(--mono);font-size:10px;font-weight:600;padding:3px 10px;border-radius:5px;margin-top:6px;flex-shrink:0;letter-spacing:.5px}
+.t1{color:var(--oc);background:var(--oc-dim)}.t2{color:var(--ins);background:var(--ins-dim)}.t3{color:var(--acc);background:var(--acc-dim)}.t4{color:var(--sk);background:var(--sk-dim)}.t5{color:var(--au);background:var(--au-dim)}
+.sec-title{font-size:23px;font-weight:800;letter-spacing:-.6px;text-wrap:balance}.sec-sub{font-size:13px;color:var(--muted)}
+.sub-title{font-size:14.5px;font-weight:700;margin:26px 0 12px;display:flex;align-items:center;gap:10px}
+.sub-title::before{content:'';width:14px;height:3px;background:var(--acc);border-radius:2px}
+p.t{color:var(--muted);font-size:13.5px;margin-bottom:11px;max-width:68ch}p.t strong,li strong{color:var(--text)}
+.ex-box{background:var(--s1);border:1px solid var(--border2);border-radius:11px;overflow:hidden;margin:13px 0}
+.ex-head{display:flex;align-items:center;gap:8px;padding:9px 16px;background:var(--s2);border-bottom:1px solid var(--border);font-family:var(--mono);font-size:10px;font-weight:600;color:var(--muted);letter-spacing:.5px}
+.ex-tag{margin-left:auto;font-size:9px;font-weight:700;padding:2px 9px;border-radius:100px;font-family:var(--font)}
+.ex-body{padding:10px 20px}
+.ex-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:13.5px}
+.ex-row:last-child{border-bottom:none}
+.ex-en{color:var(--text);font-weight:600;min-width:280px}.ex-vn{color:var(--muted)}
+.info{display:flex;gap:12px;padding:14px 16px;border-radius:9px;margin:13px 0;font-size:13px;line-height:1.6}
+.i-tip{background:var(--tip-bg);border:1px solid var(--tip-bd);color:var(--tip-fg)}
+.i-warn{background:var(--acc-dim);border:1px solid rgba(255,208,96,.25);color:var(--warn-fg)}
+.i-ok{background:var(--ins-dim);border:1px solid rgba(64,216,142,.25);color:var(--ok-fg)}
+.tbl{width:100%;border-collapse:collapse;font-size:13px;margin:13px 0;display:block;overflow-x:auto}
+.tbl th{background:var(--s3);padding:10px 14px;text-align:left;font-size:10px;color:var(--muted);border-bottom:1px solid var(--border2);white-space:nowrap;letter-spacing:.5px}
+.tbl td{padding:10px 14px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:top}
+.tbl td:first-child{color:var(--text);font-weight:600}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}
+.card{background:var(--s1);border:1px solid var(--border);border-radius:11px;padding:16px;min-width:0}
+.card:hover{border-color:var(--acc)}
+.card-icon{font-size:24px}.card-title{font-size:13px;font-weight:700}.card-desc{font-size:12px;color:var(--muted)}
+.cmp{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);border-radius:11px;overflow:hidden;margin:13px 0}
+.bad{background:rgba(255,101,132,.07);padding:14px 16px;border-right:1px solid var(--border)}.good{background:rgba(64,216,142,.07);padding:14px 16px}
+.cmp b{display:block;font-size:10px;margin-bottom:6px;letter-spacing:.5px}.bad b{color:var(--au)}.good b{color:var(--ins)}
+.cmp div div{font-size:13.5px}
+.dlg{display:grid;gap:8px;margin:12px 0;background:var(--s1);border:1px solid var(--border2);border-radius:12px;padding:16px 18px}
+.dlg-t{font-size:10px;font-weight:800;color:var(--acc);margin-bottom:2px;letter-spacing:.6px}
+.turn{display:flex;gap:10px;align-items:baseline}
+.turn>div{min-width:0}
+.who{flex-shrink:0;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+.wa{background:var(--oc-dim);color:var(--oc)}.wb{background:var(--ins-dim);color:var(--ins)}
+.turn .say{font-weight:600}.turn small{display:block;color:var(--muted);font-size:12px;font-weight:400}
+.gen{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0}
+.gen label{font-size:11.5px;color:var(--muted);font-weight:600;display:block;min-width:0}
+.gen select{width:100%;margin-top:4px;background:var(--code-bg);border:1px solid var(--border2);border-radius:8px;padding:9px 12px;color:var(--text);font:inherit;font-size:13px}
+select:focus-visible,button:focus-visible,.say:focus-visible,.exi input:focus-visible,.chk input:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.btns{display:flex;flex-wrap:wrap;gap:6px}
+.btn{background:var(--acc-dim);color:var(--acc);border:1px solid var(--acc);border-radius:8px;padding:8px 16px;font:inherit;font-weight:700;font-size:13px;cursor:pointer}
+.btn.alt{background:var(--ins-dim);color:var(--ins);border-color:var(--ins)}
+.out{margin-top:14px;min-height:60px;background:var(--s2);border:1px dashed var(--border2);border-radius:10px;padding:14px 16px;font-size:14px;line-height:1.9}
+.big{font-size:21px;font-weight:800;color:var(--acc);letter-spacing:-.3px;line-height:1.4;margin-bottom:4px}
+.out .why{display:block;color:var(--muted);font-size:12.5px}
+.out .why b{color:var(--teal);font-family:var(--mono);font-weight:600}
+.timeline{display:grid;gap:0;margin:14px 0;border-left:2px solid var(--border2);padding-left:18px}
+.tl{position:relative;padding:8px 0 12px}
+.tl::before{content:'';position:absolute;left:-24px;top:16px;width:10px;height:10px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 3px var(--bg)}
+.tl time{font-family:var(--mono);font-size:12px;color:var(--acc);font-variant-numeric:tabular-nums;font-weight:600}
+.tl .say{font-weight:600;font-size:13.5px}
+.tl small{display:block;color:var(--muted);font-size:12px}
+.freq{display:grid;gap:7px;margin:14px 0}
+.fq{display:grid;grid-template-columns:110px 1fr 54px;gap:12px;align-items:center;font-size:13px}
+.fq .say{font-weight:700}
+.fq .track{height:8px;background:var(--s3);border-radius:4px;overflow:hidden}
+.fq .fill{height:100%;background:linear-gradient(90deg,var(--ins),var(--acc))}
+.fq span:last-child{font-family:var(--mono);font-size:11.5px;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+.plan{display:grid;gap:8px;margin:12px 0}
+.day{display:flex;gap:14px;align-items:baseline;background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:12px 16px;font-size:13px;color:var(--muted)}
+.day b{color:var(--acc);font-family:var(--mono);font-size:12px;flex-shrink:0;width:52px}.day strong{color:var(--text)}
+.chk{list-style:none;margin:10px 0}.chk li{padding:6px 0;font-size:13.5px;color:var(--muted);border-bottom:1px solid rgba(255,255,255,.04)}
+.chk input{accent-color:var(--ins);margin-right:10px;width:15px;height:15px;vertical-align:-2px}
+.gr{border:1px solid rgba(160,122,244,.38);background:linear-gradient(180deg,var(--sk-dim),transparent 110px),var(--s1);border-radius:12px;margin:28px 0;overflow:hidden}
+.gr-head{padding:10px 18px;font-size:12px;font-weight:800;color:var(--sk);border-bottom:1px solid var(--border);display:flex;gap:10px;flex-wrap:wrap;align-items:baseline;letter-spacing:.4px}
+.gr-head em{font-style:normal;color:var(--muted);font-weight:600;letter-spacing:0}
+.gr-body{padding:14px 18px;font-size:13.5px;color:var(--muted)}
+.gr-body p{margin-bottom:10px}.gr-body b{color:var(--text)}.gr-body ul{padding-left:20px;margin-bottom:8px}.gr-body li{margin-bottom:4px}
+.gr-body .tbl{margin:8px 0 12px}
+.fm{display:inline-block;font-family:var(--mono);font-size:12px;background:var(--code-bg);color:var(--teal);padding:3px 9px;border-radius:6px;margin:2px 0}
+.say{cursor:pointer;border-bottom:1px dotted var(--oc)}
+.say:hover{color:var(--acc);background:var(--acc-dim);border-radius:4px}
+.say::after{content:"🔊";font-size:.68em;margin-left:3px;opacity:.5}
+.say.playing{color:var(--ins);background:var(--ins-dim);border-radius:4px}.say.playing::after{opacity:1}
+.exi{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:13.5px;color:var(--text)}
+.exi input{width:220px;max-width:100%;background:var(--code-bg);border:1px solid var(--border2);border-radius:6px;padding:4px 8px;color:var(--text);font:inherit;font-size:13px;text-align:center}
+.exi input.ok{border-color:var(--ins);color:var(--ins)}.exi input.no{border-color:var(--au);color:var(--au)}
+.exi small{color:var(--muted);font-size:11.5px}
+.exi .key{color:var(--ins);font-size:12px;width:100%}
+.footer{border-top:1px solid var(--border);padding-block:28px 90px;padding-left:var(--gl);padding-right:var(--gr);font-size:12px;color:var(--muted)}
+.audio-bar{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:500;display:flex;gap:10px;align-items:center;background:var(--s2);border:1px solid var(--border2);border-radius:12px;padding:8px 12px;box-shadow:0 8px 28px rgba(0,0,0,.5);font-size:12px;color:var(--muted)}
+.audio-bar b{color:var(--acc)}.ab-g{display:flex;gap:4px}
+.audio-bar button{background:var(--s3);color:var(--muted);border:1px solid var(--border);border-radius:7px;padding:4px 10px;font:inherit;font-weight:700;cursor:pointer}
+.audio-bar button.on{background:var(--acc-dim);color:var(--acc);border-color:var(--acc)}
+.topnav{display:none}
+@media(max-width:900px){
+:root{--gl:max(18px,env(safe-area-inset-left,0px));--gr:max(18px,env(safe-area-inset-right,0px))}
+.sidebar{display:none}.main{margin-left:0}.hero h1{font-size:32px;letter-spacing:-1.4px}.hero{padding-block:48px 40px}
+.grid-3,.cmp{grid-template-columns:1fr}.gen{grid-template-columns:1fr 1fr}.bad{border-right:none;border-bottom:1px solid var(--border)}
+.topnav{display:flex;overflow-x:auto;position:sticky;top:env(safe-area-inset-top,0px);z-index:500;background:var(--s1);border-bottom:2px solid var(--border2);scrollbar-width:none;padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+.topnav a{flex-shrink:0;padding:10px 14px;color:var(--muted);text-decoration:none;font-size:12px;font-weight:700;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-2px}
+.topnav a.active{color:var(--acc);border-bottom-color:var(--acc);background:var(--acc-dim)}
+.ex-en{min-width:0}
+.fq{grid-template-columns:90px 1fr 46px}
+.audio-bar{left:calc(8px + env(safe-area-inset-left,0px));right:calc(8px + env(safe-area-inset-right,0px));justify-content:center;flex-wrap:wrap}
+}
+@media(max-width:480px){.gen{grid-template-columns:1fr}}
+.lbl{font-family:var(--mono);font-size:10px;font-weight:600;color:var(--faint);letter-spacing:1px;text-transform:uppercase;min-width:120px}
+.rl{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;padding:3px 0}
+.rl .say{font-weight:700;font-size:15px}
+.clock{font-family:var(--mono);font-size:30px;font-weight:600;color:var(--acc);letter-spacing:2px;margin-bottom:6px;font-variant-numeric:tabular-nums}
+.ords{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:14px 0}
+.od{background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:10px 14px;display:flex;gap:10px;align-items:baseline;min-width:0}
+.od b{font-family:var(--mono);color:var(--au);font-size:13px;width:44px;flex-shrink:0;font-variant-numeric:tabular-nums}.od .say{font-size:13.5px;font-weight:600}
+.tline{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin:14px 0;border:1px solid var(--border2);border-radius:11px;overflow:hidden}
+.tl-i{padding:12px 10px;text-align:center;border-right:1px solid var(--border);background:var(--s1);display:grid;gap:2px;min-width:0}
+.tl-i:last-child{border-right:none}.tl-i .say{font-size:13px;font-weight:700}.tl-i em{font-style:normal;font-size:12px;color:var(--muted)}
+.tl-i.now{background:var(--acc-dim)}.tl-i.now .say{color:var(--acc)}
+.tbl small{color:var(--muted);font-size:11.5px}
+@media(max-width:900px){.ords{grid-template-columns:repeat(2,1fr)}.tline{grid-template-columns:1fr}.tl-i{border-right:none;border-bottom:1px solid var(--border)}.tl-i:last-child{border-bottom:none}}
+</style>
+
+<aside class="sidebar">
+  <div class="sb-logo">
+    <div class="sb-brand"><div class="logo-icon">📅</div><div class="logo-text"><h2>Time &amp; Date</h2><p>Tiếng Anh cho người mới</p></div></div>
+    <div class="prog-wrap"><div class="prog-bar" id="pbar"></div></div>
+  </div>
+  <div class="nav-label">BÀI HỌC</div>
+  <a class="nav-link" href="#s1">🗓️ Thứ &amp; tháng</a>
+  <a class="nav-link" href="#s2">🔢 Số thứ tự</a>
+  <a class="nav-link" href="#s3">📆 Nói ngày tháng năm</a>
+  <a class="nav-link" href="#s4">⏪ Quá khứ &amp; tương lai</a>
+  <a class="nav-link" href="#s5">📌 Hẹn lịch &amp; ngày lễ</a>
+  <div class="nav-label">THỰC HÀNH</div>
+  <a class="nav-link" href="#s6">💬 Hội thoại mẫu</a>
+  <a class="nav-link" href="#s7">🛠️ Máy đọc ngày &amp; bài tập</a>
+  <a class="nav-link" href="#s8">🚀 Từ vựng nâng cao</a>
+</aside>
+
+<div class="main">
+<nav class="topnav">
+  <a href="#s1">1 Thứ &amp; tháng</a><a href="#s2">2 Số thứ tự</a><a href="#s3">3 Ngày tháng</a><a href="#s4">4 Quá khứ</a><a href="#s5">5 Hẹn lịch</a><a href="#s6">6 Hội thoại</a><a href="#s7">7 Bài tập</a><a href="#s8">8 Nâng cao</a>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow"><i></i>Dành cho người mới bắt đầu</div>
+  <h1>Ngày, tháng, năm<br><span class="grad">bằng tiếng Anh</span></h1>
+  <p class="hero-desc">Học thứ và tháng, số thứ tự, cách đọc ngày tháng kiểu Anh và kiểu Mỹ, cách đọc năm, nói chuyện đã qua và sắp tới, và hẹn lịch với người khác. Bấm vào câu có biểu tượng loa để nghe, nói theo, rồi luyện đọc bất kỳ ngày nào với máy đọc ngày ở phần thực hành.</p>
+  <div class="chips"><span class="chip c3">Thứ &amp; tháng</span><span class="chip c5">Số thứ tự</span><span class="chip c1">Đọc ngày tháng</span><span class="chip c2">Hẹn lịch</span><span class="chip c4">Từ vựng nâng cao</span></div>
+</header>
+
+<div class="content">
+
+<section class="section" id="s1">
+  <div class="sec-head"><span class="sec-tag t3">BÀI 1</span><div><div class="sec-title">Thứ trong tuần và tháng trong năm</div><div class="sec-sub">Tên đầy đủ, cách viết tắt và cách đọc</div></div></div>
+  <table class="tbl"><thead><tr><th>Thứ</th><th>Viết tắt</th><th>Nghĩa</th><th>Tháng</th><th>Viết tắt</th><th>Nghĩa</th></tr></thead><tbody>
+  <tr><td class="say">Monday</td><td>Mon</td><td>thứ Hai</td><td class="say">January</td><td>Jan</td><td>tháng 1</td></tr>
+  <tr><td class="say">Tuesday</td><td>Tue</td><td>thứ Ba</td><td class="say">February</td><td>Feb</td><td>tháng 2</td></tr>
+  <tr><td class="say">Wednesday</td><td>Wed</td><td>thứ Tư</td><td class="say">March</td><td>Mar</td><td>tháng 3</td></tr>
+  <tr><td class="say">Thursday</td><td>Thu</td><td>thứ Năm</td><td class="say">April</td><td>Apr</td><td>tháng 4</td></tr>
+  <tr><td class="say">Friday</td><td>Fri</td><td>thứ Sáu</td><td class="say">May</td><td>May</td><td>tháng 5</td></tr>
+  <tr><td class="say">Saturday</td><td>Sat</td><td>thứ Bảy</td><td class="say">June</td><td>Jun</td><td>tháng 6</td></tr>
+  <tr><td class="say">Sunday</td><td>Sun</td><td>Chủ nhật</td><td class="say">July</td><td>Jul</td><td>tháng 7</td></tr>
+  <tr><td></td><td></td><td></td><td class="say">August</td><td>Aug</td><td>tháng 8</td></tr>
+  <tr><td></td><td></td><td></td><td class="say">September</td><td>Sep</td><td>tháng 9</td></tr>
+  <tr><td></td><td></td><td></td><td class="say">October</td><td>Oct</td><td>tháng 10</td></tr>
+  <tr><td></td><td></td><td></td><td class="say">November</td><td>Nov</td><td>tháng 11</td></tr>
+  <tr><td></td><td></td><td></td><td class="say">December</td><td>Dec</td><td>tháng 12</td></tr></tbody></table>
+  <div class="info i-warn"><span>⚠️</span><span><strong>Nhớ:</strong> tên thứ và tháng <strong>luôn viết hoa chữ cái đầu</strong>: <em>Monday, November</em>. Chú ý phát âm <strong>Wednesday</strong> (/ˈwenz.deɪ/, chữ d đầu tiên câm) và <strong>February</strong>.</span></div>
+  <div class="ex-box"><div class="ex-head">HỎI THỨ<span class="ex-tag t3">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">What day is it today?</span><span class="ex-vn">Hôm nay thứ mấy?</span></div>
+    <div class="ex-row"><span class="ex-en say">It’s Sunday.</span><span class="ex-vn">Hôm nay Chủ nhật</span></div>
+    <div class="ex-row"><span class="ex-en say">I work from Monday to Friday.</span><span class="ex-vn">Tôi làm từ thứ Hai đến thứ Sáu</span></div>
+    <div class="ex-row"><span class="ex-en say">I go swimming on Saturdays.</span><span class="ex-vn">Thứ Bảy nào tôi cũng đi bơi</span></div>
+  </div></div>
+</section>
+
+<section class="section" id="s2">
+  <div class="sec-head"><span class="sec-tag t5">BÀI 2</span><div><div class="sec-title">Số thứ tự</div><div class="sec-sub">Tiếng Anh đọc ngày bằng số thứ tự: ngày “thứ tám”, không phải ngày “tám”</div></div></div>
+  <div class="ords">
+    <div class="od"><b>1st</b><span class="say">first</span></div><div class="od"><b>2nd</b><span class="say">second</span></div><div class="od"><b>3rd</b><span class="say">third</span></div><div class="od"><b>4th</b><span class="say">fourth</span></div>
+    <div class="od"><b>5th</b><span class="say">fifth</span></div><div class="od"><b>6th</b><span class="say">sixth</span></div><div class="od"><b>7th</b><span class="say">seventh</span></div><div class="od"><b>8th</b><span class="say">eighth</span></div>
+    <div class="od"><b>9th</b><span class="say">ninth</span></div><div class="od"><b>10th</b><span class="say">tenth</span></div><div class="od"><b>11th</b><span class="say">eleventh</span></div><div class="od"><b>12th</b><span class="say">twelfth</span></div>
+    <div class="od"><b>13th</b><span class="say">thirteenth</span></div><div class="od"><b>20th</b><span class="say">twentieth</span></div><div class="od"><b>21st</b><span class="say">twenty-first</span></div><div class="od"><b>22nd</b><span class="say">twenty-second</span></div>
+    <div class="od"><b>23rd</b><span class="say">twenty-third</span></div><div class="od"><b>30th</b><span class="say">thirtieth</span></div><div class="od"><b>31st</b><span class="say">thirty-first</span></div><div class="od"><b>100th</b><span class="say">hundredth</span></div>
+  </div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Quy tắc đuôi -st, -nd, -rd, -th</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Đuôi</th><th>Dùng với</th><th>Ví dụ</th></tr></thead><tbody>
+<tr><td><span class="fm">-st</span></td><td>số tận cùng là 1 (trừ 11)</td><td>1st, 21st, 31st</td></tr>
+<tr><td><span class="fm">-nd</span></td><td>số tận cùng là 2 (trừ 12)</td><td>2nd, 22nd</td></tr>
+<tr><td><span class="fm">-rd</span></td><td>số tận cùng là 3 (trừ 13)</td><td>3rd, 23rd</td></tr>
+<tr><td><span class="fm">-th</span></td><td>tất cả số còn lại, kể cả 11, 12, 13</td><td>4th, 11th, 12th, 13th, 25th</td></tr></tbody></table>
+<p>Năm từ biến đổi đặc biệt: <b>one → first, two → second, three → third, five → fifth, twelve → twelfth</b>. Số tròn chục đổi <b>-ty → -tieth</b>: twenty → twentieth.</p>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>11st, 12nd, fiveth</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">eleventh, twelfth, fifth</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s3">
+  <div class="sec-head"><span class="sec-tag t1">BÀI 3</span><div><div class="sec-title">Nói ngày, tháng, năm</div><div class="sec-sub">Hai kiểu Anh và Mỹ, và cách đọc năm</div></div></div>
+  <table class="tbl"><thead><tr><th>Kiểu</th><th>Viết</th><th>Đọc</th></tr></thead><tbody>
+  <tr><td>Anh (UK)</td><td>8 November / 8/11</td><td><span class="say">the eighth of November</span></td></tr>
+  <tr><td>Mỹ (US)</td><td>November 8 / 11/8</td><td><span class="say">November eighth</span></td></tr>
+  <tr><td>Việt Nam</td><td>08/11</td><td>giống kiểu Anh: ngày trước, tháng sau</td></tr></tbody></table>
+  <div class="info i-warn"><span>⚠️</span><span><strong>Cẩn thận:</strong> <strong>03/04</strong> với người Anh là 3 tháng 4, nhưng với người Mỹ là <strong>4 tháng 3</strong>. Khi đặt vé hay hẹn quan trọng, nên viết tên tháng bằng chữ để tránh nhầm.</span></div>
+  <div class="sub-title">Cách đọc năm</div>
+  <table class="tbl"><thead><tr><th>Năm</th><th>Cách đọc</th><th>Quy tắc</th></tr></thead><tbody>
+  <tr><td>1999</td><td><span class="say">nineteen ninety-nine</span></td><td>tách đôi: 19 / 99</td></tr>
+  <tr><td>1975</td><td><span class="say">nineteen seventy-five</span></td><td>tách đôi: 19 / 75</td></tr>
+  <tr><td>2000</td><td><span class="say">two thousand</span></td><td>năm tròn</td></tr>
+  <tr><td>2005</td><td><span class="say">two thousand and five</span></td><td>2001 đến 2009 đọc kiểu nghìn</td></tr>
+  <tr><td>2026</td><td><span class="say">twenty twenty-six</span></td><td>từ 2010 trở đi thường tách đôi</td></tr>
+  <tr><td>1900s</td><td><span class="say">the nineteen hundreds</span></td><td>thập kỷ, thế kỷ</td></tr></tbody></table>
+  <div class="ex-box"><div class="ex-head">HỎI NGÀY<span class="ex-tag t1">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">What’s the date today?</span><span class="ex-vn">Hôm nay ngày bao nhiêu?</span></div>
+    <div class="ex-row"><span class="ex-en say">It’s the eighth of November.</span><span class="ex-vn">Hôm nay ngày 8 tháng 11</span></div>
+    <div class="ex-row"><span class="ex-en say">When were you born?</span><span class="ex-vn">Bạn sinh năm nào / ngày nào?</span></div>
+    <div class="ex-row"><span class="ex-en say">I was born on the fifth of May, nineteen ninety-eight.</span><span class="ex-vn">Tôi sinh ngày 5 tháng 5 năm 1998</span></div>
+    <div class="ex-row"><span class="ex-en say">What year is it?</span><span class="ex-vn">Năm nay là năm nào?</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>in / on / at với thời gian</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Giới từ</th><th>Dùng với</th><th>Ví dụ</th></tr></thead><tbody>
+<tr><td><span class="fm">in</span></td><td>năm, tháng, mùa, thập kỷ, buổi</td><td><span class="say">in 2026, in November, in the 1990s, in the morning</span></td></tr>
+<tr><td><span class="fm">on</span></td><td>thứ, ngày cụ thể, ngày lễ có “Day”</td><td><span class="say">on Monday, on the 8th of November, on New Year’s Day</span></td></tr>
+<tr><td><span class="fm">at</span></td><td>giờ, mốc ngắn, dịp lễ (không có “Day”)</td><td><span class="say">at 9 o’clock, at noon, at night, at Christmas</span></td></tr></tbody></table>
+<p>Đi từ lớn đến nhỏ: <b>in</b> (rộng nhất) → <b>on</b> (một ngày) → <b>at</b> (một điểm).</p>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>I was born in 5th May.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">I was born on the fifth of May.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s4">
+  <div class="sec-head"><span class="sec-tag t4">BÀI 4</span><div><div class="sec-title">Quá khứ, hiện tại, tương lai</div><div class="sec-sub">Các mốc thời gian và cách nói “cách đây”, “sau”, “trong bao lâu”</div></div></div>
+  <div class="tline">
+    <div class="tl-i"><span class="say">the day before yesterday</span><em>hôm kia</em></div>
+    <div class="tl-i"><span class="say">yesterday</span><em>hôm qua</em></div>
+    <div class="tl-i now"><span class="say">today</span><em>hôm nay</em></div>
+    <div class="tl-i"><span class="say">tomorrow</span><em>ngày mai</em></div>
+    <div class="tl-i"><span class="say">the day after tomorrow</span><em>ngày kia</em></div>
+  </div>
+  <table class="tbl"><thead><tr><th>Quá khứ</th><th>Hiện tại</th><th>Tương lai</th></tr></thead><tbody>
+  <tr><td><span class="say">last week</span><br><small>tuần trước</small></td><td><span class="say">this week</span><br><small>tuần này</small></td><td><span class="say">next week</span><br><small>tuần sau</small></td></tr>
+  <tr><td><span class="say">last month</span><br><small>tháng trước</small></td><td><span class="say">this month</span><br><small>tháng này</small></td><td><span class="say">next month</span><br><small>tháng sau</small></td></tr>
+  <tr><td><span class="say">last year</span><br><small>năm ngoái</small></td><td><span class="say">this year</span><br><small>năm nay</small></td><td><span class="say">next year</span><br><small>năm sau</small></td></tr>
+  <tr><td><span class="say">three days ago</span><br><small>3 ngày trước</small></td><td><span class="say">now</span><br><small>bây giờ</small></td><td><span class="say">in three days</span><br><small>3 ngày nữa</small></td></tr></tbody></table>
+  <div class="ex-box"><div class="ex-head">KHOẢNG THỜI GIAN<span class="ex-tag t4">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">How long have you lived here?</span><span class="ex-vn">Bạn sống ở đây bao lâu rồi?</span></div>
+    <div class="ex-row"><span class="ex-en say">I’ve lived here for five years.</span><span class="ex-vn">Tôi sống ở đây được 5 năm rồi</span></div>
+    <div class="ex-row"><span class="ex-en say">I’ve lived here since 2021.</span><span class="ex-vn">Tôi sống ở đây từ năm 2021</span></div>
+    <div class="ex-row"><span class="ex-en say">The course lasts two weeks.</span><span class="ex-vn">Khóa học kéo dài hai tuần</span></div>
+    <div class="ex-row"><span class="ex-en say">See you in a minute!</span><span class="ex-vn">Một phút nữa gặp nhé!</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>ago / in, và for / since</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Từ</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+<tr><td><span class="fm">khoảng + ago</span></td><td>cách đây (quá khứ)</td><td><span class="say">I met her two years ago.</span></td></tr>
+<tr><td><span class="fm">in + khoảng</span></td><td>sau … nữa (tương lai)</td><td><span class="say">The bus comes in ten minutes.</span></td></tr>
+<tr><td><span class="fm">for + khoảng</span></td><td>trong bao lâu</td><td><span class="say">for three hours, for a week</span></td></tr>
+<tr><td><span class="fm">since + mốc</span></td><td>từ khi</td><td><span class="say">since Monday, since 2020</span></td></tr></tbody></table>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>I came here before two years. / I live here since five years.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">I came here two years ago. I’ve lived here for two years.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s5">
+  <div class="sec-head"><span class="sec-tag t2">BÀI 5</span><div><div class="sec-title">Hẹn lịch và các ngày đặc biệt</div><div class="sec-sub">Sắp xếp cuộc hẹn, nói về sinh nhật và ngày lễ</div></div></div>
+  <div class="ex-box"><div class="ex-head">HẸN LỊCH<span class="ex-tag t2">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Are you free on Friday?</span><span class="ex-vn">Thứ Sáu bạn rảnh không?</span></div>
+    <div class="ex-row"><span class="ex-en say">What time works for you?</span><span class="ex-vn">Mấy giờ thì tiện cho bạn?</span></div>
+    <div class="ex-row"><span class="ex-en say">How about Saturday at ten a.m.?</span><span class="ex-vn">Thứ Bảy lúc 10 giờ sáng thì sao?</span></div>
+    <div class="ex-row"><span class="ex-en say">Sorry, I’m busy that day.</span><span class="ex-vn">Xin lỗi, hôm đó tôi bận</span></div>
+    <div class="ex-row"><span class="ex-en say">Can we meet next Tuesday instead?</span><span class="ex-vn">Mình gặp thứ Ba tuần sau được không?</span></div>
+    <div class="ex-row"><span class="ex-en say">See you on the fifteenth!</span><span class="ex-vn">Hẹn gặp ngày 15 nhé!</span></div>
+  </div></div>
+  <div class="sub-title">Ôn nhanh: giờ trong lịch hẹn</div>
+  <table class="tbl"><thead><tr><th>Viết</th><th>Đọc</th><th>Ghi chú</th></tr></thead><tbody>
+  <tr><td>9:00 a.m.</td><td><span class="say">nine a.m.</span> / <span class="say">nine in the morning</span></td><td>a.m. là từ nửa đêm đến trưa</td></tr>
+  <tr><td>3:30 p.m.</td><td><span class="say">three thirty p.m.</span> / <span class="say">half past three</span></td><td>p.m. là từ trưa đến nửa đêm</td></tr>
+  <tr><td>15:30</td><td><span class="say">fifteen thirty</span></td><td>giờ 24h, hay dùng ở sân bay, nhà ga</td></tr></tbody></table>
+  <div class="sub-title">Ngày đặc biệt</div>
+  <div class="ex-box"><div class="ex-head">SINH NHẬT &amp; NGÀY LỄ<span class="ex-tag t3">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">When’s your birthday?</span><span class="ex-vn">Sinh nhật bạn ngày nào?</span></div>
+    <div class="ex-row"><span class="ex-en say">My birthday is on the twelfth of March.</span><span class="ex-vn">Sinh nhật tôi ngày 12 tháng 3</span></div>
+    <div class="ex-row"><span class="ex-en say">Tết is usually in late January or February.</span><span class="ex-vn">Tết thường vào cuối tháng 1 hoặc tháng 2</span></div>
+    <div class="ex-row"><span class="ex-en say">Vietnam’s National Day is on the second of September.</span><span class="ex-vn">Quốc khánh Việt Nam là ngày 2 tháng 9</span></div>
+    <div class="ex-row"><span class="ex-en say">Happy New Year!</span><span class="ex-vn">Chúc mừng năm mới!</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Hiện tại tiếp diễn cho lịch hẹn đã sắp xếp</em></div><div class="gr-body">
+<p>Kế hoạch đã chốt ngày giờ, người bản xứ hay dùng <span class="fm">S + am/is/are + V-ing + thời gian</span>:</p>
+<ul><li><span class="say">I’m meeting my teacher on Thursday.</span></li><li><span class="say">We’re flying to Da Nang next Monday.</span></li></ul>
+<div class="cmp"><div class="bad"><b>❌ NGHE LẠ</b><div>I meet my doctor tomorrow at 3.</div></div><div class="good"><b>✔ TỰ NHIÊN</b><div class="say">I’m seeing my doctor tomorrow at three.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s6">
+  <div class="sec-head"><span class="sec-tag t3">BÀI 6</span><div><div class="sec-title">Hội thoại mẫu</div><div class="sec-sub">Bấm từng câu để nghe, rồi đóng vai cả hai người</div></div></div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 1: HỎI VỀ SINH NHẬT</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">When’s your birthday, Minh?</span><small>Sinh nhật bạn ngày nào vậy Minh?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">It’s on the twentieth of November.</span><small>Ngày 20 tháng 11.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">That’s soon! It’s in twelve days.</span><small>Sắp rồi! Còn 12 ngày nữa.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Yes. It’s also Teachers’ Day in Vietnam.</span><small>Ừ. Đó cũng là ngày Nhà giáo ở Việt Nam.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Cool! Let’s have dinner on that day.</span><small>Hay quá! Hôm đó mình đi ăn tối nhé.</small></div></div>
+  </div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 2: HẸN GẶP</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Can we meet to talk about the project?</span><small>Mình gặp để bàn về dự án được không?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Sure. Are you free on Wednesday?</span><small>Được. Thứ Tư bạn rảnh không?</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Sorry, I’m visiting a client on Wednesday. How about Thursday morning?</span><small>Xin lỗi, thứ Tư tôi đi gặp khách hàng. Sáng thứ Năm thì sao?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Thursday at nine thirty works for me.</span><small>Thứ Năm 9 rưỡi tôi được.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Great. See you then!</span><small>Tuyệt. Hẹn gặp lúc đó nhé!</small></div></div>
+  </div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 3: ĐẶT VÉ VÀ XÁC NHẬN NGÀY</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">I’d like a ticket to Hue, please.</span><small>Cho tôi một vé đi Huế.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">For which date?</span><small>Ngày nào ạ?</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">The third of December.</span><small>Ngày 3 tháng 12.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">That’s a Thursday. There’s a train at seven fifteen in the morning.</span><small>Hôm đó là thứ Năm. Có chuyến 7 giờ 15 sáng.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Perfect. Just to confirm, that’s December third, right?</span><small>Tốt quá. Xác nhận lại là ngày 3 tháng 12 nhé?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Yes, Thursday, December third.</span><small>Vâng, thứ Năm, ngày 3 tháng 12.</small></div></div>
+  </div>
+  <div class="info i-ok"><span>✅</span><span><strong>Cách luyện:</strong> nghe một lượt, nói theo từng câu, rồi che phần tiếng Việt và tự đóng vai A hoặc B. Lần sau thay bằng sinh nhật và lịch thật của bạn.</span></div>
+</section>
+
+<section class="section" id="s7">
+  <div class="sec-head"><span class="sec-tag t1">BÀI 7</span><div><div class="sec-title">Máy đọc ngày &amp; bài tập</div><div class="sec-sub">Chọn một ngày bất kỳ, xem cách đọc kiểu Anh, kiểu Mỹ, thứ mấy và cách hôm nay bao lâu</div></div></div>
+  <div class="gen">
+    <label for="g-d">Ngày<select id="g-d"></select></label>
+    <label for="g-m">Tháng<select id="g-m"></select></label>
+    <label for="g-y">Năm<select id="g-y"></select></label>
+  </div>
+  <div class="btns"><button class="btn" id="gen-btn">Đọc ngày này</button><button class="btn alt" id="today-btn">Hôm nay</button><button class="btn alt" id="rnd-btn">Chọn ngẫu nhiên</button></div>
+  <div class="out" id="gen-out" aria-live="polite"></div>
+
+  <div class="sub-title">Bài tập: điền câu trả lời</div>
+  <p class="t">Câu 1–4: điền một từ vào chỗ trống. Câu 5–8: dịch sang tiếng Anh, gõ cả câu. Không phân biệt hoa thường.</p>
+  <div id="exlist">
+    <div class="exi">1. 12th đọc là →<input id="ex1" data-a="twelfth" aria-label="Câu 1"><small>số thứ tự</small></div>
+    <div class="exi">2. My birthday is ___ the 5th of May. →<input id="ex2" data-a="on" aria-label="Câu 2"><small>in / on / at</small></div>
+    <div class="exi">3. I met him three years ___. →<input id="ex3" data-a="ago" aria-label="Câu 3"><small>cách đây</small></div>
+    <div class="exi">4. I’ve lived here ___ 2020. →<input id="ex4" data-a="since" aria-label="Câu 4"><small>for / since</small></div>
+    <div class="exi">5. Hôm nay ngày bao nhiêu? →<input id="ex5" data-a="what's the date today?|what is the date today?|what's today's date?|what is today's date?" aria-label="Câu 5"><small>date</small></div>
+    <div class="exi">6. Hôm nay thứ mấy? →<input id="ex6" data-a="what day is it today?|what day is today?" aria-label="Câu 6"><small>day</small></div>
+    <div class="exi">7. 1998 đọc là →<input id="ex7" data-a="nineteen ninety-eight|nineteen ninety eight" aria-label="Câu 7"><small>tách đôi</small></div>
+    <div class="exi">8. Thứ Sáu bạn rảnh không? →<input id="ex8" data-a="are you free on friday?|are you free friday?" aria-label="Câu 8"><small>free on…</small></div>
+  </div>
+  <div class="btns" style="margin-top:12px"><button class="btn" id="ex-check">Kiểm tra đáp án</button><button class="btn alt" id="ex-show">Xem đáp án</button><button class="btn alt" id="ex-reset">Làm lại</button></div>
+  <div class="out" id="ex-out" style="min-height:0" aria-live="polite"></div>
+
+  <div class="sub-title">Lộ trình luyện 7 ngày</div>
+  <div class="plan">
+    <div class="day"><b>Ngày 1</b><span><strong>Thứ và tháng:</strong> đọc to 7 thứ và 12 tháng, chú ý Wednesday, February</span></div>
+    <div class="day"><b>Ngày 2</b><span><strong>Số thứ tự:</strong> đọc từ 1st đến 31st, nhớ first, second, third, fifth, twelfth</span></div>
+    <div class="day"><b>Ngày 3</b><span><strong>Ngày tháng:</strong> mỗi sáng nói <em>Today is…</em> theo cả kiểu Anh và Mỹ</span></div>
+    <div class="day"><b>Ngày 4</b><span><strong>Năm:</strong> đọc năm sinh của 5 người trong gia đình</span></div>
+    <div class="day"><b>Ngày 5</b><span><strong>Quá khứ và tương lai:</strong> đặt 5 câu với ago, in, for, since</span></div>
+    <div class="day"><b>Ngày 6</b><span><strong>Hội thoại:</strong> đóng vai 3 tình huống, dùng máy đọc ngày để đổi ngày tháng</span></div>
+    <div class="day"><b>Ngày 7</b><span><strong>Ôn tổng hợp:</strong> thu âm 1 phút kể lịch tuần tới của bạn</span></div>
+  </div>
+</section>
+
+<section class="section" id="s8">
+  <div class="sec-head"><span class="sec-tag t5">NÂNG CAO</span><div><div class="sec-title">Từ vựng mới để hội thoại tự nhiên hơn</div><div class="sec-sub">Thêm vài từ này, câu nói về thời gian của bạn sẽ giống người bản xứ hơn</div></div></div>
+  <div class="sub-title">Lịch và kế hoạch</div>
+  <table class="tbl"><thead><tr><th>Từ / cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">reschedule</td><td>dời lịch sang thời điểm khác</td><td><span class="say">Can we reschedule the meeting?</span></td></tr>
+  <tr><td class="say">postpone</td><td>hoãn lại</td><td><span class="say">The match was postponed until next week.</span></td></tr>
+  <tr><td class="say">deadline</td><td>hạn chót</td><td><span class="say">The deadline is the thirtieth of November.</span></td></tr>
+  <tr><td class="say">public holiday</td><td>ngày nghỉ lễ</td><td><span class="say">Monday is a public holiday.</span></td></tr>
+  <tr><td class="say">anniversary</td><td>ngày kỷ niệm</td><td><span class="say">Today is our wedding anniversary.</span></td></tr>
+  <tr><td class="say">fortnight</td><td>hai tuần (kiểu Anh)</td><td><span class="say">I’m on holiday for a fortnight.</span></td></tr>
+  <tr><td class="say">calendar</td><td>lịch</td><td><span class="say">Let me check my calendar.</span></td></tr>
+  <tr><td class="say">book / be booked up</td><td>đặt lịch / kín lịch</td><td><span class="say">Sorry, I’m booked up this week.</span></td></tr></tbody></table>
+  <div class="sub-title">Diễn đạt thời gian linh hoạt</div>
+  <table class="tbl"><thead><tr><th>Từ / cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">early / mid / late</td><td>đầu / giữa / cuối (tháng, năm)</td><td><span class="say">I’m moving in early March.</span></td></tr>
+  <tr><td class="say">the other day</td><td>hôm trước (gần đây)</td><td><span class="say">I saw your sister the other day.</span></td></tr>
+  <tr><td class="say">a couple of days</td><td>vài ba hôm</td><td><span class="say">I’ll call you in a couple of days.</span></td></tr>
+  <tr><td class="say">around the corner</td><td>sắp đến rồi</td><td><span class="say">Tết is just around the corner.</span></td></tr>
+  <tr><td class="say">decade / century</td><td>thập kỷ / thế kỷ</td><td><span class="say">The city has changed a lot in the last decade.</span></td></tr>
+  <tr><td class="say">from time to time</td><td>thỉnh thoảng</td><td><span class="say">We meet from time to time.</span></td></tr></tbody></table>
+  <div class="sub-title">Cụm giúp cuộc trò chuyện trôi chảy</div>
+  <div class="ex-box"><div class="ex-head">LÀM CHO HỘI THOẠI TỰ NHIÊN<span class="ex-tag t5">Nâng cao</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Let me check my calendar and get back to you.</span><span class="ex-vn">Để tôi xem lịch rồi báo lại bạn</span></div>
+    <div class="ex-row"><span class="ex-en say">Does next Friday suit you?</span><span class="ex-vn">Thứ Sáu tuần sau có tiện cho bạn không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Time flies!</span><span class="ex-vn">Thời gian trôi nhanh thật!</span></div>
+    <div class="ex-row"><span class="ex-en say">Long time no see!</span><span class="ex-vn">Lâu lắm không gặp!</span></div>
+    <div class="ex-row"><span class="ex-en say">It’s been ages since we last met.</span><span class="ex-vn">Lâu lắm rồi mình mới gặp lại</span></div>
+    <div class="ex-row"><span class="ex-en say">I’ll be there in no time.</span><span class="ex-vn">Tôi sẽ đến ngay thôi</span></div>
+    <div class="ex-row"><span class="ex-en say">Just to confirm, that’s Thursday the third?</span><span class="ex-vn">Xác nhận lại là thứ Năm ngày 3 nhé?</span></div>
+  </div></div>
+  <div class="cmp"><div class="bad"><b>❌ NGHE CỨNG</b><div>Meeting is 3/4. You come.</div></div><div class="good"><b>✔ TỰ NHIÊN HƠN</b><div class="say">The meeting is on Friday, the third of April. Does that suit you?</div></div></div>
+  <div class="info i-tip"><span>💡</span><span><strong>Mẹo:</strong> khi hẹn quan trọng, luôn nhắc lại <strong>cả thứ và ngày</strong>, ví dụ <em>Thursday, December third</em>. Nếu một trong hai bị nghe nhầm, người kia sẽ nhận ra ngay.</span></div>
+
+  <div class="sub-title">Tự kiểm tra</div>
+  <ul class="chk">
+    <li><label><input type="checkbox" id="c1">Tôi nói và viết đúng 7 thứ và 12 tháng</label></li>
+    <li><label><input type="checkbox" id="c2">Tôi đọc được số thứ tự từ 1st đến 31st</label></li>
+    <li><label><input type="checkbox" id="c3">Tôi đọc ngày theo kiểu Anh và kiểu Mỹ</label></li>
+    <li><label><input type="checkbox" id="c4">Tôi đọc được năm như 1998, 2005, 2026</label></li>
+    <li><label><input type="checkbox" id="c5">Tôi dùng đúng <strong>in / on / at</strong> với thời gian</label></li>
+    <li><label><input type="checkbox" id="c6">Tôi phân biệt <strong>ago / in</strong> và <strong>for / since</strong></label></li>
+    <li><label><input type="checkbox" id="c7">Tôi hẹn lịch được và dùng ít nhất 5 từ vựng nâng cao</label></li>
+  </ul>
+</section>
+
+</div>
+<div class="footer">📅 Giao tiếp tiếng Anh: Time &amp; Date · Dành cho người mới bắt đầu · 2026</div>
+</div>
+
+<div class="audio-bar">
+  <b>🔊 Audio</b>
+  <div class="ab-g"><button data-acc="en-GB" class="on">Anh-Anh</button><button data-acc="en-US">Anh-Mỹ</button></div>
+  <div class="ab-g"><button data-rate="0.6">Chậm</button><button data-rate="0.85" class="on">Vừa</button><button data-rate="1">Nhanh</button></div>
+</div>
+
+<script>
+(function(){
+var doc=document.documentElement,bar=document.getElementById('pbar');
+addEventListener('scroll',function(){bar.style.width=(doc.scrollTop/Math.max(1,doc.scrollHeight-doc.clientHeight)*100)+'%'});
+var links=document.querySelectorAll('.nav-link,.topnav a');
+if('IntersectionObserver' in window)document.querySelectorAll('.section[id]').forEach(function(s){
+  new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;
+    links.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id)});
+  })},{rootMargin:'-20% 0px -70% 0px'}).observe(s);
+});
+
+/* Audio */
+var S=window.speechSynthesis,st={acc:'en-GB',rate:.85},cur=null;
+function voice(){if(!S)return null;var v=S.getVoices().filter(function(x){return x.lang.replace('_','-').toLowerCase()===st.acc.toLowerCase()});
+  return v.find(function(x){return /google|natural|premium|enhanced/i.test(x.name)})||v[0]||null}
+function say(el){
+  if(cur)cur.classList.remove('playing');
+  if(!S){el.title='Trình duyệt này không hỗ trợ đọc audio';return}
+  S.cancel();cur=el;el.classList.add('playing');
+  var t=el.textContent.replace(/\s+/g,' ').replace(/\s*\/\s*/g,'. ').replace(/→/g,'. ').replace(/a\.m\./g,'A M').replace(/p\.m\./g,'P M').replace(/Tết/g,'Tet').trim();
+  var u=new SpeechSynthesisUtterance(t);u.lang=st.acc;u.rate=st.rate;var v=voice();if(v)u.voice=v;
+  u.onend=u.onerror=function(){el.classList.remove('playing')};S.speak(u);
+}
+function prep(root){root.querySelectorAll('.say').forEach(function(e){e.tabIndex=0;e.setAttribute('role','button')})}
+prep(document);
+document.addEventListener('click',function(e){var el=e.target.closest('.say');if(el)say(el)});
+document.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.classList&&e.target.classList.contains('say')){e.preventDefault();say(e.target)}});
+document.querySelectorAll('.audio-bar button').forEach(function(b){b.addEventListener('click',function(){
+  b.parentElement.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');
+  if(b.dataset.acc)st.acc=b.dataset.acc;if(b.dataset.rate)st.rate=+b.dataset.rate;
+})});
+
+/* Máy đọc ngày */
+var MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
+var DAYS=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+var DAYS_VN=['Chủ nhật','thứ Hai','thứ Ba','thứ Tư','thứ Năm','thứ Sáu','thứ Bảy'];
+var ONES=['','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen'];
+var TENS=['','','twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety'];
+var ORD={one:'first',two:'second',three:'third',five:'fifth',eight:'eighth',nine:'ninth',twelve:'twelfth'};
+function card(n){if(n<20)return ONES[n];var t=TENS[Math.floor(n/10)],u=n%10;return u?t+'-'+ONES[u]:t}
+function ordw(n){var w=card(n),p=w.split('-'),l=p.pop();
+  var o=ORD[l]||(/y$/.test(l)?l.slice(0,-1)+'ieth':l+'th');p.push(o);return p.join('-')}
+function suf(n){var a=n%100;if(a>=11&&a<=13)return n+'th';return n+({1:'st',2:'nd',3:'rd'}[n%10]||'th')}
+function year(y){
+  if(y%1000===0)return card(y/1000)+' thousand';
+  if(y>=2000&&y<2010)return'two thousand and '+card(y%10);
+  var a=Math.floor(y/100),b=y%100;return card(a)+' '+(b===0?'hundred':b<10?'oh '+card(b):card(b));
+}
+var gd=document.getElementById('g-d'),gm=document.getElementById('g-m'),gy=document.getElementById('g-y');
+for(var i=1;i<=31;i++)gd.add(new Option(suf(i),i));
+MONTHS.forEach(function(m,i){gm.add(new Option(m+' ('+(i+1)+')',i))});
+for(var y=1950;y<=2040;y++)gy.add(new Option(y,y));
+var out=document.getElementById('gen-out');
+function setToday(){var n=new Date();gd.value=n.getDate();gm.value=n.getMonth();gy.value=n.getFullYear()<1950||n.getFullYear()>2040?2026:n.getFullYear()}
+function show(){
+  var d=+gd.value,m=+gm.value,y=+gy.value,dt=new Date(y,m,d);
+  out.innerHTML='';
+  if(dt.getMonth()!==m){
+    var e=document.createElement('div');e.style.color='var(--au)';e.textContent=MONTHS[m]+' năm '+y+' không có ngày '+d+'. Chọn ngày nhỏ hơn nhé.';out.append(e);return;
+  }
+  var uk='the '+ordw(d)+' of '+MONTHS[m]+', '+year(y),us=MONTHS[m]+' '+ordw(d)+', '+year(y);
+  var now=new Date();now.setHours(0,0,0,0);var diff=Math.round((dt-now)/864e5);
+  var rel,relvn;
+  if(diff===0){rel='That’s today!';relvn='Chính là hôm nay.'}
+  else if(diff===1){rel='That’s tomorrow.';relvn='Là ngày mai.'}
+  else if(diff===-1){rel='That was yesterday.';relvn='Là hôm qua.'}
+  else if(diff>0){rel=diff<60?'That’s in '+card2(diff)+' days.':'That’s in about '+card2(Math.round(diff/30))+' months.';relvn=diff+' ngày nữa.'}
+  else{var a=-diff;rel=a<60?'That was '+card2(a)+' days ago.':a<730?'That was about '+card2(Math.round(a/30))+' months ago.':'That was about '+card2(Math.round(a/365))+' years ago.';relvn='Cách đây '+a+' ngày.'}
+  var top=document.createElement('div');top.className='clock';top.textContent=('0'+d).slice(-2)+'/'+('0'+(m+1)).slice(-2)+'/'+y;out.append(top);
+  var lines=[['Kiểu Anh','It’s '+uk+'.'],['Kiểu Mỹ','It’s '+us+'.'],['Thứ','It’s a '+DAYS[dt.getDay()]+'.'],['So với hôm nay',rel]];
+  lines.forEach(function(l){var r=document.createElement('div');r.className='rl';var lb=document.createElement('span');lb.className='lbl';lb.textContent=l[0];var sp=document.createElement('span');sp.className='say';sp.textContent=l[1];r.append(lb,sp);out.append(r)});
+  var v=document.createElement('div');v.style.color='var(--muted)';v.style.fontSize='13px';v.textContent='Nghĩa: '+DAYS_VN[dt.getDay()]+', ngày '+d+' tháng '+(m+1)+' năm '+y+'. '+relvn;out.append(v);
+  var w=document.createElement('span');w.className='why';
+  w.innerHTML='Viết <b>'+suf(d)+'</b>, đọc <b>'+ordw(d)+'</b>. Năm <b>'+y+'</b> đọc là <b>'+year(y)+'</b>. Nói “vào ngày này” dùng <b>on</b>: <b>on '+DAYS[dt.getDay()]+', the '+ordw(d)+' of '+MONTHS[m]+'</b>.';
+  out.append(w);prep(out);
+}
+function card2(n){if(n<100)return card(n);var h=Math.floor(n/100),r=n%100;return card(h)+' hundred'+(r?' and '+card(r):'')}
+document.getElementById('gen-btn').addEventListener('click',show);
+document.getElementById('today-btn').addEventListener('click',function(){setToday();show()});
+document.getElementById('rnd-btn').addEventListener('click',function(){
+  gm.value=Math.floor(Math.random()*12);gy.value=1950+Math.floor(Math.random()*91);gd.value=1+Math.floor(Math.random()*28);show();
+});
+setToday();show();
+
+/* Bài tập */
+var inputs=document.querySelectorAll('#exlist input'),exo=document.getElementById('ex-out');
+function norm(s){return s.toLowerCase().replace(/[’‘`]/g,"'").replace(/[.!?]+$/,'').replace(/,/g,'').replace(/\s+/g,' ').trim()}
+document.getElementById('ex-check').addEventListener('click',function(){
+  var ok=0;
+  inputs.forEach(function(i){
+    var good=i.dataset.a.split('|').some(function(a){return norm(a)===norm(i.value)});
+    i.classList.remove('ok','no');i.classList.add(good?'ok':'no');if(good)ok++;
+  });
+  exo.style.minHeight='';
+  exo.textContent=ok===inputs.length?'🎉 Chính xác '+ok+'/'+inputs.length+'. Bạn nói ngày tháng rất tốt!':'Đúng '+ok+'/'+inputs.length+'. Các ô viền đỏ cần xem lại; đọc lại phần ngữ pháp ở Bài 2 đến 4, hoặc bấm “Xem đáp án”.';
+});
+document.getElementById('ex-show').addEventListener('click',function(){
+  inputs.forEach(function(i){
+    var k=i.parentElement.querySelector('.key');
+    if(!k){k=document.createElement('span');k.className='key';i.parentElement.append(k)}
+    var a=i.dataset.a.split('|')[0].replace(/'/g,'’').replace('friday','Friday');k.textContent='Đáp án: '+(/\?$/.test(a)?a.charAt(0).toUpperCase()+a.slice(1):a);
+  });
+});
+document.getElementById('ex-reset').addEventListener('click',function(){
+  inputs.forEach(function(i){i.value='';i.classList.remove('ok','no')});
+  document.querySelectorAll('#exlist .key').forEach(function(k){k.remove()});
+  exo.textContent='';exo.style.minHeight='0';
+});
+})();
+</script>
+
+<script src="nav.js" defer></script>
+</body></html>

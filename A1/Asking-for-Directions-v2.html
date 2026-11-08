@@ -1,0 +1,587 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Tiếng Anh Asking for Directions</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: sidebar mục lục cố định + cột bài học, cùng theme tối của bộ "Hỏi đường & Hỏi giờ" (nhấn xanh dương – xanh ngọc như bài gốc) */
+:root{color-scheme:dark;
+--bg:#080810;--s1:#0e0e1c;--s2:#131326;--s3:#18182e;--border:#222240;--border2:#2c2c50;--text:#e6e6f2;--muted:#8a8ab8;--faint:#4a4a78;
+--acc:#ffd060;--acc-dim:rgba(255,208,96,.11);--oc:#38bdf8;--oc-dim:rgba(56,189,248,.13);--ins:#40d88e;--ins-dim:rgba(64,216,142,.12);
+--sk:#a07af4;--sk-dim:rgba(160,122,244,.12);--au:#ff6584;--au-dim:rgba(255,101,132,.12);--teal:#30d8c0;--code-bg:#05050e;
+--tip-bg:rgba(91,168,255,.10);--tip-bd:rgba(91,168,255,.25);--tip-fg:#8ab8f0;--warn-fg:#e0bc58;--ok-fg:#5ccf98;--line:rgba(255,255,255,.05);
+--font:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+--gl:max(64px,env(safe-area-inset-left,0px));--gr:max(64px,env(safe-area-inset-right,0px))}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 60px)}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.7;font-size:15px;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:600;background:var(--s1)}
+.sidebar{position:fixed;left:0;top:0;width:260px;height:100%;background:var(--s1);border-right:1px solid var(--border);overflow-y:auto;z-index:400;padding-top:env(safe-area-inset-top,0px);padding-left:env(safe-area-inset-left,0px)}
+.sb-logo{padding:20px 18px 16px;border-bottom:1px solid var(--border)}
+.sb-brand{display:flex;align-items:center;gap:11px;margin-bottom:12px}
+.logo-icon{width:44px;height:44px;border-radius:11px;background:linear-gradient(135deg,var(--oc),var(--teal));display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 0 26px rgba(56,189,248,.3)}
+.logo-text h2{font-size:15px;font-weight:800}.logo-text p{font-size:10.5px;color:var(--muted)}
+.prog-wrap{height:3px;background:var(--border);border-radius:2px;overflow:hidden}
+.prog-bar{height:100%;width:0;background:linear-gradient(90deg,var(--acc),var(--ins),var(--oc),var(--sk),var(--au))}
+.nav-label{padding:14px 18px 4px;font-size:9.5px;font-weight:700;letter-spacing:1.6px;color:var(--faint)}
+.nav-link{display:flex;align-items:center;gap:9px;padding:7px 18px;color:var(--muted);text-decoration:none;font-size:12.5px;font-weight:600;border-left:2px solid transparent}
+.nav-link:hover,.nav-link.active{color:var(--text);background:rgba(255,208,96,.07);border-left-color:var(--acc)}
+.main{margin-left:260px}
+.hero{padding-block:80px 60px;padding-left:var(--gl);padding-right:var(--gr);border-bottom:1px solid var(--border);background:radial-gradient(ellipse 65% 55% at 75% 22%,rgba(56,189,248,.10),transparent 60%),radial-gradient(ellipse 50% 55% at 10% 82%,rgba(48,216,192,.07),transparent 55%),var(--bg)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--acc-dim);border:1px solid rgba(255,208,96,.38);color:var(--acc);padding:5px 16px;border-radius:100px;font-size:11.5px;font-weight:700;margin-bottom:24px}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--acc);animation:p 2s infinite}
+@keyframes p{50%{opacity:.35;transform:scale(.7)}}
+@media(prefers-reduced-motion:reduce){.eyebrow i{animation:none}html{scroll-behavior:auto}}
+.hero h1{font-size:50px;font-weight:900;letter-spacing:-2.4px;line-height:1.06;margin-bottom:18px;text-wrap:balance}
+.grad{background:linear-gradient(135deg,var(--oc),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-desc{font-size:16px;color:var(--muted);max-width:620px;margin-bottom:28px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{padding:5px 14px;border-radius:7px;font-size:12px;font-weight:700}
+.c1{background:var(--oc-dim);color:var(--oc)}.c2{background:var(--ins-dim);color:var(--ins)}.c3{background:var(--acc-dim);color:var(--acc)}.c4{background:var(--sk-dim);color:var(--sk)}.c5{background:var(--au-dim);color:var(--au)}
+.content{padding-block:56px;padding-left:var(--gl);padding-right:var(--gr);max-width:calc(1020px + 64px)}
+.section{margin-bottom:68px}
+.sec-head{display:flex;gap:14px;align-items:flex-start;margin-bottom:28px;padding-bottom:18px;border-bottom:1px solid var(--border)}
+.sec-tag{font-family:var(--mono);font-size:10px;font-weight:600;padding:3px 10px;border-radius:5px;margin-top:6px;flex-shrink:0;letter-spacing:.5px}
+.t1{color:var(--oc);background:var(--oc-dim)}.t2{color:var(--ins);background:var(--ins-dim)}.t3{color:var(--acc);background:var(--acc-dim)}.t4{color:var(--sk);background:var(--sk-dim)}.t5{color:var(--au);background:var(--au-dim)}
+.sec-title{font-size:23px;font-weight:800;letter-spacing:-.6px;text-wrap:balance}.sec-sub{font-size:13px;color:var(--muted)}
+.sub-title{font-size:14.5px;font-weight:700;margin:26px 0 12px;display:flex;align-items:center;gap:10px}
+.sub-title::before{content:'';width:14px;height:3px;background:var(--acc);border-radius:2px}
+p.t{color:var(--muted);font-size:13.5px;margin-bottom:11px;max-width:68ch}p.t strong,li strong{color:var(--text)}
+.ex-box{background:var(--s1);border:1px solid var(--border2);border-radius:11px;overflow:hidden;margin:13px 0}
+.ex-head{display:flex;align-items:center;gap:8px;padding:9px 16px;background:var(--s2);border-bottom:1px solid var(--border);font-family:var(--mono);font-size:10px;font-weight:600;color:var(--muted);letter-spacing:.5px}
+.ex-tag{margin-left:auto;font-size:9px;font-weight:700;padding:2px 9px;border-radius:100px;font-family:var(--font)}
+.ex-body{padding:10px 20px}
+.ex-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:13.5px}
+.ex-row:last-child{border-bottom:none}
+.ex-en{color:var(--text);font-weight:600;min-width:280px}.ex-vn{color:var(--muted)}
+.info{display:flex;gap:12px;padding:14px 16px;border-radius:9px;margin:13px 0;font-size:13px;line-height:1.6}
+.i-tip{background:var(--tip-bg);border:1px solid var(--tip-bd);color:var(--tip-fg)}
+.i-warn{background:var(--acc-dim);border:1px solid rgba(255,208,96,.25);color:var(--warn-fg)}
+.i-ok{background:var(--ins-dim);border:1px solid rgba(64,216,142,.25);color:var(--ok-fg)}
+.tbl{width:100%;border-collapse:collapse;font-size:13px;margin:13px 0;display:block;overflow-x:auto}
+.tbl th{background:var(--s3);padding:10px 14px;text-align:left;font-size:10px;color:var(--muted);border-bottom:1px solid var(--border2);white-space:nowrap;letter-spacing:.5px}
+.tbl td{padding:10px 14px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:top}
+.tbl td:first-child{color:var(--text);font-weight:600}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}
+.card{background:var(--s1);border:1px solid var(--border);border-radius:11px;padding:16px;min-width:0}
+.card:hover{border-color:var(--acc)}
+.card-icon{font-size:24px}.card-title{font-size:13px;font-weight:700}.card-desc{font-size:12px;color:var(--muted)}
+.cmp{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);border-radius:11px;overflow:hidden;margin:13px 0}
+.bad{background:rgba(255,101,132,.07);padding:14px 16px;border-right:1px solid var(--border)}.good{background:rgba(64,216,142,.07);padding:14px 16px}
+.cmp b{display:block;font-size:10px;margin-bottom:6px;letter-spacing:.5px}.bad b{color:var(--au)}.good b{color:var(--ins)}
+.cmp div div{font-size:13.5px}
+.dlg{display:grid;gap:8px;margin:12px 0;background:var(--s1);border:1px solid var(--border2);border-radius:12px;padding:16px 18px}
+.dlg-t{font-size:10px;font-weight:800;color:var(--acc);margin-bottom:2px;letter-spacing:.6px}
+.turn{display:flex;gap:10px;align-items:baseline}
+.turn>div{min-width:0}
+.who{flex-shrink:0;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+.wa{background:var(--oc-dim);color:var(--oc)}.wb{background:var(--ins-dim);color:var(--ins)}
+.turn .say{font-weight:600}.turn small{display:block;color:var(--muted);font-size:12px;font-weight:400}
+.gen{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:12px 0}
+.gen label{font-size:11.5px;color:var(--muted);font-weight:600;display:block;min-width:0}
+.gen select{width:100%;margin-top:4px;background:var(--code-bg);border:1px solid var(--border2);border-radius:8px;padding:9px 12px;color:var(--text);font:inherit;font-size:13px}
+select:focus-visible,button:focus-visible,.say:focus-visible,.exi input:focus-visible,.chk input:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.btns{display:flex;flex-wrap:wrap;gap:6px}
+.btn{background:var(--acc-dim);color:var(--acc);border:1px solid var(--acc);border-radius:8px;padding:8px 16px;font:inherit;font-weight:700;font-size:13px;cursor:pointer}
+.btn.alt{background:var(--ins-dim);color:var(--ins);border-color:var(--ins)}
+.out{margin-top:14px;min-height:60px;background:var(--s2);border:1px dashed var(--border2);border-radius:10px;padding:14px 16px;font-size:14px;line-height:1.9}
+.big{font-size:21px;font-weight:800;color:var(--acc);letter-spacing:-.3px;line-height:1.4;margin-bottom:4px}
+.out .why{display:block;color:var(--muted);font-size:12.5px}
+.out .why b{color:var(--teal);font-family:var(--mono);font-weight:600}
+.timeline{display:grid;gap:0;margin:14px 0;border-left:2px solid var(--border2);padding-left:18px}
+.tl{position:relative;padding:8px 0 12px}
+.tl::before{content:'';position:absolute;left:-24px;top:16px;width:10px;height:10px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 3px var(--bg)}
+.tl time{font-family:var(--mono);font-size:12px;color:var(--acc);font-variant-numeric:tabular-nums;font-weight:600}
+.tl .say{font-weight:600;font-size:13.5px}
+.tl small{display:block;color:var(--muted);font-size:12px}
+.freq{display:grid;gap:7px;margin:14px 0}
+.fq{display:grid;grid-template-columns:110px 1fr 54px;gap:12px;align-items:center;font-size:13px}
+.fq .say{font-weight:700}
+.fq .track{height:8px;background:var(--s3);border-radius:4px;overflow:hidden}
+.fq .fill{height:100%;background:linear-gradient(90deg,var(--ins),var(--acc))}
+.fq span:last-child{font-family:var(--mono);font-size:11.5px;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+.plan{display:grid;gap:8px;margin:12px 0}
+.day{display:flex;gap:14px;align-items:baseline;background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:12px 16px;font-size:13px;color:var(--muted)}
+.day b{color:var(--acc);font-family:var(--mono);font-size:12px;flex-shrink:0;width:52px}.day strong{color:var(--text)}
+.chk{list-style:none;margin:10px 0}.chk li{padding:6px 0;font-size:13.5px;color:var(--muted);border-bottom:1px solid rgba(255,255,255,.04)}
+.chk input{accent-color:var(--ins);margin-right:10px;width:15px;height:15px;vertical-align:-2px}
+.gr{border:1px solid rgba(160,122,244,.38);background:linear-gradient(180deg,var(--sk-dim),transparent 110px),var(--s1);border-radius:12px;margin:28px 0;overflow:hidden}
+.gr-head{padding:10px 18px;font-size:12px;font-weight:800;color:var(--sk);border-bottom:1px solid var(--border);display:flex;gap:10px;flex-wrap:wrap;align-items:baseline;letter-spacing:.4px}
+.gr-head em{font-style:normal;color:var(--muted);font-weight:600;letter-spacing:0}
+.gr-body{padding:14px 18px;font-size:13.5px;color:var(--muted)}
+.gr-body p{margin-bottom:10px}.gr-body b{color:var(--text)}.gr-body ul{padding-left:20px;margin-bottom:8px}.gr-body li{margin-bottom:4px}
+.gr-body .tbl{margin:8px 0 12px}
+.fm{display:inline-block;font-family:var(--mono);font-size:12px;background:var(--code-bg);color:var(--teal);padding:3px 9px;border-radius:6px;margin:2px 0}
+.say{cursor:pointer;border-bottom:1px dotted var(--oc)}
+.say:hover{color:var(--acc);background:var(--acc-dim);border-radius:4px}
+.say::after{content:"🔊";font-size:.68em;margin-left:3px;opacity:.5}
+.say.playing{color:var(--ins);background:var(--ins-dim);border-radius:4px}.say.playing::after{opacity:1}
+.exi{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:13.5px;color:var(--text)}
+.exi input{width:220px;max-width:100%;background:var(--code-bg);border:1px solid var(--border2);border-radius:6px;padding:4px 8px;color:var(--text);font:inherit;font-size:13px;text-align:center}
+.exi input.ok{border-color:var(--ins);color:var(--ins)}.exi input.no{border-color:var(--au);color:var(--au)}
+.exi small{color:var(--muted);font-size:11.5px}
+.exi .key{color:var(--ins);font-size:12px;width:100%}
+.footer{border-top:1px solid var(--border);padding-block:28px 90px;padding-left:var(--gl);padding-right:var(--gr);font-size:12px;color:var(--muted)}
+.audio-bar{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:500;display:flex;gap:10px;align-items:center;background:var(--s2);border:1px solid var(--border2);border-radius:12px;padding:8px 12px;box-shadow:0 8px 28px rgba(0,0,0,.5);font-size:12px;color:var(--muted)}
+.audio-bar b{color:var(--acc)}.ab-g{display:flex;gap:4px}
+.audio-bar button{background:var(--s3);color:var(--muted);border:1px solid var(--border);border-radius:7px;padding:4px 10px;font:inherit;font-weight:700;cursor:pointer}
+.audio-bar button.on{background:var(--acc-dim);color:var(--acc);border-color:var(--acc)}
+.topnav{display:none}
+@media(max-width:900px){
+:root{--gl:max(18px,env(safe-area-inset-left,0px));--gr:max(18px,env(safe-area-inset-right,0px))}
+.sidebar{display:none}.main{margin-left:0}.hero h1{font-size:32px;letter-spacing:-1.4px}.hero{padding-block:48px 40px}
+.grid-3,.cmp{grid-template-columns:1fr}.gen{grid-template-columns:1fr 1fr}.bad{border-right:none;border-bottom:1px solid var(--border)}
+.topnav{display:flex;overflow-x:auto;position:sticky;top:env(safe-area-inset-top,0px);z-index:500;background:var(--s1);border-bottom:2px solid var(--border2);scrollbar-width:none;padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+.topnav a{flex-shrink:0;padding:10px 14px;color:var(--muted);text-decoration:none;font-size:12px;font-weight:700;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-2px}
+.topnav a.active{color:var(--acc);border-bottom-color:var(--acc);background:var(--acc-dim)}
+.ex-en{min-width:0}
+.fq{grid-template-columns:90px 1fr 46px}
+.audio-bar{left:calc(8px + env(safe-area-inset-left,0px));right:calc(8px + env(safe-area-inset-right,0px));justify-content:center;flex-wrap:wrap}
+}
+@media(max-width:480px){.gen{grid-template-columns:1fr}}
+.lbl{font-family:var(--mono);font-size:10px;font-weight:600;color:var(--faint);letter-spacing:1px;min-width:120px}
+.rl{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;padding:3px 0}
+.rl .say{font-weight:700;font-size:15px}
+.mapwrap{background:var(--s1);border:1px solid var(--border2);border-radius:14px;padding:8px;margin:14px 0;max-width:560px}
+.mapwrap svg{display:block;width:100%;height:auto}
+.steps{margin:6px 0 8px;padding-left:22px;display:grid;gap:6px}
+.steps li{font-size:14.5px;font-weight:600;color:var(--text)}.steps li::marker{color:var(--oc);font-family:var(--mono)}
+.steps small{display:block;color:var(--muted);font-weight:400;font-size:12px}
+.hint{color:var(--acc);font-size:13.5px;margin-top:6px}
+</style>
+
+<aside class="sidebar">
+  <div class="sb-logo">
+    <div class="sb-brand"><div class="logo-icon">🗺️</div><div class="logo-text"><h2>Asking for Directions</h2><p>Tiếng Anh cho người mới</p></div></div>
+    <div class="prog-wrap"><div class="prog-bar" id="pbar"></div></div>
+  </div>
+  <div class="nav-label">BÀI HỌC</div>
+  <a class="nav-link" href="#s1">🙋 Hỏi đường lịch sự</a>
+  <a class="nav-link" href="#s2">🧭 Hiểu lời chỉ đường</a>
+  <a class="nav-link" href="#s3">📍 Mốc &amp; địa chỉ</a>
+  <a class="nav-link" href="#s4">🔁 Xác nhận lại</a>
+  <a class="nav-link" href="#s5">🏢 Trong tòa nhà &amp; qua điện thoại</a>
+  <div class="nav-label">THỰC HÀNH</div>
+  <a class="nav-link" href="#s6">💬 Hội thoại mẫu</a>
+  <a class="nav-link" href="#s7">🗺️ Bản đồ luyện tập &amp; bài tập</a>
+  <a class="nav-link" href="#s8">🚀 Từ vựng nâng cao</a>
+</aside>
+
+<div class="main">
+<nav class="topnav">
+  <a href="#s1">1 Hỏi</a><a href="#s2">2 Chỉ đường</a><a href="#s3">3 Mốc</a><a href="#s4">4 Xác nhận</a><a href="#s5">5 Tòa nhà</a><a href="#s6">6 Hội thoại</a><a href="#s7">7 Bản đồ</a><a href="#s8">8 Nâng cao</a>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow"><i></i>Dành cho người mới bắt đầu</div>
+  <h1>Hỏi đường, chỉ đường<br><span class="grad">bằng tiếng Anh</span></h1>
+  <p class="hero-desc">Bài này đi tiếp sau bài “Hỏi đường &amp; Hỏi giờ”: hỏi đường lịch sự hơn, hiểu những lời chỉ đường dài, dùng mốc và địa chỉ, xác nhận lại khi chưa chắc, tìm đường trong tòa nhà và qua điện thoại. Bấm vào câu có biểu tượng loa để nghe, rồi luyện với bản đồ tương tác ở phần thực hành.</p>
+  <div class="chips"><span class="chip c1">Hỏi lịch sự</span><span class="chip c2">Chỉ đường</span><span class="chip c3">Mốc &amp; địa chỉ</span><span class="chip c4">Bản đồ luyện tập</span><span class="chip c5">Từ vựng nâng cao</span></div>
+</header>
+
+<div class="content">
+
+<section class="section" id="s1">
+  <div class="sec-head"><span class="sec-tag t1">BÀI 1</span><div><div class="sec-title">Hỏi đường lịch sự</div><div class="sec-sub">Từ câu hỏi ngắn đến câu hỏi lịch sự nhất</div></div></div>
+  <table class="tbl"><thead><tr><th>Mức độ</th><th>Câu hỏi</th><th>Nghĩa</th></tr></thead><tbody>
+  <tr><td>Ngắn gọn</td><td><span class="say">Where’s the museum?</span></td><td>Bảo tàng ở đâu?</td></tr>
+  <tr><td>Thân thiện</td><td><span class="say">How do I get to the museum?</span></td><td>Tôi đến bảo tàng bằng cách nào?</td></tr>
+  <tr><td>Lịch sự</td><td><span class="say">Excuse me, do you know where the museum is?</span></td><td>Xin lỗi, bạn có biết bảo tàng ở đâu không?</td></tr>
+  <tr><td>Lịch sự nhất</td><td><span class="say">Sorry to bother you, could you tell me how to get to the museum?</span></td><td>Xin lỗi làm phiền, bạn chỉ giúp tôi đường đến bảo tàng được không?</td></tr></tbody></table>
+  <div class="ex-box"><div class="ex-head">CÂU HỎI HỮU ÍCH<span class="ex-tag t1">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">I’m looking for the Temple of Literature.</span><span class="ex-vn">Tôi đang tìm Văn Miếu</span></div>
+    <div class="ex-row"><span class="ex-en say">Is this the right way to the train station?</span><span class="ex-vn">Đây có phải đường ra ga tàu không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Which way is the river?</span><span class="ex-vn">Sông ở hướng nào?</span></div>
+    <div class="ex-row"><span class="ex-en say">Is there an ATM around here?</span><span class="ex-vn">Quanh đây có cây ATM không?</span></div>
+    <div class="ex-row"><span class="ex-en say">What’s the best way to get there?</span><span class="ex-vn">Đến đó bằng cách nào tiện nhất?</span></div>
+    <div class="ex-row"><span class="ex-en say">Can I walk there, or should I take a taxi?</span><span class="ex-vn">Đi bộ được không, hay tôi nên đi taxi?</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Câu hỏi gián tiếp: Do you know where … is?</em></div><div class="gr-body">
+<p>Khi đặt câu hỏi bên trong <b>Do you know… / Could you tell me…</b>, phần sau trở lại <b>trật tự câu thường</b>: chủ ngữ trước, động từ sau.</p>
+<table class="tbl"><thead><tr><th>Câu hỏi trực tiếp</th><th>Câu hỏi gián tiếp (lịch sự hơn)</th></tr></thead><tbody>
+<tr><td><span class="say">Where is the bank?</span></td><td><span class="say">Do you know where the bank is?</span></td></tr>
+<tr><td><span class="say">How far is it?</span></td><td><span class="say">Could you tell me how far it is?</span></td></tr>
+<tr><td><span class="say">Which bus goes there?</span></td><td><span class="say">Do you know which bus goes there?</span></td></tr></tbody></table>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>Do you know where is the bank?</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">Do you know where the bank is?</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s2">
+  <div class="sec-head"><span class="sec-tag t2">BÀI 2</span><div><div class="sec-title">Hiểu lời chỉ đường dài</div><div class="sec-sub">Những động từ và cụm từ người bản xứ hay dùng</div></div></div>
+  <table class="tbl"><thead><tr><th>Cụm từ</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">go along</td><td>đi dọc theo</td><td><span class="say">Go along this street.</span></td></tr>
+  <tr><td class="say">take the second left</td><td>rẽ trái ở ngã rẽ thứ hai</td><td><span class="say">Take the second left after the bridge.</span></td></tr>
+  <tr><td class="say">go past</td><td>đi qua (một địa điểm)</td><td><span class="say">Go past the school.</span></td></tr>
+  <tr><td class="say">cross</td><td>băng qua</td><td><span class="say">Cross the road at the lights.</span></td></tr>
+  <tr><td class="say">keep going</td><td>cứ đi tiếp</td><td><span class="say">Keep going until you see a big hotel.</span></td></tr>
+  <tr><td class="say">until you reach</td><td>cho đến khi tới</td><td><span class="say">Walk until you reach the lake.</span></td></tr>
+  <tr><td class="say">at the end of the road</td><td>ở cuối đường</td><td><span class="say">It’s at the end of the road.</span></td></tr>
+  <tr><td class="say">follow the signs</td><td>đi theo biển chỉ dẫn</td><td><span class="say">Just follow the signs to the airport.</span></td></tr></tbody></table>
+  <div class="info i-tip"><span>💡</span><span><strong>Mẹo:</strong> khi nghe chỉ đường dài, hãy để ý <strong>các từ nối</strong> (first, then, after that, when you see) và <strong>con số</strong> (second left, two blocks). Đó là những thông tin quan trọng nhất.</span></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Từ nối trình tự và mệnh đề when</em></div><div class="gr-body">
+<ul><li><span class="fm">First, … Then, … After that, … Finally, …</span> → <span class="say">First, go straight. Then, turn right. After that, cross the bridge.</span></li>
+<li><span class="fm">When you see + mốc, + V</span> → <span class="say">When you see the post office, turn left.</span></li>
+<li><span class="fm">V + until you + V</span> → <span class="say">Keep walking until you get to the corner.</span></li></ul>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>When you will see the bank, turn left.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">When you see the bank, turn left.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s3">
+  <div class="sec-head"><span class="sec-tag t3">BÀI 3</span><div><div class="sec-title">Mốc và địa chỉ</div><div class="sec-sub">Dùng địa điểm dễ thấy và đọc địa chỉ đúng cách</div></div></div>
+  <div class="grid-3">
+    <div class="card"><div class="card-icon">🚦</div><div class="card-title say">at the traffic lights</div><div class="card-desc">ở chỗ đèn giao thông</div></div>
+    <div class="card"><div class="card-icon">🌉</div><div class="card-title say">over the bridge</div><div class="card-desc">qua cầu</div></div>
+    <div class="card"><div class="card-icon">⛽</div><div class="card-title say">next to the gas station</div><div class="card-desc">cạnh cây xăng</div></div>
+    <div class="card"><div class="card-icon">↪️</div><div class="card-title say">around the corner</div><div class="card-desc">ngay chỗ rẽ</div></div>
+    <div class="card"><div class="card-icon">➕</div><div class="card-title say">on the corner of X and Y</div><div class="card-desc">ở góc đường X và Y</div></div>
+    <div class="card"><div class="card-icon">🏛️</div><div class="card-title say">across from the museum</div><div class="card-desc">đối diện bảo tàng</div></div>
+  </div>
+  <div class="ex-box"><div class="ex-head">NÓI ĐỊA CHỈ<span class="ex-tag t3">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">What’s the address?</span><span class="ex-vn">Địa chỉ là gì?</span></div>
+    <div class="ex-row"><span class="ex-en say">It’s at twenty-five Hang Bai Street.</span><span class="ex-vn">Ở số 25 phố Hàng Bài</span></div>
+    <div class="ex-row"><span class="ex-en say">It’s on Trang Tien Street, near the Opera House.</span><span class="ex-vn">Ở phố Tràng Tiền, gần Nhà hát Lớn</span></div>
+    <div class="ex-row"><span class="ex-en say">It’s in Alley ten, Kim Ma Street.</span><span class="ex-vn">Ở ngõ 10 phố Kim Mã</span></div>
+    <div class="ex-row"><span class="ex-en say">It’s in Ba Dinh District.</span><span class="ex-vn">Ở quận Ba Đình</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>at / on / in với địa chỉ</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Giới từ</th><th>Dùng với</th><th>Ví dụ</th></tr></thead><tbody>
+<tr><td><span class="fm">at</span></td><td>địa chỉ có số nhà</td><td><span class="say">at 25 Hang Bai Street</span></td></tr>
+<tr><td><span class="fm">on</span></td><td>tên đường (không có số)</td><td><span class="say">on Hang Bai Street</span></td></tr>
+<tr><td><span class="fm">in</span></td><td>ngõ, quận, thành phố, đất nước</td><td><span class="say">in Hoan Kiem District, in Hanoi</span></td></tr></tbody></table>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>The hotel is in Hang Bai Street, at Hanoi.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">The hotel is on Hang Bai Street, in Hanoi.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s4">
+  <div class="sec-head"><span class="sec-tag t4">BÀI 4</span><div><div class="sec-title">Xác nhận lại khi chưa chắc</div><div class="sec-sub">Nhắc lại, hỏi lại, nhờ chỉ trên bản đồ</div></div></div>
+  <div class="ex-box"><div class="ex-head">KHI CHƯA NGHE RÕ<span class="ex-tag t4">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Sorry, could you say that again, a bit more slowly?</span><span class="ex-vn">Xin lỗi, bạn nói lại chậm hơn chút được không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Did you say left or right?</span><span class="ex-vn">Bạn nói trái hay phải?</span></div>
+    <div class="ex-row"><span class="ex-en say">Could you show me on the map?</span><span class="ex-vn">Bạn chỉ giúp trên bản đồ được không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Could you write it down for me?</span><span class="ex-vn">Bạn viết ra giúp tôi được không?</span></div>
+  </div></div>
+  <div class="ex-box"><div class="ex-head">TỰ NHẮC LẠI ĐỂ KIỂM TRA<span class="ex-tag t1">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">So I go straight, then take the second right?</span><span class="ex-vn">Vậy là tôi đi thẳng, rồi rẽ phải ở ngã thứ hai?</span></div>
+    <div class="ex-row"><span class="ex-en say">Let me check. It’s past the bank, on the left, right?</span><span class="ex-vn">Để tôi kiểm tra. Đi qua ngân hàng, ở bên trái, đúng không?</span></div>
+    <div class="ex-row"><span class="ex-en say">About how far is it?</span><span class="ex-vn">Khoảng bao xa?</span></div>
+    <div class="ex-row"><span class="ex-en say">Got it. Thanks a lot!</span><span class="ex-vn">Hiểu rồi. Cảm ơn nhiều!</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Xác nhận bằng So… ? và đuôi …, right?</em></div><div class="gr-body">
+<ul><li><span class="fm">So + câu khẳng định + ?</span> (lên giọng cuối câu) → <span class="say">So it’s on the left?</span></li>
+<li><span class="fm">Câu khẳng định + , right?</span> → <span class="say">It’s near the lake, right?</span></li>
+<li><span class="fm">Did you say + A + or + B?</span> → <span class="say">Did you say the first or the third street?</span></li></ul>
+<div class="cmp"><div class="bad"><b>❌ NGHE CỨNG</b><div>What? Again!</div></div><div class="good"><b>✔ LỊCH SỰ</b><div class="say">Sorry, I didn’t catch that. Could you say it again?</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s5">
+  <div class="sec-head"><span class="sec-tag t5">BÀI 5</span><div><div class="sec-title">Trong tòa nhà và qua điện thoại</div><div class="sec-sub">Tìm phòng, tìm cửa hàng trong trung tâm thương mại, hẹn gặp khi chưa thấy nhau</div></div></div>
+  <div class="ex-box"><div class="ex-head">TRONG TÒA NHÀ<span class="ex-tag t5">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Excuse me, where’s the meeting room?</span><span class="ex-vn">Xin lỗi, phòng họp ở đâu?</span></div>
+    <div class="ex-row"><span class="ex-en say">It’s on the third floor. Take the lift on your right.</span><span class="ex-vn">Ở tầng 3. Đi thang máy bên phải bạn</span></div>
+    <div class="ex-row"><span class="ex-en say">Go down the corridor. It’s the second door on the left.</span><span class="ex-vn">Đi dọc hành lang. Cửa thứ hai bên trái</span></div>
+    <div class="ex-row"><span class="ex-en say">Where are the restrooms?</span><span class="ex-vn">Nhà vệ sinh ở đâu?</span></div>
+    <div class="ex-row"><span class="ex-en say">They’re next to the escalator.</span><span class="ex-vn">Ở cạnh thang cuốn</span></div>
+    <div class="ex-row"><span class="ex-en say">Which floor is the food court on?</span><span class="ex-vn">Khu ẩm thực ở tầng mấy?</span></div>
+  </div></div>
+  <div class="ex-box"><div class="ex-head">QUA ĐIỆN THOẠI<span class="ex-tag t2">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">I’m here, but I can’t find you.</span><span class="ex-vn">Tôi đến rồi, nhưng không thấy bạn</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m standing in front of the bookstore.</span><span class="ex-vn">Tôi đang đứng trước hiệu sách</span></div>
+    <div class="ex-row"><span class="ex-en say">What can you see around you?</span><span class="ex-vn">Xung quanh bạn có gì?</span></div>
+    <div class="ex-row"><span class="ex-en say">Stay there. I’ll come to you.</span><span class="ex-vn">Cứ đứng đó. Tôi đến chỗ bạn</span></div>
+    <div class="ex-row"><span class="ex-en say">Can you send me your location?</span><span class="ex-vn">Gửi vị trí cho tôi được không?</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Số thứ tự cho tầng, cửa, ngã rẽ</em></div><div class="gr-body">
+<ul><li><span class="fm">on the + số thứ tự + floor</span> → <span class="say">on the fifth floor</span></li>
+<li><span class="fm">the + số thứ tự + door / room / turning</span> → <span class="say">the third door on the right</span></li>
+<li><span class="fm">take the + số thứ tự + left / right</span> → <span class="say">take the first right</span></li></ul>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>It’s in floor three, door two left.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">It’s on the third floor, the second door on the left.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s6">
+  <div class="sec-head"><span class="sec-tag t3">BÀI 6</span><div><div class="sec-title">Hội thoại mẫu</div><div class="sec-sub">Bấm từng câu để nghe, rồi đóng vai cả hai người</div></div></div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 1: HỎI ĐƯỜNG ĐẾN BẢO TÀNG</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Sorry to bother you. Do you know where the History Museum is?</span><small>Xin lỗi làm phiền. Bạn có biết Bảo tàng Lịch sử ở đâu không?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Sure. Go along this street and take the second right. Then go past the Opera House.</span><small>Có chứ. Đi dọc phố này, rẽ phải ở ngã thứ hai. Rồi đi qua Nhà hát Lớn.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Sorry, did you say the second right?</span><small>Xin lỗi, bạn nói rẽ phải ở ngã thứ hai à?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Yes, the second right. The museum is on your left, behind the Opera House.</span><small>Đúng, rẽ phải ở ngã thứ hai. Bảo tàng ở bên trái, phía sau Nhà hát Lớn.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">So I go straight, take the second right, and it’s behind the Opera House. Got it, thanks!</span><small>Vậy tôi đi thẳng, rẽ phải ngã thứ hai, và nó ở sau Nhà hát Lớn. Hiểu rồi, cảm ơn!</small></div></div>
+  </div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 2: TÌM PHÒNG TRONG TÒA NHÀ</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Excuse me, I have an interview with ABC Company. Which floor is it on?</span><small>Xin lỗi, tôi có buổi phỏng vấn với công ty ABC. Công ty ở tầng mấy?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">It’s on the seventh floor. The lifts are just over there.</span><small>Ở tầng 7. Thang máy ngay đằng kia.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Thank you. And when I get out of the lift?</span><small>Cảm ơn. Ra khỏi thang máy thì đi sao?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Turn left and go down the corridor. It’s the last door on the right.</span><small>Rẽ trái và đi dọc hành lang. Cửa cuối cùng bên phải.</small></div></div>
+  </div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 3: GỌI ĐIỆN TÌM NHAU</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Hi, I’m at the mall, but I can’t find the café.</span><small>Alo, mình đến trung tâm thương mại rồi mà không thấy quán cà phê.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Where are you now? What can you see?</span><small>Giờ bạn ở đâu? Bạn thấy gì?</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">I’m standing next to the escalator, opposite a shoe shop.</span><small>Mình đứng cạnh thang cuốn, đối diện một tiệm giày.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Okay, take the escalator up one floor. The café is right at the top, around the corner.</span><small>Được rồi, lên thang cuốn một tầng. Quán ở ngay trên đó, chỗ rẽ.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Great, I’ll be there in a minute.</span><small>Tuyệt, mình đến ngay.</small></div></div>
+  </div>
+  <div class="info i-ok"><span>✅</span><span><strong>Cách luyện:</strong> nghe một lượt, nói theo từng câu, rồi che phần tiếng Việt và tự đóng vai A hoặc B. Lần sau thử chỉ đường từ nhà bạn đến một quán quen.</span></div>
+</section>
+
+<section class="section" id="s7">
+  <div class="sec-head"><span class="sec-tag t1">BÀI 7</span><div><div class="sec-title">Bản đồ luyện tập &amp; bài tập</div><div class="sec-sub">Bạn đang đứng ở chấm “YOU”, mặt quay lên phía trên bản đồ. Chọn nơi muốn đến để xem lời chỉ đường và đường đi</div></div></div>
+  <div class="mapwrap">
+    <svg id="map" viewBox="0 0 520 430" role="img" aria-label="Bản đồ phố luyện chỉ đường"></svg>
+  </div>
+  <div class="gen">
+    <label for="g-d">Tôi muốn đến<select id="g-d"></select></label>
+    <label for="g-m">Chế độ<select id="g-m"><option value="0">Xem lời chỉ đường</option><option value="1">Tự đoán: ẩn lời chỉ đường</option></select></label>
+  </div>
+  <div class="btns"><button class="btn" id="gen-btn">Chỉ đường</button><button class="btn alt" id="rnd-btn">Chọn ngẫu nhiên</button><button class="btn alt" id="rev-btn" hidden>Hiện lời chỉ đường</button></div>
+  <div class="out" id="gen-out" aria-live="polite"></div>
+
+  <div class="sub-title">Bài tập: điền câu trả lời</div>
+  <p class="t">Câu 1–4: điền một từ vào chỗ trống. Câu 5–8: dịch sang tiếng Anh, gõ cả câu. Không phân biệt hoa thường.</p>
+  <div id="exlist">
+    <div class="exi">1. Do you know where the bank ___? →<input id="ex1" data-a="is" aria-label="Câu 1"><small>câu gián tiếp</small></div>
+    <div class="exi">2. The hotel is ___ Hang Bai Street. →<input id="ex2" data-a="on" aria-label="Câu 2"><small>tên đường</small></div>
+    <div class="exi">3. Take the ___ left. (thứ hai) →<input id="ex3" data-a="second" aria-label="Câu 3"><small>số thứ tự</small></div>
+    <div class="exi">4. When you ___ the park, turn right. (see) →<input id="ex4" data-a="see" aria-label="Câu 4"><small>sau when</small></div>
+    <div class="exi">5. Bạn có biết ga tàu ở đâu không? →<input id="ex5" data-a="do you know where the train station is?|do you know where the railway station is?" aria-label="Câu 5"><small>Do you know…</small></div>
+    <div class="exi">6. Bạn chỉ giúp trên bản đồ được không? →<input id="ex6" data-a="could you show me on the map?|can you show me on the map?" aria-label="Câu 6"><small>show me</small></div>
+    <div class="exi">7. Bạn nói trái hay phải? →<input id="ex7" data-a="did you say left or right?" aria-label="Câu 7"><small>Did you say…</small></div>
+    <div class="exi">8. Nó ở tầng ba →<input id="ex8" data-a="it's on the third floor|it is on the third floor" aria-label="Câu 8"><small>floor</small></div>
+  </div>
+  <div class="btns" style="margin-top:12px"><button class="btn" id="ex-check">Kiểm tra đáp án</button><button class="btn alt" id="ex-show">Xem đáp án</button><button class="btn alt" id="ex-reset">Làm lại</button></div>
+  <div class="out" id="ex-out" style="min-height:0" aria-live="polite"></div>
+
+  <div class="sub-title">Lộ trình luyện 7 ngày</div>
+  <div class="plan">
+    <div class="day"><b>Ngày 1</b><span><strong>Hỏi lịch sự:</strong> chuyển 5 câu hỏi trực tiếp thành câu hỏi gián tiếp</span></div>
+    <div class="day"><b>Ngày 2</b><span><strong>Chỉ đường dài:</strong> học 8 cụm ở Bài 2, luyện first / then / when you see</span></div>
+    <div class="day"><b>Ngày 3</b><span><strong>Mốc và địa chỉ:</strong> nói địa chỉ nhà bạn, nơi làm với at / on / in</span></div>
+    <div class="day"><b>Ngày 4</b><span><strong>Xác nhận:</strong> nghe một lời chỉ đường trên bản đồ, rồi tự nhắc lại bằng So…?</span></div>
+    <div class="day"><b>Ngày 5</b><span><strong>Trong tòa nhà:</strong> chỉ đường đến 3 phòng ở trường hoặc công ty bạn</span></div>
+    <div class="day"><b>Ngày 6</b><span><strong>Bản đồ:</strong> dùng chế độ tự đoán, nói lời chỉ đường trước rồi mới mở đáp án</span></div>
+    <div class="day"><b>Ngày 7</b><span><strong>Ôn tổng hợp:</strong> thu âm 1 phút chỉ đường từ nhà bạn đến chỗ làm hoặc trường</span></div>
+  </div>
+</section>
+
+<section class="section" id="s8">
+  <div class="sec-head"><span class="sec-tag t5">NÂNG CAO</span><div><div class="sec-title">Từ vựng mới để hội thoại tự nhiên hơn</div><div class="sec-sub">Những từ bổ sung, không trùng với phần nâng cao của bài Hỏi đường &amp; Hỏi giờ</div></div></div>
+  <div class="sub-title">Đường phố và giao thông</div>
+  <table class="tbl"><thead><tr><th>Từ / cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">alley / lane</td><td>ngõ, hẻm</td><td><span class="say">The café is at the end of a small alley.</span></td></tr>
+  <tr><td class="say">block</td><td>dãy nhà giữa hai ngã tư</td><td><span class="say">It’s three blocks from here.</span></td></tr>
+  <tr><td class="say">junction</td><td>chỗ giao nhau, ngã ba</td><td><span class="say">Turn left at the next junction.</span></td></tr>
+  <tr><td class="say">one-way street</td><td>đường một chiều</td><td><span class="say">You can’t drive there. It’s a one-way street.</span></td></tr>
+  <tr><td class="say">make a U-turn</td><td>quay đầu xe</td><td><span class="say">Make a U-turn at the next traffic lights.</span></td></tr>
+  <tr><td class="say">overpass / underpass</td><td>cầu vượt / hầm chui</td><td><span class="say">Use the overpass to cross the main road.</span></td></tr>
+  <tr><td class="say">bear left / bear right</td><td>đi chếch sang trái / phải</td><td><span class="say">Bear right at the fork in the road.</span></td></tr>
+  <tr><td class="say">signpost</td><td>biển chỉ đường</td><td><span class="say">Look for the signpost to the old town.</span></td></tr></tbody></table>
+  <div class="sub-title">Bản đồ và định vị</div>
+  <table class="tbl"><thead><tr><th>Từ / cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">drop a pin</td><td>gửi ghim vị trí</td><td><span class="say">Can you drop me a pin?</span></td></tr>
+  <tr><td class="say">get lost</td><td>bị lạc</td><td><span class="say">I always get lost in the Old Quarter.</span></td></tr>
+  <tr><td class="say">north / south / east / west</td><td>bắc / nam / đông / tây</td><td><span class="say">The lake is to the north of the city center.</span></td></tr>
+  <tr><td class="say">the entrance / the exit</td><td>lối vào / lối ra</td><td><span class="say">Meet me at the main entrance.</span></td></tr>
+  <tr><td class="say">walking distance</td><td>khoảng cách đi bộ được</td><td><span class="say">The hotel is within walking distance of the beach.</span></td></tr>
+  <tr><td class="say">a stone’s throw from</td><td>rất gần (một quãng ném đá)</td><td><span class="say">My house is a stone’s throw from the market.</span></td></tr></tbody></table>
+  <div class="sub-title">Cụm giúp cuộc trò chuyện trôi chảy</div>
+  <div class="ex-box"><div class="ex-head">LÀM CHO HỘI THOẠI TỰ NHIÊN<span class="ex-tag t5">Nâng cao</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">I’m hopeless with directions.</span><span class="ex-vn">Tôi rất kém nhớ đường</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m not from around here, sorry.</span><span class="ex-vn">Xin lỗi, tôi không phải người ở đây</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m heading that way. I can show you.</span><span class="ex-vn">Tôi cũng đi hướng đó. Để tôi dẫn bạn đi</span></div>
+    <div class="ex-row"><span class="ex-en say">It’s easy to miss, so look carefully.</span><span class="ex-vn">Chỗ đó dễ đi lố lắm, nhìn kỹ nhé</span></div>
+    <div class="ex-row"><span class="ex-en say">If you get to the river, you’ve gone too far.</span><span class="ex-vn">Nếu thấy sông là bạn đi quá rồi đấy</span></div>
+    <div class="ex-row"><span class="ex-en say">You’re almost there.</span><span class="ex-vn">Bạn sắp đến nơi rồi</span></div>
+    <div class="ex-row"><span class="ex-en say">Thanks, you’ve been really helpful!</span><span class="ex-vn">Cảm ơn, bạn giúp tôi nhiều lắm!</span></div>
+  </div></div>
+  <div class="cmp"><div class="bad"><b>❌ NGHE CỨNG</b><div>Bank where? Go how?</div></div><div class="good"><b>✔ TỰ NHIÊN HƠN</b><div class="say">Excuse me, I’m a bit lost. Do you know where the nearest bank is?</div></div></div>
+  <div class="info i-tip"><span>💡</span><span><strong>Mẹo:</strong> khi chỉ đường cho người khác, nói thêm một câu <strong>“nếu đi quá”</strong>, ví dụ <em>“If you see the river, you’ve gone too far.”</em> Người nghe sẽ biết chắc mình có đi đúng không.</span></div>
+
+  <div class="sub-title">Tự kiểm tra</div>
+  <ul class="chk">
+    <li><label><input type="checkbox" id="c1">Tôi hỏi đường được ở 4 mức lịch sự</label></li>
+    <li><label><input type="checkbox" id="c2">Tôi dùng đúng câu hỏi gián tiếp <strong>Do you know where … is?</strong></label></li>
+    <li><label><input type="checkbox" id="c3">Tôi hiểu lời chỉ đường dài với <strong>take the second left, go past, until you reach</strong></label></li>
+    <li><label><input type="checkbox" id="c4">Tôi nói địa chỉ đúng với <strong>at / on / in</strong></label></li>
+    <li><label><input type="checkbox" id="c5">Tôi xác nhận lại được bằng <strong>So…? / …, right? / Did you say…?</strong></label></li>
+    <li><label><input type="checkbox" id="c6">Tôi chỉ đường trong tòa nhà và qua điện thoại được</label></li>
+    <li><label><input type="checkbox" id="c7">Tôi dùng được ít nhất 5 từ vựng nâng cao</label></li>
+  </ul>
+</section>
+
+</div>
+<div class="footer">🗺️ Giao tiếp tiếng Anh: Asking for Directions · Dành cho người mới bắt đầu · 2026</div>
+</div>
+
+<div class="audio-bar">
+  <b>🔊 Audio</b>
+  <div class="ab-g"><button data-acc="en-GB" class="on">Anh-Anh</button><button data-acc="en-US">Anh-Mỹ</button></div>
+  <div class="ab-g"><button data-rate="0.6">Chậm</button><button data-rate="0.85" class="on">Vừa</button><button data-rate="1">Nhanh</button></div>
+</div>
+
+<script>
+(function(){
+var doc=document.documentElement,bar=document.getElementById('pbar');
+addEventListener('scroll',function(){bar.style.width=(doc.scrollTop/Math.max(1,doc.scrollHeight-doc.clientHeight)*100)+'%'});
+var links=document.querySelectorAll('.nav-link,.topnav a');
+if('IntersectionObserver' in window)document.querySelectorAll('.section[id]').forEach(function(s){
+  new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;
+    links.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id)});
+  })},{rootMargin:'-20% 0px -70% 0px'}).observe(s);
+});
+
+/* Audio */
+var S=window.speechSynthesis,st={acc:'en-GB',rate:.85},cur=null;
+function voice(){if(!S)return null;var v=S.getVoices().filter(function(x){return x.lang.replace('_','-').toLowerCase()===st.acc.toLowerCase()});
+  return v.find(function(x){return /google|natural|premium|enhanced/i.test(x.name)})||v[0]||null}
+function say(el){
+  if(cur)cur.classList.remove('playing');
+  if(!S){el.title='Trình duyệt này không hỗ trợ đọc audio';return}
+  S.cancel();cur=el;el.classList.add('playing');
+  var t=el.textContent.replace(/\s+/g,' ').replace(/\s*\/\s*/g,'. ').replace(/→/g,'. ')
+    .replace(/Hang Bai/g,'Hang Bye').replace(/Trang Tien/g,'Chang Tee-en').replace(/Kim Ma/g,'Kim Mah').replace(/Ba Dinh/g,'Ba Din').trim();
+  var u=new SpeechSynthesisUtterance(t);u.lang=st.acc;u.rate=st.rate;var v=voice();if(v)u.voice=v;
+  u.onend=u.onerror=function(){el.classList.remove('playing')};S.speak(u);
+}
+function prep(root){root.querySelectorAll('.say').forEach(function(e){e.tabIndex=0;e.setAttribute('role','button')})}
+prep(document);
+document.addEventListener('click',function(e){var el=e.target.closest('.say');if(el)say(el)});
+document.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.classList&&e.target.classList.contains('say')){e.preventDefault();say(e.target)}});
+document.querySelectorAll('.audio-bar button').forEach(function(b){b.addEventListener('click',function(){
+  b.parentElement.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');
+  if(b.dataset.acc)st.acc=b.dataset.acc;if(b.dataset.rate)st.rate=+b.dataset.rate;
+})});
+
+/* ===== Bản đồ luyện tập =====
+   Lưới phố: 5 phố dọc (x = 0..4), 4 phố ngang (y = 0..3). Bạn đứng ở (2,0), mặt hướng lên (bắc).
+   Địa điểm kiểu 'H' nằm ở góc ngã tư (c, r) trên phố ngang r, phía N hoặc S.
+   Địa điểm kiểu 'V' nằm trên phố dọc giữa (x = 2) tại hàng r, phía W hoặc E. */
+var NS='http://www.w3.org/2000/svg';
+function X(c){return 70+c*95}function Y(r){return 380-r*110}
+var TURN=['','at the traffic lights','at the park','at the end of the road'];
+var TURN_VN=['','ở chỗ đèn giao thông','ở chỗ công viên','ở cuối đường'];
+var PL=[
+ {n:'bank',vn:'ngân hàng',i:'🏦',t:'H',c:4,r:1,s:'N',near:'next to the flower shop'},
+ {n:'pharmacy',vn:'hiệu thuốc',i:'💊',t:'H',c:0,r:1,s:'S',near:'opposite a school'},
+ {n:'post office',vn:'bưu điện',i:'📮',t:'V',r:2,s:'E',near:'opposite the park'},
+ {n:'supermarket',vn:'siêu thị',i:'🛒',t:'H',c:1,r:2,s:'N',near:'across from the park'},
+ {n:'café',vn:'quán cà phê',i:'☕',t:'H',c:3,r:2,s:'S',near:'next to a bookstore'},
+ {n:'museum',vn:'bảo tàng',i:'🏛️',t:'H',c:0,r:3,s:'N',near:'at the end of the street'},
+ {n:'hospital',vn:'bệnh viện',i:'🏥',t:'H',c:4,r:3,s:'S',near:'on the corner'},
+ {n:'train station',vn:'ga tàu',i:'🚉',t:'V',r:3,s:'W',near:'at the end of the road'}
+];
+function placeXY(p){
+  if(p.t==='H'){var dx=p.c<2?-1:1;return[X(p.c)+(p.c===0||p.c===4?-dx*30:dx*30)-0,Y(p.r)+(p.s==='N'?-34:34)]}
+  return[X(2)+(p.s==='E'?42:-42),Y(p.r)+(p.r===3?28:50)];
+}
+var svg=document.getElementById('map');
+function el(tag,attrs,txt){var e=document.createElementNS(NS,tag);for(var k in attrs)e.setAttribute(k,attrs[k]);if(txt!=null)e.textContent=txt;return e}
+function drawBase(){
+  svg.innerHTML='';
+  svg.append(el('rect',{x:0,y:0,width:520,height:430,rx:14,fill:'var(--s1)'}));
+  for(var c=0;c<4;c++)for(var r=0;r<3;r++)svg.append(el('rect',{x:X(c)+10,y:Y(r+1)+10,width:75,height:90,rx:6,fill:'var(--s2)'}));
+  for(var x=0;x<5;x++)svg.append(el('line',{x1:X(x),y1:Y(0)+30,x2:X(x),y2:Y(3),stroke:'var(--border2)','stroke-width':9,'stroke-linecap':'round'}));
+  for(var y=0;y<4;y++)svg.append(el('line',{x1:X(0),y1:Y(y),x2:X(4),y2:Y(y),stroke:'var(--border2)','stroke-width':9,'stroke-linecap':'round'}));
+  svg.append(el('text',{x:X(2)+10,y:Y(1)+4,fill:'var(--muted)','font-size':16},'🚦'));
+  svg.append(el('rect',{x:X(1)+10,y:Y(2)+10,width:75,height:90,rx:6,fill:'var(--ins-dim)'}));
+  svg.append(el('text',{x:X(1)+47,y:Y(2)+60,'text-anchor':'middle',fill:'var(--ins)','font-size':12,'font-weight':700},'PARK'));
+  PL.forEach(function(p){var q=placeXY(p);
+    svg.append(el('text',{x:q[0],y:q[1],'text-anchor':'middle','font-size':20},p.i));
+    svg.append(el('text',{x:q[0],y:q[1]+15,'text-anchor':'middle',fill:'var(--muted)','font-size':10.5,'font-weight':600},p.n))});
+  svg.append(el('circle',{cx:X(2),cy:Y(0)+30,r:9,fill:'var(--acc)'}));
+  svg.append(el('text',{x:X(2)+16,y:Y(0)+35,fill:'var(--acc)','font-size':12,'font-weight':800},'YOU ↑'));
+  svg.append(el('text',{x:500,y:26,'text-anchor':'end',fill:'var(--faint)','font-size':12,'font-weight':700},'N ↑'));
+}
+function route(p){
+  var pts=[[X(2),Y(0)+30],[X(2),Y(p.r)]];
+  if(p.t==='H')pts.push([X(p.c),Y(p.r)]);
+  return pts;
+}
+function drawRoute(p){
+  drawBase();
+  var pts=route(p).map(function(a){return a.join(',')}).join(' ');
+  svg.append(el('polyline',{points:pts,fill:'none',stroke:'var(--oc)','stroke-width':5,'stroke-linecap':'round','stroke-linejoin':'round','stroke-dasharray':'2 10'}));
+  var q=placeXY(p);svg.append(el('circle',{cx:q[0],cy:q[1]-7,r:20,fill:'none',stroke:'var(--acc)','stroke-width':2.5}));
+}
+var NUMW=['zero','one','two','three','four'],ORDW=['','first','second','third'];
+function blocks(n){return(n===1?'one block':NUMW[n]+' blocks')}
+function steps(p){
+  var en=[],vn=[];
+  if(p.t==='V'){
+    if(p.r===3){en.push('Go straight to the end of the road.');vn.push('Đi thẳng đến cuối đường.')}
+    else{en.push('Go straight for '+blocks(p.r)+'.');vn.push('Đi thẳng '+p.r+' dãy nhà.')}
+    var side=p.s==='E'?'right':'left';
+    en.push('The '+p.n+' is on your '+side+', '+p.near+'.');vn.push(p.vn.charAt(0).toUpperCase()+p.vn.slice(1)+' ở bên '+(side==='right'?'phải':'trái')+'.');
+    return[en,vn,'Không cần rẽ: chỉ đi thẳng rồi nhìn sang <b>'+side+'</b>.'];
+  }
+  var dir=p.c<2?'left':'right',m=Math.abs(p.c-2);
+  var side2=(dir==='left')?(p.s==='N'?'right':'left'):(p.s==='N'?'left':'right');
+  if(p.r===1){en.push('Go straight to the traffic lights.');vn.push('Đi thẳng đến đèn giao thông.')}
+  else if(p.r===3){en.push('Go straight to the end of the road.');vn.push('Đi thẳng đến cuối đường.')}
+  else{en.push('Go straight for '+blocks(p.r)+', past the traffic lights.');vn.push('Đi thẳng '+p.r+' dãy nhà, qua đèn giao thông.')}
+  en.push('Turn '+dir+' '+TURN[p.r]+'.');vn.push('Rẽ '+(dir==='left'?'trái':'phải')+' '+TURN_VN[p.r]+'.');
+  en.push(m===1?'Walk for one block.':'Go along that street for '+blocks(m)+'.');vn.push('Đi tiếp '+m+' dãy nhà.');
+  en.push('The '+p.n+' is on your '+side2+', '+p.near+'.');vn.push(p.vn.charAt(0).toUpperCase()+p.vn.slice(1)+' ở bên '+(side2==='right'?'phải':'trái')+'.');
+  var note='Cách nói khác cho bước rẽ: <b>take the '+ORDW[p.r]+' '+dir+'</b> (rẽ '+(dir==='left'?'trái':'phải')+' ở ngã thứ '+p.r+'). ';
+  note+='Sau khi rẽ, bạn đang đi về hướng <b>'+(dir==='left'?'tây':'đông')+'</b>, nên địa điểm phía '+(p.s==='N'?'bắc':'nam')+' sẽ ở bên <b>'+side2+'</b> của bạn.';
+  return[en,vn,note];
+}
+var gd=document.getElementById('g-d'),gm=document.getElementById('g-m'),out=document.getElementById('gen-out'),rev=document.getElementById('rev-btn');
+PL.forEach(function(p,i){gd.add(new Option(p.n+' ('+p.vn+')',i))});
+gd.value=0;
+function show(force){
+  var p=PL[+gd.value],hide=gm.value==='1'&&!force,r=steps(p);
+  drawRoute(p);
+  out.innerHTML='';
+  var q=document.createElement('div');q.className='rl';var lb=document.createElement('span');lb.className='lbl';lb.textContent='BẠN HỎI';
+  var sq=document.createElement('span');sq.className='say';sq.textContent='Excuse me, do you know where the '+p.n+' is?';q.append(lb,sq);out.append(q);
+  if(hide){
+    var h=document.createElement('div');h.className='hint';h.textContent='Nhìn đường đi trên bản đồ và tự nói lời chỉ đường bằng tiếng Anh. Xong thì bấm “Hiện lời chỉ đường” để so sánh.';out.append(h);
+    rev.hidden=false;prep(out);return;
+  }
+  rev.hidden=true;
+  var a=document.createElement('div');a.className='lbl';a.style.marginTop='8px';a.textContent='NGƯỜI KIA CHỈ ĐƯỜNG';out.append(a);
+  var ol=document.createElement('ol');ol.className='steps';
+  r[0].forEach(function(s,i){var li=document.createElement('li');var sp=document.createElement('span');sp.className='say';sp.textContent=s;var sm=document.createElement('small');sm.textContent=r[1][i];li.append(sp,sm);ol.append(li)});
+  out.append(ol);
+  var conf=document.createElement('div');conf.className='rl';var lc=document.createElement('span');lc.className='lbl';lc.textContent='BẠN XÁC NHẬN';
+  var sc=document.createElement('span');sc.className='say';
+  sc.textContent=p.t==='V'?'So I just go straight, and it’s on my '+(p.s==='E'?'right':'left')+'?':'So I take the '+ORDW[p.r]+' '+(p.c<2?'left':'right')+', and it’s on my '+(r[0][3].indexOf('right')>-1?'right':'left')+'?';
+  conf.append(lc,sc);out.append(conf);
+  var w=document.createElement('span');w.className='why';w.innerHTML=r[2];out.append(w);
+  prep(out);
+}
+document.getElementById('gen-btn').addEventListener('click',function(){show(false)});
+gd.addEventListener('change',function(){show(false)});
+gm.addEventListener('change',function(){show(false)});
+rev.addEventListener('click',function(){show(true)});
+document.getElementById('rnd-btn').addEventListener('click',function(){gd.value=Math.floor(Math.random()*PL.length);show(false)});
+show(false);
+
+/* Bài tập */
+var inputs=document.querySelectorAll('#exlist input'),exo=document.getElementById('ex-out');
+function norm(s){return s.toLowerCase().replace(/[’‘`]/g,"'").replace(/[.!?]+$/,'').replace(/,/g,'').replace(/\s+/g,' ').trim()}
+function cap(s){return s.charAt(0).toUpperCase()+s.slice(1)}
+document.getElementById('ex-check').addEventListener('click',function(){
+  var ok=0;
+  inputs.forEach(function(i){
+    var good=i.dataset.a.split('|').some(function(a){return norm(a)===norm(i.value)});
+    i.classList.remove('ok','no');i.classList.add(good?'ok':'no');if(good)ok++;
+  });
+  exo.style.minHeight='';
+  exo.textContent=ok===inputs.length?'🎉 Chính xác '+ok+'/'+inputs.length+'. Bạn hỏi đường rất tự tin rồi!':'Đúng '+ok+'/'+inputs.length+'. Các ô viền đỏ cần xem lại; đọc lại phần ngữ pháp ở Bài 1 đến 5, hoặc bấm “Xem đáp án”.';
+});
+document.getElementById('ex-show').addEventListener('click',function(){
+  inputs.forEach(function(i){
+    var k=i.parentElement.querySelector('.key');
+    if(!k){k=document.createElement('span');k.className='key';i.parentElement.append(k)}
+    var a=i.dataset.a.split('|')[0].replace(/'/g,'’');k.textContent='Đáp án: '+(a.indexOf(' ')>-1?cap(a):a);
+  });
+});
+document.getElementById('ex-reset').addEventListener('click',function(){
+  inputs.forEach(function(i){i.value='';i.classList.remove('ok','no')});
+  document.querySelectorAll('#exlist .key').forEach(function(k){k.remove()});
+  exo.textContent='';exo.style.minHeight='0';
+});
+})();
+</script>
+
+<script src="nav.js" defer></script>
+</body></html>

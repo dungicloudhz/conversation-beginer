@@ -1,0 +1,515 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Tiếng Anh Movies</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: sidebar mục lục cố định + cột bài học, cùng theme tối của bộ "Hỏi đường & Hỏi giờ" (nhấn vàng – tím cho chủ đề phim ảnh) */
+:root{color-scheme:dark;
+--bg:#080810;--s1:#0e0e1c;--s2:#131326;--s3:#18182e;--border:#222240;--border2:#2c2c50;--text:#e6e6f2;--muted:#8a8ab8;--faint:#4a4a78;
+--acc:#ffd060;--acc-dim:rgba(255,208,96,.11);--oc:#38bdf8;--oc-dim:rgba(56,189,248,.13);--ins:#40d88e;--ins-dim:rgba(64,216,142,.12);
+--sk:#a07af4;--sk-dim:rgba(160,122,244,.12);--au:#ff6584;--au-dim:rgba(255,101,132,.12);--teal:#30d8c0;--code-bg:#05050e;
+--tip-bg:rgba(91,168,255,.10);--tip-bd:rgba(91,168,255,.25);--tip-fg:#8ab8f0;--warn-fg:#e0bc58;--ok-fg:#5ccf98;--line:rgba(255,255,255,.05);
+--font:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+--gl:max(64px,env(safe-area-inset-left,0px));--gr:max(64px,env(safe-area-inset-right,0px))}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 60px)}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.7;font-size:15px;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:600;background:var(--s1)}
+.sidebar{position:fixed;left:0;top:0;width:260px;height:100%;background:var(--s1);border-right:1px solid var(--border);overflow-y:auto;z-index:400;padding-top:env(safe-area-inset-top,0px);padding-left:env(safe-area-inset-left,0px)}
+.sb-logo{padding:20px 18px 16px;border-bottom:1px solid var(--border)}
+.sb-brand{display:flex;align-items:center;gap:11px;margin-bottom:12px}
+.logo-icon{width:44px;height:44px;border-radius:11px;background:linear-gradient(135deg,var(--acc),var(--sk));display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 0 26px rgba(255,208,96,.28)}
+.logo-text h2{font-size:15px;font-weight:800}.logo-text p{font-size:10.5px;color:var(--muted)}
+.prog-wrap{height:3px;background:var(--border);border-radius:2px;overflow:hidden}
+.prog-bar{height:100%;width:0;background:linear-gradient(90deg,var(--acc),var(--ins),var(--oc),var(--sk),var(--au))}
+.nav-label{padding:14px 18px 4px;font-size:9.5px;font-weight:700;letter-spacing:1.6px;color:var(--faint)}
+.nav-link{display:flex;align-items:center;gap:9px;padding:7px 18px;color:var(--muted);text-decoration:none;font-size:12.5px;font-weight:600;border-left:2px solid transparent}
+.nav-link:hover,.nav-link.active{color:var(--text);background:rgba(255,208,96,.07);border-left-color:var(--acc)}
+.main{margin-left:260px}
+.hero{padding-block:80px 60px;padding-left:var(--gl);padding-right:var(--gr);border-bottom:1px solid var(--border);background:radial-gradient(ellipse 65% 55% at 75% 22%,rgba(255,208,96,.09),transparent 60%),radial-gradient(ellipse 50% 55% at 10% 82%,rgba(160,122,244,.08),transparent 55%),var(--bg)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--acc-dim);border:1px solid rgba(255,208,96,.38);color:var(--acc);padding:5px 16px;border-radius:100px;font-size:11.5px;font-weight:700;margin-bottom:24px}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--acc);animation:p 2s infinite}
+@keyframes p{50%{opacity:.35;transform:scale(.7)}}
+@media(prefers-reduced-motion:reduce){.eyebrow i{animation:none}html{scroll-behavior:auto}}
+.hero h1{font-size:50px;font-weight:900;letter-spacing:-2.4px;line-height:1.06;margin-bottom:18px;text-wrap:balance}
+.grad{background:linear-gradient(135deg,var(--acc),var(--sk));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-desc{font-size:16px;color:var(--muted);max-width:620px;margin-bottom:28px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{padding:5px 14px;border-radius:7px;font-size:12px;font-weight:700}
+.c1{background:var(--oc-dim);color:var(--oc)}.c2{background:var(--ins-dim);color:var(--ins)}.c3{background:var(--acc-dim);color:var(--acc)}.c4{background:var(--sk-dim);color:var(--sk)}.c5{background:var(--au-dim);color:var(--au)}
+.content{padding-block:56px;padding-left:var(--gl);padding-right:var(--gr);max-width:calc(1020px + 64px)}
+.section{margin-bottom:68px}
+.sec-head{display:flex;gap:14px;align-items:flex-start;margin-bottom:28px;padding-bottom:18px;border-bottom:1px solid var(--border)}
+.sec-tag{font-family:var(--mono);font-size:10px;font-weight:600;padding:3px 10px;border-radius:5px;margin-top:6px;flex-shrink:0;letter-spacing:.5px}
+.t1{color:var(--oc);background:var(--oc-dim)}.t2{color:var(--ins);background:var(--ins-dim)}.t3{color:var(--acc);background:var(--acc-dim)}.t4{color:var(--sk);background:var(--sk-dim)}.t5{color:var(--au);background:var(--au-dim)}
+.sec-title{font-size:23px;font-weight:800;letter-spacing:-.6px;text-wrap:balance}.sec-sub{font-size:13px;color:var(--muted)}
+.sub-title{font-size:14.5px;font-weight:700;margin:26px 0 12px;display:flex;align-items:center;gap:10px}
+.sub-title::before{content:'';width:14px;height:3px;background:var(--acc);border-radius:2px}
+p.t{color:var(--muted);font-size:13.5px;margin-bottom:11px;max-width:68ch}p.t strong,li strong{color:var(--text)}
+.ex-box{background:var(--s1);border:1px solid var(--border2);border-radius:11px;overflow:hidden;margin:13px 0}
+.ex-head{display:flex;align-items:center;gap:8px;padding:9px 16px;background:var(--s2);border-bottom:1px solid var(--border);font-family:var(--mono);font-size:10px;font-weight:600;color:var(--muted);letter-spacing:.5px}
+.ex-tag{margin-left:auto;font-size:9px;font-weight:700;padding:2px 9px;border-radius:100px;font-family:var(--font)}
+.ex-body{padding:10px 20px}
+.ex-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:13.5px}
+.ex-row:last-child{border-bottom:none}
+.ex-en{color:var(--text);font-weight:600;min-width:280px}.ex-vn{color:var(--muted)}
+.info{display:flex;gap:12px;padding:14px 16px;border-radius:9px;margin:13px 0;font-size:13px;line-height:1.6}
+.i-tip{background:var(--tip-bg);border:1px solid var(--tip-bd);color:var(--tip-fg)}
+.i-warn{background:var(--acc-dim);border:1px solid rgba(255,208,96,.25);color:var(--warn-fg)}
+.i-ok{background:var(--ins-dim);border:1px solid rgba(64,216,142,.25);color:var(--ok-fg)}
+.tbl{width:100%;border-collapse:collapse;font-size:13px;margin:13px 0;display:block;overflow-x:auto}
+.tbl th{background:var(--s3);padding:10px 14px;text-align:left;font-size:10px;color:var(--muted);border-bottom:1px solid var(--border2);white-space:nowrap;letter-spacing:.5px}
+.tbl td{padding:10px 14px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:top}
+.tbl td:first-child{color:var(--text);font-weight:600}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}
+.card{background:var(--s1);border:1px solid var(--border);border-radius:11px;padding:16px;min-width:0}
+.card:hover{border-color:var(--acc)}
+.card-icon{font-size:24px}.card-title{font-size:13px;font-weight:700}.card-desc{font-size:12px;color:var(--muted)}
+.cmp{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);border-radius:11px;overflow:hidden;margin:13px 0}
+.bad{background:rgba(255,101,132,.07);padding:14px 16px;border-right:1px solid var(--border)}.good{background:rgba(64,216,142,.07);padding:14px 16px}
+.cmp b{display:block;font-size:10px;margin-bottom:6px;letter-spacing:.5px}.bad b{color:var(--au)}.good b{color:var(--ins)}
+.cmp div div{font-size:13.5px}
+.dlg{display:grid;gap:8px;margin:12px 0;background:var(--s1);border:1px solid var(--border2);border-radius:12px;padding:16px 18px}
+.dlg-t{font-size:10px;font-weight:800;color:var(--acc);margin-bottom:2px;letter-spacing:.6px}
+.turn{display:flex;gap:10px;align-items:baseline}
+.turn>div{min-width:0}
+.who{flex-shrink:0;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+.wa{background:var(--oc-dim);color:var(--oc)}.wb{background:var(--ins-dim);color:var(--ins)}
+.turn .say{font-weight:600}.turn small{display:block;color:var(--muted);font-size:12px;font-weight:400}
+.gen{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:12px 0}
+.gen label{font-size:11.5px;color:var(--muted);font-weight:600;display:block;min-width:0}
+.gen select{width:100%;margin-top:4px;background:var(--code-bg);border:1px solid var(--border2);border-radius:8px;padding:9px 12px;color:var(--text);font:inherit;font-size:13px}
+select:focus-visible,button:focus-visible,.say:focus-visible,.exi input:focus-visible,.chk input:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.btns{display:flex;flex-wrap:wrap;gap:6px}
+.btn{background:var(--acc-dim);color:var(--acc);border:1px solid var(--acc);border-radius:8px;padding:8px 16px;font:inherit;font-weight:700;font-size:13px;cursor:pointer}
+.btn.alt{background:var(--ins-dim);color:var(--ins);border-color:var(--ins)}
+.out{margin-top:14px;min-height:60px;background:var(--s2);border:1px dashed var(--border2);border-radius:10px;padding:14px 16px;font-size:14px;line-height:1.9}
+.big{font-size:21px;font-weight:800;color:var(--acc);letter-spacing:-.3px;line-height:1.4;margin-bottom:4px}
+.out .why{display:block;color:var(--muted);font-size:12.5px}
+.out .why b{color:var(--teal);font-family:var(--mono);font-weight:600}
+.timeline{display:grid;gap:0;margin:14px 0;border-left:2px solid var(--border2);padding-left:18px}
+.tl{position:relative;padding:8px 0 12px}
+.tl::before{content:'';position:absolute;left:-24px;top:16px;width:10px;height:10px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 3px var(--bg)}
+.tl time{font-family:var(--mono);font-size:12px;color:var(--acc);font-variant-numeric:tabular-nums;font-weight:600}
+.tl .say{font-weight:600;font-size:13.5px}
+.tl small{display:block;color:var(--muted);font-size:12px}
+.freq{display:grid;gap:7px;margin:14px 0}
+.fq{display:grid;grid-template-columns:110px 1fr 54px;gap:12px;align-items:center;font-size:13px}
+.fq .say{font-weight:700}
+.fq .track{height:8px;background:var(--s3);border-radius:4px;overflow:hidden}
+.fq .fill{height:100%;background:linear-gradient(90deg,var(--ins),var(--acc))}
+.fq span:last-child{font-family:var(--mono);font-size:11.5px;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+.plan{display:grid;gap:8px;margin:12px 0}
+.day{display:flex;gap:14px;align-items:baseline;background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:12px 16px;font-size:13px;color:var(--muted)}
+.day b{color:var(--acc);font-family:var(--mono);font-size:12px;flex-shrink:0;width:52px}.day strong{color:var(--text)}
+.chk{list-style:none;margin:10px 0}.chk li{padding:6px 0;font-size:13.5px;color:var(--muted);border-bottom:1px solid rgba(255,255,255,.04)}
+.chk input{accent-color:var(--ins);margin-right:10px;width:15px;height:15px;vertical-align:-2px}
+.gr{border:1px solid rgba(160,122,244,.38);background:linear-gradient(180deg,var(--sk-dim),transparent 110px),var(--s1);border-radius:12px;margin:28px 0;overflow:hidden}
+.gr-head{padding:10px 18px;font-size:12px;font-weight:800;color:var(--sk);border-bottom:1px solid var(--border);display:flex;gap:10px;flex-wrap:wrap;align-items:baseline;letter-spacing:.4px}
+.gr-head em{font-style:normal;color:var(--muted);font-weight:600;letter-spacing:0}
+.gr-body{padding:14px 18px;font-size:13.5px;color:var(--muted)}
+.gr-body p{margin-bottom:10px}.gr-body b{color:var(--text)}.gr-body ul{padding-left:20px;margin-bottom:8px}.gr-body li{margin-bottom:4px}
+.gr-body .tbl{margin:8px 0 12px}
+.fm{display:inline-block;font-family:var(--mono);font-size:12px;background:var(--code-bg);color:var(--teal);padding:3px 9px;border-radius:6px;margin:2px 0}
+.say{cursor:pointer;border-bottom:1px dotted var(--oc)}
+.say:hover{color:var(--acc);background:var(--acc-dim);border-radius:4px}
+.say::after{content:"🔊";font-size:.68em;margin-left:3px;opacity:.5}
+.say.playing{color:var(--ins);background:var(--ins-dim);border-radius:4px}.say.playing::after{opacity:1}
+.exi{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:13.5px;color:var(--text)}
+.exi input{width:220px;max-width:100%;background:var(--code-bg);border:1px solid var(--border2);border-radius:6px;padding:4px 8px;color:var(--text);font:inherit;font-size:13px;text-align:center}
+.exi input.ok{border-color:var(--ins);color:var(--ins)}.exi input.no{border-color:var(--au);color:var(--au)}
+.exi small{color:var(--muted);font-size:11.5px}
+.exi .key{color:var(--ins);font-size:12px;width:100%}
+.footer{border-top:1px solid var(--border);padding-block:28px 90px;padding-left:var(--gl);padding-right:var(--gr);font-size:12px;color:var(--muted)}
+.audio-bar{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:500;display:flex;gap:10px;align-items:center;background:var(--s2);border:1px solid var(--border2);border-radius:12px;padding:8px 12px;box-shadow:0 8px 28px rgba(0,0,0,.5);font-size:12px;color:var(--muted)}
+.audio-bar b{color:var(--acc)}.ab-g{display:flex;gap:4px}
+.audio-bar button{background:var(--s3);color:var(--muted);border:1px solid var(--border);border-radius:7px;padding:4px 10px;font:inherit;font-weight:700;cursor:pointer}
+.audio-bar button.on{background:var(--acc-dim);color:var(--acc);border-color:var(--acc)}
+.topnav{display:none}
+@media(max-width:900px){
+:root{--gl:max(18px,env(safe-area-inset-left,0px));--gr:max(18px,env(safe-area-inset-right,0px))}
+.sidebar{display:none}.main{margin-left:0}.hero h1{font-size:32px;letter-spacing:-1.4px}.hero{padding-block:48px 40px}
+.grid-3,.cmp{grid-template-columns:1fr}.gen{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}.bad{border-right:none;border-bottom:1px solid var(--border)}
+.topnav{display:flex;overflow-x:auto;position:sticky;top:env(safe-area-inset-top,0px);z-index:500;background:var(--s1);border-bottom:2px solid var(--border2);scrollbar-width:none;padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+.topnav a{flex-shrink:0;padding:10px 14px;color:var(--muted);text-decoration:none;font-size:12px;font-weight:700;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-2px}
+.topnav a.active{color:var(--acc);border-bottom-color:var(--acc);background:var(--acc-dim)}
+.ex-en{min-width:0}
+.fq{grid-template-columns:90px 1fr 46px}
+.audio-bar{left:calc(8px + env(safe-area-inset-left,0px));right:calc(8px + env(safe-area-inset-right,0px));justify-content:center;flex-wrap:wrap}
+}
+@media(max-width:480px){.gen{grid-template-columns:1fr}}
+.lbl{font-family:var(--mono);font-size:10px;font-weight:600;color:var(--faint);letter-spacing:1px}
+.para{font-size:16px;font-weight:600;line-height:1.9;margin:4px 0 6px;max-width:68ch}
+.stars{font-size:26px;color:var(--acc);letter-spacing:4px;margin-bottom:4px}
+</style>
+
+<aside class="sidebar">
+  <div class="sb-logo">
+    <div class="sb-brand"><div class="logo-icon">🎬</div><div class="logo-text"><h2>Movies</h2><p>Tiếng Anh cho người mới</p></div></div>
+    <div class="prog-wrap"><div class="prog-bar" id="pbar"></div></div>
+  </div>
+  <div class="nav-label">BÀI HỌC</div>
+  <a class="nav-link" href="#s1">🎞️ Thể loại phim</a>
+  <a class="nav-link" href="#s2">🍿 Thói quen xem phim</a>
+  <a class="nav-link" href="#s3">🎟️ Đi rạp</a>
+  <a class="nav-link" href="#s4">🗣️ Kể &amp; nhận xét phim</a>
+  <a class="nav-link" href="#s5">🤔 Rủ xem &amp; chọn phim</a>
+  <div class="nav-label">THỰC HÀNH</div>
+  <a class="nav-link" href="#s6">💬 Hội thoại mẫu</a>
+  <a class="nav-link" href="#s7">🛠️ Máy viết review &amp; bài tập</a>
+  <a class="nav-link" href="#s8">🚀 Từ vựng nâng cao</a>
+</aside>
+
+<div class="main">
+<nav class="topnav">
+  <a href="#s1">1 Thể loại</a><a href="#s2">2 Thói quen</a><a href="#s3">3 Đi rạp</a><a href="#s4">4 Nhận xét</a><a href="#s5">5 Chọn phim</a><a href="#s6">6 Hội thoại</a><a href="#s7">7 Luyện tập</a><a href="#s8">8 Nâng cao</a>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow"><i></i>Dành cho người mới bắt đầu</div>
+  <h1>Nói về phim ảnh<br><span class="grad">bằng tiếng Anh</span></h1>
+  <p class="hero-desc">Học tên các thể loại phim, cách nói bạn hay xem phim ở đâu, mua vé và chọn ghế ở rạp, kể nội dung phim mà không tiết lộ cái kết, nhận xét phim hay hay dở, và rủ bạn bè đi xem. Bấm vào câu có biểu tượng loa để nghe, rồi viết review phim với máy ở phần thực hành.</p>
+  <div class="chips"><span class="chip c3">Thể loại</span><span class="chip c1">Đi rạp</span><span class="chip c4">Kể nội dung</span><span class="chip c2">Review</span><span class="chip c5">Từ vựng nâng cao</span></div>
+</header>
+
+<div class="content">
+
+<section class="section" id="s1">
+  <div class="sec-head"><span class="sec-tag t3">BÀI 1</span><div><div class="sec-title">Các thể loại phim</div><div class="sec-sub">Gọi đúng tên loại phim bạn thích</div></div></div>
+  <div class="grid-3">
+    <div class="card"><div class="card-icon">💥</div><div class="card-title say">action movie</div><div class="card-desc">phim hành động</div></div>
+    <div class="card"><div class="card-icon">😂</div><div class="card-title say">comedy</div><div class="card-desc">phim hài</div></div>
+    <div class="card"><div class="card-icon">👻</div><div class="card-title say">horror movie</div><div class="card-desc">phim kinh dị</div></div>
+    <div class="card"><div class="card-icon">💕</div><div class="card-title say">romantic comedy</div><div class="card-desc">phim hài lãng mạn</div></div>
+    <div class="card"><div class="card-icon">🚀</div><div class="card-title say">science fiction (sci-fi)</div><div class="card-desc">phim khoa học viễn tưởng</div></div>
+    <div class="card"><div class="card-icon">🧸</div><div class="card-title say">animated movie</div><div class="card-desc">phim hoạt hình</div></div>
+    <div class="card"><div class="card-icon">🎭</div><div class="card-title say">drama</div><div class="card-desc">phim chính kịch, tâm lý</div></div>
+    <div class="card"><div class="card-icon">🔪</div><div class="card-title say">thriller</div><div class="card-desc">phim giật gân, ly kỳ</div></div>
+    <div class="card"><div class="card-icon">🌍</div><div class="card-title say">documentary</div><div class="card-desc">phim tài liệu</div></div>
+  </div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>movie hay film? và a / an + thể loại</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Từ</th><th>Dùng ở</th><th>Ví dụ</th></tr></thead><tbody>
+<tr><td><span class="fm">movie</span> / <span class="fm">go to the movies</span></td><td>Mỹ</td><td><span class="say">Let’s go to the movies tonight.</span></td></tr>
+<tr><td><span class="fm">film</span> / <span class="fm">go to the cinema</span></td><td>Anh</td><td><span class="say">Let’s go to the cinema tonight.</span></td></tr>
+<tr><td><span class="fm">a / an + thể loại + movie</span></td><td>cả hai</td><td><span class="say">It’s an action movie.</span> <span class="say">It’s a comedy.</span></td></tr></tbody></table>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>I like watch film action.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">I like watching action movies.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s2">
+  <div class="sec-head"><span class="sec-tag t1">BÀI 2</span><div><div class="sec-title">Thói quen xem phim</div><div class="sec-sub">Xem gì, xem ở đâu, xem bao lâu một lần</div></div></div>
+  <div class="ex-box"><div class="ex-head">HỎI VÀ ĐÁP<span class="ex-tag t1">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">What kind of movies do you like?</span><span class="ex-vn">Bạn thích thể loại phim nào?</span></div>
+    <div class="ex-row"><span class="ex-en say">How often do you go to the cinema?</span><span class="ex-vn">Bạn đi rạp bao lâu một lần?</span></div>
+    <div class="ex-row"><span class="ex-en say">I usually watch movies at home on my laptop.</span><span class="ex-vn">Tôi thường xem phim ở nhà trên laptop</span></div>
+    <div class="ex-row"><span class="ex-en say">I prefer comedies to horror movies.</span><span class="ex-vn">Tôi thích phim hài hơn phim kinh dị</span></div>
+    <div class="ex-row"><span class="ex-en say">I watch movies with English subtitles to practice English.</span><span class="ex-vn">Tôi xem phim có phụ đề tiếng Anh để luyện tiếng Anh</span></div>
+    <div class="ex-row"><span class="ex-en say">Who’s your favorite actor?</span><span class="ex-vn">Diễn viên bạn thích nhất là ai?</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>prefer A to B / would rather</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Cấu trúc</th><th>Ví dụ</th></tr></thead><tbody>
+<tr><td><span class="fm">prefer + N + to + N</span></td><td><span class="say">I prefer dramas to action movies.</span></td></tr>
+<tr><td><span class="fm">prefer + V-ing + to + V-ing</span></td><td><span class="say">I prefer watching at home to going out.</span></td></tr>
+<tr><td><span class="fm">I’d rather + V + than + V</span> (lúc này)</td><td><span class="say">I’d rather watch a comedy than a horror movie tonight.</span></td></tr></tbody></table>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>I prefer comedy than horror.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">I prefer comedies to horror movies.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s3">
+  <div class="sec-head"><span class="sec-tag t4">BÀI 3</span><div><div class="sec-title">Đi xem phim ở rạp</div><div class="sec-sub">Hỏi suất chiếu, mua vé, chọn ghế, mua bắp nước</div></div></div>
+  <div class="ex-box"><div class="ex-head">Ở QUẦY VÉ<span class="ex-tag t4">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">What time does the next showing start?</span><span class="ex-vn">Suất chiếu tiếp theo bắt đầu lúc mấy giờ?</span></div>
+    <div class="ex-row"><span class="ex-en say">Two tickets for the seven thirty showing, please.</span><span class="ex-vn">Cho hai vé suất 7 giờ 30</span></div>
+    <div class="ex-row"><span class="ex-en say">Can we sit in the middle, near the back?</span><span class="ex-vn">Cho chúng tôi ngồi giữa, gần phía sau</span></div>
+    <div class="ex-row"><span class="ex-en say">Is it in English with Vietnamese subtitles?</span><span class="ex-vn">Phim nói tiếng Anh, phụ đề tiếng Việt phải không?</span></div>
+    <div class="ex-row"><span class="ex-en say">How long is the movie?</span><span class="ex-vn">Phim dài bao lâu?</span></div>
+    <div class="ex-row"><span class="ex-en say">A large popcorn and two Cokes, please.</span><span class="ex-vn">Cho một bắp rang bơ lớn và hai lon Coca</span></div>
+  </div></div>
+  <table class="tbl"><thead><tr><th>Từ</th><th>Nghĩa</th></tr></thead><tbody>
+  <tr><td class="say">showtime / showing</td><td>suất chiếu</td></tr><tr><td class="say">screen / theater</td><td>phòng chiếu</td></tr>
+  <tr><td class="say">row / seat</td><td>hàng ghế / ghế</td></tr><tr><td class="say">subtitles / dubbed</td><td>phụ đề / lồng tiếng</td></tr>
+  <tr><td class="say">sold out</td><td>hết vé</td></tr></tbody></table>
+  <div class="info i-tip"><span>💡</span><span><strong>Mẹo:</strong> phim chiếu rạp ở Việt Nam thường có nhãn phân loại tuổi. Khi rủ bạn nước ngoài, hãy hỏi <strong>“Is it in English, or is it dubbed?”</strong> để chắc họ xem hiểu.</span></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Hiện tại đơn cho lịch chiếu</em></div><div class="gr-body">
+<p>Suất chiếu theo lịch cố định nên dùng <b>hiện tại đơn</b>, dù là chuyện tối nay: <span class="fm">What time does it start / finish?</span></p>
+<ul><li><span class="say">The movie starts at eight and finishes at ten.</span></li><li><span class="say">What time does the last showing start?</span></li></ul>
+<div class="cmp"><div class="bad"><b>❌ NGHE LẠ</b><div>What time will the movie start according to schedule?</div></div><div class="good"><b>✔ TỰ NHIÊN</b><div class="say">What time does the movie start?</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s4">
+  <div class="sec-head"><span class="sec-tag t2">BÀI 4</span><div><div class="sec-title">Kể và nhận xét phim</div><div class="sec-sub">Nói phim về cái gì, lấy bối cảnh ở đâu, hay dở thế nào</div></div></div>
+  <div class="ex-box"><div class="ex-head">KỂ NỘI DUNG<span class="ex-tag t2">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">It’s about a girl who travels back in time.</span><span class="ex-vn">Phim kể về một cô gái du hành ngược thời gian</span></div>
+    <div class="ex-row"><span class="ex-en say">It’s set in Hanoi in the nineteen nineties.</span><span class="ex-vn">Phim lấy bối cảnh Hà Nội những năm 1990</span></div>
+    <div class="ex-row"><span class="ex-en say">The main character is a young doctor.</span><span class="ex-vn">Nhân vật chính là một bác sĩ trẻ</span></div>
+    <div class="ex-row"><span class="ex-en say">It’s based on a true story.</span><span class="ex-vn">Phim dựa trên câu chuyện có thật</span></div>
+    <div class="ex-row"><span class="ex-en say">I won’t tell you the ending. No spoilers!</span><span class="ex-vn">Mình không kể cái kết đâu. Không tiết lộ!</span></div>
+  </div></div>
+  <table class="tbl"><thead><tr><th>Nhận xét</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">gripping</td><td>cuốn hút, hồi hộp</td><td><span class="say">The story was gripping from start to finish.</span></td></tr>
+  <tr><td class="say">hilarious</td><td>cực kỳ buồn cười</td><td><span class="say">The comedy was hilarious.</span></td></tr>
+  <tr><td class="say">touching</td><td>cảm động</td><td><span class="say">The ending was really touching.</span></td></tr>
+  <tr><td class="say">terrifying</td><td>đáng sợ</td><td><span class="say">That horror movie was terrifying.</span></td></tr>
+  <tr><td class="say">slow / boring</td><td>chậm / chán</td><td><span class="say">The first half was a bit slow.</span></td></tr>
+  <tr><td class="say">great acting</td><td>diễn xuất tốt</td><td><span class="say">The acting was brilliant.</span></td></tr></tbody></table>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Tính từ -ing (bộ phim) và -ed (người xem)</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>-ing: tả bộ phim</th><th>-ed: tả cảm xúc của bạn</th></tr></thead><tbody>
+<tr><td><span class="say">The movie was boring.</span></td><td><span class="say">I was bored.</span></td></tr>
+<tr><td><span class="say">The ending was surprising.</span></td><td><span class="say">I was surprised.</span></td></tr>
+<tr><td><span class="say">The story was interesting.</span></td><td><span class="say">I was interested.</span></td></tr>
+<tr><td><span class="say">It was frightening.</span></td><td><span class="say">I was frightened.</span></td></tr></tbody></table>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>I was very boring during the movie.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">I was very bored during the movie. It was boring.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s5">
+  <div class="sec-head"><span class="sec-tag t5">BÀI 5</span><div><div class="sec-title">Rủ xem và chọn phim</div><div class="sec-sub">Hỏi bạn đã xem chưa, có đáng xem không, chọn phim cùng nhau</div></div></div>
+  <div class="ex-box"><div class="ex-head">RỦ VÀ CHỌN PHIM<span class="ex-tag t5">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Have you seen the new Marvel movie?</span><span class="ex-vn">Bạn xem phim Marvel mới chưa?</span></div>
+    <div class="ex-row"><span class="ex-en say">Yes, I saw it last weekend. It was great!</span><span class="ex-vn">Rồi, mình xem cuối tuần trước. Hay lắm!</span></div>
+    <div class="ex-row"><span class="ex-en say">Is it worth watching?</span><span class="ex-vn">Có đáng xem không?</span></div>
+    <div class="ex-row"><span class="ex-en say">What’s on at the cinema this week?</span><span class="ex-vn">Tuần này rạp chiếu phim gì?</span></div>
+    <div class="ex-row"><span class="ex-en say">Let’s watch something light tonight.</span><span class="ex-vn">Tối nay xem cái gì nhẹ nhàng thôi</span></div>
+    <div class="ex-row"><span class="ex-en say">Can you recommend a good movie?</span><span class="ex-vn">Bạn giới thiệu phim nào hay được không?</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Have you seen…? (hiện tại hoàn thành) và I saw… (quá khứ đơn)</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Cấu trúc</th><th>Dùng khi</th><th>Ví dụ</th></tr></thead><tbody>
+<tr><td><span class="fm">Have you seen + phim?</span></td><td>hỏi đã từng xem chưa (không nói lúc nào)</td><td><span class="say">Have you seen it yet?</span></td></tr>
+<tr><td><span class="fm">I saw it + thời gian cụ thể</span></td><td>có mốc thời gian</td><td><span class="say">I saw it yesterday.</span></td></tr>
+<tr><td><span class="fm">I haven’t seen it yet.</span></td><td>chưa xem</td><td><span class="say">I haven’t seen it yet.</span></td></tr></tbody></table>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>Did you see this movie ever? I have seen it yesterday.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">Have you ever seen this movie? I saw it yesterday.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s6">
+  <div class="sec-head"><span class="sec-tag t3">BÀI 6</span><div><div class="sec-title">Hội thoại mẫu</div><div class="sec-sub">Bấm từng câu để nghe, rồi đóng vai cả hai người</div></div></div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 1: CHỌN PHIM CÙNG BẠN</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Do you want to watch a movie tonight?</span><small>Tối nay xem phim không?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Sure! What’s on?</span><small>Có chứ! Đang chiếu gì?</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">There’s a new horror movie and a romantic comedy.</span><small>Có một phim kinh dị mới và một phim hài lãng mạn.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">I’d rather watch the comedy. Horror movies are too scary for me.</span><small>Mình muốn xem phim hài hơn. Phim kinh dị đáng sợ quá với mình.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Fine with me. Let’s go for the comedy.</span><small>Mình sao cũng được. Xem phim hài nhé.</small></div></div>
+  </div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 2: MUA VÉ Ở RẠP</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Hi, two tickets for the eight o’clock showing, please.</span><small>Chào bạn, cho hai vé suất 8 giờ.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Sure. Where would you like to sit?</span><small>Vâng. Anh chị muốn ngồi ở đâu?</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Somewhere in the middle, please. Not too close to the screen.</span><small>Chỗ nào ở giữa nhé. Đừng gần màn hình quá.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Row F, seats eight and nine. Would you like any popcorn?</span><small>Hàng F, ghế 8 và 9. Anh chị có mua bắp không?</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Yes, a large sweet popcorn to share, please.</span><small>Có, một bắp ngọt lớn để ăn chung.</small></div></div>
+  </div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 3: SAU KHI XEM PHIM</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">So, what did you think?</span><small>Thế bạn thấy sao?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">I loved it! The ending was so touching. I almost cried.</span><small>Mình thích lắm! Cái kết cảm động quá. Mình suýt khóc.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Me too. But I thought the first half was a bit slow.</span><small>Mình cũng vậy. Nhưng mình thấy nửa đầu hơi chậm.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Maybe, but the acting was brilliant. I’d give it four out of five.</span><small>Có thể, nhưng diễn xuất xuất sắc. Mình chấm 4 trên 5.</small></div></div>
+  </div>
+  <div class="info i-ok"><span>✅</span><span><strong>Cách luyện:</strong> nghe một lượt, nói theo từng câu, rồi che phần tiếng Việt và tự đóng vai A hoặc B. Lần sau thay bằng một bộ phim bạn vừa xem.</span></div>
+</section>
+
+<section class="section" id="s7">
+  <div class="sec-head"><span class="sec-tag t2">BÀI 7</span><div><div class="sec-title">Máy viết review &amp; bài tập</div><div class="sec-sub">Chọn thể loại, cốt truyện, cảm nhận và số sao, xem đoạn review hoàn chỉnh</div></div></div>
+  <div class="gen">
+    <label for="g-g">Thể loại<select id="g-g"></select></label>
+    <label for="g-p">Phim kể về<select id="g-p"></select></label>
+    <label for="g-set">Bối cảnh<select id="g-set"></select></label>
+    <label for="g-f">Cảm nhận chính<select id="g-f"></select></label>
+    <label for="g-r">Chấm điểm<select id="g-r"></select></label>
+  </div>
+  <div class="btns"><button class="btn" id="gen-btn">Viết review</button><button class="btn alt" id="rnd-btn">Chọn ngẫu nhiên</button></div>
+  <div class="out" id="gen-out" aria-live="polite"></div>
+
+  <div class="sub-title">Bài tập: điền câu trả lời</div>
+  <p class="t">Câu 1–4: điền một từ vào chỗ trống. Câu 5–8: dịch sang tiếng Anh, gõ cả câu. Không phân biệt hoa thường.</p>
+  <div id="exlist">
+    <div class="exi">1. The movie was boring. I was ___. →<input id="ex1" data-a="bored" aria-label="Câu 1"><small>-ed hay -ing?</small></div>
+    <div class="exi">2. I prefer comedies ___ horror movies. →<input id="ex2" data-a="to" aria-label="Câu 2"><small>prefer A ? B</small></div>
+    <div class="exi">3. Have you ___ the new movie? (see) →<input id="ex3" data-a="seen" aria-label="Câu 3"><small>V3</small></div>
+    <div class="exi">4. It’s ___ on a true story. →<input id="ex4" data-a="based" aria-label="Câu 4"><small>dựa trên</small></div>
+    <div class="exi">5. Phim kể về cái gì? →<input id="ex5" data-a="what's it about?|what is it about?|what's the movie about?|what is the movie about?" aria-label="Câu 5"><small>about</small></div>
+    <div class="exi">6. Phim bắt đầu lúc mấy giờ? →<input id="ex6" data-a="what time does the movie start?|what time does it start?|what time does the film start?" aria-label="Câu 6"><small>does … start</small></div>
+    <div class="exi">7. Có đáng xem không? →<input id="ex7" data-a="is it worth watching?|is it worth seeing?" aria-label="Câu 7"><small>worth + V-ing</small></div>
+    <div class="exi">8. Không tiết lộ nội dung nhé! →<input id="ex8" data-a="no spoilers|no spoilers please" aria-label="Câu 8"><small>spoiler</small></div>
+  </div>
+  <div class="btns" style="margin-top:12px"><button class="btn" id="ex-check">Kiểm tra đáp án</button><button class="btn alt" id="ex-show">Xem đáp án</button><button class="btn alt" id="ex-reset">Làm lại</button></div>
+  <div class="out" id="ex-out" style="min-height:0" aria-live="polite"></div>
+
+  <div class="sub-title">Lộ trình luyện 7 ngày</div>
+  <div class="plan">
+    <div class="day"><b>Ngày 1</b><span><strong>Thể loại:</strong> học tên 9 thể loại, nói thể loại bạn thích và không thích</span></div>
+    <div class="day"><b>Ngày 2</b><span><strong>Thói quen:</strong> luyện prefer A to B và I’d rather</span></div>
+    <div class="day"><b>Ngày 3</b><span><strong>Đi rạp:</strong> đóng vai mua vé, chọn ghế, mua bắp nước</span></div>
+    <div class="day"><b>Ngày 4</b><span><strong>Kể phim:</strong> kể một phim bạn thích bằng It’s about / It’s set in, không tiết lộ cái kết</span></div>
+    <div class="day"><b>Ngày 5</b><span><strong>-ed / -ing:</strong> nói 6 cặp câu tả phim và cảm xúc của bạn</span></div>
+    <div class="day"><b>Ngày 6</b><span><strong>Máy review:</strong> viết 3 review bằng máy, đọc to và đổi số sao</span></div>
+    <div class="day"><b>Ngày 7</b><span><strong>Ôn tổng hợp:</strong> xem một bộ phim có phụ đề tiếng Anh, rồi thu âm 1 phút review</span></div>
+  </div>
+</section>
+
+<section class="section" id="s8">
+  <div class="sec-head"><span class="sec-tag t5">NÂNG CAO</span><div><div class="sec-title">Từ vựng mới để hội thoại tự nhiên hơn</div><div class="sec-sub">Thêm vài từ này, bạn sẽ bàn phim như một người mê điện ảnh</div></div></div>
+  <div class="sub-title">Thế giới điện ảnh</div>
+  <table class="tbl"><thead><tr><th>Từ / cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">director</td><td>đạo diễn</td><td><span class="say">The director is famous for sci-fi movies.</span></td></tr>
+  <tr><td class="say">cast</td><td>dàn diễn viên</td><td><span class="say">The cast was amazing.</span></td></tr>
+  <tr><td class="say">trailer</td><td>đoạn giới thiệu phim</td><td><span class="say">Have you watched the trailer?</span></td></tr>
+  <tr><td class="say">sequel / remake</td><td>phần tiếp theo / bản làm lại</td><td><span class="say">The sequel was better than the first one.</span></td></tr>
+  <tr><td class="say">blockbuster</td><td>phim bom tấn</td><td><span class="say">It’s the biggest blockbuster of the summer.</span></td></tr>
+  <tr><td class="say">box office</td><td>doanh thu phòng vé</td><td><span class="say">It was a huge box office hit.</span></td></tr>
+  <tr><td class="say">soundtrack</td><td>nhạc phim</td><td><span class="say">I love the soundtrack.</span></td></tr></tbody></table>
+  <div class="sub-title">Nhận xét như người mê phim</div>
+  <table class="tbl"><thead><tr><th>Từ / cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">plot twist</td><td>cú lật, tình tiết bất ngờ</td><td><span class="say">I didn’t see that plot twist coming!</span></td></tr>
+  <tr><td class="say">spoiler</td><td>tiết lộ nội dung</td><td><span class="say">Don’t read the comments. There are spoilers.</span></td></tr>
+  <tr><td class="say">cliffhanger</td><td>kết lửng gây tò mò</td><td><span class="say">The series ended on a cliffhanger.</span></td></tr>
+  <tr><td class="say">overrated / underrated</td><td>được đánh giá quá cao / bị đánh giá thấp</td><td><span class="say">I think that movie is a bit overrated.</span></td></tr>
+  <tr><td class="say">must-see</td><td>phim nhất định phải xem</td><td><span class="say">It’s a must-see this year.</span></td></tr>
+  <tr><td class="say">binge-watch</td><td>xem liền một mạch nhiều tập</td><td><span class="say">I binge-watched the whole series this weekend.</span></td></tr></tbody></table>
+  <div class="sub-title">Cụm giúp cuộc trò chuyện trôi chảy</div>
+  <div class="ex-box"><div class="ex-head">LÀM CHO HỘI THOẠI TỰ NHIÊN<span class="ex-tag t5">Nâng cao</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">It kept me on the edge of my seat.</span><span class="ex-vn">Nó làm tôi hồi hộp suốt cả phim</span></div>
+    <div class="ex-row"><span class="ex-en say">I couldn’t take my eyes off the screen.</span><span class="ex-vn">Tôi không rời mắt khỏi màn hình được</span></div>
+    <div class="ex-row"><span class="ex-en say">It was a total letdown.</span><span class="ex-vn">Thật là thất vọng</span></div>
+    <div class="ex-row"><span class="ex-en say">It’s worth a watch.</span><span class="ex-vn">Đáng để xem một lần</span></div>
+    <div class="ex-row"><span class="ex-en say">The book was better.</span><span class="ex-vn">Sách hay hơn phim</span></div>
+    <div class="ex-row"><span class="ex-en say">What did you think of the ending?</span><span class="ex-vn">Bạn thấy cái kết thế nào?</span></div>
+    <div class="ex-row"><span class="ex-en say">Let’s grab some popcorn and chill.</span><span class="ex-vn">Mua bắp rồi ngồi thư giãn thôi</span></div>
+  </div></div>
+  <div class="cmp"><div class="bad"><b>❌ NGHE CỨNG</b><div>Film good. I like. Very interesting I am.</div></div><div class="good"><b>✔ TỰ NHIÊN HƠN</b><div class="say">I really enjoyed it. The plot twist was amazing, and it kept me on the edge of my seat.</div></div></div>
+  <div class="info i-tip"><span>💡</span><span><strong>Mẹo:</strong> xem phim với <strong>phụ đề tiếng Anh</strong> (không phải tiếng Việt) là cách luyện nghe rất hiệu quả. Bắt đầu với phim hoạt hình hoặc hài, vì lời thoại thường chậm và rõ hơn.</span></div>
+
+  <div class="sub-title">Tự kiểm tra</div>
+  <ul class="chk">
+    <li><label><input type="checkbox" id="c1">Tôi gọi tên được 9 thể loại phim</label></li>
+    <li><label><input type="checkbox" id="c2">Tôi dùng đúng <strong>prefer A to B</strong> và <strong>I’d rather</strong></label></li>
+    <li><label><input type="checkbox" id="c3">Tôi mua vé, chọn suất và chọn ghế ở rạp được</label></li>
+    <li><label><input type="checkbox" id="c4">Tôi kể nội dung phim bằng <strong>It’s about / It’s set in</strong></label></li>
+    <li><label><input type="checkbox" id="c5">Tôi phân biệt tính từ <strong>-ing</strong> và <strong>-ed</strong></label></li>
+    <li><label><input type="checkbox" id="c6">Tôi dùng đúng <strong>Have you seen…?</strong> và <strong>I saw…</strong></label></li>
+    <li><label><input type="checkbox" id="c7">Tôi dùng được ít nhất 5 từ vựng nâng cao</label></li>
+  </ul>
+</section>
+
+</div>
+<div class="footer">🎬 Giao tiếp tiếng Anh: Movies · Dành cho người mới bắt đầu · 2026</div>
+</div>
+
+<div class="audio-bar">
+  <b>🔊 Audio</b>
+  <div class="ab-g"><button data-acc="en-GB" class="on">Anh-Anh</button><button data-acc="en-US">Anh-Mỹ</button></div>
+  <div class="ab-g"><button data-rate="0.6">Chậm</button><button data-rate="0.85" class="on">Vừa</button><button data-rate="1">Nhanh</button></div>
+</div>
+
+<script>
+(function(){
+var doc=document.documentElement,bar=document.getElementById('pbar');
+addEventListener('scroll',function(){bar.style.width=(doc.scrollTop/Math.max(1,doc.scrollHeight-doc.clientHeight)*100)+'%'});
+var links=document.querySelectorAll('.nav-link,.topnav a');
+if('IntersectionObserver' in window)document.querySelectorAll('.section[id]').forEach(function(s){
+  new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;
+    links.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id)});
+  })},{rootMargin:'-20% 0px -70% 0px'}).observe(s);
+});
+
+/* Audio */
+var S=window.speechSynthesis,st={acc:'en-GB',rate:.85},cur=null;
+function voice(){if(!S)return null;var v=S.getVoices().filter(function(x){return x.lang.replace('_','-').toLowerCase()===st.acc.toLowerCase()});
+  return v.find(function(x){return /google|natural|premium|enhanced/i.test(x.name)})||v[0]||null}
+function say(el){
+  if(cur)cur.classList.remove('playing');
+  if(!S){el.title='Trình duyệt này không hỗ trợ đọc audio';return}
+  S.cancel();cur=el;el.classList.add('playing');
+  var t=el.textContent.replace(/\s+/g,' ').replace(/\s*\/\s*/g,'. ').replace(/→/g,'. ').replace(/★|☆/g,'').trim();
+  var u=new SpeechSynthesisUtterance(t);u.lang=st.acc;u.rate=st.rate;var v=voice();if(v)u.voice=v;
+  u.onend=u.onerror=function(){el.classList.remove('playing')};S.speak(u);
+}
+function prep(root){root.querySelectorAll('.say').forEach(function(e){e.tabIndex=0;e.setAttribute('role','button')})}
+prep(document);
+document.addEventListener('click',function(e){var el=e.target.closest('.say');if(el)say(el)});
+document.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.classList&&e.target.classList.contains('say')){e.preventDefault();say(e.target)}});
+document.querySelectorAll('.audio-bar button').forEach(function(b){b.addEventListener('click',function(){
+  b.parentElement.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');
+  if(b.dataset.acc)st.acc=b.dataset.acc;if(b.dataset.rate)st.rate=+b.dataset.rate;
+})});
+
+/* ===== Máy viết review ===== */
+var GEN=[['an action movie','phim hành động','💥'],['a comedy','phim hài','😂'],['a horror movie','phim kinh dị','👻'],['a romantic comedy','phim hài lãng mạn','💕'],
+  ['a sci-fi movie','phim khoa học viễn tưởng','🚀'],['an animated movie','phim hoạt hình','🧸'],['a drama','phim tâm lý','🎭'],['a thriller','phim giật gân','🔪']];
+var PLOT=[['a detective who is trying to solve a murder','một thám tử phá án mạng'],['two strangers who fall in love on a train','hai người lạ yêu nhau trên một chuyến tàu'],
+  ['a family who moves into a haunted house','một gia đình chuyển đến ngôi nhà ma ám'],['a group of friends on a road trip','một nhóm bạn trong chuyến đi phượt'],
+  ['robots that take over the world','những người máy chiếm thế giới'],['a young girl with magic powers','một cô bé có phép thuật'],
+  ['an old man who returns to his hometown','một ông lão trở về quê']];
+var SET=[['in Hanoi in the 1990s','ở Hà Nội những năm 1990'],['in New York','ở New York'],['in space','ngoài vũ trụ'],['in a small village','ở một ngôi làng nhỏ'],['in the future','trong tương lai'],['in Japan','ở Nhật Bản']];
+/* [tính từ -ing (phim), -ed (người), nghĩa] */
+var FEEL=[['exciting','excited','hồi hộp, phấn khích'],['surprising','surprised','bất ngờ'],['touching','touched','cảm động'],['frightening','frightened','sợ hãi'],
+  ['amusing','amused','buồn cười, thích thú'],['boring','bored','chán'],['confusing','confused','khó hiểu'],['disappointing','disappointed','thất vọng']];
+var RATE=[1,2,3,4,5];
+function fill(id,arr,lab){var s=document.getElementById(id);arr.forEach(function(x,i){s.add(new Option(lab(x),i))});return s}
+var gg=fill('g-g',GEN,function(x){return x[2]+' '+x[0].replace(/^an? /,'')}),gp=fill('g-p',PLOT,function(x){return x[1]}),gset=fill('g-set',SET,function(x){return x[1]}),
+    gf=fill('g-f',FEEL,function(x){return x[0]+' / '+x[1]+' ('+x[2]+')'}),gr=fill('g-r',RATE,function(x){return x+' / 5 sao'});
+gg.value=7;gp.value=0;gset.value=0;gf.value=0;gr.value=3;
+var NUMW=['zero','one','two','three','four','five'];
+var out=document.getElementById('gen-out');
+function show(){
+  var g=GEN[+gg.value],p=PLOT[+gp.value],s=SET[+gset.value],f=FEEL[+gf.value],r=RATE[+gr.value];
+  var neg=['boring','confusing','disappointing'].indexOf(f[0])>-1;
+  var sentences=[
+    'Last weekend I watched '+g[0]+'.',
+    'It’s about '+p[0]+', and it’s set '+s[0].replace('1990s','nineteen nineties')+'.',
+    'The story was '+f[0]+', and I was '+(neg?'quite ':'really ')+f[1]+'.'
+  ];
+  if(r>=4)sentences.push('The acting was brilliant, and '+(neg?'the ending saved it.':'the ending was perfect.'));
+  else if(r===3)sentences.push('Some parts were a bit slow, but it was okay overall.');
+  else sentences.push('Honestly, it was a bit of a letdown.');
+  sentences.push('I’d give it '+NUMW[r]+' out of five.');
+  sentences.push(r>=4?'I’d definitely recommend it. It’s a must-see!':r===3?'It’s worth a watch if you have time.':'I wouldn’t recommend it, to be honest.');
+  out.innerHTML='';
+  var stars=document.createElement('div');stars.className='stars';stars.textContent='★'.repeat(r)+'☆'.repeat(5-r);stars.setAttribute('aria-label',r+' trên 5 sao');out.append(stars);
+  var lb=document.createElement('div');lb.className='lbl';lb.textContent='REVIEW CỦA BẠN';out.append(lb);
+  var para=document.createElement('div');para.className='para';
+  sentences.forEach(function(x,i){var sp=document.createElement('span');sp.className='say';sp.textContent=x.replace('nineteen nineties','1990s');para.append(sp);if(i<sentences.length-1)para.append(' ')});
+  out.append(para);
+  var vn=document.createElement('div');vn.style.color='var(--muted)';vn.style.fontSize='13px';
+  vn.textContent='Nghĩa: Cuối tuần trước mình xem một '+g[1]+' về '+p[1]+', bối cảnh '+s[1]+'. Cảm nhận: '+f[2]+'. Chấm '+r+'/5.';out.append(vn);
+  var lb2=document.createElement('div');lb2.className='lbl';lb2.style.marginTop='10px';lb2.textContent='HỎI NGƯỜI KIA';out.append(lb2);
+  ['Have you seen it?','What kind of movies do you like?','What’s the best movie you’ve seen this year?'].forEach(function(q){var d=document.createElement('div');var sp=document.createElement('span');sp.className='say';sp.textContent=q;d.append(sp);out.append(d)});
+  var w=document.createElement('span');w.className='why';
+  w.innerHTML='Bộ phim dùng tính từ <b>-ing</b>: <b>'+f[0]+'</b>; cảm xúc của bạn dùng <b>-ed</b>: <b>I was '+f[1]+'</b>. Kể nội dung: <b>It’s about…</b>, bối cảnh: <b>It’s set in…</b>. Chấm điểm: <b>I’d give it … out of five</b>.';
+  out.append(w);prep(out);
+}
+document.getElementById('gen-btn').addEventListener('click',show);
+[gg,gp,gset,gf,gr].forEach(function(s){s.addEventListener('change',show)});
+document.getElementById('rnd-btn').addEventListener('click',function(){
+  [[gg,GEN],[gp,PLOT],[gset,SET],[gf,FEEL],[gr,RATE]].forEach(function(x){x[0].value=Math.floor(Math.random()*x[1].length)});show();
+});
+show();
+
+/* Bài tập */
+function cap(s){return s.charAt(0).toUpperCase()+s.slice(1)}
+var inputs=document.querySelectorAll('#exlist input'),exo=document.getElementById('ex-out');
+function norm(s){return s.toLowerCase().replace(/[’‘`]/g,"'").replace(/[.!?]+$/,'').replace(/,/g,'').replace(/\s+/g,' ').trim()}
+document.getElementById('ex-check').addEventListener('click',function(){
+  var ok=0;
+  inputs.forEach(function(i){
+    var good=i.dataset.a.split('|').some(function(a){return norm(a)===norm(i.value)});
+    i.classList.remove('ok','no');i.classList.add(good?'ok':'no');if(good)ok++;
+  });
+  exo.style.minHeight='';
+  exo.textContent=ok===inputs.length?'🎉 Chính xác '+ok+'/'+inputs.length+'. Bạn bàn phim rất tự nhiên!':'Đúng '+ok+'/'+inputs.length+'. Các ô viền đỏ cần xem lại; đọc lại phần ngữ pháp ở Bài 1 đến 5, hoặc bấm “Xem đáp án”.';
+});
+document.getElementById('ex-show').addEventListener('click',function(){
+  inputs.forEach(function(i){
+    var k=i.parentElement.querySelector('.key');
+    if(!k){k=document.createElement('span');k.className='key';i.parentElement.append(k)}
+    var a=i.dataset.a.split('|')[0].replace(/'/g,'’');k.textContent='Đáp án: '+(a.indexOf(' ')>-1?cap(a):a);
+  });
+});
+document.getElementById('ex-reset').addEventListener('click',function(){
+  inputs.forEach(function(i){i.value='';i.classList.remove('ok','no')});
+  document.querySelectorAll('#exlist .key').forEach(function(k){k.remove()});
+  exo.textContent='';exo.style.minHeight='0';
+});
+})();
+</script>
+
+<script src="nav.js" defer></script>
+</body></html>

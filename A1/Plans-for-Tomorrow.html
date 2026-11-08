@@ -1,0 +1,533 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Tiếng Anh Plans for Tomorrow</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: sidebar mục lục cố định + cột bài học, cùng theme tối của bộ "Hỏi đường & Hỏi giờ" (nhấn tím – xanh lá cho chủ đề Plans for Tomorrow) */
+:root{color-scheme:dark;
+--bg:#080810;--s1:#0e0e1c;--s2:#131326;--s3:#18182e;--border:#222240;--border2:#2c2c50;--text:#e6e6f2;--muted:#8a8ab8;--faint:#4a4a78;
+--acc:#ffd060;--acc-dim:rgba(255,208,96,.11);--oc:#38bdf8;--oc-dim:rgba(56,189,248,.13);--ins:#40d88e;--ins-dim:rgba(64,216,142,.12);
+--sk:#a07af4;--sk-dim:rgba(160,122,244,.12);--au:#ff6584;--au-dim:rgba(255,101,132,.12);--teal:#30d8c0;--code-bg:#05050e;
+--tip-bg:rgba(91,168,255,.10);--tip-bd:rgba(91,168,255,.25);--tip-fg:#8ab8f0;--warn-fg:#e0bc58;--ok-fg:#5ccf98;--line:rgba(255,255,255,.05);
+--font:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+--gl:max(64px,env(safe-area-inset-left,0px));--gr:max(64px,env(safe-area-inset-right,0px))}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 60px)}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.7;font-size:15px;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:600;background:var(--s1)}
+.sidebar{position:fixed;left:0;top:0;width:260px;height:100%;background:var(--s1);border-right:1px solid var(--border);overflow-y:auto;z-index:400;padding-top:env(safe-area-inset-top,0px);padding-left:env(safe-area-inset-left,0px)}
+.sb-logo{padding:20px 18px 16px;border-bottom:1px solid var(--border)}
+.sb-brand{display:flex;align-items:center;gap:11px;margin-bottom:12px}
+.logo-icon{width:44px;height:44px;border-radius:11px;background:linear-gradient(135deg,var(--sk),var(--ins));display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 0 26px rgba(160,122,244,.3)}
+.logo-text h2{font-size:15px;font-weight:800}.logo-text p{font-size:10.5px;color:var(--muted)}
+.prog-wrap{height:3px;background:var(--border);border-radius:2px;overflow:hidden}
+.prog-bar{height:100%;width:0;background:linear-gradient(90deg,var(--acc),var(--ins),var(--oc),var(--sk),var(--au))}
+.nav-label{padding:14px 18px 4px;font-size:9.5px;font-weight:700;letter-spacing:1.6px;color:var(--faint)}
+.nav-link{display:flex;align-items:center;gap:9px;padding:7px 18px;color:var(--muted);text-decoration:none;font-size:12.5px;font-weight:600;border-left:2px solid transparent}
+.nav-link:hover,.nav-link.active{color:var(--text);background:rgba(255,208,96,.07);border-left-color:var(--acc)}
+.main{margin-left:260px}
+.hero{padding-block:80px 60px;padding-left:var(--gl);padding-right:var(--gr);border-bottom:1px solid var(--border);background:radial-gradient(ellipse 65% 55% at 75% 22%,rgba(160,122,244,.10),transparent 60%),radial-gradient(ellipse 50% 55% at 10% 82%,rgba(64,216,142,.07),transparent 55%),var(--bg)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--acc-dim);border:1px solid rgba(255,208,96,.38);color:var(--acc);padding:5px 16px;border-radius:100px;font-size:11.5px;font-weight:700;margin-bottom:24px}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--acc);animation:p 2s infinite}
+@keyframes p{50%{opacity:.35;transform:scale(.7)}}
+@media(prefers-reduced-motion:reduce){.eyebrow i{animation:none}html{scroll-behavior:auto}}
+.hero h1{font-size:50px;font-weight:900;letter-spacing:-2.4px;line-height:1.06;margin-bottom:18px;text-wrap:balance}
+.grad{background:linear-gradient(135deg,var(--sk),var(--ins));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-desc{font-size:16px;color:var(--muted);max-width:620px;margin-bottom:28px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{padding:5px 14px;border-radius:7px;font-size:12px;font-weight:700}
+.c1{background:var(--oc-dim);color:var(--oc)}.c2{background:var(--ins-dim);color:var(--ins)}.c3{background:var(--acc-dim);color:var(--acc)}.c4{background:var(--sk-dim);color:var(--sk)}.c5{background:var(--au-dim);color:var(--au)}
+.content{padding-block:56px;padding-left:var(--gl);padding-right:var(--gr);max-width:calc(1020px + 64px)}
+.section{margin-bottom:68px}
+.sec-head{display:flex;gap:14px;align-items:flex-start;margin-bottom:28px;padding-bottom:18px;border-bottom:1px solid var(--border)}
+.sec-tag{font-family:var(--mono);font-size:10px;font-weight:600;padding:3px 10px;border-radius:5px;margin-top:6px;flex-shrink:0;letter-spacing:.5px}
+.t1{color:var(--oc);background:var(--oc-dim)}.t2{color:var(--ins);background:var(--ins-dim)}.t3{color:var(--acc);background:var(--acc-dim)}.t4{color:var(--sk);background:var(--sk-dim)}.t5{color:var(--au);background:var(--au-dim)}
+.sec-title{font-size:23px;font-weight:800;letter-spacing:-.6px;text-wrap:balance}.sec-sub{font-size:13px;color:var(--muted)}
+.sub-title{font-size:14.5px;font-weight:700;margin:26px 0 12px;display:flex;align-items:center;gap:10px}
+.sub-title::before{content:'';width:14px;height:3px;background:var(--acc);border-radius:2px}
+p.t{color:var(--muted);font-size:13.5px;margin-bottom:11px;max-width:68ch}p.t strong,li strong{color:var(--text)}
+.ex-box{background:var(--s1);border:1px solid var(--border2);border-radius:11px;overflow:hidden;margin:13px 0}
+.ex-head{display:flex;align-items:center;gap:8px;padding:9px 16px;background:var(--s2);border-bottom:1px solid var(--border);font-family:var(--mono);font-size:10px;font-weight:600;color:var(--muted);letter-spacing:.5px}
+.ex-tag{margin-left:auto;font-size:9px;font-weight:700;padding:2px 9px;border-radius:100px;font-family:var(--font)}
+.ex-body{padding:10px 20px}
+.ex-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:13.5px}
+.ex-row:last-child{border-bottom:none}
+.ex-en{color:var(--text);font-weight:600;min-width:280px}.ex-vn{color:var(--muted)}
+.info{display:flex;gap:12px;padding:14px 16px;border-radius:9px;margin:13px 0;font-size:13px;line-height:1.6}
+.i-tip{background:var(--tip-bg);border:1px solid var(--tip-bd);color:var(--tip-fg)}
+.i-warn{background:var(--acc-dim);border:1px solid rgba(255,208,96,.25);color:var(--warn-fg)}
+.i-ok{background:var(--ins-dim);border:1px solid rgba(64,216,142,.25);color:var(--ok-fg)}
+.tbl{width:100%;border-collapse:collapse;font-size:13px;margin:13px 0;display:block;overflow-x:auto}
+.tbl th{background:var(--s3);padding:10px 14px;text-align:left;font-size:10px;color:var(--muted);border-bottom:1px solid var(--border2);white-space:nowrap;letter-spacing:.5px}
+.tbl td{padding:10px 14px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:top}
+.tbl td:first-child{color:var(--text);font-weight:600}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}
+.card{background:var(--s1);border:1px solid var(--border);border-radius:11px;padding:16px;min-width:0}
+.card:hover{border-color:var(--acc)}
+.card-icon{font-size:24px}.card-title{font-size:13px;font-weight:700}.card-desc{font-size:12px;color:var(--muted)}
+.cmp{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);border-radius:11px;overflow:hidden;margin:13px 0}
+.bad{background:rgba(255,101,132,.07);padding:14px 16px;border-right:1px solid var(--border)}.good{background:rgba(64,216,142,.07);padding:14px 16px}
+.cmp b{display:block;font-size:10px;margin-bottom:6px;letter-spacing:.5px}.bad b{color:var(--au)}.good b{color:var(--ins)}
+.cmp div div{font-size:13.5px}
+.dlg{display:grid;gap:8px;margin:12px 0;background:var(--s1);border:1px solid var(--border2);border-radius:12px;padding:16px 18px}
+.dlg-t{font-size:10px;font-weight:800;color:var(--acc);margin-bottom:2px;letter-spacing:.6px}
+.turn{display:flex;gap:10px;align-items:baseline}
+.turn>div{min-width:0}
+.who{flex-shrink:0;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+.wa{background:var(--oc-dim);color:var(--oc)}.wb{background:var(--ins-dim);color:var(--ins)}
+.turn .say{font-weight:600}.turn small{display:block;color:var(--muted);font-size:12px;font-weight:400}
+.gen{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:12px 0}
+.gen label{font-size:11.5px;color:var(--muted);font-weight:600;display:block;min-width:0}
+.gen select{width:100%;margin-top:4px;background:var(--code-bg);border:1px solid var(--border2);border-radius:8px;padding:9px 12px;color:var(--text);font:inherit;font-size:13px}
+select:focus-visible,button:focus-visible,.say:focus-visible,.exi input:focus-visible,.chk input:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.btns{display:flex;flex-wrap:wrap;gap:6px}
+.btn{background:var(--acc-dim);color:var(--acc);border:1px solid var(--acc);border-radius:8px;padding:8px 16px;font:inherit;font-weight:700;font-size:13px;cursor:pointer}
+.btn.alt{background:var(--ins-dim);color:var(--ins);border-color:var(--ins)}
+.out{margin-top:14px;min-height:60px;background:var(--s2);border:1px dashed var(--border2);border-radius:10px;padding:14px 16px;font-size:14px;line-height:1.9}
+.big{font-size:21px;font-weight:800;color:var(--acc);letter-spacing:-.3px;line-height:1.4;margin-bottom:4px}
+.out .why{display:block;color:var(--muted);font-size:12.5px}
+.out .why b{color:var(--teal);font-family:var(--mono);font-weight:600}
+.timeline{display:grid;gap:0;margin:14px 0;border-left:2px solid var(--border2);padding-left:18px}
+.tl{position:relative;padding:8px 0 12px}
+.tl::before{content:'';position:absolute;left:-24px;top:16px;width:10px;height:10px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 3px var(--bg)}
+.tl time{font-family:var(--mono);font-size:12px;color:var(--acc);font-variant-numeric:tabular-nums;font-weight:600}
+.tl .say{font-weight:600;font-size:13.5px}
+.tl small{display:block;color:var(--muted);font-size:12px}
+.freq{display:grid;gap:7px;margin:14px 0}
+.fq{display:grid;grid-template-columns:110px 1fr 54px;gap:12px;align-items:center;font-size:13px}
+.fq .say{font-weight:700}
+.fq .track{height:8px;background:var(--s3);border-radius:4px;overflow:hidden}
+.fq .fill{height:100%;background:linear-gradient(90deg,var(--ins),var(--acc))}
+.fq span:last-child{font-family:var(--mono);font-size:11.5px;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+.plan{display:grid;gap:8px;margin:12px 0}
+.day{display:flex;gap:14px;align-items:baseline;background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:12px 16px;font-size:13px;color:var(--muted)}
+.day b{color:var(--acc);font-family:var(--mono);font-size:12px;flex-shrink:0;width:52px}.day strong{color:var(--text)}
+.chk{list-style:none;margin:10px 0}.chk li{padding:6px 0;font-size:13.5px;color:var(--muted);border-bottom:1px solid rgba(255,255,255,.04)}
+.chk input{accent-color:var(--ins);margin-right:10px;width:15px;height:15px;vertical-align:-2px}
+.gr{border:1px solid rgba(160,122,244,.38);background:linear-gradient(180deg,var(--sk-dim),transparent 110px),var(--s1);border-radius:12px;margin:28px 0;overflow:hidden}
+.gr-head{padding:10px 18px;font-size:12px;font-weight:800;color:var(--sk);border-bottom:1px solid var(--border);display:flex;gap:10px;flex-wrap:wrap;align-items:baseline;letter-spacing:.4px}
+.gr-head em{font-style:normal;color:var(--muted);font-weight:600;letter-spacing:0}
+.gr-body{padding:14px 18px;font-size:13.5px;color:var(--muted)}
+.gr-body p{margin-bottom:10px}.gr-body b{color:var(--text)}.gr-body ul{padding-left:20px;margin-bottom:8px}.gr-body li{margin-bottom:4px}
+.gr-body .tbl{margin:8px 0 12px}
+.fm{display:inline-block;font-family:var(--mono);font-size:12px;background:var(--code-bg);color:var(--teal);padding:3px 9px;border-radius:6px;margin:2px 0}
+.say{cursor:pointer;border-bottom:1px dotted var(--oc)}
+.say:hover{color:var(--acc);background:var(--acc-dim);border-radius:4px}
+.say::after{content:"🔊";font-size:.68em;margin-left:3px;opacity:.5}
+.say.playing{color:var(--ins);background:var(--ins-dim);border-radius:4px}.say.playing::after{opacity:1}
+.exi{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:13.5px;color:var(--text)}
+.exi input{width:220px;max-width:100%;background:var(--code-bg);border:1px solid var(--border2);border-radius:6px;padding:4px 8px;color:var(--text);font:inherit;font-size:13px;text-align:center}
+.exi input.ok{border-color:var(--ins);color:var(--ins)}.exi input.no{border-color:var(--au);color:var(--au)}
+.exi small{color:var(--muted);font-size:11.5px}
+.exi .key{color:var(--ins);font-size:12px;width:100%}
+.footer{border-top:1px solid var(--border);padding-block:28px 90px;padding-left:var(--gl);padding-right:var(--gr);font-size:12px;color:var(--muted)}
+.audio-bar{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:500;display:flex;gap:10px;align-items:center;background:var(--s2);border:1px solid var(--border2);border-radius:12px;padding:8px 12px;box-shadow:0 8px 28px rgba(0,0,0,.5);font-size:12px;color:var(--muted)}
+.audio-bar b{color:var(--acc)}.ab-g{display:flex;gap:4px}
+.audio-bar button{background:var(--s3);color:var(--muted);border:1px solid var(--border);border-radius:7px;padding:4px 10px;font:inherit;font-weight:700;cursor:pointer}
+.audio-bar button.on{background:var(--acc-dim);color:var(--acc);border-color:var(--acc)}
+.topnav{display:none}
+@media(max-width:900px){
+:root{--gl:max(18px,env(safe-area-inset-left,0px));--gr:max(18px,env(safe-area-inset-right,0px))}
+.sidebar{display:none}.main{margin-left:0}.hero h1{font-size:32px;letter-spacing:-1.4px}.hero{padding-block:48px 40px}
+.grid-3,.cmp{grid-template-columns:1fr}.gen{grid-template-columns:1fr 1fr}.bad{border-right:none;border-bottom:1px solid var(--border)}
+.topnav{display:flex;overflow-x:auto;position:sticky;top:env(safe-area-inset-top,0px);z-index:500;background:var(--s1);border-bottom:2px solid var(--border2);scrollbar-width:none;padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+.topnav a{flex-shrink:0;padding:10px 14px;color:var(--muted);text-decoration:none;font-size:12px;font-weight:700;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-2px}
+.topnav a.active{color:var(--acc);border-bottom-color:var(--acc);background:var(--acc-dim)}
+.ex-en{min-width:0}
+.fq{grid-template-columns:90px 1fr 46px}
+.audio-bar{left:calc(8px + env(safe-area-inset-left,0px));right:calc(8px + env(safe-area-inset-right,0px));justify-content:center;flex-wrap:wrap}
+}
+@media(max-width:480px){.gen{grid-template-columns:1fr}}
+
+.lbl{font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--faint)}
+.tline{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--border2);border-radius:12px;overflow:hidden;margin:12px 0}
+.tl-i{padding:14px;border-right:1px solid var(--border);background:var(--s1);display:grid;gap:4px}
+.tl-i:last-child{border-right:0}.tl-i .say{color:var(--text);font-weight:600;font-size:13.5px}.tl-i em{font-style:normal;color:var(--muted);font-size:12px}
+.planner{display:grid;gap:8px;margin:12px 0}
+.prow{display:grid;grid-template-columns:90px 1fr 1fr;gap:8px}
+.prow select{width:100%;background:var(--code-bg);border:1px solid var(--border2);border-radius:8px;padding:9px 12px;color:var(--text);font:inherit;font-size:13px}
+.prow select:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.sched{display:grid;gap:6px}
+.srow{display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}
+.srow b{font-family:var(--mono);color:var(--acc);font-size:13px;min-width:46px}
+.badge{font-family:var(--mono);font-size:10.5px;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.badge.c6{background:rgba(48,216,192,.12);color:var(--teal)}
+@media(max-width:900px){.tline{grid-template-columns:1fr}.tl-i{border-right:0;border-bottom:1px solid var(--border)}.tl-i:last-child{border-bottom:0}.prow{grid-template-columns:1fr}}
+</style>
+
+<aside class="sidebar">
+  <div class="sb-logo">
+    <div class="sb-brand"><div class="logo-icon">🗒️</div><div class="logo-text"><h2>Plans for Tomorrow</h2><p>Tiếng Anh cho người mới</p></div></div>
+    <div class="prog-wrap"><div class="prog-bar" id="pbar"></div></div>
+  </div>
+  <div class="nav-label">BÀI HỌC</div>
+  <a class="nav-link" href="#s1">⏰ Mốc thời gian ngày mai</a>
+  <a class="nav-link" href="#s2">🔮 Các cách nói tương lai</a>
+  <a class="nav-link" href="#s3">❓ Hỏi kế hoạch người khác</a>
+  <a class="nav-link" href="#s4">✅ Việc phải làm</a>
+  <a class="nav-link" href="#s5">🔄 Đổi &amp; hủy kế hoạch</a>
+  <div class="nav-label">THỰC HÀNH</div>
+  <a class="nav-link" href="#s6">💬 Hội thoại mẫu</a>
+  <a class="nav-link" href="#s7">🛠️ Lịch ngày mai &amp; bài tập</a>
+  <a class="nav-link" href="#s8">🚀 Từ vựng nâng cao</a>
+</aside>
+
+<div class="main">
+<nav class="topnav">
+  <a href="#s1">1 Mốc giờ</a><a href="#s2">2 Tương lai</a><a href="#s3">3 Hỏi</a><a href="#s4">4 Việc phải làm</a><a href="#s5">5 Đổi lịch</a><a href="#s6">6 Hội thoại</a><a href="#s7">7 Luyện tập</a><a href="#s8">8 Nâng cao</a>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow"><i></i>Dành cho người mới bắt đầu</div>
+  <h1>Ngày mai làm gì<br><span class="grad">bằng tiếng Anh</span></h1>
+  <p class="hero-desc">Nói về ngày mai tưởng đơn giản, nhưng tiếng Anh có tới năm, sáu cách diễn đạt tương lai, mỗi cách mang một sắc thái. Bài này giúp bạn chọn đúng cách cho việc đã hẹn, việc đã định, lịch cố định, việc có thể xảy ra và việc bắt buộc; hỏi kế hoạch của người khác; và đổi hoặc hủy hẹn lịch sự. Bấm vào câu có biểu tượng loa để nghe, rồi lên lịch ngày mai của bạn ở phần thực hành.</p>
+  <div class="chips"><span class="chip c4">will</span><span class="chip c2">going to</span><span class="chip c1">be + V-ing</span><span class="chip c3">might / have to</span><span class="chip c5">Từ vựng nâng cao</span></div>
+</header>
+
+<div class="content">
+
+<section class="section" id="s1">
+  <div class="sec-head"><span class="sec-tag t4">BÀI 1</span><div><div class="sec-title">Mốc thời gian ngày mai</div><div class="sec-sub">Gắn thời gian vào câu cho rõ ràng</div></div></div>
+  <div class="tline">
+    <div class="tl-i"><span class="say">first thing tomorrow</span><em>việc đầu tiên sáng mai</em></div>
+    <div class="tl-i"><span class="say">tomorrow morning</span><em>sáng mai</em></div>
+    <div class="tl-i"><span class="say">tomorrow afternoon</span><em>chiều mai</em></div>
+    <div class="tl-i"><span class="say">tomorrow evening</span><em>tối mai</em></div>
+    <div class="tl-i"><span class="say">tomorrow night</span><em>đêm mai</em></div>
+  </div>
+  <table class="tbl"><thead><tr><th>Cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">tomorrow at nine</td><td>9 giờ ngày mai</td><td><span class="say">I have a meeting tomorrow at nine.</span></td></tr>
+  <tr><td class="say">the day after tomorrow</td><td>ngày kia</td><td><span class="say">We’re leaving the day after tomorrow.</span></td></tr>
+  <tr><td class="say">by tomorrow</td><td>trước / chậm nhất ngày mai</td><td><span class="say">I’ll finish it by tomorrow.</span></td></tr>
+  <tr><td class="say">until tomorrow</td><td>cho đến mai</td><td><span class="say">The shop is closed until tomorrow.</span></td></tr>
+  <tr><td class="say">this time tomorrow</td><td>giờ này ngày mai</td><td><span class="say">This time tomorrow, I’ll be on the beach.</span></td></tr></tbody></table>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Không có giới từ trước tomorrow</em></div><div class="gr-body">
+<ul><li><b>tomorrow</b>, <b>tomorrow morning</b>, <b>next week</b> đứng một mình, không thêm <i>in / on / at</i> phía trước.</li>
+<li>Nhưng: <span class="fm">tomorrow + at + giờ</span> → <span class="say">tomorrow at seven</span></li>
+<li><b>by</b> = hạn chót, <b>until</b> = kéo dài đến lúc đó.</li></ul>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>I’ll call you in tomorrow morning.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">I’ll call you tomorrow morning.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s2">
+  <div class="sec-head"><span class="sec-tag t2">BÀI 2</span><div><div class="sec-title">Các cách nói tương lai</div><div class="sec-sub">Mỗi cách một sắc thái, chọn theo việc bạn nói</div></div></div>
+  <table class="tbl"><thead><tr><th>Cách nói</th><th>Dùng khi</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td><span class="fm">be + V-ing</span></td><td><b>đã hẹn, đã sắp xếp</b> với người khác</td><td><span class="say">I’m meeting Lan for lunch tomorrow.</span></td></tr>
+  <tr><td><span class="fm">be going to + V</span></td><td><b>đã định</b> trong đầu từ trước</td><td><span class="say">I’m going to clean my room tomorrow.</span></td></tr>
+  <tr><td><span class="fm">hiện tại đơn</span></td><td><b>lịch trình cố định</b>: tàu, xe, lớp học, phim</td><td><span class="say">My class starts at eight tomorrow.</span></td></tr>
+  <tr><td><span class="fm">will + V</span></td><td><b>quyết định ngay lúc nói</b>, lời hứa, dự đoán</td><td><span class="say">I’ll call you tomorrow, I promise.</span></td></tr>
+  <tr><td><span class="fm">might / may + V</span></td><td><b>có thể</b>, chưa chắc</td><td><span class="say">I might go to the gym tomorrow.</span></td></tr>
+  <tr><td><span class="fm">have to + V</span></td><td><b>bắt buộc</b> phải làm</td><td><span class="say">I have to get up early tomorrow.</span></td></tr></tbody></table>
+  <div class="info i-tip"><span>💡</span><span><strong>Mẹo nhớ:</strong> có <strong>người hẹn</strong> thì dùng <em>be + V-ing</em>; chỉ có <strong>mình định</strong> thì dùng <em>going to</em>; có <strong>bảng giờ</strong> thì dùng <em>hiện tại đơn</em>; <strong>vừa nghĩ ra</strong> thì dùng <em>will</em>.</span></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>will hay going to?</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Tình huống</th><th>Câu đúng</th></tr></thead><tbody>
+<tr><td>A: “We’re out of milk.” (bạn vừa nghe, quyết định ngay)</td><td><span class="say">Oh, I’ll buy some tomorrow.</span></td></tr>
+<tr><td>Bạn đã định từ hôm qua</td><td><span class="say">I’m going to buy milk tomorrow.</span></td></tr></tbody></table>
+<div class="cmp"><div class="bad"><b>❌ NGHE LẠ</b><div>(đã hẹn bác sĩ) I will see the doctor tomorrow at 3.</div></div><div class="good"><b>✔ TỰ NHIÊN</b><div class="say">I’m seeing the doctor tomorrow at three.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s3">
+  <div class="sec-head"><span class="sec-tag t1">BÀI 3</span><div><div class="sec-title">Hỏi kế hoạch của người khác</div><div class="sec-sub">Hỏi xem người khác có rảnh không, định làm gì</div></div></div>
+  <div class="ex-box"><div class="ex-head">CÂU HỎI<span class="ex-tag t1">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">What are you doing tomorrow?</span><span class="ex-vn">Mai bạn làm gì?</span></div>
+    <div class="ex-row"><span class="ex-en say">Are you free tomorrow afternoon?</span><span class="ex-vn">Chiều mai bạn rảnh không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Are you going to work from home tomorrow?</span><span class="ex-vn">Mai bạn có định làm ở nhà không?</span></div>
+    <div class="ex-row"><span class="ex-en say">What time does your flight leave?</span><span class="ex-vn">Chuyến bay của bạn mấy giờ cất cánh?</span></div>
+    <div class="ex-row"><span class="ex-en say">Do you have to work tomorrow?</span><span class="ex-vn">Mai bạn có phải đi làm không?</span></div>
+    <div class="ex-row"><span class="ex-en say">What’s your plan for tomorrow?</span><span class="ex-vn">Kế hoạch ngày mai của bạn là gì?</span></div>
+  </div></div>
+  <div class="ex-box"><div class="ex-head">TRẢ LỜI<span class="ex-tag t2">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">I’m busy in the morning, but I’m free after three.</span><span class="ex-vn">Sáng tôi bận, nhưng sau 3 giờ thì rảnh</span></div>
+    <div class="ex-row"><span class="ex-en say">Nothing much. I’m just going to relax.</span><span class="ex-vn">Không có gì. Tôi chỉ định nghỉ ngơi</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m not sure yet. I’ll let you know tonight.</span><span class="ex-vn">Tôi chưa chắc. Tối nay tôi báo bạn</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Câu hỏi theo từng cách nói tương lai</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Cách nói</th><th>Câu hỏi</th></tr></thead><tbody>
+<tr><td>be + V-ing</td><td><span class="say">What are you doing tomorrow?</span></td></tr>
+<tr><td>going to</td><td><span class="say">Are you going to come?</span></td></tr>
+<tr><td>hiện tại đơn</td><td><span class="say">What time does the meeting start?</span></td></tr>
+<tr><td>have to</td><td><span class="say">Do you have to get up early?</span></td></tr></tbody></table>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>What you do tomorrow? You have to work tomorrow?</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">What are you doing tomorrow? Do you have to work tomorrow?</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s4">
+  <div class="sec-head"><span class="sec-tag t3">BÀI 4</span><div><div class="sec-title">Việc phải làm và danh sách việc</div><div class="sec-sub">Nói những việc bắt buộc, cần làm, và nhắc nhở</div></div></div>
+  <div class="ex-box"><div class="ex-head">NÓI VỀ VIỆC PHẢI LÀM<span class="ex-tag t3">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">I have a lot to do tomorrow.</span><span class="ex-vn">Mai tôi có nhiều việc phải làm</span></div>
+    <div class="ex-row"><span class="ex-en say">I have to hand in my report by noon.</span><span class="ex-vn">Tôi phải nộp báo cáo trước trưa</span></div>
+    <div class="ex-row"><span class="ex-en say">I need to go to the bank.</span><span class="ex-vn">Tôi cần ra ngân hàng</span></div>
+    <div class="ex-row"><span class="ex-en say">First, I’ll answer my emails. Then, I’ll call the client.</span><span class="ex-vn">Đầu tiên tôi trả lời email. Sau đó tôi gọi khách hàng</span></div>
+    <div class="ex-row"><span class="ex-en say">Don’t forget to bring your ID card tomorrow.</span><span class="ex-vn">Mai đừng quên mang căn cước nhé</span></div>
+    <div class="ex-row"><span class="ex-en say">Can you remind me to call my mom?</span><span class="ex-vn">Nhắc tôi gọi cho mẹ nhé?</span></div>
+    <div class="ex-row"><span class="ex-en say">I’ll set an alarm for six.</span><span class="ex-vn">Tôi sẽ đặt báo thức lúc 6 giờ</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>have to / need to / don’t have to, và don’t forget to</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Cấu trúc</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+<tr><td><span class="fm">have to + V</span></td><td>phải (do quy định, người khác yêu cầu)</td><td><span class="say">I have to wear a uniform.</span></td></tr>
+<tr><td><span class="fm">need to + V</span></td><td>cần (vì mình thấy cần)</td><td><span class="say">I need to buy some food.</span></td></tr>
+<tr><td><span class="fm">don’t have to + V</span></td><td><b>không cần</b> (không phải là cấm)</td><td><span class="say">I don’t have to work tomorrow.</span></td></tr>
+<tr><td><span class="fm">Don’t forget to + V</span></td><td>đừng quên làm gì</td><td><span class="say">Don’t forget to lock the door.</span></td></tr></tbody></table>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>Tomorrow I must to go to the bank. Don’t forget bring it.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">I have to go to the bank tomorrow. Don’t forget to bring it.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s5">
+  <div class="sec-head"><span class="sec-tag t5">BÀI 5</span><div><div class="sec-title">Đổi và hủy kế hoạch</div><div class="sec-sub">Khi có việc đột xuất, nói sao cho lịch sự</div></div></div>
+  <div class="ex-box"><div class="ex-head">ĐỔI, HỦY HẸN<span class="ex-tag t5">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">I’m sorry, something came up. I can’t make it tomorrow.</span><span class="ex-vn">Xin lỗi, có việc đột xuất. Mai tôi không đến được</span></div>
+    <div class="ex-row"><span class="ex-en say">Can we reschedule?</span><span class="ex-vn">Mình dời lịch được không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Could we move it to Thursday instead?</span><span class="ex-vn">Mình chuyển sang thứ Năm được không?</span></div>
+    <div class="ex-row"><span class="ex-en say">I might be a bit late. I’ll text you.</span><span class="ex-vn">Tôi có thể đến muộn một chút. Tôi sẽ nhắn bạn</span></div>
+    <div class="ex-row"><span class="ex-en say">Let’s keep it for now and check tomorrow morning.</span><span class="ex-vn">Cứ giữ lịch đã, sáng mai mình kiểm tra lại</span></div>
+    <div class="ex-row"><span class="ex-en say">No problem. Let me know when you’re free.</span><span class="ex-vn">Không sao. Khi nào rảnh thì báo mình</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>will cho lời hứa và đề nghị khi đổi lịch</em></div><div class="gr-body">
+<ul><li>Hứa báo lại: <span class="say">I’ll let you know tonight.</span></li>
+<li>Đề nghị bù: <span class="say">I’ll make it up to you.</span></li>
+<li>Phủ định: <span class="fm">won’t + V</span> → <span class="say">I won’t be able to come.</span></li>
+<li><b>can’t make it</b> = không đến được (rất tự nhiên)</li></ul>
+<div class="cmp"><div class="bad"><b>❌ NGHE CỘC</b><div>Tomorrow cannot. Cancel.</div></div><div class="good"><b>✔ LỊCH SỰ</b><div class="say">I’m really sorry, but I can’t make it tomorrow. Can we reschedule?</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s6">
+  <div class="sec-head"><span class="sec-tag t3">BÀI 6</span><div><div class="sec-title">Hội thoại mẫu</div><div class="sec-sub">Bấm từng câu để nghe, rồi đóng vai cả hai người</div></div></div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 1: TỐI NAY NÓI VỀ NGÀY MAI</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">What are you doing tomorrow?</span><small>Mai bạn làm gì?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">I have to get up early. My English class starts at seven.</span><small>Mình phải dậy sớm. Lớp tiếng Anh bắt đầu lúc 7 giờ.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">And after that?</span><small>Còn sau đó?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">I’m meeting my cousin for lunch. In the afternoon, I’m going to study for my test.</span><small>Mình hẹn em họ đi ăn trưa. Buổi chiều mình định ôn bài kiểm tra.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Busy day! Are you free in the evening?</span><small>Bận ghê! Tối bạn rảnh không?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">I might be. I’ll let you know.</span><small>Có thể. Mình báo bạn sau nhé.</small></div></div>
+  </div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 2: ĐỒNG NGHIỆP XẾP LỊCH</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Are you free tomorrow at ten? I need to talk to you about the project.</span><small>Mai 10 giờ anh rảnh không? Tôi cần nói chuyện về dự án.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Sorry, I’m seeing a client at ten. How about two o’clock?</span><small>Xin lỗi, 10 giờ tôi gặp khách. 2 giờ được không?</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Two is fine. I’ll book the meeting room.</span><small>2 giờ được. Tôi sẽ đặt phòng họp.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Great. Don’t forget to bring the latest numbers.</span><small>Tuyệt. Đừng quên mang số liệu mới nhất nhé.</small></div></div>
+  </div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 3: HỦY HẸN VÀ HẸN LẠI</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Hi Mai, I’m so sorry, but something came up. I can’t make it to dinner tomorrow.</span><small>Chào Mai, mình rất xin lỗi, có việc đột xuất. Mai mình không đi ăn tối được.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Oh, that’s okay. Is everything all right?</span><small>Ồ, không sao. Mọi chuyện ổn chứ?</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Yes, I just have to finish an urgent project. Can we reschedule to Saturday?</span><small>Ổn, mình chỉ phải làm xong một dự án gấp. Dời sang thứ Bảy được không?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Saturday works for me. I’ll book a table again.</span><small>Thứ Bảy mình được. Mình sẽ đặt bàn lại.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Thank you! Dinner is on me this time.</span><small>Cảm ơn bạn! Lần này mình mời nhé.</small></div></div>
+  </div>
+  <div class="info i-ok"><span>✅</span><span><strong>Cách luyện:</strong> nghe một lượt, nói theo từng câu, rồi che phần tiếng Việt và tự đóng vai A hoặc B. Tối nay, thử kể kế hoạch ngày mai của bạn bằng tiếng Anh.</span></div>
+</section>
+
+<section class="section" id="s7">
+  <div class="sec-head"><span class="sec-tag t2">BÀI 7</span><div><div class="sec-title">Lịch ngày mai &amp; bài tập</div><div class="sec-sub">Với mỗi khung giờ, chọn việc và loại kế hoạch. Máy chọn đúng cách nói tương lai cho bạn</div></div></div>
+  <div class="planner" id="planner"></div>
+  <div class="btns"><button class="btn" id="gen-btn">Kể kế hoạch ngày mai</button><button class="btn alt" id="rnd-btn">Chọn ngẫu nhiên</button></div>
+  <div class="out" id="gen-out" aria-live="polite"></div>
+
+  <div class="sub-title">Bài tập: điền câu trả lời</div>
+  <p class="t">Câu 1–4: điền một từ vào chỗ trống. Câu 5–8: dịch sang tiếng Anh, gõ cả câu. Không phân biệt hoa thường.</p>
+  <div id="exlist">
+    <div class="exi">1. My train ___ at 6:30 tomorrow. (leave, lịch cố định) →<input id="ex1" data-a="leaves" aria-label="Câu 1"><small>hiện tại đơn</small></div>
+    <div class="exi">2. I’m ___ my dentist tomorrow. (see, đã hẹn) →<input id="ex2" data-a="seeing" aria-label="Câu 2"><small>be + V-ing</small></div>
+    <div class="exi">3. I don’t ___ to work tomorrow. (không cần) →<input id="ex3" data-a="have" aria-label="Câu 3"><small>have to</small></div>
+    <div class="exi">4. I’ll finish it ___ tomorrow. (chậm nhất) →<input id="ex4" data-a="by" aria-label="Câu 4"><small>by / until</small></div>
+    <div class="exi">5. Mai bạn làm gì? →<input id="ex5" data-a="what are you doing tomorrow?|what will you do tomorrow?|what are you going to do tomorrow?" aria-label="Câu 5"><small>be + V-ing</small></div>
+    <div class="exi">6. Có thể mai tôi đi bơi →<input id="ex6" data-a="i might go swimming tomorrow|i may go swimming tomorrow|tomorrow i might go swimming" aria-label="Câu 6"><small>might</small></div>
+    <div class="exi">7. Tôi sẽ báo bạn sau →<input id="ex7" data-a="i'll let you know|i will let you know|i'll let you know later" aria-label="Câu 7"><small>let you know</small></div>
+    <div class="exi">8. Xin lỗi, mai tôi không đến được →<input id="ex8" data-a="sorry i can't make it tomorrow|i'm sorry i can't make it tomorrow|sorry i can't come tomorrow|i'm sorry i can't come tomorrow" aria-label="Câu 8"><small>make it</small></div>
+  </div>
+  <div class="btns" style="margin-top:12px"><button class="btn" id="ex-check">Kiểm tra đáp án</button><button class="btn alt" id="ex-show">Xem đáp án</button><button class="btn alt" id="ex-reset">Làm lại</button></div>
+  <div class="out" id="ex-out" style="min-height:0" aria-live="polite"></div>
+
+  <div class="sub-title">Lộ trình luyện 7 ngày</div>
+  <div class="plan">
+    <div class="day"><b>Ngày 1</b><span><strong>Mốc thời gian:</strong> học các cụm tomorrow…, nhớ không có giới từ phía trước</span></div>
+    <div class="day"><b>Ngày 2</b><span><strong>going to / be + V-ing:</strong> mỗi tối nói 3 việc định làm và 1 việc đã hẹn cho ngày mai</span></div>
+    <div class="day"><b>Ngày 3</b><span><strong>Lịch cố định:</strong> nói giờ lớp học, giờ tàu xe, giờ phim bằng hiện tại đơn</span></div>
+    <div class="day"><b>Ngày 4</b><span><strong>will / might:</strong> luyện quyết định ngay lúc nói và những việc chưa chắc</span></div>
+    <div class="day"><b>Ngày 5</b><span><strong>Việc phải làm:</strong> viết danh sách việc ngày mai bằng have to / need to</span></div>
+    <div class="day"><b>Ngày 6</b><span><strong>Đổi lịch:</strong> luyện hủy hẹn lịch sự và đề nghị hẹn lại</span></div>
+    <div class="day"><b>Ngày 7</b><span><strong>Ôn tổng hợp:</strong> dùng máy lên lịch, thu âm 1 phút kể kế hoạch ngày mai thật của bạn</span></div>
+  </div>
+</section>
+
+<section class="section" id="s8">
+  <div class="sec-head"><span class="sec-tag t5">NÂNG CAO</span><div><div class="sec-title">Từ vựng mới để hội thoại tự nhiên hơn</div><div class="sec-sub">Thêm vài từ này, bạn sẽ nói về lịch trình như người đi làm bản xứ</div></div></div>
+  <div class="sub-title">Lịch trình và sắp xếp</div>
+  <table class="tbl"><thead><tr><th>Từ / cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">to-do list</td><td>danh sách việc cần làm</td><td><span class="say">My to-do list for tomorrow is really long.</span></td></tr>
+  <tr><td class="say">a packed day</td><td>một ngày kín lịch</td><td><span class="say">Tomorrow is a packed day.</span></td></tr>
+  <tr><td class="say">tied up</td><td>bận, kẹt việc</td><td><span class="say">I’m tied up all morning.</span></td></tr>
+  <tr><td class="say">available</td><td>rảnh, sẵn sàng</td><td><span class="say">Are you available tomorrow afternoon?</span></td></tr>
+  <tr><td class="say">an early start</td><td>phải bắt đầu sớm</td><td><span class="say">I have an early start tomorrow.</span></td></tr>
+  <tr><td class="say">double-booked</td><td>lỡ hẹn trùng hai việc</td><td><span class="say">Sorry, I’m double-booked at three.</span></td></tr>
+  <tr><td class="say">wrap up</td><td>kết thúc, hoàn tất</td><td><span class="say">I’ll wrap up the report tomorrow.</span></td></tr>
+  <tr><td class="say">plan B</td><td>phương án dự phòng</td><td><span class="say">If it rains, what’s our plan B?</span></td></tr></tbody></table>
+  <div class="sub-title">Cách nói linh hoạt về kế hoạch</div>
+  <table class="tbl"><thead><tr><th>Từ / cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">play it by ear</td><td>tùy cơ ứng biến</td><td><span class="say">Let’s play it by ear tomorrow.</span></td></tr>
+  <tr><td class="say">sleep on it</td><td>để mai suy nghĩ thêm</td><td><span class="say">I’ll sleep on it and tell you tomorrow.</span></td></tr>
+  <tr><td class="say">last-minute</td><td>phút chót</td><td><span class="say">It was a last-minute change.</span></td></tr>
+  <tr><td class="say">get round to</td><td>có thời gian để làm</td><td><span class="say">I’ll get round to it tomorrow.</span></td></tr>
+  <tr><td class="say">be up to</td><td>đang làm gì, định làm gì</td><td><span class="say">What are you up to tomorrow?</span></td></tr>
+  <tr><td class="say">pencil in</td><td>ghi tạm vào lịch</td><td><span class="say">Let’s pencil it in for ten.</span></td></tr></tbody></table>
+  <div class="sub-title">Cụm giúp cuộc trò chuyện trôi chảy</div>
+  <div class="ex-box"><div class="ex-head">LÀM CHO HỘI THOẠI TỰ NHIÊN<span class="ex-tag t5">Nâng cao</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">I’ve got a lot on my plate tomorrow.</span><span class="ex-vn">Mai tôi bận ngập đầu</span></div>
+    <div class="ex-row"><span class="ex-en say">What’s on your agenda for tomorrow?</span><span class="ex-vn">Mai bạn có lịch gì?</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m all set for tomorrow.</span><span class="ex-vn">Tôi chuẩn bị xong hết cho ngày mai rồi</span></div>
+    <div class="ex-row"><span class="ex-en say">Let’s touch base tomorrow morning.</span><span class="ex-vn">Sáng mai mình trao đổi nhanh nhé</span></div>
+    <div class="ex-row"><span class="ex-en say">Tomorrow is another day.</span><span class="ex-vn">Ngày mai là một ngày mới</span></div>
+    <div class="ex-row"><span class="ex-en say">Fingers crossed it all goes to plan.</span><span class="ex-vn">Mong mọi việc theo đúng kế hoạch</span></div>
+    <div class="ex-row"><span class="ex-en say">See you tomorrow!</span><span class="ex-vn">Mai gặp nhé!</span></div>
+  </div></div>
+  <div class="cmp"><div class="bad"><b>❌ NGHE CỨNG</b><div>Tomorrow I will meet client, I will maybe gym, I will must report.</div></div><div class="good"><b>✔ TỰ NHIÊN HƠN</b><div class="say">I’ve got a packed day tomorrow. I’m meeting a client at ten, I have to finish a report, and I might go to the gym if I have time.</div></div></div>
+  <div class="info i-tip"><span>💡</span><span><strong>Mẹo:</strong> người mới học thường dùng <em>will</em> cho mọi việc tương lai. Hãy thử mỗi tối nói 3 câu về ngày mai, mỗi câu dùng một cách khác nhau. Sau một tuần, bạn sẽ tự nhiên chọn đúng.</span></div>
+
+  <div class="sub-title">Tự kiểm tra</div>
+  <ul class="chk">
+    <li><label><input type="checkbox" id="c1">Tôi dùng các mốc tomorrow… đúng, không thêm giới từ</label></li>
+    <li><label><input type="checkbox" id="c2">Tôi phân biệt <strong>be + V-ing</strong> (đã hẹn) và <strong>going to</strong> (đã định)</label></li>
+    <li><label><input type="checkbox" id="c3">Tôi dùng hiện tại đơn cho lịch cố định</label></li>
+    <li><label><input type="checkbox" id="c4">Tôi dùng <strong>will</strong> cho quyết định ngay và <strong>might</strong> cho việc chưa chắc</label></li>
+    <li><label><input type="checkbox" id="c5">Tôi dùng đúng <strong>have to / need to / don’t have to</strong></label></li>
+    <li><label><input type="checkbox" id="c6">Tôi hủy và dời hẹn lịch sự được</label></li>
+    <li><label><input type="checkbox" id="c7">Tôi dùng được ít nhất 5 từ vựng nâng cao</label></li>
+  </ul>
+</section>
+
+</div>
+<div class="footer">🗒️ Giao tiếp tiếng Anh: Plans for Tomorrow · Dành cho người mới bắt đầu · 2026</div>
+</div>
+
+<div class="audio-bar">
+  <b>🔊 Audio</b>
+  <div class="ab-g"><button data-acc="en-GB" class="on">Anh-Anh</button><button data-acc="en-US">Anh-Mỹ</button></div>
+  <div class="ab-g"><button data-rate="0.6">Chậm</button><button data-rate="0.85" class="on">Vừa</button><button data-rate="1">Nhanh</button></div>
+</div>
+
+<script>
+(function(){
+var doc=document.documentElement,bar=document.getElementById('pbar');
+addEventListener('scroll',function(){bar.style.width=(doc.scrollTop/Math.max(1,doc.scrollHeight-doc.clientHeight)*100)+'%'});
+var links=document.querySelectorAll('.nav-link,.topnav a');
+if('IntersectionObserver' in window)document.querySelectorAll('.section[id]').forEach(function(s){
+  new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;
+    links.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id)});
+  })},{rootMargin:'-20% 0px -70% 0px'}).observe(s);
+});
+
+/* Audio */
+var S=window.speechSynthesis,st={acc:'en-GB',rate:.85},cur=null;
+function voice(){if(!S)return null;var v=S.getVoices().filter(function(x){return x.lang.replace('_','-').toLowerCase()===st.acc.toLowerCase()});
+  return v.find(function(x){return /google|natural|premium|enhanced/i.test(x.name)})||v[0]||null}
+function say(el){
+  if(cur)cur.classList.remove('playing');
+  if(!S){el.title='Trình duyệt này không hỗ trợ đọc audio';return}
+  S.cancel();cur=el;el.classList.add('playing');
+  var t=el.textContent.replace(/\s+/g,' ').replace(/\s*\/\s*/g,'. ').replace(/→/g,'. ').trim();
+  var u=new SpeechSynthesisUtterance(t);u.lang=st.acc;u.rate=st.rate;var v=voice();if(v)u.voice=v;
+  u.onend=u.onerror=function(){el.classList.remove('playing')};S.speak(u);
+}
+function prep(root){root.querySelectorAll('.say').forEach(function(e){e.tabIndex=0;e.setAttribute('role','button')})}
+prep(document);
+document.addEventListener('click',function(e){var el=e.target.closest('.say');if(el)say(el)});
+document.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.classList&&e.target.classList.contains('say')){e.preventDefault();say(e.target)}});
+document.querySelectorAll('.audio-bar button').forEach(function(b){b.addEventListener('click',function(){
+  b.parentElement.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');
+  if(b.dataset.acc)st.acc=b.dataset.acc;if(b.dataset.rate)st.rate=+b.dataset.rate;
+})});
+
+/* ===== Lịch ngày mai =====
+   ACT: [V nguyên mẫu, V-ing, chủ ngữ cho lịch cố định + động từ -s (hoặc ''), nghĩa] */
+var ACT=[['go to my English class','going to my English class','my English class starts','đi học tiếng Anh'],
+ ['meet a client','meeting a client','','gặp khách hàng'],['have lunch with my cousin','having lunch with my cousin','','ăn trưa với em họ'],
+ ['finish my report','finishing my report','','làm xong báo cáo'],['go to the gym','going to the gym','','đi tập gym'],
+ ['catch the train to Hai Phong','catching the train to Hai Phong','my train to Hai Phong leaves','bắt tàu đi Hải Phòng'],
+ ['see the dentist','seeing the dentist','','đi khám răng'],['clean my apartment','cleaning my apartment','','dọn căn hộ'],
+ ['call my parents','calling my parents','','gọi điện cho bố mẹ'],['watch a movie','watching a movie','the movie starts','xem phim'],
+ ['go to the bank','going to the bank','','ra ngân hàng'],['study for my test','studying for my test','','ôn bài kiểm tra']];
+/* TYPE: [mã, nhãn] */
+var TYPE=[['arr','Đã hẹn (be + V-ing)'],['int','Đã định (going to)'],['sch','Lịch cố định (hiện tại đơn)'],['might','Chưa chắc (might)'],['must','Bắt buộc (have to)'],['will','Vừa quyết định (will)']];
+var TIMES=[['7:00','at seven'],['9:00','at nine'],['10:30','at half past ten'],['12:00','at noon'],['14:00','at two'],['16:00','at four'],['18:30','at half past six'],['20:00','at eight']];
+var DEFAULT=[[0,0,2],[3,1,4],[4,2,1],[6,3,0],[7,9,3]];
+var planner=document.getElementById('planner'),rows=[];
+function sel(arr,lab,val,aria){var s=document.createElement('select');s.setAttribute('aria-label',aria);arr.forEach(function(x,i){s.add(new Option(lab(x),i))});s.value=val;s.addEventListener('change',show);return s}
+DEFAULT.forEach(function(d,i){
+  var r=document.createElement('div');r.className='prow';
+  var t=sel(TIMES,function(x){return x[0]},d[0],'Giờ, dòng '+(i+1)),a=sel(ACT,function(x){return x[3]},d[1],'Việc, dòng '+(i+1)),ty=sel(TYPE,function(x){return x[1]},d[2],'Loại kế hoạch, dòng '+(i+1));
+  r.append(t,a,ty);planner.append(r);rows.push([t,a,ty]);
+});
+var out=document.getElementById('gen-out');
+var TYCLS={arr:'c1',int:'c2',sch:'c3',might:'c4',must:'c5',will:'c6'};
+function sentence(act,type,time){
+  var T=time[1];
+  if(type==='sch'){
+    if(act[2])return cap(act[2])+' '+T+' tomorrow.';
+    type='arr';
+  }
+  if(type==='arr')return 'I’m '+act[1]+' tomorrow '+T+'.';
+  if(type==='int')return 'I’m going to '+act[0]+' tomorrow '+T+'.';
+  if(type==='might')return 'I might '+act[0]+' tomorrow '+T+', but I’m not sure yet.';
+  if(type==='must')return 'I have to '+act[0]+' tomorrow '+T+'.';
+  return 'Oh, I know! I’ll '+act[0]+' tomorrow '+T+'.';
+}
+function cap(s){return s.charAt(0).toUpperCase()+s.slice(1)}
+function show(){
+  var items=rows.map(function(r){return{t:TIMES[+r[0].value],ti:+r[0].value,a:ACT[+r[1].value],ty:TYPE[+r[2].value][0],tyl:TYPE[+r[2].value][1]}}).sort(function(x,y){return x.ti-y.ti});
+  out.innerHTML='';
+  var tl=document.createElement('div');tl.className='sched';
+  var notes=[];
+  items.forEach(function(it){
+    var real=it.ty;if(it.ty==='sch'&&!it.a[2]){real='arr';notes.push('“'+it.a[3]+'” không có lịch cố định công khai, nên máy dùng <b>be + V-ing</b> thay cho hiện tại đơn.')}
+    var r=document.createElement('div');r.className='srow';
+    var tm=document.createElement('b');tm.textContent=it.t[0];
+    var bd=document.createElement('span');bd.className='badge '+TYCLS[real];bd.textContent=TYPE.filter(function(x){return x[0]===real})[0][1].split(' (')[1].replace(')','');
+    var sp=document.createElement('span');sp.className='say';sp.textContent=sentence(it.a,it.ty,it.t);
+    r.append(tm,bd,sp);tl.append(r);
+  });
+  out.append(tl);
+  var q=document.createElement('div');q.className='lbl';q.style.marginTop='10px';q.textContent='BẠN BÈ HỎI';out.append(q);
+  var qq=document.createElement('div');var qs=document.createElement('span');qs.className='say';qs.textContent='What are you doing tomorrow? Are you free in the evening?';qq.append(qs);out.append(qq);
+  var last=items[items.length-1];
+  var ans=document.createElement('div');var as=document.createElement('span');as.className='say';
+  as.textContent=last.ti>=6?'Sorry, I’m busy in the evening, but I’ll let you know if anything changes.':'Yes, I’m free after '+last.t[1].replace('at ','')+'. Let’s meet then!';
+  ans.append(as);out.append(ans);
+  var w=document.createElement('span');w.className='why';
+  w.innerHTML=(notes.length?notes.join(' ')+' ':'')+'Mỗi màu là một cách nói tương lai. Khi kể cả ngày, hãy trộn nhiều cách như trên. Đó là dấu hiệu của người nói tiếng Anh tự nhiên.';
+  out.append(w);prep(out);
+}
+document.getElementById('gen-btn').addEventListener('click',show);
+document.getElementById('rnd-btn').addEventListener('click',function(){
+  var used=[];rows.forEach(function(r){var t;do{t=Math.floor(Math.random()*TIMES.length)}while(used.indexOf(t)>-1);used.push(t);r[0].value=t;r[1].value=Math.floor(Math.random()*ACT.length);r[2].value=Math.floor(Math.random()*TYPE.length)});show();
+});
+show();
+
+/* Bài tập */
+var inputs=document.querySelectorAll('#exlist input'),exo=document.getElementById('ex-out');
+function norm(s){return s.toLowerCase().replace(/[’‘`]/g,"'").replace(/[.!?]+$/,'').replace(/,/g,'').replace(/\s+/g,' ').trim()}
+document.getElementById('ex-check').addEventListener('click',function(){
+  var ok=0;
+  inputs.forEach(function(i){
+    var good=i.dataset.a.split('|').some(function(a){return norm(a)===norm(i.value)});
+    i.classList.remove('ok','no');i.classList.add(good?'ok':'no');if(good)ok++;
+  });
+  exo.style.minHeight='';
+  exo.textContent=ok===inputs.length?'🎉 Chính xác '+ok+'/'+inputs.length+'. Bạn đã chọn đúng cách nói tương lai!':'Đúng '+ok+'/'+inputs.length+'. Các ô viền đỏ cần xem lại; đọc lại bảng ở Bài 2 và Bài 4, hoặc bấm “Xem đáp án”.';
+});
+document.getElementById('ex-show').addEventListener('click',function(){
+  inputs.forEach(function(i){
+    var k=i.parentElement.querySelector('.key');
+    if(!k){k=document.createElement('span');k.className='key';i.parentElement.append(k)}
+    var a=i.dataset.a.split('|')[0].replace(/'/g,'’').replace(/\bi\b/g,'I').replace(/^sorry I/,'sorry, I');k.textContent='Đáp án: '+(a.indexOf(' ')>-1?cap(a):a);
+  });
+});
+document.getElementById('ex-reset').addEventListener('click',function(){
+  inputs.forEach(function(i){i.value='';i.classList.remove('ok','no')});
+  document.querySelectorAll('#exlist .key').forEach(function(k){k.remove()});
+  exo.textContent='';exo.style.minHeight='0';
+});
+})();
+</script>
+
+<script src="nav.js" defer></script>
+</body></html>

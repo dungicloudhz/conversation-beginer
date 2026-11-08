@@ -1,0 +1,596 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Gọi Món Tại Nhà Hàng</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: sidebar mục lục cố định + cột bài học, cùng theme tối của bộ "Hỏi đường & Hỏi giờ" (nhấn hồng đỏ – tím cho chủ đề nhà hàng) */
+:root{color-scheme:dark;
+--bg:#080810;--s1:#0e0e1c;--s2:#131326;--s3:#18182e;--border:#222240;--border2:#2c2c50;--text:#e6e6f2;--muted:#8a8ab8;--faint:#4a4a78;
+--acc:#ffd060;--acc-dim:rgba(255,208,96,.11);--oc:#38bdf8;--oc-dim:rgba(56,189,248,.13);--ins:#40d88e;--ins-dim:rgba(64,216,142,.12);
+--sk:#a07af4;--sk-dim:rgba(160,122,244,.12);--au:#ff6584;--au-dim:rgba(255,101,132,.12);--teal:#30d8c0;--code-bg:#05050e;
+--tip-bg:rgba(91,168,255,.10);--tip-bd:rgba(91,168,255,.25);--tip-fg:#8ab8f0;--warn-fg:#e0bc58;--ok-fg:#5ccf98;--line:rgba(255,255,255,.05);
+--font:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+--gl:max(64px,env(safe-area-inset-left,0px));--gr:max(64px,env(safe-area-inset-right,0px))}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 60px)}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.7;font-size:15px;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:600;background:var(--s1)}
+.sidebar{position:fixed;left:0;top:0;width:260px;height:100%;background:var(--s1);border-right:1px solid var(--border);overflow-y:auto;z-index:400;padding-top:env(safe-area-inset-top,0px);padding-left:env(safe-area-inset-left,0px)}
+.sb-logo{padding:20px 18px 16px;border-bottom:1px solid var(--border)}
+.sb-brand{display:flex;align-items:center;gap:11px;margin-bottom:12px}
+.logo-icon{width:44px;height:44px;border-radius:11px;background:linear-gradient(135deg,var(--au),var(--sk));display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 0 26px rgba(255,101,132,.28)}
+.logo-text h2{font-size:15px;font-weight:800}.logo-text p{font-size:10.5px;color:var(--muted)}
+.prog-wrap{height:3px;background:var(--border);border-radius:2px;overflow:hidden}
+.prog-bar{height:100%;width:0;background:linear-gradient(90deg,var(--acc),var(--ins),var(--oc),var(--sk),var(--au))}
+.nav-label{padding:14px 18px 4px;font-size:9.5px;font-weight:700;letter-spacing:1.6px;color:var(--faint)}
+.nav-link{display:flex;align-items:center;gap:9px;padding:7px 18px;color:var(--muted);text-decoration:none;font-size:12.5px;font-weight:600;border-left:2px solid transparent}
+.nav-link:hover,.nav-link.active{color:var(--text);background:rgba(255,208,96,.07);border-left-color:var(--acc)}
+.main{margin-left:260px}
+.hero{padding-block:80px 60px;padding-left:var(--gl);padding-right:var(--gr);border-bottom:1px solid var(--border);background:radial-gradient(ellipse 65% 55% at 75% 22%,rgba(255,101,132,.10),transparent 60%),radial-gradient(ellipse 50% 55% at 10% 82%,rgba(160,122,244,.08),transparent 55%),var(--bg)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--acc-dim);border:1px solid rgba(255,208,96,.38);color:var(--acc);padding:5px 16px;border-radius:100px;font-size:11.5px;font-weight:700;margin-bottom:24px}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--acc);animation:p 2s infinite}
+@keyframes p{50%{opacity:.35;transform:scale(.7)}}
+@media(prefers-reduced-motion:reduce){.eyebrow i{animation:none}html{scroll-behavior:auto}}
+.hero h1{font-size:50px;font-weight:900;letter-spacing:-2.4px;line-height:1.06;margin-bottom:18px;text-wrap:balance}
+.grad{background:linear-gradient(135deg,var(--au),var(--sk));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-desc{font-size:16px;color:var(--muted);max-width:620px;margin-bottom:28px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{padding:5px 14px;border-radius:7px;font-size:12px;font-weight:700}
+.c1{background:var(--oc-dim);color:var(--oc)}.c2{background:var(--ins-dim);color:var(--ins)}.c3{background:var(--acc-dim);color:var(--acc)}.c4{background:var(--sk-dim);color:var(--sk)}.c5{background:var(--au-dim);color:var(--au)}
+.content{padding-block:56px;padding-left:var(--gl);padding-right:var(--gr);max-width:calc(1020px + 64px)}
+.section{margin-bottom:68px}
+.sec-head{display:flex;gap:14px;align-items:flex-start;margin-bottom:28px;padding-bottom:18px;border-bottom:1px solid var(--border)}
+.sec-tag{font-family:var(--mono);font-size:10px;font-weight:600;padding:3px 10px;border-radius:5px;margin-top:6px;flex-shrink:0;letter-spacing:.5px}
+.t1{color:var(--oc);background:var(--oc-dim)}.t2{color:var(--ins);background:var(--ins-dim)}.t3{color:var(--acc);background:var(--acc-dim)}.t4{color:var(--sk);background:var(--sk-dim)}.t5{color:var(--au);background:var(--au-dim)}
+.sec-title{font-size:23px;font-weight:800;letter-spacing:-.6px;text-wrap:balance}.sec-sub{font-size:13px;color:var(--muted)}
+.sub-title{font-size:14.5px;font-weight:700;margin:26px 0 12px;display:flex;align-items:center;gap:10px}
+.sub-title::before{content:'';width:14px;height:3px;background:var(--acc);border-radius:2px}
+p.t{color:var(--muted);font-size:13.5px;margin-bottom:11px;max-width:68ch}p.t strong,li strong{color:var(--text)}
+.ex-box{background:var(--s1);border:1px solid var(--border2);border-radius:11px;overflow:hidden;margin:13px 0}
+.ex-head{display:flex;align-items:center;gap:8px;padding:9px 16px;background:var(--s2);border-bottom:1px solid var(--border);font-family:var(--mono);font-size:10px;font-weight:600;color:var(--muted);letter-spacing:.5px}
+.ex-tag{margin-left:auto;font-size:9px;font-weight:700;padding:2px 9px;border-radius:100px;font-family:var(--font)}
+.ex-body{padding:10px 20px}
+.ex-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:13.5px}
+.ex-row:last-child{border-bottom:none}
+.ex-en{color:var(--text);font-weight:600;min-width:280px}.ex-vn{color:var(--muted)}
+.info{display:flex;gap:12px;padding:14px 16px;border-radius:9px;margin:13px 0;font-size:13px;line-height:1.6}
+.i-tip{background:var(--tip-bg);border:1px solid var(--tip-bd);color:var(--tip-fg)}
+.i-warn{background:var(--acc-dim);border:1px solid rgba(255,208,96,.25);color:var(--warn-fg)}
+.i-ok{background:var(--ins-dim);border:1px solid rgba(64,216,142,.25);color:var(--ok-fg)}
+.tbl{width:100%;border-collapse:collapse;font-size:13px;margin:13px 0;display:block;overflow-x:auto}
+.tbl th{background:var(--s3);padding:10px 14px;text-align:left;font-size:10px;color:var(--muted);border-bottom:1px solid var(--border2);white-space:nowrap;letter-spacing:.5px}
+.tbl td{padding:10px 14px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:top}
+.tbl td:first-child{color:var(--text);font-weight:600}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}
+.card{background:var(--s1);border:1px solid var(--border);border-radius:11px;padding:16px;min-width:0}
+.card:hover{border-color:var(--acc)}
+.card-icon{font-size:24px}.card-title{font-size:13px;font-weight:700}.card-desc{font-size:12px;color:var(--muted)}
+.cmp{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);border-radius:11px;overflow:hidden;margin:13px 0}
+.bad{background:rgba(255,101,132,.07);padding:14px 16px;border-right:1px solid var(--border)}.good{background:rgba(64,216,142,.07);padding:14px 16px}
+.cmp b{display:block;font-size:10px;margin-bottom:6px;letter-spacing:.5px}.bad b{color:var(--au)}.good b{color:var(--ins)}
+.cmp div div{font-size:13.5px}
+.dlg{display:grid;gap:8px;margin:12px 0;background:var(--s1);border:1px solid var(--border2);border-radius:12px;padding:16px 18px}
+.dlg-t{font-size:10px;font-weight:800;color:var(--acc);margin-bottom:2px;letter-spacing:.6px}
+.turn{display:flex;gap:10px;align-items:baseline}
+.turn>div{min-width:0}
+.who{flex-shrink:0;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+.wa{background:var(--oc-dim);color:var(--oc)}.wb{background:var(--ins-dim);color:var(--ins)}
+.turn .say{font-weight:600}.turn small{display:block;color:var(--muted);font-size:12px;font-weight:400}
+.gen{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:12px 0}
+.gen label{font-size:11.5px;color:var(--muted);font-weight:600;display:block;min-width:0}
+.gen select{width:100%;margin-top:4px;background:var(--code-bg);border:1px solid var(--border2);border-radius:8px;padding:9px 12px;color:var(--text);font:inherit;font-size:13px}
+select:focus-visible,button:focus-visible,.say:focus-visible,.exi input:focus-visible,.chk input:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.btns{display:flex;flex-wrap:wrap;gap:6px}
+.btn{background:var(--acc-dim);color:var(--acc);border:1px solid var(--acc);border-radius:8px;padding:8px 16px;font:inherit;font-weight:700;font-size:13px;cursor:pointer}
+.btn.alt{background:var(--ins-dim);color:var(--ins);border-color:var(--ins)}
+.out{margin-top:14px;min-height:60px;background:var(--s2);border:1px dashed var(--border2);border-radius:10px;padding:14px 16px;font-size:14px;line-height:1.9}
+.big{font-size:21px;font-weight:800;color:var(--acc);letter-spacing:-.3px;line-height:1.4;margin-bottom:4px}
+.out .why{display:block;color:var(--muted);font-size:12.5px}
+.out .why b{color:var(--teal);font-family:var(--mono);font-weight:600}
+.timeline{display:grid;gap:0;margin:14px 0;border-left:2px solid var(--border2);padding-left:18px}
+.tl{position:relative;padding:8px 0 12px}
+.tl::before{content:'';position:absolute;left:-24px;top:16px;width:10px;height:10px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 3px var(--bg)}
+.tl time{font-family:var(--mono);font-size:12px;color:var(--acc);font-variant-numeric:tabular-nums;font-weight:600}
+.tl .say{font-weight:600;font-size:13.5px}
+.tl small{display:block;color:var(--muted);font-size:12px}
+.freq{display:grid;gap:7px;margin:14px 0}
+.fq{display:grid;grid-template-columns:110px 1fr 54px;gap:12px;align-items:center;font-size:13px}
+.fq .say{font-weight:700}
+.fq .track{height:8px;background:var(--s3);border-radius:4px;overflow:hidden}
+.fq .fill{height:100%;background:linear-gradient(90deg,var(--ins),var(--acc))}
+.fq span:last-child{font-family:var(--mono);font-size:11.5px;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+.plan{display:grid;gap:8px;margin:12px 0}
+.day{display:flex;gap:14px;align-items:baseline;background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:12px 16px;font-size:13px;color:var(--muted)}
+.day b{color:var(--acc);font-family:var(--mono);font-size:12px;flex-shrink:0;width:52px}.day strong{color:var(--text)}
+.chk{list-style:none;margin:10px 0}.chk li{padding:6px 0;font-size:13.5px;color:var(--muted);border-bottom:1px solid rgba(255,255,255,.04)}
+.chk input{accent-color:var(--ins);margin-right:10px;width:15px;height:15px;vertical-align:-2px}
+.gr{border:1px solid rgba(160,122,244,.38);background:linear-gradient(180deg,var(--sk-dim),transparent 110px),var(--s1);border-radius:12px;margin:28px 0;overflow:hidden}
+.gr-head{padding:10px 18px;font-size:12px;font-weight:800;color:var(--sk);border-bottom:1px solid var(--border);display:flex;gap:10px;flex-wrap:wrap;align-items:baseline;letter-spacing:.4px}
+.gr-head em{font-style:normal;color:var(--muted);font-weight:600;letter-spacing:0}
+.gr-body{padding:14px 18px;font-size:13.5px;color:var(--muted)}
+.gr-body p{margin-bottom:10px}.gr-body b{color:var(--text)}.gr-body ul{padding-left:20px;margin-bottom:8px}.gr-body li{margin-bottom:4px}
+.gr-body .tbl{margin:8px 0 12px}
+.fm{display:inline-block;font-family:var(--mono);font-size:12px;background:var(--code-bg);color:var(--teal);padding:3px 9px;border-radius:6px;margin:2px 0}
+.say{cursor:pointer;border-bottom:1px dotted var(--oc)}
+.say:hover{color:var(--acc);background:var(--acc-dim);border-radius:4px}
+.say::after{content:"🔊";font-size:.68em;margin-left:3px;opacity:.5}
+.say.playing{color:var(--ins);background:var(--ins-dim);border-radius:4px}.say.playing::after{opacity:1}
+.exi{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:13.5px;color:var(--text)}
+.exi input{width:220px;max-width:100%;background:var(--code-bg);border:1px solid var(--border2);border-radius:6px;padding:4px 8px;color:var(--text);font:inherit;font-size:13px;text-align:center}
+.exi input.ok{border-color:var(--ins);color:var(--ins)}.exi input.no{border-color:var(--au);color:var(--au)}
+.exi small{color:var(--muted);font-size:11.5px}
+.exi .key{color:var(--ins);font-size:12px;width:100%}
+.footer{border-top:1px solid var(--border);padding-block:28px 90px;padding-left:var(--gl);padding-right:var(--gr);font-size:12px;color:var(--muted)}
+.audio-bar{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:500;display:flex;gap:10px;align-items:center;background:var(--s2);border:1px solid var(--border2);border-radius:12px;padding:8px 12px;box-shadow:0 8px 28px rgba(0,0,0,.5);font-size:12px;color:var(--muted)}
+.audio-bar b{color:var(--acc)}.ab-g{display:flex;gap:4px}
+.audio-bar button{background:var(--s3);color:var(--muted);border:1px solid var(--border);border-radius:7px;padding:4px 10px;font:inherit;font-weight:700;cursor:pointer}
+.audio-bar button.on{background:var(--acc-dim);color:var(--acc);border-color:var(--acc)}
+.topnav{display:none}
+@media(max-width:900px){
+:root{--gl:max(18px,env(safe-area-inset-left,0px));--gr:max(18px,env(safe-area-inset-right,0px))}
+.sidebar{display:none}.main{margin-left:0}.hero h1{font-size:32px;letter-spacing:-1.4px}.hero{padding-block:48px 40px}
+.grid-3,.cmp{grid-template-columns:1fr}.gen{grid-template-columns:1fr 1fr}.bad{border-right:none;border-bottom:1px solid var(--border)}
+.topnav{display:flex;overflow-x:auto;position:sticky;top:env(safe-area-inset-top,0px);z-index:500;background:var(--s1);border-bottom:2px solid var(--border2);scrollbar-width:none;padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+.topnav a{flex-shrink:0;padding:10px 14px;color:var(--muted);text-decoration:none;font-size:12px;font-weight:700;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-2px}
+.topnav a.active{color:var(--acc);border-bottom-color:var(--acc);background:var(--acc-dim)}
+.ex-en{min-width:0}
+.fq{grid-template-columns:90px 1fr 46px}
+.audio-bar{left:calc(8px + env(safe-area-inset-left,0px));right:calc(8px + env(safe-area-inset-right,0px));justify-content:center;flex-wrap:wrap}
+}
+@media(max-width:480px){.gen{grid-template-columns:1fr}}
+.lbl{font-family:var(--mono);font-size:10px;font-weight:600;color:var(--faint);letter-spacing:1px;min-width:120px}
+.rl{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;padding:3px 0}
+.rl .say{font-weight:700;font-size:15px}
+.menu{background:var(--s1);border:1px solid var(--border2);border-radius:14px;padding:6px 18px 12px;margin:14px 0;max-width:640px}
+.mh{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:1.4px;color:var(--au);padding:12px 0 4px}
+.mi{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;padding:7px 0;border-bottom:1px dashed var(--border)}
+.mi.on .mn{color:var(--acc)}
+.mn{font-size:13.5px;font-weight:600;min-width:0}.mn small{display:block;font-weight:400;color:var(--muted);font-size:11.5px}
+.mp{font-family:var(--mono);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.qc{display:flex;align-items:center;gap:6px}
+.qc button{width:28px;height:28px;border-radius:8px;border:1px solid var(--border2);background:var(--s3);color:var(--text);font:inherit;font-weight:700;cursor:pointer}
+.qc button:hover{border-color:var(--acc);color:var(--acc)}
+.qc b{min-width:16px;text-align:center;font-family:var(--mono);font-variant-numeric:tabular-nums}
+.bill{background:var(--code-bg);border:1px solid var(--border2);border-radius:10px;padding:12px 16px;margin:12px 0;max-width:380px;font-family:var(--mono);font-size:12.5px}
+.bh{color:var(--faint);letter-spacing:1.4px;font-size:10px;margin-bottom:6px}
+.br{display:flex;justify-content:space-between;gap:12px;padding:2px 0;font-variant-numeric:tabular-nums}
+.br.sep{border-top:1px dashed var(--border2);margin-top:4px;padding-top:6px}
+.br.tot{color:var(--acc);font-weight:600;font-size:14px}
+</style>
+
+<aside class="sidebar">
+  <div class="sb-logo">
+    <div class="sb-brand"><div class="logo-icon">🍽️</div><div class="logo-text"><h2>Gọi món tại nhà hàng</h2><p>Tiếng Anh cho người mới</p></div></div>
+    <div class="prog-wrap"><div class="prog-bar" id="pbar"></div></div>
+  </div>
+  <div class="nav-label">BÀI HỌC</div>
+  <a class="nav-link" href="#s1">📞 Đặt bàn</a>
+  <a class="nav-link" href="#s2">📖 Đến nơi &amp; đọc thực đơn</a>
+  <a class="nav-link" href="#s3">📝 Gọi món &amp; yêu cầu riêng</a>
+  <a class="nav-link" href="#s4">🙋 Trong bữa ăn</a>
+  <a class="nav-link" href="#s5">💳 Thanh toán</a>
+  <div class="nav-label">THỰC HÀNH</div>
+  <a class="nav-link" href="#s6">💬 Hội thoại mẫu</a>
+  <a class="nav-link" href="#s7">🧾 Thực đơn luyện tập &amp; bài tập</a>
+  <a class="nav-link" href="#s8">🚀 Từ vựng nâng cao</a>
+</aside>
+
+<div class="main">
+<nav class="topnav">
+  <a href="#s1">1 Đặt bàn</a><a href="#s2">2 Thực đơn</a><a href="#s3">3 Gọi món</a><a href="#s4">4 Bữa ăn</a><a href="#s5">5 Thanh toán</a><a href="#s6">6 Hội thoại</a><a href="#s7">7 Luyện tập</a><a href="#s8">8 Nâng cao</a>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow"><i></i>Dành cho người mới bắt đầu</div>
+  <h1>Gọi món tại nhà hàng<br><span class="grad">bằng tiếng Anh</span></h1>
+  <p class="hero-desc">Đi trọn một bữa ăn bằng tiếng Anh: gọi điện đặt bàn, được dẫn vào chỗ, đọc thực đơn, gọi món kèm yêu cầu riêng, nhờ phục vụ, phàn nàn lịch sự khi có vấn đề, rồi xin hóa đơn và chia tiền. Bấm vào câu có biểu tượng loa để nghe, rồi tự gọi món với thực đơn tương tác ở phần thực hành.</p>
+  <div class="chips"><span class="chip c5">Đặt bàn</span><span class="chip c3">Thực đơn</span><span class="chip c2">Gọi món</span><span class="chip c1">Phàn nàn lịch sự</span><span class="chip c4">Thanh toán</span></div>
+</header>
+
+<div class="content">
+
+<section class="section" id="s1">
+  <div class="sec-head"><span class="sec-tag t5">BÀI 1</span><div><div class="sec-title">Đặt bàn trước</div><div class="sec-sub">Gọi điện hoặc nhắn tin giữ chỗ</div></div></div>
+  <div class="ex-box"><div class="ex-head">KHÁCH NÓI<span class="ex-tag t5">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Hi, I’d like to book a table, please.</span><span class="ex-vn">Chào bạn, tôi muốn đặt bàn</span></div>
+    <div class="ex-row"><span class="ex-en say">A table for four at seven p.m. on Friday.</span><span class="ex-vn">Bàn cho bốn người, 7 giờ tối thứ Sáu</span></div>
+    <div class="ex-row"><span class="ex-en say">Do you have a table by the window?</span><span class="ex-vn">Có bàn cạnh cửa sổ không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Is there a private room for twelve people?</span><span class="ex-vn">Có phòng riêng cho 12 người không?</span></div>
+    <div class="ex-row"><span class="ex-en say">The booking is under the name Nguyen.</span><span class="ex-vn">Đặt dưới tên Nguyễn</span></div>
+    <div class="ex-row"><span class="ex-en say">Could I change my booking to eight o’clock?</span><span class="ex-vn">Tôi đổi giờ đặt sang 8 giờ được không?</span></div>
+  </div></div>
+  <div class="ex-box"><div class="ex-head">NHÀ HÀNG HỎI<span class="ex-tag t1">Nghe hiểu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">For how many people?</span><span class="ex-vn">Cho bao nhiêu người ạ?</span></div>
+    <div class="ex-row"><span class="ex-en say">What time would you like?</span><span class="ex-vn">Anh chị muốn mấy giờ?</span></div>
+    <div class="ex-row"><span class="ex-en say">Can I have your name and phone number?</span><span class="ex-vn">Cho tôi xin tên và số điện thoại</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m sorry, we’re fully booked at seven. How about seven thirty?</span><span class="ex-vn">Xin lỗi, 7 giờ kín bàn rồi. 7 rưỡi được không ạ?</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>a table for + số người + at + giờ + on + ngày</em></div><div class="gr-body">
+<p>Thứ tự thông tin khi đặt bàn: <span class="fm">I’d like to book a table + for (số người) + at (giờ) + on (ngày)</span></p>
+<ul><li><span class="say">I’d like to book a table for two at eight on Saturday.</span></li>
+<li><span class="say">Can I reserve a table for six tomorrow evening?</span> (tomorrow không cần giới từ)</li></ul>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>I want book table 4 people in 7pm in Friday.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">I’d like to book a table for four at seven p.m. on Friday.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s2">
+  <div class="sec-head"><span class="sec-tag t3">BÀI 2</span><div><div class="sec-title">Đến nơi và đọc thực đơn</div><div class="sec-sub">Báo đã đặt bàn, hiểu các mục và cách chế biến trên menu</div></div></div>
+  <div class="ex-box"><div class="ex-head">KHI VỪA ĐẾN<span class="ex-tag t3">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Good evening. Do you have a reservation?</span><span class="ex-vn">Chào buổi tối. Anh chị có đặt bàn không ạ?</span></div>
+    <div class="ex-row"><span class="ex-en say">Yes, a table for four under Nguyen.</span><span class="ex-vn">Có, bàn bốn người tên Nguyễn</span></div>
+    <div class="ex-row"><span class="ex-en say">No, we don’t. Do you have a table for two?</span><span class="ex-vn">Không. Còn bàn hai người không ạ?</span></div>
+    <div class="ex-row"><span class="ex-en say">Right this way, please.</span><span class="ex-vn">Mời đi lối này</span></div>
+    <div class="ex-row"><span class="ex-en say">Could we sit outside?</span><span class="ex-vn">Chúng tôi ngồi ngoài trời được không?</span></div>
+  </div></div>
+  <div class="sub-title">Các mục trên thực đơn</div>
+  <table class="tbl"><thead><tr><th>Mục</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">starters / appetizers</td><td>món khai vị</td><td><span class="say">spring rolls, salad, soup</span></td></tr>
+  <tr><td class="say">main courses / mains</td><td>món chính</td><td><span class="say">grilled fish, beef steak, fried rice</span></td></tr>
+  <tr><td class="say">side dishes / sides</td><td>món ăn kèm</td><td><span class="say">steamed rice, French fries, vegetables</span></td></tr>
+  <tr><td class="say">desserts</td><td>tráng miệng</td><td><span class="say">ice cream, fruit, flan</span></td></tr>
+  <tr><td class="say">today’s specials</td><td>món đặc biệt hôm nay</td><td><span class="say">What are today’s specials?</span></td></tr></tbody></table>
+  <div class="sub-title">Cách chế biến</div>
+  <div class="grid-3">
+    <div class="card"><div class="card-icon">🔥</div><div class="card-title say">grilled</div><div class="card-desc">nướng vỉ</div></div>
+    <div class="card"><div class="card-icon">🍳</div><div class="card-title say">fried</div><div class="card-desc">chiên, rán</div></div>
+    <div class="card"><div class="card-icon">♨️</div><div class="card-title say">steamed</div><div class="card-desc">hấp</div></div>
+    <div class="card"><div class="card-icon">🥘</div><div class="card-title say">stir-fried</div><div class="card-desc">xào</div></div>
+    <div class="card"><div class="card-icon">🍲</div><div class="card-title say">boiled</div><div class="card-desc">luộc</div></div>
+    <div class="card"><div class="card-icon">🍗</div><div class="card-title say">roasted</div><div class="card-desc">quay, nướng lò</div></div>
+  </div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Phân từ quá khứ làm tính từ: grilled fish</em></div><div class="gr-body">
+<p>Cách chế biến là <b>động từ thêm -ed</b> (phân từ quá khứ), đặt <b>trước</b> tên món: <span class="fm">V-ed + món</span></p>
+<ul><li>grill → <span class="say">grilled chicken</span></li><li>steam → <span class="say">steamed fish</span></li><li>stir-fry → <span class="say">stir-fried morning glory</span> (rau muống xào)</li></ul>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>fish grill / rice fry</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">grilled fish, fried rice</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s3">
+  <div class="sec-head"><span class="sec-tag t2">BÀI 3</span><div><div class="sec-title">Gọi món và yêu cầu riêng</div><div class="sec-sub">Gọi món chính xác, bớt hay thêm nguyên liệu, báo dị ứng</div></div></div>
+  <div class="ex-box"><div class="ex-head">GỌI MÓN<span class="ex-tag t2">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Are you ready to order?</span><span class="ex-vn">Anh chị gọi món được chưa ạ?</span></div>
+    <div class="ex-row"><span class="ex-en say">Could we have a few more minutes?</span><span class="ex-vn">Cho chúng tôi thêm vài phút nhé</span></div>
+    <div class="ex-row"><span class="ex-en say">What would you recommend?</span><span class="ex-vn">Bạn gợi ý món gì?</span></div>
+    <div class="ex-row"><span class="ex-en say">I’ll have the grilled pork with rice.</span><span class="ex-vn">Tôi lấy cơm thịt nướng</span></div>
+    <div class="ex-row"><span class="ex-en say">For the starter, we’d like the spring rolls.</span><span class="ex-vn">Khai vị, chúng tôi lấy nem rán</span></div>
+    <div class="ex-row"><span class="ex-en say">How would you like your steak?</span><span class="ex-vn">Anh muốn bít tết chín mức nào?</span></div>
+    <div class="ex-row"><span class="ex-en say">Medium, please.</span><span class="ex-vn">Chín vừa nhé</span></div>
+  </div></div>
+  <div class="ex-box"><div class="ex-head">YÊU CẦU RIÊNG<span class="ex-tag t5">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Could I have it without onions?</span><span class="ex-vn">Cho tôi món này không hành được không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Can I have the sauce on the side?</span><span class="ex-vn">Để nước sốt riêng ra được không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Not too spicy, please.</span><span class="ex-vn">Đừng cay quá nhé</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m allergic to peanuts. Does this dish have any?</span><span class="ex-vn">Tôi dị ứng lạc. Món này có lạc không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Do you have any vegetarian dishes?</span><span class="ex-vn">Có món chay không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Can I have rice instead of fries?</span><span class="ex-vn">Đổi khoai tây chiên thành cơm được không?</span></div>
+  </div></div>
+  <table class="tbl"><thead><tr><th>Mức chín (bít tết)</th><th>Nghĩa</th></tr></thead><tbody>
+  <tr><td class="say">rare</td><td>tái</td></tr><tr><td class="say">medium-rare</td><td>tái vừa</td></tr>
+  <tr><td class="say">medium</td><td>chín vừa</td></tr><tr><td class="say">well-done</td><td>chín kỹ</td></tr></tbody></table>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>I’ll have…, và with / without / instead of / extra</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Cấu trúc</th><th>Ví dụ</th></tr></thead><tbody>
+<tr><td><span class="fm">I’ll have + the + món</span></td><td><span class="say">I’ll have the beef pho.</span> (quyết định ngay lúc gọi)</td></tr>
+<tr><td><span class="fm">with / without + nguyên liệu</span></td><td><span class="say">with extra herbs, without chili</span></td></tr>
+<tr><td><span class="fm">A + instead of + B</span></td><td><span class="say">noodles instead of rice</span></td></tr>
+<tr><td><span class="fm">extra + N</span></td><td><span class="say">Can I have extra lime?</span></td></tr></tbody></table>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>I take beef pho, no have onion.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">I’ll have the beef pho without onions, please.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s4">
+  <div class="sec-head"><span class="sec-tag t1">BÀI 4</span><div><div class="sec-title">Trong bữa ăn</div><div class="sec-sub">Nhờ phục vụ, khen món, và phàn nàn lịch sự khi có vấn đề</div></div></div>
+  <div class="ex-box"><div class="ex-head">NHỜ PHỤC VỤ<span class="ex-tag t1">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Excuse me, could we have some more napkins?</span><span class="ex-vn">Xin lỗi, cho chúng tôi thêm khăn giấy</span></div>
+    <div class="ex-row"><span class="ex-en say">Could I get a pair of chopsticks, please?</span><span class="ex-vn">Cho tôi một đôi đũa</span></div>
+    <div class="ex-row"><span class="ex-en say">Can we get some more ice?</span><span class="ex-vn">Cho thêm ít đá được không?</span></div>
+    <div class="ex-row"><span class="ex-en say">This is delicious! What’s in the sauce?</span><span class="ex-vn">Ngon quá! Nước sốt làm từ gì vậy?</span></div>
+  </div></div>
+  <div class="ex-box"><div class="ex-head">PHÀN NÀN LỊCH SỰ<span class="ex-tag t5">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Excuse me, I’m afraid this isn’t what I ordered.</span><span class="ex-vn">Xin lỗi, hình như đây không phải món tôi gọi</span></div>
+    <div class="ex-row"><span class="ex-en say">My soup is a bit cold. Could you warm it up?</span><span class="ex-vn">Súp của tôi hơi nguội. Hâm nóng lại giúp được không?</span></div>
+    <div class="ex-row"><span class="ex-en say">We’ve been waiting for thirty minutes. Is our food coming soon?</span><span class="ex-vn">Chúng tôi đợi 30 phút rồi. Món sắp ra chưa ạ?</span></div>
+    <div class="ex-row"><span class="ex-en say">Sorry, I think there’s a mistake on the bill.</span><span class="ex-vn">Xin lỗi, hình như hóa đơn bị nhầm</span></div>
+    <div class="ex-row"><span class="ex-en say">I asked for no chili, but this is very spicy.</span><span class="ex-vn">Tôi đã dặn không ớt, nhưng món này cay lắm</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Làm mềm lời phàn nàn: I’m afraid…, a bit, I think</em></div><div class="gr-body">
+<ul><li><span class="fm">I’m afraid + câu</span> = “e là…” → <span class="say">I’m afraid the fish is overcooked.</span></li>
+<li><span class="fm">a bit / a little + tính từ</span> → <span class="say">It’s a bit salty.</span> (nghe nhẹ nhàng hơn <i>very salty</i>)</li>
+<li><span class="fm">I think there’s + vấn đề</span> → <span class="say">I think there’s a hair in my soup.</span></li>
+<li>Kết thúc bằng một lời đề nghị: <span class="say">Could you change it, please?</span></li></ul>
+<div class="cmp"><div class="bad"><b>❌ NGHE GAY GẮT</b><div>This is wrong! Bad food!</div></div><div class="good"><b>✔ LỊCH SỰ</b><div class="say">Excuse me, I’m afraid this isn’t what I ordered. Could you check, please?</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s5">
+  <div class="sec-head"><span class="sec-tag t4">BÀI 5</span><div><div class="sec-title">Thanh toán</div><div class="sec-sub">Xin hóa đơn, chia tiền, hỏi phí phục vụ, tiền boa</div></div></div>
+  <div class="ex-box"><div class="ex-head">XIN HÓA ĐƠN VÀ TRẢ TIỀN<span class="ex-tag t4">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Could we have the bill, please?</span><span class="ex-vn">Cho chúng tôi thanh toán</span></div>
+    <div class="ex-row"><span class="ex-en say">Can we pay separately?</span><span class="ex-vn">Chúng tôi trả riêng được không?</span></div>
+    <div class="ex-row"><span class="ex-en say">We’ll pay together.</span><span class="ex-vn">Chúng tôi trả chung</span></div>
+    <div class="ex-row"><span class="ex-en say">Is service included?</span><span class="ex-vn">Đã gồm phí phục vụ chưa?</span></div>
+    <div class="ex-row"><span class="ex-en say">Do you take credit cards?</span><span class="ex-vn">Nhà hàng có nhận thẻ tín dụng không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Could I get a receipt, please?</span><span class="ex-vn">Cho tôi xin hóa đơn đỏ / biên lai</span></div>
+    <div class="ex-row"><span class="ex-en say">Everything was great. Thank you!</span><span class="ex-vn">Mọi thứ đều tuyệt. Cảm ơn!</span></div>
+  </div></div>
+  <div class="info i-warn"><span>⚠️</span><span><strong>Nhớ:</strong> ở Anh gọi là <strong>the bill</strong>, ở Mỹ là <strong>the check</strong>. Ở Mỹ, tiền boa (<strong>tip</strong>) thường khoảng 15–20% và rất được mong đợi; ở nhiều nước khác, phí phục vụ (<strong>service charge</strong>) có thể đã nằm sẵn trong hóa đơn.</span></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Đọc tổng tiền: That comes to…</em></div><div class="gr-body">
+<ul><li><span class="fm">That comes to / That’s + số tiền</span> → <span class="say">That comes to four hundred and fifty thousand dong.</span></li>
+<li><span class="fm">… each</span> = mỗi người → <span class="say">It’s one hundred and fifty thousand each.</span></li>
+<li>Không thêm -s cho <b>hundred / thousand / million</b> sau số: <i>two hundred thousand</i>.</li></ul>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>Total is four hundreds fifty thousands.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">That comes to four hundred and fifty thousand.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s6">
+  <div class="sec-head"><span class="sec-tag t3">BÀI 6</span><div><div class="sec-title">Hội thoại mẫu</div><div class="sec-sub">Bấm từng câu để nghe, rồi đóng vai cả hai người</div></div></div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 1: GỌI ĐIỆN ĐẶT BÀN</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Good afternoon, Lotus Restaurant. How can I help you?</span><small>Chào buổi chiều, nhà hàng Lotus xin nghe. Tôi giúp gì được ạ?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Hi, I’d like to book a table for four at seven tonight.</span><small>Chào bạn, tôi muốn đặt bàn bốn người lúc 7 giờ tối nay.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">I’m sorry, we’re fully booked at seven. Is seven thirty okay?</span><small>Xin lỗi, 7 giờ kín bàn rồi. 7 rưỡi được không ạ?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Seven thirty is fine. Could we have a table by the window?</span><small>7 rưỡi cũng được. Cho chúng tôi bàn cạnh cửa sổ nhé?</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Of course. Can I have your name, please?</span><small>Vâng ạ. Cho tôi xin tên.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">It’s Hoa. H-O-A.</span><small>Tên Hoa. H-O-A.</small></div></div>
+  </div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 2: GỌI MÓN KÈM YÊU CẦU</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Are you ready to order?</span><small>Anh chị gọi món chưa ạ?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Yes. For the starter, we’ll share the spring rolls. What would you recommend for the main?</span><small>Rồi. Khai vị chúng tôi dùng chung nem rán. Món chính bạn gợi ý gì?</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">The grilled fish is our specialty.</span><small>Cá nướng là món đặc trưng của nhà hàng ạ.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Great, I’ll have that. But I’m allergic to peanuts. Is there any in the sauce?</span><small>Tuyệt, tôi lấy món đó. Nhưng tôi dị ứng lạc. Nước sốt có lạc không?</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Yes, there is. We can serve it with a different sauce.</span><small>Có ạ. Chúng tôi có thể đổi nước sốt khác.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Perfect, thank you. And two glasses of lime juice, please.</span><small>Tốt quá, cảm ơn. Và hai cốc nước chanh nhé.</small></div></div>
+  </div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 3: SỬA LỖI VÀ THANH TOÁN</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Excuse me, I’m afraid this isn’t what I ordered. I asked for chicken, not beef.</span><small>Xin lỗi, e là đây không phải món tôi gọi. Tôi gọi gà, không phải bò.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">I’m so sorry. I’ll change it right away.</span><small>Thành thật xin lỗi. Tôi đổi ngay ạ.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Thanks. … Could we have the bill, please? We’d like to pay separately.</span><small>Cảm ơn. … Cho chúng tôi thanh toán nhé. Chúng tôi trả riêng.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Sure. Your part comes to two hundred and ten thousand dong.</span><small>Vâng. Phần của anh là 210 nghìn đồng.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Here you are. Keep the change. Everything was lovely.</span><small>Gửi bạn. Không cần thối lại. Mọi thứ rất ngon.</small></div></div>
+  </div>
+  <div class="info i-ok"><span>✅</span><span><strong>Cách luyện:</strong> nghe một lượt, nói theo từng câu, rồi che phần tiếng Việt và tự đóng vai A hoặc B. Lần sau thay món và yêu cầu bằng những gì bạn hay gọi.</span></div>
+</section>
+
+<section class="section" id="s7">
+  <div class="sec-head"><span class="sec-tag t2">BÀI 7</span><div><div class="sec-title">Thực đơn luyện tập &amp; bài tập</div><div class="sec-sub">Chọn số lượng món, thêm yêu cầu riêng, chọn số người, rồi xem câu gọi món và hóa đơn</div></div></div>
+  <div class="menu" id="menu"></div>
+  <div class="gen">
+    <label for="g-req">Yêu cầu riêng<select id="g-req"></select></label>
+    <label for="g-pol">Cách gọi<select id="g-pol"></select></label>
+    <label for="g-ppl">Số người chia tiền<select id="g-ppl"></select></label>
+    <label for="g-svc">Phí phục vụ<select id="g-svc"><option value="0">Không có</option><option value="5">5%</option><option value="10" selected>10%</option></select></label>
+  </div>
+  <div class="btns"><button class="btn" id="gen-btn">Gọi món &amp; tính tiền</button><button class="btn alt" id="rnd-btn">Gọi ngẫu nhiên</button><button class="btn alt" id="clr-btn">Xóa hết</button></div>
+  <div class="out" id="gen-out" aria-live="polite"></div>
+
+  <div class="sub-title">Bài tập: điền câu trả lời</div>
+  <p class="t">Câu 1–4: điền một từ vào chỗ trống. Câu 5–8: dịch sang tiếng Anh, gõ cả câu. Không phân biệt hoa thường.</p>
+  <div id="exlist">
+    <div class="exi">1. A table ___ four, please. →<input id="ex1" data-a="for" aria-label="Câu 1"><small>số người</small></div>
+    <div class="exi">2. I’d like the ___ fish. (hấp) →<input id="ex2" data-a="steamed" aria-label="Câu 2"><small>V-ed</small></div>
+    <div class="exi">3. Could I have it ___ onions? (không có) →<input id="ex3" data-a="without" aria-label="Câu 3"><small>bỏ bớt</small></div>
+    <div class="exi">4. I’m ___ to peanuts. (dị ứng) →<input id="ex4" data-a="allergic" aria-label="Câu 4"><small>dị ứng</small></div>
+    <div class="exi">5. Bạn gợi ý món gì? →<input id="ex5" data-a="what would you recommend?|what do you recommend?" aria-label="Câu 5"><small>recommend</small></div>
+    <div class="exi">6. Tôi lấy món phở bò →<input id="ex6" data-a="i'll have the beef pho|i'll have the beef phở|i will have the beef pho|i'll have beef pho" aria-label="Câu 6"><small>I’ll have…</small></div>
+    <div class="exi">7. Cho chúng tôi thanh toán →<input id="ex7" data-a="could we have the bill please?|can we have the bill please?|could we have the check please?|could we have the bill?|can we have the bill?|could we get the check please?" aria-label="Câu 7"><small>bill / check</small></div>
+    <div class="exi">8. Chúng tôi trả riêng được không? →<input id="ex8" data-a="can we pay separately?|could we pay separately?" aria-label="Câu 8"><small>separately</small></div>
+  </div>
+  <div class="btns" style="margin-top:12px"><button class="btn" id="ex-check">Kiểm tra đáp án</button><button class="btn alt" id="ex-show">Xem đáp án</button><button class="btn alt" id="ex-reset">Làm lại</button></div>
+  <div class="out" id="ex-out" style="min-height:0" aria-live="polite"></div>
+
+  <div class="sub-title">Lộ trình luyện 7 ngày</div>
+  <div class="plan">
+    <div class="day"><b>Ngày 1</b><span><strong>Đặt bàn:</strong> luyện câu đặt bàn đủ 3 thông tin: số người, giờ, ngày</span></div>
+    <div class="day"><b>Ngày 2</b><span><strong>Thực đơn:</strong> học các mục trên menu và 6 cách chế biến</span></div>
+    <div class="day"><b>Ngày 3</b><span><strong>Gọi món:</strong> luyện I’ll have…, with / without / instead of</span></div>
+    <div class="day"><b>Ngày 4</b><span><strong>Phàn nàn lịch sự:</strong> nói 5 tình huống bằng I’m afraid… và a bit…</span></div>
+    <div class="day"><b>Ngày 5</b><span><strong>Thanh toán:</strong> dùng thực đơn luyện tập, đọc to tổng tiền và tiền mỗi người</span></div>
+    <div class="day"><b>Ngày 6</b><span><strong>Hội thoại:</strong> đóng vai 3 tình huống với một người bạn</span></div>
+    <div class="day"><b>Ngày 7</b><span><strong>Ôn tổng hợp:</strong> thu âm cả bữa ăn từ lúc đặt bàn đến lúc trả tiền</span></div>
+  </div>
+</section>
+
+<section class="section" id="s8">
+  <div class="sec-head"><span class="sec-tag t5">NÂNG CAO</span><div><div class="sec-title">Từ vựng mới để hội thoại tự nhiên hơn</div><div class="sec-sub">Thêm vài từ này, bạn sẽ gọi món tự tin như người hay đi nhà hàng</div></div></div>
+  <div class="sub-title">Tại nhà hàng</div>
+  <table class="tbl"><thead><tr><th>Từ / cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">reservation</td><td>sự đặt chỗ</td><td><span class="say">I have a reservation for two.</span></td></tr>
+  <tr><td class="say">server / waiter / waitress</td><td>người phục vụ</td><td><span class="say">Our server was really friendly.</span></td></tr>
+  <tr><td class="say">house specialty</td><td>món đặc trưng của quán</td><td><span class="say">What’s the house specialty?</span></td></tr>
+  <tr><td class="say">set menu</td><td>thực đơn set, combo</td><td><span class="say">The set menu includes a drink and dessert.</span></td></tr>
+  <tr><td class="say">refill</td><td>rót thêm</td><td><span class="say">Can I get a refill?</span></td></tr>
+  <tr><td class="say">takeaway box / doggy bag</td><td>hộp mang đồ thừa về</td><td><span class="say">Could I get a takeaway box for this?</span></td></tr>
+  <tr><td class="say">service charge</td><td>phí phục vụ</td><td><span class="say">There’s a ten percent service charge.</span></td></tr>
+  <tr><td class="say">tip</td><td>tiền boa</td><td><span class="say">Is it normal to leave a tip here?</span></td></tr></tbody></table>
+  <div class="sub-title">Ăn kiêng và nhận xét món ăn</div>
+  <table class="tbl"><thead><tr><th>Từ / cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">vegan</td><td>thuần chay (không cả trứng, sữa)</td><td><span class="say">Is this dish vegan?</span></td></tr>
+  <tr><td class="say">gluten-free</td><td>không chứa gluten</td><td><span class="say">Do you have gluten-free options?</span></td></tr>
+  <tr><td class="say">overcooked / undercooked</td><td>nấu quá / chưa chín</td><td><span class="say">I’m afraid the chicken is undercooked.</span></td></tr>
+  <tr><td class="say">tender</td><td>mềm</td><td><span class="say">The beef is so tender.</span></td></tr>
+  <tr><td class="say">crispy</td><td>giòn</td><td><span class="say">I love how crispy the spring rolls are.</span></td></tr>
+  <tr><td class="say">rich / light</td><td>đậm đà, béo / thanh nhẹ</td><td><span class="say">The sauce is a bit too rich for me.</span></td></tr></tbody></table>
+  <div class="sub-title">Cụm giúp cuộc trò chuyện trôi chảy</div>
+  <div class="ex-box"><div class="ex-head">LÀM CHO HỘI THOẠI TỰ NHIÊN<span class="ex-tag t5">Nâng cao</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">We’re still deciding.</span><span class="ex-vn">Chúng tôi vẫn đang chọn món</span></div>
+    <div class="ex-row"><span class="ex-en say">What’s good here?</span><span class="ex-vn">Ở đây món gì ngon?</span></div>
+    <div class="ex-row"><span class="ex-en say">I’ll have the same.</span><span class="ex-vn">Cho tôi giống vậy</span></div>
+    <div class="ex-row"><span class="ex-en say">Let’s get a few dishes to share.</span><span class="ex-vn">Gọi vài món ăn chung đi</span></div>
+    <div class="ex-row"><span class="ex-en say">My compliments to the chef!</span><span class="ex-vn">Gửi lời khen đến đầu bếp nhé!</span></div>
+    <div class="ex-row"><span class="ex-en say">This one’s on me.</span><span class="ex-vn">Bữa này tôi mời</span></div>
+    <div class="ex-row"><span class="ex-en say">I couldn’t eat another bite!</span><span class="ex-vn">Tôi no không ăn nổi nữa!</span></div>
+  </div></div>
+  <div class="cmp"><div class="bad"><b>❌ NGHE CỘC</b><div>Give me fish. No chili. Quick.</div></div><div class="good"><b>✔ TỰ NHIÊN HƠN</b><div class="say">Could I have the grilled fish, please? Not too spicy, if possible. Thanks!</div></div></div>
+  <div class="info i-tip"><span>💡</span><span><strong>Mẹo:</strong> gọi phục vụ bằng cách giơ tay nhẹ, nhìn về phía họ và nói <strong>“Excuse me”</strong>. Tránh vỗ tay hay gọi to <em>“Waiter!”</em>, vì ở nhiều nước điều đó bị coi là bất lịch sự.</span></div>
+
+  <div class="sub-title">Tự kiểm tra</div>
+  <ul class="chk">
+    <li><label><input type="checkbox" id="c1">Tôi đặt bàn được với đủ số người, giờ và ngày</label></li>
+    <li><label><input type="checkbox" id="c2">Tôi hiểu các mục trên thực đơn và 6 cách chế biến</label></li>
+    <li><label><input type="checkbox" id="c3">Tôi gọi món bằng <strong>I’ll have…</strong> và nói được yêu cầu riêng</label></li>
+    <li><label><input type="checkbox" id="c4">Tôi báo được dị ứng và hỏi món chay</label></li>
+    <li><label><input type="checkbox" id="c5">Tôi phàn nàn lịch sự bằng <strong>I’m afraid… / a bit…</strong></label></li>
+    <li><label><input type="checkbox" id="c6">Tôi xin hóa đơn, chia tiền và đọc được tổng tiền</label></li>
+    <li><label><input type="checkbox" id="c7">Tôi dùng được ít nhất 5 từ vựng nâng cao</label></li>
+  </ul>
+</section>
+
+</div>
+<div class="footer">🍽️ Giao tiếp tiếng Anh: Gọi món tại nhà hàng · Dành cho người mới bắt đầu · 2026</div>
+</div>
+
+<div class="audio-bar">
+  <b>🔊 Audio</b>
+  <div class="ab-g"><button data-acc="en-GB" class="on">Anh-Anh</button><button data-acc="en-US">Anh-Mỹ</button></div>
+  <div class="ab-g"><button data-rate="0.6">Chậm</button><button data-rate="0.85" class="on">Vừa</button><button data-rate="1">Nhanh</button></div>
+</div>
+
+<script>
+(function(){
+var doc=document.documentElement,bar=document.getElementById('pbar');
+addEventListener('scroll',function(){bar.style.width=(doc.scrollTop/Math.max(1,doc.scrollHeight-doc.clientHeight)*100)+'%'});
+var links=document.querySelectorAll('.nav-link,.topnav a');
+if('IntersectionObserver' in window)document.querySelectorAll('.section[id]').forEach(function(s){
+  new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;
+    links.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id)});
+  })},{rootMargin:'-20% 0px -70% 0px'}).observe(s);
+});
+
+/* Audio */
+var S=window.speechSynthesis,st={acc:'en-GB',rate:.85},cur=null;
+function voice(){if(!S)return null;var v=S.getVoices().filter(function(x){return x.lang.replace('_','-').toLowerCase()===st.acc.toLowerCase()});
+  return v.find(function(x){return /google|natural|premium|enhanced/i.test(x.name)})||v[0]||null}
+function say(el){
+  if(cur)cur.classList.remove('playing');
+  if(!S){el.title='Trình duyệt này không hỗ trợ đọc audio';return}
+  S.cancel();cur=el;el.classList.add('playing');
+  var t=el.textContent.replace(/\s+/g,' ').replace(/\s*\/\s*/g,'. ').replace(/→/g,'. ').replace(/a\.m\./g,'A M').replace(/p\.m\./g,'P M').replace(/\bpho\b|phở/gi,'fuh').trim();
+  var u=new SpeechSynthesisUtterance(t);u.lang=st.acc;u.rate=st.rate;var v=voice();if(v)u.voice=v;
+  u.onend=u.onerror=function(){el.classList.remove('playing')};S.speak(u);
+}
+function prep(root){root.querySelectorAll('.say').forEach(function(e){e.tabIndex=0;e.setAttribute('role','button')})}
+prep(document);
+document.addEventListener('click',function(e){var el=e.target.closest('.say');if(el)say(el)});
+document.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.classList&&e.target.classList.contains('say')){e.preventDefault();say(e.target)}});
+document.querySelectorAll('.audio-bar button').forEach(function(b){b.addEventListener('click',function(){
+  b.parentElement.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');
+  if(b.dataset.acc)st.acc=b.dataset.acc;if(b.dataset.rate)st.rate=+b.dataset.rate;
+})});
+
+/* ===== Thực đơn luyện tập (giá minh họa) =====
+   [mục, tên số ít, tên số nhiều, nghĩa, giá nghìn đồng, biểu tượng] */
+var MENU=[
+ ['STARTERS','plate of spring rolls','plates of spring rolls','nem rán',65,'🥟'],
+ ['STARTERS','green papaya salad','green papaya salads','gỏi đu đủ',55,'🥗'],
+ ['MAINS','bowl of beef pho','bowls of beef pho','phở bò',60,'🍜'],
+ ['MAINS','grilled fish','grilled fish','cá nướng',150,'🐟'],
+ ['MAINS','plate of fried rice','plates of fried rice','cơm rang',70,'🍛'],
+ ['MAINS','plate of stir-fried morning glory','plates of stir-fried morning glory','rau muống xào',45,'🥬'],
+ ['DESSERTS','scoop of coconut ice cream','scoops of coconut ice cream','kem dừa',35,'🍨'],
+ ['DRINKS','glass of lime juice','glasses of lime juice','nước chanh',30,'🍋'],
+ ['DRINKS','iced coffee','iced coffees','cà phê đá',35,'☕']
+];
+var REQ=[['','Không có'],['without onions','không hành'],['not too spicy','đừng cay quá'],['with no peanuts, please. I’m allergic','không lạc, tôi dị ứng'],['with the sauce on the side','để sốt riêng'],['with extra herbs','thêm rau thơm']];
+var POL=[['Could I have {x}, please?','Lịch sự nhất'],['I’ll have {x}, please.','Tự nhiên khi gọi món'],['We’d like {x}, please.','Gọi cho cả bàn']];
+var qty=MENU.map(function(){return 0});
+var menuEl=document.getElementById('menu');
+var NUMW=['zero','one','two','three','four','five','six','seven','eight','nine'];
+function renderMenu(){
+  menuEl.innerHTML='';var sec='';
+  MENU.forEach(function(m,i){
+    if(m[0]!==sec){sec=m[0];var h=document.createElement('div');h.className='mh';h.textContent=sec;menuEl.append(h)}
+    var r=document.createElement('div');r.className='mi'+(qty[i]?' on':'');
+    var n=document.createElement('span');n.className='mn';n.textContent=m[5]+' '+m[1].replace(/^(plate|bowl|scoop|glass) of /,'');
+    var v=document.createElement('small');v.textContent=m[3];n.append(v);
+    var p=document.createElement('span');p.className='mp';p.textContent=m[4]+'k';
+    var c=document.createElement('span');c.className='qc';
+    var minus=document.createElement('button');minus.type='button';minus.textContent='−';minus.setAttribute('aria-label','Bớt '+m[3]);
+    var q=document.createElement('b');q.textContent=qty[i];
+    var plus=document.createElement('button');plus.type='button';plus.textContent='+';plus.setAttribute('aria-label','Thêm '+m[3]);
+    minus.addEventListener('click',function(){if(qty[i]>0){qty[i]--;renderMenu();show()}});
+    plus.addEventListener('click',function(){if(qty[i]<9){qty[i]++;renderMenu();show()}});
+    c.append(minus,q,plus);r.append(n,p,c);menuEl.append(r);
+  });
+}
+function fill(id,arr,lab){var s=document.getElementById(id);arr.forEach(function(x,i){s.add(new Option(lab(x),i))});return s}
+var greq=fill('g-req',REQ,function(x){return x[0]?x[0].replace(/, please\. I’m allergic/,'')+' ('+x[1]+')':x[1]}),gpol=fill('g-pol',POL,function(x){return x[0].replace('{x}','…')+' · '+x[1]});
+var gppl=document.getElementById('g-ppl');for(var p=1;p<=6;p++)gppl.add(new Option(p+' người',p));gppl.value=2;
+var gsvc=document.getElementById('g-svc');
+/* đọc số tiền (đơn vị đồng) */
+var ONES=['','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen'];
+var TENS=['','','twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety'];
+function u100(n){if(n<20)return ONES[n];var t=TENS[Math.floor(n/10)],u=n%10;return u?t+'-'+ONES[u]:t}
+function u1000(n){var h=Math.floor(n/100),r=n%100,s=[];if(h)s.push(ONES[h]+' hundred');if(r)s.push((h?'and ':'')+u100(r));return s.join(' ')}
+function money(d){
+  if(d===0)return'zero dong';
+  var m=Math.floor(d/1e6),k=Math.floor(d%1e6/1000),r=d%1000,s=[];
+  if(m)s.push(u1000(m)+' million');if(k)s.push(u1000(k)+' thousand');if(r)s.push(u1000(r));
+  return s.join(' ')+' dong';
+}
+function fmt(d){return d.toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')+'đ'}
+function cap(s){return s.charAt(0).toUpperCase()+s.slice(1)}
+var out=document.getElementById('gen-out');
+function show(){
+  out.innerHTML='';
+  var items=[];MENU.forEach(function(m,i){if(qty[i])items.push([m,qty[i]])});
+  if(!items.length){var e=document.createElement('div');e.style.color='var(--muted)';e.textContent='Bấm dấu + ở thực đơn để chọn món, hoặc bấm “Gọi ngẫu nhiên”.';out.append(e);return}
+  var parts=items.map(function(x){var m=x[0],q=x[1];
+    if(q===1)return(/^[aeiou]/.test(m[1])?'an ':'a ')+m[1].replace(/^grilled fish$/,'grilled fish');
+    return NUMW[q]+' '+m[2];});
+  var list=parts.length===1?parts[0]:parts.slice(0,-1).join(', ')+' and '+parts[parts.length-1];
+  var pol=POL[+gpol.value][0],req=REQ[+greq.value][0];
+  var order=pol.replace('{x}',list);
+  var reqLine=req?(req.indexOf('allergic')>-1?'And could I have the dishes with no peanuts, please? I’m allergic.':'Could I have the food '+req+', please?'):'';
+  var sub=items.reduce(function(a,x){return a+x[0][4]*1000*x[1]},0),svc=+gsvc.value,fee=Math.round(sub*svc/100/1000)*1000,total=sub+fee,ppl=+gppl.value,each=Math.ceil(total/ppl/1000)*1000;
+  var lines=[['BẠN GỌI MÓN',order]];if(reqLine)lines.push(['YÊU CẦU RIÊNG',reqLine]);
+  lines.push(['XIN HÓA ĐƠN',ppl>1?'Could we have the bill, please? We’d like to split it '+(ppl===2?'between two':NUMW[ppl]+' ways')+'.':'Could I have the bill, please?']);
+  lines.push(['PHỤC VỤ NÓI','That comes to '+money(total)+(svc?', including service':'')+'.']);
+  if(ppl>1)lines.push(['MỖI NGƯỜI','That’s about '+money(each)+' each.']);
+  lines.forEach(function(l){var d=document.createElement('div');d.className='rl';var lb=document.createElement('span');lb.className='lbl';lb.textContent=l[0];var sp=document.createElement('span');sp.className='say';sp.textContent=l[1];d.append(lb,sp);out.append(d)});
+  var bill=document.createElement('div');bill.className='bill';
+  var bh=document.createElement('div');bh.className='bh';bh.textContent='HÓA ĐƠN · BILL';bill.append(bh);
+  function row(a,b,cls){var r=document.createElement('div');r.className='br'+(cls?' '+cls:'');var x=document.createElement('span');x.textContent=a;var y=document.createElement('span');y.textContent=b;r.append(x,y);bill.append(r)}
+  items.forEach(function(x){row(x[1]+' × '+x[0][3],fmt(x[0][4]*1000*x[1]))});
+  row('Subtotal',fmt(sub),'sep');if(svc)row('Service charge '+svc+'%',fmt(fee));row('TOTAL',fmt(total),'tot');if(ppl>1)row('Each ('+ppl+' people)',fmt(each));
+  out.append(bill);
+  var w=document.createElement('span');w.className='why';
+  w.innerHTML='Nhiều món thì nối bằng dấu phẩy và <b>and</b> trước món cuối. Gọi nhiều phần thì đơn vị đổi sang số nhiều: <b>two bowls of beef pho</b>, <b>three glasses of lime juice</b>. Chia tiền: <b>split it between two</b> (2 người) hoặc <b>split it three ways</b> (từ 3 người). Giá trong thực đơn chỉ để luyện tập.';
+  out.append(w);prep(out);
+}
+document.getElementById('gen-btn').addEventListener('click',show);
+[greq,gpol,gppl,gsvc].forEach(function(s){s.addEventListener('change',show)});
+document.getElementById('rnd-btn').addEventListener('click',function(){
+  qty=MENU.map(function(){return 0});var n=2+Math.floor(Math.random()*3);
+  while(n--){qty[Math.floor(Math.random()*MENU.length)]+=1+Math.floor(Math.random()*2)}
+  greq.value=Math.floor(Math.random()*REQ.length);gpol.value=Math.floor(Math.random()*POL.length);gppl.value=1+Math.floor(Math.random()*4);
+  renderMenu();show();
+});
+document.getElementById('clr-btn').addEventListener('click',function(){qty=MENU.map(function(){return 0});renderMenu();show()});
+qty[2]=2;qty[0]=1;qty[7]=2;renderMenu();show();
+
+/* Bài tập */
+var inputs=document.querySelectorAll('#exlist input'),exo=document.getElementById('ex-out');
+function norm(s){return s.toLowerCase().replace(/[’‘`]/g,"'").replace(/[.!?]+$/,'').replace(/,/g,'').replace(/\s+/g,' ').trim()}
+document.getElementById('ex-check').addEventListener('click',function(){
+  var ok=0;
+  inputs.forEach(function(i){
+    var good=i.dataset.a.split('|').some(function(a){return norm(a)===norm(i.value)});
+    i.classList.remove('ok','no');i.classList.add(good?'ok':'no');if(good)ok++;
+  });
+  exo.style.minHeight='';
+  exo.textContent=ok===inputs.length?'🎉 Chính xác '+ok+'/'+inputs.length+'. Bạn sẵn sàng gọi món bằng tiếng Anh rồi!':'Đúng '+ok+'/'+inputs.length+'. Các ô viền đỏ cần xem lại; đọc lại phần ngữ pháp ở Bài 1 đến 5, hoặc bấm “Xem đáp án”.';
+});
+document.getElementById('ex-show').addEventListener('click',function(){
+  inputs.forEach(function(i){
+    var k=i.parentElement.querySelector('.key');
+    if(!k){k=document.createElement('span');k.className='key';i.parentElement.append(k)}
+    var a=i.dataset.a.split('|')[0].replace(/'/g,'’').replace(/^i’ll/,'I’ll').replace(' please?',', please?');k.textContent='Đáp án: '+(a.indexOf(' ')>-1?cap(a):a);
+  });
+});
+document.getElementById('ex-reset').addEventListener('click',function(){
+  inputs.forEach(function(i){i.value='';i.classList.remove('ok','no')});
+  document.querySelectorAll('#exlist .key').forEach(function(k){k.remove()});
+  exo.textContent='';exo.style.minHeight='0';
+});
+})();
+</script>
+
+<script src="nav.js" defer></script>
+</body></html>

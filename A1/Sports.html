@@ -1,0 +1,566 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Tiếng Anh Sports</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: sidebar mục lục cố định + cột bài học, cùng theme tối của bộ "Hỏi đường & Hỏi giờ" (nhấn xanh lá – xanh dương cho chủ đề thể thao) */
+:root{color-scheme:dark;
+--bg:#080810;--s1:#0e0e1c;--s2:#131326;--s3:#18182e;--border:#222240;--border2:#2c2c50;--text:#e6e6f2;--muted:#8a8ab8;--faint:#4a4a78;
+--acc:#ffd060;--acc-dim:rgba(255,208,96,.11);--oc:#38bdf8;--oc-dim:rgba(56,189,248,.13);--ins:#40d88e;--ins-dim:rgba(64,216,142,.12);
+--sk:#a07af4;--sk-dim:rgba(160,122,244,.12);--au:#ff6584;--au-dim:rgba(255,101,132,.12);--teal:#30d8c0;--code-bg:#05050e;
+--tip-bg:rgba(91,168,255,.10);--tip-bd:rgba(91,168,255,.25);--tip-fg:#8ab8f0;--warn-fg:#e0bc58;--ok-fg:#5ccf98;--line:rgba(255,255,255,.05);
+--font:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+--gl:max(64px,env(safe-area-inset-left,0px));--gr:max(64px,env(safe-area-inset-right,0px))}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 60px)}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.7;font-size:15px;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:600;background:var(--s1)}
+.sidebar{position:fixed;left:0;top:0;width:260px;height:100%;background:var(--s1);border-right:1px solid var(--border);overflow-y:auto;z-index:400;padding-top:env(safe-area-inset-top,0px);padding-left:env(safe-area-inset-left,0px)}
+.sb-logo{padding:20px 18px 16px;border-bottom:1px solid var(--border)}
+.sb-brand{display:flex;align-items:center;gap:11px;margin-bottom:12px}
+.logo-icon{width:44px;height:44px;border-radius:11px;background:linear-gradient(135deg,var(--ins),var(--oc));display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 0 26px rgba(64,216,142,.3)}
+.logo-text h2{font-size:15px;font-weight:800}.logo-text p{font-size:10.5px;color:var(--muted)}
+.prog-wrap{height:3px;background:var(--border);border-radius:2px;overflow:hidden}
+.prog-bar{height:100%;width:0;background:linear-gradient(90deg,var(--acc),var(--ins),var(--oc),var(--sk),var(--au))}
+.nav-label{padding:14px 18px 4px;font-size:9.5px;font-weight:700;letter-spacing:1.6px;color:var(--faint)}
+.nav-link{display:flex;align-items:center;gap:9px;padding:7px 18px;color:var(--muted);text-decoration:none;font-size:12.5px;font-weight:600;border-left:2px solid transparent}
+.nav-link:hover,.nav-link.active{color:var(--text);background:rgba(255,208,96,.07);border-left-color:var(--acc)}
+.main{margin-left:260px}
+.hero{padding-block:80px 60px;padding-left:var(--gl);padding-right:var(--gr);border-bottom:1px solid var(--border);background:radial-gradient(ellipse 65% 55% at 75% 22%,rgba(64,216,142,.09),transparent 60%),radial-gradient(ellipse 50% 55% at 10% 82%,rgba(56,189,248,.08),transparent 55%),var(--bg)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--acc-dim);border:1px solid rgba(255,208,96,.38);color:var(--acc);padding:5px 16px;border-radius:100px;font-size:11.5px;font-weight:700;margin-bottom:24px}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--acc);animation:p 2s infinite}
+@keyframes p{50%{opacity:.35;transform:scale(.7)}}
+@media(prefers-reduced-motion:reduce){.eyebrow i{animation:none}html{scroll-behavior:auto}}
+.hero h1{font-size:50px;font-weight:900;letter-spacing:-2.4px;line-height:1.06;margin-bottom:18px;text-wrap:balance}
+.grad{background:linear-gradient(135deg,var(--ins),var(--oc));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-desc{font-size:16px;color:var(--muted);max-width:620px;margin-bottom:28px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{padding:5px 14px;border-radius:7px;font-size:12px;font-weight:700}
+.c1{background:var(--oc-dim);color:var(--oc)}.c2{background:var(--ins-dim);color:var(--ins)}.c3{background:var(--acc-dim);color:var(--acc)}.c4{background:var(--sk-dim);color:var(--sk)}.c5{background:var(--au-dim);color:var(--au)}
+.content{padding-block:56px;padding-left:var(--gl);padding-right:var(--gr);max-width:calc(1020px + 64px)}
+.section{margin-bottom:68px}
+.sec-head{display:flex;gap:14px;align-items:flex-start;margin-bottom:28px;padding-bottom:18px;border-bottom:1px solid var(--border)}
+.sec-tag{font-family:var(--mono);font-size:10px;font-weight:600;padding:3px 10px;border-radius:5px;margin-top:6px;flex-shrink:0;letter-spacing:.5px}
+.t1{color:var(--oc);background:var(--oc-dim)}.t2{color:var(--ins);background:var(--ins-dim)}.t3{color:var(--acc);background:var(--acc-dim)}.t4{color:var(--sk);background:var(--sk-dim)}.t5{color:var(--au);background:var(--au-dim)}
+.sec-title{font-size:23px;font-weight:800;letter-spacing:-.6px;text-wrap:balance}.sec-sub{font-size:13px;color:var(--muted)}
+.sub-title{font-size:14.5px;font-weight:700;margin:26px 0 12px;display:flex;align-items:center;gap:10px}
+.sub-title::before{content:'';width:14px;height:3px;background:var(--acc);border-radius:2px}
+p.t{color:var(--muted);font-size:13.5px;margin-bottom:11px;max-width:68ch}p.t strong,li strong{color:var(--text)}
+.ex-box{background:var(--s1);border:1px solid var(--border2);border-radius:11px;overflow:hidden;margin:13px 0}
+.ex-head{display:flex;align-items:center;gap:8px;padding:9px 16px;background:var(--s2);border-bottom:1px solid var(--border);font-family:var(--mono);font-size:10px;font-weight:600;color:var(--muted);letter-spacing:.5px}
+.ex-tag{margin-left:auto;font-size:9px;font-weight:700;padding:2px 9px;border-radius:100px;font-family:var(--font)}
+.ex-body{padding:10px 20px}
+.ex-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:13.5px}
+.ex-row:last-child{border-bottom:none}
+.ex-en{color:var(--text);font-weight:600;min-width:280px}.ex-vn{color:var(--muted)}
+.info{display:flex;gap:12px;padding:14px 16px;border-radius:9px;margin:13px 0;font-size:13px;line-height:1.6}
+.i-tip{background:var(--tip-bg);border:1px solid var(--tip-bd);color:var(--tip-fg)}
+.i-warn{background:var(--acc-dim);border:1px solid rgba(255,208,96,.25);color:var(--warn-fg)}
+.i-ok{background:var(--ins-dim);border:1px solid rgba(64,216,142,.25);color:var(--ok-fg)}
+.tbl{width:100%;border-collapse:collapse;font-size:13px;margin:13px 0;display:block;overflow-x:auto}
+.tbl th{background:var(--s3);padding:10px 14px;text-align:left;font-size:10px;color:var(--muted);border-bottom:1px solid var(--border2);white-space:nowrap;letter-spacing:.5px}
+.tbl td{padding:10px 14px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:top}
+.tbl td:first-child{color:var(--text);font-weight:600}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}
+.card{background:var(--s1);border:1px solid var(--border);border-radius:11px;padding:16px;min-width:0}
+.card:hover{border-color:var(--acc)}
+.card-icon{font-size:24px}.card-title{font-size:13px;font-weight:700}.card-desc{font-size:12px;color:var(--muted)}
+.cmp{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);border-radius:11px;overflow:hidden;margin:13px 0}
+.bad{background:rgba(255,101,132,.07);padding:14px 16px;border-right:1px solid var(--border)}.good{background:rgba(64,216,142,.07);padding:14px 16px}
+.cmp b{display:block;font-size:10px;margin-bottom:6px;letter-spacing:.5px}.bad b{color:var(--au)}.good b{color:var(--ins)}
+.cmp div div{font-size:13.5px}
+.dlg{display:grid;gap:8px;margin:12px 0;background:var(--s1);border:1px solid var(--border2);border-radius:12px;padding:16px 18px}
+.dlg-t{font-size:10px;font-weight:800;color:var(--acc);margin-bottom:2px;letter-spacing:.6px}
+.turn{display:flex;gap:10px;align-items:baseline}
+.turn>div{min-width:0}
+.who{flex-shrink:0;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+.wa{background:var(--oc-dim);color:var(--oc)}.wb{background:var(--ins-dim);color:var(--ins)}
+.turn .say{font-weight:600}.turn small{display:block;color:var(--muted);font-size:12px;font-weight:400}
+.gen{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:12px 0}
+.gen label{font-size:11.5px;color:var(--muted);font-weight:600;display:block;min-width:0}
+.gen select{width:100%;margin-top:4px;background:var(--code-bg);border:1px solid var(--border2);border-radius:8px;padding:9px 12px;color:var(--text);font:inherit;font-size:13px}
+select:focus-visible,button:focus-visible,.say:focus-visible,.exi input:focus-visible,.chk input:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.btns{display:flex;flex-wrap:wrap;gap:6px}
+.btn{background:var(--acc-dim);color:var(--acc);border:1px solid var(--acc);border-radius:8px;padding:8px 16px;font:inherit;font-weight:700;font-size:13px;cursor:pointer}
+.btn.alt{background:var(--ins-dim);color:var(--ins);border-color:var(--ins)}
+.out{margin-top:14px;min-height:60px;background:var(--s2);border:1px dashed var(--border2);border-radius:10px;padding:14px 16px;font-size:14px;line-height:1.9}
+.big{font-size:21px;font-weight:800;color:var(--acc);letter-spacing:-.3px;line-height:1.4;margin-bottom:4px}
+.out .why{display:block;color:var(--muted);font-size:12.5px}
+.out .why b{color:var(--teal);font-family:var(--mono);font-weight:600}
+.timeline{display:grid;gap:0;margin:14px 0;border-left:2px solid var(--border2);padding-left:18px}
+.tl{position:relative;padding:8px 0 12px}
+.tl::before{content:'';position:absolute;left:-24px;top:16px;width:10px;height:10px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 3px var(--bg)}
+.tl time{font-family:var(--mono);font-size:12px;color:var(--acc);font-variant-numeric:tabular-nums;font-weight:600}
+.tl .say{font-weight:600;font-size:13.5px}
+.tl small{display:block;color:var(--muted);font-size:12px}
+.freq{display:grid;gap:7px;margin:14px 0}
+.fq{display:grid;grid-template-columns:110px 1fr 54px;gap:12px;align-items:center;font-size:13px}
+.fq .say{font-weight:700}
+.fq .track{height:8px;background:var(--s3);border-radius:4px;overflow:hidden}
+.fq .fill{height:100%;background:linear-gradient(90deg,var(--ins),var(--acc))}
+.fq span:last-child{font-family:var(--mono);font-size:11.5px;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+.plan{display:grid;gap:8px;margin:12px 0}
+.day{display:flex;gap:14px;align-items:baseline;background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:12px 16px;font-size:13px;color:var(--muted)}
+.day b{color:var(--acc);font-family:var(--mono);font-size:12px;flex-shrink:0;width:52px}.day strong{color:var(--text)}
+.chk{list-style:none;margin:10px 0}.chk li{padding:6px 0;font-size:13.5px;color:var(--muted);border-bottom:1px solid rgba(255,255,255,.04)}
+.chk input{accent-color:var(--ins);margin-right:10px;width:15px;height:15px;vertical-align:-2px}
+.gr{border:1px solid rgba(160,122,244,.38);background:linear-gradient(180deg,var(--sk-dim),transparent 110px),var(--s1);border-radius:12px;margin:28px 0;overflow:hidden}
+.gr-head{padding:10px 18px;font-size:12px;font-weight:800;color:var(--sk);border-bottom:1px solid var(--border);display:flex;gap:10px;flex-wrap:wrap;align-items:baseline;letter-spacing:.4px}
+.gr-head em{font-style:normal;color:var(--muted);font-weight:600;letter-spacing:0}
+.gr-body{padding:14px 18px;font-size:13.5px;color:var(--muted)}
+.gr-body p{margin-bottom:10px}.gr-body b{color:var(--text)}.gr-body ul{padding-left:20px;margin-bottom:8px}.gr-body li{margin-bottom:4px}
+.gr-body .tbl{margin:8px 0 12px}
+.fm{display:inline-block;font-family:var(--mono);font-size:12px;background:var(--code-bg);color:var(--teal);padding:3px 9px;border-radius:6px;margin:2px 0}
+.say{cursor:pointer;border-bottom:1px dotted var(--oc)}
+.say:hover{color:var(--acc);background:var(--acc-dim);border-radius:4px}
+.say::after{content:"🔊";font-size:.68em;margin-left:3px;opacity:.5}
+.say.playing{color:var(--ins);background:var(--ins-dim);border-radius:4px}.say.playing::after{opacity:1}
+.exi{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:13.5px;color:var(--text)}
+.exi input{width:220px;max-width:100%;background:var(--code-bg);border:1px solid var(--border2);border-radius:6px;padding:4px 8px;color:var(--text);font:inherit;font-size:13px;text-align:center}
+.exi input.ok{border-color:var(--ins);color:var(--ins)}.exi input.no{border-color:var(--au);color:var(--au)}
+.exi small{color:var(--muted);font-size:11.5px}
+.exi .key{color:var(--ins);font-size:12px;width:100%}
+.footer{border-top:1px solid var(--border);padding-block:28px 90px;padding-left:var(--gl);padding-right:var(--gr);font-size:12px;color:var(--muted)}
+.audio-bar{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:500;display:flex;gap:10px;align-items:center;background:var(--s2);border:1px solid var(--border2);border-radius:12px;padding:8px 12px;box-shadow:0 8px 28px rgba(0,0,0,.5);font-size:12px;color:var(--muted)}
+.audio-bar b{color:var(--acc)}.ab-g{display:flex;gap:4px}
+.audio-bar button{background:var(--s3);color:var(--muted);border:1px solid var(--border);border-radius:7px;padding:4px 10px;font:inherit;font-weight:700;cursor:pointer}
+.audio-bar button.on{background:var(--acc-dim);color:var(--acc);border-color:var(--acc)}
+.topnav{display:none}
+@media(max-width:900px){
+:root{--gl:max(18px,env(safe-area-inset-left,0px));--gr:max(18px,env(safe-area-inset-right,0px))}
+.sidebar{display:none}.main{margin-left:0}.hero h1{font-size:32px;letter-spacing:-1.4px}.hero{padding-block:48px 40px}
+.grid-3,.cmp{grid-template-columns:1fr}.gen{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}.bad{border-right:none;border-bottom:1px solid var(--border)}
+.topnav{display:flex;overflow-x:auto;position:sticky;top:env(safe-area-inset-top,0px);z-index:500;background:var(--s1);border-bottom:2px solid var(--border2);scrollbar-width:none;padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+.topnav a{flex-shrink:0;padding:10px 14px;color:var(--muted);text-decoration:none;font-size:12px;font-weight:700;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-2px}
+.topnav a.active{color:var(--acc);border-bottom-color:var(--acc);background:var(--acc-dim)}
+.ex-en{min-width:0}
+.fq{grid-template-columns:90px 1fr 46px}
+.audio-bar{left:calc(8px + env(safe-area-inset-left,0px));right:calc(8px + env(safe-area-inset-right,0px));justify-content:center;flex-wrap:wrap}
+}
+@media(max-width:480px){.gen{grid-template-columns:1fr}}
+.lbl{font-family:var(--mono);font-size:10px;font-weight:600;color:var(--faint);letter-spacing:1px;min-width:110px}
+.rl{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;padding:3px 0}
+.rl .say{font-weight:700;font-size:15px}
+.board{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center;background:var(--code-bg);border:1px solid var(--border2);border-radius:12px;padding:12px 16px;margin-bottom:10px;max-width:460px}
+.board span{font-weight:800;font-size:15px;min-width:0}.board span:last-child{text-align:right}
+.board b{font-family:var(--mono);font-size:28px;color:var(--ins);font-variant-numeric:tabular-nums}
+</style>
+
+<aside class="sidebar">
+  <div class="sb-logo">
+    <div class="sb-brand"><div class="logo-icon">🏸</div><div class="logo-text"><h2>Sports</h2><p>Tiếng Anh cho người mới</p></div></div>
+    <div class="prog-wrap"><div class="prog-bar" id="pbar"></div></div>
+  </div>
+  <div class="nav-label">BÀI HỌC</div>
+  <a class="nav-link" href="#s1">⚽ Các môn thể thao</a>
+  <a class="nav-link" href="#s2">❤️ Sở thích &amp; thói quen</a>
+  <a class="nav-link" href="#s3">📺 Xem &amp; cổ vũ</a>
+  <a class="nav-link" href="#s4">💪 Tập luyện &amp; sức khỏe</a>
+  <a class="nav-link" href="#s5">🎾 Rủ chơi &amp; luật chơi</a>
+  <div class="nav-label">THỰC HÀNH</div>
+  <a class="nav-link" href="#s6">💬 Hội thoại mẫu</a>
+  <a class="nav-link" href="#s7">🛠️ Máy thể thao &amp; bài tập</a>
+  <a class="nav-link" href="#s8">🚀 Từ vựng nâng cao</a>
+</aside>
+
+<div class="main">
+<nav class="topnav">
+  <a href="#s1">1 Môn thể thao</a><a href="#s2">2 Sở thích</a><a href="#s3">3 Xem trận</a><a href="#s4">4 Tập luyện</a><a href="#s5">5 Rủ chơi</a><a href="#s6">6 Hội thoại</a><a href="#s7">7 Luyện tập</a><a href="#s8">8 Nâng cao</a>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow"><i></i>Dành cho người mới bắt đầu</div>
+  <h1>Nói về thể thao<br><span class="grad">bằng tiếng Anh</span></h1>
+  <p class="hero-desc">Thể thao là chủ đề dễ bắt chuyện với bất kỳ ai. Học tên các môn, cách nói bạn chơi gì và chơi bao lâu rồi, xem và bàn tỉ số trận đấu, nói về tập luyện và chấn thương, rủ bạn chơi và giải thích luật cơ bản. Bấm vào câu có biểu tượng loa để nghe, rồi luyện với hai máy ở phần thực hành.</p>
+  <div class="chips"><span class="chip c2">Môn thể thao</span><span class="chip c1">play / go / do</span><span class="chip c3">Tỉ số</span><span class="chip c4">Tập luyện</span><span class="chip c5">Từ vựng nâng cao</span></div>
+</header>
+
+<div class="content">
+
+<section class="section" id="s1">
+  <div class="sec-head"><span class="sec-tag t2">BÀI 1</span><div><div class="sec-title">Các môn thể thao</div><div class="sec-sub">Tên môn và động từ đi kèm đúng</div></div></div>
+  <div class="grid-3">
+    <div class="card"><div class="card-icon">⚽</div><div class="card-title say">football / soccer</div><div class="card-desc">bóng đá (Anh / Mỹ)</div></div>
+    <div class="card"><div class="card-icon">🏸</div><div class="card-title say">badminton</div><div class="card-desc">cầu lông</div></div>
+    <div class="card"><div class="card-icon">🏐</div><div class="card-title say">volleyball</div><div class="card-desc">bóng chuyền</div></div>
+    <div class="card"><div class="card-icon">🏀</div><div class="card-title say">basketball</div><div class="card-desc">bóng rổ</div></div>
+    <div class="card"><div class="card-icon">🏓</div><div class="card-title say">table tennis</div><div class="card-desc">bóng bàn</div></div>
+    <div class="card"><div class="card-icon">🏊</div><div class="card-title say">swimming</div><div class="card-desc">bơi lội</div></div>
+    <div class="card"><div class="card-icon">🏃</div><div class="card-title say">running / jogging</div><div class="card-desc">chạy bộ</div></div>
+    <div class="card"><div class="card-icon">🧘</div><div class="card-title say">yoga</div><div class="card-desc">yoga</div></div>
+    <div class="card"><div class="card-icon">🥋</div><div class="card-title say">martial arts</div><div class="card-desc">võ thuật</div></div>
+  </div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>play / go / do + môn thể thao</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Động từ</th><th>Dùng với</th><th>Ví dụ</th></tr></thead><tbody>
+<tr><td><span class="fm">play</span></td><td>môn có bóng, có đối thủ</td><td><span class="say">play football, play badminton, play tennis</span></td></tr>
+<tr><td><span class="fm">go</span></td><td>môn kết thúc bằng -ing</td><td><span class="say">go swimming, go running, go cycling</span></td></tr>
+<tr><td><span class="fm">do</span></td><td>môn tập cá nhân, không bóng</td><td><span class="say">do yoga, do karate, do exercise</span></td></tr></tbody></table>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>I play swimming. I play yoga.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">I go swimming. I do yoga.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s2">
+  <div class="sec-head"><span class="sec-tag t1">BÀI 2</span><div><div class="sec-title">Sở thích và thói quen thể thao</div><div class="sec-sub">Bạn thích môn gì, chơi thường xuyên không, có giỏi không</div></div></div>
+  <div class="ex-box"><div class="ex-head">HỎI VÀ ĐÁP<span class="ex-tag t1">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Do you play any sports?</span><span class="ex-vn">Bạn có chơi môn thể thao nào không?</span></div>
+    <div class="ex-row"><span class="ex-en say">What’s your favorite sport?</span><span class="ex-vn">Môn thể thao bạn thích nhất là gì?</span></div>
+    <div class="ex-row"><span class="ex-en say">I play badminton twice a week.</span><span class="ex-vn">Tôi chơi cầu lông mỗi tuần hai lần</span></div>
+    <div class="ex-row"><span class="ex-en say">I go running every morning around the lake.</span><span class="ex-vn">Sáng nào tôi cũng chạy bộ quanh hồ</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m not very sporty, but I love watching football.</span><span class="ex-vn">Tôi không giỏi thể thao lắm, nhưng rất thích xem bóng đá</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m pretty good at swimming.</span><span class="ex-vn">Tôi bơi khá giỏi</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m a big fan of Manchester United.</span><span class="ex-vn">Tôi là fan cuồng của Manchester United</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>good at + V-ing / N, và like / enjoy + V-ing</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Cấu trúc</th><th>Ví dụ</th></tr></thead><tbody>
+<tr><td><span class="fm">be good at + N / V-ing</span></td><td><span class="say">She’s good at basketball.</span> <span class="say">I’m good at running.</span></td></tr>
+<tr><td><span class="fm">be bad at / not very good at</span></td><td><span class="say">I’m not very good at tennis.</span></td></tr>
+<tr><td><span class="fm">like / love / enjoy + V-ing</span></td><td><span class="say">I enjoy playing volleyball.</span></td></tr>
+<tr><td><span class="fm">a fan of + đội / môn</span></td><td><span class="say">I’m a fan of the national team.</span></td></tr></tbody></table>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>I’m good in swim. I enjoy to play tennis.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">I’m good at swimming. I enjoy playing tennis.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s3">
+  <div class="sec-head"><span class="sec-tag t3">BÀI 3</span><div><div class="sec-title">Xem thể thao và cổ vũ</div><div class="sec-sub">Nói về trận đấu, tỉ số, thắng thua</div></div></div>
+  <table class="tbl"><thead><tr><th>Từ</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">match / game</td><td>trận đấu</td><td><span class="say">Did you watch the match last night?</span></td></tr>
+  <tr><td class="say">team / player</td><td>đội / cầu thủ</td><td><span class="say">He’s the best player on the team.</span></td></tr>
+  <tr><td class="say">score</td><td>tỉ số; ghi bàn</td><td><span class="say">What’s the score?</span></td></tr>
+  <tr><td class="say">win / lose / draw</td><td>thắng / thua / hòa</td><td><span class="say">We won two–one.</span></td></tr>
+  <tr><td class="say">goal</td><td>bàn thắng</td><td><span class="say">What a goal!</span></td></tr>
+  <tr><td class="say">stadium</td><td>sân vận động</td><td><span class="say">The stadium was full.</span></td></tr></tbody></table>
+  <div class="ex-box"><div class="ex-head">CỔ VŨ VÀ BÀN TRẬN ĐẤU<span class="ex-tag t3">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Come on, Vietnam!</span><span class="ex-vn">Cố lên Việt Nam!</span></div>
+    <div class="ex-row"><span class="ex-en say">Who’s playing tonight?</span><span class="ex-vn">Tối nay đội nào đá?</span></div>
+    <div class="ex-row"><span class="ex-en say">Who won?</span><span class="ex-vn">Ai thắng?</span></div>
+    <div class="ex-row"><span class="ex-en say">Vietnam beat Thailand two–one.</span><span class="ex-vn">Việt Nam thắng Thái Lan 2–1</span></div>
+    <div class="ex-row"><span class="ex-en say">It ended in a draw, one all.</span><span class="ex-vn">Trận đấu hòa 1–1</span></div>
+    <div class="ex-row"><span class="ex-en say">That was an amazing match!</span><span class="ex-vn">Trận đấu tuyệt vời!</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>win hay beat? và quá khứ bất quy tắc</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Động từ</th><th>Quá khứ</th><th>Theo sau là</th><th>Ví dụ</th></tr></thead><tbody>
+<tr><td><span class="fm">win</span></td><td>won</td><td>trận đấu, giải, cúp</td><td><span class="say">We won the match.</span></td></tr>
+<tr><td><span class="fm">beat</span></td><td>beat</td><td>đối thủ</td><td><span class="say">We beat Thailand.</span></td></tr>
+<tr><td><span class="fm">lose</span></td><td>lost</td><td>trận đấu / lose to + đối thủ</td><td><span class="say">They lost to Japan.</span></td></tr>
+<tr><td><span class="fm">draw</span></td><td>drew</td><td>hòa</td><td><span class="say">We drew with Korea.</span></td></tr></tbody></table>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>Vietnam won Thailand.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">Vietnam beat Thailand. Vietnam won the match.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s4">
+  <div class="sec-head"><span class="sec-tag t4">BÀI 4</span><div><div class="sec-title">Tập luyện và sức khỏe</div><div class="sec-sub">Đi tập, khởi động, giữ dáng, và khi bị chấn thương</div></div></div>
+  <div class="grid-3">
+    <div class="card"><div class="card-icon">🤸</div><div class="card-title say">warm up</div><div class="card-desc">khởi động</div></div>
+    <div class="card"><div class="card-icon">🧍</div><div class="card-title say">stretch</div><div class="card-desc">giãn cơ</div></div>
+    <div class="card"><div class="card-icon">🏋️</div><div class="card-title say">work out</div><div class="card-desc">tập luyện (thường ở phòng gym)</div></div>
+    <div class="card"><div class="card-icon">💪</div><div class="card-title say">get in shape</div><div class="card-desc">lấy lại vóc dáng</div></div>
+    <div class="card"><div class="card-icon">🥵</div><div class="card-title say">sweat</div><div class="card-desc">đổ mồ hôi</div></div>
+    <div class="card"><div class="card-icon">🤕</div><div class="card-title say">get injured</div><div class="card-desc">bị chấn thương</div></div>
+  </div>
+  <div class="ex-box"><div class="ex-head">NÓI VỀ TẬP LUYỆN<span class="ex-tag t4">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">How often do you work out?</span><span class="ex-vn">Bạn tập bao lâu một lần?</span></div>
+    <div class="ex-row"><span class="ex-en say">I go to the gym three times a week.</span><span class="ex-vn">Tôi đi gym ba lần một tuần</span></div>
+    <div class="ex-row"><span class="ex-en say">How long have you been playing badminton?</span><span class="ex-vn">Bạn chơi cầu lông được bao lâu rồi?</span></div>
+    <div class="ex-row"><span class="ex-en say">I’ve been playing for about five years.</span><span class="ex-vn">Tôi chơi được khoảng năm năm rồi</span></div>
+    <div class="ex-row"><span class="ex-en say">Always warm up before you play.</span><span class="ex-vn">Luôn khởi động trước khi chơi</span></div>
+    <div class="ex-row"><span class="ex-en say">I hurt my ankle last week.</span><span class="ex-vn">Tuần trước tôi bị đau mắt cá chân</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Hiện tại hoàn thành tiếp diễn: have been + V-ing</em></div><div class="gr-body">
+<p>Việc bắt đầu trong quá khứ và vẫn đang tiếp tục: <span class="fm">S + have/has been + V-ing + for / since…</span></p>
+<ul><li><span class="say">I’ve been doing yoga for two years.</span></li><li><span class="say">She’s been playing tennis since she was ten.</span></li></ul>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>I play badminton since 5 years.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">I’ve been playing badminton for five years.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s5">
+  <div class="sec-head"><span class="sec-tag t5">BÀI 5</span><div><div class="sec-title">Rủ chơi và giải thích luật</div><div class="sec-sub">Mời bạn chơi cùng, nói về dụng cụ và luật cơ bản</div></div></div>
+  <div class="ex-box"><div class="ex-head">RỦ CHƠI<span class="ex-tag t5">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Do you want to play badminton after work?</span><span class="ex-vn">Tan làm đi đánh cầu lông không?</span></div>
+    <div class="ex-row"><span class="ex-en say">We need one more player. Do you want to join?</span><span class="ex-vn">Bọn mình thiếu một người. Bạn chơi cùng không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Let’s go for a run this Sunday.</span><span class="ex-vn">Chủ nhật này đi chạy bộ đi</span></div>
+    <div class="ex-row"><span class="ex-en say">Can I borrow your racket?</span><span class="ex-vn">Cho mình mượn vợt được không?</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m a beginner, so go easy on me!</span><span class="ex-vn">Mình mới chơi, nhẹ tay với mình nhé!</span></div>
+  </div></div>
+  <table class="tbl"><thead><tr><th>Dụng cụ / nơi chơi</th><th>Nghĩa</th></tr></thead><tbody>
+  <tr><td class="say">racket / shuttlecock / net</td><td>vợt / quả cầu lông / lưới</td></tr>
+  <tr><td class="say">ball / goal / court / pitch</td><td>bóng / khung thành / sân (bóng rổ, cầu lông) / sân bóng đá</td></tr>
+  <tr><td class="say">sneakers / sportswear</td><td>giày thể thao / quần áo thể thao</td></tr>
+  <tr><td class="say">swimming pool / track</td><td>bể bơi / đường chạy</td></tr></tbody></table>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Nói luật chơi: can / can’t / have to / must</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Cấu trúc</th><th>Ví dụ</th></tr></thead><tbody>
+<tr><td><span class="fm">You can + V</span> (được phép)</td><td><span class="say">You can hit the ball once.</span></td></tr>
+<tr><td><span class="fm">You can’t + V</span> (không được)</td><td><span class="say">You can’t touch the ball with your hands.</span></td></tr>
+<tr><td><span class="fm">You have to + V</span> (phải)</td><td><span class="say">You have to serve from behind the line.</span></td></tr>
+<tr><td><span class="fm">It’s your turn / your serve</span></td><td><span class="say">It’s your serve.</span></td></tr></tbody></table>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>You can’t to touch the net.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">You can’t touch the net.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s6">
+  <div class="sec-head"><span class="sec-tag t3">BÀI 6</span><div><div class="sec-title">Hội thoại mẫu</div><div class="sec-sub">Bấm từng câu để nghe, rồi đóng vai cả hai người</div></div></div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 1: RỦ ĐÁNH CẦU LÔNG</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Do you play any sports, Emma?</span><small>Emma có chơi môn thể thao nào không?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">I do yoga sometimes, but I’m not very sporty. What about you?</span><small>Thỉnh thoảng mình tập yoga, nhưng không giỏi thể thao lắm. Còn bạn?</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">I play badminton twice a week. Do you want to join us on Thursday?</span><small>Mình đánh cầu lông hai lần một tuần. Thứ Năm chơi cùng bọn mình không?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">I’d love to, but I’m a total beginner. I don’t have a racket.</span><small>Mình muốn lắm, nhưng mình mới tinh. Mình cũng không có vợt.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">No problem. You can borrow mine. We’ll go easy on you!</span><small>Không sao. Bạn mượn vợt của mình. Bọn mình sẽ nhẹ tay!</small></div></div>
+  </div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 2: BÀN VỀ TRẬN BÓNG ĐÁ</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Did you watch the match last night?</span><small>Tối qua bạn xem trận đấu không?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Of course! Vietnam beat Indonesia two–one. What a game!</span><small>Tất nhiên! Việt Nam thắng Indonesia 2–1. Trận hay quá!</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">I missed the second half. Who scored the winning goal?</span><small>Mình lỡ hiệp hai. Ai ghi bàn quyết định?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Number ten, in the last five minutes. The whole stadium went crazy!</span><small>Số 10, ở năm phút cuối. Cả sân vận động như phát điên!</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">I can’t believe I missed it. Let’s watch the next match together.</span><small>Không tin là mình lỡ mất. Trận sau xem cùng nhau nhé.</small></div></div>
+  </div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 3: Ở PHÒNG GYM</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Hey, I haven’t seen you here for a while.</span><small>Ê, lâu rồi không thấy bạn ở đây.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">I hurt my knee playing football, so I had to take a break.</span><small>Mình bị đau đầu gối khi đá bóng nên phải nghỉ một thời gian.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Oh no. Is it better now?</span><small>Ôi. Giờ đỡ chưa?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Much better, thanks. But I’m totally out of shape now.</span><small>Đỡ nhiều rồi, cảm ơn. Nhưng giờ mình xuống phong độ hẳn.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Take it slow and always warm up. You’ll get back in shape soon.</span><small>Cứ từ từ và nhớ khởi động. Bạn sẽ sớm lấy lại phong độ thôi.</small></div></div>
+  </div>
+  <div class="info i-ok"><span>✅</span><span><strong>Cách luyện:</strong> nghe một lượt, nói theo từng câu, rồi che phần tiếng Việt và tự đóng vai A hoặc B. Lần sau thay bằng môn bạn thích và đội bạn cổ vũ.</span></div>
+</section>
+
+<section class="section" id="s7">
+  <div class="sec-head"><span class="sec-tag t2">BÀI 7</span><div><div class="sec-title">Máy thể thao &amp; bài tập</div><div class="sec-sub">Công cụ 1 nói về môn bạn chơi; công cụ 2 tường thuật tỉ số trận đấu</div></div></div>
+  <div class="sub-title">Công cụ 1: Môn thể thao của bạn</div>
+  <div class="gen">
+    <label for="g-sp">Môn<select id="g-sp"></select></label>
+    <label for="g-fq">Bao lâu một lần<select id="g-fq"></select></label>
+    <label for="g-yr">Đã chơi được<select id="g-yr"></select></label>
+  </div>
+  <div class="btns"><button class="btn" id="sp-btn">Tạo câu</button><button class="btn alt" id="sp-rnd">Chọn ngẫu nhiên</button></div>
+  <div class="out" id="sp-out" aria-live="polite"></div>
+
+  <div class="sub-title">Công cụ 2: Tường thuật tỉ số</div>
+  <div class="gen g5">
+    <label for="g-ta">Đội A<select id="g-ta"></select></label>
+    <label for="g-sa">Bàn A<select id="g-sa"></select></label>
+    <label for="g-sb">Bàn B<select id="g-sb"></select></label>
+    <label for="g-tb">Đội B<select id="g-tb"></select></label>
+  </div>
+  <div class="btns"><button class="btn" id="sc-btn">Tường thuật</button><button class="btn alt" id="sc-rnd">Tỉ số ngẫu nhiên</button></div>
+  <div class="out" id="sc-out" aria-live="polite"></div>
+
+  <div class="sub-title">Bài tập: điền câu trả lời</div>
+  <p class="t">Câu 1–4: điền một từ vào chỗ trống. Câu 5–8: dịch sang tiếng Anh, gõ cả câu. Không phân biệt hoa thường.</p>
+  <div id="exlist">
+    <div class="exi">1. I ___ swimming every weekend. →<input id="ex1" data-a="go" aria-label="Câu 1"><small>play / go / do</small></div>
+    <div class="exi">2. She ___ yoga in the morning. →<input id="ex2" data-a="does" aria-label="Câu 2"><small>she + ?</small></div>
+    <div class="exi">3. Vietnam ___ Thailand 2–0. (thắng) →<input id="ex3" data-a="beat" aria-label="Câu 3"><small>win hay beat?</small></div>
+    <div class="exi">4. I’m good ___ basketball. →<input id="ex4" data-a="at" aria-label="Câu 4"><small>good + ?</small></div>
+    <div class="exi">5. Tỉ số bao nhiêu rồi? →<input id="ex5" data-a="what's the score?|what is the score?" aria-label="Câu 5"><small>score</small></div>
+    <div class="exi">6. Tôi chơi cầu lông được ba năm rồi →<input id="ex6" data-a="i've been playing badminton for three years|i have been playing badminton for three years|i've played badminton for three years|i have played badminton for three years|i've been playing badminton for 3 years" aria-label="Câu 6"><small>have been + V-ing</small></div>
+    <div class="exi">7. Bạn tập bao lâu một lần? →<input id="ex7" data-a="how often do you work out?|how often do you exercise?" aria-label="Câu 7"><small>How often…</small></div>
+    <div class="exi">8. Bạn không được chạm tay vào bóng →<input id="ex8" data-a="you can't touch the ball with your hands|you cannot touch the ball with your hands|you can't touch the ball with your hand" aria-label="Câu 8"><small>can’t</small></div>
+  </div>
+  <div class="btns" style="margin-top:12px"><button class="btn" id="ex-check">Kiểm tra đáp án</button><button class="btn alt" id="ex-show">Xem đáp án</button><button class="btn alt" id="ex-reset">Làm lại</button></div>
+  <div class="out" id="ex-out" style="min-height:0" aria-live="polite"></div>
+
+  <div class="sub-title">Lộ trình luyện 7 ngày</div>
+  <div class="plan">
+    <div class="day"><b>Ngày 1</b><span><strong>Các môn:</strong> học tên 12 môn và xếp vào nhóm play / go / do</span></div>
+    <div class="day"><b>Ngày 2</b><span><strong>Sở thích:</strong> nói môn bạn thích, chơi bao lâu một lần, có giỏi không</span></div>
+    <div class="day"><b>Ngày 3</b><span><strong>Xem trận:</strong> xem một trận đấu, nói kết quả bằng beat / win / draw</span></div>
+    <div class="day"><b>Ngày 4</b><span><strong>Tỉ số:</strong> dùng công cụ 2, đọc to 5 tỉ số khác nhau</span></div>
+    <div class="day"><b>Ngày 5</b><span><strong>Tập luyện:</strong> luyện have been + V-ing và các cụm warm up, work out</span></div>
+    <div class="day"><b>Ngày 6</b><span><strong>Rủ chơi:</strong> giải thích luật một môn bạn biết bằng can / can’t / have to</span></div>
+    <div class="day"><b>Ngày 7</b><span><strong>Ôn tổng hợp:</strong> thu âm 1 phút kể về môn thể thao bạn yêu thích</span></div>
+  </div>
+</section>
+
+<section class="section" id="s8">
+  <div class="sec-head"><span class="sec-tag t5">NÂNG CAO</span><div><div class="sec-title">Từ vựng mới để hội thoại tự nhiên hơn</div><div class="sec-sub">Thêm vài từ này, bạn sẽ bàn thể thao như một fan thực thụ</div></div></div>
+  <div class="sub-title">Thi đấu và giải đấu</div>
+  <table class="tbl"><thead><tr><th>Từ / cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">coach</td><td>huấn luyện viên</td><td><span class="say">The coach made a great decision.</span></td></tr>
+  <tr><td class="say">referee</td><td>trọng tài</td><td><span class="say">The referee gave a penalty.</span></td></tr>
+  <tr><td class="say">tournament / league</td><td>giải đấu / giải vô địch theo mùa</td><td><span class="say">They’re top of the league.</span></td></tr>
+  <tr><td class="say">opponent</td><td>đối thủ</td><td><span class="say">Our opponent was very strong.</span></td></tr>
+  <tr><td class="say">penalty</td><td>phạt đền</td><td><span class="say">He missed the penalty.</span></td></tr>
+  <tr><td class="say">extra time</td><td>hiệp phụ</td><td><span class="say">The match went to extra time.</span></td></tr>
+  <tr><td class="say">underdog</td><td>đội cửa dưới</td><td><span class="say">Everyone loves an underdog.</span></td></tr>
+  <tr><td class="say">hat-trick</td><td>cú hat-trick (ghi 3 bàn)</td><td><span class="say">He scored a hat-trick!</span></td></tr></tbody></table>
+  <div class="sub-title">Thể lực và tập luyện</div>
+  <table class="tbl"><thead><tr><th>Từ / cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">out of shape</td><td>xuống phong độ, kém dáng</td><td><span class="say">I’m so out of shape.</span></td></tr>
+  <tr><td class="say">out of breath</td><td>hụt hơi</td><td><span class="say">I was out of breath after five minutes.</span></td></tr>
+  <tr><td class="say">stamina</td><td>sức bền</td><td><span class="say">Running helps build stamina.</span></td></tr>
+  <tr><td class="say">sprain</td><td>bong gân</td><td><span class="say">I sprained my ankle.</span></td></tr>
+  <tr><td class="say">personal best</td><td>thành tích tốt nhất của bản thân</td><td><span class="say">I set a new personal best today!</span></td></tr>
+  <tr><td class="say">sore muscles</td><td>đau mỏi cơ</td><td><span class="say">My muscles are sore after yesterday’s workout.</span></td></tr></tbody></table>
+  <div class="sub-title">Cụm giúp cuộc trò chuyện trôi chảy</div>
+  <div class="ex-box"><div class="ex-head">LÀM CHO HỘI THOẠI TỰ NHIÊN<span class="ex-tag t5">Nâng cao</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Good game!</span><span class="ex-vn">Trận hay! (nói với đối thủ sau trận)</span></div>
+    <div class="ex-row"><span class="ex-en say">Well played!</span><span class="ex-vn">Chơi hay lắm!</span></div>
+    <div class="ex-row"><span class="ex-en say">That was a close match.</span><span class="ex-vn">Trận đấu sít sao thật</span></div>
+    <div class="ex-row"><span class="ex-en say">It’s anyone’s game.</span><span class="ex-vn">Đội nào cũng có thể thắng</span></div>
+    <div class="ex-row"><span class="ex-en say">Who are you rooting for?</span><span class="ex-vn">Bạn cổ vũ đội nào?</span></div>
+    <div class="ex-row"><span class="ex-en say">No pain, no gain.</span><span class="ex-vn">Có khổ luyện mới có thành công</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m more of a spectator than a player.</span><span class="ex-vn">Tôi thích xem hơn là chơi</span></div>
+  </div></div>
+  <div class="cmp"><div class="bad"><b>❌ NGHE CỨNG</b><div>Vietnam win. Score 2 1. Good.</div></div><div class="good"><b>✔ TỰ NHIÊN HƠN</b><div class="say">Vietnam beat Thailand two–one last night. It was a really close match!</div></div></div>
+  <div class="info i-tip"><span>💡</span><span><strong>Mẹo:</strong> người Anh gọi là <strong>football</strong>, người Mỹ gọi là <strong>soccer</strong> (vì “football” ở Mỹ là bóng bầu dục). Tỉ số 0 trong bóng đá kiểu Anh hay đọc là <strong>nil</strong>: <em>“two–nil”</em>.</span></div>
+
+  <div class="sub-title">Tự kiểm tra</div>
+  <ul class="chk">
+    <li><label><input type="checkbox" id="c1">Tôi gọi tên được 12 môn và dùng đúng <strong>play / go / do</strong></label></li>
+    <li><label><input type="checkbox" id="c2">Tôi nói được sở thích và tần suất chơi thể thao</label></li>
+    <li><label><input type="checkbox" id="c3">Tôi dùng đúng <strong>good at + V-ing</strong></label></li>
+    <li><label><input type="checkbox" id="c4">Tôi phân biệt <strong>win / beat / lose / draw</strong> và đọc được tỉ số</label></li>
+    <li><label><input type="checkbox" id="c5">Tôi dùng <strong>have been + V-ing</strong> để nói chơi được bao lâu</label></li>
+    <li><label><input type="checkbox" id="c6">Tôi rủ chơi và giải thích luật bằng <strong>can / can’t / have to</strong></label></li>
+    <li><label><input type="checkbox" id="c7">Tôi dùng được ít nhất 5 từ vựng nâng cao</label></li>
+  </ul>
+</section>
+
+</div>
+<div class="footer">🏸 Giao tiếp tiếng Anh: Sports · Dành cho người mới bắt đầu · 2026</div>
+</div>
+
+<div class="audio-bar">
+  <b>🔊 Audio</b>
+  <div class="ab-g"><button data-acc="en-GB" class="on">Anh-Anh</button><button data-acc="en-US">Anh-Mỹ</button></div>
+  <div class="ab-g"><button data-rate="0.6">Chậm</button><button data-rate="0.85" class="on">Vừa</button><button data-rate="1">Nhanh</button></div>
+</div>
+
+<script>
+(function(){
+var doc=document.documentElement,bar=document.getElementById('pbar');
+addEventListener('scroll',function(){bar.style.width=(doc.scrollTop/Math.max(1,doc.scrollHeight-doc.clientHeight)*100)+'%'});
+var links=document.querySelectorAll('.nav-link,.topnav a');
+if('IntersectionObserver' in window)document.querySelectorAll('.section[id]').forEach(function(s){
+  new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;
+    links.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id)});
+  })},{rootMargin:'-20% 0px -70% 0px'}).observe(s);
+});
+
+/* Audio */
+var S=window.speechSynthesis,st={acc:'en-GB',rate:.85},cur=null;
+function voice(){if(!S)return null;var v=S.getVoices().filter(function(x){return x.lang.replace('_','-').toLowerCase()===st.acc.toLowerCase()});
+  return v.find(function(x){return /google|natural|premium|enhanced/i.test(x.name)})||v[0]||null}
+function say(el){
+  if(cur)cur.classList.remove('playing');
+  if(!S){el.title='Trình duyệt này không hỗ trợ đọc audio';return}
+  S.cancel();cur=el;el.classList.add('playing');
+  var t=el.textContent.replace(/\s+/g,' ').replace(/\s*\/\s*/g,'. ').replace(/–/g,' ').replace(/→/g,'. ').trim();
+  var u=new SpeechSynthesisUtterance(t);u.lang=st.acc;u.rate=st.rate;var v=voice();if(v)u.voice=v;
+  u.onend=u.onerror=function(){el.classList.remove('playing')};S.speak(u);
+}
+function prep(root){root.querySelectorAll('.say').forEach(function(e){e.tabIndex=0;e.setAttribute('role','button')})}
+prep(document);
+document.addEventListener('click',function(e){var el=e.target.closest('.say');if(el)say(el)});
+document.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.classList&&e.target.classList.contains('say')){e.preventDefault();say(e.target)}});
+document.querySelectorAll('.audio-bar button').forEach(function(b){b.addEventListener('click',function(){
+  b.parentElement.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');
+  if(b.dataset.acc)st.acc=b.dataset.acc;if(b.dataset.rate)st.rate=+b.dataset.rate;
+})});
+function fill(id,arr,lab){var s=document.getElementById(id);arr.forEach(function(x,i){s.add(new Option(lab(x),i))});return s}
+function line(out,label,text){var d=document.createElement('div');d.className='rl';var lb=document.createElement('span');lb.className='lbl';lb.textContent=label;var sp=document.createElement('span');sp.className='say';sp.textContent=text;d.append(lb,sp);out.append(d)}
+var NUMW=['zero','one','two','three','four','five','six','seven','eight','nine','ten'];
+
+/* ===== Công cụ 1: môn thể thao =====
+   [môn, nghĩa, động từ, nơi chơi, dụng cụ, rủ (động từ cụm), biểu tượng] */
+var SP=[['badminton','cầu lông','play','at the sports center','a racket and a shuttlecock','play badminton','🏸'],
+ ['football','bóng đá','play','on a pitch near my house','a ball and good sneakers','play football','⚽'],
+ ['volleyball','bóng chuyền','play','on the beach','a ball and a net','play volleyball','🏐'],
+ ['table tennis','bóng bàn','play','at my office','a paddle and a small ball','play table tennis','🏓'],
+ ['swimming','bơi lội','go','at the local pool','a swimsuit and goggles','go swimming','🏊'],
+ ['running','chạy bộ','go','around the lake','running shoes','go for a run','🏃'],
+ ['cycling','đạp xe','go','along the river','a bike and a helmet','go cycling','🚴'],
+ ['yoga','yoga','do','at home','a yoga mat','do some yoga','🧘'],
+ ['karate','karate','do','at a martial arts club','a karate uniform','do a karate class','🥋'],
+ ['weight training','tập tạ','do','at the gym','weights and a towel','work out at the gym','🏋️']];
+var FQ=[['every day','mỗi ngày'],['twice a week','hai lần một tuần'],['three times a week','ba lần một tuần'],['on weekends','vào cuối tuần'],['once a month','mỗi tháng một lần']];
+var YR=[[1,'1 năm'],[2,'2 năm'],[3,'3 năm'],[5,'5 năm'],[10,'10 năm'],[0,'từ hồi đi học']];
+var gsp=fill('g-sp',SP,function(x){return x[6]+' '+x[0]+' ('+x[1]+')'}),gfq=fill('g-fq',FQ,function(x){return x[0]+' ('+x[1]+')'}),gyr=fill('g-yr',YR,function(x){return x[1]});
+gsp.value=0;gfq.value=1;gyr.value=2;
+var spOut=document.getElementById('sp-out');
+function spShow(){
+  var s=SP[+gsp.value],f=FQ[+gfq.value],y=YR[+gyr.value];
+  var ing={play:'playing',go:'going',do:'doing'}[s[2]];
+  var dur=y[0]?'for '+(y[0]===1?'a year':NUMW[y[0]]+' years'):'since I was at school';
+  spOut.innerHTML='';
+  var top=document.createElement('div');top.className='big';top.textContent=s[6]+' '+s[2]+' '+s[0];spOut.append(top);
+  line(spOut,'THÓI QUEN','I '+s[2]+' '+s[0]+' '+f[0]+', '+s[3]+'.');
+  line(spOut,'BAO LÂU RỒI','I’ve been '+(s[2]==='go'?s[0]:ing+' '+s[0])+' '+dur+'.');
+  line(spOut,'NGƯỜI KHÁC','My brother '+(s[2]==='go'?'goes':s[2]==='do'?'does':'plays')+' '+s[0]+' too.');
+  line(spOut,'DỤNG CỤ','For '+s[0]+', you need '+s[4]+'.');
+  line(spOut,'RỦ CHƠI','Do you want to '+s[5]+' with me this weekend?');
+  var w=document.createElement('span');w.className='why';
+  var why={play:'<b>play</b> vì đây là môn có bóng hoặc có đối thủ.',go:'<b>go</b> vì tên môn kết thúc bằng <b>-ing</b>.',do:'<b>do</b> vì đây là môn tập cá nhân, không dùng bóng.'}[s[2]];
+  w.innerHTML='Dùng '+why+' Với he / she: <b>'+(s[2]==='go'?'goes':s[2]==='do'?'does':'plays')+'</b>. Nói chơi được bao lâu: <b>have been + V-ing + '+(y[0]?'for':'since')+'</b>.';
+  spOut.append(w);prep(spOut);
+}
+document.getElementById('sp-btn').addEventListener('click',spShow);
+[gsp,gfq,gyr].forEach(function(s){s.addEventListener('change',spShow)});
+document.getElementById('sp-rnd').addEventListener('click',function(){gsp.value=Math.floor(Math.random()*SP.length);gfq.value=Math.floor(Math.random()*FQ.length);gyr.value=Math.floor(Math.random()*YR.length);spShow()});
+spShow();
+
+/* ===== Công cụ 2: tỉ số ===== */
+var TEAMS=['Vietnam','Thailand','Japan','Korea','Indonesia','Australia','Hanoi FC','Saigon FC'];
+var gta=fill('g-ta',TEAMS,function(x){return x}),gtb=fill('g-tb',TEAMS,function(x){return x}),
+    gsa=fill('g-sa',[0,1,2,3,4,5],function(x){return x}),gsb=fill('g-sb',[0,1,2,3,4,5],function(x){return x});
+gta.value=0;gtb.value=1;gsa.value=2;gsb.value=1;
+var scOut=document.getElementById('sc-out');
+function sc(n,uk){return n===0?(uk?'nil':'zero'):NUMW[n]}
+function scShow(){
+  var a=TEAMS[+gta.value],b=TEAMS[+gtb.value],x=+gsa.value,y=+gsb.value;
+  scOut.innerHTML='';
+  if(a===b){var e=document.createElement('div');e.style.color='var(--au)';e.textContent='Hai đội đang trùng nhau. Chọn hai đội khác nhau nhé.';scOut.append(e);return}
+  var board=document.createElement('div');board.className='board';board.innerHTML='';
+  var ta=document.createElement('span');ta.textContent=a;var s=document.createElement('b');s.textContent=x+' – '+y;var tb=document.createElement('span');tb.textContent=b;board.append(ta,s,tb);scOut.append(board);
+  var hi=Math.max(x,y),lo=Math.min(x,y),win=x>y?a:b,lose=x>y?b:a;
+  if(x===y){
+    var drawRead=x===0?'nil–nil':(sc(x)+' all');
+    line(scOut,'KẾT QUẢ','It was a draw. '+a+' drew with '+b+', '+drawRead+'.');
+    line(scOut,'CÁCH KHÁC','The match ended '+(x===0?'goalless':sc(x)+'–'+sc(x))+'.');
+    line(scOut,'BÌNH LUẬN',x===0?'Neither team scored. It was a bit boring.':'It was a close match. Both teams played well.');
+  }else{
+    line(scOut,'KẾT QUẢ',win+' beat '+lose+' '+sc(hi)+'–'+sc(lo,1)+'.');
+    line(scOut,'CÁCH KHÁC',win+' won the match '+sc(hi)+'–'+sc(lo)+'. '+lose+' lost.');
+    line(scOut,'BÌNH LUẬN',hi-lo>=3?'It was an easy win for '+win+'.':hi-lo===1?'It was a really close match!':'It was a comfortable win for '+win+'.');
+  }
+  line(scOut,'HỎI','What was the final score?');
+  var w=document.createElement('span');w.className='why';
+  w.innerHTML=x===y?'Hòa: <b>draw</b> (quá khứ <b>drew</b>), tỉ số hòa đọc là <b>one all, two all</b>; 0–0 đọc là <b>nil–nil</b> (Anh) hoặc <b>zero–zero</b> / <b>goalless</b>.':'<b>beat</b> + đối thủ, <b>win</b> + trận đấu, <b>lose to</b> + đối thủ. Đọc tỉ số đội thắng trước; số 0 đọc là <b>nil</b> (Anh) hoặc <b>zero</b> (Mỹ).';
+  scOut.append(w);prep(scOut);
+}
+document.getElementById('sc-btn').addEventListener('click',scShow);
+[gta,gtb,gsa,gsb].forEach(function(s){s.addEventListener('change',scShow)});
+document.getElementById('sc-rnd').addEventListener('click',function(){
+  var i=Math.floor(Math.random()*TEAMS.length),j;do{j=Math.floor(Math.random()*TEAMS.length)}while(j===i);
+  gta.value=i;gtb.value=j;gsa.value=Math.floor(Math.random()*5);gsb.value=Math.floor(Math.random()*5);scShow();
+});
+scShow();
+
+/* Bài tập */
+function cap(s){return s.charAt(0).toUpperCase()+s.slice(1)}
+var inputs=document.querySelectorAll('#exlist input'),exo=document.getElementById('ex-out');
+function norm(s){return s.toLowerCase().replace(/[’‘`]/g,"'").replace(/[.!?]+$/,'').replace(/,/g,'').replace(/\s+/g,' ').trim()}
+document.getElementById('ex-check').addEventListener('click',function(){
+  var ok=0;
+  inputs.forEach(function(i){
+    var good=i.dataset.a.split('|').some(function(a){return norm(a)===norm(i.value)});
+    i.classList.remove('ok','no');i.classList.add(good?'ok':'no');if(good)ok++;
+  });
+  exo.style.minHeight='';
+  exo.textContent=ok===inputs.length?'🎉 Chính xác '+ok+'/'+inputs.length+'. Bạn nói về thể thao rất tốt!':'Đúng '+ok+'/'+inputs.length+'. Các ô viền đỏ cần xem lại; đọc lại phần ngữ pháp ở Bài 1 đến 5, hoặc bấm “Xem đáp án”.';
+});
+document.getElementById('ex-show').addEventListener('click',function(){
+  inputs.forEach(function(i){
+    var k=i.parentElement.querySelector('.key');
+    if(!k){k=document.createElement('span');k.className='key';i.parentElement.append(k)}
+    var a=i.dataset.a.split('|')[0].replace(/'/g,'’').replace(/^i’ve/,'I’ve');k.textContent='Đáp án: '+(a.indexOf(' ')>-1?cap(a):a);
+  });
+});
+document.getElementById('ex-reset').addEventListener('click',function(){
+  inputs.forEach(function(i){i.value='';i.classList.remove('ok','no')});
+  document.querySelectorAll('#exlist .key').forEach(function(k){k.remove()});
+  exo.textContent='';exo.style.minHeight='0';
+});
+})();
+</script>
+
+<script src="nav.js" defer></script>
+</body></html>

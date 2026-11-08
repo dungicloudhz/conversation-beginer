@@ -1,0 +1,528 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Tiếng Anh Meeting New People</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: sidebar mục lục cố định + cột bài học, cùng theme tối của bộ "Hỏi đường & Hỏi giờ" (nhấn xanh lá – tím cho chủ đề làm quen) */
+:root{color-scheme:dark;
+--bg:#080810;--s1:#0e0e1c;--s2:#131326;--s3:#18182e;--border:#222240;--border2:#2c2c50;--text:#e6e6f2;--muted:#8a8ab8;--faint:#4a4a78;
+--acc:#ffd060;--acc-dim:rgba(255,208,96,.11);--oc:#38bdf8;--oc-dim:rgba(56,189,248,.13);--ins:#40d88e;--ins-dim:rgba(64,216,142,.12);
+--sk:#a07af4;--sk-dim:rgba(160,122,244,.12);--au:#ff6584;--au-dim:rgba(255,101,132,.12);--teal:#30d8c0;--code-bg:#05050e;
+--tip-bg:rgba(91,168,255,.10);--tip-bd:rgba(91,168,255,.25);--tip-fg:#8ab8f0;--warn-fg:#e0bc58;--ok-fg:#5ccf98;--line:rgba(255,255,255,.05);
+--font:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+--gl:max(64px,env(safe-area-inset-left,0px));--gr:max(64px,env(safe-area-inset-right,0px))}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 60px)}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.7;font-size:15px;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:600;background:var(--s1)}
+.sidebar{position:fixed;left:0;top:0;width:260px;height:100%;background:var(--s1);border-right:1px solid var(--border);overflow-y:auto;z-index:400;padding-top:env(safe-area-inset-top,0px);padding-left:env(safe-area-inset-left,0px)}
+.sb-logo{padding:20px 18px 16px;border-bottom:1px solid var(--border)}
+.sb-brand{display:flex;align-items:center;gap:11px;margin-bottom:12px}
+.logo-icon{width:44px;height:44px;border-radius:11px;background:linear-gradient(135deg,var(--ins),var(--sk));display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 0 26px rgba(64,216,142,.28)}
+.logo-text h2{font-size:15px;font-weight:800}.logo-text p{font-size:10.5px;color:var(--muted)}
+.prog-wrap{height:3px;background:var(--border);border-radius:2px;overflow:hidden}
+.prog-bar{height:100%;width:0;background:linear-gradient(90deg,var(--acc),var(--ins),var(--oc),var(--sk),var(--au))}
+.nav-label{padding:14px 18px 4px;font-size:9.5px;font-weight:700;letter-spacing:1.6px;color:var(--faint)}
+.nav-link{display:flex;align-items:center;gap:9px;padding:7px 18px;color:var(--muted);text-decoration:none;font-size:12.5px;font-weight:600;border-left:2px solid transparent}
+.nav-link:hover,.nav-link.active{color:var(--text);background:rgba(255,208,96,.07);border-left-color:var(--acc)}
+.main{margin-left:260px}
+.hero{padding-block:80px 60px;padding-left:var(--gl);padding-right:var(--gr);border-bottom:1px solid var(--border);background:radial-gradient(ellipse 65% 55% at 75% 22%,rgba(64,216,142,.09),transparent 60%),radial-gradient(ellipse 50% 55% at 10% 82%,rgba(160,122,244,.08),transparent 55%),var(--bg)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--acc-dim);border:1px solid rgba(255,208,96,.38);color:var(--acc);padding:5px 16px;border-radius:100px;font-size:11.5px;font-weight:700;margin-bottom:24px}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--acc);animation:p 2s infinite}
+@keyframes p{50%{opacity:.35;transform:scale(.7)}}
+@media(prefers-reduced-motion:reduce){.eyebrow i{animation:none}html{scroll-behavior:auto}}
+.hero h1{font-size:50px;font-weight:900;letter-spacing:-2.4px;line-height:1.06;margin-bottom:18px;text-wrap:balance}
+.grad{background:linear-gradient(135deg,var(--ins),var(--sk));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-desc{font-size:16px;color:var(--muted);max-width:620px;margin-bottom:28px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{padding:5px 14px;border-radius:7px;font-size:12px;font-weight:700}
+.c1{background:var(--oc-dim);color:var(--oc)}.c2{background:var(--ins-dim);color:var(--ins)}.c3{background:var(--acc-dim);color:var(--acc)}.c4{background:var(--sk-dim);color:var(--sk)}.c5{background:var(--au-dim);color:var(--au)}
+.content{padding-block:56px;padding-left:var(--gl);padding-right:var(--gr);max-width:calc(1020px + 64px)}
+.section{margin-bottom:68px}
+.sec-head{display:flex;gap:14px;align-items:flex-start;margin-bottom:28px;padding-bottom:18px;border-bottom:1px solid var(--border)}
+.sec-tag{font-family:var(--mono);font-size:10px;font-weight:600;padding:3px 10px;border-radius:5px;margin-top:6px;flex-shrink:0;letter-spacing:.5px}
+.t1{color:var(--oc);background:var(--oc-dim)}.t2{color:var(--ins);background:var(--ins-dim)}.t3{color:var(--acc);background:var(--acc-dim)}.t4{color:var(--sk);background:var(--sk-dim)}.t5{color:var(--au);background:var(--au-dim)}
+.sec-title{font-size:23px;font-weight:800;letter-spacing:-.6px;text-wrap:balance}.sec-sub{font-size:13px;color:var(--muted)}
+.sub-title{font-size:14.5px;font-weight:700;margin:26px 0 12px;display:flex;align-items:center;gap:10px}
+.sub-title::before{content:'';width:14px;height:3px;background:var(--acc);border-radius:2px}
+p.t{color:var(--muted);font-size:13.5px;margin-bottom:11px;max-width:68ch}p.t strong,li strong{color:var(--text)}
+.ex-box{background:var(--s1);border:1px solid var(--border2);border-radius:11px;overflow:hidden;margin:13px 0}
+.ex-head{display:flex;align-items:center;gap:8px;padding:9px 16px;background:var(--s2);border-bottom:1px solid var(--border);font-family:var(--mono);font-size:10px;font-weight:600;color:var(--muted);letter-spacing:.5px}
+.ex-tag{margin-left:auto;font-size:9px;font-weight:700;padding:2px 9px;border-radius:100px;font-family:var(--font)}
+.ex-body{padding:10px 20px}
+.ex-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:13.5px}
+.ex-row:last-child{border-bottom:none}
+.ex-en{color:var(--text);font-weight:600;min-width:280px}.ex-vn{color:var(--muted)}
+.info{display:flex;gap:12px;padding:14px 16px;border-radius:9px;margin:13px 0;font-size:13px;line-height:1.6}
+.i-tip{background:var(--tip-bg);border:1px solid var(--tip-bd);color:var(--tip-fg)}
+.i-warn{background:var(--acc-dim);border:1px solid rgba(255,208,96,.25);color:var(--warn-fg)}
+.i-ok{background:var(--ins-dim);border:1px solid rgba(64,216,142,.25);color:var(--ok-fg)}
+.tbl{width:100%;border-collapse:collapse;font-size:13px;margin:13px 0;display:block;overflow-x:auto}
+.tbl th{background:var(--s3);padding:10px 14px;text-align:left;font-size:10px;color:var(--muted);border-bottom:1px solid var(--border2);white-space:nowrap;letter-spacing:.5px}
+.tbl td{padding:10px 14px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:top}
+.tbl td:first-child{color:var(--text);font-weight:600}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}
+.card{background:var(--s1);border:1px solid var(--border);border-radius:11px;padding:16px;min-width:0}
+.card:hover{border-color:var(--acc)}
+.card-icon{font-size:24px}.card-title{font-size:13px;font-weight:700}.card-desc{font-size:12px;color:var(--muted)}
+.cmp{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);border-radius:11px;overflow:hidden;margin:13px 0}
+.bad{background:rgba(255,101,132,.07);padding:14px 16px;border-right:1px solid var(--border)}.good{background:rgba(64,216,142,.07);padding:14px 16px}
+.cmp b{display:block;font-size:10px;margin-bottom:6px;letter-spacing:.5px}.bad b{color:var(--au)}.good b{color:var(--ins)}
+.cmp div div{font-size:13.5px}
+.dlg{display:grid;gap:8px;margin:12px 0;background:var(--s1);border:1px solid var(--border2);border-radius:12px;padding:16px 18px}
+.dlg-t{font-size:10px;font-weight:800;color:var(--acc);margin-bottom:2px;letter-spacing:.6px}
+.turn{display:flex;gap:10px;align-items:baseline}
+.turn>div{min-width:0}
+.who{flex-shrink:0;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+.wa{background:var(--oc-dim);color:var(--oc)}.wb{background:var(--ins-dim);color:var(--ins)}
+.turn .say{font-weight:600}.turn small{display:block;color:var(--muted);font-size:12px;font-weight:400}
+.gen{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0}
+.gen label{font-size:11.5px;color:var(--muted);font-weight:600;display:block;min-width:0}
+.gen select{width:100%;margin-top:4px;background:var(--code-bg);border:1px solid var(--border2);border-radius:8px;padding:9px 12px;color:var(--text);font:inherit;font-size:13px}
+select:focus-visible,button:focus-visible,.say:focus-visible,.exi input:focus-visible,.chk input:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.btns{display:flex;flex-wrap:wrap;gap:6px}
+.btn{background:var(--acc-dim);color:var(--acc);border:1px solid var(--acc);border-radius:8px;padding:8px 16px;font:inherit;font-weight:700;font-size:13px;cursor:pointer}
+.btn.alt{background:var(--ins-dim);color:var(--ins);border-color:var(--ins)}
+.out{margin-top:14px;min-height:60px;background:var(--s2);border:1px dashed var(--border2);border-radius:10px;padding:14px 16px;font-size:14px;line-height:1.9}
+.big{font-size:21px;font-weight:800;color:var(--acc);letter-spacing:-.3px;line-height:1.4;margin-bottom:4px}
+.out .why{display:block;color:var(--muted);font-size:12.5px}
+.out .why b{color:var(--teal);font-family:var(--mono);font-weight:600}
+.timeline{display:grid;gap:0;margin:14px 0;border-left:2px solid var(--border2);padding-left:18px}
+.tl{position:relative;padding:8px 0 12px}
+.tl::before{content:'';position:absolute;left:-24px;top:16px;width:10px;height:10px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 3px var(--bg)}
+.tl time{font-family:var(--mono);font-size:12px;color:var(--acc);font-variant-numeric:tabular-nums;font-weight:600}
+.tl .say{font-weight:600;font-size:13.5px}
+.tl small{display:block;color:var(--muted);font-size:12px}
+.freq{display:grid;gap:7px;margin:14px 0}
+.fq{display:grid;grid-template-columns:110px 1fr 54px;gap:12px;align-items:center;font-size:13px}
+.fq .say{font-weight:700}
+.fq .track{height:8px;background:var(--s3);border-radius:4px;overflow:hidden}
+.fq .fill{height:100%;background:linear-gradient(90deg,var(--ins),var(--acc))}
+.fq span:last-child{font-family:var(--mono);font-size:11.5px;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+.plan{display:grid;gap:8px;margin:12px 0}
+.day{display:flex;gap:14px;align-items:baseline;background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:12px 16px;font-size:13px;color:var(--muted)}
+.day b{color:var(--acc);font-family:var(--mono);font-size:12px;flex-shrink:0;width:52px}.day strong{color:var(--text)}
+.chk{list-style:none;margin:10px 0}.chk li{padding:6px 0;font-size:13.5px;color:var(--muted);border-bottom:1px solid rgba(255,255,255,.04)}
+.chk input{accent-color:var(--ins);margin-right:10px;width:15px;height:15px;vertical-align:-2px}
+.gr{border:1px solid rgba(160,122,244,.38);background:linear-gradient(180deg,var(--sk-dim),transparent 110px),var(--s1);border-radius:12px;margin:28px 0;overflow:hidden}
+.gr-head{padding:10px 18px;font-size:12px;font-weight:800;color:var(--sk);border-bottom:1px solid var(--border);display:flex;gap:10px;flex-wrap:wrap;align-items:baseline;letter-spacing:.4px}
+.gr-head em{font-style:normal;color:var(--muted);font-weight:600;letter-spacing:0}
+.gr-body{padding:14px 18px;font-size:13.5px;color:var(--muted)}
+.gr-body p{margin-bottom:10px}.gr-body b{color:var(--text)}.gr-body ul{padding-left:20px;margin-bottom:8px}.gr-body li{margin-bottom:4px}
+.gr-body .tbl{margin:8px 0 12px}
+.fm{display:inline-block;font-family:var(--mono);font-size:12px;background:var(--code-bg);color:var(--teal);padding:3px 9px;border-radius:6px;margin:2px 0}
+.say{cursor:pointer;border-bottom:1px dotted var(--oc)}
+.say:hover{color:var(--acc);background:var(--acc-dim);border-radius:4px}
+.say::after{content:"🔊";font-size:.68em;margin-left:3px;opacity:.5}
+.say.playing{color:var(--ins);background:var(--ins-dim);border-radius:4px}.say.playing::after{opacity:1}
+.exi{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:13.5px;color:var(--text)}
+.exi input{width:220px;max-width:100%;background:var(--code-bg);border:1px solid var(--border2);border-radius:6px;padding:4px 8px;color:var(--text);font:inherit;font-size:13px;text-align:center}
+.exi input.ok{border-color:var(--ins);color:var(--ins)}.exi input.no{border-color:var(--au);color:var(--au)}
+.exi small{color:var(--muted);font-size:11.5px}
+.exi .key{color:var(--ins);font-size:12px;width:100%}
+.footer{border-top:1px solid var(--border);padding-block:28px 90px;padding-left:var(--gl);padding-right:var(--gr);font-size:12px;color:var(--muted)}
+.audio-bar{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:500;display:flex;gap:10px;align-items:center;background:var(--s2);border:1px solid var(--border2);border-radius:12px;padding:8px 12px;box-shadow:0 8px 28px rgba(0,0,0,.5);font-size:12px;color:var(--muted)}
+.audio-bar b{color:var(--acc)}.ab-g{display:flex;gap:4px}
+.audio-bar button{background:var(--s3);color:var(--muted);border:1px solid var(--border);border-radius:7px;padding:4px 10px;font:inherit;font-weight:700;cursor:pointer}
+.audio-bar button.on{background:var(--acc-dim);color:var(--acc);border-color:var(--acc)}
+.topnav{display:none}
+@media(max-width:900px){
+:root{--gl:max(18px,env(safe-area-inset-left,0px));--gr:max(18px,env(safe-area-inset-right,0px))}
+.sidebar{display:none}.main{margin-left:0}.hero h1{font-size:32px;letter-spacing:-1.4px}.hero{padding-block:48px 40px}
+.grid-3,.cmp{grid-template-columns:1fr}.gen{grid-template-columns:1fr 1fr}.bad{border-right:none;border-bottom:1px solid var(--border)}
+.topnav{display:flex;overflow-x:auto;position:sticky;top:env(safe-area-inset-top,0px);z-index:500;background:var(--s1);border-bottom:2px solid var(--border2);scrollbar-width:none;padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+.topnav a{flex-shrink:0;padding:10px 14px;color:var(--muted);text-decoration:none;font-size:12px;font-weight:700;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-2px}
+.topnav a.active{color:var(--acc);border-bottom-color:var(--acc);background:var(--acc-dim)}
+.ex-en{min-width:0}
+.fq{grid-template-columns:90px 1fr 46px}
+.audio-bar{left:calc(8px + env(safe-area-inset-left,0px));right:calc(8px + env(safe-area-inset-right,0px));justify-content:center;flex-wrap:wrap}
+}
+@media(max-width:480px){.gen{grid-template-columns:1fr}}
+.gen input{width:100%;margin-top:4px;background:var(--code-bg);border:1px solid var(--border2);border-radius:8px;padding:9px 12px;color:var(--text);font:inherit;font-size:13px}
+.gen input:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.lbl{font-family:var(--mono);font-size:10px;font-weight:600;color:var(--faint);letter-spacing:1px}
+.big{font-size:18px}
+</style>
+
+<aside class="sidebar">
+  <div class="sb-logo">
+    <div class="sb-brand"><div class="logo-icon">🤝</div><div class="logo-text"><h2>Meeting New People</h2><p>Tiếng Anh cho người mới</p></div></div>
+    <div class="prog-wrap"><div class="prog-bar" id="pbar"></div></div>
+  </div>
+  <div class="nav-label">BÀI HỌC</div>
+  <a class="nav-link" href="#s1">👋 Chào &amp; giới thiệu</a>
+  <a class="nav-link" href="#s2">❓ Hỏi thông tin cơ bản</a>
+  <a class="nav-link" href="#s3">🧑‍🤝‍🧑 Giới thiệu người khác</a>
+  <a class="nav-link" href="#s4">🎯 Tìm điểm chung</a>
+  <a class="nav-link" href="#s5">🔚 Giữ &amp; kết thúc chuyện</a>
+  <div class="nav-label">THỰC HÀNH</div>
+  <a class="nav-link" href="#s6">💬 Hội thoại mẫu</a>
+  <a class="nav-link" href="#s7">🛠️ Tự giới thiệu &amp; bài tập</a>
+  <a class="nav-link" href="#s8">🚀 Từ vựng nâng cao</a>
+</aside>
+
+<div class="main">
+<nav class="topnav">
+  <a href="#s1">1 Chào hỏi</a><a href="#s2">2 Hỏi</a><a href="#s3">3 Giới thiệu</a><a href="#s4">4 Điểm chung</a><a href="#s5">5 Kết thúc</a><a href="#s6">6 Hội thoại</a><a href="#s7">7 Bài tập</a><a href="#s8">8 Nâng cao</a>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow"><i></i>Dành cho người mới bắt đầu</div>
+  <h1>Làm quen người mới<br><span class="grad">bằng tiếng Anh</span></h1>
+  <p class="hero-desc">Học cách chào hỏi, giới thiệu bản thân, hỏi han người mới gặp, giới thiệu bạn bè với nhau, tìm điểm chung để nói chuyện, và chào tạm biệt sao cho tự nhiên. Bấm vào câu có biểu tượng loa để nghe, nói theo, rồi tự tạo đoạn giới thiệu của bạn ở phần thực hành.</p>
+  <div class="chips"><span class="chip c2">Chào hỏi</span><span class="chip c1">Hỏi &amp; đáp</span><span class="chip c4">Giới thiệu</span><span class="chip c3">Điểm chung</span><span class="chip c5">Từ vựng nâng cao</span></div>
+</header>
+
+<div class="content">
+
+<section class="section" id="s1">
+  <div class="sec-head"><span class="sec-tag t2">BÀI 1</span><div><div class="sec-title">Chào hỏi và giới thiệu bản thân</div><div class="sec-sub">Những câu đầu tiên khi gặp một người lạ</div></div></div>
+  <table class="tbl"><thead><tr><th>Lời chào</th><th>Mức độ</th><th>Dùng khi</th></tr></thead><tbody>
+  <tr><td><span class="say">Hi! / Hey!</span></td><td>thân mật</td><td>bạn bè, người cùng tuổi</td></tr>
+  <tr><td><span class="say">Hello.</span></td><td>trung tính</td><td>dùng được hầu hết mọi lúc</td></tr>
+  <tr><td><span class="say">Good morning. / Good afternoon. / Good evening.</span></td><td>lịch sự</td><td>công việc, người lớn tuổi</td></tr>
+  <tr><td><span class="say">How are you?</span></td><td>trung tính</td><td>hỏi thăm sau lời chào</td></tr>
+  <tr><td><span class="say">How’s it going?</span></td><td>thân mật</td><td>giống “Dạo này sao rồi?”</td></tr></tbody></table>
+  <div class="ex-box"><div class="ex-head">GIỚI THIỆU BẢN THÂN<span class="ex-tag t2">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Hi, I’m Linh.</span><span class="ex-vn">Chào bạn, mình là Linh</span></div>
+    <div class="ex-row"><span class="ex-en say">My name is Nguyen Van Nam, but you can call me Nam.</span><span class="ex-vn">Tên tôi là Nguyễn Văn Nam, cứ gọi tôi là Nam</span></div>
+    <div class="ex-row"><span class="ex-en say">Nice to meet you.</span><span class="ex-vn">Rất vui được gặp bạn</span></div>
+    <div class="ex-row"><span class="ex-en say">Nice to meet you too.</span><span class="ex-vn">Tôi cũng rất vui được gặp bạn</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m fine, thanks. And you?</span><span class="ex-vn">Tôi khỏe, cảm ơn. Còn bạn?</span></div>
+    <div class="ex-row"><span class="ex-en say">Not bad, thanks!</span><span class="ex-vn">Cũng ổn, cảm ơn!</span></div>
+  </div></div>
+  <div class="info i-tip"><span>💡</span><span><strong>Mẹo:</strong> người nước ngoài thường gọi bằng <strong>tên riêng</strong> (first name). Nếu tên bạn khó đọc, nói thêm <em>“You can call me…”</em> và đưa ra một tên ngắn dễ nhớ.</span></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Động từ to be và dạng rút gọn</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Đầy đủ</th><th>Rút gọn</th><th>Ví dụ</th></tr></thead><tbody>
+<tr><td><span class="fm">I am</span></td><td><span class="fm">I’m</span></td><td><span class="say">I’m a student.</span></td></tr>
+<tr><td><span class="fm">You / We / They are</span></td><td><span class="fm">You’re / We’re / They’re</span></td><td><span class="say">You’re very kind.</span></td></tr>
+<tr><td><span class="fm">He / She / It is</span></td><td><span class="fm">He’s / She’s / It’s</span></td><td><span class="say">She’s from Japan.</span></td></tr>
+<tr><td><span class="fm">am not / is not / are not</span></td><td><span class="fm">’m not / isn’t / aren’t</span></td><td><span class="say">I’m not from here.</span></td></tr></tbody></table>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>I Linh. I student.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">I’m Linh. I’m a student.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s2">
+  <div class="sec-head"><span class="sec-tag t1">BÀI 2</span><div><div class="sec-title">Hỏi thông tin cơ bản</div><div class="sec-sub">Quê quán, nơi sống, công việc, học tập</div></div></div>
+  <div class="ex-box"><div class="ex-head">HỎI VÀ ĐÁP<span class="ex-tag t1">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">What’s your name?</span><span class="ex-vn">Bạn tên gì?</span></div>
+    <div class="ex-row"><span class="ex-en say">Where are you from?</span><span class="ex-vn">Bạn đến từ đâu?</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m from Vietnam. I’m Vietnamese.</span><span class="ex-vn">Tôi đến từ Việt Nam. Tôi là người Việt</span></div>
+    <div class="ex-row"><span class="ex-en say">Which part of Vietnam?</span><span class="ex-vn">Vùng nào của Việt Nam?</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m from Hue, but I live in Hanoi now.</span><span class="ex-vn">Tôi quê Huế, nhưng giờ sống ở Hà Nội</span></div>
+    <div class="ex-row"><span class="ex-en say">What do you do?</span><span class="ex-vn">Bạn làm nghề gì?</span></div>
+    <div class="ex-row"><span class="ex-en say">What are you studying?</span><span class="ex-vn">Bạn đang học ngành gì?</span></div>
+    <div class="ex-row"><span class="ex-en say">How long have you been in Vietnam?</span><span class="ex-vn">Bạn ở Việt Nam bao lâu rồi?</span></div>
+  </div></div>
+  <table class="tbl"><thead><tr><th>Quốc gia</th><th>Quốc tịch / người</th><th>Quốc gia</th><th>Quốc tịch / người</th></tr></thead><tbody>
+  <tr><td class="say">Vietnam</td><td class="say">Vietnamese</td><td class="say">Japan</td><td class="say">Japanese</td></tr>
+  <tr><td class="say">Korea</td><td class="say">Korean</td><td class="say">China</td><td class="say">Chinese</td></tr>
+  <tr><td class="say">the USA</td><td class="say">American</td><td class="say">the UK</td><td class="say">British</td></tr>
+  <tr><td class="say">Australia</td><td class="say">Australian</td><td class="say">France</td><td class="say">French</td></tr>
+  <tr><td class="say">Thailand</td><td class="say">Thai</td><td class="say">Germany</td><td class="say">German</td></tr></tbody></table>
+  <div class="info i-warn"><span>⚠️</span><span><strong>Nhớ:</strong> với người mới quen, tránh hỏi ngay <strong>tuổi, lương, cân nặng, đã có gia đình chưa</strong>. Ở nhiều nước, những câu này bị coi là riêng tư. Hỏi về quê, công việc, sở thích thì an toàn.</span></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Câu hỏi với be và với do</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Loại</th><th>Cấu trúc</th><th>Ví dụ</th></tr></thead><tbody>
+<tr><td>Với be</td><td><span class="fm">Wh- + am/is/are + S?</span></td><td><span class="say">Where are you from?</span></td></tr>
+<tr><td>Với động từ thường</td><td><span class="fm">Wh- + do/does + S + V?</span></td><td><span class="say">Where do you live?</span></td></tr>
+<tr><td>Có / không</td><td><span class="fm">Are you…? / Do you…?</span></td><td><span class="say">Are you a teacher?</span> <span class="say">Do you like Hanoi?</span></td></tr></tbody></table>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>Where you are from? / Where are you live?</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">Where are you from? Where do you live?</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s3">
+  <div class="sec-head"><span class="sec-tag t4">BÀI 3</span><div><div class="sec-title">Giới thiệu người khác</div><div class="sec-sub">Giúp hai người bạn của bạn làm quen với nhau</div></div></div>
+  <div class="ex-box"><div class="ex-head">GIỚI THIỆU<span class="ex-tag t4">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Mai, this is my friend Tom.</span><span class="ex-vn">Mai ơi, đây là Tom, bạn mình</span></div>
+    <div class="ex-row"><span class="ex-en say">Tom, this is Mai. We work together.</span><span class="ex-vn">Tom, đây là Mai. Bọn mình làm cùng nhau</span></div>
+    <div class="ex-row"><span class="ex-en say">Have you two met before?</span><span class="ex-vn">Hai bạn gặp nhau bao giờ chưa?</span></div>
+    <div class="ex-row"><span class="ex-en say">I’d like you to meet my manager, Mr. Brown.</span><span class="ex-vn">Tôi muốn giới thiệu bạn với quản lý của tôi, ông Brown</span></div>
+    <div class="ex-row"><span class="ex-en say">These are my classmates, Hoa and Duc.</span><span class="ex-vn">Đây là các bạn cùng lớp của tôi, Hoa và Đức</span></div>
+    <div class="ex-row"><span class="ex-en say">She’s really good at photography.</span><span class="ex-vn">Cô ấy chụp ảnh rất giỏi</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>This is / These are khi giới thiệu</em></div><div class="gr-body">
+<ul><li><span class="fm">This is + một người</span> → <span class="say">This is my sister, Lan.</span></li>
+<li><span class="fm">These are + nhiều người</span> → <span class="say">These are my parents.</span></li>
+<li>Khi giới thiệu, <b>không dùng</b> <i>He is…</i> hay <i>She is…</i> ở câu đầu tiên; dùng <b>This is</b>.</li></ul>
+<div class="cmp"><div class="bad"><b>❌ NGHE LẠ</b><div>He is Tom. He is my friend.</div></div><div class="good"><b>✔ TỰ NHIÊN</b><div class="say">This is Tom. He’s my friend from university.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s4">
+  <div class="sec-head"><span class="sec-tag t3">BÀI 4</span><div><div class="sec-title">Tìm điểm chung</div><div class="sec-sub">Hỏi sở thích và hưởng ứng khi hai người giống nhau</div></div></div>
+  <div class="grid-3">
+    <div class="card"><div class="card-icon">🎵</div><div class="card-title say">listening to music</div><div class="card-desc">nghe nhạc</div></div>
+    <div class="card"><div class="card-icon">📚</div><div class="card-title say">reading</div><div class="card-desc">đọc sách</div></div>
+    <div class="card"><div class="card-icon">⚽</div><div class="card-title say">playing football</div><div class="card-desc">đá bóng</div></div>
+    <div class="card"><div class="card-icon">🎬</div><div class="card-title say">watching movies</div><div class="card-desc">xem phim</div></div>
+    <div class="card"><div class="card-icon">✈️</div><div class="card-title say">traveling</div><div class="card-desc">đi du lịch</div></div>
+    <div class="card"><div class="card-icon">🍳</div><div class="card-title say">cooking</div><div class="card-desc">nấu ăn</div></div>
+  </div>
+  <div class="ex-box"><div class="ex-head">HỎI VỀ SỞ THÍCH<span class="ex-tag t3">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">What do you do in your free time?</span><span class="ex-vn">Lúc rảnh bạn làm gì?</span></div>
+    <div class="ex-row"><span class="ex-en say">What are your hobbies?</span><span class="ex-vn">Sở thích của bạn là gì?</span></div>
+    <div class="ex-row"><span class="ex-en say">I love traveling. I went to Phu Quoc last month.</span><span class="ex-vn">Mình mê du lịch. Tháng trước mình đi Phú Quốc</span></div>
+    <div class="ex-row"><span class="ex-en say">Do you like K-pop?</span><span class="ex-vn">Bạn thích K-pop không?</span></div>
+    <div class="ex-row"><span class="ex-en say">What kind of movies do you like?</span><span class="ex-vn">Bạn thích thể loại phim nào?</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Hưởng ứng: Me too / Me neither / So do I / Neither do I</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Người kia nói</th><th>Bạn giống họ</th><th>Bạn khác họ</th></tr></thead><tbody>
+<tr><td><span class="say">I love coffee.</span> (khẳng định)</td><td><span class="say">Me too!</span> / <span class="say">So do I.</span></td><td><span class="say">Oh, I don’t.</span></td></tr>
+<tr><td><span class="say">I don’t like spicy food.</span> (phủ định)</td><td><span class="say">Me neither.</span> / <span class="say">Neither do I.</span></td><td><span class="say">Really? I do.</span></td></tr>
+<tr><td><span class="say">I’m a bit shy.</span> (với be)</td><td><span class="say">So am I.</span></td><td><span class="say">Oh, I’m not.</span></td></tr></tbody></table>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>A: I don’t like durian. B: Me too.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">I don’t like durian. Me neither.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s5">
+  <div class="sec-head"><span class="sec-tag t5">BÀI 5</span><div><div class="sec-title">Giữ cuộc trò chuyện và chào tạm biệt</div><div class="sec-sub">Phản hồi để câu chuyện không bị đứt, rồi kết thúc thật lịch sự</div></div></div>
+  <div class="ex-box"><div class="ex-head">PHẢN HỒI ĐỂ NÓI TIẾP<span class="ex-tag t5">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Really? That’s interesting!</span><span class="ex-vn">Thật à? Hay thế!</span></div>
+    <div class="ex-row"><span class="ex-en say">Oh, cool! How long have you been doing that?</span><span class="ex-vn">Ồ, hay quá! Bạn làm việc đó bao lâu rồi?</span></div>
+    <div class="ex-row"><span class="ex-en say">That sounds fun.</span><span class="ex-vn">Nghe vui đấy</span></div>
+    <div class="ex-row"><span class="ex-en say">What do you like about it?</span><span class="ex-vn">Bạn thích điều gì ở nó?</span></div>
+    <div class="ex-row"><span class="ex-en say">Sorry, could you say that again?</span><span class="ex-vn">Xin lỗi, bạn nhắc lại được không?</span></div>
+  </div></div>
+  <div class="ex-box"><div class="ex-head">CHÀO TẠM BIỆT<span class="ex-tag t2">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">It was nice meeting you.</span><span class="ex-vn">Rất vui vì đã gặp bạn</span></div>
+    <div class="ex-row"><span class="ex-en say">Can I have your number?</span><span class="ex-vn">Cho mình xin số điện thoại nhé?</span></div>
+    <div class="ex-row"><span class="ex-en say">Are you on Facebook or Zalo?</span><span class="ex-vn">Bạn có dùng Facebook hay Zalo không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Let’s keep in touch.</span><span class="ex-vn">Giữ liên lạc nhé</span></div>
+    <div class="ex-row"><span class="ex-en say">I have to go now. See you around!</span><span class="ex-vn">Mình phải đi rồi. Hẹn gặp lại!</span></div>
+    <div class="ex-row"><span class="ex-en say">Take care!</span><span class="ex-vn">Giữ gìn sức khỏe nhé!</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Nice to meet you hay Nice meeting you?</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Câu</th><th>Dùng khi</th></tr></thead><tbody>
+<tr><td><span class="say">Nice to meet you.</span></td><td><b>đầu</b> cuộc gặp, ngay sau khi giới thiệu</td></tr>
+<tr><td><span class="say">It was nice meeting you.</span> / <span class="say">Nice meeting you.</span></td><td><b>cuối</b> cuộc gặp, khi chào tạm biệt</td></tr>
+<tr><td><span class="say">Nice to see you again.</span></td><td>gặp lại người <b>đã quen</b> (dùng see, không dùng meet)</td></tr></tbody></table>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>(gặp lại bạn cũ) Nice to meet you again!</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">Nice to see you again!</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s6">
+  <div class="sec-head"><span class="sec-tag t3">BÀI 6</span><div><div class="sec-title">Hội thoại mẫu</div><div class="sec-sub">Bấm từng câu để nghe, rồi đóng vai cả hai người</div></div></div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 1: GẶP NGƯỜI MỚI Ở BỮA TIỆC</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Hi, I’m Linh. I don’t think we’ve met.</span><small>Chào, mình là Linh. Hình như mình chưa gặp nhau.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Hi Linh, I’m Sarah. Nice to meet you.</span><small>Chào Linh, mình là Sarah. Rất vui được gặp bạn.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Nice to meet you too. Where are you from, Sarah?</span><small>Mình cũng vậy. Sarah đến từ đâu?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">I’m from Australia. I’m teaching English here in Hanoi.</span><small>Mình đến từ Úc. Mình đang dạy tiếng Anh ở Hà Nội.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Oh, really? How long have you been here?</span><small>Ồ, thật à? Bạn ở đây bao lâu rồi?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">About six months. I love it here!</span><small>Khoảng sáu tháng. Mình rất thích ở đây!</small></div></div>
+  </div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 2: GIỚI THIỆU HAI NGƯỜI BẠN</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Tom, this is my friend Nam. Nam, this is Tom. He’s from London.</span><small>Tom, đây là Nam, bạn mình. Nam, đây là Tom. Cậu ấy đến từ London.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Hi Tom, nice to meet you! What brings you to Vietnam?</span><small>Chào Tom, rất vui được gặp! Điều gì đưa bạn đến Việt Nam?</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">I’m traveling around Southeast Asia. Do you like traveling?</span><small>Mình đang đi du lịch quanh Đông Nam Á. Bạn có thích du lịch không?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Yes, I love it! But I don’t like long bus trips.</span><small>Có, mình mê lắm! Nhưng mình không thích đi xe khách đường dài.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Me neither! I always get carsick.</span><small>Mình cũng thế! Lần nào mình cũng say xe.</small></div></div>
+  </div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 3: CHÀO TẠM BIỆT VÀ XIN LIÊN LẠC</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Well, I have to go now. It was really nice meeting you.</span><small>Mình phải đi rồi. Gặp bạn vui thật đấy.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">You too! Can I have your number? Let’s grab a coffee sometime.</span><small>Mình cũng vậy! Cho mình xin số nhé? Hôm nào đi cà phê.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Sure. Are you on Zalo?</span><small>Được chứ. Bạn có dùng Zalo không?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Yes, I am. Here, scan my QR code.</span><small>Có. Đây, quét mã QR của mình nhé.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Done! See you soon. Take care!</span><small>Xong rồi! Hẹn sớm gặp lại. Giữ gìn nhé!</small></div></div>
+  </div>
+  <div class="info i-ok"><span>✅</span><span><strong>Cách luyện:</strong> nghe một lượt, nói theo từng câu, rồi che phần tiếng Việt và tự đóng vai A hoặc B. Lần sau thay bằng tên, quê và sở thích thật của bạn.</span></div>
+</section>
+
+<section class="section" id="s7">
+  <div class="sec-head"><span class="sec-tag t2">BÀI 7</span><div><div class="sec-title">Tự giới thiệu &amp; bài tập</div><div class="sec-sub">Điền thông tin của bạn, xem đoạn giới thiệu hoàn chỉnh và câu hỏi lại người kia</div></div></div>
+  <div class="gen">
+    <label for="g-n">Tên của bạn<input id="g-n" value="Linh" maxlength="30" autocomplete="off"></label>
+    <label for="g-h">Quê<select id="g-h"></select></label>
+    <label for="g-l">Đang sống ở<select id="g-l"></select></label>
+    <label for="g-j">Công việc<select id="g-j"></select></label>
+    <label for="g-b">Sở thích<select id="g-b"></select></label>
+    <label for="g-st">Phong cách<select id="g-st"></select></label>
+  </div>
+  <div class="btns"><button class="btn" id="gen-btn">Tạo đoạn giới thiệu</button><button class="btn alt" id="rnd-btn">Chọn ngẫu nhiên</button></div>
+  <div class="out" id="gen-out" aria-live="polite"></div>
+
+  <div class="sub-title">Bài tập: điền câu trả lời</div>
+  <p class="t">Câu 1–4: điền một từ vào chỗ trống. Câu 5–8: dịch sang tiếng Anh, gõ cả câu. Không phân biệt hoa thường.</p>
+  <div id="exlist">
+    <div class="exi">1. Where ___ you from? →<input id="ex1" data-a="are" aria-label="Câu 1"><small>be</small></div>
+    <div class="exi">2. Where ___ you live? →<input id="ex2" data-a="do" aria-label="Câu 2"><small>động từ thường</small></div>
+    <div class="exi">3. A: I don’t like coffee. B: Me ___. →<input id="ex3" data-a="neither" aria-label="Câu 3"><small>phủ định</small></div>
+    <div class="exi">4. Mai, ___ is my friend Tom. →<input id="ex4" data-a="this" aria-label="Câu 4"><small>giới thiệu</small></div>
+    <div class="exi">5. Rất vui được gặp bạn →<input id="ex5" data-a="nice to meet you|it's nice to meet you|pleased to meet you" aria-label="Câu 5"><small>đầu cuộc gặp</small></div>
+    <div class="exi">6. Tôi là người Việt Nam →<input id="ex6" data-a="i'm vietnamese|i am vietnamese|i'm from vietnam|i am from vietnam" aria-label="Câu 6"><small>quốc tịch</small></div>
+    <div class="exi">7. Lúc rảnh bạn làm gì? →<input id="ex7" data-a="what do you do in your free time?|what do you do in your spare time?" aria-label="Câu 7"><small>free time</small></div>
+    <div class="exi">8. Giữ liên lạc nhé →<input id="ex8" data-a="let's keep in touch|let's stay in touch|keep in touch" aria-label="Câu 8"><small>in touch</small></div>
+  </div>
+  <div class="btns" style="margin-top:12px"><button class="btn" id="ex-check">Kiểm tra đáp án</button><button class="btn alt" id="ex-show">Xem đáp án</button><button class="btn alt" id="ex-reset">Làm lại</button></div>
+  <div class="out" id="ex-out" style="min-height:0" aria-live="polite"></div>
+
+  <div class="sub-title">Lộ trình luyện 7 ngày</div>
+  <div class="plan">
+    <div class="day"><b>Ngày 1</b><span><strong>Chào hỏi:</strong> luyện các lời chào và câu tự giới thiệu, dùng dạng rút gọn I’m, she’s</span></div>
+    <div class="day"><b>Ngày 2</b><span><strong>Hỏi thông tin:</strong> luyện câu hỏi với be và với do, học 10 quốc tịch</span></div>
+    <div class="day"><b>Ngày 3</b><span><strong>Giới thiệu người khác:</strong> giới thiệu 3 người bạn bằng This is…</span></div>
+    <div class="day"><b>Ngày 4</b><span><strong>Điểm chung:</strong> luyện Me too / Me neither / So do I với 10 câu</span></div>
+    <div class="day"><b>Ngày 5</b><span><strong>Kết thúc:</strong> luyện phản hồi để nói tiếp và các câu chào tạm biệt</span></div>
+    <div class="day"><b>Ngày 6</b><span><strong>Hội thoại:</strong> đóng vai 3 tình huống, dùng máy tự giới thiệu để đổi thông tin</span></div>
+    <div class="day"><b>Ngày 7</b><span><strong>Ôn tổng hợp:</strong> thu âm 1 phút tự giới thiệu, rồi thử nói với một người nước ngoài</span></div>
+  </div>
+</section>
+
+<section class="section" id="s8">
+  <div class="sec-head"><span class="sec-tag t5">NÂNG CAO</span><div><div class="sec-title">Từ vựng mới để hội thoại tự nhiên hơn</div><div class="sec-sub">Thêm vài từ này, bạn sẽ làm quen tự tin và tự nhiên hơn</div></div></div>
+  <div class="sub-title">Về các mối quan hệ</div>
+  <table class="tbl"><thead><tr><th>Từ / cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">acquaintance</td><td>người quen (chưa thân)</td><td><span class="say">He’s just an acquaintance from work.</span></td></tr>
+  <tr><td class="say">mutual friend</td><td>bạn chung</td><td><span class="say">We met through a mutual friend.</span></td></tr>
+  <tr><td class="say">get to know</td><td>làm quen, tìm hiểu</td><td><span class="say">I’d love to get to know you better.</span></td></tr>
+  <tr><td class="say">hit it off</td><td>hợp nhau ngay</td><td><span class="say">We hit it off right away.</span></td></tr>
+  <tr><td class="say">have a lot in common</td><td>có nhiều điểm chung</td><td><span class="say">We have a lot in common.</span></td></tr>
+  <tr><td class="say">hang out</td><td>đi chơi cùng nhau</td><td><span class="say">We should hang out sometime.</span></td></tr>
+  <tr><td class="say">networking</td><td>mở rộng quan hệ (công việc)</td><td><span class="say">I go to networking events to meet new people.</span></td></tr></tbody></table>
+  <div class="sub-title">Về tính cách khi giao tiếp</div>
+  <table class="tbl"><thead><tr><th>Từ / cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">outgoing</td><td>hướng ngoại, cởi mở</td><td><span class="say">She’s very outgoing and makes friends easily.</span></td></tr>
+  <tr><td class="say">shy</td><td>nhút nhát</td><td><span class="say">I’m a bit shy at first.</span></td></tr>
+  <tr><td class="say">introvert / extrovert</td><td>người hướng nội / hướng ngoại</td><td><span class="say">I’m more of an introvert.</span></td></tr>
+  <tr><td class="say">small talk</td><td>chuyện phiếm xã giao</td><td><span class="say">I’m not very good at small talk.</span></td></tr>
+  <tr><td class="say">icebreaker</td><td>câu, trò để phá băng</td><td><span class="say">Asking about food is a great icebreaker.</span></td></tr>
+  <tr><td class="say">easygoing</td><td>dễ tính, dễ gần</td><td><span class="say">He’s really easygoing.</span></td></tr></tbody></table>
+  <div class="sub-title">Cụm giúp cuộc trò chuyện trôi chảy</div>
+  <div class="ex-box"><div class="ex-head">LÀM CHO HỘI THOẠI TỰ NHIÊN<span class="ex-tag t5">Nâng cao</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Sorry, I didn’t catch your name.</span><span class="ex-vn">Xin lỗi, mình chưa nghe rõ tên bạn</span></div>
+    <div class="ex-row"><span class="ex-en say">How do you know the host?</span><span class="ex-vn">Bạn quen chủ nhà thế nào?</span></div>
+    <div class="ex-row"><span class="ex-en say">What brings you here?</span><span class="ex-vn">Điều gì đưa bạn đến đây?</span></div>
+    <div class="ex-row"><span class="ex-en say">I’ve heard a lot about you.</span><span class="ex-vn">Tôi nghe nói về bạn nhiều rồi</span></div>
+    <div class="ex-row"><span class="ex-en say">Small world!</span><span class="ex-vn">Trái đất tròn thật! (khi phát hiện quen chung)</span></div>
+    <div class="ex-row"><span class="ex-en say">Let me know if you’re ever in Hanoi.</span><span class="ex-vn">Khi nào đến Hà Nội thì báo mình nhé</span></div>
+    <div class="ex-row"><span class="ex-en say">It was great talking to you.</span><span class="ex-vn">Nói chuyện với bạn vui lắm</span></div>
+  </div></div>
+  <div class="cmp"><div class="bad"><b>❌ NGHE CỨNG</b><div>My name Linh. I 25 years old. I work office.</div></div><div class="good"><b>✔ TỰ NHIÊN HƠN</b><div class="say">Hi, I’m Linh. I work in marketing, and in my free time I love trying new cafés. How about you?</div></div></div>
+  <div class="info i-tip"><span>💡</span><span><strong>Mẹo:</strong> công thức làm quen dễ nhất là <strong>trả lời + thêm một chi tiết + hỏi lại</strong>. Ví dụ: <em>“I’m from Hue. It’s famous for its food. Have you been there?”</em></span></div>
+
+  <div class="sub-title">Tự kiểm tra</div>
+  <ul class="chk">
+    <li><label><input type="checkbox" id="c1">Tôi chào hỏi đúng mức độ: thân mật, trung tính, lịch sự</label></li>
+    <li><label><input type="checkbox" id="c2">Tôi tự giới thiệu được tên, quê, công việc, sở thích</label></li>
+    <li><label><input type="checkbox" id="c3">Tôi đặt đúng câu hỏi với <strong>be</strong> và với <strong>do</strong></label></li>
+    <li><label><input type="checkbox" id="c4">Tôi giới thiệu người khác bằng <strong>This is…</strong></label></li>
+    <li><label><input type="checkbox" id="c5">Tôi hưởng ứng đúng bằng <strong>Me too / Me neither / So do I</strong></label></li>
+    <li><label><input type="checkbox" id="c6">Tôi phân biệt <strong>Nice to meet you</strong> và <strong>Nice meeting you</strong></label></li>
+    <li><label><input type="checkbox" id="c7">Tôi dùng được ít nhất 5 từ vựng nâng cao</label></li>
+  </ul>
+</section>
+
+</div>
+<div class="footer">🤝 Giao tiếp tiếng Anh: Meeting New People · Dành cho người mới bắt đầu · 2026</div>
+</div>
+
+<div class="audio-bar">
+  <b>🔊 Audio</b>
+  <div class="ab-g"><button data-acc="en-GB" class="on">Anh-Anh</button><button data-acc="en-US">Anh-Mỹ</button></div>
+  <div class="ab-g"><button data-rate="0.6">Chậm</button><button data-rate="0.85" class="on">Vừa</button><button data-rate="1">Nhanh</button></div>
+</div>
+
+<script>
+(function(){
+var doc=document.documentElement,bar=document.getElementById('pbar');
+addEventListener('scroll',function(){bar.style.width=(doc.scrollTop/Math.max(1,doc.scrollHeight-doc.clientHeight)*100)+'%'});
+var links=document.querySelectorAll('.nav-link,.topnav a');
+if('IntersectionObserver' in window)document.querySelectorAll('.section[id]').forEach(function(s){
+  new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;
+    links.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id)});
+  })},{rootMargin:'-20% 0px -70% 0px'}).observe(s);
+});
+
+/* Audio */
+var S=window.speechSynthesis,st={acc:'en-GB',rate:.85},cur=null;
+function voice(){if(!S)return null;var v=S.getVoices().filter(function(x){return x.lang.replace('_','-').toLowerCase()===st.acc.toLowerCase()});
+  return v.find(function(x){return /google|natural|premium|enhanced/i.test(x.name)})||v[0]||null}
+function say(el){
+  if(cur)cur.classList.remove('playing');
+  if(!S){el.title='Trình duyệt này không hỗ trợ đọc audio';return}
+  S.cancel();cur=el;el.classList.add('playing');
+  var t=el.textContent.replace(/\s+/g,' ').replace(/\s*\/\s*/g,'. ').replace(/→/g,'. ').replace(/\bHue\b/g,'Hway').replace(/Phu Quoc/g,'Foo Kwok').replace(/Zalo/g,'Zah-lo').trim();
+  var u=new SpeechSynthesisUtterance(t);u.lang=st.acc;u.rate=st.rate;var v=voice();if(v)u.voice=v;
+  u.onend=u.onerror=function(){el.classList.remove('playing')};S.speak(u);
+}
+function prep(root){root.querySelectorAll('.say').forEach(function(e){e.tabIndex=0;e.setAttribute('role','button')})}
+prep(document);
+document.addEventListener('click',function(e){var el=e.target.closest('.say');if(el)say(el)});
+document.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.classList&&e.target.classList.contains('say')){e.preventDefault();say(e.target)}});
+document.querySelectorAll('.audio-bar button').forEach(function(b){b.addEventListener('click',function(){
+  b.parentElement.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');
+  if(b.dataset.acc)st.acc=b.dataset.acc;if(b.dataset.rate)st.rate=+b.dataset.rate;
+})});
+
+/* Tự giới thiệu */
+var CITY=[['Hanoi','Hà Nội','the capital'],['Ho Chi Minh City','TP. Hồ Chí Minh','the biggest city in Vietnam'],['Da Nang','Đà Nẵng','a beautiful beach city'],
+  ['Hue','Huế','famous for its food and history'],['Hai Phong','Hải Phòng','a port city in the north'],['Can Tho','Cần Thơ','famous for its floating markets'],['Nha Trang','Nha Trang','famous for its beaches']];
+/* [nghề tiếng Anh dạng đầy đủ, nghĩa] */
+var JOB=[['a student','sinh viên'],['a teacher','giáo viên'],['an engineer','kỹ sư'],['an accountant','kế toán'],['a nurse','y tá'],['a designer','nhà thiết kế'],['a software developer','lập trình viên'],['a salesperson','nhân viên kinh doanh']];
+var HOB=[['traveling','đi du lịch'],['reading','đọc sách'],['cooking','nấu ăn'],['playing football','đá bóng'],['watching movies','xem phim'],['taking photos','chụp ảnh'],['trying new cafés','thử quán cà phê mới'],['listening to music','nghe nhạc']];
+var STY=[['casual','thân mật (bạn bè, tiệc)'],['formal','lịch sự (công việc)']];
+function fill(id,arr,lab){var s=document.getElementById(id);arr.forEach(function(x,i){s.add(new Option(lab(x),i))});return s}
+var gn=document.getElementById('g-n'),gh=fill('g-h',CITY,function(x){return x[0]}),gl=fill('g-l',CITY,function(x){return x[0]}),
+    gj=fill('g-j',JOB,function(x){return x[0].replace(/^an? /,'')+' ('+x[1]+')'}),gb=fill('g-b',HOB,function(x){return x[0]+' ('+x[1]+')'}),
+    gst=fill('g-st',STY,function(x){return x[1]});
+gh.value=3;gl.value=0;gj.value=5;gb.value=6;gst.value=0;
+var out=document.getElementById('gen-out');
+function cap(s){return s.charAt(0).toUpperCase()+s.slice(1)}
+function show(){
+  var name=(gn.value||'').replace(/\s+/g,' ').trim()||'Linh';
+  var h=CITY[+gh.value],l=CITY[+gl.value],j=JOB[+gj.value],b=HOB[+gb.value],formal=+gst.value===1;
+  var lines=[];
+  lines.push(formal?'Good morning. My name is '+name+'. It’s a pleasure to meet you.':'Hi, I’m '+name+'. Nice to meet you!');
+  if(h===l)lines.push('I’m from '+h[0]+', and I still live there. It’s '+h[2]+'.');
+  else lines.push('I’m from '+h[0]+', but I live in '+l[0]+' now.');
+  lines.push(j[0]==='a student'?'I’m a student.':(formal?'I work as '+j[0]+'.':'I’m '+j[0]+'.'));
+  lines.push(formal?'In my free time, I enjoy '+b[0]+'.':'In my free time, I love '+b[0]+'.');
+  var ask=formal?['May I ask where you’re from?','What do you do?','What do you enjoy doing in your free time?']:['How about you? Where are you from?','What do you do?','Do you like '+b[0]+' too?'];
+  out.innerHTML='';
+  var lb=document.createElement('div');lb.className='lbl';lb.textContent='ĐOẠN GIỚI THIỆU';out.append(lb);
+  var big=document.createElement('div');big.className='big';
+  lines.forEach(function(x,i){var sp=document.createElement('span');sp.className='say';sp.textContent=x;big.append(sp);if(i<lines.length-1)big.append(' ')});out.append(big);
+  var vn=document.createElement('div');vn.style.color='var(--muted)';vn.style.fontSize='13px';
+  vn.textContent='Nghĩa: '+(formal?'Xin chào. Tôi tên là ':'Chào bạn, mình là ')+name+'. Quê '+h[1]+(h===l?', vẫn đang sống ở đó':', hiện sống ở '+l[1])+'. Là '+j[1]+'. Lúc rảnh thích '+b[1]+'.';
+  out.append(vn);
+  var lb2=document.createElement('div');lb2.className='lbl';lb2.style.marginTop='10px';lb2.textContent='HỎI LẠI NGƯỜI KIA';out.append(lb2);
+  ask.forEach(function(x){var d=document.createElement('div');var sp=document.createElement('span');sp.className='say';sp.textContent=x;d.append(sp);out.append(d)});
+  var w=document.createElement('span');w.className='why';
+  w.innerHTML=(formal?'Kiểu lịch sự: dùng <b>My name is</b>, <b>It’s a pleasure to meet you</b>, <b>I work as</b>, <b>May I ask…</b>.':'Kiểu thân mật: dùng <b>I’m</b>, <b>Nice to meet you</b>, câu ngắn và hỏi lại bằng <b>How about you?</b>.')+' Sau <b>love / enjoy</b> dùng <b>V-ing</b>: <b>'+b[0]+'</b>.';
+  out.append(w);prep(out);
+}
+document.getElementById('gen-btn').addEventListener('click',show);
+gn.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();show()}});
+document.getElementById('rnd-btn').addEventListener('click',function(){
+  var names=['Linh','Nam','Hoa','Minh','Trang','Duc','Mai','Khoa'];gn.value=names[Math.floor(Math.random()*names.length)];
+  [[gh,CITY],[gl,CITY],[gj,JOB],[gb,HOB],[gst,STY]].forEach(function(x){x[0].value=Math.floor(Math.random()*x[1].length)});show();
+});
+show();
+
+/* Bài tập */
+var inputs=document.querySelectorAll('#exlist input'),exo=document.getElementById('ex-out');
+function norm(s){return s.toLowerCase().replace(/[’‘`]/g,"'").replace(/[.!?]+$/,'').replace(/,/g,'').replace(/\s+/g,' ').trim()}
+document.getElementById('ex-check').addEventListener('click',function(){
+  var ok=0;
+  inputs.forEach(function(i){
+    var good=i.dataset.a.split('|').some(function(a){return norm(a)===norm(i.value)});
+    i.classList.remove('ok','no');i.classList.add(good?'ok':'no');if(good)ok++;
+  });
+  exo.style.minHeight='';
+  exo.textContent=ok===inputs.length?'🎉 Chính xác '+ok+'/'+inputs.length+'. Bạn sẵn sàng làm quen bạn mới rồi!':'Đúng '+ok+'/'+inputs.length+'. Các ô viền đỏ cần xem lại; đọc lại phần ngữ pháp ở Bài 1 đến 5, hoặc bấm “Xem đáp án”.';
+});
+document.getElementById('ex-show').addEventListener('click',function(){
+  inputs.forEach(function(i){
+    var k=i.parentElement.querySelector('.key');
+    if(!k){k=document.createElement('span');k.className='key';i.parentElement.append(k)}
+    var a=i.dataset.a.split('|')[0].replace(/'/g,'’').replace(/^i’m/,'I’m').replace('vietnamese','Vietnamese');k.textContent='Đáp án: '+(a.indexOf(' ')>-1?cap(a):a);
+  });
+});
+document.getElementById('ex-reset').addEventListener('click',function(){
+  inputs.forEach(function(i){i.value='';i.classList.remove('ok','no')});
+  document.querySelectorAll('#exlist .key').forEach(function(k){k.remove()});
+  exo.textContent='';exo.style.minHeight='0';
+});
+})();
+</script>
+
+<script src="nav.js" defer></script>
+</body></html>
