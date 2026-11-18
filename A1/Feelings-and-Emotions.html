@@ -1,0 +1,543 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Tiếng Anh Feelings & Emotions</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: sidebar mục lục cố định + cột bài học, cùng theme tối của bộ "Hỏi đường & Hỏi giờ" (nhấn vàng – hồng cho chủ đề Feelings & Emotions) */
+:root{color-scheme:dark;
+--bg:#080810;--s1:#0e0e1c;--s2:#131326;--s3:#18182e;--border:#222240;--border2:#2c2c50;--text:#e6e6f2;--muted:#8a8ab8;--faint:#4a4a78;
+--acc:#ffd060;--acc-dim:rgba(255,208,96,.11);--oc:#38bdf8;--oc-dim:rgba(56,189,248,.13);--ins:#40d88e;--ins-dim:rgba(64,216,142,.12);
+--sk:#a07af4;--sk-dim:rgba(160,122,244,.12);--au:#ff6584;--au-dim:rgba(255,101,132,.12);--teal:#30d8c0;--code-bg:#05050e;
+--tip-bg:rgba(91,168,255,.10);--tip-bd:rgba(91,168,255,.25);--tip-fg:#8ab8f0;--warn-fg:#e0bc58;--ok-fg:#5ccf98;--line:rgba(255,255,255,.05);
+--font:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+--gl:max(64px,env(safe-area-inset-left,0px));--gr:max(64px,env(safe-area-inset-right,0px))}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 60px)}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.7;font-size:15px;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:600;background:var(--s1)}
+.sidebar{position:fixed;left:0;top:0;width:260px;height:100%;background:var(--s1);border-right:1px solid var(--border);overflow-y:auto;z-index:400;padding-top:env(safe-area-inset-top,0px);padding-left:env(safe-area-inset-left,0px)}
+.sb-logo{padding:20px 18px 16px;border-bottom:1px solid var(--border)}
+.sb-brand{display:flex;align-items:center;gap:11px;margin-bottom:12px}
+.logo-icon{width:44px;height:44px;border-radius:11px;background:linear-gradient(135deg,var(--acc),var(--au));display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 0 26px rgba(255,208,96,.28)}
+.logo-text h2{font-size:15px;font-weight:800}.logo-text p{font-size:10.5px;color:var(--muted)}
+.prog-wrap{height:3px;background:var(--border);border-radius:2px;overflow:hidden}
+.prog-bar{height:100%;width:0;background:linear-gradient(90deg,var(--acc),var(--ins),var(--oc),var(--sk),var(--au))}
+.nav-label{padding:14px 18px 4px;font-size:9.5px;font-weight:700;letter-spacing:1.6px;color:var(--faint)}
+.nav-link{display:flex;align-items:center;gap:9px;padding:7px 18px;color:var(--muted);text-decoration:none;font-size:12.5px;font-weight:600;border-left:2px solid transparent}
+.nav-link:hover,.nav-link.active{color:var(--text);background:rgba(255,208,96,.07);border-left-color:var(--acc)}
+.main{margin-left:260px}
+.hero{padding-block:80px 60px;padding-left:var(--gl);padding-right:var(--gr);border-bottom:1px solid var(--border);background:radial-gradient(ellipse 65% 55% at 75% 22%,rgba(255,208,96,.09),transparent 60%),radial-gradient(ellipse 50% 55% at 10% 82%,rgba(255,101,132,.07),transparent 55%),var(--bg)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--acc-dim);border:1px solid rgba(255,208,96,.38);color:var(--acc);padding:5px 16px;border-radius:100px;font-size:11.5px;font-weight:700;margin-bottom:24px}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--acc);animation:p 2s infinite}
+@keyframes p{50%{opacity:.35;transform:scale(.7)}}
+@media(prefers-reduced-motion:reduce){.eyebrow i{animation:none}html{scroll-behavior:auto}}
+.hero h1{font-size:50px;font-weight:900;letter-spacing:-2.4px;line-height:1.06;margin-bottom:18px;text-wrap:balance}
+.grad{background:linear-gradient(135deg,var(--acc),var(--au));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-desc{font-size:16px;color:var(--muted);max-width:620px;margin-bottom:28px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{padding:5px 14px;border-radius:7px;font-size:12px;font-weight:700}
+.c1{background:var(--oc-dim);color:var(--oc)}.c2{background:var(--ins-dim);color:var(--ins)}.c3{background:var(--acc-dim);color:var(--acc)}.c4{background:var(--sk-dim);color:var(--sk)}.c5{background:var(--au-dim);color:var(--au)}
+.content{padding-block:56px;padding-left:var(--gl);padding-right:var(--gr);max-width:calc(1020px + 64px)}
+.section{margin-bottom:68px}
+.sec-head{display:flex;gap:14px;align-items:flex-start;margin-bottom:28px;padding-bottom:18px;border-bottom:1px solid var(--border)}
+.sec-tag{font-family:var(--mono);font-size:10px;font-weight:600;padding:3px 10px;border-radius:5px;margin-top:6px;flex-shrink:0;letter-spacing:.5px}
+.t1{color:var(--oc);background:var(--oc-dim)}.t2{color:var(--ins);background:var(--ins-dim)}.t3{color:var(--acc);background:var(--acc-dim)}.t4{color:var(--sk);background:var(--sk-dim)}.t5{color:var(--au);background:var(--au-dim)}
+.sec-title{font-size:23px;font-weight:800;letter-spacing:-.6px;text-wrap:balance}.sec-sub{font-size:13px;color:var(--muted)}
+.sub-title{font-size:14.5px;font-weight:700;margin:26px 0 12px;display:flex;align-items:center;gap:10px}
+.sub-title::before{content:'';width:14px;height:3px;background:var(--acc);border-radius:2px}
+p.t{color:var(--muted);font-size:13.5px;margin-bottom:11px;max-width:68ch}p.t strong,li strong{color:var(--text)}
+.ex-box{background:var(--s1);border:1px solid var(--border2);border-radius:11px;overflow:hidden;margin:13px 0}
+.ex-head{display:flex;align-items:center;gap:8px;padding:9px 16px;background:var(--s2);border-bottom:1px solid var(--border);font-family:var(--mono);font-size:10px;font-weight:600;color:var(--muted);letter-spacing:.5px}
+.ex-tag{margin-left:auto;font-size:9px;font-weight:700;padding:2px 9px;border-radius:100px;font-family:var(--font)}
+.ex-body{padding:10px 20px}
+.ex-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:13.5px}
+.ex-row:last-child{border-bottom:none}
+.ex-en{color:var(--text);font-weight:600;min-width:280px}.ex-vn{color:var(--muted)}
+.info{display:flex;gap:12px;padding:14px 16px;border-radius:9px;margin:13px 0;font-size:13px;line-height:1.6}
+.i-tip{background:var(--tip-bg);border:1px solid var(--tip-bd);color:var(--tip-fg)}
+.i-warn{background:var(--acc-dim);border:1px solid rgba(255,208,96,.25);color:var(--warn-fg)}
+.i-ok{background:var(--ins-dim);border:1px solid rgba(64,216,142,.25);color:var(--ok-fg)}
+.tbl{width:100%;border-collapse:collapse;font-size:13px;margin:13px 0;display:block;overflow-x:auto}
+.tbl th{background:var(--s3);padding:10px 14px;text-align:left;font-size:10px;color:var(--muted);border-bottom:1px solid var(--border2);white-space:nowrap;letter-spacing:.5px}
+.tbl td{padding:10px 14px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:top}
+.tbl td:first-child{color:var(--text);font-weight:600}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}
+.card{background:var(--s1);border:1px solid var(--border);border-radius:11px;padding:16px;min-width:0}
+.card:hover{border-color:var(--acc)}
+.card-icon{font-size:24px}.card-title{font-size:13px;font-weight:700}.card-desc{font-size:12px;color:var(--muted)}
+.cmp{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);border-radius:11px;overflow:hidden;margin:13px 0}
+.bad{background:rgba(255,101,132,.07);padding:14px 16px;border-right:1px solid var(--border)}.good{background:rgba(64,216,142,.07);padding:14px 16px}
+.cmp b{display:block;font-size:10px;margin-bottom:6px;letter-spacing:.5px}.bad b{color:var(--au)}.good b{color:var(--ins)}
+.cmp div div{font-size:13.5px}
+.dlg{display:grid;gap:8px;margin:12px 0;background:var(--s1);border:1px solid var(--border2);border-radius:12px;padding:16px 18px}
+.dlg-t{font-size:10px;font-weight:800;color:var(--acc);margin-bottom:2px;letter-spacing:.6px}
+.turn{display:flex;gap:10px;align-items:baseline}
+.turn>div{min-width:0}
+.who{flex-shrink:0;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+.wa{background:var(--oc-dim);color:var(--oc)}.wb{background:var(--ins-dim);color:var(--ins)}
+.turn .say{font-weight:600}.turn small{display:block;color:var(--muted);font-size:12px;font-weight:400}
+.gen{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin:12px 0}
+.gen label{font-size:11.5px;color:var(--muted);font-weight:600;display:block;min-width:0}
+.gen select{width:100%;margin-top:4px;background:var(--code-bg);border:1px solid var(--border2);border-radius:8px;padding:9px 12px;color:var(--text);font:inherit;font-size:13px}
+select:focus-visible,button:focus-visible,.say:focus-visible,.exi input:focus-visible,.chk input:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.btns{display:flex;flex-wrap:wrap;gap:6px}
+.btn{background:var(--acc-dim);color:var(--acc);border:1px solid var(--acc);border-radius:8px;padding:8px 16px;font:inherit;font-weight:700;font-size:13px;cursor:pointer}
+.btn.alt{background:var(--ins-dim);color:var(--ins);border-color:var(--ins)}
+.out{margin-top:14px;min-height:60px;background:var(--s2);border:1px dashed var(--border2);border-radius:10px;padding:14px 16px;font-size:14px;line-height:1.9}
+.big{font-size:21px;font-weight:800;color:var(--acc);letter-spacing:-.3px;line-height:1.4;margin-bottom:4px}
+.out .why{display:block;color:var(--muted);font-size:12.5px}
+.out .why b{color:var(--teal);font-family:var(--mono);font-weight:600}
+.timeline{display:grid;gap:0;margin:14px 0;border-left:2px solid var(--border2);padding-left:18px}
+.tl{position:relative;padding:8px 0 12px}
+.tl::before{content:'';position:absolute;left:-24px;top:16px;width:10px;height:10px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 3px var(--bg)}
+.tl time{font-family:var(--mono);font-size:12px;color:var(--acc);font-variant-numeric:tabular-nums;font-weight:600}
+.tl .say{font-weight:600;font-size:13.5px}
+.tl small{display:block;color:var(--muted);font-size:12px}
+.freq{display:grid;gap:7px;margin:14px 0}
+.fq{display:grid;grid-template-columns:110px 1fr 54px;gap:12px;align-items:center;font-size:13px}
+.fq .say{font-weight:700}
+.fq .track{height:8px;background:var(--s3);border-radius:4px;overflow:hidden}
+.fq .fill{height:100%;background:linear-gradient(90deg,var(--ins),var(--acc))}
+.fq span:last-child{font-family:var(--mono);font-size:11.5px;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+.plan{display:grid;gap:8px;margin:12px 0}
+.day{display:flex;gap:14px;align-items:baseline;background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:12px 16px;font-size:13px;color:var(--muted)}
+.day b{color:var(--acc);font-family:var(--mono);font-size:12px;flex-shrink:0;width:52px}.day strong{color:var(--text)}
+.chk{list-style:none;margin:10px 0}.chk li{padding:6px 0;font-size:13.5px;color:var(--muted);border-bottom:1px solid rgba(255,255,255,.04)}
+.chk input{accent-color:var(--ins);margin-right:10px;width:15px;height:15px;vertical-align:-2px}
+.gr{border:1px solid rgba(160,122,244,.38);background:linear-gradient(180deg,var(--sk-dim),transparent 110px),var(--s1);border-radius:12px;margin:28px 0;overflow:hidden}
+.gr-head{padding:10px 18px;font-size:12px;font-weight:800;color:var(--sk);border-bottom:1px solid var(--border);display:flex;gap:10px;flex-wrap:wrap;align-items:baseline;letter-spacing:.4px}
+.gr-head em{font-style:normal;color:var(--muted);font-weight:600;letter-spacing:0}
+.gr-body{padding:14px 18px;font-size:13.5px;color:var(--muted)}
+.gr-body p{margin-bottom:10px}.gr-body b{color:var(--text)}.gr-body ul{padding-left:20px;margin-bottom:8px}.gr-body li{margin-bottom:4px}
+.gr-body .tbl{margin:8px 0 12px}
+.fm{display:inline-block;font-family:var(--mono);font-size:12px;background:var(--code-bg);color:var(--teal);padding:3px 9px;border-radius:6px;margin:2px 0}
+.say{cursor:pointer;border-bottom:1px dotted var(--oc)}
+.say:hover{color:var(--acc);background:var(--acc-dim);border-radius:4px}
+.say::after{content:"🔊";font-size:.68em;margin-left:3px;opacity:.5}
+.say.playing{color:var(--ins);background:var(--ins-dim);border-radius:4px}.say.playing::after{opacity:1}
+.exi{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:13.5px;color:var(--text)}
+.exi input{width:220px;max-width:100%;background:var(--code-bg);border:1px solid var(--border2);border-radius:6px;padding:4px 8px;color:var(--text);font:inherit;font-size:13px;text-align:center}
+.exi input.ok{border-color:var(--ins);color:var(--ins)}.exi input.no{border-color:var(--au);color:var(--au)}
+.exi small{color:var(--muted);font-size:11.5px}
+.exi .key{color:var(--ins);font-size:12px;width:100%}
+.footer{border-top:1px solid var(--border);padding-block:28px 90px;padding-left:var(--gl);padding-right:var(--gr);font-size:12px;color:var(--muted)}
+.audio-bar{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:500;display:flex;gap:10px;align-items:center;background:var(--s2);border:1px solid var(--border2);border-radius:12px;padding:8px 12px;box-shadow:0 8px 28px rgba(0,0,0,.5);font-size:12px;color:var(--muted)}
+.audio-bar b{color:var(--acc)}.ab-g{display:flex;gap:4px}
+.audio-bar button{background:var(--s3);color:var(--muted);border:1px solid var(--border);border-radius:7px;padding:4px 10px;font:inherit;font-weight:700;cursor:pointer}
+.audio-bar button.on{background:var(--acc-dim);color:var(--acc);border-color:var(--acc)}
+.topnav{display:none}
+@media(max-width:900px){
+:root{--gl:max(18px,env(safe-area-inset-left,0px));--gr:max(18px,env(safe-area-inset-right,0px))}
+.sidebar{display:none}.main{margin-left:0}.hero h1{font-size:32px;letter-spacing:-1.4px}.hero{padding-block:48px 40px}
+.grid-3,.cmp{grid-template-columns:1fr}.gen{grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}.bad{border-right:none;border-bottom:1px solid var(--border)}
+.topnav{display:flex;overflow-x:auto;position:sticky;top:env(safe-area-inset-top,0px);z-index:500;background:var(--s1);border-bottom:2px solid var(--border2);scrollbar-width:none;padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+.topnav a{flex-shrink:0;padding:10px 14px;color:var(--muted);text-decoration:none;font-size:12px;font-weight:700;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-2px}
+.topnav a.active{color:var(--acc);border-bottom-color:var(--acc);background:var(--acc-dim)}
+.ex-en{min-width:0}
+.fq{grid-template-columns:90px 1fr 46px}
+.audio-bar{left:calc(8px + env(safe-area-inset-left,0px));right:calc(8px + env(safe-area-inset-right,0px));justify-content:center;flex-wrap:wrap}
+}
+@media(max-width:480px){.gen{grid-template-columns:1fr}}
+
+.lbl{font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--faint)}
+.out .lbl{color:var(--acc);min-width:72px;display:inline-block}
+.scale{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:12px 0}
+.sc-i{background:var(--s1);border:1px solid var(--border);border-top:3px solid var(--ins);border-radius:10px;padding:12px 14px;display:grid;gap:4px;align-content:start}
+.sc-i.n0{border-top-color:var(--oc)}.sc-i.n{border-top-color:var(--au)}
+.sc-i b{font-size:22px;line-height:1}.sc-i .say{color:var(--text);font-weight:600;font-size:13.5px}.sc-i em{font-style:normal;color:var(--muted);font-size:12px}
+@media(max-width:700px){.scale{grid-template-columns:1fr 1fr}}
+</style>
+
+<aside class="sidebar">
+  <div class="sb-logo">
+    <div class="sb-brand"><div class="logo-icon">😊</div><div class="logo-text"><h2>Feelings</h2><p>Tiếng Anh cho người mới</p></div></div>
+    <div class="prog-wrap"><div class="prog-bar" id="pbar"></div></div>
+  </div>
+  <div class="nav-label">BÀI HỌC</div>
+  <a class="nav-link" href="#s1">🎭 Từ chỉ cảm xúc</a>
+  <a class="nav-link" href="#s2">❓ How do you feel?</a>
+  <a class="nav-link" href="#s3">💡 Nói nguyên nhân</a>
+  <a class="nav-link" href="#s4">🤗 Đáp lại cảm xúc</a>
+  <a class="nav-link" href="#s5">🔄 Cảm xúc thay đổi</a>
+  <div class="nav-label">THỰC HÀNH</div>
+  <a class="nav-link" href="#s6">💬 Hội thoại mẫu</a>
+  <a class="nav-link" href="#s7">🛠️ Máy cảm xúc &amp; bài tập</a>
+  <a class="nav-link" href="#s8">🚀 Từ vựng nâng cao</a>
+</aside>
+
+<div class="main">
+<nav class="topnav">
+  <a href="#s1">1 Cảm xúc</a><a href="#s2">2 Hỏi</a><a href="#s3">3 Nguyên nhân</a><a href="#s4">4 Đáp lại</a><a href="#s5">5 Thay đổi</a><a href="#s6">6 Hội thoại</a><a href="#s7">7 Luyện tập</a><a href="#s8">8 Nâng cao</a>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow"><i></i>Dành cho người mới bắt đầu</div>
+  <h1>Cảm xúc &amp; cảm giác<br><span class="grad">bằng tiếng Anh</span></h1>
+  <p class="hero-desc">Vui, mệt, đói, chán… là những điều bạn nói mỗi ngày. Bài này dạy bạn gọi tên cảm xúc, hỏi <em>“How do you feel?”</em>, nói mức độ (<em>a bit, quite, really</em>), giải thích nguyên nhân, và quan trọng không kém là đáp lại khi người khác vui hay buồn. Bấm vào câu có biểu tượng loa để nghe.</p>
+  <div class="chips"><span class="chip c1">be / feel + adj</span><span class="chip c2">a bit / really</span><span class="chip c3">adj + giới từ</span><span class="chip c4">get + adj</span><span class="chip c5">Từ vựng nâng cao</span></div>
+</header>
+
+<div class="content">
+
+<section class="section" id="s1">
+  <div class="sec-head"><span class="sec-tag t1">BÀI 1</span><div><div class="sec-title">Từ chỉ cảm xúc và cảm giác</div><div class="sec-sub">16 tính từ dùng hằng ngày</div></div></div>
+  <div class="sub-title">Cảm giác cơ thể</div>
+  <div class="scale">
+    <div class="sc-i n0"><b>😴</b><span class="say">tired</span><em>mệt</em></div>
+    <div class="sc-i n0"><b>🥱</b><span class="say">sleepy</span><em>buồn ngủ</em></div>
+    <div class="sc-i n0"><b>🍽️</b><span class="say">hungry</span><em>đói</em></div>
+    <div class="sc-i n0"><b>🥤</b><span class="say">thirsty</span><em>khát</em></div>
+  </div>
+  <div class="sub-title">Cảm xúc tích cực</div>
+  <div class="scale">
+    <div class="sc-i p"><b>😊</b><span class="say">happy</span><em>vui</em></div>
+    <div class="sc-i p"><b>🤩</b><span class="say">excited</span><em>háo hức</em></div>
+    <div class="sc-i p"><b>😌</b><span class="say">relaxed</span><em>thư thái</em></div>
+    <div class="sc-i p"><b>😲</b><span class="say">surprised</span><em>ngạc nhiên</em></div>
+  </div>
+  <div class="sub-title">Cảm xúc tiêu cực</div>
+  <div class="scale">
+    <div class="sc-i n"><b>😢</b><span class="say">sad</span><em>buồn</em></div>
+    <div class="sc-i n"><b>😑</b><span class="say">bored</span><em>chán</em></div>
+    <div class="sc-i n"><b>😠</b><span class="say">angry</span><em>tức giận</em></div>
+    <div class="sc-i n"><b>😰</b><span class="say">nervous</span><em>hồi hộp, lo lắng</em></div>
+    <div class="sc-i n"><b>😟</b><span class="say">worried</span><em>lo</em></div>
+    <div class="sc-i n"><b>😱</b><span class="say">scared</span><em>sợ</em></div>
+    <div class="sc-i n"><b>🥺</b><span class="say">lonely</span><em>cô đơn</em></div>
+    <div class="sc-i n"><b>🤒</b><span class="say">sick</span><em>ốm, mệt trong người</em></div>
+  </div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>be / feel + tính từ</em></div><div class="gr-body">
+<ul><li><span class="fm">I’m + tính từ</span> → <span class="say">I’m hungry.</span> (tiếng Việt “tôi đói” không có “là”, nhưng tiếng Anh <b>bắt buộc có be</b>)</li>
+<li><span class="fm">I feel + tính từ</span> → <span class="say">I feel tired.</span></li>
+<li>Không dùng <i>have</i> với tính từ cảm xúc, và không dùng danh từ thay tính từ.</li></ul>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>I hungry. I have tired. I am hunger. I feel boring.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">I’m hungry. I’m tired. I feel bored.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s2">
+  <div class="sec-head"><span class="sec-tag t2">BÀI 2</span><div><div class="sec-title">How do you feel? Hỏi và trả lời</div><div class="sec-sub">Hỏi thăm và nói mức độ cảm xúc</div></div></div>
+  <div class="ex-box"><div class="ex-head">HỎI THĂM<span class="ex-tag t2">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">How do you feel?</span><span class="ex-vn">Bạn thấy thế nào?</span></div>
+    <div class="ex-row"><span class="ex-en say">How are you feeling today?</span><span class="ex-vn">Hôm nay bạn thấy sao?</span></div>
+    <div class="ex-row"><span class="ex-en say">Are you okay?</span><span class="ex-vn">Bạn ổn chứ?</span></div>
+    <div class="ex-row"><span class="ex-en say">You look tired. Did you sleep well?</span><span class="ex-vn">Trông bạn mệt thế. Ngủ ngon không?</span></div>
+    <div class="ex-row"><span class="ex-en say">You look happy! What’s the good news?</span><span class="ex-vn">Trông bạn vui thế! Có tin gì vui à?</span></div>
+    <div class="ex-row"><span class="ex-en say">What’s wrong?</span><span class="ex-vn">Có chuyện gì vậy?</span></div>
+  </div></div>
+  <table class="tbl"><thead><tr><th>Mức độ</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">a bit / a little</td><td>hơi</td><td><span class="say">I’m a bit tired.</span></td></tr>
+  <tr><td class="say">quite</td><td>khá</td><td><span class="say">I’m quite hungry.</span></td></tr>
+  <tr><td class="say">very / really</td><td>rất</td><td><span class="say">I’m really excited.</span></td></tr>
+  <tr><td class="say">so</td><td>quá (nhấn mạnh khi nói)</td><td><span class="say">I’m so bored!</span></td></tr>
+  <tr><td class="say">not very</td><td>không … lắm</td><td><span class="say">I’m not very hungry.</span></td></tr></tbody></table>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>look + tính từ, mức độ đứng trước tính từ</em></div><div class="gr-body">
+<ul><li><span class="fm">You look + tính từ</span> → <span class="say">You look worried.</span> (không dùng <i>look like</i> + tính từ)</li>
+<li><span class="fm">be + a bit / quite / really + tính từ</span></li>
+<li><b>a bit</b> thường đi với cảm xúc <b>tiêu cực</b>: <span class="say">a bit sad</span>. Với cảm xúc tích cực, dùng <span class="say">really happy</span>.</li></ul>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>You look like tired. I’m tired a bit. I very happy.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">You look tired. I’m a bit tired. I’m very happy.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s3">
+  <div class="sec-head"><span class="sec-tag t3">BÀI 3</span><div><div class="sec-title">Nói nguyên nhân</div><div class="sec-sub">Vì sao bạn thấy như vậy</div></div></div>
+  <div class="ex-box"><div class="ex-head">BECAUSE VÀ MAKE<span class="ex-tag t3">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">I’m tired because I worked late last night.</span><span class="ex-vn">Tôi mệt vì tối qua làm muộn</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m hungry. I skipped breakfast.</span><span class="ex-vn">Tôi đói. Tôi bỏ bữa sáng</span></div>
+    <div class="ex-row"><span class="ex-en say">Rainy days make me sad.</span><span class="ex-vn">Ngày mưa làm tôi buồn</span></div>
+    <div class="ex-row"><span class="ex-en say">Music makes me feel relaxed.</span><span class="ex-vn">Âm nhạc làm tôi thấy thư thái</span></div>
+  </div></div>
+  <table class="tbl"><thead><tr><th>Tính từ + giới từ</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">happy about / with</td><td>vui vì / hài lòng với</td><td><span class="say">I’m happy with my new job.</span></td></tr>
+  <tr><td class="say">excited about</td><td>háo hức về</td><td><span class="say">I’m excited about the trip.</span></td></tr>
+  <tr><td class="say">worried about</td><td>lo về</td><td><span class="say">She’s worried about her exam.</span></td></tr>
+  <tr><td class="say">scared of / afraid of</td><td>sợ</td><td><span class="say">I’m scared of dogs.</span></td></tr>
+  <tr><td class="say">angry with + người</td><td>giận ai</td><td><span class="say">He’s angry with me.</span></td></tr>
+  <tr><td class="say">bored with</td><td>chán</td><td><span class="say">I’m bored with this game.</span></td></tr>
+  <tr><td class="say">proud of</td><td>tự hào về</td><td><span class="say">I’m proud of you.</span></td></tr>
+  <tr><td class="say">tired of</td><td>chán ngấy</td><td><span class="say">I’m tired of waiting.</span></td></tr></tbody></table>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>make + người + tính từ</em></div><div class="gr-body">
+<ul><li><span class="fm">N + make(s) + me + adj</span> → <span class="say">Traffic makes me angry.</span></li>
+<li><span class="fm">… make(s) me feel + adj</span> → <span class="say">It makes me feel calm.</span></li>
+<li>Sau giới từ, động từ chuyển sang V-ing: <span class="say">I’m scared of flying.</span></li></ul>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>I’m scared with dogs. Traffic makes me to angry. I’m worried for exam.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">I’m scared of dogs. Traffic makes me angry. I’m worried about the exam.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s4">
+  <div class="sec-head"><span class="sec-tag t4">BÀI 4</span><div><div class="sec-title">Đáp lại cảm xúc của người khác</div><div class="sec-sub">Chia vui, an ủi, gợi ý giúp đỡ</div></div></div>
+  <div class="ex-box"><div class="ex-head">KHI NGƯỜI KHÁC VUI<span class="ex-tag t2">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">That’s great! I’m so happy for you.</span><span class="ex-vn">Tuyệt quá! Mình mừng cho bạn</span></div>
+    <div class="ex-row"><span class="ex-en say">Congratulations!</span><span class="ex-vn">Chúc mừng nhé!</span></div>
+    <div class="ex-row"><span class="ex-en say">How exciting!</span><span class="ex-vn">Thú vị quá!</span></div>
+    <div class="ex-row"><span class="ex-en say">You deserve it.</span><span class="ex-vn">Bạn xứng đáng mà</span></div>
+  </div></div>
+  <div class="ex-box"><div class="ex-head">KHI NGƯỜI KHÁC BUỒN HAY LO<span class="ex-tag t4">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Oh no, I’m sorry to hear that.</span><span class="ex-vn">Ôi, mình rất tiếc khi nghe vậy</span></div>
+    <div class="ex-row"><span class="ex-en say">That sounds stressful.</span><span class="ex-vn">Nghe căng thẳng thật</span></div>
+    <div class="ex-row"><span class="ex-en say">Don’t worry. It’ll be okay.</span><span class="ex-vn">Đừng lo. Sẽ ổn thôi</span></div>
+    <div class="ex-row"><span class="ex-en say">Do you want to talk about it?</span><span class="ex-vn">Bạn có muốn kể không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Is there anything I can do?</span><span class="ex-vn">Mình có giúp được gì không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Cheer up!</span><span class="ex-vn">Vui lên nào!</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Gợi ý: Why don’t you / Let’s / You could + V</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Bạn nghe</th><th>Gợi ý</th></tr></thead><tbody>
+<tr><td><span class="say">I’m tired.</span></td><td><span class="say">Why don’t you take a nap?</span></td></tr>
+<tr><td><span class="say">I’m hungry.</span></td><td><span class="say">Let’s get something to eat.</span></td></tr>
+<tr><td><span class="say">I’m bored.</span></td><td><span class="say">You could watch a movie.</span></td></tr></tbody></table>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>Why don’t you to rest? Let’s to eat. Let’s eating.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">Why don’t you rest? Let’s eat.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s5">
+  <div class="sec-head"><span class="sec-tag t5">BÀI 5</span><div><div class="sec-title">Cảm xúc thay đổi</div><div class="sec-sub">Trở nên đói, mệt; trước lo, giờ yên tâm</div></div></div>
+  <div class="ex-box"><div class="ex-head">GET + TÍNH TỪ VÀ QUÁ KHỨ<span class="ex-tag t5">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">I’m getting hungry. Let’s have lunch.</span><span class="ex-vn">Tôi bắt đầu đói rồi. Ăn trưa thôi</span></div>
+    <div class="ex-row"><span class="ex-en say">I get bored easily.</span><span class="ex-vn">Tôi dễ chán</span></div>
+    <div class="ex-row"><span class="ex-en say">She gets angry when people are late.</span><span class="ex-vn">Cô ấy nổi giận khi người khác đến muộn</span></div>
+    <div class="ex-row"><span class="ex-en say">I was nervous before the test, but now I feel fine.</span><span class="ex-vn">Trước bài thi tôi hồi hộp, nhưng giờ thấy ổn</span></div>
+    <div class="ex-row"><span class="ex-en say">I feel much better now, thanks.</span><span class="ex-vn">Giờ tôi thấy đỡ hơn nhiều rồi, cảm ơn</span></div>
+    <div class="ex-row"><span class="ex-en say">Yesterday I felt really down.</span><span class="ex-vn">Hôm qua tôi thấy rất buồn</span></div>
+  </div></div>
+  <div class="info i-tip"><span>💡</span><span><strong>Mẹo:</strong> khi đang buồn hay căng thẳng kéo dài, hãy nói ra với người thân hoặc người bạn tin. Câu <em>“Can we talk? I’m not feeling great.”</em> là một khởi đầu tốt.</span></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>get + tính từ (trở nên) và quá khứ của be / feel</em></div><div class="gr-body">
+<ul><li><span class="fm">get + adj</span>: trở nên → <span class="say">It’s getting cold.</span> <span class="say">I got bored.</span></li>
+<li>Quá khứ: <b>am / is → was</b>, <b>are → were</b>, <b>feel → felt</b>.</li>
+<li><span class="fm">better / worse</span>: <span class="say">I feel better.</span> <span class="say">It’s getting worse.</span></li></ul>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>Yesterday I feel sad. I am become hungry. I feel more good.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">Yesterday I felt sad. I’m getting hungry. I feel better.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s6">
+  <div class="sec-head"><span class="sec-tag t3">BÀI 6</span><div><div class="sec-title">Hội thoại mẫu</div><div class="sec-sub">Bấm từng câu để nghe, rồi đóng vai cả hai người</div></div></div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 1: BẠN TRÔNG MỆT</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Are you okay? You look really tired.</span><small>Bạn ổn không? Trông bạn mệt quá.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Yeah, I’m exhausted. I only slept four hours last night.</span><small>Ừ, mình kiệt sức. Tối qua chỉ ngủ bốn tiếng.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Oh no. Why?</span><small>Trời. Sao vậy?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">My neighbour’s dog barked all night. It made me so angry.</span><small>Chó nhà hàng xóm sủa cả đêm. Mình bực lắm.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">That sounds terrible. Why don’t you take a short nap at lunch?</span><small>Nghe khổ thật. Sao trưa nay bạn không chợp mắt một lúc?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Good idea. Thanks.</span><small>Ý hay. Cảm ơn nhé.</small></div></div>
+  </div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 2: HỒI HỘP TRƯỚC PHỎNG VẤN</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">How are you feeling about tomorrow?</span><small>Bạn thấy thế nào về ngày mai?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Honestly, I’m really nervous. It’s my first job interview in English.</span><small>Thật lòng, mình hồi hộp lắm. Đây là buổi phỏng vấn tiếng Anh đầu tiên.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Don’t worry. You’ve practised a lot. You’ll be fine.</span><small>Đừng lo. Bạn luyện nhiều rồi mà. Sẽ ổn thôi.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Thanks. I feel a bit better now.</span><small>Cảm ơn. Giờ mình thấy đỡ hơn chút rồi.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Text me after it! I’m sure you’ll do great.</span><small>Phỏng vấn xong nhắn mình nhé! Chắc chắn bạn sẽ làm tốt.</small></div></div>
+  </div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 3: TIN VUI</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">You look so happy today! What’s the good news?</span><small>Hôm nay trông bạn vui thế! Có tin vui gì à?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">I got the job! I start next Monday.</span><small>Mình được nhận việc rồi! Thứ Hai tuần sau bắt đầu.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Congratulations! I’m so happy for you. You deserve it.</span><small>Chúc mừng! Mình mừng cho bạn quá. Bạn xứng đáng mà.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Thank you! I’m excited, but a little nervous too.</span><small>Cảm ơn! Mình háo hức, nhưng cũng hơi lo.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">That’s normal. Let’s celebrate this weekend!</span><small>Bình thường mà. Cuối tuần ăn mừng nhé!</small></div></div>
+  </div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 4: NGÀY MƯA BUỒN CHÁN</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">I’m so bored. It’s raining, and I can’t go out.</span><small>Chán quá. Trời mưa, không ra ngoài được.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Me too. I’m getting hungry as well.</span><small>Mình cũng vậy. Mình còn bắt đầu đói nữa.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Let’s order some pizza and watch a movie.</span><small>Gọi pizza rồi xem phim đi.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Perfect! Rainy days aren’t so bad after all.</span><small>Tuyệt! Ngày mưa hóa ra cũng không tệ.</small></div></div>
+  </div>
+  <div class="info i-ok"><span>✅</span><span><strong>Cách luyện:</strong> nghe một lượt, nói theo từng câu, rồi che phần tiếng Việt và tự đóng vai A hoặc B. Mỗi tối, nói một câu về cảm xúc của bạn trong ngày, kèm lý do.</span></div>
+</section>
+
+<section class="section" id="s7">
+  <div class="sec-head"><span class="sec-tag t2">BÀI 7</span><div><div class="sec-title">Máy cảm xúc &amp; bài tập</div><div class="sec-sub">Chọn cảm xúc, mức độ và nguyên nhân. Máy tạo đoạn hội thoại có lời đáp phù hợp của bạn bè</div></div></div>
+  <div class="gen">
+    <label for="g-f">Cảm xúc<select id="g-f"></select></label>
+    <label for="g-i">Mức độ<select id="g-i"></select></label>
+    <label for="g-c">Nguyên nhân<select id="g-c"></select></label>
+  </div>
+  <div class="btns"><button class="btn" id="gen-btn">Tạo hội thoại</button><button class="btn alt" id="rnd-btn">Chọn ngẫu nhiên</button></div>
+  <div class="out" id="gen-out" aria-live="polite"></div>
+
+  <div class="sub-title">Bài tập: điền câu trả lời</div>
+  <p class="t">Câu 1–4: điền một từ vào chỗ trống. Câu 5–8: dịch sang tiếng Anh, gõ cả câu. Không phân biệt hoa thường.</p>
+  <div id="exlist">
+    <div class="exi">1. I’m really ___. I want to eat now. →<input id="ex1" data-a="hungry" aria-label="Câu 1"><small>cảm giác</small></div>
+    <div class="exi">2. I’m scared ___ spiders. →<input id="ex2" data-a="of" aria-label="Câu 2"><small>giới từ</small></div>
+    <div class="exi">3. She’s worried ___ her exam. →<input id="ex3" data-a="about" aria-label="Câu 3"><small>giới từ</small></div>
+    <div class="exi">4. You ___ tired. Are you okay? →<input id="ex4" data-a="look|seem" aria-label="Câu 4"><small>look + adj</small></div>
+    <div class="exi">5. Bạn thấy thế nào? →<input id="ex5" data-a="how do you feel?|how are you feeling?" aria-label="Câu 5"><small>feel</small></div>
+    <div class="exi">6. Tôi hơi mệt →<input id="ex6" data-a="i'm a bit tired|i am a bit tired|i'm a little tired|i am a little tired|i feel a bit tired|i feel a little tired" aria-label="Câu 6"><small>a bit</small></div>
+    <div class="exi">7. Ngày mưa làm tôi buồn →<input id="ex7" data-a="rainy days make me sad|rain makes me sad|rainy days make me feel sad|rain makes me feel sad" aria-label="Câu 7"><small>make me + adj</small></div>
+    <div class="exi">8. Mình rất tiếc khi nghe vậy →<input id="ex8" data-a="i'm sorry to hear that|i am sorry to hear that|i'm so sorry to hear that" aria-label="Câu 8"><small>an ủi</small></div>
+  </div>
+  <div class="btns" style="margin-top:12px"><button class="btn" id="ex-check">Kiểm tra đáp án</button><button class="btn alt" id="ex-show">Xem đáp án</button><button class="btn alt" id="ex-reset">Làm lại</button></div>
+  <div class="out" id="ex-out" style="min-height:0" aria-live="polite"></div>
+
+  <div class="sub-title">Lộ trình luyện 7 ngày</div>
+  <div class="plan">
+    <div class="day"><b>Ngày 1</b><span><strong>Từ cảm xúc:</strong> học 16 tính từ, nhớ luôn có be: I’m hungry</span></div>
+    <div class="day"><b>Ngày 2</b><span><strong>Hỏi thăm:</strong> luyện How do you feel? / You look… / What’s wrong?</span></div>
+    <div class="day"><b>Ngày 3</b><span><strong>Mức độ:</strong> nói lại mỗi cảm xúc với a bit, quite, really</span></div>
+    <div class="day"><b>Ngày 4</b><span><strong>Nguyên nhân:</strong> học 8 cặp tính từ + giới từ và make me + adj</span></div>
+    <div class="day"><b>Ngày 5</b><span><strong>Đáp lại:</strong> luyện chia vui, an ủi và gợi ý Why don’t you…?</span></div>
+    <div class="day"><b>Ngày 6</b><span><strong>Thay đổi:</strong> dùng get + adj và was / felt để kể cảm xúc hôm qua</span></div>
+    <div class="day"><b>Ngày 7</b><span><strong>Ôn tổng hợp:</strong> dùng máy cảm xúc, viết nhật ký cảm xúc 5 câu, có 3 từ nâng cao</span></div>
+  </div>
+</section>
+
+<section class="section" id="s8">
+  <div class="sec-head"><span class="sec-tag t5">NÂNG CAO</span><div><div class="sec-title">Từ vựng mới để nói chuyện tự nhiên hơn</div><div class="sec-sub">Thay happy, tired, sad bằng những từ mạnh và chính xác hơn</div></div></div>
+  <div class="sub-title">Từ mạnh hơn</div>
+  <table class="tbl"><thead><tr><th>Từ cơ bản</th><th>Từ nâng cao</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td>very happy</td><td class="say">thrilled / delighted</td><td><span class="say">I’m thrilled with the result.</span></td></tr>
+  <tr><td>very tired</td><td class="say">exhausted / worn out</td><td><span class="say">I’m completely worn out.</span></td></tr>
+  <tr><td>very hungry</td><td class="say">starving</td><td><span class="say">I’m starving! Let’s eat.</span></td></tr>
+  <tr><td>very angry</td><td class="say">furious</td><td><span class="say">He was furious about the delay.</span></td></tr>
+  <tr><td>very scared</td><td class="say">terrified</td><td><span class="say">I’m terrified of heights.</span></td></tr>
+  <tr><td>very bored</td><td class="say">bored to death</td><td><span class="say">I was bored to death in that meeting.</span></td></tr></tbody></table>
+  <div class="sub-title">Cảm xúc chính xác hơn</div>
+  <table class="tbl"><thead><tr><th>Từ / cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">relieved</td><td>nhẹ nhõm</td><td><span class="say">I’m so relieved the test is over.</span></td></tr>
+  <tr><td class="say">disappointed</td><td>thất vọng</td><td><span class="say">I was disappointed with the movie.</span></td></tr>
+  <tr><td class="say">frustrated</td><td>bực bội, bế tắc</td><td><span class="say">I get frustrated when my computer is slow.</span></td></tr>
+  <tr><td class="say">embarrassed</td><td>xấu hổ, ngượng</td><td><span class="say">I was so embarrassed when I fell over.</span></td></tr>
+  <tr><td class="say">homesick</td><td>nhớ nhà</td><td><span class="say">I feel homesick during Tet.</span></td></tr>
+  <tr><td class="say">overwhelmed</td><td>quá tải</td><td><span class="say">I feel overwhelmed with work this week.</span></td></tr>
+  <tr><td class="say">grateful</td><td>biết ơn</td><td><span class="say">I’m grateful for your help.</span></td></tr>
+  <tr><td class="say">fed up with</td><td>chán ngấy</td><td><span class="say">I’m fed up with the traffic.</span></td></tr></tbody></table>
+  <div class="sub-title">Thành ngữ về cảm xúc</div>
+  <div class="ex-box"><div class="ex-head">LÀM CHO HỘI THOẠI TỰ NHIÊN<span class="ex-tag t5">Nâng cao</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">I’m over the moon!</span><span class="ex-vn">Tôi vui như mở cờ trong bụng!</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m feeling a bit down today.</span><span class="ex-vn">Hôm nay tôi hơi buồn</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m in a good mood. / I’m in a bad mood.</span><span class="ex-vn">Tâm trạng tôi đang tốt / đang tệ</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m running on empty.</span><span class="ex-vn">Tôi cạn kiệt sức lực rồi</span></div>
+    <div class="ex-row"><span class="ex-en say">I’ve got butterflies in my stomach.</span><span class="ex-vn">Tôi hồi hộp nôn nao</span></div>
+    <div class="ex-row"><span class="ex-en say">It’s been a rollercoaster of a week.</span><span class="ex-vn">Một tuần lên xuống thất thường</span></div>
+    <div class="ex-row"><span class="ex-en say">Hang in there!</span><span class="ex-vn">Cố lên nhé!</span></div>
+  </div></div>
+  <div class="cmp"><div class="bad"><b>❌ NGHE CỨNG</b><div>Today I very tired and very hungry. I am sad because work many.</div></div><div class="good"><b>✔ TỰ NHIÊN HƠN</b><div class="say">I’m absolutely starving, and to be honest, I’m running on empty. I feel a bit overwhelmed with work this week.</div></div></div>
+  <div class="info i-tip"><span>💡</span><span><strong>Mẹo:</strong> với các từ mạnh như <em>exhausted, starving, furious</em>, hãy dùng <em>absolutely</em> hoặc <em>completely</em> thay cho <em>very</em>. Ví dụ: <em>absolutely starving</em> là đúng, còn <em>very starving</em> là sai.</span></div>
+
+  <div class="sub-title">Tự kiểm tra</div>
+  <ul class="chk">
+    <li><label><input type="checkbox" id="c1">Tôi nói được 16 cảm xúc và luôn nhớ có <strong>be</strong>: I’m hungry</label></li>
+    <li><label><input type="checkbox" id="c2">Tôi hỏi được <strong>How do you feel? / You look… / What’s wrong?</strong></label></li>
+    <li><label><input type="checkbox" id="c3">Tôi dùng mức độ <strong>a bit / quite / really / so</strong></label></li>
+    <li><label><input type="checkbox" id="c4">Tôi dùng đúng tính từ + giới từ (scared of, worried about…)</label></li>
+    <li><label><input type="checkbox" id="c5">Tôi chia vui và an ủi được người khác</label></li>
+    <li><label><input type="checkbox" id="c6">Tôi dùng <strong>get + adj</strong> và quá khứ <strong>was / felt</strong></label></li>
+    <li><label><input type="checkbox" id="c7">Tôi dùng được ít nhất 5 từ vựng nâng cao</label></li>
+  </ul>
+</section>
+
+</div>
+<div class="footer">😊 Giao tiếp tiếng Anh: Feelings &amp; Emotions · Dành cho người mới bắt đầu · 2026</div>
+</div>
+
+<div class="audio-bar">
+  <b>🔊 Audio</b>
+  <div class="ab-g"><button data-acc="en-GB" class="on">Anh-Anh</button><button data-acc="en-US">Anh-Mỹ</button></div>
+  <div class="ab-g"><button data-rate="0.6">Chậm</button><button data-rate="0.85" class="on">Vừa</button><button data-rate="1">Nhanh</button></div>
+</div>
+
+<script>
+(function(){
+var doc=document.documentElement,bar=document.getElementById('pbar');
+addEventListener('scroll',function(){bar.style.width=(doc.scrollTop/Math.max(1,doc.scrollHeight-doc.clientHeight)*100)+'%'});
+var links=document.querySelectorAll('.nav-link,.topnav a');
+if('IntersectionObserver' in window)document.querySelectorAll('.section[id]').forEach(function(s){
+  new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;
+    links.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id)});
+  })},{rootMargin:'-20% 0px -70% 0px'}).observe(s);
+});
+
+/* Audio */
+var S=window.speechSynthesis,st={acc:'en-GB',rate:.85},cur=null;
+function voice(){if(!S)return null;var v=S.getVoices().filter(function(x){return x.lang.replace('_','-').toLowerCase()===st.acc.toLowerCase()});
+  return v.find(function(x){return /google|natural|premium|enhanced/i.test(x.name)})||v[0]||null}
+function say(el){
+  if(cur)cur.classList.remove('playing');
+  if(!S){el.title='Trình duyệt này không hỗ trợ đọc audio';return}
+  S.cancel();cur=el;el.classList.add('playing');
+  var t=el.textContent.replace(/\s+/g,' ').replace(/\s*\/\s*/g,'. ').replace(/→/g,'. ').replace(/\bTet\b/g,'Tet holiday').trim();
+  var u=new SpeechSynthesisUtterance(t);u.lang=st.acc;u.rate=st.rate;var v=voice();if(v)u.voice=v;
+  u.onend=u.onerror=function(){el.classList.remove('playing')};S.speak(u);
+}
+function prep(root){root.querySelectorAll('.say').forEach(function(e){e.tabIndex=0;e.setAttribute('role','button')})}
+prep(document);
+document.addEventListener('click',function(e){var el=e.target.closest('.say');if(el)say(el)});
+document.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.classList&&e.target.classList.contains('say')){e.preventDefault();say(e.target)}});
+document.querySelectorAll('.audio-bar button').forEach(function(b){b.addEventListener('click',function(){
+  b.parentElement.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');
+  if(b.dataset.acc)st.acc=b.dataset.acc;if(b.dataset.rate)st.rate=+b.dataset.rate;
+})});
+
+/* ===== Máy cảm xúc =====
+   FEEL: [nhãn, tính từ, tích cực?, câu mở đầu của bạn bè, [nguyên nhân: [en, vi]], lời đáp, gợi ý] */
+var FEEL=[
+ ['😊 Vui','happy',1,'You look {i} happy today! What’s the good news?',[['I passed my driving test','vừa thi đỗ bằng lái'],['my best friend is visiting this weekend','bạn thân sắp đến chơi'],['I got a pay rise','được tăng lương']],'That’s great! I’m so happy for you.','Let’s celebrate tonight!'],
+ ['🤩 Háo hức','excited',1,'You look {i} excited! What’s happening?',[['I’m going to Japan next week','tuần sau đi Nhật'],['my favourite band has a new album','ban nhạc yêu thích ra album mới'],['it’s my birthday tomorrow','mai là sinh nhật']],'How exciting!','Tell me all about it later!'],
+ ['😌 Thư thái','relaxed',1,'You look {i} relaxed today. How was your weekend?',[['I had a long weekend at the beach','vừa nghỉ cuối tuần dài ở biển'],['I just did an hour of yoga','vừa tập yoga một tiếng'],['my exams are finally finished','thi xong rồi']],'Good for you!','You really deserve a break.'],
+ ['😴 Mệt','tired',0,'Are you okay? You look {i} tired.',[['I worked late last night','tối qua làm muộn'],['I didn’t sleep well','ngủ không ngon'],['I walked ten kilometres today','hôm nay đi bộ 10 cây số']],'Oh, you poor thing.','Why don’t you take a nap?'],
+ ['🍽️ Đói','hungry',0,'How are you feeling?',[['I skipped breakfast','bỏ bữa sáng'],['I only had a salad for lunch','trưa chỉ ăn salad'],['I haven’t eaten since this morning','từ sáng chưa ăn gì']],'Oh no! You must be starving.','Let’s get something to eat.'],
+ ['😑 Chán','bored',0,'What’s up? You look {i} bored.',[['it’s raining and I can’t go out','trời mưa không ra ngoài được'],['there’s nothing good on TV','tivi không có gì hay'],['I have nothing to do this afternoon','chiều nay không có việc gì làm']],'I know the feeling.','Why don’t we play a board game?'],
+ ['😢 Buồn','sad',0,'Are you okay? You look {i} sad.',[['my cat is sick','con mèo bị ốm'],['my best friend is moving away','bạn thân sắp chuyển đi'],['I lost my favourite necklace','làm mất sợi dây chuyền yêu thích']],'Oh no, I’m sorry to hear that.','Do you want to talk about it?'],
+ ['😰 Hồi hộp','nervous',0,'How are you feeling? You look {i} nervous.',[['I have a job interview tomorrow','mai có buổi phỏng vấn'],['I have to give a presentation in English','phải thuyết trình bằng tiếng Anh'],['it’s my first day at a new job','ngày đầu đi làm chỗ mới']],'Don’t worry. You’ll be fine.','Take a deep breath. You’ve got this!'],
+ ['😟 Lo lắng','worried',0,'What’s wrong? You look {i} worried.',[['my mum is in hospital','mẹ đang nằm viện'],['I can’t find my passport','không tìm thấy hộ chiếu'],['my exam results come out tomorrow','mai có điểm thi']],'That sounds stressful.','Is there anything I can do to help?'],
+ ['😠 Tức giận','angry',0,'What happened? You look {i} angry.',[['someone scratched my car','ai đó làm xước xe'],['my flight was cancelled','chuyến bay bị hủy'],['my neighbour plays loud music at night','hàng xóm mở nhạc to ban đêm']],'That’s so annoying!','Let’s sit down and have a cup of tea first.'],
+ ['😱 Sợ','scared',0,'Are you okay? You look {i} scared.',[['I heard a strange noise outside','nghe tiếng động lạ bên ngoài'],['I have to see the dentist','phải đi nha sĩ'],['there’s a big spider in my room','có con nhện to trong phòng']],'Oh no, that’s scary!','Don’t worry, I’m here with you.'],
+ ['🥺 Cô đơn','lonely',0,'How are you feeling these days?',[['my family lives far away','gia đình ở xa'],['all my friends are busy','bạn bè ai cũng bận'],['I just moved to a new city','vừa chuyển đến thành phố mới']],'I understand. That’s hard.','Why don’t we have dinner together this week?']];
+var INT=[['hơi (a bit)','a bit'],['khá (quite)','quite'],['rất (really)','really'],['quá (so)','so']];
+var sf=document.getElementById('g-f'),si=document.getElementById('g-i'),sc=document.getElementById('g-c');
+FEEL.forEach(function(x,i){sf.add(new Option(x[0],i))});INT.forEach(function(x,i){si.add(new Option(x[0],i))});
+function fillCause(){sc.innerHTML='';FEEL[+sf.value][4].forEach(function(c,i){sc.add(new Option(c[1],i))})}
+sf.value=3;si.value=2;fillCause();
+sf.addEventListener('change',function(){fillCause();show()});si.addEventListener('change',show);sc.addEventListener('change',show);
+var out=document.getElementById('gen-out');
+function cap(s){return s.charAt(0).toUpperCase()+s.slice(1)}
+function line(who,txt){var d=document.createElement('div');var l=document.createElement('span');l.className='lbl';l.textContent=who+' ';var s=document.createElement('span');s.className='say';s.textContent=txt;d.append(l,s);out.append(d)}
+function show(){
+  var f=FEEL[+sf.value],ii=+si.value,c=f[4][+sc.value],swapped=false;
+  var it=INT[ii][1];
+  if(f[2]&&it==='a bit'){it='quite';swapped=true}
+  out.innerHTML='';
+  var openI=f[2]?'so':'a bit';
+  line('BẠN BÈ',f[3].replace('{i}',openI));
+  line('BẠN',(f[2]?'Yes! ':'')+'I’m '+it+' '+f[1]+' because '+c[0]+'.');
+  line('BẠN BÈ',f[5]+' '+f[6]);
+  line('BẠN',f[2]?'Thanks! You’re the best.':/^(Why don’t|Let’s)/.test(f[6])?'Good idea. Thanks!':'Thanks. I feel a bit better now.');
+  var w=document.createElement('span');w.className='why';
+  w.innerHTML='Cấu trúc: <b>I’m + '+it+' + '+f[1]+'</b> (luôn có be). Bạn bè mở lời bằng <b>You look + adj</b> hoặc <b>How are you feeling?</b>. Nguyên nhân nối bằng <b>because</b>. '+(swapped?'Cảm xúc tích cực ít đi với <b>a bit</b>, nên máy đổi thành <b>quite</b>. ':'')+'Lời đáp: <b>'+(f[2]?'chia vui':'đồng cảm')+'</b> rồi '+(/^(Why don’t|Let’s)/.test(f[6])?'<b>gợi ý</b> bằng '+f[6].split(' ').slice(0,f[6].indexOf('Why')===0?3:1).join(' '):'<b>động viên</b>')+'.';
+  out.append(w);prep(out);
+}
+document.getElementById('gen-btn').addEventListener('click',show);
+document.getElementById('rnd-btn').addEventListener('click',function(){
+  sf.value=Math.floor(Math.random()*FEEL.length);fillCause();si.value=Math.floor(Math.random()*INT.length);sc.value=Math.floor(Math.random()*3);show();
+});
+show();
+
+/* Bài tập */
+var inputs=document.querySelectorAll('#exlist input'),exo=document.getElementById('ex-out');
+function norm(s){return s.toLowerCase().replace(/[’‘`]/g,"'").replace(/[.!?]+$/,'').replace(/,/g,'').replace(/\s+/g,' ').trim()}
+document.getElementById('ex-check').addEventListener('click',function(){
+  var ok=0;
+  inputs.forEach(function(i){
+    var good=i.dataset.a.split('|').some(function(a){return norm(a)===norm(i.value)});
+    i.classList.remove('ok','no');i.classList.add(good?'ok':'no');if(good)ok++;
+  });
+  exo.style.minHeight='';
+  exo.textContent=ok===inputs.length?'🎉 Chính xác '+ok+'/'+inputs.length+'. Bạn diễn tả cảm xúc rất chuẩn!':'Đúng '+ok+'/'+inputs.length+'. Các ô viền đỏ cần xem lại; đọc lại Bài 1–5, hoặc bấm “Xem đáp án”.';
+});
+document.getElementById('ex-show').addEventListener('click',function(){
+  inputs.forEach(function(i){
+    var k=i.parentElement.querySelector('.key');
+    if(!k){k=document.createElement('span');k.className='key';i.parentElement.append(k)}
+    var a=i.dataset.a.split('|')[0].replace(/'/g,'’').replace(/\bi\b/g,'I');k.textContent='Đáp án: '+(a.indexOf(' ')>-1?cap(a):a);
+  });
+});
+document.getElementById('ex-reset').addEventListener('click',function(){
+  inputs.forEach(function(i){i.value='';i.classList.remove('ok','no')});
+  document.querySelectorAll('#exlist .key').forEach(function(k){k.remove()});
+  exo.textContent='';exo.style.minHeight='0';
+});
+})();
+</script>
+
+<script src="nav.js" defer></script>
+<script src="writing-data.js" defer></script>
+<script src="writing.js" defer></script>
+<script src="review.js" defer></script>
+<script src="cheatsheet-data/Feelings-and-Emotions.js" defer></script>
+<script src="cheatsheet.js" defer></script>
+</body></html>

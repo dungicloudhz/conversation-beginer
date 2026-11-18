@@ -1,0 +1,594 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Tiếng Anh Health & Doctor</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: sidebar mục lục cố định + cột bài học, cùng theme tối của bộ "Hỏi đường & Hỏi giờ" (nhấn hồng – xanh dương cho chủ đề Health & At the Doctor) */
+:root{color-scheme:dark;
+--bg:#080810;--s1:#0e0e1c;--s2:#131326;--s3:#18182e;--border:#222240;--border2:#2c2c50;--text:#e6e6f2;--muted:#8a8ab8;--faint:#4a4a78;
+--acc:#ffd060;--acc-dim:rgba(255,208,96,.11);--oc:#38bdf8;--oc-dim:rgba(56,189,248,.13);--ins:#40d88e;--ins-dim:rgba(64,216,142,.12);
+--sk:#a07af4;--sk-dim:rgba(160,122,244,.12);--au:#ff6584;--au-dim:rgba(255,101,132,.12);--teal:#30d8c0;--code-bg:#05050e;
+--tip-bg:rgba(91,168,255,.10);--tip-bd:rgba(91,168,255,.25);--tip-fg:#8ab8f0;--warn-fg:#e0bc58;--ok-fg:#5ccf98;--line:rgba(255,255,255,.05);
+--font:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+--gl:max(64px,env(safe-area-inset-left,0px));--gr:max(64px,env(safe-area-inset-right,0px))}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 60px)}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.7;font-size:15px;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:600;background:var(--s1)}
+.sidebar{position:fixed;left:0;top:0;width:260px;height:100%;background:var(--s1);border-right:1px solid var(--border);overflow-y:auto;z-index:400;padding-top:env(safe-area-inset-top,0px);padding-left:env(safe-area-inset-left,0px)}
+.sb-logo{padding:20px 18px 16px;border-bottom:1px solid var(--border)}
+.sb-brand{display:flex;align-items:center;gap:11px;margin-bottom:12px}
+.logo-icon{width:44px;height:44px;border-radius:11px;background:linear-gradient(135deg,var(--au),var(--oc));display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 0 26px rgba(255,101,132,.3)}
+.logo-text h2{font-size:15px;font-weight:800}.logo-text p{font-size:10.5px;color:var(--muted)}
+.prog-wrap{height:3px;background:var(--border);border-radius:2px;overflow:hidden}
+.prog-bar{height:100%;width:0;background:linear-gradient(90deg,var(--acc),var(--ins),var(--oc),var(--sk),var(--au))}
+.nav-label{padding:14px 18px 4px;font-size:9.5px;font-weight:700;letter-spacing:1.6px;color:var(--faint)}
+.nav-link{display:flex;align-items:center;gap:9px;padding:7px 18px;color:var(--muted);text-decoration:none;font-size:12.5px;font-weight:600;border-left:2px solid transparent}
+.nav-link:hover,.nav-link.active{color:var(--text);background:rgba(255,208,96,.07);border-left-color:var(--acc)}
+.main{margin-left:260px}
+.hero{padding-block:80px 60px;padding-left:var(--gl);padding-right:var(--gr);border-bottom:1px solid var(--border);background:radial-gradient(ellipse 65% 55% at 75% 22%,rgba(255,101,132,.10),transparent 60%),radial-gradient(ellipse 50% 55% at 10% 82%,rgba(64,216,142,.07),transparent 55%),var(--bg)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--acc-dim);border:1px solid rgba(255,208,96,.38);color:var(--acc);padding:5px 16px;border-radius:100px;font-size:11.5px;font-weight:700;margin-bottom:24px}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--acc);animation:p 2s infinite}
+@keyframes p{50%{opacity:.35;transform:scale(.7)}}
+@media(prefers-reduced-motion:reduce){.eyebrow i{animation:none}html{scroll-behavior:auto}}
+.hero h1{font-size:50px;font-weight:900;letter-spacing:-2.4px;line-height:1.06;margin-bottom:18px;text-wrap:balance}
+.grad{background:linear-gradient(135deg,var(--au),var(--oc));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-desc{font-size:16px;color:var(--muted);max-width:620px;margin-bottom:28px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{padding:5px 14px;border-radius:7px;font-size:12px;font-weight:700}
+.c1{background:var(--oc-dim);color:var(--oc)}.c2{background:var(--ins-dim);color:var(--ins)}.c3{background:var(--acc-dim);color:var(--acc)}.c4{background:var(--sk-dim);color:var(--sk)}.c5{background:var(--au-dim);color:var(--au)}
+.content{padding-block:56px;padding-left:var(--gl);padding-right:var(--gr);max-width:calc(1020px + 64px)}
+.section{margin-bottom:68px}
+.sec-head{display:flex;gap:14px;align-items:flex-start;margin-bottom:28px;padding-bottom:18px;border-bottom:1px solid var(--border)}
+.sec-tag{font-family:var(--mono);font-size:10px;font-weight:600;padding:3px 10px;border-radius:5px;margin-top:6px;flex-shrink:0;letter-spacing:.5px}
+.t1{color:var(--oc);background:var(--oc-dim)}.t2{color:var(--ins);background:var(--ins-dim)}.t3{color:var(--acc);background:var(--acc-dim)}.t4{color:var(--sk);background:var(--sk-dim)}.t5{color:var(--au);background:var(--au-dim)}
+.sec-title{font-size:23px;font-weight:800;letter-spacing:-.6px;text-wrap:balance}.sec-sub{font-size:13px;color:var(--muted)}
+.sub-title{font-size:14.5px;font-weight:700;margin:26px 0 12px;display:flex;align-items:center;gap:10px}
+.sub-title::before{content:'';width:14px;height:3px;background:var(--acc);border-radius:2px}
+p.t{color:var(--muted);font-size:13.5px;margin-bottom:11px;max-width:68ch}p.t strong,li strong{color:var(--text)}
+.ex-box{background:var(--s1);border:1px solid var(--border2);border-radius:11px;overflow:hidden;margin:13px 0}
+.ex-head{display:flex;align-items:center;gap:8px;padding:9px 16px;background:var(--s2);border-bottom:1px solid var(--border);font-family:var(--mono);font-size:10px;font-weight:600;color:var(--muted);letter-spacing:.5px}
+.ex-tag{margin-left:auto;font-size:9px;font-weight:700;padding:2px 9px;border-radius:100px;font-family:var(--font)}
+.ex-body{padding:10px 20px}
+.ex-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:13.5px}
+.ex-row:last-child{border-bottom:none}
+.ex-en{color:var(--text);font-weight:600;min-width:280px}.ex-vn{color:var(--muted)}
+.info{display:flex;gap:12px;padding:14px 16px;border-radius:9px;margin:13px 0;font-size:13px;line-height:1.6}
+.i-tip{background:var(--tip-bg);border:1px solid var(--tip-bd);color:var(--tip-fg)}
+.i-warn{background:var(--acc-dim);border:1px solid rgba(255,208,96,.25);color:var(--warn-fg)}
+.i-ok{background:var(--ins-dim);border:1px solid rgba(64,216,142,.25);color:var(--ok-fg)}
+.tbl{width:100%;border-collapse:collapse;font-size:13px;margin:13px 0;display:block;overflow-x:auto}
+.tbl th{background:var(--s3);padding:10px 14px;text-align:left;font-size:10px;color:var(--muted);border-bottom:1px solid var(--border2);white-space:nowrap;letter-spacing:.5px}
+.tbl td{padding:10px 14px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:top}
+.tbl td:first-child{color:var(--text);font-weight:600}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}
+.card{background:var(--s1);border:1px solid var(--border);border-radius:11px;padding:16px;min-width:0}
+.card:hover{border-color:var(--acc)}
+.card-icon{font-size:24px}.card-title{font-size:13px;font-weight:700}.card-desc{font-size:12px;color:var(--muted)}
+.cmp{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);border-radius:11px;overflow:hidden;margin:13px 0}
+.bad{background:rgba(255,101,132,.07);padding:14px 16px;border-right:1px solid var(--border)}.good{background:rgba(64,216,142,.07);padding:14px 16px}
+.cmp b{display:block;font-size:10px;margin-bottom:6px;letter-spacing:.5px}.bad b{color:var(--au)}.good b{color:var(--ins)}
+.cmp div div{font-size:13.5px}
+.dlg{display:grid;gap:8px;margin:12px 0;background:var(--s1);border:1px solid var(--border2);border-radius:12px;padding:16px 18px}
+.dlg-t{font-size:10px;font-weight:800;color:var(--acc);margin-bottom:2px;letter-spacing:.6px}
+.turn{display:flex;gap:10px;align-items:baseline}
+.turn>div{min-width:0}
+.who{flex-shrink:0;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+.wa{background:var(--oc-dim);color:var(--oc)}.wb{background:var(--ins-dim);color:var(--ins)}
+.turn .say{font-weight:600}.turn small{display:block;color:var(--muted);font-size:12px;font-weight:400}
+.gen{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:12px 0}
+.gen label{font-size:11.5px;color:var(--muted);font-weight:600;display:block;min-width:0}
+.gen select{width:100%;margin-top:4px;background:var(--code-bg);border:1px solid var(--border2);border-radius:8px;padding:9px 12px;color:var(--text);font:inherit;font-size:13px}
+select:focus-visible,button:focus-visible,.say:focus-visible,.exi input:focus-visible,.chk input:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.btns{display:flex;flex-wrap:wrap;gap:6px}
+.btn{background:var(--acc-dim);color:var(--acc);border:1px solid var(--acc);border-radius:8px;padding:8px 16px;font:inherit;font-weight:700;font-size:13px;cursor:pointer}
+.btn.alt{background:var(--ins-dim);color:var(--ins);border-color:var(--ins)}
+.out{margin-top:14px;min-height:60px;background:var(--s2);border:1px dashed var(--border2);border-radius:10px;padding:14px 16px;font-size:14px;line-height:1.9}
+.big{font-size:21px;font-weight:800;color:var(--acc);letter-spacing:-.3px;line-height:1.4;margin-bottom:4px}
+.out .why{display:block;color:var(--muted);font-size:12.5px}
+.out .why b{color:var(--teal);font-family:var(--mono);font-weight:600}
+.timeline{display:grid;gap:0;margin:14px 0;border-left:2px solid var(--border2);padding-left:18px}
+.tl{position:relative;padding:8px 0 12px}
+.tl::before{content:'';position:absolute;left:-24px;top:16px;width:10px;height:10px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 3px var(--bg)}
+.tl time{font-family:var(--mono);font-size:12px;color:var(--acc);font-variant-numeric:tabular-nums;font-weight:600}
+.tl .say{font-weight:600;font-size:13.5px}
+.tl small{display:block;color:var(--muted);font-size:12px}
+.freq{display:grid;gap:7px;margin:14px 0}
+.fq{display:grid;grid-template-columns:110px 1fr 54px;gap:12px;align-items:center;font-size:13px}
+.fq .say{font-weight:700}
+.fq .track{height:8px;background:var(--s3);border-radius:4px;overflow:hidden}
+.fq .fill{height:100%;background:linear-gradient(90deg,var(--ins),var(--acc))}
+.fq span:last-child{font-family:var(--mono);font-size:11.5px;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+.plan{display:grid;gap:8px;margin:12px 0}
+.day{display:flex;gap:14px;align-items:baseline;background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:12px 16px;font-size:13px;color:var(--muted)}
+.day b{color:var(--acc);font-family:var(--mono);font-size:12px;flex-shrink:0;width:52px}.day strong{color:var(--text)}
+.chk{list-style:none;margin:10px 0}.chk li{padding:6px 0;font-size:13.5px;color:var(--muted);border-bottom:1px solid rgba(255,255,255,.04)}
+.chk input{accent-color:var(--ins);margin-right:10px;width:15px;height:15px;vertical-align:-2px}
+.gr{border:1px solid rgba(160,122,244,.38);background:linear-gradient(180deg,var(--sk-dim),transparent 110px),var(--s1);border-radius:12px;margin:28px 0;overflow:hidden}
+.gr-head{padding:10px 18px;font-size:12px;font-weight:800;color:var(--sk);border-bottom:1px solid var(--border);display:flex;gap:10px;flex-wrap:wrap;align-items:baseline;letter-spacing:.4px}
+.gr-head em{font-style:normal;color:var(--muted);font-weight:600;letter-spacing:0}
+.gr-body{padding:14px 18px;font-size:13.5px;color:var(--muted)}
+.gr-body p{margin-bottom:10px}.gr-body b{color:var(--text)}.gr-body ul{padding-left:20px;margin-bottom:8px}.gr-body li{margin-bottom:4px}
+.gr-body .tbl{margin:8px 0 12px}
+.fm{display:inline-block;font-family:var(--mono);font-size:12px;background:var(--code-bg);color:var(--teal);padding:3px 9px;border-radius:6px;margin:2px 0}
+.say{cursor:pointer;border-bottom:1px dotted var(--oc)}
+.say:hover{color:var(--acc);background:var(--acc-dim);border-radius:4px}
+.say::after{content:"🔊";font-size:.68em;margin-left:3px;opacity:.5}
+.say.playing{color:var(--ins);background:var(--ins-dim);border-radius:4px}.say.playing::after{opacity:1}
+.exi{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:13.5px;color:var(--text)}
+.exi input{width:220px;max-width:100%;background:var(--code-bg);border:1px solid var(--border2);border-radius:6px;padding:4px 8px;color:var(--text);font:inherit;font-size:13px;text-align:center}
+.exi input.ok{border-color:var(--ins);color:var(--ins)}.exi input.no{border-color:var(--au);color:var(--au)}
+.exi small{color:var(--muted);font-size:11.5px}
+.exi .key{color:var(--ins);font-size:12px;width:100%}
+.footer{border-top:1px solid var(--border);padding-block:28px 90px;padding-left:var(--gl);padding-right:var(--gr);font-size:12px;color:var(--muted)}
+.audio-bar{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:500;display:flex;gap:10px;align-items:center;background:var(--s2);border:1px solid var(--border2);border-radius:12px;padding:8px 12px;box-shadow:0 8px 28px rgba(0,0,0,.5);font-size:12px;color:var(--muted)}
+.audio-bar b{color:var(--acc)}.ab-g{display:flex;gap:4px}
+.audio-bar button{background:var(--s3);color:var(--muted);border:1px solid var(--border);border-radius:7px;padding:4px 10px;font:inherit;font-weight:700;cursor:pointer}
+.audio-bar button.on{background:var(--acc-dim);color:var(--acc);border-color:var(--acc)}
+.topnav{display:none}
+@media(max-width:900px){
+:root{--gl:max(18px,env(safe-area-inset-left,0px));--gr:max(18px,env(safe-area-inset-right,0px))}
+.sidebar{display:none}.main{margin-left:0}.hero h1{font-size:32px;letter-spacing:-1.4px}.hero{padding-block:48px 40px}
+.grid-3,.cmp{grid-template-columns:1fr}.gen{grid-template-columns:1fr 1fr}.bad{border-right:none;border-bottom:1px solid var(--border)}
+.topnav{display:flex;overflow-x:auto;position:sticky;top:env(safe-area-inset-top,0px);z-index:500;background:var(--s1);border-bottom:2px solid var(--border2);scrollbar-width:none;padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+.topnav a{flex-shrink:0;padding:10px 14px;color:var(--muted);text-decoration:none;font-size:12px;font-weight:700;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-2px}
+.topnav a.active{color:var(--acc);border-bottom-color:var(--acc);background:var(--acc-dim)}
+.ex-en{min-width:0}
+.fq{grid-template-columns:90px 1fr 46px}
+.audio-bar{left:calc(8px + env(safe-area-inset-left,0px));right:calc(8px + env(safe-area-inset-right,0px));justify-content:center;flex-wrap:wrap}
+}
+@media(max-width:480px){.gen{grid-template-columns:1fr}}
+
+.lbl{font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--faint)}
+.out .lbl{color:var(--au);min-width:84px;display:inline-block}
+.tline{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--border2);border-radius:12px;overflow:hidden;margin:12px 0}
+.tl-i{padding:12px 14px;border-right:1px solid var(--border);background:var(--s1);display:grid;gap:3px;align-content:start}
+.tl-i:nth-child(5n){border-right:0}.tl-i:nth-child(-n+5){border-bottom:1px solid var(--border)}
+.tl-i .say{color:var(--text);font-weight:600;font-size:13.5px}.tl-i em{font-style:normal;color:var(--muted);font-size:12px}
+@media(max-width:900px){.tline{grid-template-columns:1fr 1fr}.tl-i{border-bottom:1px solid var(--border)}.tl-i:nth-child(5n){border-right:1px solid var(--border)}.tl-i:nth-child(2n){border-right:0}.tl-i:nth-last-child(-n+2){border-bottom:0}}
+</style>
+
+<aside class="sidebar">
+  <div class="sb-logo">
+    <div class="sb-brand"><div class="logo-icon">🩺</div><div class="logo-text"><h2>Health &amp; Doctor</h2><p>Tiếng Anh cho người mới</p></div></div>
+    <div class="prog-wrap"><div class="prog-bar" id="pbar"></div></div>
+  </div>
+  <div class="nav-label">BÀI HỌC</div>
+  <a class="nav-link" href="#s1">🧍 Bộ phận cơ thể</a>
+  <a class="nav-link" href="#s2">🤒 I have a headache</a>
+  <a class="nav-link" href="#s3">📝 Tả triệu chứng</a>
+  <a class="nav-link" href="#s4">👩‍⚕️ Đi khám bác sĩ</a>
+  <a class="nav-link" href="#s5">💊 Mua thuốc ở hiệu thuốc</a>
+  <div class="nav-label">THỰC HÀNH</div>
+  <a class="nav-link" href="#s6">💬 Hội thoại mẫu</a>
+  <a class="nav-link" href="#s7">🛠️ Máy tạo hội thoại &amp; bài tập</a>
+  <a class="nav-link" href="#s8">🚀 Từ vựng nâng cao</a>
+</aside>
+
+<div class="main">
+<nav class="topnav">
+  <a href="#s1">1 Cơ thể</a><a href="#s2">2 Bệnh</a><a href="#s3">3 Triệu chứng</a><a href="#s4">4 Bác sĩ</a><a href="#s5">5 Hiệu thuốc</a><a href="#s6">6 Hội thoại</a><a href="#s7">7 Luyện tập</a><a href="#s8">8 Nâng cao</a>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow"><i></i>Dành cho người mới bắt đầu</div>
+  <h1>Sức khỏe &amp; đi khám<br><span class="grad">bằng tiếng Anh</span></h1>
+  <p class="hero-desc">Khi bị ốm ở nước ngoài, hoặc chỉ cần báo với sếp là mình không khỏe, bạn cần nói rõ <em>đau ở đâu, bị bao lâu, nặng thế nào</em>. Bài này đi từ tên các bộ phận cơ thể, các bệnh thường gặp như <em>“I have a headache”</em>, cách tả triệu chứng, nói chuyện với bác sĩ, đến mua thuốc và hỏi cách dùng ở hiệu thuốc. Bấm vào câu có biểu tượng loa để nghe.</p>
+  <div class="chips"><span class="chip c1">Body parts</span><span class="chip c2">have a / hurt</span><span class="chip c3">for / since</span><span class="chip c4">should</span><span class="chip c5">Từ vựng nâng cao</span></div>
+</header>
+
+<div class="content">
+
+<section class="section" id="s1">
+  <div class="sec-head"><span class="sec-tag t1">BÀI 1</span><div><div class="sec-title">Bộ phận cơ thể</div><div class="sec-sub">Biết tên mới chỉ được chỗ đau</div></div></div>
+  <div class="sub-title">Đầu và mặt</div>
+  <div class="tline">
+    <div class="tl-i"><span class="say">head</span><em>đầu</em></div>
+    <div class="tl-i"><span class="say">eye / eyes</span><em>mắt</em></div>
+    <div class="tl-i"><span class="say">ear / ears</span><em>tai</em></div>
+    <div class="tl-i"><span class="say">nose</span><em>mũi</em></div>
+    <div class="tl-i"><span class="say">mouth</span><em>miệng</em></div>
+    <div class="tl-i"><span class="say">tooth / teeth</span><em>răng</em></div>
+    <div class="tl-i"><span class="say">throat</span><em>họng</em></div>
+    <div class="tl-i"><span class="say">neck</span><em>cổ</em></div>
+    <div class="tl-i"><span class="say">face</span><em>mặt</em></div>
+    <div class="tl-i"><span class="say">skin</span><em>da</em></div>
+  </div>
+  <div class="sub-title">Thân và tay chân</div>
+  <div class="tline">
+    <div class="tl-i"><span class="say">shoulder</span><em>vai</em></div>
+    <div class="tl-i"><span class="say">chest</span><em>ngực</em></div>
+    <div class="tl-i"><span class="say">stomach</span><em>bụng, dạ dày</em></div>
+    <div class="tl-i"><span class="say">back</span><em>lưng</em></div>
+    <div class="tl-i"><span class="say">arm</span><em>cánh tay</em></div>
+    <div class="tl-i"><span class="say">hand / finger</span><em>bàn tay / ngón tay</em></div>
+    <div class="tl-i"><span class="say">leg</span><em>chân (cả cẳng)</em></div>
+    <div class="tl-i"><span class="say">knee</span><em>đầu gối</em></div>
+    <div class="tl-i"><span class="say">ankle</span><em>mắt cá chân</em></div>
+    <div class="tl-i"><span class="say">foot / feet</span><em>bàn chân</em></div>
+  </div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Số nhiều bất quy tắc và “my” trước bộ phận cơ thể</em></div><div class="gr-body">
+<ul><li><b>tooth → teeth</b>, <b>foot → feet</b> (không có <i>tooths, foots</i>).</li>
+<li>Tiếng Anh dùng <b>my / your / his</b> trước bộ phận cơ thể, không dùng <i>the</i>: <span class="say">I hurt my knee.</span></li>
+<li>Cách đọc: <b>k</b> câm trong <i>knee</i> /niː/, <b>ch</b> đọc là /k/ trong <i>stomach</i> /ˈstʌmək/.</li></ul>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>I hurt the leg. My two foots are cold.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">I hurt my leg. My feet are cold.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s2">
+  <div class="sec-head"><span class="sec-tag t2">BÀI 2</span><div><div class="sec-title">“I have a headache”: các bệnh thường gặp</div><div class="sec-sub">Mẫu câu quan trọng nhất: I have + bệnh</div></div></div>
+  <table class="tbl"><thead><tr><th>Bệnh</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">a headache</td><td>đau đầu</td><td><span class="say">I have a headache.</span></td></tr>
+  <tr><td class="say">a stomachache</td><td>đau bụng</td><td><span class="say">I have a stomachache.</span></td></tr>
+  <tr><td class="say">a toothache</td><td>đau răng</td><td><span class="say">She has a toothache.</span></td></tr>
+  <tr><td class="say">a backache</td><td>đau lưng</td><td><span class="say">My dad has a backache.</span></td></tr>
+  <tr><td class="say">a sore throat</td><td>đau họng</td><td><span class="say">I have a sore throat.</span></td></tr>
+  <tr><td class="say">a cold</td><td>cảm lạnh</td><td><span class="say">I have a cold.</span></td></tr>
+  <tr><td class="say">a fever</td><td>sốt</td><td><span class="say">He has a fever.</span></td></tr>
+  <tr><td class="say">a cough</td><td>ho</td><td><span class="say">I have a bad cough.</span></td></tr>
+  <tr><td class="say">a runny nose</td><td>sổ mũi</td><td><span class="say">I have a runny nose.</span></td></tr>
+  <tr><td class="say">the flu</td><td>cúm</td><td><span class="say">I think I have the flu.</span></td></tr>
+  <tr><td class="say">diarrhea</td><td>tiêu chảy</td><td><span class="say">I have diarrhea.</span></td></tr></tbody></table>
+  <div class="info i-tip"><span>💡</span><span><strong>Mẹo:</strong> <em>-ache</em> nghĩa là đau âm ỉ và chỉ đi với vài bộ phận: head, stomach, tooth, back, ear. Với chỗ khác thì dùng <em>hurt</em> (xem Bài 3). Trong tiếng Anh-Anh, người ta hay nói <em>I’ve got a headache</em>.</span></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>have + a / the / không mạo từ</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Loại</th><th>Ví dụ</th></tr></thead><tbody>
+<tr><td><b>a</b> + bệnh đếm được</td><td><span class="say">a headache, a cold, a fever, a cough</span></td></tr>
+<tr><td><b>the</b> + flu</td><td><span class="say">the flu</span></td></tr>
+<tr><td><b>không mạo từ</b></td><td><span class="say">diarrhea, food poisoning, asthma</span></td></tr></tbody></table>
+<ul><li>He / She dùng <b>has</b>: <span class="say">She has a cold.</span></li></ul>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>I am headache. I have flu. He have a cold.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">I have a headache. I have the flu. He has a cold.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s3">
+  <div class="sec-head"><span class="sec-tag t3">BÀI 3</span><div><div class="sec-title">Tả triệu chứng</div><div class="sec-sub">Đau ở đâu, cảm thấy thế nào, bị bao lâu rồi</div></div></div>
+  <div class="ex-box"><div class="ex-head">ĐAU Ở ĐÂU<span class="ex-tag t3">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">My knee hurts.</span><span class="ex-vn">Đầu gối tôi đau</span></div>
+    <div class="ex-row"><span class="ex-en say">It hurts here.</span><span class="ex-vn">Đau ở chỗ này (chỉ tay)</span></div>
+    <div class="ex-row"><span class="ex-en say">It hurts when I swallow.</span><span class="ex-vn">Nuốt thì đau</span></div>
+    <div class="ex-row"><span class="ex-en say">My eyes are red and itchy.</span><span class="ex-vn">Mắt tôi đỏ và ngứa</span></div>
+  </div></div>
+  <div class="ex-box"><div class="ex-head">CẢM THẤY THẾ NÀO<span class="ex-tag t2">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">I feel sick.</span><span class="ex-vn">Tôi thấy buồn nôn / không khỏe</span></div>
+    <div class="ex-row"><span class="ex-en say">I feel dizzy.</span><span class="ex-vn">Tôi thấy chóng mặt</span></div>
+    <div class="ex-row"><span class="ex-en say">I feel weak and tired.</span><span class="ex-vn">Tôi thấy yếu và mệt</span></div>
+    <div class="ex-row"><span class="ex-en say">I can’t sleep. I keep coughing.</span><span class="ex-vn">Tôi không ngủ được. Ho suốt</span></div>
+    <div class="ex-row"><span class="ex-en say">I threw up twice last night.</span><span class="ex-vn">Tối qua tôi nôn hai lần</span></div>
+  </div></div>
+  <div class="ex-box"><div class="ex-head">BAO LÂU VÀ NẶNG THẾ NÀO<span class="ex-tag t4">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">I’ve had it since yesterday.</span><span class="ex-vn">Tôi bị từ hôm qua</span></div>
+    <div class="ex-row"><span class="ex-en say">I’ve had a fever for two days.</span><span class="ex-vn">Tôi bị sốt hai ngày rồi</span></div>
+    <div class="ex-row"><span class="ex-en say">It started this morning.</span><span class="ex-vn">Bắt đầu từ sáng nay</span></div>
+    <div class="ex-row"><span class="ex-en say">It’s getting worse. / It’s getting better.</span><span class="ex-vn">Đang nặng hơn / Đang đỡ hơn</span></div>
+    <div class="ex-row"><span class="ex-en say">The pain is about seven out of ten.</span><span class="ex-vn">Mức đau khoảng 7 trên 10</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>hurt, feel và have had … for / since</em></div><div class="gr-body">
+<ul><li><span class="fm">bộ phận + hurt(s)</span>: số ít thêm -s → <span class="say">My head hurts.</span> Số nhiều thì không → <span class="say">My feet hurt.</span></li>
+<li><span class="fm">feel + tính từ</span> → <span class="say">I feel dizzy.</span> (không dùng <i>I am feel</i>)</li>
+<li><span class="fm">have had + bệnh + for</span> + khoảng thời gian → <span class="say">for three days</span></li>
+<li><span class="fm">… + since</span> + mốc thời gian → <span class="say">since Monday</span></li></ul>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>I have a cough since two days. My head is hurt.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">I’ve had a cough for two days. My head hurts.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s4">
+  <div class="sec-head"><span class="sec-tag t4">BÀI 4</span><div><div class="sec-title">Đi khám bác sĩ</div><div class="sec-sub">Đặt lịch, trả lời câu hỏi của bác sĩ, nghe lời khuyên</div></div></div>
+  <div class="ex-box"><div class="ex-head">ĐẶT LỊCH VÀ ĐĂNG KÝ<span class="ex-tag t1">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">I’d like to make an appointment with a doctor.</span><span class="ex-vn">Tôi muốn đặt lịch khám bác sĩ</span></div>
+    <div class="ex-row"><span class="ex-en say">Is there anything available today?</span><span class="ex-vn">Hôm nay còn lịch trống không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Do you have health insurance?</span><span class="ex-vn">Anh/chị có bảo hiểm y tế không?</span></div>
+  </div></div>
+  <table class="tbl"><thead><tr><th>Bác sĩ hỏi</th><th>Nghĩa</th><th>Bạn trả lời</th></tr></thead><tbody>
+  <tr><td class="say">What seems to be the problem?</td><td>Anh/chị bị sao?</td><td><span class="say">I have a sore throat and a fever.</span></td></tr>
+  <tr><td class="say">How long have you had it?</td><td>Bị bao lâu rồi?</td><td><span class="say">Since Tuesday.</span></td></tr>
+  <tr><td class="say">Do you have any allergies?</td><td>Có dị ứng gì không?</td><td><span class="say">Yes, I’m allergic to penicillin.</span></td></tr>
+  <tr><td class="say">Are you taking any medicine?</td><td>Đang dùng thuốc gì không?</td><td><span class="say">Just some painkillers.</span></td></tr>
+  <tr><td class="say">Let me take your temperature.</td><td>Để tôi đo nhiệt độ</td><td><span class="say">Okay.</span></td></tr>
+  <tr><td class="say">Open your mouth and say “ah”.</td><td>Há miệng nói “a”</td><td><span class="say">Ah…</span></td></tr></tbody></table>
+  <div class="ex-box"><div class="ex-head">BÁC SĨ KHUYÊN<span class="ex-tag t4">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">You should get some rest.</span><span class="ex-vn">Anh/chị nên nghỉ ngơi</span></div>
+    <div class="ex-row"><span class="ex-en say">You should drink lots of water.</span><span class="ex-vn">Nên uống nhiều nước</span></div>
+    <div class="ex-row"><span class="ex-en say">You shouldn’t go to work for two days.</span><span class="ex-vn">Không nên đi làm trong hai ngày</span></div>
+    <div class="ex-row"><span class="ex-en say">I’ll give you a prescription.</span><span class="ex-vn">Tôi sẽ kê đơn cho anh/chị</span></div>
+    <div class="ex-row"><span class="ex-en say">Come back if it doesn’t get better.</span><span class="ex-vn">Nếu không đỡ thì quay lại</span></div>
+  </div></div>
+  <div class="info i-warn"><span>🚑</span><span><strong>Khẩn cấp:</strong> <em>“Call an ambulance!”</em> (Gọi cấp cứu!) · <em>“It’s an emergency.”</em> (Đây là trường hợp khẩn cấp) · <em>“He can’t breathe.”</em> (Anh ấy không thở được). Ở Việt Nam số cấp cứu là <strong>115</strong>, ở Mỹ là 911, ở Anh là 999.</span></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>should / shouldn’t + động từ nguyên mẫu</em></div><div class="gr-body">
+<ul><li>Khuyên nên: <span class="fm">should + V</span> → <span class="say">You should see a doctor.</span></li>
+<li>Khuyên không nên: <span class="fm">shouldn’t + V</span> → <span class="say">You shouldn’t eat spicy food.</span></li>
+<li>Hỏi xin lời khuyên: <span class="fm">Should I + V?</span> → <span class="say">Should I stay home?</span></li></ul>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>You should to rest. You should drinking water.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">You should rest. You should drink water.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s5">
+  <div class="sec-head"><span class="sec-tag t5">BÀI 5</span><div><div class="sec-title">Mua thuốc ở hiệu thuốc</div><div class="sec-sub">Hỏi thuốc, hỏi cách dùng, hỏi tác dụng phụ</div></div></div>
+  <table class="tbl"><thead><tr><th>Từ</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">pharmacy</td><td>hiệu thuốc (Anh-Anh: chemist’s)</td><td><span class="say">Is there a pharmacy near here?</span></td></tr>
+  <tr><td class="say">painkiller</td><td>thuốc giảm đau</td><td><span class="say">I need some painkillers.</span></td></tr>
+  <tr><td class="say">tablet / pill</td><td>viên thuốc</td><td><span class="say">Take one tablet.</span></td></tr>
+  <tr><td class="say">capsule</td><td>viên con nhộng</td><td><span class="say">Swallow the capsule with water.</span></td></tr>
+  <tr><td class="say">cough syrup</td><td>siro ho</td><td><span class="say">This cough syrup tastes sweet.</span></td></tr>
+  <tr><td class="say">throat lozenges</td><td>viên ngậm đau họng</td><td><span class="say">Do you have throat lozenges?</span></td></tr>
+  <tr><td class="say">cream</td><td>kem bôi</td><td><span class="say">Put this cream on twice a day.</span></td></tr>
+  <tr><td class="say">a plaster / a Band-Aid</td><td>băng dán cá nhân</td><td><span class="say">Can I have a plaster for my finger?</span></td></tr>
+  <tr><td class="say">prescription</td><td>đơn thuốc</td><td><span class="say">Do I need a prescription?</span></td></tr></tbody></table>
+  <div class="ex-box"><div class="ex-head">HỎI DƯỢC SĨ<span class="ex-tag t5">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Do you have anything for a headache?</span><span class="ex-vn">Có thuốc gì trị đau đầu không?</span></div>
+    <div class="ex-row"><span class="ex-en say">Can I buy this without a prescription?</span><span class="ex-vn">Thuốc này mua không cần đơn được không?</span></div>
+    <div class="ex-row"><span class="ex-en say">How often should I take it?</span><span class="ex-vn">Uống bao lâu một lần?</span></div>
+    <div class="ex-row"><span class="ex-en say">Should I take it before or after meals?</span><span class="ex-vn">Uống trước hay sau bữa ăn?</span></div>
+    <div class="ex-row"><span class="ex-en say">Are there any side effects?</span><span class="ex-vn">Có tác dụng phụ gì không?</span></div>
+    <div class="ex-row"><span class="ex-en say">It may make you sleepy, so don’t drive.</span><span class="ex-vn">Thuốc có thể gây buồn ngủ, đừng lái xe</span></div>
+  </div></div>
+  <div class="info i-tip"><span>⚠️</span><span><strong>Lưu ý:</strong> liều lượng trên trang này chỉ là ví dụ để luyện tiếng Anh. Khi dùng thuốc thật, hãy làm theo hướng dẫn trên hộp và lời dặn của dược sĩ hoặc bác sĩ.</span></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Tần suất: once, twice, three times a day</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Hỏi</th><th>Trả lời</th></tr></thead><tbody>
+<tr><td><span class="say">How often should I take it?</span></td><td><span class="say">Once a day. / Twice a day. / Three times a day.</span></td></tr>
+<tr><td><span class="say">How many tablets should I take?</span></td><td><span class="say">Two tablets every six hours.</span></td></tr>
+<tr><td><span class="say">How long should I take it for?</span></td><td><span class="say">For five days.</span></td></tr></tbody></table>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>Take two times one day. Take one tablet in every six hours.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">Take it twice a day. Take one tablet every six hours.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s6">
+  <div class="sec-head"><span class="sec-tag t3">BÀI 6</span><div><div class="sec-title">Hội thoại mẫu</div><div class="sec-sub">Bấm từng câu để nghe, rồi đóng vai cả hai người</div></div></div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 1: BẠN BÈ HỎI THĂM</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Are you okay? You don’t look well.</span><small>Bạn ổn không? Trông bạn không khỏe.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">I have a terrible headache, and I feel a bit dizzy.</span><small>Mình đau đầu kinh khủng, lại hơi chóng mặt.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Oh no. Do you want some water? Maybe you should go home and rest.</span><small>Trời. Uống chút nước không? Có lẽ bạn nên về nhà nghỉ.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Yeah, I think I will. Thanks.</span><small>Ừ, chắc mình về đây. Cảm ơn nhé.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Get well soon!</span><small>Mau khỏe nhé!</small></div></div>
+  </div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 2: Ở PHÒNG KHÁM</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Good morning. What seems to be the problem?</span><small>Chào anh. Anh bị sao vậy?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">I have a sore throat and a fever. It hurts when I swallow.</span><small>Tôi bị đau họng và sốt. Nuốt thì đau.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">How long have you had it?</span><small>Anh bị bao lâu rồi?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Since Sunday. It’s getting worse.</span><small>Từ Chủ Nhật. Đang nặng hơn.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Let me have a look. Open your mouth and say “ah”. Hmm, your throat is very red. Do you have any allergies?</span><small>Để tôi xem. Há miệng nói “a”. Ừm, họng anh đỏ lắm. Anh có dị ứng gì không?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">No, I don’t.</span><small>Không ạ.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">I’ll give you a prescription. You should rest and drink lots of warm water. Come back if it doesn’t get better in three days.</span><small>Tôi kê đơn cho anh. Anh nên nghỉ ngơi và uống nhiều nước ấm. Ba ngày không đỡ thì quay lại.</small></div></div>
+  </div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 3: Ở HIỆU THUỐC</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Hi, can I help you?</span><small>Chào chị, tôi giúp gì được ạ?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Yes, do you have anything for a cough? I can’t sleep at night.</span><small>Vâng, có thuốc gì trị ho không? Tối tôi không ngủ được.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Is it a dry cough?</span><small>Ho khan phải không ạ?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Yes, it is.</span><small>Đúng rồi.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Try this cough syrup. Take one spoonful three times a day after meals.</span><small>Chị thử siro ho này. Uống một thìa, ngày ba lần, sau bữa ăn.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Are there any side effects?</span><small>Có tác dụng phụ gì không?</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">It may make you a little sleepy. That’s eighty-five thousand dong, please.</span><small>Có thể hơi buồn ngủ. Của chị 85 nghìn đồng ạ.</small></div></div>
+  </div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 4: NHẮN XIN NGHỈ ỐM</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Hi Mr. Hung, I’m sorry, but I’m sick today. I have a high fever.</span><small>Chào anh Hùng, em xin lỗi, hôm nay em bị ốm. Em sốt cao.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Oh, sorry to hear that. Take the day off and get some rest.</span><small>Ồ, tiếc quá. Em nghỉ hôm nay rồi nghỉ ngơi đi.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Thank you. I’ll check my email if anything is urgent.</span><small>Cảm ơn anh. Có gì gấp em sẽ xem email.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Don’t worry about work. Feel better soon!</span><small>Đừng lo việc. Mau khỏe nhé!</small></div></div>
+  </div>
+  <div class="info i-ok"><span>✅</span><span><strong>Cách luyện:</strong> nghe một lượt, nói theo từng câu, rồi che phần tiếng Việt và tự đóng vai A hoặc B. Thử chỉ vào từng bộ phận trên người mình và nói tên tiếng Anh.</span></div>
+</section>
+
+<section class="section" id="s7">
+  <div class="sec-head"><span class="sec-tag t2">BÀI 7</span><div><div class="sec-title">Máy tạo hội thoại &amp; bài tập</div><div class="sec-sub">Chọn triệu chứng, thời gian, mức độ và nơi đến. Máy tạo một cuộc hội thoại hoàn chỉnh</div></div></div>
+  <div class="gen">
+    <label for="g-s">Triệu chứng<select id="g-s"></select></label>
+    <label for="g-d">Bị từ khi nào<select id="g-d"></select></label>
+    <label for="g-l">Mức độ<select id="g-l"></select></label>
+    <label for="g-p">Nơi đến<select id="g-p"></select></label>
+  </div>
+  <div class="btns"><button class="btn" id="gen-btn">Tạo hội thoại</button><button class="btn alt" id="rnd-btn">Chọn ngẫu nhiên</button></div>
+  <div class="out" id="gen-out" aria-live="polite"></div>
+
+  <div class="sub-title">Bài tập: điền câu trả lời</div>
+  <p class="t">Câu 1–4: điền một từ vào chỗ trống. Câu 5–8: dịch sang tiếng Anh, gõ cả câu. Không phân biệt hoa thường.</p>
+  <div id="exlist">
+    <div class="exi">1. I have a sore ___. (họng) →<input id="ex1" data-a="throat" aria-label="Câu 1"><small>bộ phận cơ thể</small></div>
+    <div class="exi">2. My feet ___. (hurt) →<input id="ex2" data-a="hurt" aria-label="Câu 2"><small>hurt hay hurts?</small></div>
+    <div class="exi">3. I’ve had a cough ___ two days. →<input id="ex3" data-a="for" aria-label="Câu 3"><small>for hay since?</small></div>
+    <div class="exi">4. Take this medicine ___ a day. (2 lần) →<input id="ex4" data-a="twice" aria-label="Câu 4"><small>tần suất</small></div>
+    <div class="exi">5. Tôi bị đau đầu →<input id="ex5" data-a="i have a headache|i've got a headache|i have got a headache" aria-label="Câu 5"><small>have a</small></div>
+    <div class="exi">6. Tôi bị sốt từ hôm qua →<input id="ex6" data-a="i've had a fever since yesterday|i have had a fever since yesterday|i've had fever since yesterday" aria-label="Câu 6"><small>have had + since</small></div>
+    <div class="exi">7. Bạn có thuốc gì trị ho không? →<input id="ex7" data-a="do you have anything for a cough?|do you have something for a cough?|have you got anything for a cough?|do you have any medicine for a cough?" aria-label="Câu 7"><small>anything for</small></div>
+    <div class="exi">8. Bạn nên nghỉ ngơi →<input id="ex8" data-a="you should rest|you should get some rest|you should take a rest|you should have a rest" aria-label="Câu 8"><small>should</small></div>
+  </div>
+  <div class="btns" style="margin-top:12px"><button class="btn" id="ex-check">Kiểm tra đáp án</button><button class="btn alt" id="ex-show">Xem đáp án</button><button class="btn alt" id="ex-reset">Làm lại</button></div>
+  <div class="out" id="ex-out" style="min-height:0" aria-live="polite"></div>
+
+  <div class="sub-title">Lộ trình luyện 7 ngày</div>
+  <div class="plan">
+    <div class="day"><b>Ngày 1</b><span><strong>Bộ phận cơ thể:</strong> chỉ vào người và nói 20 bộ phận, nhớ teeth và feet</span></div>
+    <div class="day"><b>Ngày 2</b><span><strong>Bệnh thường gặp:</strong> luyện I have a… với 10 bệnh trong Bài 2</span></div>
+    <div class="day"><b>Ngày 3</b><span><strong>Triệu chứng:</strong> luyện My … hurts, I feel…, It hurts when…</span></div>
+    <div class="day"><b>Ngày 4</b><span><strong>for và since:</strong> nói 5 câu I’ve had … for / since …</span></div>
+    <div class="day"><b>Ngày 5</b><span><strong>Bác sĩ:</strong> học thuộc 6 câu hỏi của bác sĩ và lời khuyên với should</span></div>
+    <div class="day"><b>Ngày 6</b><span><strong>Hiệu thuốc:</strong> dùng máy tạo hội thoại, luyện hỏi How often…? và side effects</span></div>
+    <div class="day"><b>Ngày 7</b><span><strong>Ôn tổng hợp:</strong> đóng vai đi khám trọn vẹn, dùng 3 từ nâng cao</span></div>
+  </div>
+</section>
+
+<section class="section" id="s8">
+  <div class="sec-head"><span class="sec-tag t5">NÂNG CAO</span><div><div class="sec-title">Từ vựng mới để nói chuyện tự nhiên hơn</div><div class="sec-sub">Tả triệu chứng chính xác hơn và nói về sức khỏe như người bản xứ</div></div></div>
+  <div class="sub-title">Triệu chứng chi tiết</div>
+  <table class="tbl"><thead><tr><th>Từ / cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">nauseous</td><td>buồn nôn</td><td><span class="say">I feel nauseous after eating.</span></td></tr>
+  <tr><td class="say">a blocked nose</td><td>nghẹt mũi</td><td><span class="say">I have a blocked nose and can’t smell anything.</span></td></tr>
+  <tr><td class="say">a rash</td><td>phát ban</td><td><span class="say">I have a rash on my arm.</span></td></tr>
+  <tr><td class="say">itchy</td><td>ngứa</td><td><span class="say">My skin is really itchy.</span></td></tr>
+  <tr><td class="say">swollen</td><td>sưng</td><td><span class="say">My ankle is swollen.</span></td></tr>
+  <tr><td class="say">sprain</td><td>bong gân</td><td><span class="say">I sprained my ankle playing football.</span></td></tr>
+  <tr><td class="say">a sharp pain / a dull pain</td><td>đau nhói / đau âm ỉ</td><td><span class="say">I have a sharp pain in my chest.</span></td></tr>
+  <tr><td class="say">an allergic reaction</td><td>phản ứng dị ứng</td><td><span class="say">I think it’s an allergic reaction to seafood.</span></td></tr></tbody></table>
+  <div class="sub-title">Khám chữa và dùng thuốc</div>
+  <table class="tbl"><thead><tr><th>Từ / cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">over-the-counter</td><td>thuốc không cần đơn</td><td><span class="say">You can buy it over the counter.</span></td></tr>
+  <tr><td class="say">dosage</td><td>liều dùng</td><td><span class="say">Please check the dosage on the box.</span></td></tr>
+  <tr><td class="say">side effects</td><td>tác dụng phụ</td><td><span class="say">The side effects are usually mild.</span></td></tr>
+  <tr><td class="say">a check-up</td><td>khám sức khỏe định kỳ</td><td><span class="say">I go for a check-up every year.</span></td></tr>
+  <tr><td class="say">a follow-up appointment</td><td>lịch tái khám</td><td><span class="say">Let’s book a follow-up appointment next week.</span></td></tr>
+  <tr><td class="say">contagious</td><td>dễ lây</td><td><span class="say">Is it contagious?</span></td></tr>
+  <tr><td class="say">recover / get over</td><td>hồi phục / khỏi</td><td><span class="say">It took me a week to get over the flu.</span></td></tr></tbody></table>
+  <div class="sub-title">Thành ngữ về sức khỏe</div>
+  <div class="ex-box"><div class="ex-head">LÀM CHO HỘI THOẠI TỰ NHIÊN<span class="ex-tag t5">Nâng cao</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">I’m feeling a bit under the weather.</span><span class="ex-vn">Tôi thấy hơi khó ở / không được khỏe</span></div>
+    <div class="ex-row"><span class="ex-en say">I think I’m coming down with something.</span><span class="ex-vn">Hình như tôi sắp ốm</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m feeling run-down lately.</span><span class="ex-vn">Dạo này tôi thấy kiệt sức</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m on the mend.</span><span class="ex-vn">Tôi đang đỡ dần rồi</span></div>
+    <div class="ex-row"><span class="ex-en say">Take it easy and get plenty of rest.</span><span class="ex-vn">Cứ thong thả và nghỉ ngơi nhiều vào</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m back on my feet now.</span><span class="ex-vn">Giờ tôi khỏe lại rồi</span></div>
+    <div class="ex-row"><span class="ex-en say">Get well soon!</span><span class="ex-vn">Chúc mau khỏe!</span></div>
+  </div></div>
+  <div class="cmp"><div class="bad"><b>❌ NGHE CỨNG</b><div>I am sick. My body is not good. I am pain in stomach two days.</div></div><div class="good"><b>✔ TỰ NHIÊN HƠN</b><div class="say">I’m feeling under the weather. I’ve had a dull pain in my stomach for two days, and I feel a bit nauseous after meals.</div></div></div>
+  <div class="info i-tip"><span>💡</span><span><strong>Mẹo:</strong> khi đi khám, hãy chuẩn bị trước ba ý: <strong>đau ở đâu</strong>, <strong>từ khi nào</strong>, <strong>nặng thế nào</strong> (thang 1–10). Bác sĩ nào cũng sẽ hỏi ba điều này.</span></div>
+
+  <div class="sub-title">Tự kiểm tra</div>
+  <ul class="chk">
+    <li><label><input type="checkbox" id="c1">Tôi nói được tên ít nhất 15 bộ phận cơ thể</label></li>
+    <li><label><input type="checkbox" id="c2">Tôi dùng đúng <strong>I have a headache / the flu</strong></label></li>
+    <li><label><input type="checkbox" id="c3">Tôi tả được chỗ đau bằng <strong>My … hurts</strong> và <strong>I feel …</strong></label></li>
+    <li><label><input type="checkbox" id="c4">Tôi dùng đúng <strong>I’ve had … for / since …</strong></label></li>
+    <li><label><input type="checkbox" id="c5">Tôi trả lời được câu hỏi của bác sĩ và hiểu lời khuyên với <strong>should</strong></label></li>
+    <li><label><input type="checkbox" id="c6">Tôi mua thuốc và hỏi được cách dùng, tác dụng phụ</label></li>
+    <li><label><input type="checkbox" id="c7">Tôi dùng được ít nhất 5 từ vựng nâng cao</label></li>
+  </ul>
+</section>
+
+</div>
+<div class="footer">🩺 Giao tiếp tiếng Anh: Health &amp; At the Doctor · Dành cho người mới bắt đầu · 2026</div>
+</div>
+
+<div class="audio-bar">
+  <b>🔊 Audio</b>
+  <div class="ab-g"><button data-acc="en-GB" class="on">Anh-Anh</button><button data-acc="en-US">Anh-Mỹ</button></div>
+  <div class="ab-g"><button data-rate="0.6">Chậm</button><button data-rate="0.85" class="on">Vừa</button><button data-rate="1">Nhanh</button></div>
+</div>
+
+<script>
+(function(){
+var doc=document.documentElement,bar=document.getElementById('pbar');
+addEventListener('scroll',function(){bar.style.width=(doc.scrollTop/Math.max(1,doc.scrollHeight-doc.clientHeight)*100)+'%'});
+var links=document.querySelectorAll('.nav-link,.topnav a');
+if('IntersectionObserver' in window)document.querySelectorAll('.section[id]').forEach(function(s){
+  new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;
+    links.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id)});
+  })},{rootMargin:'-20% 0px -70% 0px'}).observe(s);
+});
+
+/* Audio */
+var S=window.speechSynthesis,st={acc:'en-GB',rate:.85},cur=null;
+function voice(){if(!S)return null;var v=S.getVoices().filter(function(x){return x.lang.replace('_','-').toLowerCase()===st.acc.toLowerCase()});
+  return v.find(function(x){return /google|natural|premium|enhanced/i.test(x.name)})||v[0]||null}
+function say(el){
+  if(cur)cur.classList.remove('playing');
+  if(!S){el.title='Trình duyệt này không hỗ trợ đọc audio';return}
+  S.cancel();cur=el;el.classList.add('playing');
+  var t=el.textContent.replace(/\s+/g,' ').replace(/\s*\/\s*/g,'. ').replace(/→/g,'. ').replace(/\bdong\b/g,'dong').replace(/Hung/g,'Hoong').trim();
+  var u=new SpeechSynthesisUtterance(t);u.lang=st.acc;u.rate=st.rate;var v=voice();if(v)u.voice=v;
+  u.onend=u.onerror=function(){el.classList.remove('playing')};S.speak(u);
+}
+function prep(root){root.querySelectorAll('.say').forEach(function(e){e.tabIndex=0;e.setAttribute('role','button')})}
+prep(document);
+document.addEventListener('click',function(e){var el=e.target.closest('.say');if(el)say(el)});
+document.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.classList&&e.target.classList.contains('say')){e.preventDefault();say(e.target)}});
+document.querySelectorAll('.audio-bar button').forEach(function(b){b.addEventListener('click',function(){
+  b.parentElement.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');
+  if(b.dataset.acc)st.acc=b.dataset.acc;if(b.dataset.rate)st.rate=+b.dataset.rate;
+})});
+
+/* ===== Máy tạo hội thoại =====
+   SYM: [nhãn, bệnh (sau have), câu tả thêm, thuốc ở hiệu thuốc, cách dùng, lời khuyên, thuốc bác sĩ kê] */
+var SYM=[['Đau đầu','a headache','My head hurts, especially in the afternoon.','these painkillers','Take one or two tablets every six hours, after meals.','Try to rest in a quiet, dark room.','some stronger painkillers'],
+ ['Đau họng','a sore throat','It hurts when I swallow.','these throat lozenges','Suck one lozenge every three hours.','Drink warm water with honey and lemon.','some antibiotics'],
+ ['Ho','a cough','I keep coughing at night.','this cough syrup','Take one spoonful three times a day.','Avoid cold drinks and ice cream.','a stronger cough syrup'],
+ ['Sốt','a fever','I feel hot and very tired.','these fever tablets','Take one tablet every six hours if your temperature is high.','Drink plenty of water and get lots of rest.','some fever medicine'],
+ ['Đau bụng','a stomachache','My stomach hurts after I eat.','these antacid tablets','Chew two tablets after meals.','Eat light food like rice porridge for a few days.','some stomach medicine'],
+ ['Sổ mũi','a runny nose','I keep sneezing, and my eyes are watery.','this nasal spray','Use it twice a day, morning and evening.','Keep warm and wash your hands often.','some allergy tablets'],
+ ['Đau răng','a toothache','My tooth hurts when I eat something cold.','these painkillers','Take one tablet every six hours.','You should see a dentist as soon as possible.',''],
+ ['Đau lưng','a backache','My back hurts when I sit for a long time.','this pain relief cream','Rub it on your back twice a day.','Don’t lift heavy things, and stretch every hour.','some muscle relaxants']];
+var DUR=[['Từ sáng nay','since this morning','It started this morning.'],['Từ hôm qua','since yesterday','Since yesterday.'],['Hai ngày rồi','for two days','For about two days.'],['Một tuần rồi','for a week','For a week now.']];
+var LV=[['Nhẹ','It’s not too bad.',0],['Khá nặng','It’s quite bad.',1],['Rất nặng','It’s really bad. I can’t sleep at all.',2]];
+var PL=[['Hiệu thuốc'],['Phòng khám bác sĩ']];
+function fill(id,arr,val){var s=document.getElementById(id);arr.forEach(function(x,i){s.add(new Option(x[0],i))});s.value=val;s.addEventListener('change',show);return s}
+var ss=fill('g-s',SYM,0),sd=fill('g-d',DUR,1),sl=fill('g-l',LV,1),sp=fill('g-p',PL,0);
+var out=document.getElementById('gen-out');
+function line(who,txt){var d=document.createElement('div');var l=document.createElement('span');l.className='lbl';l.textContent=who+' ';var s=document.createElement('span');s.className='say';s.textContent=txt;d.append(l,s);out.append(d)}
+function show(){
+  var s=SYM[+ss.value],d=DUR[+sd.value],l=LV[+sl.value],doc=+sp.value===1,tooth=+ss.value===6;
+  var serious=l[2]===2||+sd.value===3;
+  out.innerHTML='';
+  var W=doc?'BÁC SĨ':'DƯỢC SĨ';
+  if(doc){
+    line(W,'Good morning. What seems to be the problem?');
+    line('BẠN','I have '+s[1]+'. '+s[2]);
+  }else{
+    line(W,'Hi, can I help you?');
+    line('BẠN','Yes, do you have anything for '+s[1]+'? '+s[2]);
+  }
+  line(W,'How long have you had it?');
+  line('BẠN','I’ve had it '+d[1]+'. '+l[1]);
+  if(doc){
+    if(tooth){
+      line(W,'I see. This looks like a problem with your tooth, so you should see a dentist. For now, you can take some painkillers.');
+      line('BẠN','How often should I take them?');
+      line(W,'One tablet every six hours. And please book a dentist appointment today.');
+    }else{
+      line(W,'Do you have any allergies?');line('BẠN','No, I don’t.');
+      if(serious){
+        line(W,'Okay. I’ll give you a prescription for '+s[6]+'. '+s[5]+' Come back if it doesn’t get better in three days.');
+        line('BẠN','How often should I take the medicine?');
+        line(W,'Twice a day after meals. The pharmacist will explain it again.');
+      }else{
+        line(W,'It’s nothing serious, so you don’t need a prescription. '+s[5]+' You can buy '+s[3].replace(/^(these|this) /,function(m){return m==='this '?'some ':'some '})+' at the pharmacy.');
+        line('BẠN','Should I stay home from work?');
+        line(W,'You should take it easy today, but you can go to work if you feel okay.');
+      }
+    }
+  }else{
+    line(W,(serious?'That sounds quite serious. ':'')+'Try '+s[3]+'. '+s[4]);
+    line('BẠN','Are there any side effects?');
+    line(W,'Not usually. '+s[5]+(serious&&!tooth?' If it doesn’t get better in two days, you should see a doctor.':''));
+  }
+  line('BẠN','Thank you very much.');
+  line(W,'You’re welcome. Get well soon!');
+  var w=document.createElement('span');w.className='why';
+  w.innerHTML='Bệnh: <b>have + '+s[1]+'</b>. Thời gian: <b>have had + '+d[1].split(' ')[0]+'</b> ('+(d[1].indexOf('for')===0?'for + khoảng thời gian':'since + mốc thời gian')+'). Lời khuyên: <b>should / imperative</b>'+(tooth?'. Đau răng thì nên gặp <b>dentist</b> (nha sĩ)':serious?'. Vì bệnh '+(l[2]===2?'nặng':'kéo dài')+', '+(doc?'bác sĩ kê đơn và dặn tái khám':'dược sĩ khuyên đi khám bác sĩ'):(doc?'. Bệnh nhẹ nên bác sĩ không kê đơn':''))+'.';
+  out.append(w);prep(out);
+}
+document.getElementById('gen-btn').addEventListener('click',show);
+document.getElementById('rnd-btn').addEventListener('click',function(){
+  ss.value=Math.floor(Math.random()*SYM.length);sd.value=Math.floor(Math.random()*DUR.length);sl.value=Math.floor(Math.random()*LV.length);sp.value=Math.floor(Math.random()*PL.length);show();
+});
+show();
+
+/* Bài tập */
+var inputs=document.querySelectorAll('#exlist input'),exo=document.getElementById('ex-out');
+function cap(s){return s.charAt(0).toUpperCase()+s.slice(1)}
+function norm(s){return s.toLowerCase().replace(/[’‘`]/g,"'").replace(/[.!?]+$/,'').replace(/,/g,'').replace(/\s+/g,' ').trim()}
+document.getElementById('ex-check').addEventListener('click',function(){
+  var ok=0;
+  inputs.forEach(function(i){
+    var good=i.dataset.a.split('|').some(function(a){return norm(a)===norm(i.value)});
+    i.classList.remove('ok','no');i.classList.add(good?'ok':'no');if(good)ok++;
+  });
+  exo.style.minHeight='';
+  exo.textContent=ok===inputs.length?'🎉 Chính xác '+ok+'/'+inputs.length+'. Bạn đã sẵn sàng đi khám bằng tiếng Anh!':'Đúng '+ok+'/'+inputs.length+'. Các ô viền đỏ cần xem lại; đọc lại Bài 2–5, hoặc bấm “Xem đáp án”.';
+});
+document.getElementById('ex-show').addEventListener('click',function(){
+  inputs.forEach(function(i){
+    var k=i.parentElement.querySelector('.key');
+    if(!k){k=document.createElement('span');k.className='key';i.parentElement.append(k)}
+    var a=i.dataset.a.split('|')[0].replace(/'/g,'’').replace(/\bi\b/g,'I');k.textContent='Đáp án: '+(a.indexOf(' ')>-1?cap(a):a);
+  });
+});
+document.getElementById('ex-reset').addEventListener('click',function(){
+  inputs.forEach(function(i){i.value='';i.classList.remove('ok','no')});
+  document.querySelectorAll('#exlist .key').forEach(function(k){k.remove()});
+  exo.textContent='';exo.style.minHeight='0';
+});
+})();
+</script>
+
+<script src="nav.js" defer></script>
+<script src="writing-data.js" defer></script>
+<script src="writing.js" defer></script>
+<script src="review.js" defer></script>
+<script src="cheatsheet-data/Health-and-Doctor.js" defer></script>
+<script src="cheatsheet.js" defer></script>
+</body></html>

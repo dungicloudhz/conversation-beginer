@@ -1,0 +1,541 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Tiếng Anh Birthdays & Holidays</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: sidebar mục lục cố định + cột bài học, cùng theme tối của bộ "Hỏi đường & Hỏi giờ" (nhấn đỏ hồng – vàng cho chủ đề Birthdays & Holidays) */
+:root{color-scheme:dark;
+--bg:#080810;--s1:#0e0e1c;--s2:#131326;--s3:#18182e;--border:#222240;--border2:#2c2c50;--text:#e6e6f2;--muted:#8a8ab8;--faint:#4a4a78;
+--acc:#ffd060;--acc-dim:rgba(255,208,96,.11);--oc:#38bdf8;--oc-dim:rgba(56,189,248,.13);--ins:#40d88e;--ins-dim:rgba(64,216,142,.12);
+--sk:#a07af4;--sk-dim:rgba(160,122,244,.12);--au:#ff6584;--au-dim:rgba(255,101,132,.12);--teal:#30d8c0;--code-bg:#05050e;
+--tip-bg:rgba(91,168,255,.10);--tip-bd:rgba(91,168,255,.25);--tip-fg:#8ab8f0;--warn-fg:#e0bc58;--ok-fg:#5ccf98;--line:rgba(255,255,255,.05);
+--font:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+--gl:max(64px,env(safe-area-inset-left,0px));--gr:max(64px,env(safe-area-inset-right,0px))}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 60px)}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.7;font-size:15px;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:600;background:var(--s1)}
+.sidebar{position:fixed;left:0;top:0;width:260px;height:100%;background:var(--s1);border-right:1px solid var(--border);overflow-y:auto;z-index:400;padding-top:env(safe-area-inset-top,0px);padding-left:env(safe-area-inset-left,0px)}
+.sb-logo{padding:20px 18px 16px;border-bottom:1px solid var(--border)}
+.sb-brand{display:flex;align-items:center;gap:11px;margin-bottom:12px}
+.logo-icon{width:44px;height:44px;border-radius:11px;background:linear-gradient(135deg,var(--au),var(--acc));display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 0 26px rgba(255,101,132,.3)}
+.logo-text h2{font-size:15px;font-weight:800}.logo-text p{font-size:10.5px;color:var(--muted)}
+.prog-wrap{height:3px;background:var(--border);border-radius:2px;overflow:hidden}
+.prog-bar{height:100%;width:0;background:linear-gradient(90deg,var(--acc),var(--ins),var(--oc),var(--sk),var(--au))}
+.nav-label{padding:14px 18px 4px;font-size:9.5px;font-weight:700;letter-spacing:1.6px;color:var(--faint)}
+.nav-link{display:flex;align-items:center;gap:9px;padding:7px 18px;color:var(--muted);text-decoration:none;font-size:12.5px;font-weight:600;border-left:2px solid transparent}
+.nav-link:hover,.nav-link.active{color:var(--text);background:rgba(255,208,96,.07);border-left-color:var(--acc)}
+.main{margin-left:260px}
+.hero{padding-block:80px 60px;padding-left:var(--gl);padding-right:var(--gr);border-bottom:1px solid var(--border);background:radial-gradient(ellipse 65% 55% at 75% 22%,rgba(255,208,96,.09),transparent 60%),radial-gradient(ellipse 50% 55% at 10% 82%,rgba(255,101,132,.08),transparent 55%),var(--bg)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--acc-dim);border:1px solid rgba(255,208,96,.38);color:var(--acc);padding:5px 16px;border-radius:100px;font-size:11.5px;font-weight:700;margin-bottom:24px}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--acc);animation:p 2s infinite}
+@keyframes p{50%{opacity:.35;transform:scale(.7)}}
+@media(prefers-reduced-motion:reduce){.eyebrow i{animation:none}html{scroll-behavior:auto}}
+.hero h1{font-size:50px;font-weight:900;letter-spacing:-2.4px;line-height:1.06;margin-bottom:18px;text-wrap:balance}
+.grad{background:linear-gradient(135deg,var(--au),var(--acc));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-desc{font-size:16px;color:var(--muted);max-width:620px;margin-bottom:28px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{padding:5px 14px;border-radius:7px;font-size:12px;font-weight:700}
+.c1{background:var(--oc-dim);color:var(--oc)}.c2{background:var(--ins-dim);color:var(--ins)}.c3{background:var(--acc-dim);color:var(--acc)}.c4{background:var(--sk-dim);color:var(--sk)}.c5{background:var(--au-dim);color:var(--au)}
+.content{padding-block:56px;padding-left:var(--gl);padding-right:var(--gr);max-width:calc(1020px + 64px)}
+.section{margin-bottom:68px}
+.sec-head{display:flex;gap:14px;align-items:flex-start;margin-bottom:28px;padding-bottom:18px;border-bottom:1px solid var(--border)}
+.sec-tag{font-family:var(--mono);font-size:10px;font-weight:600;padding:3px 10px;border-radius:5px;margin-top:6px;flex-shrink:0;letter-spacing:.5px}
+.t1{color:var(--oc);background:var(--oc-dim)}.t2{color:var(--ins);background:var(--ins-dim)}.t3{color:var(--acc);background:var(--acc-dim)}.t4{color:var(--sk);background:var(--sk-dim)}.t5{color:var(--au);background:var(--au-dim)}
+.sec-title{font-size:23px;font-weight:800;letter-spacing:-.6px;text-wrap:balance}.sec-sub{font-size:13px;color:var(--muted)}
+.sub-title{font-size:14.5px;font-weight:700;margin:26px 0 12px;display:flex;align-items:center;gap:10px}
+.sub-title::before{content:'';width:14px;height:3px;background:var(--acc);border-radius:2px}
+p.t{color:var(--muted);font-size:13.5px;margin-bottom:11px;max-width:68ch}p.t strong,li strong{color:var(--text)}
+.ex-box{background:var(--s1);border:1px solid var(--border2);border-radius:11px;overflow:hidden;margin:13px 0}
+.ex-head{display:flex;align-items:center;gap:8px;padding:9px 16px;background:var(--s2);border-bottom:1px solid var(--border);font-family:var(--mono);font-size:10px;font-weight:600;color:var(--muted);letter-spacing:.5px}
+.ex-tag{margin-left:auto;font-size:9px;font-weight:700;padding:2px 9px;border-radius:100px;font-family:var(--font)}
+.ex-body{padding:10px 20px}
+.ex-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:13.5px}
+.ex-row:last-child{border-bottom:none}
+.ex-en{color:var(--text);font-weight:600;min-width:280px}.ex-vn{color:var(--muted)}
+.info{display:flex;gap:12px;padding:14px 16px;border-radius:9px;margin:13px 0;font-size:13px;line-height:1.6}
+.i-tip{background:var(--tip-bg);border:1px solid var(--tip-bd);color:var(--tip-fg)}
+.i-warn{background:var(--acc-dim);border:1px solid rgba(255,208,96,.25);color:var(--warn-fg)}
+.i-ok{background:var(--ins-dim);border:1px solid rgba(64,216,142,.25);color:var(--ok-fg)}
+.tbl{width:100%;border-collapse:collapse;font-size:13px;margin:13px 0;display:block;overflow-x:auto}
+.tbl th{background:var(--s3);padding:10px 14px;text-align:left;font-size:10px;color:var(--muted);border-bottom:1px solid var(--border2);white-space:nowrap;letter-spacing:.5px}
+.tbl td{padding:10px 14px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:top}
+.tbl td:first-child{color:var(--text);font-weight:600}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}
+.card{background:var(--s1);border:1px solid var(--border);border-radius:11px;padding:16px;min-width:0}
+.card:hover{border-color:var(--acc)}
+.card-icon{font-size:24px}.card-title{font-size:13px;font-weight:700}.card-desc{font-size:12px;color:var(--muted)}
+.cmp{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);border-radius:11px;overflow:hidden;margin:13px 0}
+.bad{background:rgba(255,101,132,.07);padding:14px 16px;border-right:1px solid var(--border)}.good{background:rgba(64,216,142,.07);padding:14px 16px}
+.cmp b{display:block;font-size:10px;margin-bottom:6px;letter-spacing:.5px}.bad b{color:var(--au)}.good b{color:var(--ins)}
+.cmp div div{font-size:13.5px}
+.dlg{display:grid;gap:8px;margin:12px 0;background:var(--s1);border:1px solid var(--border2);border-radius:12px;padding:16px 18px}
+.dlg-t{font-size:10px;font-weight:800;color:var(--acc);margin-bottom:2px;letter-spacing:.6px}
+.turn{display:flex;gap:10px;align-items:baseline}
+.turn>div{min-width:0}
+.who{flex-shrink:0;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+.wa{background:var(--oc-dim);color:var(--oc)}.wb{background:var(--ins-dim);color:var(--ins)}
+.turn .say{font-weight:600}.turn small{display:block;color:var(--muted);font-size:12px;font-weight:400}
+.gen{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin:12px 0}
+.gen label{font-size:11.5px;color:var(--muted);font-weight:600;display:block;min-width:0}
+.gen select{width:100%;margin-top:4px;background:var(--code-bg);border:1px solid var(--border2);border-radius:8px;padding:9px 12px;color:var(--text);font:inherit;font-size:13px}
+select:focus-visible,button:focus-visible,.say:focus-visible,.exi input:focus-visible,.chk input:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.btns{display:flex;flex-wrap:wrap;gap:6px}
+.btn{background:var(--acc-dim);color:var(--acc);border:1px solid var(--acc);border-radius:8px;padding:8px 16px;font:inherit;font-weight:700;font-size:13px;cursor:pointer}
+.btn.alt{background:var(--ins-dim);color:var(--ins);border-color:var(--ins)}
+.out{margin-top:14px;min-height:60px;background:var(--s2);border:1px dashed var(--border2);border-radius:10px;padding:14px 16px;font-size:14px;line-height:1.9}
+.big{font-size:21px;font-weight:800;color:var(--acc);letter-spacing:-.3px;line-height:1.4;margin-bottom:4px}
+.out .why{display:block;color:var(--muted);font-size:12.5px}
+.out .why b{color:var(--teal);font-family:var(--mono);font-weight:600}
+.timeline{display:grid;gap:0;margin:14px 0;border-left:2px solid var(--border2);padding-left:18px}
+.tl{position:relative;padding:8px 0 12px}
+.tl::before{content:'';position:absolute;left:-24px;top:16px;width:10px;height:10px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 3px var(--bg)}
+.tl time{font-family:var(--mono);font-size:12px;color:var(--acc);font-variant-numeric:tabular-nums;font-weight:600}
+.tl .say{font-weight:600;font-size:13.5px}
+.tl small{display:block;color:var(--muted);font-size:12px}
+.freq{display:grid;gap:7px;margin:14px 0}
+.fq{display:grid;grid-template-columns:110px 1fr 54px;gap:12px;align-items:center;font-size:13px}
+.fq .say{font-weight:700}
+.fq .track{height:8px;background:var(--s3);border-radius:4px;overflow:hidden}
+.fq .fill{height:100%;background:linear-gradient(90deg,var(--ins),var(--acc))}
+.fq span:last-child{font-family:var(--mono);font-size:11.5px;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+.plan{display:grid;gap:8px;margin:12px 0}
+.day{display:flex;gap:14px;align-items:baseline;background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:12px 16px;font-size:13px;color:var(--muted)}
+.day b{color:var(--acc);font-family:var(--mono);font-size:12px;flex-shrink:0;width:52px}.day strong{color:var(--text)}
+.chk{list-style:none;margin:10px 0}.chk li{padding:6px 0;font-size:13.5px;color:var(--muted);border-bottom:1px solid rgba(255,255,255,.04)}
+.chk input{accent-color:var(--ins);margin-right:10px;width:15px;height:15px;vertical-align:-2px}
+.gr{border:1px solid rgba(160,122,244,.38);background:linear-gradient(180deg,var(--sk-dim),transparent 110px),var(--s1);border-radius:12px;margin:28px 0;overflow:hidden}
+.gr-head{padding:10px 18px;font-size:12px;font-weight:800;color:var(--sk);border-bottom:1px solid var(--border);display:flex;gap:10px;flex-wrap:wrap;align-items:baseline;letter-spacing:.4px}
+.gr-head em{font-style:normal;color:var(--muted);font-weight:600;letter-spacing:0}
+.gr-body{padding:14px 18px;font-size:13.5px;color:var(--muted)}
+.gr-body p{margin-bottom:10px}.gr-body b{color:var(--text)}.gr-body ul{padding-left:20px;margin-bottom:8px}.gr-body li{margin-bottom:4px}
+.gr-body .tbl{margin:8px 0 12px}
+.fm{display:inline-block;font-family:var(--mono);font-size:12px;background:var(--code-bg);color:var(--teal);padding:3px 9px;border-radius:6px;margin:2px 0}
+.say{cursor:pointer;border-bottom:1px dotted var(--oc)}
+.say:hover{color:var(--acc);background:var(--acc-dim);border-radius:4px}
+.say::after{content:"🔊";font-size:.68em;margin-left:3px;opacity:.5}
+.say.playing{color:var(--ins);background:var(--ins-dim);border-radius:4px}.say.playing::after{opacity:1}
+.exi{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:13.5px;color:var(--text)}
+.exi input{width:220px;max-width:100%;background:var(--code-bg);border:1px solid var(--border2);border-radius:6px;padding:4px 8px;color:var(--text);font:inherit;font-size:13px;text-align:center}
+.exi input.ok{border-color:var(--ins);color:var(--ins)}.exi input.no{border-color:var(--au);color:var(--au)}
+.exi small{color:var(--muted);font-size:11.5px}
+.exi .key{color:var(--ins);font-size:12px;width:100%}
+.footer{border-top:1px solid var(--border);padding-block:28px 90px;padding-left:var(--gl);padding-right:var(--gr);font-size:12px;color:var(--muted)}
+.audio-bar{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:500;display:flex;gap:10px;align-items:center;background:var(--s2);border:1px solid var(--border2);border-radius:12px;padding:8px 12px;box-shadow:0 8px 28px rgba(0,0,0,.5);font-size:12px;color:var(--muted)}
+.audio-bar b{color:var(--acc)}.ab-g{display:flex;gap:4px}
+.audio-bar button{background:var(--s3);color:var(--muted);border:1px solid var(--border);border-radius:7px;padding:4px 10px;font:inherit;font-weight:700;cursor:pointer}
+.audio-bar button.on{background:var(--acc-dim);color:var(--acc);border-color:var(--acc)}
+.topnav{display:none}
+@media(max-width:900px){
+:root{--gl:max(18px,env(safe-area-inset-left,0px));--gr:max(18px,env(safe-area-inset-right,0px))}
+.sidebar{display:none}.main{margin-left:0}.hero h1{font-size:32px;letter-spacing:-1.4px}.hero{padding-block:48px 40px}
+.grid-3,.cmp{grid-template-columns:1fr}.gen{grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}.bad{border-right:none;border-bottom:1px solid var(--border)}
+.topnav{display:flex;overflow-x:auto;position:sticky;top:env(safe-area-inset-top,0px);z-index:500;background:var(--s1);border-bottom:2px solid var(--border2);scrollbar-width:none;padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+.topnav a{flex-shrink:0;padding:10px 14px;color:var(--muted);text-decoration:none;font-size:12px;font-weight:700;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-2px}
+.topnav a.active{color:var(--acc);border-bottom-color:var(--acc);background:var(--acc-dim)}
+.ex-en{min-width:0}
+.fq{grid-template-columns:90px 1fr 46px}
+.audio-bar{left:calc(8px + env(safe-area-inset-left,0px));right:calc(8px + env(safe-area-inset-right,0px));justify-content:center;flex-wrap:wrap}
+}
+@media(max-width:480px){.gen{grid-template-columns:1fr}}
+
+.lbl{font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--faint)}
+.out .lbl{color:var(--au);min-width:90px;display:inline-block}
+.card-note{margin-top:6px;max-width:460px;background:linear-gradient(160deg,rgba(255,101,132,.10),rgba(255,208,96,.08));border:1px solid rgba(255,208,96,.3);border-radius:12px;padding:16px 20px;line-height:1.8;font-size:14px;color:var(--text)}
+.card-note div:first-child{color:var(--acc);font-weight:600}
+.card-note div:nth-child(3){margin-top:8px;color:var(--muted)}
+</style>
+
+<aside class="sidebar">
+  <div class="sb-logo">
+    <div class="sb-brand"><div class="logo-icon">🎁</div><div class="logo-text"><h2>Birthdays &amp; Holidays</h2><p>Tiếng Anh cho người mới</p></div></div>
+    <div class="prog-wrap"><div class="prog-bar" id="pbar"></div></div>
+  </div>
+  <div class="nav-label">BÀI HỌC</div>
+  <a class="nav-link" href="#s1">🎂 Sinh nhật</a>
+  <a class="nav-link" href="#s2">🧧 Tết Nguyên Đán</a>
+  <a class="nav-link" href="#s3">🎄 Christmas &amp; ngày lễ khác</a>
+  <a class="nav-link" href="#s4">🎉 Lời chúc mừng</a>
+  <a class="nav-link" href="#s5">🎁 Tặng &amp; nhận quà</a>
+  <div class="nav-label">THỰC HÀNH</div>
+  <a class="nav-link" href="#s6">💬 Hội thoại mẫu</a>
+  <a class="nav-link" href="#s7">🛠️ Máy viết thiệp &amp; bài tập</a>
+  <a class="nav-link" href="#s8">🚀 Từ vựng nâng cao</a>
+</aside>
+
+<div class="main">
+<nav class="topnav">
+  <a href="#s1">1 Sinh nhật</a><a href="#s2">2 Tết</a><a href="#s3">3 Christmas</a><a href="#s4">4 Lời chúc</a><a href="#s5">5 Quà</a><a href="#s6">6 Hội thoại</a><a href="#s7">7 Luyện tập</a><a href="#s8">8 Nâng cao</a>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow"><i></i>Dành cho người mới bắt đầu</div>
+  <h1>Sinh nhật, lễ Tết &amp; quà tặng<br><span class="grad">bằng tiếng Anh</span></h1>
+  <p class="hero-desc">Từ chúc sinh nhật bạn bè, giải thích phong tục Tết cho đồng nghiệp nước ngoài, đến chúc Giáng sinh và tặng quà. Bài này giúp bạn nói đúng câu vào đúng dịp, viết thiệp, và biết cách nhận quà thật duyên dáng. Ngày Nhà giáo Việt Nam 20/11 sắp đến, bạn có thể luyện ngay ở phần máy viết thiệp. Bấm vào câu có biểu tượng loa để nghe.</p>
+  <div class="chips"><span class="chip c1">Happy birthday!</span><span class="chip c2">at Tết / on Christmas Day</span><span class="chip c3">Congratulations on</span><span class="chip c4">give sb sth</span><span class="chip c5">Từ vựng nâng cao</span></div>
+</header>
+
+<div class="content">
+
+<section class="section" id="s1">
+  <div class="sec-head"><span class="sec-tag t1">BÀI 1</span><div><div class="sec-title">Sinh nhật</div><div class="sec-sub">Chúc mừng, hỏi tuổi và các hoạt động trong tiệc</div></div></div>
+  <div class="ex-box"><div class="ex-head">CHÚC VÀ HỎI<span class="ex-tag t1">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Happy birthday!</span><span class="ex-vn">Chúc mừng sinh nhật!</span></div>
+    <div class="ex-row"><span class="ex-en say">Happy thirtieth birthday!</span><span class="ex-vn">Chúc mừng sinh nhật tuổi 30!</span></div>
+    <div class="ex-row"><span class="ex-en say">I hope all your wishes come true.</span><span class="ex-vn">Chúc mọi điều ước của bạn thành hiện thực</span></div>
+    <div class="ex-row"><span class="ex-en say">When’s your birthday? / It’s on the fifth of May.</span><span class="ex-vn">Sinh nhật bạn khi nào? / Ngày 5 tháng 5</span></div>
+    <div class="ex-row"><span class="ex-en say">How old are you turning? / I’m turning twenty-five.</span><span class="ex-vn">Bạn bước sang tuổi mấy? / Mình tròn 25</span></div>
+    <div class="ex-row"><span class="ex-en say">How are you going to celebrate?</span><span class="ex-vn">Bạn định ăn mừng thế nào?</span></div>
+  </div></div>
+  <table class="tbl"><thead><tr><th>Hoạt động</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">make a wish</td><td>ước một điều</td><td><span class="say">Close your eyes and make a wish!</span></td></tr>
+  <tr><td class="say">blow out the candles</td><td>thổi nến</td><td><span class="say">Blow out the candles!</span></td></tr>
+  <tr><td class="say">cut the cake</td><td>cắt bánh</td><td><span class="say">Let’s cut the cake.</span></td></tr>
+  <tr><td class="say">sing “Happy Birthday”</td><td>hát mừng sinh nhật</td><td><span class="say">Everyone sang “Happy Birthday”.</span></td></tr>
+  <tr><td class="say">open presents</td><td>mở quà</td><td><span class="say">She opened her presents after dinner.</span></td></tr></tbody></table>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>turn + tuổi, số thứ tự cho sinh nhật</em></div><div class="gr-body">
+<ul><li><span class="fm">turn + số</span>: bước sang tuổi → <span class="say">She turned twenty yesterday.</span></li>
+<li>Sinh nhật lần thứ mấy dùng <b>số thứ tự</b>: <span class="say">my twenty-first birthday</span></li>
+<li>Ngày sinh: <span class="fm">on + ngày</span>, <span class="fm">in + tháng</span> → <span class="say">My birthday is in May, on the fifth.</span></li></ul>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>I am 25 years old next week. Happy birthday 30!</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">I’m turning twenty-five next week. Happy thirtieth birthday!</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s2">
+  <div class="sec-head"><span class="sec-tag t2">BÀI 2</span><div><div class="sec-title">Tết Nguyên Đán</div><div class="sec-sub">Chúc Tết và giải thích phong tục cho người nước ngoài</div></div></div>
+  <div class="ex-box"><div class="ex-head">CHÚC TẾT<span class="ex-tag t2">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Happy Lunar New Year!</span><span class="ex-vn">Chúc mừng năm mới!</span></div>
+    <div class="ex-row"><span class="ex-en say">Wishing you good health and happiness in the new year.</span><span class="ex-vn">Chúc bạn năm mới mạnh khỏe, hạnh phúc</span></div>
+    <div class="ex-row"><span class="ex-en say">May the new year bring you lots of luck.</span><span class="ex-vn">Chúc năm mới nhiều may mắn</span></div>
+    <div class="ex-row"><span class="ex-en say">I wish you success and prosperity.</span><span class="ex-vn">Chúc an khang thịnh vượng</span></div>
+  </div></div>
+  <table class="tbl"><thead><tr><th>Phong tục / món</th><th>Nghĩa</th><th>Giải thích bằng tiếng Anh</th></tr></thead><tbody>
+  <tr><td class="say">lucky money</td><td>tiền lì xì</td><td><span class="say">Adults give children lucky money in red envelopes.</span></td></tr>
+  <tr><td class="say">banh chung</td><td>bánh chưng</td><td><span class="say">It’s a square sticky rice cake with pork and beans.</span></td></tr>
+  <tr><td class="say">peach blossoms / apricot blossoms</td><td>hoa đào / hoa mai</td><td><span class="say">People in the north buy peach blossoms.</span></td></tr>
+  <tr><td class="say">a kumquat tree</td><td>cây quất</td><td><span class="say">A kumquat tree brings good luck.</span></td></tr>
+  <tr><td class="say">first-footing</td><td>xông đất</td><td><span class="say">The first visitor of the year brings luck to the house.</span></td></tr>
+  <tr><td class="say">visit relatives</td><td>đi chúc Tết họ hàng</td><td><span class="say">We visit our relatives on the first day of Tet.</span></td></tr>
+  <tr><td class="say">the ancestral altar</td><td>bàn thờ tổ tiên</td><td><span class="say">We put fruit and food on the ancestral altar.</span></td></tr>
+  <tr><td class="say">clean and decorate the house</td><td>dọn dẹp, trang trí nhà</td><td><span class="say">Before Tet, everyone cleans and decorates the house.</span></td></tr></tbody></table>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Hiện tại đơn để kể phong tục</em></div><div class="gr-body">
+<ul><li>Phong tục lặp lại hằng năm dùng <b>hiện tại đơn</b>: <span class="say">At Tet, we visit our grandparents.</span></li>
+<li>Chủ ngữ chung: <b>people / we / Vietnamese families</b> → <span class="say">Vietnamese families make banh chung.</span></li>
+<li><span class="fm">It’s a kind of + N</span> để giải thích món lạ → <span class="say">Banh chung is a kind of rice cake.</span></li></ul>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>In Tet, we are visiting grandparents. People gives lucky money.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">At Tet, we visit our grandparents. People give lucky money.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s3">
+  <div class="sec-head"><span class="sec-tag t3">BÀI 3</span><div><div class="sec-title">Christmas và các ngày lễ khác</div><div class="sec-sub">Lời chúc và hoạt động theo từng dịp</div></div></div>
+  <table class="tbl"><thead><tr><th>Dịp</th><th>Lời chúc</th><th>Hoạt động</th></tr></thead><tbody>
+  <tr><td>🎄 Christmas (25/12)</td><td><span class="say">Merry Christmas!</span></td><td><span class="say">decorate the Christmas tree, exchange gifts</span></td></tr>
+  <tr><td>🎆 New Year’s Eve (31/12)</td><td><span class="say">Happy New Year!</span></td><td><span class="say">count down, watch the fireworks</span></td></tr>
+  <tr><td>🌕 Mid-Autumn Festival</td><td><span class="say">Happy Mid-Autumn Festival!</span></td><td><span class="say">eat mooncakes, carry lanterns</span></td></tr>
+  <tr><td>💝 Valentine’s Day (14/2)</td><td><span class="say">Happy Valentine’s Day!</span></td><td><span class="say">give flowers and chocolates</span></td></tr>
+  <tr><td>👩‍🏫 Teachers’ Day (20/11)</td><td><span class="say">Happy Teachers’ Day!</span></td><td><span class="say">give flowers and cards to teachers</span></td></tr>
+  <tr><td>👩 Mother’s Day</td><td><span class="say">Happy Mother’s Day!</span></td><td><span class="say">take Mum out for lunch</span></td></tr></tbody></table>
+  <div class="ex-box"><div class="ex-head">NÓI VỀ KỲ NGHỈ<span class="ex-tag t3">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">What are you doing for Christmas?</span><span class="ex-vn">Giáng sinh bạn làm gì?</span></div>
+    <div class="ex-row"><span class="ex-en say">I’m going home for Tet.</span><span class="ex-vn">Tết mình về quê</span></div>
+    <div class="ex-row"><span class="ex-en say">How did you spend the holidays?</span><span class="ex-vn">Kỳ nghỉ bạn làm gì?</span></div>
+    <div class="ex-row"><span class="ex-en say">Happy holidays! (lời chúc chung cuối năm)</span><span class="ex-vn">Chúc kỳ nghỉ lễ vui vẻ!</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Giới từ với ngày lễ: at / on / in</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Giới từ</th><th>Dùng với</th><th>Ví dụ</th></tr></thead><tbody>
+<tr><td><b>at</b></td><td>cả dịp lễ</td><td><span class="say">at Christmas, at Tet, at Easter</span></td></tr>
+<tr><td><b>on</b></td><td>một ngày cụ thể</td><td><span class="say">on Christmas Day, on New Year’s Eve, on my birthday</span></td></tr>
+<tr><td><b>in</b></td><td>tháng, mùa</td><td><span class="say">in December, in spring</span></td></tr></tbody></table>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>In Christmas, we eat turkey. At my birthday, I had a party.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">At Christmas, we eat turkey. On my birthday, I had a party.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s4">
+  <div class="sec-head"><span class="sec-tag t4">BÀI 4</span><div><div class="sec-title">Lời chúc mừng cho mọi dịp</div><div class="sec-sub">Nói trực tiếp và viết vào thiệp</div></div></div>
+  <table class="tbl"><thead><tr><th>Dịp</th><th>Lời chúc</th></tr></thead><tbody>
+  <tr><td>Đám cưới</td><td><span class="say">Congratulations on your wedding! Wishing you a lifetime of happiness.</span></td></tr>
+  <tr><td>Tốt nghiệp</td><td><span class="say">Congratulations on graduating! I’m so proud of you.</span></td></tr>
+  <tr><td>Việc mới</td><td><span class="say">Congratulations on your new job! Good luck!</span></td></tr>
+  <tr><td>Em bé chào đời</td><td><span class="say">Congratulations on the new baby!</span></td></tr>
+  <tr><td>Thi / phỏng vấn</td><td><span class="say">Good luck! Fingers crossed for you.</span></td></tr>
+  <tr><td>Lên chức</td><td><span class="say">Well done on your promotion! You deserve it.</span></td></tr></tbody></table>
+  <div class="ex-box"><div class="ex-head">VIẾT THIỆP<span class="ex-tag t4">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Dear Lan,</span><span class="ex-vn">Lan thân mến, (mở đầu)</span></div>
+    <div class="ex-row"><span class="ex-en say">Wishing you all the best on your special day.</span><span class="ex-vn">Chúc bạn mọi điều tốt đẹp nhất trong ngày đặc biệt</span></div>
+    <div class="ex-row"><span class="ex-en say">I hope this year brings you lots of joy.</span><span class="ex-vn">Mong năm nay mang đến cho bạn thật nhiều niềm vui</span></div>
+    <div class="ex-row"><span class="ex-en say">Love, / Best wishes, / Warm regards,</span><span class="ex-vn">Thân thương / Chúc mọi điều tốt đẹp / Trân trọng (kết thư)</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Congratulations on + N / V-ing và ba cách chúc</em></div><div class="gr-body">
+<ul><li><span class="fm">Congratulations on + N / V-ing</span> → <span class="say">Congratulations on passing your exam!</span> (luôn có <b>s</b>)</li>
+<li><span class="fm">Wishing you + N</span> → <span class="say">Wishing you a happy new year.</span></li>
+<li><span class="fm">I hope + S + V</span> → <span class="say">I hope you have a great day.</span></li>
+<li><span class="fm">May + S + V (nguyên mẫu)</span> (trang trọng) → <span class="say">May all your dreams come true.</span></li></ul>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>Congratulation for your wedding! I wish you have a happy day.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">Congratulations on your wedding! I hope you have a happy day.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s5">
+  <div class="sec-head"><span class="sec-tag t5">BÀI 5</span><div><div class="sec-title">Tặng và nhận quà</div><div class="sec-sub">Trao quà khiêm tốn, nhận quà duyên dáng</div></div></div>
+  <div class="ex-box"><div class="ex-head">KHI TẶNG<span class="ex-tag t5">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">This is for you.</span><span class="ex-vn">Cái này tặng bạn</span></div>
+    <div class="ex-row"><span class="ex-en say">I got you a little something.</span><span class="ex-vn">Mình có chút quà nhỏ cho bạn</span></div>
+    <div class="ex-row"><span class="ex-en say">I hope you like it.</span><span class="ex-vn">Mong bạn thích</span></div>
+    <div class="ex-row"><span class="ex-en say">Go on, open it!</span><span class="ex-vn">Mở ra đi!</span></div>
+    <div class="ex-row"><span class="ex-en say">What should I get my mum for her birthday?</span><span class="ex-vn">Mình nên mua gì tặng sinh nhật mẹ?</span></div>
+  </div></div>
+  <div class="ex-box"><div class="ex-head">KHI NHẬN<span class="ex-tag t2">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Thank you so much! You shouldn’t have!</span><span class="ex-vn">Cảm ơn nhiều! Bạn bày vẽ quá!</span></div>
+    <div class="ex-row"><span class="ex-en say">Wow, it’s beautiful! I love it.</span><span class="ex-vn">Ôi, đẹp quá! Mình thích lắm</span></div>
+    <div class="ex-row"><span class="ex-en say">How did you know I wanted this?</span><span class="ex-vn">Sao bạn biết mình muốn cái này?</span></div>
+    <div class="ex-row"><span class="ex-en say">That’s so thoughtful of you.</span><span class="ex-vn">Bạn thật chu đáo</span></div>
+  </div></div>
+  <div class="info i-tip"><span>💡</span><span><strong>Văn hóa:</strong> ở nhiều nước phương Tây, người nhận thường <strong>mở quà ngay</strong> trước mặt người tặng và khen. Người Việt hay để sau mới mở. Khi nhận quà của bạn bè nước ngoài, hãy thử mở ngay và nói <em>“I love it!”</em>.</span></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>give / buy / get + người + vật, hoặc vật + to / for + người</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Cấu trúc 1</th><th>Cấu trúc 2</th></tr></thead><tbody>
+<tr><td><span class="say">I gave my mum a scarf.</span></td><td><span class="say">I gave a scarf to my mum.</span></td></tr>
+<tr><td><span class="say">I bought him a book.</span></td><td><span class="say">I bought a book for him.</span></td></tr></tbody></table>
+<ul><li><b>give … to</b>, nhưng <b>buy / get … for</b>.</li></ul>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>I gave to my mum a scarf. I bought a book to him.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">I gave my mum a scarf. I bought a book for him.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s6">
+  <div class="sec-head"><span class="sec-tag t3">BÀI 6</span><div><div class="sec-title">Hội thoại mẫu</div><div class="sec-sub">Bấm từng câu để nghe, rồi đóng vai cả hai người</div></div></div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 1: SINH NHẬT BẤT NGỜ</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Surprise! Happy birthday, Lan!</span><small>Bất ngờ chưa! Chúc mừng sinh nhật Lan!</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Oh my goodness! I can’t believe you remembered!</span><small>Trời ơi! Không ngờ các bạn nhớ!</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Of course! Come on, make a wish and blow out the candles.</span><small>Tất nhiên! Nào, ước một điều rồi thổi nến đi.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Okay… done!</span><small>Rồi… xong!</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">I got you a little something. I hope you like it.</span><small>Mình có chút quà nhỏ. Mong bạn thích.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">A scarf! It’s so soft. You shouldn’t have! Thank you so much.</span><small>Khăn quàng! Mềm quá. Bạn bày vẽ quá! Cảm ơn nhiều.</small></div></div>
+  </div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 2: GIẢI THÍCH TẾT CHO ĐỒNG NGHIỆP</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">What is Tet exactly? Everyone is so excited.</span><small>Tết chính xác là gì vậy? Ai cũng háo hức.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">It’s the Lunar New Year, our biggest holiday. Most people go back to their hometowns.</span><small>Đó là Tết Âm lịch, ngày lễ lớn nhất của bọn mình. Hầu hết mọi người về quê.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">What do you usually do?</span><small>Bạn thường làm gì?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">We clean the house, make banh chung, and visit our relatives. Adults also give children lucky money.</span><small>Bọn mình dọn nhà, gói bánh chưng, đi thăm họ hàng. Người lớn còn lì xì cho trẻ em.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">That sounds lovely. How do you say “Happy New Year” in Vietnamese?</span><small>Nghe hay quá. “Happy New Year” tiếng Việt nói thế nào?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">“Chúc mừng năm mới!” Try it!</span><small>“Chúc mừng năm mới!” Thử nói đi!</small></div></div>
+  </div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 3: TRAO QUÀ GIÁNG SINH</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Merry Christmas! This is for you.</span><small>Giáng sinh vui vẻ! Cái này tặng bạn.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Merry Christmas! Can I open it now?</span><small>Giáng sinh vui vẻ! Mình mở bây giờ được không?</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Go on, open it!</span><small>Mở đi!</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">A cookbook! How did you know I wanted this? That’s so thoughtful of you.</span><small>Sách nấu ăn! Sao bạn biết mình muốn cái này? Bạn chu đáo thật.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">You said you wanted to learn to bake. What are you doing for New Year’s Eve?</span><small>Bạn từng nói muốn học làm bánh mà. Giao thừa bạn làm gì?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">We’re going to watch the fireworks by the lake. Come with us!</span><small>Bọn mình đi xem pháo hoa ở hồ. Đi cùng nhé!</small></div></div>
+  </div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 4: NGÀY NHÀ GIÁO 20/11</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Happy Teachers’ Day, Ms Mai! These flowers are for you.</span><small>Chúc mừng Ngày Nhà giáo cô Mai! Hoa này tặng cô ạ.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Oh, how beautiful! Thank you very much.</span><small>Ôi, đẹp quá! Cảm ơn em nhiều.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Thank you for your patience and for everything you’ve taught us.</span><small>Cảm ơn cô đã kiên nhẫn và dạy bọn em mọi điều.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">That’s so kind of you. I’m very proud of all of you.</span><small>Em thật chu đáo. Cô rất tự hào về các em.</small></div></div>
+  </div>
+  <div class="info i-ok"><span>✅</span><span><strong>Cách luyện:</strong> nghe một lượt, nói theo từng câu, rồi che phần tiếng Việt và tự đóng vai. Thử tự giải thích 3 phong tục Tết của gia đình bạn bằng tiếng Anh.</span></div>
+</section>
+
+<section class="section" id="s7">
+  <div class="sec-head"><span class="sec-tag t2">BÀI 7</span><div><div class="sec-title">Máy viết thiệp &amp; bài tập</div><div class="sec-sub">Chọn dịp, người nhận và món quà. Máy viết lời chúc nói trực tiếp, nội dung thiệp, cách trao quà và lời đáp</div></div></div>
+  <div class="gen">
+    <label for="g-o">Dịp<select id="g-o"></select></label>
+    <label for="g-p">Người nhận<select id="g-p"></select></label>
+    <label for="g-g">Quà<select id="g-g"></select></label>
+  </div>
+  <div class="btns"><button class="btn" id="gen-btn">Viết thiệp</button><button class="btn alt" id="rnd-btn">Chọn ngẫu nhiên</button></div>
+  <div class="out" id="gen-out" aria-live="polite"></div>
+
+  <div class="sub-title">Bài tập: điền câu trả lời</div>
+  <p class="t">Câu 1–4: điền một từ vào chỗ trống. Câu 5–8: dịch sang tiếng Anh, gõ cả câu. Không phân biệt hoa thường.</p>
+  <div id="exlist">
+    <div class="exi">1. Congratulations ___ your new job! →<input id="ex1" data-a="on" aria-label="Câu 1"><small>giới từ</small></div>
+    <div class="exi">2. We visit our relatives ___ Tet. →<input id="ex2" data-a="at" aria-label="Câu 2"><small>at / on / in</small></div>
+    <div class="exi">3. I’m ___ twenty-five next week. (bước sang) →<input id="ex3" data-a="turning" aria-label="Câu 3"><small>turn</small></div>
+    <div class="exi">4. I bought a present ___ my sister. →<input id="ex4" data-a="for" aria-label="Câu 4"><small>to hay for?</small></div>
+    <div class="exi">5. Chúc bạn một ngày tuyệt vời →<input id="ex5" data-a="have a wonderful day|have a great day|i hope you have a wonderful day|i hope you have a great day" aria-label="Câu 5"><small>Have a…</small></div>
+    <div class="exi">6. Mình có chút quà nhỏ cho bạn →<input id="ex6" data-a="i got you a little something|i got you a small gift|i bought you a small gift|i have a little something for you|i have a small gift for you" aria-label="Câu 6"><small>a little something</small></div>
+    <div class="exi">7. Bạn bày vẽ quá! (khi nhận quà) →<input id="ex7" data-a="you shouldn't have|you shouldn't have!" aria-label="Câu 7"><small>shouldn’t have</small></div>
+    <div class="exi">8. Chúc bạn năm mới mạnh khỏe →<input id="ex8" data-a="wishing you good health in the new year|i wish you good health in the new year|wishing you good health this new year|i hope you have good health in the new year" aria-label="Câu 8"><small>Wishing you</small></div>
+  </div>
+  <div class="btns" style="margin-top:12px"><button class="btn" id="ex-check">Kiểm tra đáp án</button><button class="btn alt" id="ex-show">Xem đáp án</button><button class="btn alt" id="ex-reset">Làm lại</button></div>
+  <div class="out" id="ex-out" style="min-height:0" aria-live="polite"></div>
+
+  <div class="sub-title">Lộ trình luyện 7 ngày</div>
+  <div class="plan">
+    <div class="day"><b>Ngày 1</b><span><strong>Sinh nhật:</strong> luyện Happy birthday, turn + tuổi, và 5 hoạt động trong tiệc</span></div>
+    <div class="day"><b>Ngày 2</b><span><strong>Tết:</strong> học 8 phong tục, tập giải thích bằng hiện tại đơn</span></div>
+    <div class="day"><b>Ngày 3</b><span><strong>Ngày lễ khác:</strong> học lời chúc từng dịp và giới từ at / on / in</span></div>
+    <div class="day"><b>Ngày 4</b><span><strong>Lời chúc:</strong> luyện Congratulations on, Wishing you, I hope, May</span></div>
+    <div class="day"><b>Ngày 5</b><span><strong>Quà:</strong> luyện tặng và nhận quà, give sb sth / buy sth for sb</span></div>
+    <div class="day"><b>Ngày 6</b><span><strong>Viết thiệp:</strong> dùng máy viết thiệp, chép tay 3 tấm thiệp khác nhau</span></div>
+    <div class="day"><b>Ngày 7</b><span><strong>Ôn tổng hợp:</strong> viết thiệp 20/11 thật tặng thầy cô bằng tiếng Anh</span></div>
+  </div>
+</section>
+
+<section class="section" id="s8">
+  <div class="sec-head"><span class="sec-tag t5">NÂNG CAO</span><div><div class="sec-title">Từ vựng mới để nói chuyện tự nhiên hơn</div><div class="sec-sub">Làm lời chúc và câu chuyện ngày lễ của bạn phong phú hơn</div></div></div>
+  <div class="sub-title">Lễ hội và tiệc tùng</div>
+  <table class="tbl"><thead><tr><th>Từ / cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">a milestone birthday</td><td>sinh nhật mốc (18, 30, 50…)</td><td><span class="say">Thirty is a milestone birthday.</span></td></tr>
+  <tr><td class="say">a surprise party</td><td>tiệc bất ngờ</td><td><span class="say">We’re throwing her a surprise party.</span></td></tr>
+  <tr><td class="say">festive</td><td>không khí lễ hội</td><td><span class="say">The streets look so festive.</span></td></tr>
+  <tr><td class="say">the holiday season</td><td>mùa lễ cuối năm</td><td><span class="say">Shops are busy during the holiday season.</span></td></tr>
+  <tr><td class="say">a family reunion</td><td>đoàn tụ gia đình</td><td><span class="say">Tet is a time for family reunions.</span></td></tr>
+  <tr><td class="say">ring in the new year</td><td>đón năm mới</td><td><span class="say">We rang in the new year with fireworks.</span></td></tr>
+  <tr><td class="say">prosperity</td><td>sự thịnh vượng</td><td><span class="say">Red is the colour of luck and prosperity.</span></td></tr>
+  <tr><td class="say">superstition</td><td>điều kiêng kỵ, mê tín</td><td><span class="say">It’s a superstition not to sweep the floor on New Year’s Day.</span></td></tr></tbody></table>
+  <div class="sub-title">Quà tặng</div>
+  <table class="tbl"><thead><tr><th>Từ / cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">thoughtful</td><td>chu đáo</td><td><span class="say">What a thoughtful gift!</span></td></tr>
+  <tr><td class="say">sentimental</td><td>có giá trị tình cảm</td><td><span class="say">This watch has sentimental value.</span></td></tr>
+  <tr><td class="say">a token of appreciation</td><td>chút lòng thành</td><td><span class="say">Please accept this as a token of our appreciation.</span></td></tr>
+  <tr><td class="say">gift-wrap</td><td>gói quà</td><td><span class="say">Could you gift-wrap it, please?</span></td></tr>
+  <tr><td class="say">Secret Santa</td><td>trò tặng quà bí mật</td><td><span class="say">Our office does Secret Santa every year.</span></td></tr>
+  <tr><td class="say">regift</td><td>đem quà được tặng đi tặng lại</td><td><span class="say">Is it rude to regift something?</span></td></tr></tbody></table>
+  <div class="sub-title">Cụm giúp cuộc trò chuyện trôi chảy</div>
+  <div class="ex-box"><div class="ex-head">LÀM CHO HỘI THOẠI TỰ NHIÊN<span class="ex-tag t5">Nâng cao</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">Many happy returns!</span><span class="ex-vn">Chúc sinh nhật vui vẻ và còn nhiều sinh nhật nữa!</span></div>
+    <div class="ex-row"><span class="ex-en say">It’s the thought that counts.</span><span class="ex-vn">Quan trọng là tấm lòng</span></div>
+    <div class="ex-row"><span class="ex-en say">Here’s to a wonderful year ahead! Cheers!</span><span class="ex-vn">Nâng ly vì một năm tuyệt vời phía trước! Dô!</span></div>
+    <div class="ex-row"><span class="ex-en say">Out with the old, in with the new!</span><span class="ex-vn">Tống cựu nghênh tân!</span></div>
+    <div class="ex-row"><span class="ex-en say">Season’s greetings!</span><span class="ex-vn">Chúc mừng mùa lễ hội! (trang trọng, trên thiệp)</span></div>
+    <div class="ex-row"><span class="ex-en say">You only turn thirty once!</span><span class="ex-vn">Đời chỉ có một lần ba mươi!</span></div>
+  </div></div>
+  <div class="cmp"><div class="bad"><b>❌ NGHE CỨNG</b><div>Happy new year. I wish you healthy. This is gift. Thank you for receive.</div></div><div class="good"><b>✔ TỰ NHIÊN HƠN</b><div class="say">Happy Lunar New Year! Wishing you good health and prosperity. I got you a little something. It’s just a token of appreciation, but I hope you like it.</div></div></div>
+  <div class="info i-tip"><span>💡</span><span><strong>Mẹo:</strong> thiệp tiếng Anh thường ngắn: 1 câu chúc, 1 câu cá nhân (nhắc kỷ niệm chung hoặc cảm ơn), rồi ký tên. Câu cá nhân là thứ khiến tấm thiệp đáng nhớ.</span></div>
+
+  <div class="sub-title">Tự kiểm tra</div>
+  <ul class="chk">
+    <li><label><input type="checkbox" id="c1">Tôi chúc sinh nhật và nói được <strong>turn + tuổi</strong></label></li>
+    <li><label><input type="checkbox" id="c2">Tôi giải thích được ít nhất 4 phong tục Tết bằng hiện tại đơn</label></li>
+    <li><label><input type="checkbox" id="c3">Tôi biết lời chúc cho Christmas, năm mới, Trung thu, 20/11</label></li>
+    <li><label><input type="checkbox" id="c4">Tôi dùng đúng <strong>at Christmas / on Christmas Day / in December</strong></label></li>
+    <li><label><input type="checkbox" id="c5">Tôi dùng đúng <strong>Congratulations on + N / V-ing</strong></label></li>
+    <li><label><input type="checkbox" id="c6">Tôi tặng và nhận quà lịch sự, dùng <strong>give sb sth / buy sth for sb</strong></label></li>
+    <li><label><input type="checkbox" id="c7">Tôi dùng được ít nhất 5 từ vựng nâng cao</label></li>
+  </ul>
+</section>
+
+</div>
+<div class="footer">🎁 Giao tiếp tiếng Anh: Birthdays &amp; Holidays · Dành cho người mới bắt đầu · 2026</div>
+</div>
+
+<div class="audio-bar">
+  <b>🔊 Audio</b>
+  <div class="ab-g"><button data-acc="en-GB" class="on">Anh-Anh</button><button data-acc="en-US">Anh-Mỹ</button></div>
+  <div class="ab-g"><button data-rate="0.6">Chậm</button><button data-rate="0.85" class="on">Vừa</button><button data-rate="1">Nhanh</button></div>
+</div>
+
+<script>
+(function(){
+var doc=document.documentElement,bar=document.getElementById('pbar');
+addEventListener('scroll',function(){bar.style.width=(doc.scrollTop/Math.max(1,doc.scrollHeight-doc.clientHeight)*100)+'%'});
+var links=document.querySelectorAll('.nav-link,.topnav a');
+if('IntersectionObserver' in window)document.querySelectorAll('.section[id]').forEach(function(s){
+  new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;
+    links.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id)});
+  })},{rootMargin:'-20% 0px -70% 0px'}).observe(s);
+});
+
+/* Audio */
+var S=window.speechSynthesis,st={acc:'en-GB',rate:.85},cur=null;
+function voice(){if(!S)return null;var v=S.getVoices().filter(function(x){return x.lang.replace('_','-').toLowerCase()===st.acc.toLowerCase()});
+  return v.find(function(x){return /google|natural|premium|enhanced/i.test(x.name)})||v[0]||null}
+function say(el){
+  if(cur)cur.classList.remove('playing');
+  if(!S){el.title='Trình duyệt này không hỗ trợ đọc audio';return}
+  S.cancel();cur=el;el.classList.add('playing');
+  var t=el.textContent.replace(/\([^)]*\)/g,'').replace(/“Chúc mừng năm mới!”/g,'Chook mung nam moy!').replace(/\s+/g,' ').replace(/\s*\/\s*/g,'. ').replace(/→/g,'. ').replace(/\bTet\b/g,'Tet').replace(/banh chung/g,'bun chung').replace(/\bMs Mai\b/g,'Miz My').replace(/\bMr Hung\b/g,'Mister Hoong').trim();
+  var u=new SpeechSynthesisUtterance(t);u.lang=st.acc;u.rate=st.rate;var v=voice();if(v)u.voice=v;
+  u.onend=u.onerror=function(){el.classList.remove('playing')};S.speak(u);
+}
+function prep(root){root.querySelectorAll('.say').forEach(function(e){e.tabIndex=0;e.setAttribute('role','button')})}
+prep(document);
+document.addEventListener('click',function(e){var el=e.target.closest('.say');if(el)say(el)});
+document.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.classList&&e.target.classList.contains('say')){e.preventDefault();say(e.target)}});
+document.querySelectorAll('.audio-bar button').forEach(function(b){b.addEventListener('click',function(){
+  b.parentElement.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');
+  if(b.dataset.acc)st.acc=b.dataset.acc;if(b.dataset.rate)st.rate=+b.dataset.rate;
+})});
+
+/* ===== Máy viết thiệp =====
+   OCC: [nhãn, lời chúc nói, chúc thân mật, chúc trang trọng, người nhận phù hợp (-1 = ai cũng được)] */
+var OCC=[['🎂 Sinh nhật','Happy birthday!','I hope you have an amazing day and a fantastic year ahead.','Wishing you a wonderful birthday and a happy, healthy year ahead.',-1],
+ ['🧧 Tết','Happy Lunar New Year!','Wishing you lots of luck, health and happiness this year.','Wishing you and your family good health and prosperity in the new year.',-1],
+ ['🎄 Giáng sinh','Merry Christmas!','Have a wonderful Christmas with your family!','Wishing you a peaceful Christmas and a happy New Year.',-1],
+ ['💍 Đám cưới','Congratulations on your wedding!','Wishing you both a lifetime of love and happiness.','Wishing you both a lifetime of love and happiness.',-1],
+ ['🎓 Tốt nghiệp','Congratulations on your graduation!','You worked so hard. I’m so proud of you!','Your hard work has paid off. Best of luck in the future.',-1],
+ ['💼 Việc mới','Congratulations on your new job!','They’re lucky to have you. Good luck!','Wishing you every success in your new role.',-1],
+ ['👩‍🏫 Ngày Nhà giáo 20/11','Happy Teachers’ Day!','Thanks for everything you’ve taught me!','Thank you for your patience and guidance. I am truly grateful.',3],
+ ['👩 Ngày của Mẹ','Happy Mother’s Day!','Thank you for always being there for me. I love you!','Thank you for always being there for me. I love you!',1]];
+/* PER: [nhãn, xưng hô trên thiệp, trang trọng?, lời kết, ký tên] */
+var PER=[['Bạn thân (Lan)','Dear Lan,',0,'Love,','Ha'],['Mẹ','Dear Mum,',0,'Lots of love,','your daughter Ha'],['Sếp (Mr Hung)','Dear Mr Hung,',1,'Best wishes,','Ha'],['Cô giáo (Ms Mai)','Dear Ms Mai,',1,'With gratitude,','your student Ha']];
+/* GIFT: [nhãn, vật, lời khen thân mật, lời khen trang trọng] */
+var GIFT=[['Không quà','','',''],['Hoa','some flowers','They’re beautiful! They smell lovely.','What beautiful flowers!'],
+ ['Sách','a book','Oh, I’ve wanted to read this! How did you know?','What a thoughtful choice. I’ll enjoy reading it.'],
+ ['Khăn quàng','a scarf','It’s so soft! I love the colour.','It’s lovely. I’ll wear it this winter.'],
+ ['Sô-cô-la','a box of chocolates','Yum! You know I love chocolate.','That’s very kind of you.']];
+function fill(id,arr,val){var s=document.getElementById(id);arr.forEach(function(x,i){s.add(new Option(x[0],i))});s.value=val;s.addEventListener('change',show);return s}
+var so=fill('g-o',OCC,6),sp=fill('g-p',PER,3),sg=fill('g-g',GIFT,1);
+so.addEventListener('change',function(){var t=OCC[+so.value][4];if(t>-1&&+sp.value!==t){sp.value=t;show()}});
+var out=document.getElementById('gen-out');
+function line(who,txt){var d=document.createElement('div');var l=document.createElement('span');l.className='lbl';l.textContent=who+' ';var s=document.createElement('span');s.className='say';s.textContent=txt;d.append(l,s);out.append(d)}
+function show(){
+  var o=OCC[+so.value],p=PER[+sp.value],g=GIFT[+sg.value],fm=p[2];
+  out.innerHTML='';
+  var nm=p[1].replace('Dear ','').replace(',','');
+  line('NÓI',o[1].replace(/!$/,', '+nm+'!')+' '+(fm?o[3]:o[2]));
+  if(g[1]){
+    line('TRAO QUÀ',fm?'This is a small gift from me. I hope you like it.':'I got you a little something. I hope you like it!');
+    line('NGƯỜI NHẬN',fm?'Oh, thank you. '+g[3]:'You shouldn’t have! '+g[2]);
+  }else{
+    line('NGƯỜI NHẬN',fm?'Thank you very much. That’s very kind of you.':'Aw, thank you so much!');
+  }
+  var card=document.createElement('div');card.className='card-note';
+  [p[1],o[1]+' '+(fm?o[3]:o[2]),p[3],p[4].charAt(0).toUpperCase()+p[4].slice(1)].forEach(function(t,i){var el=document.createElement('div');el.className=i===1?'say':'';el.textContent=t;card.append(el)});
+  var lb=document.createElement('div');lb.className='lbl';lb.style.marginTop='10px';lb.textContent='NỘI DUNG THIỆP';out.append(lb,card);
+  var w=document.createElement('span');w.className='why';
+  var note='';
+  if(o[4]>-1&&o[4]!==+sp.value)note=' Lưu ý: lời chúc này thường dành cho '+(o[4]===3?'thầy cô':'mẹ')+', nên hãy chọn lại người nhận.';
+  w.innerHTML='Người nhận '+(fm?'là cấp trên / thầy cô nên dùng giọng <b>trang trọng</b> (Wishing you…, Thank you for…), kết thư bằng <b>'+p[3].replace(',','')+'</b>':'thân thiết nên dùng giọng <b>thân mật</b>, kết thư bằng <b>'+p[3].replace(',','')+'</b>')+'. '+(g[1]?'Khi trao quà: <b>'+(fm?'This is a small gift from me':'I got you a little something')+'</b>; người nhận khen quà ngay.':'')+note;
+  out.append(w);prep(out);
+}
+document.getElementById('gen-btn').addEventListener('click',show);
+document.getElementById('rnd-btn').addEventListener('click',function(){
+  so.value=Math.floor(Math.random()*OCC.length);sp.value=Math.floor(Math.random()*PER.length);sg.value=Math.floor(Math.random()*GIFT.length);show();
+});
+show();
+
+/* Bài tập */
+var inputs=document.querySelectorAll('#exlist input'),exo=document.getElementById('ex-out');
+function cap(s){return s.charAt(0).toUpperCase()+s.slice(1)}
+function norm(s){return s.toLowerCase().replace(/[’‘`]/g,"'").replace(/[.!?]+$/,'').replace(/,/g,'').replace(/\s+/g,' ').trim()}
+document.getElementById('ex-check').addEventListener('click',function(){
+  var ok=0;
+  inputs.forEach(function(i){
+    var good=i.dataset.a.split('|').some(function(a){return norm(a)===norm(i.value)});
+    i.classList.remove('ok','no');i.classList.add(good?'ok':'no');if(good)ok++;
+  });
+  exo.style.minHeight='';
+  exo.textContent=ok===inputs.length?'🎉 Chính xác '+ok+'/'+inputs.length+'. Lời chúc của bạn chuẩn rồi!':'Đúng '+ok+'/'+inputs.length+'. Các ô viền đỏ cần xem lại; đọc lại Bài 1–5, hoặc bấm “Xem đáp án”.';
+});
+document.getElementById('ex-show').addEventListener('click',function(){
+  inputs.forEach(function(i){
+    var k=i.parentElement.querySelector('.key');
+    if(!k){k=document.createElement('span');k.className='key';i.parentElement.append(k)}
+    var a=i.dataset.a.split('|')[0].replace(/'/g,'’').replace(/\bi\b/g,'I');k.textContent='Đáp án: '+(a.indexOf(' ')>-1?cap(a):a);
+  });
+});
+document.getElementById('ex-reset').addEventListener('click',function(){
+  inputs.forEach(function(i){i.value='';i.classList.remove('ok','no')});
+  document.querySelectorAll('#exlist .key').forEach(function(k){k.remove()});
+  exo.textContent='';exo.style.minHeight='0';
+});
+})();
+</script>
+
+<script src="nav.js" defer></script>
+<script src="writing-data.js" defer></script>
+<script src="writing.js" defer></script>
+<script src="review.js" defer></script>
+<script src="cheatsheet-data/Birthdays-and-Holidays.js" defer></script>
+<script src="cheatsheet.js" defer></script>
+</body></html>

@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Cheat sheet toàn khóa A1</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Cùng theme tối với các bài A1; màu nhấn tím cho phần tổng hợp */
+:root{color-scheme:dark;
+--bg:#080810;--s1:#0e0e1c;--s2:#131326;--s3:#18182e;--border:#222240;--border2:#2c2c50;--text:#e6e6f2;--muted:#8a8ab8;--faint:#4a4a78;
+--acc:#a07af4;--acc-dim:rgba(160,122,244,.12);--sk:#a07af4;--sk-dim:rgba(160,122,244,.12);--oc:#38bdf8;--oc-dim:rgba(56,189,248,.13);--ins:#40d88e;--ins-dim:rgba(64,216,142,.12);
+--yl:#ffd060;--yl-dim:rgba(255,208,96,.11);--au:#ff6584;--au-dim:rgba(255,101,132,.12);--teal:#30d8c0;--code-bg:#05050e;
+--tip-bg:rgba(91,168,255,.10);--tip-bd:rgba(91,168,255,.25);--tip-fg:#8ab8f0;--line:rgba(255,255,255,.05);
+--font:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+--gl:max(56px,env(safe-area-inset-left,0px));--gr:max(56px,env(safe-area-inset-right,0px))}
+*{margin:0;padding:0;box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 130px)}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.7;font-size:15px;overflow-x:hidden}
+.sidebar{position:fixed;left:0;top:0;width:270px;height:100%;background:var(--s1);border-right:1px solid var(--border);overflow-y:auto;z-index:400;padding-top:env(safe-area-inset-top,0px);padding-bottom:80px}
+.sb-logo{padding:20px 18px 16px;border-bottom:1px solid var(--border)}
+.sb-brand{display:flex;align-items:center;gap:11px}
+.logo-icon{width:44px;height:44px;border-radius:11px;background:linear-gradient(135deg,var(--acc),var(--oc));display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 0 26px rgba(160,122,244,.3)}
+.logo-text h2{font-size:15px;font-weight:800}.logo-text p{font-size:10.5px;color:var(--muted)}
+.nav-label{padding:14px 18px 4px;font-size:9.5px;font-weight:700;letter-spacing:1.6px;color:var(--faint);text-transform:uppercase}
+.nav-link{display:flex;align-items:center;gap:8px;padding:5px 18px;color:var(--muted);text-decoration:none;font-size:12.5px;font-weight:600;border-left:2px solid transparent}
+.nav-link:hover{color:var(--text);background:var(--acc-dim);border-left-color:var(--acc)}
+.nav-link .n{margin-left:auto;font-size:10px;font-family:var(--mono);color:var(--ins)}
+.main{margin-left:270px}
+.hero{padding-block:64px 44px;padding-left:var(--gl);padding-right:var(--gr);border-bottom:1px solid var(--border);background:radial-gradient(ellipse 65% 55% at 75% 22%,rgba(160,122,244,.12),transparent 60%),radial-gradient(ellipse 50% 55% at 10% 82%,rgba(56,189,248,.07),transparent 55%),var(--bg)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--acc-dim);border:1px solid rgba(160,122,244,.38);color:var(--acc);padding:5px 16px;border-radius:100px;font-size:11.5px;font-weight:700;margin-bottom:20px}
+.hero h1{font-size:44px;font-weight:900;letter-spacing:-2px;line-height:1.08;margin-bottom:16px;text-wrap:balance}
+.grad{background:linear-gradient(135deg,var(--acc),var(--oc));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-desc{font-size:15.5px;color:var(--muted);max-width:680px;margin-bottom:22px}
+.stats{display:flex;flex-wrap:wrap;gap:8px}
+.stat{background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:8px 14px;font-size:12px;color:var(--muted)}
+.stat b{display:block;font-size:20px;color:var(--text);font-variant-numeric:tabular-nums;line-height:1.3}
+/* Thanh công cụ dính trên cùng */
+.tools{position:sticky;top:env(safe-area-inset-top,0px);z-index:300;background:rgba(8,8,16,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:12px var(--gr) 12px var(--gl);display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.tools input,.tools select{background:var(--code-bg);border:1px solid var(--border2);border-radius:8px;padding:9px 12px;color:var(--text);font:inherit;font-size:13.5px;min-width:0}
+.tools input{flex:1 1 280px}
+.tools select{flex:0 1 210px}
+.btn{background:var(--s3);color:var(--muted);border:1px solid var(--border2);border-radius:8px;padding:8px 12px;font:inherit;font-weight:700;font-size:12.5px;cursor:pointer;white-space:nowrap}
+.btn:hover{color:var(--text)}
+.btn[aria-pressed="true"]{background:var(--acc-dim);color:var(--acc);border-color:var(--acc)}
+.tools input:focus-visible,.tools select:focus-visible,.btn:focus-visible,summary:focus-visible,.say:focus-visible,a:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.result{width:100%;font-size:12px;color:var(--muted);min-height:18px}
+.content{padding-block:28px 56px;padding-left:var(--gl);padding-right:var(--gr);max-width:calc(1100px + 56px)}
+.grp-title{font-size:12px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--faint);margin:26px 0 12px;display:flex;align-items:center;gap:12px}
+.grp-title::after{content:'';flex:1;height:1px;background:var(--border)}
+details.lesson{background:var(--s1);border:1px solid var(--border);border-radius:13px;margin-bottom:10px;overflow:hidden}
+details.lesson[open]{border-color:var(--border2)}
+details.lesson>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;padding:14px 18px;user-select:none}
+details.lesson>summary::-webkit-details-marker{display:none}
+summary .e{font-size:22px;width:30px;text-align:center;flex-shrink:0}
+summary .t{flex:1;min-width:0}
+summary .t b{display:block;font-size:15.5px;font-weight:800}
+summary .t small{display:block;font-size:11.5px;color:var(--muted)}
+summary .go{font-size:12px;color:var(--oc);text-decoration:none;border-bottom:1px dotted var(--oc);white-space:nowrap}
+summary .chev{color:var(--faint);transition:transform .2s;font-size:13px}
+details[open]>summary .chev{transform:rotate(90deg)}
+details[open]>summary{border-bottom:1px solid var(--border);background:var(--s2)}
+.lesson-body{padding:6px 20px 22px}
+.loading{color:var(--muted);font-size:14px;padding:20px 0}
+.say{cursor:pointer;border-bottom:1px dotted var(--oc);border-radius:3px}
+.say:hover{color:var(--acc);background:var(--acc-dim)}
+.say.playing{color:var(--ins);background:var(--ins-dim)}
+mark.hl{background:rgba(255,208,96,.28);color:inherit;border-radius:3px;padding:0 1px}
+.footer{border-top:1px solid var(--border);padding-block:28px 90px;padding-left:var(--gl);padding-right:var(--gr);font-size:12px;color:var(--muted)}
+.audio-bar{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:500;display:flex;gap:10px;align-items:center;background:var(--s2);border:1px solid var(--border2);border-radius:12px;padding:8px 12px;box-shadow:0 8px 28px rgba(0,0,0,.5);font-size:12px;color:var(--muted)}
+.audio-bar b{color:var(--acc)}.ab-g{display:flex;gap:4px}
+.audio-bar button{background:var(--s3);color:var(--muted);border:1px solid var(--border);border-radius:7px;padding:4px 10px;font:inherit;font-weight:700;cursor:pointer}
+.audio-bar button.on{background:var(--acc-dim);color:var(--acc);border-color:var(--acc)}
+@media(max-width:900px){
+:root{--gl:max(16px,env(safe-area-inset-left,0px));--gr:max(16px,env(safe-area-inset-right,0px))}
+.sidebar{display:none}.main{margin-left:0}.hero h1{font-size:30px;letter-spacing:-1.2px}.hero{padding-block:40px 32px}
+.tools select{flex:1 1 140px}
+.lesson-body{padding:4px 14px 18px}
+summary .go{display:none}
+.audio-bar{left:calc(8px + env(safe-area-inset-left,0px));right:calc(8px + env(safe-area-inset-right,0px));justify-content:center;flex-wrap:wrap}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{
+  body{background:#fff;color:#000}
+  .sidebar,.tools,.audio-bar,.hero .stats,#a1-site-nav,.footer{display:none!important}
+  .main{margin:0}.hero{padding:0 0 12px;background:none;border:none}.content{padding:0;max-width:none}
+  details.lesson{border:1px solid #bbb;break-inside:auto;background:#fff}
+  details.lesson:not([open]){display:none}
+  summary .go,summary .chev{display:none}
+  *{color:#000!important;background:transparent!important;-webkit-text-fill-color:#000!important;box-shadow:none!important}
+  .cs-box,.cs-gr,.cs-goal,.cs-tblw{border-color:#bbb!important;break-inside:avoid}
+  .cs-fm{border:1px solid #999}
+}
+</style>
+</head>
+<body>
+
+<aside class="sidebar">
+  <div class="sb-logo"><div class="sb-brand"><div class="logo-icon">📋</div><div class="logo-text"><h2>Cheat sheet toàn khóa</h2><p>Mọi bài A1 trên một trang</p></div></div></div>
+  <div id="side-list"></div>
+</aside>
+
+<div class="main">
+<header class="hero">
+  <div class="eyebrow">📋 Tổng hợp A1</div>
+  <h1>Cheat sheet<br><span class="grad">của toàn bộ khóa học</span></h1>
+  <p class="hero-desc">Toàn bộ mẫu câu, ngữ pháp, lỗi hay gặp, từ vựng và mẹo của tất cả các bài, gom về một chỗ để ôn nhanh. Gõ vào ô tìm kiếm để tra một từ hay một mẫu câu trong mọi bài, hoặc chọn một phần, ví dụ “Lỗi hay gặp”, để ôn riêng phần đó của cả khóa. Bấm vào câu tiếng Anh để nghe.</p>
+  <div class="stats" id="stats"></div>
+</header>
+
+<div class="tools" role="search">
+  <input id="q" type="search" placeholder="Tìm từ, mẫu câu hoặc lỗi… (gõ tiếng Anh hoặc tiếng Việt, không cần dấu)" aria-label="Tìm trong cheat sheet" autocomplete="off">
+  <select id="part" aria-label="Chọn phần">
+    <option value="">Tất cả các phần</option>
+    <option value="phrases">💬 Mẫu câu theo tình huống</option>
+    <option value="grammar">📐 Ngữ pháp cần nhớ</option>
+    <option value="mistakes">⚠️ Lỗi người Việt hay mắc</option>
+    <option value="vocab">📚 Từ vựng cốt lõi</option>
+    <option value="goal tips">🎯 Mục tiêu và 💡 mẹo</option>
+  </select>
+  <button class="btn" type="button" id="open-all">Mở tất cả</button>
+  <button class="btn" type="button" id="close-all">Thu gọn</button>
+  <button class="btn" type="button" id="hide-vi" aria-pressed="false">🙈 Che nghĩa</button>
+  <button class="btn" type="button" id="print">🖨️ In</button>
+  <div class="result" id="result" aria-live="polite"></div>
+</div>
+
+<div class="content" id="content"><p class="loading" id="loading">Đang tải cheat sheet của các bài…</p></div>
+<div class="footer">📋 Cheat sheet toàn khóa A1 · Nội dung lấy từ phần cheat sheet ở cuối mỗi bài · 2026</div>
+</div>
+
+<div class="audio-bar">
+  <b>🔊 Audio</b>
+  <div class="ab-g"><button data-acc="en-GB" class="on">Anh-Anh</button><button data-acc="en-US">Anh-Mỹ</button></div>
+  <div class="ab-g"><button data-rate="0.6">Chậm</button><button data-rate="0.85" class="on">Vừa</button><button data-rate="1">Nhanh</button></div>
+</div>
+
+<script src="nav.js"></script>
+<script src="cheatsheet.js"></script>
+<script>
+(function(){
+var esc=A1CS.esc, content=document.getElementById('content');
+/* Danh sách bài theo đúng thứ tự menu; bỏ các trang tổng hợp */
+var SKIP={'Writing-Paragraphs.html':1,'Cheat-Sheet.html':1};
+var lessons=[];
+(window.A1_PAGES||[]).forEach(function(G){G.items.forEach(function(p){if(!SKIP[p[0]])lessons.push({file:p[0],e:p[1],title:p[2],group:G.group,name:p[0].replace(/\.html$/,'')})})});
+
+/* Nạp lần lượt từng tệp dữ liệu; mỗi tệp gán window.A1_CHEAT */
+var i=0;
+function loadNext(){
+  if(i>=lessons.length)return render();
+  var L=lessons[i],s=document.createElement('script');
+  window.A1_CHEAT=null;
+  s.src='cheatsheet-data/'+encodeURIComponent(L.name)+'.js';
+  s.onload=function(){L.data=window.A1_CHEAT;i++;loadNext()};
+  s.onerror=function(){i++;loadNext()};
+  document.getElementById('loading').textContent='Đang tải cheat sheet… '+(i+1)+'/'+lessons.length;
+  document.body.appendChild(s);
+}
+loadNext();
+
+function fold(s){return s.normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/đ/g,'d').replace(/Đ/g,'d').replace(/[’‘`]/g,"'").toLowerCase()}
+
+var items=[];
+function render(){
+  lessons=lessons.filter(function(L){return L.data});
+  var tot={p:0,g:0,m:0,v:0};
+  var h='',side='',grp='';
+  lessons.forEach(function(L){
+    var D=L.data,np=0;(D.phrases||[]).forEach(function(g){np+=g.rows.length});
+    tot.p+=np;tot.g+=(D.grammar||[]).length;tot.m+=(D.mistakes||[]).length;tot.v+=(D.vocab||[]).length;
+    if(L.group!==grp){grp=L.group;h+='<div class="grp-title" data-grp="'+esc(grp)+'">'+esc(grp)+'</div>';side+='<div class="nav-label" data-grp="'+esc(grp)+'">'+esc(grp)+'</div>'}
+    var id='cs-'+L.name;
+    h+='<details class="lesson" id="'+id+'" data-grp="'+esc(grp)+'"><summary><span class="e">'+L.e+'</span><span class="t"><b>'+esc(L.title)+'</b>'+
+      '<small>'+np+' mẫu câu · '+(D.grammar||[]).length+' điểm ngữ pháp · '+(D.mistakes||[]).length+' lỗi hay gặp · '+(D.vocab||[]).length+' từ vựng</small></span>'+
+      '<a class="go" href="'+encodeURI(L.file)+'">Mở bài học →</a><span class="chev">▶</span></summary>'+
+      '<div class="lesson-body">'+A1CS.body(D)+'</div></details>';
+    side+='<a class="nav-link" href="#'+id+'" data-for="'+id+'">'+L.e+' '+esc(L.title)+'<span class="n"></span></a>';
+  });
+  content.innerHTML=h;
+  document.getElementById('side-list').innerHTML=side;
+  document.getElementById('stats').innerHTML=
+    '<div class="stat"><b>'+lessons.length+'</b>bài học</div><div class="stat"><b>'+tot.p+'</b>mẫu câu</div>'+
+    '<div class="stat"><b>'+tot.g+'</b>điểm ngữ pháp</div><div class="stat"><b>'+tot.m+'</b>lỗi hay gặp</div><div class="stat"><b>'+tot.v+'</b>từ vựng</div>';
+  content.querySelectorAll('.say').forEach(function(e){e.tabIndex=0;e.setAttribute('role','button')});
+  /* Các mục có thể tìm: mỗi dòng mẫu câu, mỗi điểm ngữ pháp, mỗi lỗi, mỗi từ, mỗi mục tiêu và mẹo */
+  content.querySelectorAll('details.lesson').forEach(function(d){
+    d.querySelectorAll('.cs-goal li,.cs-ph,.cs-gr,.cs-tbl tbody tr,.cs-voc>div,.cs-tips li').forEach(function(el){
+      items.push({el:el,d:d,part:el.closest('[data-part]').dataset.part,text:fold(el.textContent),html:el.innerHTML});
+    });
+  });
+  /* Bấm tên bài ở sidebar thì mở bài đó */
+  document.getElementById('side-list').addEventListener('click',function(e){
+    var a=e.target.closest('[data-for]');if(a)document.getElementById(a.dataset.for).open=true;
+  });
+  /* Link "Mở bài học" không làm bật/tắt details */
+  content.addEventListener('click',function(e){if(e.target.closest('summary .go'))e.stopPropagation()},true);
+  if(location.hash){var t=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(t){t.open=true;t.scrollIntoView({behavior:'instant'})}}
+  apply();
+}
+
+/* Tìm kiếm + lọc phần */
+var qEl=document.getElementById('q'),partEl=document.getElementById('part'),res=document.getElementById('result'),timer=null,lastFiltered=false;
+function highlight(it,q){
+  if(!q){if(it.hl){it.el.innerHTML=it.html;it.hl=false}return}
+  /* tô từ khóa trong các nút chữ, giữ nguyên thẻ */
+  it.el.innerHTML=it.html;it.hl=true;
+  var walker=document.createTreeWalker(it.el,NodeFilter.SHOW_TEXT),nodes=[],n;
+  while((n=walker.nextNode()))nodes.push(n);
+  nodes.forEach(function(node){
+    var f=fold(node.nodeValue),k=f.indexOf(q);
+    if(k<0||f.length!==node.nodeValue.length)return;
+    var r=document.createRange();r.setStart(node,k);r.setEnd(node,k+q.length);
+    var m=document.createElement('mark');m.className='hl';r.surroundContents(m);
+  });
+}
+function apply(){
+  var q=fold(qEl.value.trim()),parts=partEl.value?partEl.value.split(' '):null,filtered=!!(q||parts);
+  var perLesson={},hits=0;
+  items.forEach(function(it){
+    var ok=(!parts||parts.indexOf(it.part)>=0)&&(!q||it.text.indexOf(q)>=0);
+    it.el.hidden=!ok;
+    if(ok){hits++;perLesson[it.d.id]=(perLesson[it.d.id]||0)+1}
+    highlight(it,ok?q:'');
+  });
+  content.querySelectorAll('details.lesson').forEach(function(d){
+    var n=perLesson[d.id]||0;
+    d.hidden=filtered&&!n;
+    if(filtered&&n)d.open=true;
+    else if(!filtered&&lastFiltered)d.open=false;
+    /* ẩn phần hoặc nhóm không còn mục nào */
+    d.querySelectorAll('[data-part]').forEach(function(p){
+      var any=p.querySelector('.cs-goal li:not([hidden]),.cs-ph:not([hidden]),.cs-gr:not([hidden]),tbody tr:not([hidden]),.cs-voc>div:not([hidden]),.cs-tips li:not([hidden])')||(p.matches('.cs-goal')&&p.querySelector('li:not([hidden])'));
+      p.hidden=!any;
+    });
+    d.querySelectorAll('.cs-box').forEach(function(b){b.hidden=!b.querySelector('.cs-ph:not([hidden])')});
+    var link=document.querySelector('[data-for="'+d.id+'"]');
+    if(link){link.hidden=d.hidden;link.querySelector('.n').textContent=q&&n?n:''}
+  });
+  document.querySelectorAll('[data-grp]').forEach(function(g){
+    if(g.tagName==='DETAILS')return;
+    var any=document.querySelector('details.lesson[data-grp="'+g.dataset.grp+'"]:not([hidden])');
+    g.hidden=!any;
+  });
+  var nl=Object.keys(perLesson).length;
+  res.textContent=!filtered?'Bấm vào tên một bài để mở cheat sheet của bài đó.':
+    hits?('Tìm thấy '+hits+' mục trong '+nl+' bài.'):'Không tìm thấy mục nào. Thử từ khác hoặc bỏ dấu tiếng Việt.';
+  lastFiltered=filtered;
+}
+qEl.addEventListener('input',function(){clearTimeout(timer);timer=setTimeout(apply,160)});
+partEl.addEventListener('change',apply);
+document.getElementById('open-all').addEventListener('click',function(){content.querySelectorAll('details.lesson:not([hidden])').forEach(function(d){d.open=true})});
+document.getElementById('close-all').addEventListener('click',function(){content.querySelectorAll('details.lesson').forEach(function(d){d.open=false})});
+document.getElementById('hide-vi').addEventListener('click',function(){
+  var on=this.getAttribute('aria-pressed')!=='true';this.setAttribute('aria-pressed',on);content.classList.toggle('cs-hidevi',on);
+});
+document.getElementById('print').addEventListener('click',function(){
+  var open=content.querySelectorAll('details.lesson[open]:not([hidden])').length;
+  if(!open&&!confirm('Chưa mở bài nào. Mở tất cả các bài đang hiện để in?'))return;
+  if(!open)content.querySelectorAll('details.lesson:not([hidden])').forEach(function(d){d.open=true});
+  window.print();
+});
+
+/* Audio */
+var S=window.speechSynthesis,st={acc:'en-GB',rate:.85},cur=null;
+function voice(){if(!S)return null;var v=S.getVoices().filter(function(x){return x.lang.replace('_','-').toLowerCase()===st.acc.toLowerCase()});
+  return v.find(function(x){return /google|natural|premium|enhanced/i.test(x.name)})||v[0]||null}
+function speak(el){
+  if(cur)cur.classList.remove('playing');cur=null;
+  if(!S){el.title='Trình duyệt này không hỗ trợ đọc audio';return}
+  S.cancel();cur=el;el.classList.add('playing');
+  var u=new SpeechSynthesisUtterance(el.textContent.replace(/\s+/g,' ').replace(/\s*\/\s*/g,'. ').trim());u.lang=st.acc;u.rate=st.rate;var v=voice();if(v)u.voice=v;
+  u.onend=u.onerror=function(){el.classList.remove('playing')};S.speak(u);
+}
+document.addEventListener('click',function(e){var s=e.target.closest('.say');if(s)speak(s)});
+document.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.classList&&e.target.classList.contains('say')){e.preventDefault();speak(e.target)}});
+document.querySelectorAll('.audio-bar button').forEach(function(b){b.addEventListener('click',function(){
+  b.parentElement.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');
+  if(b.dataset.acc)st.acc=b.dataset.acc;if(b.dataset.rate)st.rate=+b.dataset.rate;
+})});
+})();
+</script>
+</body>
+</html>

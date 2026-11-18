@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Viết đoạn văn theo chủ đề</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Cùng theme tối với các bài A1; màu nhấn tím – hồng cho phần luyện viết */
+:root{color-scheme:dark;
+--bg:#080810;--s1:#0e0e1c;--s2:#131326;--s3:#18182e;--border:#222240;--border2:#2c2c50;--text:#e6e6f2;--muted:#8a8ab8;--faint:#4a4a78;
+--acc:#c49bff;--acc-dim:rgba(196,155,255,.12);--oc:#38bdf8;--oc-dim:rgba(56,189,248,.13);--ins:#40d88e;--ins-dim:rgba(64,216,142,.12);
+--yl:#ffd060;--yl-dim:rgba(255,208,96,.11);--au:#ff6584;--au-dim:rgba(255,101,132,.12);--teal:#30d8c0;--code-bg:#05050e;
+--tip-bg:rgba(91,168,255,.10);--tip-bd:rgba(91,168,255,.25);--tip-fg:#8ab8f0;--ok-fg:#5ccf98;--line:rgba(255,255,255,.05);
+--font:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+--gl:max(64px,env(safe-area-inset-left,0px));--gr:max(64px,env(safe-area-inset-right,0px))}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 60px)}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.7;font-size:15px;overflow-x:hidden}
+.sidebar{position:fixed;left:0;top:0;width:270px;height:100%;background:var(--s1);border-right:1px solid var(--border);overflow-y:auto;z-index:400;padding-top:env(safe-area-inset-top,0px);padding-bottom:80px}
+.sb-logo{padding:20px 18px 16px;border-bottom:1px solid var(--border)}
+.sb-brand{display:flex;align-items:center;gap:11px;margin-bottom:12px}
+.logo-icon{width:44px;height:44px;border-radius:11px;background:linear-gradient(135deg,var(--acc),var(--au));display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 0 26px rgba(196,155,255,.3)}
+.logo-text h2{font-size:15px;font-weight:800}.logo-text p{font-size:10.5px;color:var(--muted)}
+.prog-wrap{height:3px;background:var(--border);border-radius:2px;overflow:hidden}
+.prog-bar{height:100%;width:0;background:linear-gradient(90deg,var(--acc),var(--au),var(--yl))}
+.nav-label{padding:14px 18px 4px;font-size:9.5px;font-weight:700;letter-spacing:1.6px;color:var(--faint);text-transform:uppercase}
+.nav-link{display:flex;align-items:center;gap:9px;padding:6px 18px;color:var(--muted);text-decoration:none;font-size:12.5px;font-weight:600;border-left:2px solid transparent}
+.nav-link:hover,.nav-link.active{color:var(--text);background:var(--acc-dim);border-left-color:var(--acc)}
+.nav-link .dn{margin-left:auto;font-size:10px;color:var(--ins)}
+.main{margin-left:270px}
+.hero{padding-block:80px 60px;padding-left:var(--gl);padding-right:var(--gr);border-bottom:1px solid var(--border);background:radial-gradient(ellipse 65% 55% at 75% 22%,rgba(196,155,255,.12),transparent 60%),radial-gradient(ellipse 50% 55% at 10% 82%,rgba(255,101,132,.07),transparent 55%),var(--bg)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--acc-dim);border:1px solid rgba(196,155,255,.38);color:var(--acc);padding:5px 16px;border-radius:100px;font-size:11.5px;font-weight:700;margin-bottom:24px}
+.hero h1{font-size:50px;font-weight:900;letter-spacing:-2.4px;line-height:1.06;margin-bottom:18px;text-wrap:balance}
+.grad{background:linear-gradient(135deg,var(--acc),var(--au));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-desc{font-size:16px;color:var(--muted);max-width:640px;margin-bottom:28px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{padding:5px 14px;border-radius:7px;font-size:12px;font-weight:700}
+.c1{background:var(--oc-dim);color:var(--oc)}.c2{background:var(--ins-dim);color:var(--ins)}.c3{background:var(--yl-dim);color:var(--yl)}.c4{background:var(--acc-dim);color:var(--acc)}.c5{background:var(--au-dim);color:var(--au)}
+.content{padding-block:56px;padding-left:var(--gl);padding-right:var(--gr);max-width:calc(1020px + 64px)}
+.grp-title{font-size:12px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--faint);margin:10px 0 22px;display:flex;align-items:center;gap:12px}
+.grp-title::after{content:'';flex:1;height:1px;background:var(--border)}
+.section{margin-bottom:64px}
+.sec-head{display:flex;gap:14px;align-items:flex-start;margin-bottom:22px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+.sec-tag{font-family:var(--mono);font-size:10px;font-weight:600;padding:3px 10px;border-radius:5px;margin-top:6px;flex-shrink:0;letter-spacing:.5px;color:var(--acc);background:var(--acc-dim)}
+.sec-title{font-size:23px;font-weight:800;letter-spacing:-.6px;text-wrap:balance}
+.sec-sub{font-size:13px;color:var(--muted)}
+.sec-sub a{color:var(--oc);text-decoration:none;border-bottom:1px dotted var(--oc)}
+.sub-title{font-size:14.5px;font-weight:700;margin:24px 0 12px;display:flex;align-items:center;gap:10px}
+.sub-title::before{content:'';width:14px;height:3px;background:var(--acc);border-radius:2px}
+p.t{color:var(--muted);font-size:13.5px;margin-bottom:11px;max-width:70ch}p.t strong{color:var(--text)}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:14px 0}
+.card{background:var(--s1);border:1px solid var(--border);border-radius:11px;padding:16px;min-width:0}
+.card-icon{font-size:22px}.card-title{font-size:13px;font-weight:700;margin:4px 0}.card-desc{font-size:12px;color:var(--muted)}
+.card-desc em{color:var(--text);font-style:normal}
+.tbl{width:100%;border-collapse:collapse;font-size:13px;margin:13px 0;display:block;overflow-x:auto}
+.tbl th{background:var(--s3);padding:10px 14px;text-align:left;font-size:10px;color:var(--muted);border-bottom:1px solid var(--border2);white-space:nowrap;letter-spacing:.5px}
+.tbl td{padding:10px 14px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:top}
+.tbl td:first-child{color:var(--text);font-weight:600;white-space:nowrap}
+.info{display:flex;gap:12px;padding:14px 16px;border-radius:9px;margin:13px 0;font-size:13px;line-height:1.6}
+.i-tip{background:var(--tip-bg);border:1px solid var(--tip-bd);color:var(--tip-fg)}
+.i-ok{background:var(--ins-dim);border:1px solid rgba(64,216,142,.25);color:var(--ok-fg)}
+.info strong{color:var(--text)}
+.say{cursor:pointer;border-radius:4px}
+.say:hover{background:var(--acc-dim)}
+.say.playing{background:var(--ins-dim);color:var(--ins)}
+.say:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.footer{border-top:1px solid var(--border);padding-block:28px 90px;padding-left:var(--gl);padding-right:var(--gr);font-size:12px;color:var(--muted)}
+.audio-bar{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:500;display:flex;gap:10px;align-items:center;background:var(--s2);border:1px solid var(--border2);border-radius:12px;padding:8px 12px;box-shadow:0 8px 28px rgba(0,0,0,.5);font-size:12px;color:var(--muted)}
+.audio-bar b{color:var(--acc)}.ab-g{display:flex;gap:4px}
+.audio-bar button{background:var(--s3);color:var(--muted);border:1px solid var(--border);border-radius:7px;padding:4px 10px;font:inherit;font-weight:700;cursor:pointer}
+.audio-bar button.on{background:var(--acc-dim);color:var(--acc);border-color:var(--acc)}
+.topnav{display:none}
+@media(max-width:900px){
+:root{--gl:max(16px,env(safe-area-inset-left,0px));--gr:max(16px,env(safe-area-inset-right,0px))}
+.sidebar{display:none}.main{margin-left:0}.hero h1{font-size:32px;letter-spacing:-1.4px}.hero{padding-block:48px 40px}
+.grid-4{grid-template-columns:1fr 1fr}
+.topnav{display:flex;overflow-x:auto;position:sticky;top:env(safe-area-inset-top,0px);z-index:500;background:var(--s1);border-bottom:2px solid var(--border2);scrollbar-width:none}
+.topnav a{flex-shrink:0;padding:10px 12px;color:var(--muted);text-decoration:none;font-size:12px;font-weight:700;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-2px}
+.topnav a.active{color:var(--acc);border-bottom-color:var(--acc);background:var(--acc-dim)}
+.audio-bar{left:calc(8px + env(safe-area-inset-left,0px));right:calc(8px + env(safe-area-inset-right,0px));justify-content:center;flex-wrap:wrap}
+}
+@media(max-width:480px){.grid-4{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sb-logo">
+    <div class="sb-brand"><div class="logo-icon">✍️</div><div class="logo-text"><h2>Viết đoạn văn</h2><p>Ôn lại cả khóa A1 qua <span class="wp-count">34</span> đoạn văn</p></div></div>
+    <div class="prog-wrap"><div class="prog-bar" id="pbar"></div></div>
+  </div>
+  <div class="nav-label">Hướng dẫn</div>
+  <a class="nav-link" href="#how">🧭 Cách viết một đoạn văn</a>
+</aside>
+
+<div class="main">
+<nav class="topnav" id="topnav"><a href="#how">Cách viết</a></nav>
+
+<header class="hero">
+  <div class="eyebrow">✍️ Luyện viết A1</div>
+  <h1>Viết đoạn văn<br><span class="grad">theo chủ đề đã học</span></h1>
+  <p class="hero-desc">Mỗi chủ đề có một đoạn văn mẫu chỉ dùng từ vựng và ngữ pháp của bài học tương ứng. Nghe từng câu, bật bản dịch, che từ khóa để tự nhớ lại, rồi viết đoạn văn về chính bạn theo khung gợi ý. Bài bạn viết được lưu lại trên trình duyệt này.</p>
+  <div class="chips"><span class="chip c4"><span class="wp-count">34</span> đoạn văn mẫu</span><span class="chip c1">Nghe từng câu</span><span class="chip c3">Che từ khóa</span><span class="chip c2">Khung viết</span><span class="chip c5">Tự kiểm tra cấu trúc</span></div>
+</header>
+
+<div class="content" id="content">
+
+<section class="section" id="how">
+  <div class="sec-head"><span class="sec-tag">HƯỚNG DẪN</span><div><div class="sec-title">Cách viết một đoạn văn ngắn</div><div class="sec-sub">Bốn phần, khoảng 60–100 từ, đủ cho mọi chủ đề A1</div></div></div>
+  <div class="grid-4">
+    <div class="card"><div class="card-icon">🎯</div><div class="card-title">1. Câu chủ đề</div><div class="card-desc">Nói ngay đoạn văn viết về gì. <em>My favorite food is pho.</em></div></div>
+    <div class="card"><div class="card-icon">🧱</div><div class="card-title">2. Ý triển khai</div><div class="card-desc">4–6 câu trả lời What, Where, When, Who, Why. Mỗi câu một ý.</div></div>
+    <div class="card"><div class="card-icon">🔗</div><div class="card-title">3. Từ nối</div><div class="card-desc">Nối các câu cho trôi chảy: <em>first, then, because, so, but, also</em>.</div></div>
+    <div class="card"><div class="card-icon">🏁</div><div class="card-title">4. Câu kết</div><div class="card-desc">Cảm xúc, kế hoạch hoặc một câu hỏi. <em>I love my family very much.</em></div></div>
+  </div>
+  <div class="sub-title">Từ nối hay dùng</div>
+  <table class="tbl"><thead><tr><th>Từ nối</th><th>Dùng để</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td>and / also / too</td><td>thêm ý</td><td>I like tea, and I also like coffee.</td></tr>
+  <tr><td>but</td><td>ý trái ngược</td><td>It’s small, but it’s very bright.</td></tr>
+  <tr><td>because</td><td>nêu lý do</td><td>I love autumn because it’s cool.</td></tr>
+  <tr><td>so</td><td>nêu kết quả</td><td>I was tired, so I went to bed early.</td></tr>
+  <tr><td>first / then / after that</td><td>kể theo thứ tự</td><td>First, I get up. Then I have breakfast.</td></tr>
+  <tr><td>when / if</td><td>thời điểm, điều kiện</td><td>If it rains, I’ll stay at home.</td></tr></tbody></table>
+  <div class="info i-ok"><span>✅</span><span><strong>Cách luyện mỗi chủ đề:</strong> (1) nghe và đọc to đoạn mẫu; (2) bật <strong>Che từ khóa</strong>, đọc lại và tự điền các chữ bị che; (3) viết đoạn của bạn theo khung, cố dùng đủ các cấu trúc trong danh sách; (4) bấm <strong>Nghe bài của tôi</strong> để nghe lại và sửa.</span></div>
+</section>
+
+</div>
+<div class="footer">✍️ Giao tiếp tiếng Anh A1: Viết đoạn văn theo chủ đề · Dành cho người mới bắt đầu · 2026</div>
+</div>
+
+<div class="audio-bar">
+  <b>🔊 Audio</b>
+  <div class="ab-g"><button data-acc="en-GB" class="on">Anh-Anh</button><button data-acc="en-US">Anh-Mỹ</button></div>
+  <div class="ab-g"><button data-rate="0.6">Chậm</button><button data-rate="0.85" class="on">Vừa</button><button data-rate="1">Nhanh</button></div>
+</div>
+
+<script src="writing-data.js"></script>
+<script src="writing.js"></script>
+<script>
+(function(){
+var esc=A1W.esc,GROUPS=window.A1_WRITING;
+
+/* Dựng các chủ đề (khối luyện viết dùng chung writing.js) */
+var content=document.getElementById('content'),side=document.getElementById('sidebar'),top=document.getElementById('topnav');
+var n=0,html='',nav='',tn='';
+GROUPS.forEach(function(G){
+  html+='<div class="grp-title">'+esc(G.g)+'</div>';
+  nav+='<div class="nav-label">'+esc(G.g)+'</div>';
+  G.t.forEach(function(T){
+    n++;
+    nav+='<a class="nav-link" href="#'+T.id+'">'+T.e+' '+esc(T.vi)+'<span class="dn" data-dn="'+T.id+'"></span></a>';
+    tn+='<a href="#'+T.id+'">'+n+' '+esc(T.vi)+'</a>';
+    var lessons=T.l.map(function(x){return '<a href="'+encodeURI(x[0])+'#luyen-viet">'+esc(x[1])+'</a>'}).join(' · ');
+    html+='<section class="section" id="'+T.id+'">'+
+      '<div class="sec-head"><span class="sec-tag">ĐOẠN '+n+'</span><div><div class="sec-title">'+T.e+' '+esc(T.en)+'</div>'+
+      '<div class="sec-sub">'+esc(T.vi)+' · Ôn bài: '+lessons+'</div></div></div>'+A1W.html(T)+'</section>';
+  });
+});
+content.insertAdjacentHTML('beforeend',html);
+document.querySelectorAll('.wp-count').forEach(function(x){x.textContent=n});
+side.insertAdjacentHTML('beforeend',nav);
+top.insertAdjacentHTML('beforeend',tn);
+A1W.bind(content);
+/* Các mục được tạo bằng JS nên trình duyệt chưa kịp nhảy tới #id trên URL */
+if(location.hash){var tg=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(tg)tg.scrollIntoView({behavior:'instant'})}
+
+/* Audio từng câu */
+var S=window.speechSynthesis,st={acc:'en-GB',rate:.85},cur=null;
+function voice(){if(!S)return null;var v=S.getVoices().filter(function(x){return x.lang.replace('_','-').toLowerCase()===st.acc.toLowerCase()});
+  return v.find(function(x){return /google|natural|premium|enhanced/i.test(x.name)})||v[0]||null}
+function speak(el){
+  if(cur)cur.classList.remove('playing');cur=null;
+  if(!S){el.title='Trình duyệt này không hỗ trợ đọc audio';return}
+  S.cancel();cur=el;el.classList.add('playing');
+  var u=new SpeechSynthesisUtterance(el.textContent.replace(/\s+/g,' ').trim());u.lang=st.acc;u.rate=st.rate;var v=voice();if(v)u.voice=v;
+  u.onend=u.onerror=function(){el.classList.remove('playing')};S.speak(u);
+}
+document.addEventListener('click',function(e){var s=e.target.closest('.say');if(s)speak(s)});
+document.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.classList&&e.target.classList.contains('say')){e.preventDefault();speak(e.target)}});
+document.querySelectorAll('.audio-bar button').forEach(function(b){b.addEventListener('click',function(){
+  b.parentElement.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');
+  if(b.dataset.acc)st.acc=b.dataset.acc;if(b.dataset.rate)st.rate=+b.dataset.rate;
+})});
+
+/* Thanh tiến độ và mục đang xem */
+var doc=document.documentElement,bar=document.getElementById('pbar');
+addEventListener('scroll',function(){bar.style.width=(doc.scrollTop/Math.max(1,doc.scrollHeight-doc.clientHeight)*100)+'%'},{passive:true});
+var links=document.querySelectorAll('.nav-link,.topnav a');
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(!en.isIntersecting)return;
+    links.forEach(function(l){var a=l.getAttribute('href')==='#'+en.target.id;l.classList.toggle('active',a);
+      if(a&&l.parentElement===top)top.scrollLeft=l.offsetLeft-top.clientWidth/2+l.offsetWidth/2});
+  })},{rootMargin:'-20% 0px -70% 0px'});
+  document.querySelectorAll('.section[id]').forEach(function(s){io.observe(s)});
+}
+})();
+</script>
+<script src="nav.js" defer></script>
+</body>
+</html>

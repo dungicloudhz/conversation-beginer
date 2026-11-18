@@ -1,0 +1,548 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Tiếng Anh Likes & Hobbies</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: sidebar mục lục cố định + cột bài học, cùng theme tối của bộ "Hỏi đường & Hỏi giờ" (nhấn hồng – tím cho chủ đề Likes & Dislikes / Hobbies) */
+:root{color-scheme:dark;
+--bg:#080810;--s1:#0e0e1c;--s2:#131326;--s3:#18182e;--border:#222240;--border2:#2c2c50;--text:#e6e6f2;--muted:#8a8ab8;--faint:#4a4a78;
+--acc:#ffd060;--acc-dim:rgba(255,208,96,.11);--oc:#38bdf8;--oc-dim:rgba(56,189,248,.13);--ins:#40d88e;--ins-dim:rgba(64,216,142,.12);
+--sk:#a07af4;--sk-dim:rgba(160,122,244,.12);--au:#ff6584;--au-dim:rgba(255,101,132,.12);--teal:#30d8c0;--code-bg:#05050e;
+--tip-bg:rgba(91,168,255,.10);--tip-bd:rgba(91,168,255,.25);--tip-fg:#8ab8f0;--warn-fg:#e0bc58;--ok-fg:#5ccf98;--line:rgba(255,255,255,.05);
+--font:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+--gl:max(64px,env(safe-area-inset-left,0px));--gr:max(64px,env(safe-area-inset-right,0px))}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 60px)}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.7;font-size:15px;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:600;background:var(--s1)}
+.sidebar{position:fixed;left:0;top:0;width:260px;height:100%;background:var(--s1);border-right:1px solid var(--border);overflow-y:auto;z-index:400;padding-top:env(safe-area-inset-top,0px);padding-left:env(safe-area-inset-left,0px)}
+.sb-logo{padding:20px 18px 16px;border-bottom:1px solid var(--border)}
+.sb-brand{display:flex;align-items:center;gap:11px;margin-bottom:12px}
+.logo-icon{width:44px;height:44px;border-radius:11px;background:linear-gradient(135deg,var(--au),var(--sk));display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 0 26px rgba(255,101,132,.3)}
+.logo-text h2{font-size:15px;font-weight:800}.logo-text p{font-size:10.5px;color:var(--muted)}
+.prog-wrap{height:3px;background:var(--border);border-radius:2px;overflow:hidden}
+.prog-bar{height:100%;width:0;background:linear-gradient(90deg,var(--acc),var(--ins),var(--oc),var(--sk),var(--au))}
+.nav-label{padding:14px 18px 4px;font-size:9.5px;font-weight:700;letter-spacing:1.6px;color:var(--faint)}
+.nav-link{display:flex;align-items:center;gap:9px;padding:7px 18px;color:var(--muted);text-decoration:none;font-size:12.5px;font-weight:600;border-left:2px solid transparent}
+.nav-link:hover,.nav-link.active{color:var(--text);background:rgba(255,208,96,.07);border-left-color:var(--acc)}
+.main{margin-left:260px}
+.hero{padding-block:80px 60px;padding-left:var(--gl);padding-right:var(--gr);border-bottom:1px solid var(--border);background:radial-gradient(ellipse 65% 55% at 75% 22%,rgba(255,101,132,.10),transparent 60%),radial-gradient(ellipse 50% 55% at 10% 82%,rgba(64,216,142,.07),transparent 55%),var(--bg)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--acc-dim);border:1px solid rgba(255,208,96,.38);color:var(--acc);padding:5px 16px;border-radius:100px;font-size:11.5px;font-weight:700;margin-bottom:24px}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--acc);animation:p 2s infinite}
+@keyframes p{50%{opacity:.35;transform:scale(.7)}}
+@media(prefers-reduced-motion:reduce){.eyebrow i{animation:none}html{scroll-behavior:auto}}
+.hero h1{font-size:50px;font-weight:900;letter-spacing:-2.4px;line-height:1.06;margin-bottom:18px;text-wrap:balance}
+.grad{background:linear-gradient(135deg,var(--au),var(--sk));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-desc{font-size:16px;color:var(--muted);max-width:620px;margin-bottom:28px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{padding:5px 14px;border-radius:7px;font-size:12px;font-weight:700}
+.c1{background:var(--oc-dim);color:var(--oc)}.c2{background:var(--ins-dim);color:var(--ins)}.c3{background:var(--acc-dim);color:var(--acc)}.c4{background:var(--sk-dim);color:var(--sk)}.c5{background:var(--au-dim);color:var(--au)}
+.content{padding-block:56px;padding-left:var(--gl);padding-right:var(--gr);max-width:calc(1020px + 64px)}
+.section{margin-bottom:68px}
+.sec-head{display:flex;gap:14px;align-items:flex-start;margin-bottom:28px;padding-bottom:18px;border-bottom:1px solid var(--border)}
+.sec-tag{font-family:var(--mono);font-size:10px;font-weight:600;padding:3px 10px;border-radius:5px;margin-top:6px;flex-shrink:0;letter-spacing:.5px}
+.t1{color:var(--oc);background:var(--oc-dim)}.t2{color:var(--ins);background:var(--ins-dim)}.t3{color:var(--acc);background:var(--acc-dim)}.t4{color:var(--sk);background:var(--sk-dim)}.t5{color:var(--au);background:var(--au-dim)}
+.sec-title{font-size:23px;font-weight:800;letter-spacing:-.6px;text-wrap:balance}.sec-sub{font-size:13px;color:var(--muted)}
+.sub-title{font-size:14.5px;font-weight:700;margin:26px 0 12px;display:flex;align-items:center;gap:10px}
+.sub-title::before{content:'';width:14px;height:3px;background:var(--acc);border-radius:2px}
+p.t{color:var(--muted);font-size:13.5px;margin-bottom:11px;max-width:68ch}p.t strong,li strong{color:var(--text)}
+.ex-box{background:var(--s1);border:1px solid var(--border2);border-radius:11px;overflow:hidden;margin:13px 0}
+.ex-head{display:flex;align-items:center;gap:8px;padding:9px 16px;background:var(--s2);border-bottom:1px solid var(--border);font-family:var(--mono);font-size:10px;font-weight:600;color:var(--muted);letter-spacing:.5px}
+.ex-tag{margin-left:auto;font-size:9px;font-weight:700;padding:2px 9px;border-radius:100px;font-family:var(--font)}
+.ex-body{padding:10px 20px}
+.ex-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:13.5px}
+.ex-row:last-child{border-bottom:none}
+.ex-en{color:var(--text);font-weight:600;min-width:280px}.ex-vn{color:var(--muted)}
+.info{display:flex;gap:12px;padding:14px 16px;border-radius:9px;margin:13px 0;font-size:13px;line-height:1.6}
+.i-tip{background:var(--tip-bg);border:1px solid var(--tip-bd);color:var(--tip-fg)}
+.i-warn{background:var(--acc-dim);border:1px solid rgba(255,208,96,.25);color:var(--warn-fg)}
+.i-ok{background:var(--ins-dim);border:1px solid rgba(64,216,142,.25);color:var(--ok-fg)}
+.tbl{width:100%;border-collapse:collapse;font-size:13px;margin:13px 0;display:block;overflow-x:auto}
+.tbl th{background:var(--s3);padding:10px 14px;text-align:left;font-size:10px;color:var(--muted);border-bottom:1px solid var(--border2);white-space:nowrap;letter-spacing:.5px}
+.tbl td{padding:10px 14px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:top}
+.tbl td:first-child{color:var(--text);font-weight:600}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}
+.card{background:var(--s1);border:1px solid var(--border);border-radius:11px;padding:16px;min-width:0}
+.card:hover{border-color:var(--acc)}
+.card-icon{font-size:24px}.card-title{font-size:13px;font-weight:700}.card-desc{font-size:12px;color:var(--muted)}
+.cmp{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);border-radius:11px;overflow:hidden;margin:13px 0}
+.bad{background:rgba(255,101,132,.07);padding:14px 16px;border-right:1px solid var(--border)}.good{background:rgba(64,216,142,.07);padding:14px 16px}
+.cmp b{display:block;font-size:10px;margin-bottom:6px;letter-spacing:.5px}.bad b{color:var(--au)}.good b{color:var(--ins)}
+.cmp div div{font-size:13.5px}
+.dlg{display:grid;gap:8px;margin:12px 0;background:var(--s1);border:1px solid var(--border2);border-radius:12px;padding:16px 18px}
+.dlg-t{font-size:10px;font-weight:800;color:var(--acc);margin-bottom:2px;letter-spacing:.6px}
+.turn{display:flex;gap:10px;align-items:baseline}
+.turn>div{min-width:0}
+.who{flex-shrink:0;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+.wa{background:var(--oc-dim);color:var(--oc)}.wb{background:var(--ins-dim);color:var(--ins)}
+.turn .say{font-weight:600}.turn small{display:block;color:var(--muted);font-size:12px;font-weight:400}
+.gen{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin:12px 0}
+.gen label{font-size:11.5px;color:var(--muted);font-weight:600;display:block;min-width:0}
+.gen select{width:100%;margin-top:4px;background:var(--code-bg);border:1px solid var(--border2);border-radius:8px;padding:9px 12px;color:var(--text);font:inherit;font-size:13px}
+select:focus-visible,button:focus-visible,.say:focus-visible,.exi input:focus-visible,.chk input:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.btns{display:flex;flex-wrap:wrap;gap:6px}
+.btn{background:var(--acc-dim);color:var(--acc);border:1px solid var(--acc);border-radius:8px;padding:8px 16px;font:inherit;font-weight:700;font-size:13px;cursor:pointer}
+.btn.alt{background:var(--ins-dim);color:var(--ins);border-color:var(--ins)}
+.out{margin-top:14px;min-height:60px;background:var(--s2);border:1px dashed var(--border2);border-radius:10px;padding:14px 16px;font-size:14px;line-height:1.9}
+.big{font-size:21px;font-weight:800;color:var(--acc);letter-spacing:-.3px;line-height:1.4;margin-bottom:4px}
+.out .why{display:block;color:var(--muted);font-size:12.5px}
+.out .why b{color:var(--teal);font-family:var(--mono);font-weight:600}
+.timeline{display:grid;gap:0;margin:14px 0;border-left:2px solid var(--border2);padding-left:18px}
+.tl{position:relative;padding:8px 0 12px}
+.tl::before{content:'';position:absolute;left:-24px;top:16px;width:10px;height:10px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 3px var(--bg)}
+.tl time{font-family:var(--mono);font-size:12px;color:var(--acc);font-variant-numeric:tabular-nums;font-weight:600}
+.tl .say{font-weight:600;font-size:13.5px}
+.tl small{display:block;color:var(--muted);font-size:12px}
+.freq{display:grid;gap:7px;margin:14px 0}
+.fq{display:grid;grid-template-columns:110px 1fr 54px;gap:12px;align-items:center;font-size:13px}
+.fq .say{font-weight:700}
+.fq .track{height:8px;background:var(--s3);border-radius:4px;overflow:hidden}
+.fq .fill{height:100%;background:linear-gradient(90deg,var(--ins),var(--acc))}
+.fq span:last-child{font-family:var(--mono);font-size:11.5px;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+.plan{display:grid;gap:8px;margin:12px 0}
+.day{display:flex;gap:14px;align-items:baseline;background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:12px 16px;font-size:13px;color:var(--muted)}
+.day b{color:var(--acc);font-family:var(--mono);font-size:12px;flex-shrink:0;width:52px}.day strong{color:var(--text)}
+.chk{list-style:none;margin:10px 0}.chk li{padding:6px 0;font-size:13.5px;color:var(--muted);border-bottom:1px solid rgba(255,255,255,.04)}
+.chk input{accent-color:var(--ins);margin-right:10px;width:15px;height:15px;vertical-align:-2px}
+.gr{border:1px solid rgba(160,122,244,.38);background:linear-gradient(180deg,var(--sk-dim),transparent 110px),var(--s1);border-radius:12px;margin:28px 0;overflow:hidden}
+.gr-head{padding:10px 18px;font-size:12px;font-weight:800;color:var(--sk);border-bottom:1px solid var(--border);display:flex;gap:10px;flex-wrap:wrap;align-items:baseline;letter-spacing:.4px}
+.gr-head em{font-style:normal;color:var(--muted);font-weight:600;letter-spacing:0}
+.gr-body{padding:14px 18px;font-size:13.5px;color:var(--muted)}
+.gr-body p{margin-bottom:10px}.gr-body b{color:var(--text)}.gr-body ul{padding-left:20px;margin-bottom:8px}.gr-body li{margin-bottom:4px}
+.gr-body .tbl{margin:8px 0 12px}
+.fm{display:inline-block;font-family:var(--mono);font-size:12px;background:var(--code-bg);color:var(--teal);padding:3px 9px;border-radius:6px;margin:2px 0}
+.say{cursor:pointer;border-bottom:1px dotted var(--oc)}
+.say:hover{color:var(--acc);background:var(--acc-dim);border-radius:4px}
+.say::after{content:"🔊";font-size:.68em;margin-left:3px;opacity:.5}
+.say.playing{color:var(--ins);background:var(--ins-dim);border-radius:4px}.say.playing::after{opacity:1}
+.exi{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:13.5px;color:var(--text)}
+.exi input{width:220px;max-width:100%;background:var(--code-bg);border:1px solid var(--border2);border-radius:6px;padding:4px 8px;color:var(--text);font:inherit;font-size:13px;text-align:center}
+.exi input.ok{border-color:var(--ins);color:var(--ins)}.exi input.no{border-color:var(--au);color:var(--au)}
+.exi small{color:var(--muted);font-size:11.5px}
+.exi .key{color:var(--ins);font-size:12px;width:100%}
+.footer{border-top:1px solid var(--border);padding-block:28px 90px;padding-left:var(--gl);padding-right:var(--gr);font-size:12px;color:var(--muted)}
+.audio-bar{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:500;display:flex;gap:10px;align-items:center;background:var(--s2);border:1px solid var(--border2);border-radius:12px;padding:8px 12px;box-shadow:0 8px 28px rgba(0,0,0,.5);font-size:12px;color:var(--muted)}
+.audio-bar b{color:var(--acc)}.ab-g{display:flex;gap:4px}
+.audio-bar button{background:var(--s3);color:var(--muted);border:1px solid var(--border);border-radius:7px;padding:4px 10px;font:inherit;font-weight:700;cursor:pointer}
+.audio-bar button.on{background:var(--acc-dim);color:var(--acc);border-color:var(--acc)}
+.topnav{display:none}
+@media(max-width:900px){
+:root{--gl:max(18px,env(safe-area-inset-left,0px));--gr:max(18px,env(safe-area-inset-right,0px))}
+.sidebar{display:none}.main{margin-left:0}.hero h1{font-size:32px;letter-spacing:-1.4px}.hero{padding-block:48px 40px}
+.grid-3,.cmp{grid-template-columns:1fr}.gen{grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}.bad{border-right:none;border-bottom:1px solid var(--border)}
+.topnav{display:flex;overflow-x:auto;position:sticky;top:env(safe-area-inset-top,0px);z-index:500;background:var(--s1);border-bottom:2px solid var(--border2);scrollbar-width:none;padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+.topnav a{flex-shrink:0;padding:10px 14px;color:var(--muted);text-decoration:none;font-size:12px;font-weight:700;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-2px}
+.topnav a.active{color:var(--acc);border-bottom-color:var(--acc);background:var(--acc-dim)}
+.ex-en{min-width:0}
+.fq{grid-template-columns:90px 1fr 46px}
+.audio-bar{left:calc(8px + env(safe-area-inset-left,0px));right:calc(8px + env(safe-area-inset-right,0px));justify-content:center;flex-wrap:wrap}
+}
+@media(max-width:480px){.gen{grid-template-columns:1fr}}
+
+.lbl{font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--faint)}
+.out .lbl{color:var(--au);min-width:72px;display:inline-block}
+.scale{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:12px 0}
+.sc-i{background:var(--s1);border:1px solid var(--border);border-top:3px solid var(--ins);border-radius:10px;padding:12px 14px;display:grid;gap:4px;align-content:start}
+.sc-i.n0{border-top-color:var(--acc)}.sc-i.n{border-top-color:var(--au)}
+.sc-i b{font-size:22px;line-height:1}.sc-i .say{color:var(--text);font-weight:600;font-size:13.5px}.sc-i em{font-style:normal;color:var(--muted);font-size:12px}
+@media(max-width:700px){.scale{grid-template-columns:1fr 1fr}}
+</style>
+
+<aside class="sidebar">
+  <div class="sb-logo">
+    <div class="sb-brand"><div class="logo-icon">🎨</div><div class="logo-text"><h2>Likes &amp; Hobbies</h2><p>Tiếng Anh cho người mới</p></div></div>
+    <div class="prog-wrap"><div class="prog-bar" id="pbar"></div></div>
+  </div>
+  <div class="nav-label">BÀI HỌC</div>
+  <a class="nav-link" href="#s1">❤️ Thang yêu ghét</a>
+  <a class="nav-link" href="#s2">🧩 Tên các sở thích</a>
+  <a class="nav-link" href="#s3">❓ Hỏi về thời gian rảnh</a>
+  <a class="nav-link" href="#s4">🤝 So do I / Neither do I</a>
+  <a class="nav-link" href="#s5">💡 Nói lý do &amp; so sánh</a>
+  <div class="nav-label">THỰC HÀNH</div>
+  <a class="nav-link" href="#s6">💬 Hội thoại mẫu</a>
+  <a class="nav-link" href="#s7">🛠️ Máy trò chuyện &amp; bài tập</a>
+  <a class="nav-link" href="#s8">🚀 Từ vựng nâng cao</a>
+</aside>
+
+<div class="main">
+<nav class="topnav">
+  <a href="#s1">1 Yêu ghét</a><a href="#s2">2 Sở thích</a><a href="#s3">3 Hỏi</a><a href="#s4">4 Đồng ý</a><a href="#s5">5 Lý do</a><a href="#s6">6 Hội thoại</a><a href="#s7">7 Luyện tập</a><a href="#s8">8 Nâng cao</a>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow"><i></i>Dành cho người mới bắt đầu</div>
+  <h1>Thích &amp; ghét, sở thích<br><span class="grad">bằng tiếng Anh</span></h1>
+  <p class="hero-desc">Nói về sở thích là cách dễ nhất để bắt chuyện và tìm điểm chung với người khác. Bài này dạy bạn thang cảm xúc từ <em>love</em> đến <em>can’t stand</em>, cách ghép đúng <em>go / play / do</em> với từng hoạt động, hỏi <em>“What do you do in your free time?”</em>, đồng ý bằng <em>So do I</em> hay <em>Neither do I</em>, và giải thích vì sao bạn thích. Các bài Music, Sports và Weekend có sở thích theo từng chủ đề; bài này là phần nền chung cho tất cả.</p>
+  <div class="chips"><span class="chip c1">like + V-ing</span><span class="chip c2">go / play / do</span><span class="chip c3">So do I</span><span class="chip c4">prefer … to …</span><span class="chip c5">Từ vựng nâng cao</span></div>
+</header>
+
+<div class="content">
+
+<section class="section" id="s1">
+  <div class="sec-head"><span class="sec-tag t1">BÀI 1</span><div><div class="sec-title">Thang yêu ghét</div><div class="sec-sub">Tám mức độ, từ rất thích đến không chịu nổi</div></div></div>
+  <div class="scale">
+    <div class="sc-i p"><b>😍</b><span class="say">I love it.</span><em>rất thích</em></div>
+    <div class="sc-i p"><b>😄</b><span class="say">I really like it.</span><em>thích lắm</em></div>
+    <div class="sc-i p"><b>🙂</b><span class="say">I like it.</span><em>thích</em></div>
+    <div class="sc-i n0"><b>😐</b><span class="say">I don’t mind it.</span><em>không phiền, cũng được</em></div>
+    <div class="sc-i n"><b>😕</b><span class="say">I don’t really like it.</span><em>không thích lắm</em></div>
+    <div class="sc-i n"><b>🙁</b><span class="say">I don’t like it.</span><em>không thích</em></div>
+    <div class="sc-i n"><b>😠</b><span class="say">I hate it.</span><em>ghét</em></div>
+    <div class="sc-i n"><b>🤢</b><span class="say">I can’t stand it.</span><em>không chịu nổi</em></div>
+  </div>
+  <div class="ex-box"><div class="ex-head">VÍ DỤ<span class="ex-tag t1">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">I love cooking for my family.</span><span class="ex-vn">Tôi rất thích nấu ăn cho gia đình</span></div>
+    <div class="ex-row"><span class="ex-en say">I really like watching cartoons.</span><span class="ex-vn">Tôi thích xem hoạt hình lắm</span></div>
+    <div class="ex-row"><span class="ex-en say">I don’t mind doing the dishes.</span><span class="ex-vn">Tôi không ngại rửa bát</span></div>
+    <div class="ex-row"><span class="ex-en say">I don’t really like crowded places.</span><span class="ex-vn">Tôi không thích chỗ đông người lắm</span></div>
+    <div class="ex-row"><span class="ex-en say">I can’t stand waiting in long lines.</span><span class="ex-vn">Tôi không chịu nổi việc xếp hàng dài</span></div>
+    <div class="ex-row"><span class="ex-en say">I enjoy walking in the park.</span><span class="ex-vn">Tôi thích đi dạo trong công viên</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Sau động từ cảm xúc: danh từ hoặc V-ing</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Động từ</th><th>+ danh từ</th><th>+ V-ing</th></tr></thead><tbody>
+<tr><td>love / like / hate</td><td><span class="say">I like music.</span></td><td><span class="say">I like singing.</span> (hoặc <i>to sing</i>)</td></tr>
+<tr><td>enjoy / don’t mind / can’t stand</td><td><span class="say">I enjoy movies.</span></td><td><span class="say">I enjoy watching movies.</span> (chỉ V-ing)</td></tr></tbody></table>
+<ul><li>Danh từ đếm được dùng số nhiều khi nói chung: <span class="say">I love cats.</span> (không nói <i>I love cat</i>)</li></ul>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>I enjoy to read. I don’t mind to wait. I like cat.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">I enjoy reading. I don’t mind waiting. I like cats.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s2">
+  <div class="sec-head"><span class="sec-tag t2">BÀI 2</span><div><div class="sec-title">Tên các sở thích</div><div class="sec-sub">Và động từ đi kèm: go, play hay do?</div></div></div>
+  <table class="tbl"><thead><tr><th>Động từ</th><th>Dùng với</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td><span class="fm">go + V-ing</span></td><td>hoạt động di chuyển, ra ngoài</td><td><span class="say">go hiking, go swimming, go camping, go shopping, go fishing</span></td></tr>
+  <tr><td><span class="fm">play + trò chơi</span></td><td>trò chơi, môn có bóng</td><td><span class="say">play chess, play video games, play cards, play badminton</span></td></tr>
+  <tr><td><span class="fm">play + the + nhạc cụ</span></td><td>nhạc cụ</td><td><span class="say">play the guitar, play the piano</span></td></tr>
+  <tr><td><span class="fm">do + hoạt động</span></td><td>bài tập, việc tự làm</td><td><span class="say">do yoga, do puzzles, do gardening, do exercise</span></td></tr>
+  <tr><td>động từ riêng</td><td>tự nó là hoạt động</td><td><span class="say">read, draw, paint, cook, bake, dance, sing, knit</span></td></tr></tbody></table>
+  <div class="sub-title">Sở thích phổ biến</div>
+  <table class="tbl"><thead><tr><th>Sở thích</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">reading</td><td>đọc sách</td><td><span class="say">I read before bed every night.</span></td></tr>
+  <tr><td class="say">taking photos</td><td>chụp ảnh</td><td><span class="say">I love taking photos of street food.</span></td></tr>
+  <tr><td class="say">drawing / painting</td><td>vẽ phác / vẽ màu</td><td><span class="say">My sister is good at painting.</span></td></tr>
+  <tr><td class="say">baking</td><td>làm bánh</td><td><span class="say">I bake cookies on Sundays.</span></td></tr>
+  <tr><td class="say">gardening</td><td>làm vườn</td><td><span class="say">My mom loves gardening.</span></td></tr>
+  <tr><td class="say">collecting stamps</td><td>sưu tầm tem</td><td><span class="say">He collects old stamps.</span></td></tr>
+  <tr><td class="say">learning languages</td><td>học ngoại ngữ</td><td><span class="say">I enjoy learning languages.</span></td></tr>
+  <tr><td class="say">watching dramas</td><td>xem phim bộ</td><td><span class="say">I watch Korean dramas at night.</span></td></tr></tbody></table>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>go / play / do: chọn đúng động từ</em></div><div class="gr-body">
+<ul><li>Đuôi <b>-ing</b> chỉ hoạt động ra ngoài thì dùng <b>go</b>: <span class="say">go jogging</span></li>
+<li>Có <b>bóng hoặc đối thủ</b> thì dùng <b>play</b>: <span class="say">play tennis</span></li>
+<li>Còn lại (yoga, karate, puzzles) thì dùng <b>do</b>: <span class="say">do karate</span></li>
+<li>Nhạc cụ có <b>the</b>: <span class="say">play the violin</span></li></ul>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>I play yoga. I go to swimming. I play guitar.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">I do yoga. I go swimming. I play the guitar.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s3">
+  <div class="sec-head"><span class="sec-tag t3">BÀI 3</span><div><div class="sec-title">Hỏi về thời gian rảnh</div><div class="sec-sub">Hỏi, trả lời và nói bạn làm việc đó thường xuyên đến đâu</div></div></div>
+  <div class="ex-box"><div class="ex-head">CÂU HỎI<span class="ex-tag t3">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">What do you do in your free time?</span><span class="ex-vn">Lúc rảnh bạn làm gì?</span></div>
+    <div class="ex-row"><span class="ex-en say">What are your hobbies?</span><span class="ex-vn">Sở thích của bạn là gì?</span></div>
+    <div class="ex-row"><span class="ex-en say">What do you like doing at the weekend?</span><span class="ex-vn">Cuối tuần bạn thích làm gì?</span></div>
+    <div class="ex-row"><span class="ex-en say">Do you like cooking?</span><span class="ex-vn">Bạn có thích nấu ăn không?</span></div>
+    <div class="ex-row"><span class="ex-en say">How often do you go hiking?</span><span class="ex-vn">Bạn đi leo núi bao lâu một lần?</span></div>
+    <div class="ex-row"><span class="ex-en say">How did you get into photography?</span><span class="ex-vn">Sao bạn lại mê chụp ảnh?</span></div>
+  </div></div>
+  <div class="ex-box"><div class="ex-head">TRẢ LỜI<span class="ex-tag t2">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">I usually read or play video games.</span><span class="ex-vn">Tôi thường đọc sách hoặc chơi game</span></div>
+    <div class="ex-row"><span class="ex-en say">Yes, I do. I cook almost every day.</span><span class="ex-vn">Có. Gần như ngày nào tôi cũng nấu</span></div>
+    <div class="ex-row"><span class="ex-en say">Not really. I’m not very good at it.</span><span class="ex-vn">Không hẳn. Tôi không giỏi lắm</span></div>
+    <div class="ex-row"><span class="ex-en say">I go hiking about once a month.</span><span class="ex-vn">Khoảng một tháng tôi đi leo núi một lần</span></div>
+    <div class="ex-row"><span class="ex-en say">I don’t have much free time, but I like walking my dog.</span><span class="ex-vn">Tôi không có nhiều thời gian rảnh, nhưng thích dắt chó đi dạo</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Trạng từ tần suất: vị trí trong câu</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>Trạng từ</th><th>Mức</th><th>Ví dụ</th></tr></thead><tbody>
+<tr><td class="say">always</td><td>100%</td><td><span class="say">I always read before bed.</span></td></tr>
+<tr><td class="say">usually</td><td>80%</td><td><span class="say">I usually go swimming on Sundays.</span></td></tr>
+<tr><td class="say">often</td><td>60%</td><td><span class="say">We often play cards.</span></td></tr>
+<tr><td class="say">sometimes</td><td>40%</td><td><span class="say">I sometimes bake cakes.</span></td></tr>
+<tr><td class="say">rarely</td><td>10%</td><td><span class="say">I rarely watch TV.</span></td></tr>
+<tr><td class="say">never</td><td>0%</td><td><span class="say">I never play golf.</span></td></tr></tbody></table>
+<ul><li>Đứng <b>trước động từ thường</b>, nhưng <b>sau be</b>: <span class="say">I’m always busy on Mondays.</span></li></ul>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>I go usually hiking. I always am tired.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">I usually go hiking. I’m always tired.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s4">
+  <div class="sec-head"><span class="sec-tag t4">BÀI 4</span><div><div class="sec-title">Đồng ý và không đồng ý: So do I / Neither do I</div><div class="sec-sub">Phản hồi nhanh để thấy có điểm chung hay không</div></div></div>
+  <table class="tbl"><thead><tr><th>Người kia nói</th><th>Bạn cũng vậy</th><th>Bạn thì khác</th></tr></thead><tbody>
+  <tr><td><span class="say">I love pizza.</span></td><td><span class="say">So do I! / Me too!</span></td><td><span class="say">Really? I don’t.</span></td></tr>
+  <tr><td><span class="say">I don’t like spicy food.</span></td><td><span class="say">Neither do I. / Me neither.</span></td><td><span class="say">Really? I do!</span></td></tr>
+  <tr><td><span class="say">I can’t stand horror movies.</span></td><td><span class="say">Neither can I.</span></td><td><span class="say">Oh, I can. I love them!</span></td></tr>
+  <tr><td><span class="say">I’m into K-pop.</span></td><td><span class="say">So am I!</span></td><td><span class="say">Oh, I’m not.</span></td></tr>
+  <tr><td><span class="say">I hate getting up early.</span></td><td><span class="say">So do I!</span></td><td><span class="say">Really? I don’t mind it.</span></td></tr></tbody></table>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>So / Neither + trợ động từ + I</em></div><div class="gr-body">
+<ul><li>Câu <b>khẳng định</b> dùng <span class="fm">So + do / am / can + I</span>; câu <b>phủ định</b> dùng <span class="fm">Neither + do / am / can + I</span>.</li>
+<li>Trợ động từ <b>lặp lại theo câu gốc</b>: <i>I’m…</i> thì đáp <b>am</b>; <i>I can’t…</i> thì đáp <b>can</b>; động từ thường thì đáp <b>do</b>.</li>
+<li><b>hate</b> là động từ khẳng định (dù nghĩa tiêu cực), nên đáp <b>So do I</b>.</li></ul>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>A: I don’t like durian. B: Me too. / A: I hate rain. B: Neither do I.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">A: I don’t like durian. B: Me neither. A: I hate rain. B: So do I.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s5">
+  <div class="sec-head"><span class="sec-tag t5">BÀI 5</span><div><div class="sec-title">Nói lý do và so sánh</div><div class="sec-sub">Vì sao bạn thích, và bạn thích cái nào hơn</div></div></div>
+  <div class="ex-box"><div class="ex-head">NÓI LÝ DO<span class="ex-tag t5">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">I love yoga because it’s relaxing.</span><span class="ex-vn">Tôi rất thích yoga vì nó thư giãn</span></div>
+    <div class="ex-row"><span class="ex-en say">I like baking because I can share cakes with friends.</span><span class="ex-vn">Tôi thích làm bánh vì có thể chia bánh cho bạn bè</span></div>
+    <div class="ex-row"><span class="ex-en say">I don’t like running. It’s too tiring for me.</span><span class="ex-vn">Tôi không thích chạy bộ. Nó quá mệt với tôi</span></div>
+    <div class="ex-row"><span class="ex-en say">Chess is interesting, but it takes a long time.</span><span class="ex-vn">Cờ vua thú vị nhưng mất nhiều thời gian</span></div>
+  </div></div>
+  <div class="ex-box"><div class="ex-head">SO SÁNH VÀ CHỌN<span class="ex-tag t4">Mẫu câu</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">I prefer reading to watching TV.</span><span class="ex-vn">Tôi thích đọc sách hơn xem tivi</span></div>
+    <div class="ex-row"><span class="ex-en say">I’d rather stay home tonight.</span><span class="ex-vn">Tối nay tôi muốn ở nhà hơn</span></div>
+    <div class="ex-row"><span class="ex-en say">Which do you prefer, cats or dogs?</span><span class="ex-vn">Bạn thích mèo hay chó hơn?</span></div>
+    <div class="ex-row"><span class="ex-en say">Cooking is more fun than cleaning.</span><span class="ex-vn">Nấu ăn vui hơn dọn dẹp</span></div>
+  </div></div>
+<div class="gr"><div class="gr-head">📐 NGỮ PHÁP SONG SONG<em>Tính từ -ing và -ed</em></div><div class="gr-body">
+<table class="tbl"><thead><tr><th>-ing: sự vật gây ra cảm giác</th><th>-ed: cảm giác của người</th></tr></thead><tbody>
+<tr><td><span class="say">The movie is boring.</span></td><td><span class="say">I’m bored.</span></td></tr>
+<tr><td><span class="say">Yoga is relaxing.</span></td><td><span class="say">I feel relaxed.</span></td></tr>
+<tr><td><span class="say">History is interesting.</span></td><td><span class="say">I’m interested in history.</span></td></tr>
+<tr><td><span class="say">The game is exciting.</span></td><td><span class="say">I’m excited about the game.</span></td></tr></tbody></table>
+<ul><li><span class="fm">prefer + A + to + B</span> (A và B cùng dạng, ví dụ cùng V-ing); <span class="fm">I’d rather + V</span> (không có <i>to</i>).</li></ul>
+<div class="cmp"><div class="bad"><b>❌ SAI</b><div>I’m boring at home. I prefer read than watch TV.</div></div><div class="good"><b>✔ ĐÚNG</b><div class="say">I’m bored at home. I prefer reading to watching TV.</div></div></div>
+</div></div>
+</section>
+
+<section class="section" id="s6">
+  <div class="sec-head"><span class="sec-tag t3">BÀI 6</span><div><div class="sec-title">Hội thoại mẫu</div><div class="sec-sub">Bấm từng câu để nghe, rồi đóng vai cả hai người</div></div></div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 1: BẮT CHUYỆN VỀ THỜI GIAN RẢNH</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">So, what do you do in your free time?</span><small>Thế lúc rảnh bạn làm gì?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">I really like taking photos. I usually go out with my camera on Sundays.</span><small>Mình thích chụp ảnh lắm. Chủ Nhật mình hay mang máy ảnh ra ngoài.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">That’s cool! What do you like taking photos of?</span><small>Hay đấy! Bạn thích chụp gì?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Mostly street food and old buildings. How about you?</span><small>Chủ yếu là đồ ăn đường phố và nhà cổ. Còn bạn?</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">I’m into baking. I make cakes almost every weekend.</span><small>Mình mê làm bánh. Gần như cuối tuần nào cũng làm.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Wow, I’d love to try one someday!</span><small>Ồ, hôm nào mình muốn ăn thử!</small></div></div>
+  </div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 2: TÌM ĐIỂM CHUNG</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">I love spicy food.</span><small>Mình mê đồ cay.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">So do I! But I can’t stand durian.</span><small>Mình cũng thế! Nhưng mình không chịu nổi sầu riêng.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Really? I love it! The smell is strong, but the taste is amazing.</span><small>Thật à? Mình thích lắm! Mùi nồng nhưng vị tuyệt.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Haha, each to their own. I don’t like getting up early either.</span><small>Haha, mỗi người một sở thích. Mình cũng không thích dậy sớm.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Neither do I. Weekends are for sleeping in!</span><small>Mình cũng không. Cuối tuần là để ngủ nướng!</small></div></div>
+  </div>
+  <div class="dlg"><div class="dlg-t">TÌNH HUỐNG 3: CHỌN HOẠT ĐỘNG CUỐI TUẦN</div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Do you want to go hiking on Saturday?</span><small>Thứ Bảy đi leo núi không?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Hmm, I don’t really like hiking. It’s too tiring for me. I’d rather do something indoors.</span><small>Ừm, mình không thích leo núi lắm. Mệt quá. Mình muốn làm gì đó trong nhà hơn.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Okay. Which do you prefer, board games or a movie?</span><small>Được. Bạn thích chơi board game hay xem phim hơn?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">I prefer board games to movies. They’re more fun with friends.</span><small>Mình thích board game hơn phim. Chơi với bạn bè vui hơn.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Great, let’s go to the board game café then!</span><small>Tuyệt, vậy đi quán board game nhé!</small></div></div>
+  </div>
+  <div class="info i-ok"><span>✅</span><span><strong>Cách luyện:</strong> nghe một lượt, nói theo từng câu, rồi che phần tiếng Việt và tự đóng vai A hoặc B. Sau đó thay sở thích trong hội thoại bằng sở thích thật của bạn.</span></div>
+</section>
+
+<section class="section" id="s7">
+  <div class="sec-head"><span class="sec-tag t2">BÀI 7</span><div><div class="sec-title">Máy trò chuyện sở thích &amp; bài tập</div><div class="sec-sub">Chọn hoạt động, mức độ thích và phản ứng của bạn bè. Máy tạo một đoạn trò chuyện đúng ngữ pháp</div></div></div>
+  <div class="gen">
+    <label for="g-h">Hoạt động<select id="g-h"></select></label>
+    <label for="g-f">Bạn thấy thế nào<select id="g-f"></select></label>
+    <label for="g-a">Bạn bè<select id="g-a"></select></label>
+  </div>
+  <div class="btns"><button class="btn" id="gen-btn">Tạo hội thoại</button><button class="btn alt" id="rnd-btn">Chọn ngẫu nhiên</button></div>
+  <div class="out" id="gen-out" aria-live="polite"></div>
+
+  <div class="sub-title">Bài tập: điền câu trả lời</div>
+  <p class="t">Câu 1–4: điền một từ vào chỗ trống. Câu 5–8: dịch sang tiếng Anh, gõ cả câu. Không phân biệt hoa thường.</p>
+  <div id="exlist">
+    <div class="exi">1. I enjoy ___ for my friends. (cook) →<input id="ex1" data-a="cooking" aria-label="Câu 1"><small>enjoy + V-ing</small></div>
+    <div class="exi">2. I ___ yoga every morning. (go / play / do) →<input id="ex2" data-a="do" aria-label="Câu 2"><small>go / play / do</small></div>
+    <div class="exi">3. A: I can’t stand horror movies. B: Neither ___ I. →<input id="ex3" data-a="can" aria-label="Câu 3"><small>trợ động từ</small></div>
+    <div class="exi">4. A: I hate waiting. B: ___ do I. →<input id="ex4" data-a="so" aria-label="Câu 4"><small>So hay Neither?</small></div>
+    <div class="exi">5. Lúc rảnh bạn làm gì? →<input id="ex5" data-a="what do you do in your free time?|what do you do in your spare time?" aria-label="Câu 5"><small>free time</small></div>
+    <div class="exi">6. Tôi không ngại nấu ăn →<input id="ex6" data-a="i don't mind cooking" aria-label="Câu 6"><small>don’t mind</small></div>
+    <div class="exi">7. Tôi thích đọc sách hơn xem tivi →<input id="ex7" data-a="i prefer reading to watching tv|i prefer reading books to watching tv|i like reading more than watching tv" aria-label="Câu 7"><small>prefer … to …</small></div>
+    <div class="exi">8. Tôi thường đi bơi vào Chủ Nhật →<input id="ex8" data-a="i usually go swimming on sundays|i usually go swimming on sunday|i often go swimming on sundays|i often go swimming on sunday" aria-label="Câu 8"><small>usually + go V-ing</small></div>
+  </div>
+  <div class="btns" style="margin-top:12px"><button class="btn" id="ex-check">Kiểm tra đáp án</button><button class="btn alt" id="ex-show">Xem đáp án</button><button class="btn alt" id="ex-reset">Làm lại</button></div>
+  <div class="out" id="ex-out" style="min-height:0" aria-live="polite"></div>
+
+  <div class="sub-title">Lộ trình luyện 7 ngày</div>
+  <div class="plan">
+    <div class="day"><b>Ngày 1</b><span><strong>Thang yêu ghét:</strong> nói 8 câu, mỗi mức độ một câu về đồ ăn, việc nhà, sở thích</span></div>
+    <div class="day"><b>Ngày 2</b><span><strong>go / play / do:</strong> xếp 15 hoạt động vào đúng nhóm động từ</span></div>
+    <div class="day"><b>Ngày 3</b><span><strong>Thời gian rảnh:</strong> trả lời What do you do in your free time? có trạng từ tần suất</span></div>
+    <div class="day"><b>Ngày 4</b><span><strong>So do I / Neither do I:</strong> luyện với bạn học hoặc dùng máy trò chuyện</span></div>
+    <div class="day"><b>Ngày 5</b><span><strong>Lý do:</strong> nói 5 câu có because và tính từ -ing / -ed</span></div>
+    <div class="day"><b>Ngày 6</b><span><strong>So sánh:</strong> luyện prefer … to … và I’d rather …</span></div>
+    <div class="day"><b>Ngày 7</b><span><strong>Ôn tổng hợp:</strong> thu âm 1 phút giới thiệu sở thích, dùng 3 từ nâng cao</span></div>
+  </div>
+</section>
+
+<section class="section" id="s8">
+  <div class="sec-head"><span class="sec-tag t5">NÂNG CAO</span><div><div class="sec-title">Từ vựng mới để nói chuyện tự nhiên hơn</div><div class="sec-sub">Thay like và don’t like bằng những cách nói sinh động hơn</div></div></div>
+  <div class="sub-title">Cách nói “thích” sinh động</div>
+  <table class="tbl"><thead><tr><th>Từ / cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">be into</td><td>mê, đang thích</td><td><span class="say">I’m really into board games right now.</span></td></tr>
+  <tr><td class="say">be keen on</td><td>hứng thú với</td><td><span class="say">She’s keen on learning Japanese.</span></td></tr>
+  <tr><td class="say">be a big fan of</td><td>là fan lớn của</td><td><span class="say">I’m a big fan of detective stories.</span></td></tr>
+  <tr><td class="say">be crazy about</td><td>phát cuồng vì</td><td><span class="say">My son is crazy about dinosaurs.</span></td></tr>
+  <tr><td class="say">be passionate about</td><td>đam mê</td><td><span class="say">He’s passionate about photography.</span></td></tr>
+  <tr><td class="say">get hooked on</td><td>bị nghiện, mê mẩn</td><td><span class="say">I got hooked on this drama last week.</span></td></tr>
+  <tr><td class="say">take up</td><td>bắt đầu một sở thích mới</td><td><span class="say">I’ve recently taken up pottery.</span></td></tr>
+  <tr><td class="say">unwind</td><td>xả hơi, thư giãn</td><td><span class="say">Gardening helps me unwind after work.</span></td></tr></tbody></table>
+  <div class="sub-title">Cách nói “không thích” nhẹ nhàng và từ chỉ người</div>
+  <table class="tbl"><thead><tr><th>Từ / cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">not my cup of tea</td><td>không phải gu của tôi</td><td><span class="say">Jazz isn’t really my cup of tea.</span></td></tr>
+  <tr><td class="say">not my thing</td><td>không hợp với tôi</td><td><span class="say">Camping is not my thing.</span></td></tr>
+  <tr><td class="say">give up</td><td>bỏ (một sở thích)</td><td><span class="say">I gave up the piano when I was ten.</span></td></tr>
+  <tr><td class="say">a bookworm</td><td>mọt sách</td><td><span class="say">I’m a bit of a bookworm.</span></td></tr>
+  <tr><td class="say">a foodie</td><td>người sành ăn</td><td><span class="say">As a foodie, I love trying new restaurants.</span></td></tr>
+  <tr><td class="say">a couch potato</td><td>người lười, suốt ngày ngồi xem tivi</td><td><span class="say">On Sundays, I’m a total couch potato.</span></td></tr>
+  <tr><td class="say">a pastime</td><td>thú tiêu khiển</td><td><span class="say">Fishing is a popular pastime here.</span></td></tr></tbody></table>
+  <div class="sub-title">Cụm giúp cuộc trò chuyện trôi chảy</div>
+  <div class="ex-box"><div class="ex-head">LÀM CHO HỘI THOẠI TỰ NHIÊN<span class="ex-tag t5">Nâng cao</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">What got you into it?</span><span class="ex-vn">Điều gì khiến bạn mê nó?</span></div>
+    <div class="ex-row"><span class="ex-en say">I’ve always wanted to try that!</span><span class="ex-vn">Tôi luôn muốn thử cái đó!</span></div>
+    <div class="ex-row"><span class="ex-en say">We have a lot in common.</span><span class="ex-vn">Chúng ta có nhiều điểm chung</span></div>
+    <div class="ex-row"><span class="ex-en say">Each to their own.</span><span class="ex-vn">Mỗi người một sở thích</span></div>
+    <div class="ex-row"><span class="ex-en say">It’s a great way to kill time.</span><span class="ex-vn">Đó là cách giết thời gian tuyệt vời</span></div>
+    <div class="ex-row"><span class="ex-en say">You should give it a try!</span><span class="ex-vn">Bạn nên thử đi!</span></div>
+  </div></div>
+  <div class="cmp"><div class="bad"><b>❌ NGHE CỨNG</b><div>I like read. I like cook. I don’t like sport. My hobby is like music.</div></div><div class="good"><b>✔ TỰ NHIÊN HƠN</b><div class="say">I’m a bit of a bookworm, and I’m really into cooking. Sports aren’t really my thing, but I’ve recently taken up yoga. It helps me unwind.</div></div></div>
+  <div class="info i-tip"><span>💡</span><span><strong>Mẹo:</strong> sau khi trả lời, hãy hỏi lại <em>“How about you?”</em> hoặc <em>“What got you into it?”</em>. Hỏi tiếp một câu là cách nhanh nhất để cuộc trò chuyện không bị đứt.</span></div>
+
+  <div class="sub-title">Tự kiểm tra</div>
+  <ul class="chk">
+    <li><label><input type="checkbox" id="c1">Tôi dùng được 8 mức độ từ <strong>love</strong> đến <strong>can’t stand</strong></label></li>
+    <li><label><input type="checkbox" id="c2">Tôi dùng V-ing sau <strong>enjoy / don’t mind / can’t stand</strong></label></li>
+    <li><label><input type="checkbox" id="c3">Tôi chọn đúng <strong>go / play / do</strong></label></li>
+    <li><label><input type="checkbox" id="c4">Tôi trả lời What do you do in your free time? có trạng từ tần suất</label></li>
+    <li><label><input type="checkbox" id="c5">Tôi phản hồi đúng <strong>So do I / Neither do I / Neither can I</strong></label></li>
+    <li><label><input type="checkbox" id="c6">Tôi nói lý do và dùng <strong>prefer … to …</strong></label></li>
+    <li><label><input type="checkbox" id="c7">Tôi dùng được ít nhất 5 từ vựng nâng cao</label></li>
+  </ul>
+</section>
+
+</div>
+<div class="footer">🎨 Giao tiếp tiếng Anh: Likes &amp; Dislikes / Hobbies · Dành cho người mới bắt đầu · 2026</div>
+</div>
+
+<div class="audio-bar">
+  <b>🔊 Audio</b>
+  <div class="ab-g"><button data-acc="en-GB" class="on">Anh-Anh</button><button data-acc="en-US">Anh-Mỹ</button></div>
+  <div class="ab-g"><button data-rate="0.6">Chậm</button><button data-rate="0.85" class="on">Vừa</button><button data-rate="1">Nhanh</button></div>
+</div>
+
+<script>
+(function(){
+var doc=document.documentElement,bar=document.getElementById('pbar');
+addEventListener('scroll',function(){bar.style.width=(doc.scrollTop/Math.max(1,doc.scrollHeight-doc.clientHeight)*100)+'%'});
+var links=document.querySelectorAll('.nav-link,.topnav a');
+if('IntersectionObserver' in window)document.querySelectorAll('.section[id]').forEach(function(s){
+  new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;
+    links.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id)});
+  })},{rootMargin:'-20% 0px -70% 0px'}).observe(s);
+});
+
+/* Audio */
+var S=window.speechSynthesis,st={acc:'en-GB',rate:.85},cur=null;
+function voice(){if(!S)return null;var v=S.getVoices().filter(function(x){return x.lang.replace('_','-').toLowerCase()===st.acc.toLowerCase()});
+  return v.find(function(x){return /google|natural|premium|enhanced/i.test(x.name)})||v[0]||null}
+function say(el){
+  if(cur)cur.classList.remove('playing');
+  if(!S){el.title='Trình duyệt này không hỗ trợ đọc audio';return}
+  S.cancel();cur=el;el.classList.add('playing');
+  var t=el.textContent.replace(/\s+/g,' ').replace(/\s*\/\s*/g,'. ').replace(/→/g,'. ').trim();
+  var u=new SpeechSynthesisUtterance(t);u.lang=st.acc;u.rate=st.rate;var v=voice();if(v)u.voice=v;
+  u.onend=u.onerror=function(){el.classList.remove('playing')};S.speak(u);
+}
+function prep(root){root.querySelectorAll('.say').forEach(function(e){e.tabIndex=0;e.setAttribute('role','button')})}
+prep(document);
+document.addEventListener('click',function(e){var el=e.target.closest('.say');if(el)say(el)});
+document.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.classList&&e.target.classList.contains('say')){e.preventDefault();say(e.target)}});
+document.querySelectorAll('.audio-bar button').forEach(function(b){b.addEventListener('click',function(){
+  b.parentElement.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');
+  if(b.dataset.acc)st.acc=b.dataset.acc;if(b.dataset.rate)st.rate=+b.dataset.rate;
+})});
+
+/* ===== Máy trò chuyện sở thích =====
+   HOB: [nhãn, V-ing, nguyên mẫu, lý do thích, lý do không thích, nhóm động từ] */
+var HOB=[['Leo núi','going hiking','go hiking','it’s great exercise and I love nature','it’s too tiring for me','go + V-ing'],
+ ['Nấu ăn','cooking','cook','it’s relaxing, and I can eat what I make','it takes too long, and I hate washing up','động từ riêng'],
+ ['Đọc tiểu thuyết','reading novels','read novels','it helps me relax before bed','I find it a bit boring','động từ riêng'],
+ ['Chơi game','playing video games','play video games','it’s exciting, and I play with my friends online','I think it’s a waste of time','play + trò chơi'],
+ ['Chơi guitar','playing the guitar','play the guitar','music makes me happy','it hurts my fingers','play + the + nhạc cụ'],
+ ['Tập yoga','doing yoga','do yoga','it makes me feel calm and healthy','I’m not very flexible','do + hoạt động'],
+ ['Chụp ảnh','taking photos','take photos','I like capturing special moments','I’m not very good at it','động từ riêng'],
+ ['Làm vườn','gardening','do gardening','it’s peaceful to watch plants grow','I don’t like getting my hands dirty','do + hoạt động'],
+ ['Đi mua sắm','going shopping','go shopping','it’s fun to find new things','the malls are too crowded','go + V-ing'],
+ ['Nhảy','dancing','dance','it’s fun and a good workout','I’m too shy','động từ riêng']];
+/* FEEL: [nhãn, câu trả lời, tần suất (nếu tích cực), cực: 1 thích / 0 trung tính / -1 không thích, trợ động từ khi đồng ý] */
+var FEEL=[['😍 Rất thích (love)','Yes, I love it!','every weekend',1,'So do I!'],
+ ['😄 Thích lắm (really like)','Yes, I really like it.','quite often',1,'So do I!'],
+ ['🙂 Thích (like)','Yes, I like it.','sometimes',1,'Me too!'],
+ ['😐 Cũng được (don’t mind)','It’s okay. I don’t mind it.','now and then',0,''],
+ ['😕 Không thích lắm','Not really. I don’t really like it.','',-1,'Neither do I.'],
+ ['🙁 Không thích','No, I don’t like it.','',-1,'Me neither.'],
+ ['😠 Ghét (hate)','No, I hate it!','',-1,'So do I!'],
+ ['🤢 Không chịu nổi','No, I can’t stand it!','',-1,'Neither can I!']];
+var AG=[['Cùng ý với bạn'],['Khác ý với bạn']];
+function fill(id,arr,val){var s=document.getElementById(id);arr.forEach(function(x,i){s.add(new Option(x[0],i))});s.value=val;s.addEventListener('change',show);return s}
+var sh=fill('g-h',HOB,0),sf=fill('g-f',FEEL,0),sa=fill('g-a',AG,0);
+var out=document.getElementById('gen-out');
+function cap(s){return s.charAt(0).toUpperCase()+s.slice(1)}
+function line(who,txt){var d=document.createElement('div');var l=document.createElement('span');l.className='lbl';l.textContent=who+' ';var s=document.createElement('span');s.className='say';s.textContent=txt;d.append(l,s);out.append(d)}
+function show(){
+  var h=HOB[+sh.value],f=FEEL[+sf.value],fi=+sf.value,agree=+sa.value===0;
+  out.innerHTML='';
+  line('BẠN BÈ','Do you like '+h[1]+'?');
+  var ans=f[1];
+  if(f[3]>0)ans+=' I '+h[2]+' '+f[2]+'.';
+  else if(f[3]===0)ans+=' I '+h[2]+' '+f[2]+'.';
+  else ans+=(fi===4?' I rarely ':' I never ')+h[2]+'.';
+  line('BẠN',ans);
+  line('BẠN BÈ',f[3]<0?'Why not?':'Why?');
+  line('BẠN','Because '+(f[3]<0?h[4]:h[3])+'.');
+  var r;
+  if(f[3]===0)r=agree?'Me too. It’s okay, but it’s not my favourite.':'Really? I love it! '+cap(h[3])+'.';
+  else if(f[3]>0)r=agree?f[4]+' We have a lot in common.':'Really? I don’t. '+cap(h[4])+'.';
+  else r=agree?f[4]+' It’s not my thing either.':'Really? I love it! You should give it a try.';
+  line('BẠN BÈ',r);
+  line('BẠN',agree?'So what do you do in your free time?':'Haha, each to their own!');
+  var w=document.createElement('span');w.className='why';
+  var aux='';
+  if(f[3]!==0&&agree){aux=fi===6?' Bạn nói <b>I hate</b> (câu khẳng định) nên bạn bè đáp <b>So do I</b>.':fi===7?' Câu có <b>can’t</b> nên đáp <b>Neither can I</b>.':f[3]<0?' Câu phủ định nên đáp <b>Neither do I / Me neither</b>.':' Câu khẳng định nên đáp <b>So do I / Me too</b>.'}
+  w.innerHTML='Câu hỏi: <b>Do you like + V-ing?</b> Hoạt động thuộc nhóm <b>'+h[5]+'</b> ('+h[2]+').'+(f[2]?' Tần suất <b>'+f[2]+'</b> đứng cuối câu.':' Không thích nên dùng <b>'+(fi===4?'rarely':'never')+'</b> trước động từ.')+aux;
+  out.append(w);prep(out);
+}
+document.getElementById('gen-btn').addEventListener('click',show);
+document.getElementById('rnd-btn').addEventListener('click',function(){
+  sh.value=Math.floor(Math.random()*HOB.length);sf.value=Math.floor(Math.random()*FEEL.length);sa.value=Math.floor(Math.random()*AG.length);show();
+});
+show();
+
+/* Bài tập */
+var inputs=document.querySelectorAll('#exlist input'),exo=document.getElementById('ex-out');
+function norm(s){return s.toLowerCase().replace(/[’‘`]/g,"'").replace(/[.!?]+$/,'').replace(/,/g,'').replace(/\s+/g,' ').trim()}
+document.getElementById('ex-check').addEventListener('click',function(){
+  var ok=0;
+  inputs.forEach(function(i){
+    var good=i.dataset.a.split('|').some(function(a){return norm(a)===norm(i.value)});
+    i.classList.remove('ok','no');i.classList.add(good?'ok':'no');if(good)ok++;
+  });
+  exo.style.minHeight='';
+  exo.textContent=ok===inputs.length?'🎉 Chính xác '+ok+'/'+inputs.length+'. Bạn đã nói về sở thích rất chuẩn!':'Đúng '+ok+'/'+inputs.length+'. Các ô viền đỏ cần xem lại; đọc lại Bài 1–5, hoặc bấm “Xem đáp án”.';
+});
+document.getElementById('ex-show').addEventListener('click',function(){
+  inputs.forEach(function(i){
+    var k=i.parentElement.querySelector('.key');
+    if(!k){k=document.createElement('span');k.className='key';i.parentElement.append(k)}
+    var a=i.dataset.a.split('|')[0].replace(/'/g,'’').replace(/\bi\b/g,'I').replace(/\btv\b/g,'TV').replace(/\bsundays\b/g,'Sundays');k.textContent='Đáp án: '+(a.indexOf(' ')>-1?cap(a):a);
+  });
+});
+document.getElementById('ex-reset').addEventListener('click',function(){
+  inputs.forEach(function(i){i.value='';i.classList.remove('ok','no')});
+  document.querySelectorAll('#exlist .key').forEach(function(k){k.remove()});
+  exo.textContent='';exo.style.minHeight='0';
+});
+})();
+</script>
+
+<script src="nav.js" defer></script>
+<script src="writing-data.js" defer></script>
+<script src="writing.js" defer></script>
+<script src="review.js" defer></script>
+<script src="cheatsheet-data/Likes-and-Hobbies.js" defer></script>
+<script src="cheatsheet.js" defer></script>
+</body></html>
