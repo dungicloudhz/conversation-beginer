@@ -138,6 +138,7 @@ summary .go{display:none}
 
 <script src="nav.js"></script>
 <script src="cheatsheet.js"></script>
+<script src="extra.js"></script>
 <script>
 (function(){
 var esc=A1CS.esc, content=document.getElementById('content');
@@ -153,9 +154,17 @@ function loadNext(){
   var L=lessons[i],s=document.createElement('script');
   window.A1_CHEAT=null;
   s.src='cheatsheet-data/'+encodeURIComponent(L.name)+'.js';
-  s.onload=function(){L.data=window.A1_CHEAT;i++;loadNext()};
+  s.onload=function(){L.data=window.A1_CHEAT;loadExtra(L)};
   s.onerror=function(){i++;loadNext()};
   document.getElementById('loading').textContent='Đang tải cheat sheet… '+(i+1)+'/'+lessons.length;
+  document.body.appendChild(s);
+}
+/* Phiên âm và loại từ cho phần từ vựng (extra-data), không bắt buộc */
+function loadExtra(L){
+  var s=document.createElement('script');window.A1_EXTRA=null;
+  s.src='extra-data/'+encodeURIComponent(L.name)+'.js';
+  s.onload=function(){L.extra=window.A1_EXTRA;i++;loadNext()};
+  s.onerror=function(){i++;loadNext()};
   document.body.appendChild(s);
 }
 loadNext();
@@ -183,6 +192,7 @@ function render(){
   document.getElementById('stats').innerHTML=
     '<div class="stat"><b>'+lessons.length+'</b>bài học</div><div class="stat"><b>'+tot.p+'</b>mẫu câu</div>'+
     '<div class="stat"><b>'+tot.g+'</b>điểm ngữ pháp</div><div class="stat"><b>'+tot.m+'</b>lỗi hay gặp</div><div class="stat"><b>'+tot.v+'</b>từ vựng</div>';
+  lessons.forEach(function(L){if(L.extra&&window.A1X)A1X.annotate(document.getElementById('cs-'+L.name),L.extra.vocab)});
   content.querySelectorAll('.say').forEach(function(e){e.tabIndex=0;e.setAttribute('role','button')});
   /* Các mục có thể tìm: mỗi dòng mẫu câu, mỗi điểm ngữ pháp, mỗi lỗi, mỗi từ, mỗi mục tiêu và mẹo */
   content.querySelectorAll('details.lesson').forEach(function(d){
