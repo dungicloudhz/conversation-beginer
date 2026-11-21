@@ -53,6 +53,67 @@ window.A1_CHEAT = {
   grammar: [
     { h: "turn + tuổi và số thứ tự cho sinh nhật",
       f: ["chủ ngữ + am / is / are + turning + số tuổi", "chủ ngữ + turned + số tuổi", "the + số thứ tự + birthday", "on + ngày, in + tháng"],
+      items: [
+        { f: "chủ ngữ + am / is / are + turning + số tuổi",
+          mean: "**sắp tròn bao nhiêu tuổi**, sắp bước sang tuổi mới.",
+          parts: [
+            ["am / is / are", "chia theo chủ ngữ: I am, she is, they are."],
+            ["turning", "**bước sang, tròn** (tuổi mới)."],
+            ["số tuổi", "chỉ cần số, **không** cần years old: turning thirty."]
+          ],
+          use: "dùng khi sinh nhật sắp tới, thường kèm mốc thời gian tương lai: next week, on Saturday, this year.",
+          note: "Không nói “I am 30 years old next week” vì câu đó chỉ tuổi hiện tại. Không nói “turning 30 years old” (thừa).",
+          ex: [
+            ["I am turning thirty on Saturday.", "Thứ Bảy này tôi tròn ba mươi tuổi."],
+            ["My grandmother is turning eighty this year.", "Năm nay bà tôi tròn tám mươi tuổi."],
+            ["The twins are turning five next month.", "Tháng sau cặp sinh đôi tròn năm tuổi."],
+            ["Is your son turning ten soon?", "Con trai bạn sắp tròn mười tuổi rồi phải không?"]
+          ] },
+        { f: "chủ ngữ + turned + số tuổi",
+          mean: "**vừa tròn, đã bước sang** bao nhiêu tuổi (chuyện đã xảy ra).",
+          parts: [
+            ["turned", "quá khứ của turn: **đã tròn**."],
+            ["số tuổi", "chỉ số, không cần years old."]
+          ],
+          use: "dùng với mốc quá khứ: yesterday, last week, last year, in May.",
+          note: "Câu phủ định và câu hỏi dùng did: Did she turn eighteen last month? Sau did, turn trở về nguyên mẫu.",
+          ex: [
+            ["My daughter turned six yesterday.", "Hôm qua con gái tôi tròn sáu tuổi."],
+            ["He turned forty last month.", "Tháng trước anh ấy tròn bốn mươi tuổi."],
+            ["I turned eighteen in two thousand and fifteen.", "Tôi tròn mười tám tuổi vào năm 2015."],
+            ["Did your dad turn sixty last year?", "Năm ngoái bố bạn tròn sáu mươi tuổi à?"]
+          ] },
+        { f: "the + số thứ tự + birthday",
+          mean: "**sinh nhật lần thứ mấy**, tức là sinh nhật tuổi bao nhiêu.",
+          parts: [
+            ["the / my / his / her", "đứng đầu; dùng my, his, her khi nói sinh nhật của ai."],
+            ["số thứ tự", "first, eighteenth, twenty-first, fiftieth…"],
+            ["birthday", "sinh nhật."]
+          ],
+          use: "dùng khi chúc mừng (Happy fiftieth birthday!), mời dự tiệc hoặc kể về một sinh nhật đặc biệt.",
+          note: "Dùng **số thứ tự**, không dùng số đếm: my twenty-first birthday, không nói “my twenty-one birthday”.",
+          ex: [
+            ["It is my sister’s eighteenth birthday today.", "Hôm nay là sinh nhật mười tám tuổi của em gái tôi."],
+            ["We had a big party for his fiftieth birthday.", "Chúng tôi tổ chức tiệc lớn cho sinh nhật năm mươi tuổi của anh ấy."],
+            ["Happy first birthday, little Minh!", "Chúc mừng sinh nhật một tuổi, bé Minh!"],
+            ["What did you do on your twenty-first birthday?", "Bạn đã làm gì vào sinh nhật hai mươi mốt tuổi?"]
+          ] },
+        { f: "on + ngày, in + tháng",
+          mean: "**giới từ khi nói ngày sinh**: on trước ngày cụ thể, in trước tháng.",
+          parts: [
+            ["on + ngày", "on the fifth of May, on May 5th, on my birthday."],
+            ["in + tháng", "in May, in December."],
+            ["in + năm", "in 1995 (năm cũng dùng in)."]
+          ],
+          use: "dùng khi trả lời When is your birthday? hoặc When were you born?",
+          note: "Có ngày cụ thể thì luôn dùng **on**, kể cả khi có tháng và năm: I was born on the fifth of May, 1995.",
+          ex: [
+            ["My birthday is on the twentieth of April.", "Sinh nhật tôi vào ngày 20 tháng 4."],
+            ["Her birthday is in September.", "Sinh nhật cô ấy vào tháng Chín."],
+            ["I was born in March, on the third.", "Tôi sinh vào tháng Ba, ngày mùng 3."],
+            ["Is your birthday in winter?", "Sinh nhật bạn vào mùa đông à?"]
+          ] }
+      ],
       p: [
         "Khi nói tuổi **sắp** hoặc **vừa** bước sang, dùng động từ **turn**: I am turning twenty-five next week, She turned twenty yesterday. Không nói “I am 25 years old next week” vì câu đó chỉ tuổi hiện tại.",
         "Sinh nhật lần thứ mấy dùng **số thứ tự** đứng trước birthday: my twenty-first birthday, Happy thirtieth birthday!",
@@ -62,6 +123,52 @@ window.A1_CHEAT = {
     },
     { h: "Hiện tại đơn để kể phong tục",
       f: ["chủ ngữ + động từ nguyên mẫu (we, people, families)", "chủ ngữ số ít + động từ thêm -s", "danh từ + is a kind of + danh từ"],
+      items: [
+        { f: "chủ ngữ + động từ nguyên mẫu (we, people, families)",
+          mean: "**kể phong tục chung** của nhiều người, lặp lại mỗi năm. Chủ ngữ số nhiều nên động từ giữ nguyên.",
+          parts: [
+            ["we", "chúng tôi (người Việt Nam, gia đình tôi)."],
+            ["people", "mọi người; **people** là số nhiều, không thêm -s cho động từ."],
+            ["families / children / Vietnamese people", "danh từ số nhiều khác."]
+          ],
+          use: "dùng thì hiện tại đơn để kể những việc làm vào dịp lễ hằng năm. Thường có cụm thời gian: at Tet, on New Year’s Eve.",
+          note: "Không nói “People gives”. Cũng không dùng hiện tại tiếp diễn cho phong tục: nói We **visit**, không nói “We are visiting” khi kể chung.",
+          ex: [
+            ["At Tet, children wear new clothes.", "Vào dịp Tết, trẻ em mặc quần áo mới."],
+            ["People decorate their houses with peach flowers.", "Mọi người trang trí nhà bằng hoa đào."],
+            ["We clean our houses before the new year.", "Chúng tôi dọn dẹp nhà cửa trước năm mới."],
+            ["Do families eat together on New Year’s Eve?", "Các gia đình có ăn cùng nhau vào đêm giao thừa không?"]
+          ] },
+        { f: "chủ ngữ số ít + động từ thêm -s",
+          mean: "**kể việc một người hoặc một vật làm** theo phong tục. Chủ ngữ số ít nên động từ thêm -s.",
+          parts: [
+            ["chủ ngữ số ít", "my mother, my grandfather, everyone, the family."],
+            ["động từ thêm -s hoặc -es", "makes, gives, cooks, watches."],
+            ["everyone / everybody", "nghĩa là mọi người nhưng là **số ít**: Everyone **wears** new clothes."]
+          ],
+          use: "dùng khi kể vai trò của từng người trong dịp lễ: ai nấu ăn, ai lì xì, ai trang trí.",
+          note: "**everyone** và **the family** hay bị nhầm là số nhiều. Hãy nhớ: Everyone **is** happy, Everyone **gets** lucky money.",
+          ex: [
+            ["My mother cooks a big meal at Tet.", "Mẹ tôi nấu một bữa thịnh soạn vào dịp Tết."],
+            ["My grandfather gives everyone lucky money.", "Ông tôi lì xì cho mọi người."],
+            ["Everyone wishes each other a happy new year.", "Mọi người chúc nhau năm mới vui vẻ."],
+            ["Does your father decorate the house?", "Bố bạn có trang trí nhà không?"]
+          ] },
+        { f: "danh từ + is a kind of + danh từ",
+          mean: "**… là một loại …** Dùng để giải thích một món ăn, đồ vật lạ cho người nước ngoài.",
+          parts: [
+            ["is a kind of", "là một loại; có thể nói is a type of với nghĩa giống hệt."],
+            ["danh từ sau", "từ chung mà người nghe đã biết: cake, soup, flower, game."]
+          ],
+          use: "nói câu này trước, rồi thêm một câu tả nguyên liệu, hình dạng hoặc khi nào dùng: It is made of…, We eat it at…",
+          note: "Tên món ăn Việt dùng như danh từ số ít nên đi với **is**: Banh tet **is** a kind of rice cake. Đừng quên chữ **a**: không nói “is kind of cake”.",
+          ex: [
+            ["Mut is a kind of dried fruit candy.", "Mứt là một loại kẹo làm từ trái cây sấy."],
+            ["Pho is a kind of noodle soup.", "Phở là một loại súp có sợi bánh."],
+            ["Ao dai is a kind of long dress.", "Áo dài là một loại váy dài truyền thống."],
+            ["Is banh tet a kind of cake?", "Bánh tét có phải là một loại bánh không?"]
+          ] }
+      ],
       p: [
         "Phong tục **lặp lại mỗi năm** nên dùng **thì hiện tại đơn**, không dùng hiện tại tiếp diễn: At Tet, we visit our grandparents.",
         "Khi kể phong tục, chủ ngữ thường là chung chung: people, we, Vietnamese families. Các chủ ngữ này là số nhiều nên động từ **không thêm -s**: People give lucky money.",
@@ -71,6 +178,53 @@ window.A1_CHEAT = {
     },
     { h: "Giới từ với ngày lễ: at, on, in",
       f: ["at + cả dịp lễ (at Christmas, at Tet)", "on + một ngày cụ thể (on Christmas Day, on my birthday)", "in + tháng hoặc mùa (in December, in spring)"],
+      items: [
+        { f: "at + cả dịp lễ (at Christmas, at Tet)",
+          mean: "**vào dịp lễ** kéo dài nhiều ngày, nói chung cả kỳ lễ.",
+          parts: [
+            ["at Christmas", "vào dịp Giáng sinh (cả mùa lễ)."],
+            ["at Tet", "vào dịp Tết."],
+            ["at Easter", "vào dịp lễ Phục sinh."]
+          ],
+          use: "dùng khi kể phong tục hay kế hoạch trong cả kỳ lễ. Có thể đặt ở đầu câu (có dấu phẩy) hoặc cuối câu.",
+          note: "Người Việt hay nói “in Tet”. Nói đúng là **at Tet**. Nếu nói một ngày cụ thể trong dịp đó thì đổi sang on: on the first day of Tet.",
+          ex: [
+            ["We go back to our hometown at Tet.", "Chúng tôi về quê vào dịp Tết."],
+            ["At Christmas, people give each other presents.", "Vào dịp Giáng sinh, mọi người tặng quà cho nhau."],
+            ["What do you eat at Tet?", "Bạn ăn gì vào dịp Tết?"],
+            ["We do not work at Christmas.", "Chúng tôi không làm việc vào dịp Giáng sinh."]
+          ] },
+        { f: "on + một ngày cụ thể (on Christmas Day, on my birthday)",
+          mean: "**vào một ngày cụ thể**: ngày lễ có chữ Day, đêm lễ có chữ Eve, ngày sinh nhật.",
+          parts: [
+            ["on + … Day", "on Christmas Day, on New Year’s Day, on Valentine’s Day."],
+            ["on + … Eve", "on Christmas Eve, on New Year’s Eve (đêm giao thừa)."],
+            ["on my birthday", "vào ngày sinh nhật của tôi."],
+            ["on the first day of Tet", "vào mùng một Tết."]
+          ],
+          use: "dùng khi nói việc xảy ra đúng một ngày trong dịp lễ.",
+          note: "Christmas thì dùng at, nhưng Christmas **Day** thì dùng on. Hãy để ý có chữ Day hay không.",
+          ex: [
+            ["We open our presents on Christmas Day.", "Chúng tôi mở quà vào ngày Giáng sinh."],
+            ["On New Year’s Eve, we watch the fireworks.", "Vào đêm giao thừa, chúng tôi xem pháo hoa."],
+            ["My friends surprised me on my birthday.", "Bạn bè làm tôi bất ngờ vào ngày sinh nhật."],
+            ["What do you do on the first day of Tet?", "Bạn làm gì vào mùng một Tết?"]
+          ] },
+        { f: "in + tháng hoặc mùa (in December, in spring)",
+          mean: "**vào tháng hoặc mùa nào**, nói khoảng thời gian rộng.",
+          parts: [
+            ["in + tháng", "in December, in January, in February."],
+            ["in + mùa", "in spring, in summer, in autumn, in winter."]
+          ],
+          use: "dùng khi nói một ngày lễ rơi vào tháng nào, mùa nào: Tet is usually in January or February.",
+          note: "Tháng trong tiếng Anh luôn viết hoa chữ cái đầu (December), còn mùa thì không (spring).",
+          ex: [
+            ["Christmas is in December.", "Giáng sinh vào tháng Mười hai."],
+            ["Tet is usually in January or February.", "Tết thường rơi vào tháng Một hoặc tháng Hai."],
+            ["Many flowers bloom in spring.", "Nhiều loài hoa nở vào mùa xuân."],
+            ["Is the Mid-Autumn Festival in September?", "Tết Trung thu có phải vào tháng Chín không?"]
+          ] }
+      ],
       p: [
         "Dùng **at** khi nói cả một dịp lễ kéo dài vài ngày: at Christmas, at Tet, at Easter. Người Việt hay nhầm thành “in Tet”.",
         "Dùng **on** khi nói **một ngày cụ thể**: on Christmas Day, on New Year’s Eve, on my birthday. Chữ birthday là một ngày nên luôn đi với on.",
@@ -80,6 +234,66 @@ window.A1_CHEAT = {
     },
     { h: "Congratulations on và ba cách chúc",
       f: ["Congratulations on + danh từ hoặc động từ thêm -ing", "Wishing you + danh từ", "I hope + chủ ngữ + động từ", "May + chủ ngữ + động từ nguyên mẫu (trang trọng)"],
+      items: [
+        { f: "Congratulations on + danh từ hoặc động từ thêm -ing",
+          mean: "**chúc mừng** ai đó vì một thành công hay một sự kiện vui (đỗ thi, kết hôn, có em bé, có việc mới).",
+          parts: [
+            ["Congratulations", "luôn có **s** ở cuối. Thân mật có thể nói Congrats."],
+            ["on + danh từ", "on your wedding, on your new baby, on your new job."],
+            ["on + động từ thêm -ing", "on passing the exam, on getting the job."]
+          ],
+          use: "dùng khi người kia **đạt được** điều gì. Có thể nói một mình: Congratulations!",
+          note: "Không dùng for: không nói “Congratulations for your wedding”. Không dùng Congratulations cho sinh nhật; sinh nhật thì nói Happy birthday.",
+          ex: [
+            ["Congratulations on your new job!", "Chúc mừng bạn có công việc mới!"],
+            ["Congratulations on your wedding!", "Chúc mừng đám cưới của hai bạn!"],
+            ["Congratulations on winning the race!", "Chúc mừng bạn thắng cuộc đua!"],
+            ["Congrats on getting your driving licence!", "Chúc mừng bạn đã có bằng lái xe!"]
+          ] },
+        { f: "Wishing you + danh từ",
+          mean: "**chúc bạn có được…** Cách chúc ngắn gọn, hay viết trên thiệp và tin nhắn.",
+          parts: [
+            ["Wishing you", "rút gọn của We are wishing you hoặc I am wishing you."],
+            ["danh từ", "điều tốt đẹp: a happy new year, good health, a lovely birthday, lots of luck."]
+          ],
+          use: "dùng ở đầu thiệp, tin nhắn chúc mừng năm mới, sinh nhật, Giáng sinh. Sau you là **danh từ**, không phải câu.",
+          note: "Cũng có thể nói **I wish you + danh từ** (I wish you good luck). Không nói “I wish you have a happy day” vì sau đó là câu, phải dùng I hope.",
+          ex: [
+            ["Wishing you a happy new year!", "Chúc bạn năm mới vui vẻ!"],
+            ["Wishing you good health and happiness.", "Chúc bạn sức khỏe và hạnh phúc."],
+            ["Wishing you a wonderful birthday!", "Chúc bạn sinh nhật tuyệt vời!"],
+            ["I wish you good luck in your exam.", "Chúc bạn may mắn trong kỳ thi."]
+          ] },
+        { f: "I hope + chủ ngữ + động từ",
+          mean: "**mong rằng, chúc rằng** + một câu đầy đủ. Cách chúc tự nhiên khi nói chuyện.",
+          parts: [
+            ["I hope", "tôi mong, tôi hy vọng."],
+            ["chủ ngữ + động từ", "câu đầy đủ, thường ở hiện tại đơn: you have, you get, it is."]
+          ],
+          use: "dùng khi nói chuyện trực tiếp, nhắn tin, cuối email. Phần sau hope là một câu có chủ ngữ và động từ.",
+          note: "Sau I hope dùng **hiện tại đơn** dù nói về tương lai: I hope you **have** a great day. Đừng nhầm với I wish (I wish + danh từ).",
+          ex: [
+            ["I hope you have a great birthday.", "Mong bạn có một sinh nhật thật vui."],
+            ["I hope you like the present.", "Mong là bạn thích món quà."],
+            ["I hope the new year brings you lots of luck.", "Mong năm mới mang lại cho bạn thật nhiều may mắn."],
+            ["I hope your family is well.", "Mong gia đình bạn khỏe mạnh."]
+          ] },
+        { f: "May + chủ ngữ + động từ nguyên mẫu (trang trọng)",
+          mean: "**cầu chúc cho…** Cách chúc trang trọng, giống lời chúc Tết, chúc cưới.",
+          parts: [
+            ["May", "đứng **đầu câu**, nghĩa là cầu mong, cầu chúc."],
+            ["chủ ngữ", "your dreams, your family, the new year…"],
+            ["động từ nguyên mẫu", "**không thêm -s**: May the new year bring…"]
+          ],
+          use: "dùng trong thiệp chúc Tết, đám cưới, lời phát biểu. Không phải câu hỏi nên kết thúc bằng dấu chấm hoặc dấu chấm than.",
+          note: "Dù chủ ngữ số ít, động từ vẫn **nguyên mẫu**: May all your dreams **come** true, May the new year **bring** you joy (không nói “brings”).",
+          ex: [
+            ["May all your dreams come true!", "Chúc mọi ước mơ của bạn thành hiện thực!"],
+            ["May the new year bring you happiness.", "Chúc năm mới mang đến cho bạn hạnh phúc."],
+            ["May you both be happy forever.", "Chúc hai bạn mãi mãi hạnh phúc."],
+            ["May your family stay healthy.", "Chúc gia đình bạn luôn khỏe mạnh."]
+          ] }
+      ],
       p: [
         "**Congratulations** luôn có **s** ở cuối và đi với giới từ **on**, không dùng for: Congratulations on your wedding, Congratulations on passing your exam.",
         "Muốn chúc điều tốt đẹp, có ba mẫu. **Wishing you + danh từ** hay dùng trên thiệp: Wishing you a happy new year. **I hope + chủ ngữ + động từ** dùng khi nói chuyện: I hope you have a great day.",
@@ -89,6 +303,53 @@ window.A1_CHEAT = {
     },
     { h: "give, buy, get: hai cách nói tặng ai cái gì",
       f: ["give / buy / get + người + vật", "give + vật + to + người", "buy / get + vật + for + người"],
+      items: [
+        { f: "give / buy / get + người + vật",
+          mean: "**tặng, mua, kiếm cho ai cái gì**, đặt người nhận ngay sau động từ, không cần giới từ.",
+          parts: [
+            ["give", "**tặng, đưa**: món quà đã có, trao tận tay. Quá khứ: gave."],
+            ["buy", "**mua tặng**: nhấn vào việc bỏ tiền mua. Quá khứ: bought."],
+            ["get", "**kiếm, mua**: thân mật, dùng rất nhiều khi nói chuyện. Quá khứ: got."]
+          ],
+          use: "cách nói phổ biến nhất khi người nhận là **đại từ** (me, him, her) hoặc khi muốn nhấn mạnh món quà ở cuối câu.",
+          note: "Không đặt giới từ ở cách này: nói I gave **her** a book, không nói “I gave to her a book”.",
+          ex: [
+            ["My boyfriend gave me a necklace.", "Bạn trai tôi tặng tôi một sợi dây chuyền."],
+            ["I bought my dad a new wallet.", "Tôi mua tặng bố một chiếc ví mới."],
+            ["What did you get your sister for her birthday?", "Bạn mua gì tặng em gái vào sinh nhật?"],
+            ["Grandma gives the children lucky money.", "Bà lì xì cho bọn trẻ."]
+          ] },
+        { f: "give + vật + to + người",
+          mean: "**tặng, đưa cái gì cho ai**, đặt món quà trước, rồi dùng **to** trước người nhận.",
+          parts: [
+            ["vật", "món quà đứng ngay sau give."],
+            ["to", "**cho, tới**: chỉ hướng món quà đi đến người nhận."],
+            ["người", "người nhận đứng cuối câu."]
+          ],
+          use: "dùng khi muốn nhấn mạnh **người nhận** (thông tin mới ở cuối câu), hoặc khi món quà là đại từ: give it to her.",
+          note: "Nếu món quà là đại từ (it, them) thì **bắt buộc** dùng cách này: I gave it to my mum (không nói “I gave my mum it”).",
+          ex: [
+            ["I gave the flowers to my teacher.", "Tôi tặng hoa cho cô giáo."],
+            ["She gave a card to each of her friends.", "Cô ấy tặng mỗi người bạn một tấm thiệp."],
+            ["Please give this present to your mother.", "Hãy đưa món quà này cho mẹ bạn."],
+            ["I made a cake and gave it to my neighbour.", "Tôi làm một chiếc bánh và tặng cho hàng xóm."]
+          ] },
+        { f: "buy / get + vật + for + người",
+          mean: "**mua cái gì cho ai**, đặt món đồ trước, rồi dùng **for** trước người nhận.",
+          parts: [
+            ["buy", "mua (rõ nghĩa bỏ tiền ra)."],
+            ["get", "mua, kiếm (thân mật hơn)."],
+            ["for", "**cho, dành cho**: chỉ người được hưởng."]
+          ],
+          use: "dùng khi kể đã mua quà cho ai, hoặc khi món đồ là đại từ: I bought it for him.",
+          note: "Với buy và get dùng **for**, không dùng to: không nói “I bought a gift to her”. Mẹo: give đi với to (trao tận tay), buy / get đi với for (làm vì ai).",
+          ex: [
+            ["I bought a toy car for my nephew.", "Tôi mua một chiếc ô tô đồ chơi cho cháu trai."],
+            ["We got a birthday cake for Lan.", "Chúng tôi mua một chiếc bánh sinh nhật cho Lan."],
+            ["He bought some roses for his wife.", "Anh ấy mua mấy bông hồng cho vợ."],
+            ["Did you get anything for Mum?", "Bạn có mua gì cho mẹ không?"]
+          ] }
+      ],
       p: [
         "Cách thứ nhất đặt **người nhận ngay sau động từ**, không cần giới từ: I gave my mum a scarf, I bought him a book.",
         "Cách thứ hai đặt **vật trước**, rồi thêm giới từ trước người nhận. Với **give** dùng **to** (đưa tận tay), với **buy** và **get** dùng **for** (mua cho ai).",

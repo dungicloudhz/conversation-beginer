@@ -138,6 +138,7 @@ summary .go{display:none}
 
 <script src="nav.js"></script>
 <script src="cheatsheet.js"></script>
+<script src="grammar-lesson.js"></script>
 <script src="extra.js"></script>
 <script>
 (function(){
@@ -155,8 +156,16 @@ function loadNext(){
   window.A1_CHEAT=null;
   s.src='cheatsheet-data/'+encodeURIComponent(L.name)+'.js';
   s.onload=function(){L.data=window.A1_CHEAT;loadExtra(L)};
-  s.onerror=function(){i++;loadNext()};
+  s.onerror=function(){loadGrammar(L)};
   document.getElementById('loading').textContent='Đang tải cheat sheet… '+(i+1)+'/'+lessons.length;
+  document.body.appendChild(s);
+}
+/* Bài ngữ pháp nền tảng không có cheatsheet-data: sinh cheat sheet từ grammar-data */
+function loadGrammar(L){
+  var s=document.createElement('script');window.A1_GRAMMAR=null;
+  s.src='grammar-data/'+encodeURIComponent(L.name)+'.js';
+  s.onload=function(){if(window.A1_GRAMMAR&&window.A1G)L.data=A1G.toCheat(window.A1_GRAMMAR);i++;loadNext()};
+  s.onerror=function(){i++;loadNext()};
   document.body.appendChild(s);
 }
 /* Phiên âm và loại từ cho phần từ vựng (extra-data), không bắt buộc */

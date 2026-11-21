@@ -27,6 +27,19 @@
     ".cs-gr p{font-size:13.5px;color:var(--muted);line-height:1.75;margin:4px 0 8px;max-width:78ch}",
     ".cs-gr p b{color:var(--text)}",
     ".cs-ex{list-style:none;margin:6px 0 0;padding:0}",
+    ".cs-it{background:var(--s2);border:1px solid var(--border);border-left:3px solid var(--acc);border-radius:10px;padding:12px 14px;margin:10px 0}",
+    ".cs-it-h{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px}",
+    ".cs-it-h .cs-fm{margin:0}",
+    ".cs-it-n{font-size:10.5px;font-weight:800;letter-spacing:.5px;color:var(--acc);text-transform:uppercase}",
+    ".cs-line{font-size:13.5px;color:var(--muted);line-height:1.7;margin:4px 0;max-width:80ch}",
+    ".cs-line b{color:var(--text)}",
+    ".cs-warn{color:var(--warn-fg,#e0bc58)}",
+    ".cs-parts{display:grid;gap:4px;margin:8px 0;padding:8px 12px;background:var(--code-bg);border-radius:8px}",
+    ".cs-parts div{display:grid;grid-template-columns:minmax(90px,max-content) 1fr;gap:12px;font-size:13px;align-items:baseline}",
+    ".cs-pw{font-family:var(--mono,ui-monospace,Menlo,monospace);color:var(--teal);font-weight:600}",
+    ".cs-pm{color:var(--muted)}.cs-pm b{color:var(--text)}",
+    ".cs-it-sub{font-size:11px;font-weight:800;letter-spacing:.5px;color:var(--text);margin:10px 0 0;text-transform:uppercase}",
+    ".cs-gen{margin-top:16px}",
     ".cs-ex li{font-size:13.5px;padding:5px 0 5px 14px;position:relative;line-height:1.6}",
     ".cs-ex li::before{content:'';position:absolute;left:0;top:13px;width:6px;height:6px;border-radius:50%;background:var(--acc)}",
     ".cs-ex .cs-vi{color:var(--muted);font-size:12.5px;display:block}",
@@ -87,12 +100,31 @@
   }
   if (D.grammar && D.grammar.length) {
     h += '<div data-part="grammar"><div class="cs-h">📐 Ngữ pháp cần nhớ</div>' + D.grammar.map(function (g, i) {
+      var exList = function (ex) {
+        return '<ul class="cs-ex">' + ex.map(function (e) {
+          return "<li>" + say(e[0]) + '<span class="cs-vi">' + esc(e[1]) + "</span></li>";
+        }).join("") + "</ul>";
+      };
+      /* Có giải thích riêng cho từng công thức (items) thì mỗi công thức một khối; không thì hiện như cũ */
+      if (g.items && g.items.length) {
+        return '<div class="cs-gr"><h4>' + (i + 1) + ". " + esc(g.h) + "</h4>" +
+          g.items.map(function (it, k) {
+            return '<div class="cs-it"><div class="cs-it-h"><span class="cs-it-n">Công thức ' + (k + 1) + '</span><span class="cs-fm">' + esc(it.f) + "</span></div>" +
+              (it.mean ? '<div class="cs-line"><b>Nghĩa:</b> ' + fmt(it.mean) + "</div>" : "") +
+              (it.parts && it.parts.length ? '<div class="cs-parts">' + it.parts.map(function (pt) {
+                return '<div><span class="cs-pw">' + esc(pt[0]) + '</span><span class="cs-pm">' + fmt(pt[1]) + "</span></div>";
+              }).join("") + "</div>" : "") +
+              (it.use ? '<div class="cs-line"><b>Dùng khi:</b> ' + fmt(it.use) + "</div>" : "") +
+              (it.note ? '<div class="cs-line cs-warn"><b>Lưu ý:</b> ' + fmt(it.note) + "</div>" : "") +
+              (it.ex && it.ex.length ? '<div class="cs-it-sub">Câu mẫu</div>' + exList(it.ex) : "") + "</div>";
+          }).join("") +
+          (g.p && g.p.length ? '<div class="cs-it-sub cs-gen">Giải thích chung</div>' + g.p.map(function (p) { return "<p>" + fmt(p) + "</p>"; }).join("") : "") +
+          (g.ex && g.ex.length ? '<div class="cs-it-sub">Ví dụ kết hợp</div>' + exList(g.ex) : "") + "</div>";
+      }
       return '<div class="cs-gr"><h4>' + (i + 1) + ". " + esc(g.h) + "</h4>" +
         (g.f || []).map(function (f) { return '<span class="cs-fm">' + esc(f) + "</span>"; }).join("") +
         (g.p || []).map(function (p) { return "<p>" + fmt(p) + "</p>"; }).join("") +
-        (g.ex && g.ex.length ? '<ul class="cs-ex">' + g.ex.map(function (e) {
-          return "<li>" + say(e[0]) + '<span class="cs-vi">' + esc(e[1]) + "</span></li>";
-        }).join("") + "</ul>" : "") + "</div>";
+        (g.ex && g.ex.length ? exList(g.ex) : "") + "</div>";
     }).join("") + "</div>";
   }
   if (D.mistakes && D.mistakes.length) {

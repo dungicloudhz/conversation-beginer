@@ -47,6 +47,70 @@ window.A1_CHEAT = {
   grammar: [
     { h: "There is và There are để nói trong nhà có gì",
       f: ["There is + a hoặc an + danh từ số ít", "There are + số đếm hoặc some + danh từ số nhiều", "Is there…? / Are there any…?", "There is not / There are not"],
+      items: [
+        { f: "There is + a hoặc an + danh từ số ít",
+          mean: "**có một (cái gì đó) ở đâu đó**. Dùng khi nói về **một** đồ vật hoặc một căn phòng.",
+          parts: [
+            ["There is", "**có**, dùng với một thứ. Dạng rút gọn hay nói là There’s."],
+            ["a", "đứng trước danh từ bắt đầu bằng **âm phụ âm**: a sofa, a kitchen, a bed."],
+            ["an", "đứng trước danh từ bắt đầu bằng **âm nguyên âm**: an oven, an armchair, an old fridge."],
+            ["danh từ số ít", "danh từ chỉ một thứ, không thêm -s."]
+          ],
+          use: "giới thiệu trong nhà, trong phòng có gì. Thường thêm nơi chốn ở cuối câu: in the living room, in my bedroom.",
+          note: "Đừng dịch “Nhà tôi có…” thành “My house has…” trong mọi trường hợp. Khi tả vị trí đồ đạc, người bản xứ thường nói **There is a … in my house**.",
+          ex: [
+            ["There is a big sofa in the living room.", "Trong phòng khách có một cái ghế sofa lớn."],
+            ["There is an oven in our kitchen.", "Bếp nhà chúng tôi có một cái lò nướng."],
+            ["There is a small garden behind my house.", "Phía sau nhà tôi có một khu vườn nhỏ."],
+            ["There is a lamp next to my bed.", "Cạnh giường tôi có một cái đèn."]
+          ] },
+        { f: "There are + số đếm hoặc some + danh từ số nhiều",
+          mean: "**có (nhiều cái gì đó) ở đâu đó**. Dùng khi nói về **hai thứ trở lên**.",
+          parts: [
+            ["There are", "**có**, dùng với nhiều thứ. Không rút gọn trong văn viết."],
+            ["số đếm", "two, three, four…: nói rõ số lượng (There are two bathrooms)."],
+            ["some", "**một vài, một ít**: khi không nói rõ số lượng (There are some books)."],
+            ["danh từ số nhiều", "danh từ thêm **-s** hoặc **-es**: rooms, chairs, glasses. Chú ý danh từ bất quy tắc: shelf → shelves."]
+          ],
+          use: "kể số phòng, số đồ vật trong nhà. Sau There are danh từ **luôn ở số nhiều**.",
+          note: "Lỗi hay gặp là quên đuôi -s: “There are three bedroom” là sai, phải nói **three bedrooms**.",
+          ex: [
+            ["There are three bedrooms in my house.", "Nhà tôi có ba phòng ngủ."],
+            ["There are some plants on the balcony.", "Ngoài ban công có vài chậu cây."],
+            ["There are four chairs around the table.", "Quanh bàn có bốn cái ghế."],
+            ["There are some cups in the cupboard.", "Trong tủ có mấy cái cốc."]
+          ] },
+        { f: "Is there…? / Are there any…?",
+          mean: "**Có … không?**: câu hỏi xem ở đâu đó có thứ gì hay không.",
+          parts: [
+            ["Is there…?", "hỏi về **một** thứ: Is there **a** washing machine? Trả lời: Yes, there is. / No, there is not."],
+            ["Are there any…?", "hỏi về **nhiều** thứ: Are there **any** towels? Trả lời: Yes, there are. / No, there are not."],
+            ["any", "dùng trong câu hỏi và câu phủ định thay cho some, nghĩa là **nào, chút nào**."]
+          ],
+          use: "khi đến nhà người khác, thuê nhà, hoặc tìm đồ trong nhà. Đưa is hoặc are lên trước there.",
+          note: "Trả lời ngắn không lặp lại danh từ: hỏi “Is there a fan?” thì đáp **Yes, there is**, không đáp “Yes, there is a fan is”.",
+          ex: [
+            ["Is there a microwave in the kitchen?", "Trong bếp có lò vi sóng không?"],
+            ["Are there any towels in the bathroom?", "Trong phòng tắm có khăn tắm nào không?"],
+            ["Is there a parking space near your house? — No, there is not.", "Gần nhà bạn có chỗ đỗ xe không? — Không có."],
+            ["Are there any eggs in the fridge? — Yes, there are.", "Trong tủ lạnh có quả trứng nào không? — Có."]
+          ] },
+        { f: "There is not / There are not",
+          mean: "**không có …**: câu phủ định của There is và There are.",
+          parts: [
+            ["There is not", "không có **một** thứ: There is not a TV. Dạng rút gọn: There isn’t."],
+            ["There are not", "không có **nhiều** thứ: There are not any chairs. Dạng rút gọn: There aren’t."],
+            ["any", "thường đi sau There are not, nghĩa là **không … nào**."]
+          ],
+          use: "nói trong nhà thiếu thứ gì. Sau There is not dùng a hoặc an + danh từ số ít; sau There are not dùng any + danh từ số nhiều.",
+          note: "Có thể nói **There is no** + danh từ thay cho There is not a: There is no TV in my room. Không dùng cả hai cùng lúc (không nói “There is not no TV”).",
+          ex: [
+            ["There is not a TV in my bedroom.", "Trong phòng ngủ của tôi không có ti vi."],
+            ["There are not any pictures on the wall.", "Trên tường không có bức tranh nào."],
+            ["There is not a lift in our building.", "Tòa nhà của chúng tôi không có thang máy."],
+            ["There are not any clean plates. Can you wash some?", "Không còn cái đĩa sạch nào. Bạn rửa vài cái được không?"]
+          ] }
+      ],
       p: [
         "Khi muốn nói “ở đâu đó **có** cái gì”, tiếng Anh dùng **There is / There are**, không dùng “have”. Người Việt hay nói “My house have two bedroom” vì dịch từng chữ “nhà tôi có”.",
         "Dùng **There is** với một thứ (There is a big kitchen) và **There are** với nhiều thứ (There are three bedrooms). Danh từ số nhiều phải thêm **-s**.",
@@ -56,6 +120,49 @@ window.A1_CHEAT = {
     },
     { h: "Giới từ chỉ vị trí: in, on, under, next to, behind",
       f: ["in + không gian bên trong", "on + bề mặt, kể cả tường", "under / next to / behind + đồ vật"],
+      items: [
+        { f: "in + không gian bên trong",
+          mean: "**ở trong, bên trong** một không gian có vách bao quanh như căn phòng, ngăn kéo, tủ, hộp.",
+          parts: [
+            ["in", "bên trong một chỗ được bao kín hoặc có giới hạn: in the drawer, in the fridge, in the box, in the kitchen."]
+          ],
+          use: "nói đồ vật nằm trong đồ đựng hoặc người, vật đang ở trong một căn phòng. Mẫu: đồ vật + is hoặc are + in + the + nơi chốn.",
+          note: "Phòng cũng là không gian bên trong: in the bathroom, in my bedroom. Nhưng nói **at home** (ở nhà), không nói “in home”.",
+          ex: [
+            ["The milk is in the fridge.", "Sữa ở trong tủ lạnh."],
+            ["My keys are in the drawer.", "Chìa khóa của tôi ở trong ngăn kéo."],
+            ["Mum is in the kitchen.", "Mẹ đang ở trong bếp."],
+            ["Are the towels in the cupboard?", "Khăn tắm có ở trong tủ không?"]
+          ] },
+        { f: "on + bề mặt, kể cả tường",
+          mean: "**ở trên, nằm trên** một bề mặt, có tiếp xúc với bề mặt đó.",
+          parts: [
+            ["on", "trên mặt bàn, mặt sàn, mặt giường, kệ, và cả **bề mặt thẳng đứng** như tường, cửa, tủ lạnh."]
+          ],
+          use: "nói đồ vật đặt trên bàn, giường, kệ hoặc treo, dán trên tường, cửa. Mẫu: đồ vật + is hoặc are + on + the + bề mặt.",
+          note: "Người Việt hay nói “in the wall” vì nghĩ tranh “ở trong tường”. Đúng phải là **on the wall**. Chỉ dùng in the wall khi vật bị khoét vào trong tường (ví dụ ổ điện âm tường).",
+          ex: [
+            ["The remote is on the sofa.", "Cái điều khiển ở trên ghế sofa."],
+            ["There is a mirror on the wall.", "Trên tường có một cái gương."],
+            ["Your phone is on the shelf.", "Điện thoại của bạn ở trên kệ."],
+            ["Is my book on the bed?", "Quyển sách của tôi có ở trên giường không?"]
+          ] },
+        { f: "under / next to / behind + đồ vật",
+          mean: "ba giới từ chỉ vị trí so với một đồ vật khác: **dưới gầm**, **bên cạnh**, **phía sau**.",
+          parts: [
+            ["under", "**ở dưới, dưới gầm** một vật: under the bed, under the table."],
+            ["next to", "**bên cạnh, sát cạnh**, luôn có hai chữ: next to the window, next to the TV."],
+            ["behind", "**phía sau**, bị vật kia che khuất: behind the door, behind the sofa. Ngược nghĩa với **in front of** (phía trước)."]
+          ],
+          use: "chỉ chỗ để đồ hoặc tìm đồ bị mất trong nhà. Sau giới từ thường là **the** + tên đồ đạc.",
+          note: "Đừng quên chữ **to** trong next to: nói next to the bed, không nói “next the bed”.",
+          ex: [
+            ["The cat is sleeping under the table.", "Con mèo đang ngủ dưới gầm bàn."],
+            ["The lamp is next to the sofa.", "Cái đèn ở bên cạnh ghế sofa."],
+            ["My shoes are behind the door.", "Giày của tôi ở sau cánh cửa."],
+            ["Is the box under the bed?", "Cái hộp có ở dưới gầm giường không?"]
+          ] }
+      ],
       p: [
         "**in** nghĩa là bên trong một không gian có vách bao quanh: in the drawer, in the fridge. **on** nghĩa là nằm trên một bề mặt: on the table.",
         "Bức tường cũng được xem là một bề mặt, nên tranh và đồng hồ treo tường dùng **on the wall**, không dùng “in the wall”.",
@@ -65,6 +172,56 @@ window.A1_CHEAT = {
     },
     { h: "Sở hữu cách ’s và tính từ sở hữu",
       f: ["tên người + ’s + đồ vật", "danh từ số nhiều tận cùng bằng -s + ’ + đồ vật", "my / your / his / her / our / their + danh từ"],
+      items: [
+        { f: "tên người + ’s + đồ vật",
+          mean: "**(đồ vật) của (người nào đó)**: chỉ sự sở hữu bằng cách thêm **’s** vào sau người sở hữu.",
+          parts: [
+            ["tên người", "người sở hữu, đứng **trước**: Lan, my brother, Mum, my sister."],
+            ["’s", "dấu sở hữu, gắn liền vào người sở hữu, nghĩa là **của**."],
+            ["đồ vật", "thứ được sở hữu, đứng **sau**: room, bike, laptop."]
+          ],
+          use: "nói đồ vật, căn phòng thuộc về ai trong nhà. Thứ tự ngược với tiếng Việt: “phòng của Nam” thành **Nam’s room**.",
+          note: "Không nói “the room of Nam”. Cũng đừng nhầm ’s sở hữu với ’s là is rút gọn: “Nam’s room” (phòng của Nam) khác “Nam’s here” (Nam ở đây).",
+          ex: [
+            ["This is my brother’s bedroom.", "Đây là phòng ngủ của anh trai tôi."],
+            ["Mum’s glasses are on the table.", "Kính của mẹ ở trên bàn."],
+            ["Is that Hoa’s laptop?", "Đó có phải máy tính xách tay của Hoa không?"],
+            ["My grandmother’s chair is next to the window.", "Ghế của bà tôi ở cạnh cửa sổ."]
+          ] },
+        { f: "danh từ số nhiều tận cùng bằng -s + ’ + đồ vật",
+          mean: "**(đồ vật) của (nhiều người)**: khi người sở hữu là danh từ số nhiều đã có đuôi -s, chỉ thêm dấu **’** phía sau.",
+          parts: [
+            ["danh từ số nhiều có -s", "parents, sisters, students, neighbours."],
+            ["’", "chỉ thêm dấu phẩy trên, **không** thêm s nữa: parents’ (không viết parents’s)."],
+            ["danh từ số nhiều bất quy tắc", "không tận cùng bằng s thì vẫn thêm **’s**: children’s room, people’s houses."]
+          ],
+          use: "nói đồ vật chung của nhiều người như bố mẹ, các anh chị, hàng xóm.",
+          note: "Khi nói, parents’ và parent’s phát âm giống nhau. Phải nhìn ngữ cảnh: **my parents’ room** là phòng của bố mẹ, **my parent’s room** là phòng của một người (bố hoặc mẹ).",
+          ex: [
+            ["My parents’ room is downstairs.", "Phòng của bố mẹ tôi ở tầng dưới."],
+            ["The girls’ toys are in the box.", "Đồ chơi của các bé gái ở trong hộp."],
+            ["Our neighbours’ dog is very noisy.", "Con chó của nhà hàng xóm rất ồn."],
+            ["The children’s room is not big.", "Phòng của bọn trẻ không rộng."]
+          ] },
+        { f: "my / your / his / her / our / their + danh từ",
+          mean: "**của tôi, của bạn, của anh ấy…**: tính từ sở hữu, đứng trước danh từ để nói vật đó thuộc về ai mà không cần nhắc tên.",
+          parts: [
+            ["my", "của **tôi**."],
+            ["your", "của **bạn** hoặc **các bạn**."],
+            ["his", "của **anh ấy, ông ấy** (người nam)."],
+            ["her", "của **cô ấy, bà ấy** (người nữ)."],
+            ["our", "của **chúng tôi, chúng ta**."],
+            ["their", "của **họ, bọn họ**."]
+          ],
+          use: "đặt ngay trước danh từ, không thêm a, an hay the. Chọn từ theo **người sở hữu**, không theo đồ vật.",
+          note: "Người Việt hay nhầm his và her vì tiếng Việt không phân biệt. Nói về chị gái thì là **her** room, dù căn phòng không có giới tính.",
+          ex: [
+            ["Our living room is very bright.", "Phòng khách của chúng tôi rất sáng."],
+            ["My brother cleans his room every Sunday.", "Anh trai tôi dọn phòng của anh ấy mỗi Chủ nhật."],
+            ["Where is your bathroom?", "Phòng tắm nhà bạn ở đâu?"],
+            ["My grandparents love their garden.", "Ông bà tôi rất yêu khu vườn của họ."]
+          ] }
+      ],
       p: [
         "Tiếng Việt nói “phòng **của** chị tôi”, nhưng tiếng Anh đặt người sở hữu **trước** và thêm **’s**: my sister’s room. Không nói “room of my sister”.",
         "Nếu người sở hữu là danh từ số nhiều đã có đuôi -s, chỉ thêm dấu **’**: my parents’ bedroom.",
@@ -74,6 +231,66 @@ window.A1_CHEAT = {
     },
     { h: "Nhờ vả và đề nghị: Can you, Could you, Shall I, I will",
       f: ["Can you + động từ nguyên mẫu?", "Could you + động từ nguyên mẫu, please?", "Shall I + động từ nguyên mẫu?", "I will + động từ nguyên mẫu"],
+      items: [
+        { f: "Can you + động từ nguyên mẫu?",
+          mean: "**Bạn … giúp tôi được không?**: lời nhờ vả **thân mật**, dùng với người trong nhà và bạn bè.",
+          parts: [
+            ["Can you", "nghĩa đen là “bạn có thể”, nhưng ở đây là lời nhờ. Giọng tự nhiên, thoải mái."],
+            ["động từ nguyên mẫu", "việc cần nhờ: open, close, turn on, help me, pass me…"],
+            ["please", "có thể thêm vào cuối câu cho mềm hơn: Can you help me, please?"]
+          ],
+          use: "nhờ bố mẹ, anh chị em, bạn cùng phòng làm việc nhà. Trả lời đồng ý: **Sure. / OK. / Of course.**",
+          note: "Sau can không có to: nói Can you **close** the door?, không nói “Can you to close the door?”.",
+          ex: [
+            ["Can you open the window?", "Con mở cửa sổ giúp mẹ được không?"],
+            ["Can you turn off the TV?", "Em tắt ti vi giúp anh được không?"],
+            ["Can you take out the rubbish, please?", "Bạn đổ rác giúp mình nhé?"],
+            ["Can you help me with the dishes?", "Bạn rửa bát giúp tôi được không?"]
+          ] },
+        { f: "Could you + động từ nguyên mẫu, please?",
+          mean: "**Phiền bạn … được không ạ?**: lời nhờ vả **lịch sự hơn** Can you.",
+          parts: [
+            ["Could you", "lịch sự, nhẹ nhàng hơn Can you. Dùng với người lớn tuổi, khách, chủ nhà, người chưa thân."],
+            ["động từ nguyên mẫu", "việc cần nhờ, đứng ngay sau Could you."],
+            ["please", "thường đặt ở cuối câu để thêm phần lịch sự."]
+          ],
+          use: "khi ở nhà người khác, nhờ chủ nhà, hàng xóm hoặc người lớn. Trả lời: **Of course. / Sure, no problem.**",
+          note: "Ở đây could **không** mang nghĩa quá khứ. Nó chỉ làm lời nhờ nghe nhẹ nhàng hơn.",
+          ex: [
+            ["Could you show me the bathroom, please?", "Phiền bạn chỉ giúp tôi phòng tắm ở đâu được không?"],
+            ["Could you turn down the music, please?", "Phiền bạn vặn nhỏ nhạc xuống được không?"],
+            ["Could you close the door, please? It is cold.", "Phiền bạn đóng cửa giúp được không? Trời lạnh quá."],
+            ["Could you tell me the Wi-Fi password, please?", "Bạn cho tôi xin mật khẩu Wi-Fi được không?"]
+          ] },
+        { f: "Shall I + động từ nguyên mẫu?",
+          mean: "**Để tôi … nhé?**: hỏi xem người kia có muốn mình giúp làm việc gì không.",
+          parts: [
+            ["Shall I", "đề nghị giúp đỡ, chờ người kia đồng ý. Chỉ dùng với **I** hoặc **we** (Shall we…? nghĩa là Mình cùng … nhé?)."],
+            ["động từ nguyên mẫu", "việc mình đề nghị làm: open, cook, help, wash…"]
+          ],
+          use: "khi thấy người khác cần giúp và muốn hỏi ý trước. Trả lời: **Yes, please.** (Vâng, cảm ơn) hoặc **No, thank you. I am fine.**",
+          note: "Đừng nhầm với Can you: **Can you…?** là mình nhờ người khác, còn **Shall I…?** là mình đề nghị giúp người khác.",
+          ex: [
+            ["Shall I turn on the fan?", "Để tôi bật quạt nhé?"],
+            ["Shall I wash the dishes?", "Để con rửa bát nhé?"],
+            ["Shall I open the window? — Yes, please.", "Để tôi mở cửa sổ nhé? — Vâng, cảm ơn."],
+            ["Shall we cook dinner together?", "Mình cùng nấu bữa tối nhé?"]
+          ] },
+        { f: "I will + động từ nguyên mẫu",
+          mean: "**Để tôi làm / tôi sẽ làm ngay**: quyết định giúp hoặc tự nhận làm một việc **ngay lúc nói**.",
+          parts: [
+            ["I will", "**tôi sẽ**, quyết định vừa đưa ra. Khi nói thường rút gọn thành **I’ll**."],
+            ["động từ nguyên mẫu", "việc mình nhận làm: get, answer, clean, do…"]
+          ],
+          use: "khi có việc cần làm và mình xung phong ngay, ví dụ chuông cửa reo, điện thoại kêu. Không hỏi ý người kia như Shall I.",
+          note: "So sánh: **Shall I open the door?** (hỏi ý: để tôi mở nhé?) và **I will open the door.** (tôi đi mở luôn). Sau will không có to.",
+          ex: [
+            ["The phone is ringing. I will answer it.", "Điện thoại đang reo. Để tôi nghe."],
+            ["I will clean the kitchen after dinner.", "Sau bữa tối tôi sẽ dọn bếp."],
+            ["Don’t worry. I will feed the cat.", "Đừng lo. Để tôi cho mèo ăn."],
+            ["I will not be home late tonight.", "Tối nay tôi sẽ không về nhà muộn."]
+          ] }
+      ],
       p: [
         "**Can you…?** dùng để nhờ người thân, bạn bè một cách thân mật. **Could you…, please?** lịch sự hơn, dùng với người lớn tuổi hoặc người chưa thân.",
         "**Shall I…?** dùng khi bạn hỏi xem mình có nên giúp không (Để tôi… nhé?). **I will** (rút gọn I’ll) dùng khi bạn tự nhận làm ngay lúc đó.",
@@ -83,6 +300,38 @@ window.A1_CHEAT = {
     },
     { h: "Would you like…? để mời khách",
       f: ["Would you like + danh từ?", "Would you like to + động từ nguyên mẫu?"],
+      items: [
+        { f: "Would you like + danh từ?",
+          mean: "**Bạn có muốn dùng … không?**: lời mời lịch sự, mời khách **một món** đồ ăn, đồ uống hoặc một thứ gì đó.",
+          parts: [
+            ["Would you like", "lịch sự hơn “Do you want”. Dùng với khách, người lớn, người mới quen."],
+            ["danh từ", "thứ được mời: some tea, a glass of water, some fruit, a cup of coffee."],
+            ["some", "thường đứng trước danh từ trong lời mời, kể cả khi là câu hỏi (Would you like **some** cake?)."]
+          ],
+          use: "mời đồ ăn, đồ uống khi có khách đến nhà. Trả lời: **Yes, please.** hoặc **No, thank you.**",
+          note: "Đừng trả lời “Yes, I like”. Câu hỏi là lời mời nên đáp **Yes, please** hoặc **Yes, I would**.",
+          ex: [
+            ["Would you like a glass of water?", "Bạn uống một cốc nước nhé?"],
+            ["Would you like some fruit?", "Bạn ăn chút hoa quả nhé?"],
+            ["Would you like a cushion? The chair is hard.", "Bạn có muốn một cái gối tựa không? Ghế hơi cứng."],
+            ["Would you like milk in your coffee? — No, thank you.", "Bạn có muốn cho sữa vào cà phê không? — Không, cảm ơn."]
+          ] },
+        { f: "Would you like to + động từ nguyên mẫu?",
+          mean: "**Bạn có muốn … không?**: lời mời lịch sự để mời ai đó **làm một việc**.",
+          parts: [
+            ["Would you like", "lời mời lịch sự."],
+            ["to", "bắt buộc có khi phía sau là động từ."],
+            ["động từ nguyên mẫu", "việc được mời làm: sit down, stay, watch, see, come in…"]
+          ],
+          use: "mời khách ngồi, ở lại ăn cơm, đi xem nhà, xem phim cùng. Trả lời: **Yes, I would love to.** hoặc **Sorry, I can’t.**",
+          note: "Phân biệt với **Do you like…?** (Bạn có thích … không?, hỏi sở thích chung). Would you like to… là mời làm việc đó ngay hoặc sắp tới.",
+          ex: [
+            ["Would you like to sit down?", "Mời bạn ngồi."],
+            ["Would you like to see my new room?", "Bạn có muốn xem phòng mới của tôi không?"],
+            ["Would you like to watch a film with us?", "Bạn có muốn xem phim cùng chúng tôi không?"],
+            ["Would you like to come in? — Yes, I would love to.", "Bạn vào nhà chơi nhé? — Vâng, rất sẵn lòng."]
+          ] }
+      ],
       p: [
         "Khi mời khách, **Would you like…?** lịch sự hơn nhiều so với “Do you want…?”. Câu “You want drink?” nghe rất cộc.",
         "Mời một món thì dùng **danh từ** (Would you like some tea?). Mời làm một việc thì dùng **to + động từ nguyên mẫu** (Would you like to stay for dinner?).",
