@@ -143,6 +143,22 @@ p.t{color:var(--muted);font-size:13.5px;margin-bottom:11px}p.t strong,li strong{
 .ck-row{grid-template-columns:1fr}
 .audio-bar{left:8px;right:8px;justify-content:center;flex-wrap:wrap}
 }
+
+/* ===== Bổ sung phần thực hành (theo mẫu Asking-for-Help) ===== */
+.dlg{background:var(--s1);border:1px solid var(--border2);border-radius:12px;padding:16px 18px}
+.turn>div{min-width:0}
+.btns{display:flex;flex-wrap:wrap;gap:6px}.btns .btn.alt{margin-left:0}
+.gen3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0}
+.gen3 label{font-size:11.5px;color:var(--muted);font-weight:600;display:block;min-width:0}
+.gen3 select{width:100%;margin-top:4px;background:var(--code-bg);border:1px solid var(--border2);border-radius:8px;padding:9px 12px;color:var(--text);font:inherit;font-size:13px}
+select:focus-visible,.chk input:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.out .why{display:block;color:var(--muted);font-size:12.5px}.out .why b{color:var(--teal);font-family:'JetBrains Mono',monospace;font-weight:600}
+.rl{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;padding:3px 0}.rl .say{font-weight:700;font-size:15px}
+.lbl{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;color:var(--faint);letter-spacing:1px;min-width:110px}
+.exi input.w{width:300px;max-width:100%;text-align:left}
+.exi .key{color:var(--ins);font-size:12px;width:100%}
+@media(max-width:900px){.gen3{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.gen3{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -158,14 +174,15 @@ p.t{color:var(--muted);font-size:13.5px;margin-bottom:11px}p.t strong,li strong{
   <a class="nav-link" href="#s4">❓ Hỏi &amp; đáp về gia đình</a>
   <a class="nav-link" href="#s5">🍲 Sinh hoạt cùng gia đình</a>
   <div class="nav-label">THỰC HÀNH</div>
-  <a class="nav-link" href="#s6">🧩 Bài mẫu &amp; tự tạo bài</a>
+  <a class="nav-link" href="#s6">🧩 Bài mẫu, máy &amp; tự tạo bài</a>
   <a class="nav-link" href="#s7">💬 Hội thoại</a>
   <a class="nav-link" href="#s8">✍️ Bài tập &amp; lộ trình 7 ngày</a>
+  <a class="nav-link" href="#s9">🚀 Từ vựng nâng cao</a>
 </aside>
 
 <div class="main">
 <nav class="topnav">
-  <a href="#s1">1 Thành viên</a><a href="#s2">2 Giới thiệu</a><a href="#s3">3 Mô tả</a><a href="#s4">4 Hỏi đáp</a><a href="#s5">5 Sinh hoạt</a><a href="#s6">6 Bài mẫu</a><a href="#s7">7 Hội thoại</a><a href="#s8">8 Bài tập</a>
+  <a href="#s1">1 Thành viên</a><a href="#s2">2 Giới thiệu</a><a href="#s3">3 Mô tả</a><a href="#s4">4 Hỏi đáp</a><a href="#s5">5 Sinh hoạt</a><a href="#s6">6 Bài mẫu</a><a href="#s7">7 Hội thoại</a><a href="#s8">8 Bài tập</a><a href="#s9">9 Nâng cao</a>
 </nav>
 
 <header class="hero">
@@ -399,10 +416,19 @@ p.t{color:var(--muted);font-size:13.5px;margin-bottom:11px}p.t strong,li strong{
 </section>
 
 <section class="section" id="s6">
-  <div class="sec-head"><span class="sec-tag t1">BÀI 6</span><div><div class="sec-title">Bài mẫu và tự tạo bài</div><div class="sec-sub">Công thức: Số người → Thành viên → Mô tả → Sinh hoạt → Kết</div></div></div>
+  <div class="sec-head"><span class="sec-tag t1">BÀI 6</span><div><div class="sec-title">Bài mẫu và tự tạo bài</div><div class="sec-sub">Công thức: Số người → Thành viên → Mô tả → Sinh hoạt → Kết. Có máy mô tả người thân và công cụ tự tạo bài</div></div></div>
   <div class="rw"><div class="rw-label">BÀI MẪU · 40 GIÂY</div><div class="rw-body">
     <span class="say">Let me tell you about my family.</span> <span class="say">There are four people in my family: my father, my mother, my younger sister and me.</span> <span class="say">My father is fifty years old.</span> <span class="say">He is a driver, and he is very hard-working.</span> <span class="say">My mother is forty-eight.</span> <span class="say">She is a teacher, and she is kind and funny.</span> <span class="say">My sister is eighteen years old, and she is a student.</span> <span class="say">We usually have dinner together in the evening.</span> <span class="say">On Sundays, we visit my grandparents.</span> <span class="say">I love my family very much.</span>
   </div></div>
+  <div class="sub-title">Máy mô tả người thân</div>
+  <p class="t">Chọn người thân, nghề nghiệp và tính cách. Máy ghép thành các câu đúng ngữ pháp (he / she, a / an, thêm -s) kèm lời giải thích. Bấm từng câu để nghe.</p>
+  <div class="gen3">
+    <label for="m-w">Người thân<select id="m-w"></select></label>
+    <label for="m-j">Nghề nghiệp<select id="m-j"></select></label>
+    <label for="m-t">Tính cách<select id="m-t"></select></label>
+  </div>
+  <div class="btns"><button class="btn" id="m-btn">Tạo câu mô tả</button><button class="btn alt" id="m-rnd">Chọn ngẫu nhiên</button></div>
+  <div class="out" id="m-out" aria-live="polite"></div>
   <div class="sub-title">Tự tạo bài của bạn</div>
   <p class="t">Điền thông tin bằng tiếng Anh (viết ngắn gọn), bấm <strong>Tạo bài</strong>, rồi bấm <strong>Nghe thử</strong> hoặc bấm từng câu để tập nói theo.</p>
   <div class="gen">
@@ -431,27 +457,47 @@ p.t{color:var(--muted);font-size:13.5px;margin-bottom:11px}p.t strong,li strong{
 </section>
 
 <section class="section" id="s7">
-  <div class="sec-head"><span class="sec-tag t2">BÀI 7</span><div><div class="sec-title">Hội thoại về gia đình</div><div class="sec-sub">Hai tình huống quen thuộc</div></div></div>
+  <div class="sec-head"><span class="sec-tag t2">BÀI 7</span><div><div class="sec-title">Hội thoại về gia đình</div><div class="sec-sub">Bốn tình huống quen thuộc, có dịch từng câu</div></div></div>
   <div class="sub-title">Tình huống 1: Làm quen đồng nghiệp</div>
   <div class="dlg">
-    <div class="turn"><span class="who wa">A</span><span><span class="say">Do you live with your family, Lan?</span><small>Bạn sống cùng gia đình à, Lan?</small></span></div>
-    <div class="turn"><span class="who wb">B</span><span><span class="say">Yes, I do. I live with my parents and my younger brother.</span></span></div>
-    <div class="turn"><span class="who wa">A</span><span><span class="say">How many people are there in your family?</span></span></div>
-    <div class="turn"><span class="who wb">B</span><span><span class="say">There are four of us. How about you, Tom?</span><small>Nhà tôi có 4 người. Còn bạn, Tom?</small></span></div>
-    <div class="turn"><span class="who wa">A</span><span><span class="say">I’m an only child, but I have a big family. I have many cousins!</span></span></div>
-    <div class="turn"><span class="who wb">B</span><span><span class="say">That sounds nice. What does your father do?</span></span></div>
-    <div class="turn"><span class="who wa">A</span><span><span class="say">He’s a doctor. And your parents?</span></span></div>
-    <div class="turn"><span class="who wb">B</span><span><span class="say">My father is a driver, and my mother is a teacher.</span></span></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Do you live with your family, Lan?</span><small>Bạn sống cùng gia đình à, Lan?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Yes, I do. I live with my parents and my younger brother.</span><small>Vâng. Tôi sống cùng bố mẹ và em trai.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">How many people are there in your family?</span><small>Gia đình bạn có mấy người?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">There are four of us. How about you, Tom?</span><small>Nhà tôi có 4 người. Còn bạn, Tom?</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">I’m an only child, but I have a big family. I have many cousins!</span><small>Tôi là con một, nhưng họ hàng đông lắm. Tôi có nhiều anh chị em họ!</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">That sounds nice. What does your father do?</span><small>Nghe vui đó. Bố bạn làm nghề gì?</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">He’s a doctor. And your parents?</span><small>Bố tôi là bác sĩ. Còn bố mẹ bạn?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">My father is a driver, and my mother is a teacher.</span><small>Bố tôi là tài xế, còn mẹ tôi là giáo viên.</small></div></div>
   </div>
   <div class="sub-title">Tình huống 2: Xem ảnh gia đình</div>
   <div class="dlg">
-    <div class="turn"><span class="who wa">A</span><span><span class="say">Who is this in the photo?</span><small>Đây là ai trong ảnh vậy?</small></span></div>
-    <div class="turn"><span class="who wb">B</span><span><span class="say">This is my grandmother. She’s seventy-five years old.</span></span></div>
-    <div class="turn"><span class="who wa">A</span><span><span class="say">And who are these people?</span></span></div>
-    <div class="turn"><span class="who wb">B</span><span><span class="say">These are my parents. My mother looks like me!</span></span></div>
-    <div class="turn"><span class="who wa">A</span><span><span class="say">You’re right. You both have long black hair.</span></span></div>
-    <div class="turn"><span class="who wb">B</span><span><span class="say">Thank you! We often take photos together at the weekend.</span></span></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Who is this in the photo?</span><small>Đây là ai trong ảnh vậy?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">This is my grandmother. She’s seventy-five years old.</span><small>Đây là bà tôi. Bà 75 tuổi.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">And who are these people?</span><small>Còn những người này là ai?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">These are my parents. My mother looks like me!</span><small>Đây là bố mẹ tôi. Mẹ tôi trông giống tôi!</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">You’re right. You both have long black hair.</span><small>Đúng thật. Hai người đều có mái tóc đen dài.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Thank you! We often take photos together at the weekend.</span><small>Cảm ơn bạn! Chúng tôi hay chụp ảnh cùng nhau vào cuối tuần.</small></div></div>
   </div>
+  <div class="sub-title">Tình huống 3: Gọi điện cho bà</div>
+  <div class="dlg">
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Hi, Grandma! How are you today?</span><small>Chào bà! Hôm nay bà khỏe không ạ?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">I’m fine, dear. Do you have dinner with your parents?</span><small>Bà khỏe, con yêu. Con ăn tối với bố mẹ à?</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Yes, we have dinner together every evening. My mother is in the kitchen now.</span><small>Vâng, tối nào cả nhà cũng ăn cùng nhau. Mẹ con đang ở trong bếp.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">And how is your little sister?</span><small>Còn em gái con thế nào?</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">She’s fine. She has a lot of homework tonight.</span><small>Em khỏe ạ. Tối nay em có nhiều bài tập.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Please visit me on Sunday.</span><small>Chủ nhật về thăm bà nhé.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Of course! We always visit you on Sundays. I love you, Grandma.</span><small>Chắc chắn rồi ạ! Chủ nhật nào cả nhà cũng về thăm bà. Con yêu bà.</small></div></div>
+  </div>
+  <div class="sub-title">Tình huống 4: Bạn đến chơi nhà</div>
+  <div class="dlg">
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Linh, this is my mother, and this is my younger brother, Nam.</span><small>Linh, đây là mẹ mình, còn đây là em trai mình, Nam.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Nice to meet you. Your mother looks so kind.</span><small>Rất vui được gặp. Mẹ bạn trông thật hiền.</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">Thank you! She’s a teacher. My father works in a bank, but he isn’t home yet.</span><small>Cảm ơn bạn! Mẹ mình là giáo viên. Bố mình làm ở ngân hàng nhưng chưa về.</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">Do you have any other brothers or sisters?</span><small>Bạn còn anh chị em nào khác không?</small></div></div>
+    <div class="turn"><span class="who wa">A</span><div><span class="say">No, just Nam and me. How about you?</span><small>Không, chỉ có Nam và mình. Còn bạn?</small></div></div>
+    <div class="turn"><span class="who wb">B</span><div><span class="say">I’m an only child, so your house is very lively.</span><small>Mình là con một, nên nhà bạn thật nhộn nhịp.</small></div></div>
+  </div>
+  <div class="info i-ok"><span>✅</span><span><strong>Cách luyện:</strong> nghe một lượt, nói theo từng câu, rồi che phần tiếng Việt và tự đóng vai A hoặc B. Lần sau thay bằng thông tin về gia đình thật của bạn.</span></div>
   <div class="ex-box"><div class="ex-head">CÂU CỨU NGUY<span class="ex-tag t5">Rất hữu ích</span></div><div class="ex-body">
     <div class="ex-row"><span class="ex-en say">Sorry, could you say that again?</span><span class="ex-vn">Xin lỗi, bạn nói lại được không?</span></div>
     <div class="ex-row"><span class="ex-en say">How do you say “anh họ” in English?</span><span class="ex-vn">“Anh họ” nói tiếng Anh thế nào?</span></div>
@@ -469,7 +515,7 @@ p.t{color:var(--muted);font-size:13.5px;margin-bottom:11px}p.t strong,li strong{
 <section class="section" id="s8">
   <div class="sec-head"><span class="sec-tag t3">BÀI 8</span><div><div class="sec-title">Bài tập và lộ trình 7 ngày</div><div class="sec-sub">Mỗi ngày 15 phút là đủ</div></div></div>
   <div class="sub-title">Điền từ thích hợp</div>
-  <p class="t">Gõ từ còn thiếu vào ô trống rồi bấm <strong>Kiểm tra</strong>.</p>
+  <p class="t">Câu 1–10: điền một từ. Câu 11–18: dịch sang tiếng Anh, gõ cả câu. Không phân biệt hoa thường. Bấm <strong>Kiểm tra</strong> hoặc <strong>Xem đáp án</strong>.</p>
   <div class="ex-box"><div class="ex-body" id="exlist">
     <div class="exi">1. My mother <input data-a="is" aria-label="câu 1"> a teacher. <small>(be)</small></div>
     <div class="exi">2. I <input data-a="have" aria-label="câu 2"> two brothers. <small>(have / has)</small></div>
@@ -481,8 +527,16 @@ p.t{color:var(--muted);font-size:13.5px;margin-bottom:11px}p.t strong,li strong{
     <div class="exi">8. She <input data-a="works" aria-label="câu 8"> in a hospital. <small>(work)</small></div>
     <div class="exi">9. <input data-a="how many" aria-label="câu 9"> people are there in your family? <small>(How many / How much)</small></div>
     <div class="exi">10. I’m two years <input data-a="younger" aria-label="câu 10"> than my sister. <small>(young)</small></div>
+    <div class="exi">11. Gia đình tôi có bốn người. →<input class="w" data-a="there are four people in my family." aria-label="câu 11"><small>There are…</small></div>
+    <div class="exi">12. Tôi có một em gái. →<input class="w" data-a="i have a younger sister.|i have one younger sister.|i have a little sister." aria-label="câu 12"><small>younger</small></div>
+    <div class="exi">13. Mẹ tôi là giáo viên. →<input class="w" data-a="my mother is a teacher." aria-label="câu 13"><small>a / an</small></div>
+    <div class="exi">14. Bố bạn làm nghề gì? →<input class="w" data-a="what does your father do?" aria-label="câu 14"><small>does + V</small></div>
+    <div class="exi">15. Tôi sống cùng bố mẹ. →<input class="w" data-a="i live with my parents." aria-label="câu 15"><small>with</small></div>
+    <div class="exi">16. Tôi không có anh chị em. →<input class="w" data-a="i don't have any brothers or sisters.|i do not have any brothers or sisters.|i don't have any siblings.|i'm an only child." aria-label="câu 16"><small>any</small></div>
+    <div class="exi">17. Chị gái tôi làm việc ở bệnh viện. →<input class="w" data-a="my older sister works in a hospital.|my sister works in a hospital." aria-label="câu 17"><small>works</small></div>
+    <div class="exi">18. Tôi rất yêu gia đình mình. →<input class="w" data-a="i love my family very much.|i love my family so much.|i really love my family." aria-label="câu 18"><small>very much</small></div>
   </div></div>
-  <button class="btn" id="ex-check">Kiểm tra</button><button class="btn alt" id="ex-reset">Làm lại</button>
+  <button class="btn" id="ex-check">Kiểm tra</button><button class="btn alt" id="ex-show">Xem đáp án</button><button class="btn alt" id="ex-reset">Làm lại</button>
   <div class="out" id="ex-out" style="min-height:0" aria-live="polite"></div>
 
   <div class="sub-title">Lộ trình luyện 7 ngày</div>
@@ -492,8 +546,8 @@ p.t{color:var(--muted);font-size:13.5px;margin-bottom:11px}p.t strong,li strong{
     <div class="day"><b>Ngày 3</b><span><strong>Tuổi và nghề.</strong> Nói về 3 người thân, nhớ thêm -s ở ngôi thứ 3: <em>She works…</em></span></div>
     <div class="day"><b>Ngày 4</b><span><strong>Ngoại hình và tính cách.</strong> Chọn 2 tính từ cho mỗi người, dùng <em>look like / take after</em>.</span></div>
     <div class="day"><b>Ngày 5</b><span><strong>Sinh hoạt chung.</strong> Viết 4 câu có <em>always / usually / sometimes</em> và <em>on / at / in</em>.</span></div>
-    <div class="day"><b>Ngày 6</b><span><strong>Ghép bài.</strong> Dùng công cụ ở Bài 6, đọc theo (shadowing) 5 lần, ghi âm và nghe lại.</span></div>
-    <div class="day"><b>Ngày 7</b><span><strong>Hội thoại.</strong> Đóng vai A và B ở Bài 7, rồi kể về gia đình cho người thật hoặc trước gương.</span></div>
+    <div class="day"><b>Ngày 6</b><span><strong>Ghép bài.</strong> Dùng máy mô tả người thân và công cụ tự tạo bài ở Bài 6, đọc theo (shadowing) 5 lần, ghi âm và nghe lại.</span></div>
+    <div class="day"><b>Ngày 7</b><span><strong>Hội thoại.</strong> Đóng vai A và B ở 4 tình huống Bài 7, thử dùng 3 cụm ở Bài 9, rồi kể về gia đình cho người thật hoặc trước gương.</span></div>
   </div>
 
   <div class="sub-title">Tổng ôn ngữ pháp</div>
@@ -517,9 +571,58 @@ p.t{color:var(--muted);font-size:13.5px;margin-bottom:11px}p.t strong,li strong{
     <li><label><input type="checkbox">Tôi tả được ngoại hình và tính cách bằng <strong>be + tính từ</strong></label></li>
     <li><label><input type="checkbox">Tôi hỏi được <strong>Do you have any brothers or sisters?</strong></label></li>
     <li><label><input type="checkbox">Tôi dùng được <strong>always / usually / sometimes</strong> đúng vị trí</label></li>
+    <li><label><input type="checkbox">Tôi dùng được ít nhất 5 từ hoặc cụm nâng cao ở <strong>Bài 9</strong></label></li>
     <li><label><input type="checkbox">Tôi kể trọn bài 40 giây về gia đình mà không dừng quá 3 lần</label></li>
   </ul>
   <div class="info i-ok"><span>✅</span><span><strong>Mẹo nhỏ:</strong> hãy dùng ảnh gia đình thật khi luyện nói. Có hình ảnh trước mặt, bạn sẽ nhớ từ vựng và đặt câu dễ hơn nhiều.</span></div>
+</section>
+
+<section class="section" id="s9">
+  <div class="sec-head"><span class="sec-tag t5">NÂNG CAO</span><div><div class="sec-title">Từ vựng mới để kể về gia đình tự nhiên hơn</div><div class="sec-sub">Thêm vài từ này, bài giới thiệu gia đình của bạn sẽ phong phú hơn</div></div></div>
+  <div class="sub-title">Họ hàng và quan hệ</div>
+  <table class="tbl"><thead><tr><th>Từ / cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">stepmother / stepfather</td><td>mẹ kế / bố dượng</td><td><span class="say">My stepmother is very kind to me.</span></td></tr>
+  <tr><td class="say">mother-in-law</td><td>mẹ chồng / mẹ vợ</td><td><span class="say">My mother-in-law cooks very well.</span></td></tr>
+  <tr><td class="say">in-laws</td><td>họ hàng bên chồng / vợ</td><td><span class="say">I get along well with my in-laws.</span></td></tr>
+  <tr><td class="say">sibling</td><td>anh chị em ruột (không phân biệt giới)</td><td><span class="say">I have two siblings.</span></td></tr>
+  <tr><td class="say">relatives</td><td>họ hàng</td><td><span class="say">Most of my relatives live in the countryside.</span></td></tr>
+  <tr><td class="say">twins</td><td>cặp sinh đôi</td><td><span class="say">My brothers are twins.</span></td></tr>
+  <tr><td class="say">grandchildren</td><td>các cháu (của ông bà)</td><td><span class="say">My grandmother has five grandchildren.</span></td></tr>
+  <tr><td class="say">the eldest / the youngest</td><td>con lớn nhất / con út</td><td><span class="say">I’m the youngest in my family.</span></td></tr>
+</tbody></table>
+  <div class="sub-title">Tính cách</div>
+  <table class="tbl"><thead><tr><th>Từ / cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">strict</td><td>nghiêm khắc</td><td><span class="say">My father is strict, but he’s fair.</span></td></tr>
+  <tr><td class="say">easy-going</td><td>dễ tính</td><td><span class="say">My mother is very easy-going.</span></td></tr>
+  <tr><td class="say">generous</td><td>hào phóng</td><td><span class="say">My uncle is generous with his time.</span></td></tr>
+  <tr><td class="say">outgoing</td><td>hướng ngoại, hòa đồng</td><td><span class="say">My sister is outgoing and funny.</span></td></tr>
+  <tr><td class="say">shy</td><td>nhút nhát, hay ngại</td><td><span class="say">My little brother is shy with strangers.</span></td></tr>
+  <tr><td class="say">patient</td><td>kiên nhẫn</td><td><span class="say">My grandmother is very patient.</span></td></tr>
+  <tr><td class="say">stubborn</td><td>bướng bỉnh</td><td><span class="say">My brother can be a little stubborn.</span></td></tr>
+  <tr><td class="say">protective</td><td>hay bảo vệ, che chở</td><td><span class="say">My older brother is very protective of me.</span></td></tr>
+</tbody></table>
+  <div class="sub-title">Cụm động từ về gia đình</div>
+  <table class="tbl"><thead><tr><th>Từ / cụm</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+  <tr><td class="say">get along with</td><td>hòa thuận với</td><td><span class="say">I get along well with my sister.</span></td></tr>
+  <tr><td class="say">grow up</td><td>lớn lên</td><td><span class="say">I grew up in a small town.</span></td></tr>
+  <tr><td class="say">bring up</td><td>nuôi dạy</td><td><span class="say">My grandparents brought me up.</span></td></tr>
+  <tr><td class="say">look up to</td><td>kính trọng, ngưỡng mộ</td><td><span class="say">I look up to my father.</span></td></tr>
+  <tr><td class="say">take care of</td><td>chăm sóc</td><td><span class="say">I take care of my grandmother.</span></td></tr>
+  <tr><td class="say">keep in touch</td><td>giữ liên lạc</td><td><span class="say">We keep in touch by phone.</span></td></tr>
+  <tr><td class="say">run in the family</td><td>có trong gia đình (di truyền)</td><td><span class="say">Singing runs in my family.</span></td></tr>
+  <tr><td class="say">be named after</td><td>được đặt theo tên</td><td><span class="say">I’m named after my grandfather.</span></td></tr>
+</tbody></table>
+  <div class="sub-title">Cụm giúp bài kể trôi chảy</div>
+  <div class="ex-box"><div class="ex-head">LÀM CHO BÀI KỂ TỰ NHIÊN<span class="ex-tag t5">Nâng cao</span></div><div class="ex-body">
+    <div class="ex-row"><span class="ex-en say">We’re a close-knit family.</span><span class="ex-vn">Gia đình tôi rất gắn bó</span></div>
+    <div class="ex-row"><span class="ex-en say">We get along well with each other.</span><span class="ex-vn">Chúng tôi hòa thuận với nhau</span></div>
+    <div class="ex-row"><span class="ex-en say">I look up to my parents because they work so hard.</span><span class="ex-vn">Tôi kính trọng bố mẹ vì bố mẹ làm việc rất chăm chỉ</span></div>
+    <div class="ex-row"><span class="ex-en say">I try to keep in touch with my relatives.</span><span class="ex-vn">Tôi cố gắng giữ liên lạc với họ hàng</span></div>
+    <div class="ex-row"><span class="ex-en say">We help each other when we have problems.</span><span class="ex-vn">Chúng tôi giúp đỡ nhau khi gặp khó khăn</span></div>
+    <div class="ex-row"><span class="ex-en say">Family is the most important thing to me.</span><span class="ex-vn">Gia đình là điều quan trọng nhất với tôi</span></div>
+  </div></div>
+  <div class="cmp"><div class="bad"><b>❌ NGHE CỨNG</b><div>My family is very happy and good. I like my family.</div></div><div class="good"><b>✔ TỰ NHIÊN HƠN</b><div class="say">We’re a close-knit family, and we get along well with each other.</div></div></div>
+  <div class="info i-tip"><span>💡</span><span><strong>Mẹo:</strong> mỗi bài kể chỉ cần thêm <strong>1 cụm nâng cao</strong> là đủ tự nhiên. Ví dụ: <span class="say">I look up to my father.</span> sau câu tả nghề nghiệp của bố.</span></div>
 </section>
 
 </div>
@@ -583,19 +686,63 @@ document.getElementById('gen-play').addEventListener('click',function(){
     el.classList.add('playing');u.onend=function(){el.classList.remove('playing');setTimeout(run,250)};u.onerror=function(){el.classList.remove('playing')};S.speak(u)})();
 });
 
+/* ===== Máy mô tả người thân ===== */
+var MW=[['father','bố','he'],['mother','mẹ','she'],['older brother','anh trai','he'],['younger sister','em gái','she'],['grandfather','ông','he'],['grandmother','bà','she'],['uncle','chú / bác / cậu','he'],['aunt','cô / dì','she']];
+var MJ=[['a teacher','giáo viên','teaches at a school'],['a doctor','bác sĩ','works in a hospital'],['an engineer','kỹ sư','works in a company'],['a driver','tài xế','drives a taxi'],['a nurse','y tá','works in a hospital'],['a farmer','nông dân','works on a farm'],['a student','học sinh / sinh viên','studies at a university'],['retired','đã nghỉ hưu','enjoys a quiet life at home']];
+var MT=[['kind','tốt bụng'],['funny','hài hước'],['hard-working','chăm chỉ'],['calm','điềm tĩnh'],['cheerful','vui vẻ'],['helpful','hay giúp đỡ'],['caring','hay quan tâm'],['quiet','ít nói']];
+function mfill(id,arr){var s=document.getElementById(id);arr.forEach(function(x,i){s.add(new Option(x[0]+' ('+x[1]+')',i))});return s}
+var mw=mfill('m-w',MW),mj=mfill('m-j',MJ),mt=mfill('m-t',MT),mo=document.getElementById('m-out');
+mw.value=0;mj.value=0;mt.value=0;
+function cap(s){return s.charAt(0).toUpperCase()+s.slice(1)}
+function mline(label,text){var d=document.createElement('div');d.className='rl';var lb=document.createElement('span');lb.className='lbl';lb.textContent=label;var sp=document.createElement('span');sp.className='say';sp.tabIndex=0;sp.setAttribute('role','button');sp.textContent=text;d.append(lb,sp);mo.append(d)}
+function mshow(){
+  var w=MW[+mw.value],j=MJ[+mj.value],t=MT[+mt.value],H=w[2]==='he'?'He':'She';
+  mo.innerHTML='';
+  mline('MỞ ĐẦU','This is my '+w[0]+'.');
+  mline('NGHỀ NGHIỆP',H+' is '+j[0]+'.');
+  mline('CÔNG VIỆC',H+' '+j[2]+'.');
+  mline('TÍNH CÁCH',H+' is very '+t[0]+'.');
+  mline('HỎI BẠN','What does your '+w[0]+' do?');
+  var v=document.createElement('div');v.style.color='var(--muted)';v.style.fontSize='13px';
+  v.textContent='Nghĩa: '+cap(w[1])+' tôi '+(j[0]==='retired'?'đã nghỉ hưu':'là '+j[1])+', rất '+t[1]+'.';mo.append(v);
+  var vb=j[2].split(' ')[0];
+  var note='Dùng <b>'+H.toLowerCase()+'</b> thay cho “my '+w[0]+'” để câu đỡ lặp. Động từ ngôi 3 số ít thêm <b>-s / -es</b>: <b>'+vb+'</b>'+(vb==='studies'?' (study → studies: phụ âm + y đổi thành ies)':vb==='teaches'?' (teach → teaches: tận cùng -ch thêm es)':'')+'.';
+  if(/^an /.test(j[0]))note+=' Trước nguyên âm dùng <b>an</b>: <b>'+j[0]+'</b>.';
+  if(j[0]==='retired'){note+=' <b>retired</b> là tính từ nên không dùng a / an.';if(/brother|sister/.test(w[0]))note+=' Thường dùng retired cho người lớn tuổi như ông bà.'}
+  note+=' Câu hỏi: <b>What does + S + do?</b> (sau does, động từ nguyên mẫu).';
+  var x=document.createElement('span');x.className='why';x.innerHTML=note;mo.append(x);
+}
+document.getElementById('m-btn').addEventListener('click',mshow);
+[mw,mj,mt].forEach(function(s){s.addEventListener('change',mshow)});
+document.getElementById('m-rnd').addEventListener('click',function(){
+  [[mw,MW],[mj,MJ],[mt,MT]].forEach(function(x){x[0].value=Math.floor(Math.random()*x[1].length)});mshow();
+});
+mshow();
+
+/* ===== Bài tập ===== */
 var inputs=document.querySelectorAll('#exlist input'),exo=document.getElementById('ex-out');
-function norm(s){return s.toLowerCase().replace(/[’‘`]/g,"'").replace(/\s+/g,' ').trim()}
+function norm(s){return s.toLowerCase().replace(/[’‘`]/g,"'").replace(/[.!?]+$/,'').replace(/,/g,'').replace(/\s+/g,' ').trim()}
 document.getElementById('ex-check').addEventListener('click',function(){
   var ok=0;
   inputs.forEach(function(i){
-    var good=norm(i.value)===norm(i.dataset.a);
+    var good=i.dataset.a.split('|').some(function(a){return norm(a)===norm(i.value)});
     i.classList.remove('ok','no');i.classList.add(good?'ok':'no');if(good)ok++;
   });
   exo.style.minHeight='';
-  exo.textContent=ok===inputs.length?'🎉 Chính xác '+ok+'/'+inputs.length+'. Bạn nắm chắc phần ngữ pháp rồi!':'Đúng '+ok+'/'+inputs.length+'. Các ô viền đỏ cần xem lại, hãy đọc lại khung ngữ pháp ở các bài tương ứng.';
+  exo.textContent=ok===inputs.length?'🎉 Chính xác '+ok+'/'+inputs.length+'. Bạn nắm chắc phần ngữ pháp rồi!':'Đúng '+ok+'/'+inputs.length+'. Các ô viền đỏ cần xem lại, hãy đọc lại khung ngữ pháp ở các bài tương ứng hoặc bấm “Xem đáp án”.';
+});
+document.getElementById('ex-show').addEventListener('click',function(){
+  inputs.forEach(function(i){
+    var k=i.parentElement.querySelector('.key');
+    if(!k){k=document.createElement('span');k.className='key';i.parentElement.append(k)}
+    var a=i.dataset.a.split('|')[0].replace(/'/g,'’').replace(/\bi\b/g,'I');
+    k.textContent='Đáp án: '+(a.indexOf(' ')>-1?cap(a):a);
+  });
 });
 document.getElementById('ex-reset').addEventListener('click',function(){
-  inputs.forEach(function(i){i.value='';i.classList.remove('ok','no')});exo.textContent='';exo.style.minHeight='0';
+  inputs.forEach(function(i){i.value='';i.classList.remove('ok','no')});
+  document.querySelectorAll('#exlist .key').forEach(function(k){k.remove()});
+  exo.textContent='';exo.style.minHeight='0';
 });
 })();
 </script>
