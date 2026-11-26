@@ -68,6 +68,7 @@
       ["Grammar-Reference.html", "📚", "Bảng tra ngữ pháp"],
     ]},
     { group: "Tổng hợp & Luyện viết", items: [
+      ["Master-Cheat-Sheet.html", "🗂️", "Master Cheat Sheet – Tổng hợp A1"],
       ["Cheat-Sheet.html", "📋", "Cheat sheet toàn khóa"],
       ["Writing-Paragraphs.html", "✍️", "Viết đoạn văn theo chủ đề"],
     ]},

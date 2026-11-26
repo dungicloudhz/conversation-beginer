@@ -1,0 +1,2095 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>A1 Master Cheat Sheet – Tổng hợp toàn bộ từ vựng &amp; ngữ pháp</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;
+--bg:#080810;--s1:#0e0e1c;--s2:#131326;--s3:#18182e;
+--border:#222240;--border2:#2c2c50;
+--text:#e6e6f2;--muted:#8a8ab8;--faint:#4a4a78;
+--acc:#ffd060;--acc-dim:rgba(255,208,96,.11);
+--oc:#38bdf8;--oc-dim:rgba(56,189,248,.13);
+--ins:#40d88e;--ins-dim:rgba(64,216,142,.12);
+--sk:#a07af4;--sk-dim:rgba(160,122,244,.12);
+--au:#ff6584;--au-dim:rgba(255,101,132,.12);
+--teal:#30d8c0;--code-bg:#05050e;
+--tip-bg:rgba(91,168,255,.10);--tip-bd:rgba(91,168,255,.25);--tip-fg:#8ab8f0;
+--warn-fg:#e0bc58;--ok-fg:#5ccf98;--line:rgba(255,255,255,.05);
+--font:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',sans-serif;
+--mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+--gl:max(64px,env(safe-area-inset-left,0px));--gr:max(64px,env(safe-area-inset-right,0px))}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px)+72px)}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.7;font-size:15px;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:600;background:var(--s1)}
+
+.sidebar{position:fixed;left:0;top:0;width:272px;height:100%;background:var(--s1);border-right:1px solid var(--border);overflow-y:auto;z-index:400;padding-top:env(safe-area-inset-top,0px);padding-left:env(safe-area-inset-left,0px)}
+.sb-logo{padding:18px 16px 12px;border-bottom:1px solid var(--border)}
+.sb-brand{display:flex;align-items:center;gap:10px;margin-bottom:9px}
+.logo-icon{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,#ffd060,#a07af4,#38bdf8);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;box-shadow:0 0 24px rgba(255,208,96,.3)}
+.logo-text h2{font-size:13.5px;font-weight:900;line-height:1.2}
+.logo-text p{font-size:9.5px;color:var(--muted)}
+.prog-wrap{height:3px;background:var(--border);border-radius:2px;overflow:hidden}
+.prog-bar{height:100%;width:0;background:linear-gradient(90deg,var(--acc),var(--ins),var(--oc),var(--sk),var(--au));transition:width .4s}
+.nav-label{padding:11px 16px 3px;font-size:9px;font-weight:700;letter-spacing:1.5px;color:var(--faint);text-transform:uppercase}
+.nav-link{display:flex;align-items:center;gap:8px;padding:5px 16px;color:var(--muted);text-decoration:none;font-size:11.5px;font-weight:600;border-left:2px solid transparent;transition:all .12s}
+.nav-link:hover,.nav-link.active{color:var(--text);background:rgba(255,208,96,.07);border-left-color:var(--acc)}
+
+.main{margin-left:272px}
+.hero{padding-block:68px 50px;padding-left:var(--gl);padding-right:var(--gr);border-bottom:1px solid var(--border);background:radial-gradient(ellipse 70% 60% at 80% 20%,rgba(160,122,244,.12),transparent 55%),radial-gradient(ellipse 55% 55% at 5% 85%,rgba(56,189,248,.09),transparent 55%),var(--bg)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--acc-dim);border:1px solid rgba(255,208,96,.38);color:var(--acc);padding:4px 14px;border-radius:100px;font-size:11px;font-weight:700;margin-bottom:20px}
+.eyebrow i{width:5px;height:5px;border-radius:50%;background:var(--acc);animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.35;transform:scale(.7)}}
+@media(prefers-reduced-motion:reduce){.eyebrow i{animation:none}html{scroll-behavior:auto}}
+.hero h1{font-size:44px;font-weight:900;letter-spacing:-2px;line-height:1.05;margin-bottom:14px;text-wrap:balance}
+.grad-all{background:linear-gradient(135deg,var(--acc),var(--au),var(--oc),var(--sk));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-desc{font-size:14.5px;color:var(--muted);max-width:640px;margin-bottom:22px}
+.stat-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}
+.stat{background:var(--s1);border:1px solid var(--border2);border-radius:9px;padding:10px 16px;display:grid;gap:1px}
+.stat b{font-size:20px;font-weight:900;color:var(--acc)}
+.stat span{font-size:10.5px;color:var(--muted)}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{padding:3px 11px;border-radius:6px;font-size:11px;font-weight:700}
+.c1{background:var(--oc-dim);color:var(--oc)}.c2{background:var(--ins-dim);color:var(--ins)}
+.c3{background:var(--acc-dim);color:var(--acc)}.c4{background:var(--sk-dim);color:var(--sk)}.c5{background:var(--au-dim);color:var(--au)}
+
+.content{padding-block:48px;padding-left:var(--gl);padding-right:var(--gr);max-width:calc(1060px + 128px)}
+.ts{margin-bottom:68px;scroll-margin-top:76px}
+.topic-head{display:flex;gap:14px;align-items:flex-start;margin-bottom:24px;padding-bottom:14px;border-bottom:2px solid var(--border)}
+.topic-emoji{font-size:34px;line-height:1}
+.topic-title{font-size:24px;font-weight:900;letter-spacing:-.6px}
+.topic-sub{font-size:12px;color:var(--muted);margin-top:2px}
+
+.pl{display:grid;gap:0;margin:11px 0;background:var(--s1);border:1px solid var(--border2);border-radius:10px;overflow:hidden}
+.pr{display:flex;flex-wrap:wrap;align-items:baseline;gap:3px 14px;padding:8px 15px;border-bottom:1px solid rgba(255,255,255,.04);font-size:13px}
+.pr:last-child{border-bottom:none}
+.pe{color:var(--text);font-weight:600;min-width:290px}
+.pv{color:var(--muted);font-size:12px}
+
+.gram{border:1px solid rgba(160,122,244,.33);background:linear-gradient(180deg,var(--sk-dim),transparent 80px),var(--s1);border-radius:11px;margin:18px 0;overflow:hidden}
+.gram-h{padding:8px 15px;font-size:10.5px;font-weight:800;color:var(--sk);border-bottom:1px solid var(--border);display:flex;gap:9px;align-items:baseline;letter-spacing:.4px}
+.gram-h em{font-style:normal;color:var(--muted);font-weight:600}
+.gram-b{padding:11px 15px;font-size:13px;color:var(--muted)}
+.gram-b b{color:var(--text)}
+.gram-b ul{padding-left:17px;margin:5px 0}
+.gram-b li{margin-bottom:3px}
+.fm{display:inline-block;font-family:var(--mono);font-size:11px;background:var(--code-bg);color:var(--teal);padding:1px 7px;border-radius:4px;margin:1px 0}
+.cmp{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);border-radius:9px;overflow:hidden;margin:9px 0}
+.bad{background:rgba(255,101,132,.07);padding:11px 13px;border-right:1px solid var(--border)}
+.good{background:rgba(64,216,142,.07);padding:11px 13px}
+.cmp b{display:block;font-size:9px;margin-bottom:4px;letter-spacing:.5px}
+.bad b{color:var(--au)}.good b{color:var(--ins)}
+.cmp div div{font-size:12.5px}
+
+.tbl{width:100%;border-collapse:collapse;font-size:12.5px;margin:9px 0;display:block;overflow-x:auto}
+.tbl th{background:var(--s3);padding:8px 12px;text-align:left;font-size:9.5px;color:var(--muted);border-bottom:1px solid var(--border2);white-space:nowrap;letter-spacing:.5px}
+.tbl td{padding:8px 12px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:top}
+.tbl td:first-child{color:var(--text);font-weight:600}
+
+.sub-h{font-size:13px;font-weight:700;margin:20px 0 9px;display:flex;align-items:center;gap:9px;color:var(--text)}
+.sub-h::before{content:'';width:11px;height:3px;background:var(--acc);border-radius:2px;flex-shrink:0}
+
+.info{display:flex;gap:10px;padding:11px 13px;border-radius:8px;margin:10px 0;font-size:12px;line-height:1.6}
+.i-tip{background:var(--tip-bg);border:1px solid var(--tip-bd);color:var(--tip-fg)}
+.i-warn{background:var(--acc-dim);border:1px solid rgba(255,208,96,.25);color:var(--warn-fg)}
+.i-ok{background:var(--ins-dim);border:1px solid rgba(64,216,142,.25);color:var(--ok-fg)}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0}
+.sec-div{height:1px;background:linear-gradient(90deg,var(--border),transparent);margin:14px 0 24px}
+.grp-label{padding:24px var(--gl) 6px;font-size:10px;font-weight:800;color:var(--faint);letter-spacing:1.6px;text-transform:uppercase;border-top:1px solid var(--border);margin-top:16px}
+
+/* ═══════════════════════════════════════════════════
+   VOCAB CARD v2 — mỗi từ một dòng:
+   [🔊]  English (đậm)
+         /phiên âm/ (teal)
+         ┃ nghĩa tiếng Việt (vàng nhạt)
+   Card nhiều từ (a / b / c) được tách thành nhiều dòng,
+   mỗi dòng có audio + IPA + nghĩa riêng.
+════════════════════════════════════════════════════ */
+.vg{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px;margin:12px 0;align-items:start}
+.two-col .vg{grid-template-columns:repeat(auto-fill,minmax(230px,1fr))!important}
+.vc{background:linear-gradient(180deg,var(--s2),var(--s1));border:1px solid var(--border);border-radius:14px;padding:3px;display:flex;flex-direction:column;min-width:0;transition:border-color .15s,box-shadow .15s}
+.vc:hover{border-color:rgba(255,208,96,.45);box-shadow:0 0 0 3px rgba(255,208,96,.06)}
+
+.vr{display:flex;gap:11px;align-items:flex-start;padding:10px 10px 10px 9px;border-radius:11px;cursor:pointer;outline:none;-webkit-tap-highlight-color:transparent;transition:background .12s}
+.vr+.vr{border-top:1px solid rgba(255,255,255,.06);border-top-left-radius:0;border-top-right-radius:0}
+.vr:hover{background:var(--acc-dim)}
+.vr:focus-visible{box-shadow:inset 0 0 0 2px rgba(255,208,96,.6)}
+
+.vb{flex:0 0 32px;width:32px;height:32px;margin-top:1px;border-radius:50%;display:grid;place-items:center;background:var(--s3);border:1px solid var(--border2);color:var(--acc);transition:background .12s,color .12s,border-color .12s}
+.vb svg{width:15px;height:15px;display:block}
+.vr:hover .vb{background:var(--acc);border-color:var(--acc);color:#1a1405}
+.vr.playing .vb{background:var(--ins);border-color:var(--ins);color:#06251a;animation:vpulse 1s ease-out infinite}
+@keyframes vpulse{0%{box-shadow:0 0 0 0 rgba(64,216,142,.55)}100%{box-shadow:0 0 0 9px rgba(64,216,142,0)}}
+@media(prefers-reduced-motion:reduce){.vr.playing .vb{animation:none}}
+
+.vr-txt{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.vr-en{font-weight:800;font-size:14.5px;line-height:1.35;color:var(--text);word-break:break-word}
+.vr-en small{font-size:11px;font-weight:600;color:var(--faint);margin-left:4px}
+.vr-ipa{font-family:var(--mono);font-size:11.5px;line-height:1.5;color:var(--teal);word-break:break-word}
+.vr-vi{margin-top:4px;padding-left:8px;border-left:2px solid rgba(255,208,96,.55);font-size:13px;line-height:1.45;color:#ecd9a4;word-break:break-word}
+
+/* nghĩa chung cho card có nhiều từ nhưng số nghĩa không khớp */
+.vc-mean{margin:2px 7px 8px;padding:7px 10px;border-radius:9px;background:rgba(255,208,96,.07);border-left:2px solid rgba(255,208,96,.55);font-size:13px;line-height:1.45;color:#ecd9a4}
+/* ghi chú dùng với play/go/do ... */
+.vc-tag{align-self:flex-start;margin:0 10px 9px;padding:2px 10px;border-radius:99px;background:var(--sk-dim);color:var(--sk);font-size:10.5px;font-weight:700}
+
+/* chế độ: ẩn phiên âm / che nghĩa để tự kiểm tra */
+body.no-ipa .vr-ipa{display:none}
+body.hide-vi .vr-vi,body.hide-vi .vc-mean{filter:blur(6px);user-select:none;transition:filter .18s}
+body.hide-vi .vr:hover .vr-vi,body.hide-vi .vr.show .vr-vi,
+body.hide-vi .vc:hover .vc-mean,body.hide-vi .vc.show .vc-mean{filter:none}
+
+/* thanh công cụ cố định (góc dưới phải) */
+#vtools{position:fixed;right:calc(14px + env(safe-area-inset-right,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:2147483100;display:flex;gap:3px;padding:4px;background:var(--s2);border:1px solid var(--border2);border-radius:14px;box-shadow:0 6px 24px rgba(0,0,0,.55)}
+#vtools button{display:flex;align-items:center;gap:6px;padding:7px 11px;border:0;border-radius:10px;background:transparent;color:var(--muted);font:inherit;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap}
+#vtools button:hover{color:var(--text)}
+#vtools button[aria-pressed=true]{background:var(--acc-dim);color:var(--acc)}
+@media(max-width:560px){#vtools .lbl{display:none}#vtools button{padding:8px 12px;font-size:14px}}
+
+/* thanh trạng thái đang phát (nằm trên thanh công cụ) */
+#audio-bar{position:fixed;right:calc(14px + env(safe-area-inset-right,0px));bottom:calc(66px + env(safe-area-inset-bottom,0px));z-index:2147483100;display:none;align-items:center;gap:9px;background:var(--s2);border:1px solid var(--border2);border-radius:12px;padding:8px 14px;box-shadow:0 6px 24px rgba(0,0,0,.55);font-size:12px;color:var(--muted)}
+#audio-bar.show{display:flex}
+#audio-bar b{color:var(--acc);max-width:220px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+#audio-bar button{background:var(--s3);color:var(--muted);border:1px solid var(--border);border-radius:6px;padding:4px 11px;font:inherit;font-weight:700;cursor:pointer;flex-shrink:0}
+#audio-bar button:hover{color:var(--acc);border-color:var(--acc)}
+
+/* mẫu câu: click để nghe */
+.pe{cursor:pointer;border-radius:3px}
+.pe:hover{color:var(--acc)}
+
+
+.footer{border-top:1px solid var(--border);padding-block:24px 80px;padding-left:var(--gl);padding-right:var(--gr);font-size:11.5px;color:var(--muted)}
+
+.topnav{display:none}
+@media(max-width:960px){
+  :root{--gl:max(16px,env(safe-area-inset-left,0px));--gr:max(16px,env(safe-area-inset-right,0px))}
+  .sidebar{display:none}.main{margin-left:0}
+  .hero h1{font-size:28px;letter-spacing:-1px}.hero{padding-block:40px 32px}
+  .topnav{display:flex !important;overflow-x:auto;position:sticky;top:env(safe-area-inset-top,0px);z-index:500;background:var(--s1);border-bottom:2px solid var(--border2);scrollbar-width:none;padding-left:env(safe-area-inset-left,0px)}
+  .topnav a{flex-shrink:0;padding:8px 12px;color:var(--muted);text-decoration:none;font-size:11px;font-weight:700;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-2px}
+  .topnav a.active{color:var(--acc);border-bottom-color:var(--acc);background:var(--acc-dim)}
+  .cmp{grid-template-columns:1fr}.bad{border-right:none;border-bottom:1px solid var(--border)}
+  .two-col{grid-template-columns:1fr}
+  .pe{min-width:0}
+}
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sb-logo">
+    <div class="sb-brand">
+      <div class="logo-icon">🗂️</div>
+      <div class="logo-text"><h2>Master Cheat Sheet</h2><p>Tổng hợp từ vựng &amp; ngữ pháp A1</p></div>
+    </div>
+    <div class="prog-wrap"><div class="prog-bar" id="pbar"></div></div>
+  </div>
+  <div class="nav-label">📌 Nhóm 1 – Bắt đầu</div>
+  <a class="nav-link" href="#t1">👋 Giới thiệu &amp; chào hỏi</a>
+  <a class="nav-link" href="#t2">🤝 Làm quen người mới</a>
+  <a class="nav-link" href="#t3">🫶 Kết bạn &amp; bạn bè</a>
+  <a class="nav-link" href="#t4">🎭 Cảm xúc &amp; cảm giác</a>
+  <a class="nav-link" href="#t5">👨‍👩‍👧 Gia đình</a>
+  <a class="nav-link" href="#t6">🙏 Cảm ơn &amp; Xin lỗi</a>
+  <div class="nav-label">📌 Nhóm 2 – Cuộc sống hằng ngày</div>
+  <a class="nav-link" href="#t7">⏰ Hoạt động hằng ngày</a>
+  <a class="nav-link" href="#t8">📅 Thời gian &amp; Ngày tháng</a>
+  <a class="nav-link" href="#t9">🎁 Sinh nhật &amp; Lễ tết</a>
+  <a class="nav-link" href="#t10">🌤️ Thời tiết &amp; Mùa</a>
+  <a class="nav-link" href="#t11">🏠 Nhà cửa &amp; Nội thất</a>
+  <a class="nav-link" href="#t12">👗 Quần áo &amp; Trang phục</a>
+  <a class="nav-link" href="#t13">💼 Nghề nghiệp &amp; Công việc</a>
+  <a class="nav-link" href="#t14">📚 Học tập &amp; Trường học</a>
+  <a class="nav-link" href="#t15">🗓️ Kế hoạch tương lai</a>
+  <div class="nav-label">📌 Nhóm 3 – Ăn uống &amp; Mua sắm</div>
+  <a class="nav-link" href="#t16">🍜 Đồ ăn &amp; Đồ uống</a>
+  <a class="nav-link" href="#t17">🥤 Gọi đồ uống</a>
+  <a class="nav-link" href="#t18">🍽️ Nhà hàng &amp; Quán ăn</a>
+  <a class="nav-link" href="#t19">🛍️ Mua sắm</a>
+  <div class="nav-label">📌 Nhóm 4 – Đi lại &amp; Hỗ trợ</div>
+  <a class="nav-link" href="#t20">🧭 Hỏi đường &amp; Hỏi giờ</a>
+  <a class="nav-link" href="#t21">🆘 Nhờ giúp đỡ</a>
+  <a class="nav-link" href="#t22">🩺 Sức khoẻ &amp; Bác sĩ</a>
+  <a class="nav-link" href="#t23">🚌 Phương tiện đi lại</a>
+  <a class="nav-link" href="#t24">✈️ Du lịch &amp; Khách sạn</a>
+  <a class="nav-link" href="#t25">📞 Giao tiếp điện thoại</a>
+  <div class="nav-label">📌 Nhóm 5 – Sở thích &amp; Giải trí</div>
+  <a class="nav-link" href="#t26">🎨 Sở thích &amp; Thời gian rảnh</a>
+  <a class="nav-link" href="#t27">🎉 Hoạt động cuối tuần</a>
+  <a class="nav-link" href="#t28">💌 Lời mời &amp; Hẹn hò</a>
+  <a class="nav-link" href="#t29">⚽ Thể thao</a>
+  <a class="nav-link" href="#t30">🎬 Phim ảnh</a>
+  <a class="nav-link" href="#t31">🎵 Âm nhạc</a>
+  <div class="nav-label">📐 Ngữ pháp cốt lõi</div>
+  <a class="nav-link" href="#g1">📐 Các thì động từ</a>
+  <a class="nav-link" href="#g2">📐 Câu hỏi &amp; Phủ định</a>
+  <a class="nav-link" href="#g3">📐 Modals &amp; Conditionals</a>
+  <a class="nav-link" href="#g4">📐 Danh từ &amp; Mạo từ</a>
+  <a class="nav-link" href="#g5">📐 Tính từ &amp; Trạng từ</a>
+  <a class="nav-link" href="#g6">📐 Giới từ</a>
+</aside>
+
+<!-- MOBILE TOP NAV -->
+<nav class="topnav">
+  <a href="#t1">👋 Giới thiệu</a><a href="#t2">🤝 Làm quen</a><a href="#t3">🫶 Kết bạn</a>
+  <a href="#t4">🎭 Cảm xúc</a><a href="#t5">👨‍👩‍👧 Gia đình</a><a href="#t6">🙏 Cảm ơn</a>
+  <a href="#t7">⏰ Hằng ngày</a><a href="#t8">📅 Thời gian</a><a href="#t9">🎁 Lễ tết</a>
+  <a href="#t10">🌤️ Thời tiết</a><a href="#t11">🏠 Nhà cửa</a><a href="#t12">👗 Quần áo</a>
+  <a href="#t13">💼 Nghề nghiệp</a><a href="#t14">📚 Học tập</a><a href="#t15">🗓️ Kế hoạch</a>
+  <a href="#t16">🍜 Đồ ăn</a><a href="#t17">🥤 Đồ uống</a><a href="#t18">🍽️ Nhà hàng</a>
+  <a href="#t19">🛍️ Mua sắm</a><a href="#t20">🧭 Hỏi đường</a><a href="#t21">🆘 Nhờ giúp</a>
+  <a href="#t22">🩺 Sức khoẻ</a><a href="#t23">🚌 Đi lại</a><a href="#t24">✈️ Du lịch</a>
+  <a href="#t25">📞 Điện thoại</a><a href="#t26">🎨 Sở thích</a><a href="#t27">🎉 Cuối tuần</a>
+  <a href="#t28">💌 Lời mời</a><a href="#t29">⚽ Thể thao</a><a href="#t30">🎬 Phim</a>
+  <a href="#t31">🎵 Âm nhạc</a><a href="#g1">📐 Thì</a><a href="#g2">📐 Hỏi</a>
+  <a href="#g3">📐 Modals</a><a href="#g4">📐 Danh từ</a><a href="#g5">📐 Tính từ</a>
+</nav>
+
+<div class="main">
+<!-- HERO -->
+<header class="hero">
+  <div class="eyebrow"><i></i>Tiếng Anh A1 – Tổng hợp</div>
+  <h1>Master Cheat Sheet<br><span class="grad-all">A1 Toàn tập</span></h1>
+  <p class="hero-desc">Tổng hợp từ vựng &amp; ngữ pháp từ <strong style="color:var(--text)">31 chủ đề A1</strong>. Mỗi chủ đề có bảng từ vựng, mẫu câu thực dụng song ngữ và hộp ngữ pháp tóm tắt cách ghép từ vào câu đúng. Dùng để ôn tập nhanh hoặc tra cứu trước khi luyện nói.</p>
+  <div class="stat-row">
+    <div class="stat"><b>31</b><span>Chủ đề</span></div>
+    <div class="stat"><b>500+</b><span>Từ vựng</span></div>
+    <div class="stat"><b>250+</b><span>Mẫu câu</span></div>
+    <div class="stat"><b>50+</b><span>Cấu trúc ngữ pháp</span></div>
+  </div>
+  <div class="chips">
+    <span class="chip c1">Gặp gỡ</span><span class="chip c2">Cảm xúc</span><span class="chip c3">Đồ ăn</span>
+    <span class="chip c4">Sức khoẻ</span><span class="chip c5">Du lịch</span>
+    <span class="chip c1">Thể thao</span><span class="chip c2">Âm nhạc</span><span class="chip c3">Mua sắm</span>
+    <span class="chip c4">Gia đình</span><span class="chip c5">Thời tiết</span>
+  </div>
+</header>
+
+<div class="content">
+
+<!-- ════ NHÓM 1: BẮT ĐẦU ════ -->
+<div class="grp-label">📌 Nhóm 1 – Bắt đầu</div>
+
+<!-- T1: GIỚI THIỆU -->
+<section class="ts" id="t1">
+  <div class="topic-head"><div class="topic-emoji">👋</div><div>
+    <div class="topic-title">Giới thiệu bản thân</div>
+    <div class="topic-sub">introduce-yourself-beginer.html</div>
+  </div></div>
+  <div class="vg">
+    <div class="vc"><div class="ve">Hello / Hi / Hey</div><div class="vv">Xin chào / Chào bạn / Chào (thân mật)</div></div>
+    <div class="vc"><div class="ve">My name is…</div><div class="vv">Tên tôi là…</div></div>
+    <div class="vc"><div class="ve">I'm from Vietnam</div><div class="vv">Tôi đến từ Việt Nam</div></div>
+    <div class="vc"><div class="ve">I'm a student / teacher</div><div class="vv">Tôi là học sinh / giáo viên</div></div>
+    <div class="vc"><div class="ve">I live in Hanoi</div><div class="vv">Tôi sống ở Hà Nội</div></div>
+    <div class="vc"><div class="ve">I'm 25 years old</div><div class="vv">Tôi 25 tuổi</div></div>
+    <div class="vc"><div class="ve">Nice to meet you</div><div class="vv">Rất vui được gặp bạn</div></div>
+    <div class="vc"><div class="ve">Goodbye / See you later</div><div class="vv">Tạm biệt / Gặp sau</div></div>
+  </div>
+  <div class="pl">
+    <div class="pr"><span class="pe">Hi, I'm Linh. What's your name?</span><span class="pv">Chào, mình là Linh. Bạn tên gì?</span></div>
+    <div class="pr"><span class="pe">I'm from Hue, but I live in Hanoi now.</span><span class="pv">Tôi quê Huế, nhưng hiện sống ở Hà Nội.</span></div>
+    <div class="pr"><span class="pe">I work for a software company.</span><span class="pv">Tôi làm cho một công ty phần mềm.</span></div>
+    <div class="pr"><span class="pe">In my free time I like reading and cooking.</span><span class="pv">Lúc rảnh tôi thích đọc sách và nấu ăn.</span></div>
+  </div>
+  <div class="gram"><div class="gram-h">📐 NGỮ PHÁP – <em>To be (am/is/are) + rút gọn</em></div><div class="gram-b">
+    <ul>
+      <li>Tiếng Anh bắt buộc có <b>be</b>: <span class="fm">I'm a student</span> (không nói "I student")</li>
+      <li>Rút gọn: <span class="fm">I am → I'm</span> · <span class="fm">She is → She's</span> · <span class="fm">They are → They're</span></li>
+      <li>Phủ định: <span class="fm">I'm not · isn't · aren't</span></li>
+    </ul>
+    <div class="cmp"><div class="bad"><b>❌ SAI</b><div>I student. She engineer.</div></div><div class="good"><b>✔ ĐÚNG</b><div>I'm a student. She's an engineer.</div></div></div>
+  </div></div>
+</section>
+
+<!-- T2: LÀM QUEN -->
+<section class="ts" id="t2">
+  <div class="topic-head"><div class="topic-emoji">🤝</div><div>
+    <div class="topic-title">Làm quen người mới</div>
+    <div class="topic-sub">Meeting-New-People.html</div>
+  </div></div>
+  <div class="vg">
+    <div class="vc"><div class="ve">How are you? / How's it going?</div><div class="vv">Bạn khoẻ không? / Dạo này sao?</div></div>
+    <div class="vc"><div class="ve">Not bad, thanks!</div><div class="vv">Cũng ổn, cảm ơn!</div></div>
+    <div class="vc"><div class="ve">Where are you from?</div><div class="vv">Bạn đến từ đâu?</div></div>
+    <div class="vc"><div class="ve">What do you do?</div><div class="vv">Bạn làm nghề gì?</div></div>
+    <div class="vc"><div class="ve">What are you studying?</div><div class="vv">Bạn đang học ngành gì?</div></div>
+    <div class="vc"><div class="ve">This is my friend Tom.</div><div class="vv">Đây là bạn tôi, Tom.</div></div>
+    <div class="vc"><div class="ve">Have you met before?</div><div class="vv">Hai bạn gặp nhau chưa?</div></div>
+    <div class="vc"><div class="ve">Me too! / Me neither.</div><div class="vv">Mình cũng vậy! / Mình cũng không.</div></div>
+  </div>
+  <div class="sub-h">Quốc gia &amp; Quốc tịch</div>
+  <table class="tbl"><thead><tr><th>Quốc gia</th><th>Quốc tịch</th><th>Quốc gia</th><th>Quốc tịch</th></tr></thead><tbody>
+    <tr><td>Vietnam</td><td>Vietnamese</td><td>Japan</td><td>Japanese</td></tr>
+    <tr><td>Korea</td><td>Korean</td><td>China</td><td>Chinese</td></tr>
+    <tr><td>the USA</td><td>American</td><td>the UK</td><td>British</td></tr>
+    <tr><td>France</td><td>French</td><td>Germany</td><td>German</td></tr>
+  </tbody></table>
+  <div class="gram"><div class="gram-h">📐 NGỮ PHÁP – <em>Câu hỏi với be và do · This is vs He is</em></div><div class="gram-b">
+    <ul>
+      <li>Với <b>be</b>: <span class="fm">Where are you from?</span> (đảo be lên trước)</li>
+      <li>Với động từ thường: <span class="fm">What do you do? / Where do you live?</span></li>
+      <li>Giới thiệu người: dùng <span class="fm">This is + tên</span>, không dùng "He is…" ở câu đầu.</li>
+      <li>Hưởng ứng khẳng định → <span class="fm">Me too / So do I</span> · phủ định → <span class="fm">Me neither / Neither do I</span></li>
+    </ul>
+    <div class="cmp"><div class="bad"><b>❌ SAI</b><div>Where you are from? He is Tom, my friend.</div></div><div class="good"><b>✔ ĐÚNG</b><div>Where are you from? This is Tom, my friend.</div></div></div>
+  </div></div>
+</section>
+
+<!-- T3: KẾT BẠN -->
+<section class="ts" id="t3">
+  <div class="topic-head"><div class="topic-emoji">🫶</div><div>
+    <div class="topic-title">Kết bạn &amp; Bạn bè</div>
+    <div class="topic-sub">Making-Friends.html</div>
+  </div></div>
+  <div class="two-col">
+    <div>
+      <div class="sub-h">Tính cách</div>
+      <div class="vg" style="grid-template-columns:1fr 1fr">
+        <div class="vc"><div class="ve">funny</div><div class="vv">vui tính</div></div>
+        <div class="vc"><div class="ve">kind</div><div class="vv">tốt bụng</div></div>
+        <div class="vc"><div class="ve">reliable</div><div class="vv">đáng tin</div></div>
+        <div class="vc"><div class="ve">honest</div><div class="vv">thẳng thắn</div></div>
+        <div class="vc"><div class="ve">generous</div><div class="vv">hào phóng</div></div>
+        <div class="vc"><div class="ve">outgoing</div><div class="vv">hoạt bát</div></div>
+        <div class="vc"><div class="ve">shy</div><div class="vv">nhút nhát</div></div>
+        <div class="vc"><div class="ve">talkative</div><div class="vv">nói nhiều</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="sub-h">Rủ &amp; Từ chối khéo</div>
+      <div class="pl">
+        <div class="pr"><span class="pe">Do you want to grab a coffee?</span><span class="pv">Đi uống cà phê không?</span></div>
+        <div class="pr"><span class="pe">Let's go to the night market!</span><span class="pv">Đi chợ đêm đi!</span></div>
+        <div class="pr"><span class="pe">I'd love to!</span><span class="pv">Mình rất muốn đi!</span></div>
+        <div class="pr"><span class="pe">I'd love to, but I have to work late.</span><span class="pv">Rất muốn, nhưng phải làm muộn.</span></div>
+        <div class="pr"><span class="pe">Maybe another time?</span><span class="pv">Để lần khác nhé?</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="gram"><div class="gram-h">📐 NGỮ PHÁP – <em>4 cách rủ rê · I'd love to, but…</em></div><div class="gram-b">
+    <table class="tbl"><thead><tr><th>Cấu trúc</th><th>Ví dụ</th><th>Mức độ</th></tr></thead><tbody>
+      <tr><td><span class="fm">Do you want to + V?</span></td><td>Do you want to hang out?</td><td>thân mật</td></tr>
+      <tr><td><span class="fm">Would you like to + V?</span></td><td>Would you like to join us?</td><td>lịch sự</td></tr>
+      <tr><td><span class="fm">Let's + V</span></td><td>Let's go for a walk.</td><td>rủ cùng</td></tr>
+      <tr><td><span class="fm">How about + V-ing?</span></td><td>How about having lunch?</td><td>gợi ý</td></tr>
+    </tbody></table>
+  </div></div>
+</section>
+
+<!-- T4: CẢM XÚC -->
+<section class="ts" id="t4">
+  <div class="topic-head"><div class="topic-emoji">🎭</div><div>
+    <div class="topic-title">Cảm xúc &amp; Cảm giác</div>
+    <div class="topic-sub">Feelings-and-Emotions.html</div>
+  </div></div>
+  <div class="two-col">
+    <div>
+      <div class="sub-h">Cảm giác cơ thể &amp; Tích cực</div>
+      <div class="vg" style="grid-template-columns:1fr 1fr">
+        <div class="vc"><div class="ve">tired / sleepy</div><div class="vv">mệt / buồn ngủ</div></div>
+        <div class="vc"><div class="ve">hungry / thirsty</div><div class="vv">đói / khát</div></div>
+        <div class="vc"><div class="ve">happy / excited</div><div class="vv">vui / háo hức</div></div>
+        <div class="vc"><div class="ve">relaxed / surprised</div><div class="vv">thư thái / ngạc nhiên</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="sub-h">Tiêu cực</div>
+      <div class="vg" style="grid-template-columns:1fr 1fr">
+        <div class="vc"><div class="ve">sad / bored</div><div class="vv">buồn / chán</div></div>
+        <div class="vc"><div class="ve">angry / nervous</div><div class="vv">tức / hồi hộp</div></div>
+        <div class="vc"><div class="ve">worried / scared</div><div class="vv">lo / sợ</div></div>
+        <div class="vc"><div class="ve">lonely / sick</div><div class="vv">cô đơn / ốm</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="sub-h">Tính từ + Giới từ cố định</div>
+  <table class="tbl"><thead><tr><th>Cấu trúc</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>
+    <tr><td>excited / worried / happy about</td><td>háo hức / lo / vui về</td><td>I'm excited about the trip.</td></tr>
+    <tr><td>scared of / afraid of</td><td>sợ</td><td>I'm scared of dogs.</td></tr>
+    <tr><td>angry with + người</td><td>giận ai</td><td>He's angry with me.</td></tr>
+    <tr><td>proud of / tired of</td><td>tự hào về / chán ngấy</td><td>I'm proud of you.</td></tr>
+    <tr><td>bored with / good at</td><td>chán với / giỏi về</td><td>I'm bored with this game.</td></tr>
+  </tbody></table>
+  <div class="gram"><div class="gram-h">📐 NGỮ PHÁP – <em>be/feel + adj · mức độ · make me + adj</em></div><div class="gram-b">
+    <ul>
+      <li><span class="fm">I'm + adj</span> — phải có be: "I'm hungry" (không nói "I hungry")</li>
+      <li>Mức độ: <span class="fm">a bit / quite / really / so + adj</span> — "a bit" thường với cảm xúc tiêu cực</li>
+      <li><span class="fm">S + make(s) + me + adj</span> → "Traffic makes me angry."</li>
+      <li>Sau giới từ → V-ing: "I'm scared of <b>flying</b>."</li>
+    </ul>
+    <div class="cmp"><div class="bad"><b>❌ SAI</b><div>I am feel bored. I'm scared with dogs.</div></div><div class="good"><b>✔ ĐÚNG</b><div>I feel bored. I'm scared of dogs.</div></div></div>
+  </div></div>
+</section>
+
+<!-- T5: GIA ĐÌNH -->
+<section class="ts" id="t5">
+  <div class="topic-head"><div class="topic-emoji">👨‍👩‍👧</div><div>
+    <div class="topic-title">Gia đình</div>
+    <div class="topic-sub">family-english-beginner.html</div>
+  </div></div>
+  <div class="vg">
+    <div class="vc"><div class="ve">parents</div><div class="vv">bố mẹ</div></div>
+    <div class="vc"><div class="ve">father / mother</div><div class="vv">bố / mẹ</div></div>
+    <div class="vc"><div class="ve">brother / sister</div><div class="vv">anh/em trai / chị/em gái</div></div>
+    <div class="vc"><div class="ve">husband / wife</div><div class="vv">chồng / vợ</div></div>
+    <div class="vc"><div class="ve">son / daughter</div><div class="vv">con trai / con gái</div></div>
+    <div class="vc"><div class="ve">grandparents</div><div class="vv">ông bà</div></div>
+    <div class="vc"><div class="ve">uncle / aunt</div><div class="vv">chú/bác / cô/dì</div></div>
+    <div class="vc"><div class="ve">cousin</div><div class="vv">anh/em họ</div></div>
+    <div class="vc"><div class="ve">only child</div><div class="vv">con một</div></div>
+    <div class="vc"><div class="ve">eldest / youngest</div><div class="vv">con cả / con út</div></div>
+  </div>
+  <div class="pl">
+    <div class="pr"><span class="pe">I have one older brother and one younger sister.</span><span class="pv">Tôi có một anh trai và một em gái.</span></div>
+    <div class="pr"><span class="pe">My parents live in Hue. My dad is a doctor.</span><span class="pv">Bố mẹ tôi sống ở Huế. Bố tôi là bác sĩ.</span></div>
+    <div class="pr"><span class="pe">I'm the eldest of three children.</span><span class="pv">Tôi là con cả trong gia đình ba anh chị em.</span></div>
+    <div class="pr"><span class="pe">We get together every Tết.</span><span class="pv">Cả nhà tụ họp mỗi dịp Tết.</span></div>
+  </div>
+</section>
+
+<!-- T6: CẢM ƠN & XIN LỖI -->
+<section class="ts" id="t6">
+  <div class="topic-head"><div class="topic-emoji">🙏</div><div>
+    <div class="topic-title">Cảm ơn &amp; Xin lỗi</div>
+    <div class="topic-sub">thank-you-sorry.html</div>
+  </div></div>
+  <div class="two-col">
+    <div>
+      <div class="sub-h">Cảm ơn</div>
+      <div class="pl">
+        <div class="pr"><span class="pe">Thank you so much!</span><span class="pv">Cảm ơn rất nhiều!</span></div>
+        <div class="pr"><span class="pe">Thanks for your help.</span><span class="pv">Cảm ơn vì đã giúp đỡ.</span></div>
+        <div class="pr"><span class="pe">I really appreciate it.</span><span class="pv">Tôi thực sự trân trọng điều đó.</span></div>
+        <div class="pr"><span class="pe">You're welcome. / No problem.</span><span class="pv">Không có gì. / Không sao đâu.</span></div>
+        <div class="pr"><span class="pe">Don't mention it!</span><span class="pv">Đừng bận tâm!</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="sub-h">Xin lỗi &amp; Thứ lỗi</div>
+      <div class="pl">
+        <div class="pr"><span class="pe">I'm sorry. / I apologize.</span><span class="pv">Tôi xin lỗi.</span></div>
+        <div class="pr"><span class="pe">I'm so sorry about that.</span><span class="pv">Tôi thực sự xin lỗi về điều đó.</span></div>
+        <div class="pr"><span class="pe">Excuse me. (nhờ qua đường/hỏi)</span><span class="pv">Xin lỗi / Làm ơn.</span></div>
+        <div class="pr"><span class="pe">That's okay. / No worries.</span><span class="pv">Không sao. / Không có gì đâu.</span></div>
+        <div class="pr"><span class="pe">It's my fault.</span><span class="pv">Lỗi của tôi.</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="info i-tip"><span>💡</span><span><b>Nhớ:</b> "Sorry" dùng khi lỡ chạm vào người → xin lỗi nhẹ. "I apologize" trang trọng hơn, dùng khi mắc lỗi thực sự. "Excuse me" dùng để thu hút sự chú ý hoặc xin qua.</span></div>
+</section>
+
+<!-- ════ NHÓM 2: CUỘC SỐNG HẰNG NGÀY ════ -->
+<div class="grp-label">📌 Nhóm 2 – Cuộc sống hằng ngày</div>
+
+<!-- T7: HOẠT ĐỘNG HẰNG NGÀY -->
+<section class="ts" id="t7">
+  <div class="topic-head"><div class="topic-emoji">⏰</div><div>
+    <div class="topic-title">Hoạt động hằng ngày</div>
+    <div class="topic-sub">daily-routine.html</div>
+  </div></div>
+  <div class="vg">
+    <div class="vc"><div class="ve">wake up / get up</div><div class="vv">thức dậy / ra khỏi giường</div></div>
+    <div class="vc"><div class="ve">have breakfast / have lunch / have dinner</div><div class="vv">ăn sáng / ăn trưa / ăn tối</div></div>
+    <div class="vc"><div class="ve">go to work / go to school</div><div class="vv">đi làm / đi học</div></div>
+    <div class="vc"><div class="ve">come home</div><div class="vv">về nhà</div></div>
+    <div class="vc"><div class="ve">take a shower / take a bath</div><div class="vv">tắm vòi hoa sen / tắm bồn</div></div>
+    <div class="vc"><div class="ve">go to bed</div><div class="vv">đi ngủ</div></div>
+    <div class="vc"><div class="ve">cook / clean</div><div class="vv">nấu ăn / dọn dẹp</div></div>
+    <div class="vc"><div class="ve">exercise / work out</div><div class="vv">tập thể dục / tập gym</div></div>
+    <div class="vc"><div class="ve">always / usually / often</div><div class="vv">luôn / thường / hay</div></div>
+    <div class="vc"><div class="ve">sometimes / rarely / never</div><div class="vv">đôi khi / hiếm / không bao giờ</div></div>
+  </div>
+  <div class="pl">
+    <div class="pr"><span class="pe">I usually wake up at 6:30 and go for a run.</span><span class="pv">Tôi thường dậy lúc 6:30 rồi đi chạy bộ.</span></div>
+    <div class="pr"><span class="pe">I always have coffee before work.</span><span class="pv">Tôi luôn uống cà phê trước khi đi làm.</span></div>
+    <div class="pr"><span class="pe">I rarely stay up past midnight.</span><span class="pv">Tôi hiếm khi thức quá nửa đêm.</span></div>
+  </div>
+  <div class="gram"><div class="gram-h">📐 NGỮ PHÁP – <em>Trạng từ tần suất: vị trí trong câu</em></div><div class="gram-b">
+    <ul>
+      <li>Đứng <b>trước động từ thường</b>: "I <b>usually</b> go swimming."</li>
+      <li>Đứng <b>sau be</b>: "I'm <b>always</b> busy on Mondays."</li>
+    </ul>
+    <div class="cmp"><div class="bad"><b>❌ SAI</b><div>I go usually hiking. I always am tired.</div></div><div class="good"><b>✔ ĐÚNG</b><div>I usually go hiking. I'm always tired.</div></div></div>
+  </div></div>
+</section>
+
+<!-- T8: THỜI GIAN & NGÀY THÁNG -->
+<section class="ts" id="t8">
+  <div class="topic-head"><div class="topic-emoji">📅</div><div>
+    <div class="topic-title">Thời gian &amp; Ngày tháng</div>
+    <div class="topic-sub">Time-and-Date.html</div>
+  </div></div>
+  <div class="vg">
+    <div class="vc"><div class="ve">Monday – Sunday</div><div class="vv">Thứ 2 – Chủ Nhật</div></div>
+    <div class="vc"><div class="ve">January – December</div><div class="vv">Tháng 1 – Tháng 12</div></div>
+    <div class="vc"><div class="ve">morning / afternoon / evening / night</div><div class="vv">sáng / chiều / tối / đêm</div></div>
+    <div class="vc"><div class="ve">yesterday / today / tomorrow</div><div class="vv">hôm qua / hôm nay / ngày mai</div></div>
+    <div class="vc"><div class="ve">last week / next month</div><div class="vv">tuần trước / tháng sau</div></div>
+    <div class="vc"><div class="ve">What time is it?</div><div class="vv">Mấy giờ rồi?</div></div>
+    <div class="vc"><div class="ve">on time / early / late</div><div class="vv">đúng giờ / sớm / muộn</div></div>
+  </div>
+  <div class="pl">
+    <div class="pr"><span class="pe">It's half past seven. / It's a quarter to eight.</span><span class="pv">7 giờ 30. / 7 giờ 45.</span></div>
+    <div class="pr"><span class="pe">I have a meeting on Monday at 9 a.m.</span><span class="pv">Tôi có cuộc họp vào thứ Hai lúc 9 giờ sáng.</span></div>
+  </div>
+  <div class="gram"><div class="gram-h">📐 NGỮ PHÁP – <em>at / on / in với thời gian</em></div><div class="gram-b">
+    <table class="tbl"><thead><tr><th>Giới từ</th><th>Dùng với</th><th>Ví dụ</th></tr></thead><tbody>
+      <tr><td>at</td><td>giờ cụ thể, at night/noon</td><td>at 7 p.m. / at night</td></tr>
+      <tr><td>on</td><td>ngày trong tuần, ngày tháng</td><td>on Monday / on July 4th</td></tr>
+      <tr><td>in</td><td>tháng, năm, mùa, in the morning</td><td>in January / in summer</td></tr>
+    </tbody></table>
+  </div></div>
+</section>
+
+<!-- T9: SINH NHẬT & LỄ TẾT -->
+<section class="ts" id="t9">
+  <div class="topic-head"><div class="topic-emoji">🎁</div><div>
+    <div class="topic-title">Sinh nhật &amp; Lễ tết</div>
+    <div class="topic-sub">Birthdays-and-Holidays.html</div>
+  </div></div>
+  <div class="vg">
+    <div class="vc"><div class="ve">Happy Birthday!</div><div class="vv">Chúc mừng sinh nhật!</div></div>
+    <div class="vc"><div class="ve">Happy New Year!</div><div class="vv">Chúc mừng năm mới!</div></div>
+    <div class="vc"><div class="ve">Congratulations!</div><div class="vv">Chúc mừng!</div></div>
+    <div class="vc"><div class="ve">party / celebration</div><div class="vv">tiệc / lễ kỷ niệm</div></div>
+    <div class="vc"><div class="ve">gift / present / card</div><div class="vv">quà / quà tặng / thiệp</div></div>
+    <div class="vc"><div class="ve">candles / cake</div><div class="vv">nến / bánh</div></div>
+    <div class="vc"><div class="ve">national holiday</div><div class="vv">ngày lễ quốc gia</div></div>
+    <div class="vc"><div class="ve">Tết / Lunar New Year</div><div class="vv">Tết Nguyên Đán / Tết Âm lịch</div></div>
+  </div>
+  <div class="pl">
+    <div class="pr"><span class="pe">When is your birthday?</span><span class="pv">Sinh nhật bạn vào ngày nào?</span></div>
+    <div class="pr"><span class="pe">My birthday is on the 15th of March.</span><span class="pv">Sinh nhật tôi ngày 15 tháng 3.</span></div>
+    <div class="pr"><span class="pe">What do you usually do at Tết?</span><span class="pv">Bạn thường làm gì dịp Tết?</span></div>
+    <div class="pr"><span class="pe">We get together as a family and eat traditional food.</span><span class="pv">Cả gia đình tụ họp và ăn những món truyền thống.</span></div>
+  </div>
+</section>
+
+<!-- T10: THỜI TIẾT -->
+<section class="ts" id="t10">
+  <div class="topic-head"><div class="topic-emoji">🌤️</div><div>
+    <div class="topic-title">Thời tiết &amp; Mùa</div>
+    <div class="topic-sub">Weather.html</div>
+  </div></div>
+  <div class="vg">
+    <div class="vc"><div class="ve">sunny / cloudy / rainy</div><div class="vv">nắng / nhiều mây / mưa</div><div class="vx">thêm -y để tạo tính từ: sun/cloud/rain + y</div></div>
+    <div class="vc"><div class="ve">windy / foggy / stormy</div><div class="vv">nhiều gió / sương mù / bão</div></div>
+    <div class="vc"><div class="ve">hot / warm / cool / cold</div><div class="vv">nóng / ấm / mát / lạnh</div></div>
+    <div class="vc"><div class="ve">freezing / boiling</div><div class="vv">lạnh cóng / nóng như thiêu</div></div>
+    <div class="vc"><div class="ve">spring / summer / autumn / winter</div><div class="vv">xuân / hè / thu / đông</div></div>
+    <div class="vc"><div class="ve">dry season / rainy season</div><div class="vv">mùa khô / mùa mưa</div></div>
+    <div class="vc"><div class="ve">temperature / degree</div><div class="vv">nhiệt độ / độ (°C)</div></div>
+    <div class="vc"><div class="ve">forecast / drizzle</div><div class="vv">dự báo / mưa phùn</div></div>
+  </div>
+  <div class="pl">
+    <div class="pr"><span class="pe">What's the weather like today?</span><span class="pv">Hôm nay thời tiết thế nào?</span></div>
+    <div class="pr"><span class="pe">It's thirty-two degrees. It's boiling!</span><span class="pv">Hôm nay 32 độ. Nóng kinh khủng!</span></div>
+    <div class="pr"><span class="pe">It's going to rain this afternoon.</span><span class="pv">Chiều nay trời sẽ mưa.</span></div>
+    <div class="pr"><span class="pe">Today is hotter than yesterday.</span><span class="pv">Hôm nay nóng hơn hôm qua.</span></div>
+  </div>
+  <div class="gram"><div class="gram-h">📐 NGỮ PHÁP – <em>It's + adj/V-ing · So sánh hơn · Hiện tại đơn vs tiếp diễn</em></div><div class="gram-b">
+    <ul>
+      <li>Luôn dùng <b>It</b> làm chủ ngữ: <span class="fm">It's sunny.</span> / <span class="fm">It's raining.</span></li>
+      <li>So sánh hơn tính từ ngắn: <span class="fm">adj + -er + than</span> → "hotter, windier"</li>
+      <li>Khí hậu (thường xuyên) → hiện tại đơn: "It <b>rains</b> a lot in July."</li>
+      <li>Đang xảy ra → tiếp diễn: "It <b>'s raining</b> now."</li>
+    </ul>
+    <div class="cmp"><div class="bad"><b>❌ SAI</b><div>Today is rain. How is the weather like?</div></div><div class="good"><b>✔ ĐÚNG</b><div>It's raining. What's the weather like?</div></div></div>
+  </div></div>
+</section>
+
+<!-- T11: NHÀ CỬA -->
+<section class="ts" id="t11">
+  <div class="topic-head"><div class="topic-emoji">🏠</div><div>
+    <div class="topic-title">Nhà cửa &amp; Nội thất</div>
+    <div class="topic-sub">At-Home.html · House-and-Furniture.html</div>
+  </div></div>
+  <div class="vg">
+    <div class="vc"><div class="ve">living room / bedroom</div><div class="vv">phòng khách / phòng ngủ</div></div>
+    <div class="vc"><div class="ve">kitchen / bathroom</div><div class="vv">bếp / phòng tắm</div></div>
+    <div class="vc"><div class="ve">balcony / garden</div><div class="vv">ban công / sân vườn</div></div>
+    <div class="vc"><div class="ve">sofa / armchair</div><div class="vv">ghế sofa / ghế bành</div></div>
+    <div class="vc"><div class="ve">wardrobe / bookshelf</div><div class="vv">tủ quần áo / kệ sách</div></div>
+    <div class="vc"><div class="ve">fridge / washing machine</div><div class="vv">tủ lạnh / máy giặt</div></div>
+    <div class="vc"><div class="ve">air conditioner (A/C)</div><div class="vv">điều hoà</div></div>
+    <div class="vc"><div class="ve">sink / tap</div><div class="vv">chậu rửa / vòi nước</div></div>
+    <div class="vc"><div class="ve">microwave / oven</div><div class="vv">lò vi sóng / lò nướng</div></div>
+    <div class="vc"><div class="ve">curtains / carpet</div><div class="vv">rèm cửa / thảm</div></div>
+  </div>
+  <div class="pl">
+    <div class="pr"><span class="pe">My apartment has two bedrooms and a small balcony.</span><span class="pv">Căn hộ tôi có hai phòng ngủ và một ban công nhỏ.</span></div>
+    <div class="pr"><span class="pe">The sofa is next to the window.</span><span class="pv">Ghế sofa ở bên cạnh cửa sổ.</span></div>
+  </div>
+  <div class="gram"><div class="gram-h">📐 NGỮ PHÁP – <em>Giới từ nơi chốn</em></div><div class="gram-b">
+    <table class="tbl"><thead><tr><th>Giới từ</th><th>Dùng khi</th><th>Ví dụ</th></tr></thead><tbody>
+      <tr><td>in</td><td>bên trong</td><td>The books are in the drawer.</td></tr>
+      <tr><td>on</td><td>trên bề mặt</td><td>The remote is on the table.</td></tr>
+      <tr><td>next to / beside</td><td>bên cạnh</td><td>The lamp is next to the bed.</td></tr>
+      <tr><td>between</td><td>ở giữa hai vật</td><td>The sofa is between the windows.</td></tr>
+      <tr><td>opposite / across from</td><td>đối diện</td><td>The bathroom is opposite the bedroom.</td></tr>
+    </tbody></table>
+  </div></div>
+</section>
+
+<!-- T12: QUẦN ÁO -->
+<section class="ts" id="t12">
+  <div class="topic-head"><div class="topic-emoji">👗</div><div>
+    <div class="topic-title">Quần áo &amp; Trang phục</div>
+    <div class="topic-sub">Clothes.html</div>
+  </div></div>
+  <div class="vg">
+    <div class="vc"><div class="ve">T-shirt / shirt / blouse</div><div class="vv">áo phông / áo sơ mi / áo kiểu nữ</div></div>
+    <div class="vc"><div class="ve">dress / skirt</div><div class="vv">váy liền / chân váy</div></div>
+    <div class="vc"><div class="ve">jeans / trousers / shorts</div><div class="vv">quần bò / quần âu / quần đùi</div></div>
+    <div class="vc"><div class="ve">jacket / coat / hoodie</div><div class="vv">áo khoác / áo khoác dài / áo hoodie</div></div>
+    <div class="vc"><div class="ve">sneakers / boots / sandals</div><div class="vv">giày thể thao / bốt / dép</div></div>
+    <div class="vc"><div class="ve">hat / cap / scarf</div><div class="vv">mũ / mũ lưỡi trai / khăn quàng</div></div>
+    <div class="vc"><div class="ve">plain / striped / floral / checked</div><div class="vv">trơn / sọc / hoa / ca rô</div></div>
+    <div class="vc"><div class="ve">cotton / wool / denim / silk</div><div class="vv">cotton / len / vải bò / lụa</div></div>
+    <div class="vc"><div class="ve">casual / smart / formal / sporty</div><div class="vv">thường ngày / lịch sự / trang trọng / thể thao</div></div>
+  </div>
+  <div class="pl">
+    <div class="pr"><span class="pe">I'm wearing a white shirt and black trousers today.</span><span class="pv">Hôm nay tôi mặc áo sơ mi trắng và quần âu đen.</span></div>
+    <div class="pr"><span class="pe">She's the woman in the red dress.</span><span class="pv">Cô ấy là người phụ nữ mặc váy đỏ.</span></div>
+    <div class="pr"><span class="pe">You should wear something smart for the interview.</span><span class="pv">Bạn nên mặc đồ lịch sự cho buổi phỏng vấn.</span></div>
+  </div>
+  <div class="gram"><div class="gram-h">📐 NGỮ PHÁP – <em>wear/put on/take off · thứ tự tính từ · a pair of</em></div><div class="gram-b">
+    <ul>
+      <li><b>wear</b> (thói quen): "I usually <b>wear</b> jeans." vs <b>wearing</b> (lúc này): "I<b>'m wearing</b> sandals."</li>
+      <li>Thứ tự tính từ: <span class="fm">ý kiến → cỡ → màu → họa tiết → chất liệu → món đồ</span></li>
+      <li><span class="fm">a pair of</span> jeans / socks / shoes / glasses (vì có hai phần)</li>
+    </ul>
+    <div class="cmp"><div class="bad"><b>❌ SAI</b><div>a cotton white shirt · She wears a dress now.</div></div><div class="good"><b>✔ ĐÚNG</b><div>a white cotton shirt · She's wearing a dress.</div></div></div>
+  </div></div>
+</section>
+
+<!-- T13: NGHỀ NGHIỆP -->
+<section class="ts" id="t13">
+  <div class="topic-head"><div class="topic-emoji">💼</div><div>
+    <div class="topic-title">Nghề nghiệp &amp; Công việc</div>
+    <div class="topic-sub">accupation.html · At-Work.html</div>
+  </div></div>
+  <div class="vg">
+    <div class="vc"><div class="ve">doctor / nurse</div><div class="vv">bác sĩ / y tá</div></div>
+    <div class="vc"><div class="ve">teacher / lecturer</div><div class="vv">giáo viên / giảng viên</div></div>
+    <div class="vc"><div class="ve">engineer / programmer</div><div class="vv">kỹ sư / lập trình viên</div></div>
+    <div class="vc"><div class="ve">accountant / lawyer</div><div class="vv">kế toán / luật sư</div></div>
+    <div class="vc"><div class="ve">manager / CEO</div><div class="vv">quản lý / giám đốc</div></div>
+    <div class="vc"><div class="ve">designer / photographer</div><div class="vv">nhà thiết kế / nhiếp ảnh</div></div>
+    <div class="vc"><div class="ve">chef / waiter</div><div class="vv">đầu bếp / phục vụ</div></div>
+    <div class="vc"><div class="ve">freelancer / self-employed</div><div class="vv">người làm tự do / tự kinh doanh</div></div>
+    <div class="vc"><div class="ve">full-time / part-time</div><div class="vv">toàn thời gian / bán thời gian</div></div>
+    <div class="vc"><div class="ve">salary / deadline / meeting</div><div class="vv">lương / hạn chót / cuộc họp</div></div>
+  </div>
+  <div class="pl">
+    <div class="pr"><span class="pe">What do you do for a living?</span><span class="pv">Bạn làm nghề gì?</span></div>
+    <div class="pr"><span class="pe">I work for a tech company in Hanoi.</span><span class="pv">Tôi làm cho một công ty công nghệ ở Hà Nội.</span></div>
+    <div class="pr"><span class="pe">I'm in charge of the marketing team.</span><span class="pv">Tôi phụ trách nhóm marketing.</span></div>
+    <div class="pr"><span class="pe">I work from home three days a week.</span><span class="pv">Tôi làm việc ở nhà ba ngày một tuần.</span></div>
+  </div>
+</section>
+
+<!-- T14: HỌC TẬP -->
+<section class="ts" id="t14">
+  <div class="topic-head"><div class="topic-emoji">📚</div><div>
+    <div class="topic-title">Học tập &amp; Trường học</div>
+    <div class="topic-sub">School-and-Study.html</div>
+  </div></div>
+  <div class="vg">
+    <div class="vc"><div class="ve">primary school / secondary school</div><div class="vv">tiểu học / THCS</div></div>
+    <div class="vc"><div class="ve">high school / university</div><div class="vv">THPT / đại học</div></div>
+    <div class="vc"><div class="ve">subject / major</div><div class="vv">môn học / ngành học</div></div>
+    <div class="vc"><div class="ve">homework / assignment</div><div class="vv">bài tập về nhà / bài tập</div></div>
+    <div class="vc"><div class="ve">exam / test / quiz</div><div class="vv">kỳ thi / bài kiểm tra / bài quiz</div></div>
+    <div class="vc"><div class="ve">pass / fail / grade</div><div class="vv">đậu / rớt / điểm</div></div>
+    <div class="vc"><div class="ve">classmate / professor</div><div class="vv">bạn cùng lớp / giáo sư</div></div>
+    <div class="vc"><div class="ve">scholarship / tuition fee</div><div class="vv">học bổng / học phí</div></div>
+  </div>
+  <div class="pl">
+    <div class="pr"><span class="pe">I'm studying computer science at HUST.</span><span class="pv">Tôi đang học ngành khoa học máy tính tại BKHN.</span></div>
+    <div class="pr"><span class="pe">I have a big exam next week. I need to study harder.</span><span class="pv">Tuần sau tôi có kỳ thi lớn. Tôi cần học chăm hơn.</span></div>
+    <div class="pr"><span class="pe">My favourite subject is English because it's useful.</span><span class="pv">Môn tôi thích nhất là tiếng Anh vì nó rất hữu ích.</span></div>
+  </div>
+</section>
+
+<!-- T15: KẾ HOẠCH TƯƠNG LAI -->
+<section class="ts" id="t15">
+  <div class="topic-head"><div class="topic-emoji">🗓️</div><div>
+    <div class="topic-title">Kế hoạch tương lai</div>
+    <div class="topic-sub">Plans-for-Tomorrow.html</div>
+  </div></div>
+  <div class="vg">
+    <div class="vc"><div class="ve">plan / intention</div><div class="vv">kế hoạch / ý định</div></div>
+    <div class="vc"><div class="ve">appointment / meeting</div><div class="vv">cuộc hẹn / cuộc họp</div></div>
+    <div class="vc"><div class="ve">this weekend / next week</div><div class="vv">cuối tuần này / tuần sau</div></div>
+    <div class="vc"><div class="ve">Are you free…?</div><div class="vv">Bạn có rảnh…?</div></div>
+  </div>
+  <div class="pl">
+    <div class="pr"><span class="pe">What are you doing tonight?</span><span class="pv">Tối nay bạn có kế hoạch gì?</span></div>
+    <div class="pr"><span class="pe">I'm meeting my friend for dinner at six.</span><span class="pv">Tôi hẹn gặp bạn ăn tối lúc sáu giờ.</span></div>
+    <div class="pr"><span class="pe">We're going to visit my grandparents this Sunday.</span><span class="pv">Chủ nhật này chúng tôi đến thăm ông bà.</span></div>
+  </div>
+  <div class="gram"><div class="gram-h">📐 NGỮ PHÁP – <em>be going to vs will vs hiện tại tiếp diễn cho tương lai</em></div><div class="gram-b">
+    <table class="tbl"><thead><tr><th>Cấu trúc</th><th>Dùng khi</th><th>Ví dụ</th></tr></thead><tbody>
+      <tr><td><span class="fm">be going to + V</span></td><td>kế hoạch đã quyết định, dự đoán</td><td>I'm going to study medicine.</td></tr>
+      <tr><td><span class="fm">will + V</span></td><td>quyết định ngay lúc nói, hứa</td><td>I'll help you with that.</td></tr>
+      <tr><td><span class="fm">am/is/are + V-ing</span></td><td>kế hoạch đã sắp xếp cụ thể</td><td>I'm having lunch with Lan tomorrow.</td></tr>
+    </tbody></table>
+  </div></div>
+</section>
+
+<!-- ════ NHÓM 3: ĂN UỐNG & MUA SẮM ════ -->
+<div class="grp-label">📌 Nhóm 3 – Ăn uống &amp; Mua sắm</div>
+
+<!-- T16: ĐỒ ĂN & ĐỒ UỐNG -->
+<section class="ts" id="t16">
+  <div class="topic-head"><div class="topic-emoji">🍜</div><div>
+    <div class="topic-title">Đồ ăn &amp; Đồ uống</div>
+    <div class="topic-sub">Food-and-Drinks.html</div>
+  </div></div>
+  <div class="two-col">
+    <div>
+      <div class="sub-h">Đồ ăn</div>
+      <div class="vg" style="grid-template-columns:1fr 1fr">
+        <div class="vc"><div class="ve">rice / noodle soup</div><div class="vv">cơm / phở, bún</div></div>
+        <div class="vc"><div class="ve">bread / sandwich</div><div class="vv">bánh mì / bánh kẹp</div></div>
+        <div class="vc"><div class="ve">chicken / beef / pork</div><div class="vv">gà / bò / lợn</div></div>
+        <div class="vc"><div class="ve">fish / seafood</div><div class="vv">cá / hải sản</div></div>
+        <div class="vc"><div class="ve">egg / dairy</div><div class="vv">trứng / sữa và chế phẩm</div></div>
+        <div class="vc"><div class="ve">fruit / vegetables</div><div class="vv">trái cây / rau củ</div></div>
+        <div class="vc"><div class="ve">snacks / dessert</div><div class="vv">đồ ăn vặt / tráng miệng</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="sub-h">Đồ uống &amp; Hương vị</div>
+      <div class="vg" style="grid-template-columns:1fr 1fr">
+        <div class="vc"><div class="ve">water / coffee / tea</div><div class="vv">nước / cà phê / trà</div></div>
+        <div class="vc"><div class="ve">juice / smoothie</div><div class="vv">nước ép / sinh tố</div></div>
+        <div class="vc"><div class="ve">soft drink / beer</div><div class="vv">nước ngọt / bia</div></div>
+        <div class="vc"><div class="ve">sweet / salty / spicy</div><div class="vv">ngọt / mặn / cay</div></div>
+        <div class="vc"><div class="ve">sour / bitter</div><div class="vv">chua / đắng</div></div>
+        <div class="vc"><div class="ve">delicious / tasty</div><div class="vv">rất ngon / ngon</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="gram"><div class="gram-h">📐 NGỮ PHÁP – <em>Danh từ đếm được/không đếm được · some/any · taste + adj</em></div><div class="gram-b">
+    <ul>
+      <li>Không đếm được (rice, water, bread): không có a/an, không thêm -s</li>
+      <li><span class="fm">some</span> → câu khẳng định, lời mời: "I'd like <b>some</b> rice."</li>
+      <li><span class="fm">any</span> → câu hỏi/phủ định: "Do you have <b>any</b> milk?"</li>
+      <li><span class="fm">S + tastes/smells/looks + adj</span> → "This cake tastes sweet."</li>
+    </ul>
+    <div class="cmp"><div class="bad"><b>❌ SAI</b><div>I want a bread and two rices.</div></div><div class="good"><b>✔ ĐÚNG</b><div>I want some bread and two bowls of rice.</div></div></div>
+  </div></div>
+</section>
+
+<!-- T17: GỌI ĐỒ UỐNG -->
+<section class="ts" id="t17">
+  <div class="topic-head"><div class="topic-emoji">🥤</div><div>
+    <div class="topic-title">Gọi đồ uống</div>
+    <div class="topic-sub">drinking.html</div>
+  </div></div>
+  <div class="pl">
+    <div class="pr"><span class="pe">I'd like an iced coffee with milk.</span><span class="pv">Cho tôi một ly cà phê sữa đá.</span></div>
+    <div class="pr"><span class="pe">Hot or iced? / Less sugar, please.</span><span class="pv">Nóng hay đá? / Ít đường thôi nhé.</span></div>
+    <div class="pr"><span class="pe">No ice, please. / For here or to go?</span><span class="pv">Không đá nhé. / Dùng ở đây hay mang đi?</span></div>
+    <div class="pr"><span class="pe">Would you like something to drink?</span><span class="pv">Bạn có muốn uống gì không?</span></div>
+    <div class="pr"><span class="pe">Can I get a refill?</span><span class="pv">Cho tôi thêm nước được không?</span></div>
+  </div>
+  <div class="info i-tip"><span>💡</span><span>Cà phê sữa đá kiểu Việt: <b>Vietnamese iced coffee with condensed milk</b>. "To go" (Mỹ) và "takeaway" (Anh) đều nghĩa là mang đi.</span></div>
+</section>
+
+<!-- T18: NHÀ HÀNG -->
+<section class="ts" id="t18">
+  <div class="topic-head"><div class="topic-emoji">🍽️</div><div>
+    <div class="topic-title">Nhà hàng &amp; Quán ăn</div>
+    <div class="topic-sub">at-a-restaurant.html · restaurant-cafe.html</div>
+  </div></div>
+  <div class="vg">
+    <div class="vc"><div class="ve">menu / order</div><div class="vv">thực đơn / gọi món</div></div>
+    <div class="vc"><div class="ve">starter / main course</div><div class="vv">khai vị / món chính</div></div>
+    <div class="vc"><div class="ve">bill (Anh) / check (Mỹ)</div><div class="vv">hoá đơn / hoá đơn</div></div>
+    <div class="vc"><div class="ve">reservation / book a table</div><div class="vv">sự đặt chỗ / đặt bàn</div></div>
+    <div class="vc"><div class="ve">waiter / waitress</div><div class="vv">phục vụ nam / phục vụ nữ</div></div>
+    <div class="vc"><div class="ve">tip</div><div class="vv">tiền boa</div></div>
+  </div>
+  <div class="pl">
+    <div class="pr"><span class="pe">A table for two, please.</span><span class="pv">Cho tôi bàn cho hai người.</span></div>
+    <div class="pr"><span class="pe">Could I see the menu, please?</span><span class="pv">Cho tôi xem thực đơn được không?</span></div>
+    <div class="pr"><span class="pe">What do you recommend?</span><span class="pv">Bạn gợi ý món gì?</span></div>
+    <div class="pr"><span class="pe">I'd like the fried rice. Not too spicy, please.</span><span class="pv">Cho tôi cơm rang. Đừng cay quá nhé.</span></div>
+    <div class="pr"><span class="pe">Could we have the bill, please?</span><span class="pv">Cho chúng tôi thanh toán.</span></div>
+    <div class="pr"><span class="pe">Are you ready to order? / Enjoy your meal!</span><span class="pv">Anh chị gọi món chưa? / Chúc ngon miệng!</span></div>
+  </div>
+  <div class="gram"><div class="gram-h">📐 NGỮ PHÁP – <em>Mức lịch sự khi gọi món</em></div><div class="gram-b">
+    <table class="tbl"><thead><tr><th>Cấu trúc</th><th>Mức độ</th><th>Ví dụ</th></tr></thead><tbody>
+      <tr><td><span class="fm">I want + món</span></td><td>Thẳng, dễ nghe cộc</td><td>I want a coffee.</td></tr>
+      <tr><td><span class="fm">Can I have + món?</span></td><td>Thân thiện, phổ biến</td><td>Can I have a coffee?</td></tr>
+      <tr><td><span class="fm">I'd like + món, please</span></td><td>Lịch sự nhất</td><td>I'd like a coffee, please.</td></tr>
+    </tbody></table>
+  </div></div>
+</section>
+
+<!-- T19: MUA SẮM -->
+<section class="ts" id="t19">
+  <div class="topic-head"><div class="topic-emoji">🛍️</div><div>
+    <div class="topic-title">Mua sắm</div>
+    <div class="topic-sub">Shopping.html</div>
+  </div></div>
+  <div class="vg">
+    <div class="vc"><div class="ve">How much is it?</div><div class="vv">Cái này giá bao nhiêu?</div></div>
+    <div class="vc"><div class="ve">price / cost / discount</div><div class="vv">giá / chi phí / giảm giá</div></div>
+    <div class="vc"><div class="ve">size: S / M / L / XL</div><div class="vv">cỡ nhỏ / cỡ vừa / cỡ lớn / cỡ rất lớn</div></div>
+    <div class="vc"><div class="ve">try on / fitting room</div><div class="vv">thử đồ / phòng thử</div></div>
+    <div class="vc"><div class="ve">too big / too small / too tight</div><div class="vv">quá to / quá nhỏ / quá chật</div></div>
+    <div class="vc"><div class="ve">cash / card / receipt</div><div class="vv">tiền mặt / thẻ / hoá đơn</div></div>
+    <div class="vc"><div class="ve">refund / exchange</div><div class="vv">hoàn tiền / đổi hàng</div></div>
+    <div class="vc"><div class="ve">I'll take it. / I'm just looking.</div><div class="vv">Tôi lấy cái này. / Tôi chỉ xem thôi.</div></div>
+  </div>
+  <div class="pl">
+    <div class="pr"><span class="pe">Can I try this on? Do you have this in a size M?</span><span class="pv">Thử cái này được không? Có size M không?</span></div>
+    <div class="pr"><span class="pe">It's a bit too tight. Do you have a bigger one?</span><span class="pv">Hơi chật. Bạn có cái to hơn không?</span></div>
+    <div class="pr"><span class="pe">Can you give me a discount? How about 150,000?</span><span class="pv">Bớt cho tôi chút không? 150 nghìn được không?</span></div>
+    <div class="pr"><span class="pe">Can I pay by card? Could I have the receipt?</span><span class="pv">Trả bằng thẻ được không? Cho tôi xin hoá đơn.</span></div>
+  </div>
+  <div class="gram"><div class="gram-h">📐 NGỮ PHÁP – <em>one/ones thay tên món · so sánh hơn · I'll take it/them</em></div><div class="gram-b">
+    <ul>
+      <li><b>one</b> thay cho một món, <b>ones</b> cho nhiều: "I don't like the red one. These shoes are too small. Do you have bigger <b>ones</b>?"</li>
+      <li>So sánh hơn: <span class="fm">adj ngắn + -er</span> (bigger, cheaper) · <span class="fm">more + adj dài</span> (more expensive)</li>
+      <li><span class="fm">I'll take it</span> (một) · <span class="fm">I'll take them</span> (nhiều hoặc đồ có hai phần như shoes)</li>
+    </ul>
+  </div></div>
+</section>
+
+<!-- ════ NHÓM 4: ĐI LẠI & HỖ TRỢ ════ -->
+<div class="grp-label">📌 Nhóm 4 – Đi lại &amp; Hỗ trợ</div>
+
+<!-- T20: HỎI ĐƯỜNG -->
+<section class="ts" id="t20">
+  <div class="topic-head"><div class="topic-emoji">🧭</div><div>
+    <div class="topic-title">Hỏi đường &amp; Hỏi giờ</div>
+    <div class="topic-sub">ask-for-directions.html · Asking-for-Directions-v2.html</div>
+  </div></div>
+  <div class="vg">
+    <div class="vc"><div class="ve">go straight / turn left / turn right</div><div class="vv">đi thẳng / rẽ trái / rẽ phải</div></div>
+    <div class="vc"><div class="ve">cross the street</div><div class="vv">sang đường</div></div>
+    <div class="vc"><div class="ve">on the left / on the right</div><div class="vv">bên trái / bên phải</div></div>
+    <div class="vc"><div class="ve">next to / opposite / between</div><div class="vv">bên cạnh / đối diện / giữa</div></div>
+    <div class="vc"><div class="ve">traffic light / corner / junction</div><div class="vv">đèn giao thông / góc đường / ngã tư</div></div>
+    <div class="vc"><div class="ve">five minutes on foot / five minutes by car</div><div class="vv">5 phút đi bộ / 5 phút đi xe</div></div>
+  </div>
+  <div class="pl">
+    <div class="pr"><span class="pe">Excuse me, how do I get to the station?</span><span class="pv">Xin lỗi, tôi đến ga như thế nào?</span></div>
+    <div class="pr"><span class="pe">Go straight and turn left at the traffic light.</span><span class="pv">Đi thẳng rồi rẽ trái ở đèn đỏ.</span></div>
+    <div class="pr"><span class="pe">It's on the right, next to the café.</span><span class="pv">Bên tay phải, cạnh quán cà phê.</span></div>
+    <div class="pr"><span class="pe">Could you repeat that more slowly, please?</span><span class="pv">Bạn nhắc lại chậm hơn được không?</span></div>
+  </div>
+</section>
+
+<!-- T21: NHỜ GIÚP ĐỠ -->
+<section class="ts" id="t21">
+  <div class="topic-head"><div class="topic-emoji">🆘</div><div>
+    <div class="topic-title">Nhờ giúp đỡ</div>
+    <div class="topic-sub">Asking-for-Help.html · english-communication-toolkit.html</div>
+  </div></div>
+  <div class="pl">
+    <div class="pr"><span class="pe">Could you help me, please?</span><span class="pv">Bạn có thể giúp tôi không?</span></div>
+    <div class="pr"><span class="pe">Could you say that again / more slowly?</span><span class="pv">Bạn nói lại / chậm hơn được không?</span></div>
+    <div class="pr"><span class="pe">What does "___" mean?</span><span class="pv">"___" có nghĩa là gì?</span></div>
+    <div class="pr"><span class="pe">How do you say "___" in English?</span><span class="pv">"___" tiếng Anh nói thế nào?</span></div>
+    <div class="pr"><span class="pe">Can you write it down?</span><span class="pv">Bạn viết ra giúp tôi được không?</span></div>
+    <div class="pr"><span class="pe">I don't understand. / I'm not sure.</span><span class="pv">Tôi không hiểu. / Tôi không chắc.</span></div>
+    <div class="pr"><span class="pe">Is there a problem? / Is everything okay?</span><span class="pv">Có vấn đề gì không? / Mọi thứ ổn chứ?</span></div>
+  </div>
+  <div class="gram"><div class="gram-h">📐 NGỮ PHÁP – <em>Could you…? và Would you mind…?</em></div><div class="gram-b">
+    <ul>
+      <li><span class="fm">Could you + V, please?</span> → lịch sự, phổ biến nhất</li>
+      <li><span class="fm">Would you mind + V-ing?</span> → còn lịch sự hơn: "Would you mind closing the door?"</li>
+      <li>Trả lời đồng ý: "Of course!" / "Sure!" / "No problem!"</li>
+    </ul>
+  </div></div>
+</section>
+
+<!-- T22: SỨC KHOẺ -->
+<section class="ts" id="t22">
+  <div class="topic-head"><div class="topic-emoji">🩺</div><div>
+    <div class="topic-title">Sức khoẻ &amp; Đi khám bác sĩ</div>
+    <div class="topic-sub">Health-and-Doctor.html</div>
+  </div></div>
+  <div class="two-col">
+    <div>
+      <div class="sub-h">Bộ phận cơ thể</div>
+      <div class="vg" style="grid-template-columns:1fr 1fr">
+        <div class="vc"><div class="ve">head / eye / ear</div><div class="vv">đầu / mắt / tai</div></div>
+        <div class="vc"><div class="ve">nose / mouth / throat</div><div class="vv">mũi / miệng / họng</div></div>
+        <div class="vc"><div class="ve">tooth → teeth</div><div class="vv">răng (bất quy tắc)</div></div>
+        <div class="vc"><div class="ve">shoulder / chest / back</div><div class="vv">vai / ngực / lưng</div></div>
+        <div class="vc"><div class="ve">stomach / arm / leg</div><div class="vv">bụng / tay / chân</div></div>
+        <div class="vc"><div class="ve">knee / ankle / foot → feet</div><div class="vv">đầu gối / mắt cá / bàn chân</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="sub-h">Bệnh thường gặp</div>
+      <div class="vg" style="grid-template-columns:1fr 1fr">
+        <div class="vc"><div class="ve">a headache / stomachache</div><div class="vv">đau đầu / đau bụng</div></div>
+        <div class="vc"><div class="ve">a sore throat / backache</div><div class="vv">đau họng / đau lưng</div></div>
+        <div class="vc"><div class="ve">a cold / the flu</div><div class="vv">cảm lạnh / cúm</div></div>
+        <div class="vc"><div class="ve">a fever / a cough</div><div class="vv">sốt / ho</div></div>
+        <div class="vc"><div class="ve">a runny nose / diarrhea</div><div class="vv">sổ mũi / tiêu chảy</div></div>
+        <div class="vc"><div class="ve">feel dizzy / nauseous</div><div class="vv">chóng mặt / buồn nôn</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="pl">
+    <div class="pr"><span class="pe">I have a sore throat and a fever.</span><span class="pv">Tôi bị đau họng và sốt.</span></div>
+    <div class="pr"><span class="pe">I've had a cough for two days / since Monday.</span><span class="pv">Tôi bị ho hai ngày rồi / từ thứ Hai.</span></div>
+    <div class="pr"><span class="pe">My knee hurts. / It hurts when I swallow.</span><span class="pv">Đầu gối tôi đau. / Nuốt thì đau.</span></div>
+    <div class="pr"><span class="pe">You should get some rest and drink lots of water.</span><span class="pv">Bạn nên nghỉ ngơi và uống nhiều nước.</span></div>
+    <div class="pr"><span class="pe">I'm allergic to penicillin.</span><span class="pv">Tôi bị dị ứng với penicillin.</span></div>
+  </div>
+  <div class="gram"><div class="gram-h">📐 NGỮ PHÁP – <em>have a + bệnh · hurt(s) · for / since · should</em></div><div class="gram-b">
+    <ul>
+      <li><span class="fm">I have + a + bệnh</span>: "I have <b>a</b> headache / <b>a</b> cold / <b>the</b> flu."</li>
+      <li><span class="fm">bộ phận + hurt(s)</span>: "My head <b>hurts</b>" (s vì số ít) · "My feet <b>hurt</b>" (số nhiều)</li>
+      <li><span class="fm">for + khoảng thời gian</span> vs <span class="fm">since + mốc</span></li>
+      <li><span class="fm">should / shouldn't + V</span>: "You should rest." (không có "to")</li>
+    </ul>
+    <div class="cmp"><div class="bad"><b>❌ SAI</b><div>I am headache. I have cough since two days.</div></div><div class="good"><b>✔ ĐÚNG</b><div>I have a headache. I've had a cough for two days.</div></div></div>
+  </div></div>
+</section>
+
+<!-- T23: PHƯƠNG TIỆN ĐI LẠI -->
+<section class="ts" id="t23">
+  <div class="topic-head"><div class="topic-emoji">🚌</div><div>
+    <div class="topic-title">Phương tiện đi lại</div>
+    <div class="topic-sub">Transportation.html</div>
+  </div></div>
+  <div class="vg">
+    <div class="vc"><div class="ve">bus / train / metro</div><div class="vv">xe buýt / tàu / tàu điện</div></div>
+    <div class="vc"><div class="ve">taxi / motorbike / bicycle</div><div class="vv">taxi / xe máy / xe đạp</div></div>
+    <div class="vc"><div class="ve">get on / get off</div><div class="vv">lên xe buýt, tàu / xuống xe buýt, tàu</div></div>
+    <div class="vc"><div class="ve">get in / get out of</div><div class="vv">lên taxi, ô tô / ra khỏi taxi, ô tô</div></div>
+    <div class="vc"><div class="ve">single ticket / return ticket</div><div class="vv">vé một chiều / vé khứ hồi</div></div>
+    <div class="vc"><div class="ve">platform / bus stop / station</div><div class="vv">sân ga / trạm xe buýt / nhà ga</div></div>
+    <div class="vc"><div class="ve">fare / timetable</div><div class="vv">giá vé / lịch chạy</div></div>
+    <div class="vc"><div class="ve">traffic jam / delayed</div><div class="vv">kẹt xe / bị trễ</div></div>
+    <div class="vc"><div class="ve">How long does it take?</div><div class="vv">Mất bao lâu?</div></div>
+    <div class="vc"><div class="ve">How far is it?</div><div class="vv">Cách bao xa?</div></div>
+  </div>
+  <div class="pl">
+    <div class="pr"><span class="pe">Which bus goes to the Old Quarter?</span><span class="pv">Xe buýt nào đi Phố Cổ?</span></div>
+    <div class="pr"><span class="pe">It takes me thirty minutes to get to work by motorbike.</span><span class="pv">Đi xe máy mất 30 phút để đến công ty.</span></div>
+    <div class="pr"><span class="pe">I'm stuck in a traffic jam. I'll be late.</span><span class="pv">Tôi đang bị kẹt xe. Tôi sẽ trễ.</span></div>
+    <div class="pr"><span class="pe">To the airport, please. I'm in a bit of a hurry.</span><span class="pv">Ra sân bay giúp tôi. Tôi hơi vội.</span></div>
+  </div>
+  <div class="gram"><div class="gram-h">📐 NGỮ PHÁP – <em>It takes me + time + to V · by + phương tiện</em></div><div class="gram-b">
+    <ul>
+      <li><span class="fm">It takes (me) + time + to + V</span> → "It takes me 30 minutes to get to school."</li>
+      <li><span class="fm">by + bus / train / car</span> (không có the): "I go by <b>bus</b>."</li>
+      <li><span class="fm">on foot</span> (không dùng "by foot")</li>
+    </ul>
+    <div class="cmp"><div class="bad"><b>❌ SAI</b><div>I take 30 mins. I go by foot. I get down the bus.</div></div><div class="good"><b>✔ ĐÚNG</b><div>It takes me 30 mins. I go on foot. I get off the bus.</div></div></div>
+  </div></div>
+</section>
+
+<!-- T24: DU LỊCH & KHÁCH SẠN -->
+<section class="ts" id="t24">
+  <div class="topic-head"><div class="topic-emoji">✈️</div><div>
+    <div class="topic-title">Du lịch &amp; Khách sạn</div>
+    <div class="topic-sub">Travel.html · At-the-Hotel.html</div>
+  </div></div>
+  <div class="vg">
+    <div class="vc"><div class="ve">passport / visa / boarding pass</div><div class="vv">hộ chiếu / visa / thẻ lên máy bay</div></div>
+    <div class="vc"><div class="ve">check in / check out</div><div class="vv">nhận phòng / trả phòng</div></div>
+    <div class="vc"><div class="ve">single room / double room / twin room</div><div class="vv">phòng đơn / phòng đôi / phòng 2 giường</div></div>
+    <div class="vc"><div class="ve">luggage / suitcase / carry-on</div><div class="vv">hành lý / vali / xách tay</div></div>
+    <div class="vc"><div class="ve">flight / gate / delayed</div><div class="vv">chuyến bay / cổng / bị trễ</div></div>
+    <div class="vc"><div class="ve">sightseeing / guided tour</div><div class="vv">tham quan / tour có hướng dẫn</div></div>
+    <div class="vc"><div class="ve">entrance fee</div><div class="vv">vé vào cửa</div></div>
+    <div class="vc"><div class="ve">my wallet was stolen</div><div class="vv">ví tôi bị lấy cắp</div></div>
+  </div>
+  <div class="pl">
+    <div class="pr"><span class="pe">I'd like to check in. I have a reservation under Tran.</span><span class="pv">Tôi muốn nhận phòng. Đặt dưới tên Trần.</span></div>
+    <div class="pr"><span class="pe">Is breakfast included? What time is checkout?</span><span class="pv">Có bao gồm bữa sáng không? Mấy giờ trả phòng?</span></div>
+    <div class="pr"><span class="pe">Have you ever been to Japan? Yes, I went last spring.</span><span class="pv">Bạn đến Nhật chưa? Rồi, hồi mùa xuân năm ngoái.</span></div>
+    <div class="pr"><span class="pe">My luggage didn't arrive. / Our flight was cancelled.</span><span class="pv">Hành lý tôi không đến. / Chuyến bay bị huỷ.</span></div>
+  </div>
+  <div class="gram"><div class="gram-h">📐 NGỮ PHÁP – <em>been vs gone · Câu bị động: was/were + V3</em></div><div class="gram-b">
+    <ul>
+      <li>"She has <b>been</b> to Paris." (đã đến và đã về) vs "She has <b>gone</b> to Paris." (đang ở đó)</li>
+      <li>Câu bị động khi kể sự cố: <span class="fm">S + was/were + V3</span> → "My bag <b>was stolen</b>." "The flight <b>was cancelled</b>."</li>
+    </ul>
+  </div></div>
+</section>
+
+<!-- T25: ĐIỆN THOẠI -->
+<section class="ts" id="t25">
+  <div class="topic-head"><div class="topic-emoji">📞</div><div>
+    <div class="topic-title">Giao tiếp qua điện thoại</div>
+    <div class="topic-sub">conversation-phone.html</div>
+  </div></div>
+  <div class="pl">
+    <div class="pr"><span class="pe">Hello, this is Linh. Can I speak to Mr. Brown?</span><span class="pv">Chào, tôi là Linh. Cho tôi nói chuyện với ông Brown được không?</span></div>
+    <div class="pr"><span class="pe">Speaking! / One moment, please.</span><span class="pv">Chính tôi đây! / Chờ một chút.</span></div>
+    <div class="pr"><span class="pe">I'm calling about the meeting tomorrow.</span><span class="pv">Tôi gọi về cuộc họp ngày mai.</span></div>
+    <div class="pr"><span class="pe">Could I leave a message?</span><span class="pv">Tôi nhắn lại được không?</span></div>
+    <div class="pr"><span class="pe">I'll call back later. / Sorry, wrong number.</span><span class="pv">Tôi sẽ gọi lại sau. / Xin lỗi, nhầm số.</span></div>
+    <div class="pr"><span class="pe">The line is breaking up. / I can't hear you well.</span><span class="pv">Sóng bị nhiễu. / Tôi nghe không rõ.</span></div>
+  </div>
+</section>
+
+<!-- ════ NHÓM 5: SỞ THÍCH & GIẢI TRÍ ════ -->
+<div class="grp-label">📌 Nhóm 5 – Sở thích &amp; Giải trí</div>
+
+<!-- T26: SỞ THÍCH -->
+<section class="ts" id="t26">
+  <div class="topic-head"><div class="topic-emoji">🎨</div><div>
+    <div class="topic-title">Sở thích &amp; Thời gian rảnh</div>
+    <div class="topic-sub">Likes-and-Hobbies.html</div>
+  </div></div>
+  <div class="vg">
+    <div class="vc"><div class="ve">reading / drawing / painting</div><div class="vv">đọc sách / vẽ phác thảo / vẽ tranh màu</div></div>
+    <div class="vc"><div class="ve">cooking / baking</div><div class="vv">nấu ăn / làm bánh</div></div>
+    <div class="vc"><div class="ve">taking photos / gardening</div><div class="vv">chụp ảnh / làm vườn</div></div>
+    <div class="vc"><div class="ve">playing chess / video games</div><div class="vv">chơi cờ / game</div></div>
+    <div class="vc"><div class="ve">go hiking / go camping / go fishing</div><div class="vv">đi leo núi / đi cắm trại / đi câu cá</div></div>
+    <div class="vc"><div class="ve">watching dramas</div><div class="vv">xem phim bộ</div></div>
+    <div class="vc"><div class="ve">learning languages</div><div class="vv">học ngoại ngữ</div></div>
+    <div class="vc"><div class="ve">I prefer A to B.</div><div class="vv">Tôi thích A hơn B.</div></div>
+    <div class="vc"><div class="ve">I'd rather + V.</div><div class="vv">Tôi muốn … hơn.</div></div>
+  </div>
+  <div class="pl">
+    <div class="pr"><span class="pe">What do you do in your free time?</span><span class="pv">Lúc rảnh bạn làm gì?</span></div>
+    <div class="pr"><span class="pe">I love taking photos of street food.</span><span class="pv">Tôi thích chụp ảnh đồ ăn đường phố.</span></div>
+    <div class="pr"><span class="pe">I go hiking about once a month.</span><span class="pv">Khoảng một tháng tôi đi leo núi một lần.</span></div>
+    <div class="pr"><span class="pe">I prefer reading to watching TV.</span><span class="pv">Tôi thích đọc sách hơn xem tivi.</span></div>
+  </div>
+  <div class="gram"><div class="gram-h">📐 NGỮ PHÁP – <em>love/enjoy/hate + V-ing · prefer A to B · adj -ing vs -ed</em></div><div class="gram-b">
+    <ul>
+      <li><b>enjoy / don't mind / can't stand</b> chỉ dùng với V-ing: "I enjoy <b>reading</b>." (không phải "to read")</li>
+      <li><span class="fm">prefer + V-ing + to + V-ing</span>: "I prefer reading to watching."</li>
+      <li>Tính từ <b>-ing</b> tả sự vật: "The movie is <b>boring</b>." · <b>-ed</b> tả cảm xúc người: "I'm <b>bored</b>."</li>
+    </ul>
+    <div class="cmp"><div class="bad"><b>❌ SAI</b><div>I enjoy to read. I'm boring at home. I prefer read than watch.</div></div><div class="good"><b>✔ ĐÚNG</b><div>I enjoy reading. I'm bored at home. I prefer reading to watching.</div></div></div>
+  </div></div>
+</section>
+
+<!-- T27: CUỐI TUẦN -->
+<section class="ts" id="t27">
+  <div class="topic-head"><div class="topic-emoji">🎉</div><div>
+    <div class="topic-title">Hoạt động cuối tuần</div>
+    <div class="topic-sub">Weekend-Activities.html</div>
+  </div></div>
+  <div class="vg">
+    <div class="vc"><div class="ve">hang out with friends</div><div class="vv">đi chơi với bạn bè</div></div>
+    <div class="vc"><div class="ve">go for a walk / go for a drive</div><div class="vv">đi dạo / đi lái xe hóng mát</div></div>
+    <div class="vc"><div class="ve">visit family</div><div class="vv">đến thăm gia đình</div></div>
+    <div class="vc"><div class="ve">go to the market</div><div class="vv">đi chợ</div></div>
+    <div class="vc"><div class="ve">sleep in / relax</div><div class="vv">ngủ nướng / thư giãn</div></div>
+    <div class="vc"><div class="ve">What did you do last weekend?</div><div class="vv">Cuối tuần qua bạn làm gì?</div></div>
+  </div>
+  <div class="pl">
+    <div class="pr"><span class="pe">What did you do last weekend?</span><span class="pv">Cuối tuần qua bạn làm gì?</span></div>
+    <div class="pr"><span class="pe">I went to the night market with my friends.</span><span class="pv">Tôi đi chợ đêm với bạn bè.</span></div>
+    <div class="pr"><span class="pe">We stayed up until midnight watching movies.</span><span class="pv">Chúng tôi thức đến nửa đêm xem phim.</span></div>
+    <div class="pr"><span class="pe">I didn't do much. I just slept in and relaxed.</span><span class="pv">Tôi không làm gì nhiều. Chỉ ngủ nướng và thư giãn.</span></div>
+  </div>
+</section>
+
+<!-- T28: LỜI MỜI -->
+<section class="ts" id="t28">
+  <div class="topic-head"><div class="topic-emoji">💌</div><div>
+    <div class="topic-title">Lời mời &amp; Hẹn hò</div>
+    <div class="topic-sub">Invitations.html</div>
+  </div></div>
+  <div class="pl">
+    <div class="pr"><span class="pe">Would you like to come to my birthday party?</span><span class="pv">Bạn có muốn đến tiệc sinh nhật của mình không?</span></div>
+    <div class="pr"><span class="pe">Are you free this Saturday?</span><span class="pv">Thứ Bảy này bạn có rảnh không?</span></div>
+    <div class="pr"><span class="pe">Count me in! / I'd love to!</span><span class="pv">Cho mình tham gia! / Mình rất muốn!</span></div>
+    <div class="pr"><span class="pe">What time should we meet? / See you there!</span><span class="pv">Mấy giờ gặp nhau? / Gặp nhau ở đó nhé!</span></div>
+    <div class="pr"><span class="pe">Sorry, I already have plans. Maybe next time?</span><span class="pv">Xin lỗi, mình có hẹn rồi. Lần khác nhé?</span></div>
+    <div class="pr"><span class="pe">Thanks for the invitation!</span><span class="pv">Cảm ơn vì đã mời!</span></div>
+  </div>
+</section>
+
+<!-- T29: THỂ THAO -->
+<section class="ts" id="t29">
+  <div class="topic-head"><div class="topic-emoji">⚽</div><div>
+    <div class="topic-title">Thể thao</div>
+    <div class="topic-sub">Sports.html</div>
+  </div></div>
+  <div class="vg">
+    <div class="vc"><div class="ve">football / badminton</div><div class="vv">bóng đá / cầu lông</div><div class="vx">chơi: play + tên môn</div></div>
+    <div class="vc"><div class="ve">basketball / volleyball / tennis</div><div class="vv">bóng rổ / bóng chuyền / tennis</div><div class="vx">chơi: play + tên môn</div></div>
+    <div class="vc"><div class="ve">swimming / running / cycling</div><div class="vv">bơi lội / chạy bộ / đạp xe</div><div class="vx">đi: go + V-ing</div></div>
+    <div class="vc"><div class="ve">yoga / martial arts / karate</div><div class="vv">yoga / võ thuật / karate</div><div class="vx">tập: do + tên môn</div></div>
+    <div class="vc"><div class="ve">win (won) / lose (lost)</div><div class="vv">thắng / thua</div></div>
+    <div class="vc"><div class="ve">draw (drew) / beat (beat)</div><div class="vv">hoà / đánh bại</div></div>
+    <div class="vc"><div class="ve">score / goal / match</div><div class="vv">tỉ số / bàn thắng / trận</div></div>
+    <div class="vc"><div class="ve">warm up / stretch / get injured</div><div class="vv">khởi động / giãn cơ / bị chấn thương</div></div>
+    <div class="vc"><div class="ve">twice a week / every day</div><div class="vv">hai lần một tuần / mỗi ngày</div></div>
+  </div>
+  <div class="pl">
+    <div class="pr"><span class="pe">I play badminton twice a week.</span><span class="pv">Tôi chơi cầu lông mỗi tuần hai lần.</span></div>
+    <div class="pr"><span class="pe">I'm pretty good at swimming.</span><span class="pv">Tôi bơi khá giỏi.</span></div>
+    <div class="pr"><span class="pe">Vietnam beat Thailand two–one.</span><span class="pv">Việt Nam thắng Thái Lan 2–1.</span></div>
+    <div class="pr"><span class="pe">I've been playing for about five years.</span><span class="pv">Tôi chơi được khoảng năm năm rồi.</span></div>
+  </div>
+  <div class="gram"><div class="gram-h">📐 NGỮ PHÁP – <em>play/go/do · good at V-ing · win vs beat</em></div><div class="gram-b">
+    <table class="tbl"><thead><tr><th>Động từ</th><th>Dùng với</th><th>Ví dụ</th></tr></thead><tbody>
+      <tr><td><span class="fm">play</span></td><td>môn có bóng, có đối thủ</td><td>play football, badminton</td></tr>
+      <tr><td><span class="fm">go</span></td><td>môn kết thúc bằng -ing</td><td>go swimming, go running</td></tr>
+      <tr><td><span class="fm">do</span></td><td>môn tập cá nhân, không bóng</td><td>do yoga, do karate</td></tr>
+    </tbody></table>
+    <ul>
+      <li><span class="fm">be good at + N / V-ing</span>: "I'm good at <b>swimming</b>." (không phải "good in")</li>
+      <li><b>win</b> + trận/giải · <b>beat</b> + đối thủ: "We <b>beat</b> Thailand / We <b>won</b> the match."</li>
+    </ul>
+  </div></div>
+</section>
+
+<!-- T30: PHIM -->
+<section class="ts" id="t30">
+  <div class="topic-head"><div class="topic-emoji">🎬</div><div>
+    <div class="topic-title">Phim ảnh</div>
+    <div class="topic-sub">Movies.html</div>
+  </div></div>
+  <div class="vg">
+    <div class="vc"><div class="ve">action / comedy / drama</div><div class="vv">hành động / hài / tâm lý</div></div>
+    <div class="vc"><div class="ve">horror / romance / thriller</div><div class="vv">kinh dị / lãng mạn / giật gân</div></div>
+    <div class="vc"><div class="ve">director / actor / actress</div><div class="vv">đạo diễn / diễn viên nam / diễn viên nữ</div></div>
+    <div class="vc"><div class="ve">subtitles / dubbed</div><div class="vv">phụ đề / lồng tiếng</div></div>
+    <div class="vc"><div class="ve">gripping / touching / hilarious</div><div class="vv">cuốn hút / cảm động / cực kỳ hài</div></div>
+    <div class="vc"><div class="ve">great acting / spoiler</div><div class="vv">diễn xuất tốt / tiết lộ nội dung</div></div>
+  </div>
+  <div class="pl">
+    <div class="pr"><span class="pe">Have you seen the new Marvel movie?</span><span class="pv">Bạn xem phim Marvel mới chưa?</span></div>
+    <div class="pr"><span class="pe">Yes, I saw it last weekend. It was gripping!</span><span class="pv">Rồi, mình xem cuối tuần trước. Cuốn lắm!</span></div>
+    <div class="pr"><span class="pe">I prefer comedies to horror movies.</span><span class="pv">Tôi thích phim hài hơn phim kinh dị.</span></div>
+    <div class="pr"><span class="pe">It's about a girl who travels back in time.</span><span class="pv">Phim kể về một cô gái du hành ngược thời gian.</span></div>
+    <div class="pr"><span class="pe">The movie was boring. / I was bored.</span><span class="pv">Phim nhàm chán. / Tôi thấy chán.</span></div>
+  </div>
+  <div class="gram"><div class="gram-h">📐 NGỮ PHÁP – <em>Tính từ -ing (phim) vs -ed (người xem) · prefer A to B · Have you seen…?</em></div><div class="gram-b">
+    <table class="tbl"><thead><tr><th>-ing tả phim</th><th>-ed tả cảm xúc bạn</th></tr></thead><tbody>
+      <tr><td>The movie is boring / interesting / frightening</td><td>I'm bored / interested / frightened</td></tr>
+    </tbody></table>
+    <ul>
+      <li><span class="fm">Have you seen…?</span> (hỏi trải nghiệm, không có mốc thời gian) → trả lời với mốc thời gian thì dùng quá khứ đơn: "I <b>saw</b> it yesterday."</li>
+    </ul>
+  </div></div>
+</section>
+
+<!-- T31: ÂM NHẠC -->
+<section class="ts" id="t31">
+  <div class="topic-head"><div class="topic-emoji">🎵</div><div>
+    <div class="topic-title">Âm nhạc</div>
+    <div class="topic-sub">Music.html</div>
+  </div></div>
+  <div class="vg">
+    <div class="vc"><div class="ve">pop / rock / jazz / classical</div><div class="vv">nhạc pop / nhạc rock / nhạc jazz / nhạc cổ điển</div></div>
+    <div class="vc"><div class="ve">K-pop / ballad / EDM</div><div class="vv">K-pop / nhạc trữ tình / điện tử</div></div>
+    <div class="vc"><div class="ve">song / album / playlist</div><div class="vv">bài hát / album / danh sách nhạc</div></div>
+    <div class="vc"><div class="ve">lyrics / melody / beat / chorus</div><div class="vv">lời / giai điệu / nhịp / điệp khúc</div></div>
+    <div class="vc"><div class="ve">singer / band / musician</div><div class="vv">ca sĩ / ban nhạc / nhạc sĩ</div></div>
+    <div class="vc"><div class="ve">play the guitar / play the piano / play the violin</div><div class="vv">chơi guitar / chơi piano / chơi vĩ cầm</div></div>
+    <div class="vc"><div class="ve">catchy / upbeat / relaxing</div><div class="vv">bắt tai / sôi động / thư giãn</div></div>
+    <div class="vc"><div class="ve">concert / live music</div><div class="vv">buổi hoà nhạc / nhạc sống</div></div>
+  </div>
+  <div class="pl">
+    <div class="pr"><span class="pe">What kind of music are you into?</span><span class="pv">Bạn mê thể loại nhạc nào?</span></div>
+    <div class="pr"><span class="pe">I listen to music on my phone every day.</span><span class="pv">Ngày nào tôi cũng nghe nhạc trên điện thoại.</span></div>
+    <div class="pr"><span class="pe">I play the guitar a little. I'm still a beginner.</span><span class="pv">Tôi chơi guitar một chút. Vẫn còn mới tập.</span></div>
+    <div class="pr"><span class="pe">This song makes me feel relaxed. It reminds me of home.</span><span class="pv">Bài này làm tôi thấy thư thái. Nó gợi nhớ về nhà.</span></div>
+    <div class="pr"><span class="pe">Have you ever been to a live concert?</span><span class="pv">Bạn đã bao giờ đi xem nhạc sống chưa?</span></div>
+  </div>
+  <div class="gram"><div class="gram-h">📐 NGỮ PHÁP – <em>listen to · play the + nhạc cụ · make me feel + adj · used to</em></div><div class="gram-b">
+    <ul>
+      <li><span class="fm">listen to + N</span> (chủ động) vs <b>hear</b> (tự nhiên nghe thấy): "I <b>listen to</b> music every day."</li>
+      <li><span class="fm">play + the + nhạc cụ</span>: "play <b>the</b> guitar" (có the) · <span class="fm">play + môn thể thao</span>: "play football" (không có the)</li>
+      <li><span class="fm">make me feel + adj</span> / <span class="fm">remind me of + N</span>: "It makes me feel happy. It reminds me of home."</li>
+      <li><span class="fm">used to + V</span> = trước đây từng: "I used to play the violin."</li>
+    </ul>
+  </div></div>
+</section>
+
+<!-- ════ NGỮ PHÁP CỐT LÕI ════ -->
+<div class="grp-label">📐 Ngữ pháp cốt lõi</div>
+
+<!-- G1: CÁC THÌ -->
+<section class="ts" id="g1">
+  <div class="topic-head"><div class="topic-emoji">📐</div><div>
+    <div class="topic-title">Các thì động từ</div>
+    <div class="topic-sub">Grammar-Present-Tenses · Past-Simple · Present-Perfect · Future</div>
+  </div></div>
+  <table class="tbl"><thead><tr><th>Thì</th><th>Cấu trúc</th><th>Dùng khi</th><th>Ví dụ</th></tr></thead><tbody>
+    <tr><td>Hiện tại đơn</td><td>S + V(s/es)</td><td>thói quen, sự thật</td><td>She works every day.</td></tr>
+    <tr><td>Hiện tại tiếp diễn</td><td>S + am/is/are + V-ing</td><td>đang xảy ra lúc này, kế hoạch gần</td><td>I'm meeting her tonight.</td></tr>
+    <tr><td>Quá khứ đơn</td><td>S + V-ed / V2</td><td>việc đã kết thúc trong quá khứ</td><td>We went to Hội An last week.</td></tr>
+    <tr><td>Hiện tại hoàn thành</td><td>S + have/has + V3</td><td>kinh nghiệm, từ quá khứ đến nay</td><td>I've lived here for 3 years.</td></tr>
+    <tr><td>be going to</td><td>S + am/is/are going to + V</td><td>kế hoạch đã quyết định, dự đoán</td><td>It's going to rain.</td></tr>
+    <tr><td>will</td><td>S + will + V</td><td>quyết định ngay lúc nói, hứa hẹn</td><td>I'll help you!</td></tr>
+    <tr><td>Tiếp diễn hoàn thành</td><td>S + have/has been + V-ing + for/since</td><td>bắt đầu quá khứ, còn tiếp tục</td><td>I've been playing for 5 years.</td></tr>
+  </tbody></table>
+  <div class="info i-tip"><span>💡</span><span>"Look! She <b>is wearing</b> a red dress." (lúc này) vs "She usually <b>wears</b> jeans." (thói quen). Đừng nhầm hai thì này.</span></div>
+</section>
+
+<!-- G2: CÂU HỎI & PHỦ ĐỊNH -->
+<section class="ts" id="g2">
+  <div class="topic-head"><div class="topic-emoji">📐</div><div>
+    <div class="topic-title">Câu hỏi &amp; Phủ định</div>
+    <div class="topic-sub">Grammar-Questions.html</div>
+  </div></div>
+  <table class="tbl"><thead><tr><th>Loại</th><th>Cấu trúc</th><th>Ví dụ</th></tr></thead><tbody>
+    <tr><td>Yes/No với be</td><td>Am/Is/Are + S…?</td><td>Are you a teacher?</td></tr>
+    <tr><td>Yes/No động từ thường</td><td>Do/Does + S + V…?</td><td>Do you like coffee?</td></tr>
+    <tr><td>Wh- với be</td><td>Wh- + is/are + S?</td><td>Where are you from?</td></tr>
+    <tr><td>Wh- động từ thường</td><td>Wh- + do/does + S + V?</td><td>What do you do?</td></tr>
+    <tr><td>How long (hiện tại hoàn thành)</td><td>How long + have/has + S + V3?</td><td>How long have you lived here?</td></tr>
+    <tr><td>Phủ định hiện tại đơn</td><td>S + don't/doesn't + V</td><td>I don't like durian.</td></tr>
+    <tr><td>Phủ định quá khứ đơn</td><td>S + didn't + V</td><td>I didn't go to the party.</td></tr>
+  </tbody></table>
+  <div class="gram"><div class="gram-h">📐 Lỗi thường gặp</div><div class="gram-b">
+    <div class="cmp"><div class="bad"><b>❌ SAI</b><div>Where you are from? / What you do? / She don't like it.</div></div><div class="good"><b>✔ ĐÚNG</b><div>Where are you from? / What do you do? / She doesn't like it.</div></div></div>
+  </div></div>
+</section>
+
+<!-- G3: MODALS -->
+<section class="ts" id="g3">
+  <div class="topic-head"><div class="topic-emoji">📐</div><div>
+    <div class="topic-title">Modals &amp; Câu điều kiện</div>
+    <div class="topic-sub">Grammar-Modals.html · Grammar-Conditionals.html</div>
+  </div></div>
+  <table class="tbl"><thead><tr><th>Modal</th><th>Dùng khi</th><th>Ví dụ</th></tr></thead><tbody>
+    <tr><td>can / can't</td><td>khả năng, xin phép</td><td>I can swim. Can I sit here?</td></tr>
+    <tr><td>should / shouldn't</td><td>lời khuyên</td><td>You should rest. Don't go to work.</td></tr>
+    <tr><td>must / mustn't</td><td>bắt buộc / cấm</td><td>You must wear a seatbelt.</td></tr>
+    <tr><td>might / may</td><td>khả năng (không chắc)</td><td>It might rain. Take an umbrella.</td></tr>
+    <tr><td>would like to</td><td>muốn (lịch sự)</td><td>I'd like a coffee, please.</td></tr>
+    <tr><td>have to</td><td>bắt buộc bên ngoài</td><td>I have to work late tonight.</td></tr>
+    <tr><td>could</td><td>xin phép lịch sự, khả năng quá khứ</td><td>Could you help me? I could swim at age 5.</td></tr>
+  </tbody></table>
+  <div class="sub-h">Câu điều kiện</div>
+  <table class="tbl"><thead><tr><th>Loại</th><th>Cấu trúc</th><th>Ví dụ</th></tr></thead><tbody>
+    <tr><td>Loại 0 – sự thật</td><td>If + hiện tại đơn, + hiện tại đơn</td><td>If it rains, I stay home.</td></tr>
+    <tr><td>Loại 1 – có thể xảy ra</td><td>If + hiện tại đơn, + will + V</td><td>If I have time, I'll call you.</td></tr>
+  </tbody></table>
+  <div class="info i-tip"><span>💡</span><span>Sau tất cả modals, động từ <b>không chia</b>: "She can <b>swim</b>" (không phải "swims"), "You should <b>rest</b>" (không phải "to rest").</span></div>
+</section>
+
+<!-- G4: DANH TỪ & MẠO TỪ -->
+<section class="ts" id="g4">
+  <div class="topic-head"><div class="topic-emoji">📐</div><div>
+    <div class="topic-title">Danh từ &amp; Mạo từ</div>
+    <div class="topic-sub">Grammar-Articles.html · Grammar-Quantifiers.html · Grammar-Pronouns.html</div>
+  </div></div>
+  <table class="tbl"><thead><tr><th>Mạo từ</th><th>Dùng khi</th><th>Ví dụ</th></tr></thead><tbody>
+    <tr><td>a / an</td><td>nhắc đến lần đầu, danh từ đếm được số ít</td><td>I have a dog. She's an engineer.</td></tr>
+    <tr><td>the</td><td>đã biết, duy nhất, nhắc lại</td><td>The dog is cute. Close the door.</td></tr>
+    <tr><td>Không mạo từ</td><td>không đếm được, số nhiều chung chung</td><td>I love music. Dogs are friendly.</td></tr>
+  </tbody></table>
+  <div class="sub-h">Quantifiers – Từ chỉ số lượng</div>
+  <table class="tbl"><thead><tr><th>Từ</th><th>Dùng với</th><th>Ví dụ</th></tr></thead><tbody>
+    <tr><td>many</td><td>đếm được số nhiều</td><td>How many eggs?</td></tr>
+    <tr><td>much</td><td>không đếm được</td><td>How much water?</td></tr>
+    <tr><td>a lot of / lots of</td><td>cả hai loại</td><td>I have a lot of friends / time.</td></tr>
+    <tr><td>some</td><td>câu khẳng định, lời mời</td><td>I'd like some coffee.</td></tr>
+    <tr><td>any</td><td>câu hỏi, phủ định</td><td>Is there any milk?</td></tr>
+    <tr><td>a few</td><td>đếm được (ít nhưng đủ)</td><td>a few friends</td></tr>
+    <tr><td>a little</td><td>không đếm được (ít nhưng đủ)</td><td>a little time</td></tr>
+  </tbody></table>
+</section>
+
+<!-- G5: TÍNH TỪ & TRẠNG TỪ -->
+<section class="ts" id="g5">
+  <div class="topic-head"><div class="topic-emoji">📐</div><div>
+    <div class="topic-title">Tính từ &amp; Trạng từ</div>
+    <div class="topic-sub">Grammar-Comparisons.html · Grammar-Adverbs.html</div>
+  </div></div>
+  <div class="sub-h">So sánh hơn &amp; nhất</div>
+  <table class="tbl"><thead><tr><th>Quy tắc</th><th>So sánh hơn</th><th>So sánh nhất</th></tr></thead><tbody>
+    <tr><td>Tính từ ngắn (1 âm tiết)</td><td>adj + -er (than)</td><td>the + adj + -est</td></tr>
+    <tr><td>adj kết thúc CVC</td><td>gấp đôi phụ âm + -er: bigger</td><td>the biggest</td></tr>
+    <tr><td>adj kết thúc -y</td><td>-y → -ier: happier</td><td>the happiest</td></tr>
+    <tr><td>Tính từ dài (2+ âm tiết)</td><td>more + adj</td><td>the most + adj</td></tr>
+    <tr><td>Bất quy tắc</td><td>good→better / bad→worse / far→further</td><td>the best / worst / furthest</td></tr>
+  </tbody></table>
+  <div class="sub-h">Trạng từ tần suất</div>
+  <div class="pl">
+    <div class="pr"><span class="pe">always (100%) · usually (80%) · often (60%)</span><span class="pv">luôn · thường · hay</span></div>
+    <div class="pr"><span class="pe">sometimes (40%) · rarely (10%) · never (0%)</span><span class="pv">đôi khi · hiếm · không bao giờ</span></div>
+  </div>
+  <div class="info i-tip"><span>💡</span><span>Trạng từ tần suất đứng <b>trước động từ thường</b> ("I <b>usually</b> walk") nhưng <b>sau be</b> ("I'm <b>always</b> late").</span></div>
+</section>
+
+<!-- G6: GIỚI TỪ -->
+<section class="ts" id="g6">
+  <div class="topic-head"><div class="topic-emoji">📐</div><div>
+    <div class="topic-title">Giới từ</div>
+    <div class="topic-sub">Grammar-Prepositions.html</div>
+  </div></div>
+  <table class="tbl"><thead><tr><th>Giới từ</th><th>Dùng với</th><th>Ví dụ</th></tr></thead><tbody>
+    <tr><td>at</td><td>giờ, địa điểm cụ thể, at night/noon</td><td>at 7 p.m. / at school / at night</td></tr>
+    <tr><td>on</td><td>ngày tháng, bề mặt, on the left</td><td>on Monday / on the table</td></tr>
+    <tr><td>in</td><td>tháng, năm, mùa, bên trong</td><td>in January / in the box</td></tr>
+    <tr><td>for</td><td>khoảng thời gian</td><td>for two days</td></tr>
+    <tr><td>since</td><td>mốc thời gian (hiện tại hoàn thành)</td><td>since Monday</td></tr>
+    <tr><td>by</td><td>phương tiện (không có the)</td><td>by bus / by car</td></tr>
+    <tr><td>next to / beside</td><td>bên cạnh</td><td>next to the window</td></tr>
+    <tr><td>opposite / across from</td><td>đối diện</td><td>opposite the bank</td></tr>
+    <tr><td>between</td><td>ở giữa (hai vật)</td><td>between the sofa and the table</td></tr>
+  </tbody></table>
+</section>
+
+</div><!-- end content -->
+<footer class="footer">
+  <p>🗂️ <strong>A1 Master Cheat Sheet</strong> — tổng hợp từ 31 chủ đề trong bộ bài <em>Tiếng Anh giao tiếp A1</em>.</p>
+  <p style="margin-top:5px">Mỗi chủ đề đã có bài học chi tiết với hội thoại, bài tập và phát âm. Dùng cheat sheet này để ôn tập nhanh, tra từ vựng, hoặc kiểm tra lại ngữ pháp. Bấm <strong>☰ Bài học</strong> (góc dưới trái) để chuyển sang bài bất kỳ.</p>
+</footer>
+</div><!-- end main -->
+
+</div><!-- end main -->
+
+<!-- Audio status bar -->
+<div id="audio-bar">
+  <span>🔊</span><b id="ab-word">…</b>
+  <button id="ab-stop">■ Dừng</button>
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════
+   1. PHIÊN ÂM IPA – tra cứu tĩnh
+   ═══════════════════════════════════════════════ */
+/* ─────────────────────────────────────────────────
+   IPA cho từng từ riêng lẻ (key = lowercase, chữ cái)
+   ───────────────────────────────────────────────── */
+var IPA = {
+  /* ── Chào hỏi & giao tiếp cơ bản ── */
+  "hello":"/həˈloʊ/","hi":"/haɪ/","hey":"/heɪ/",
+  "goodbye":"/ˌɡʊdˈbaɪ/","nice":"/naɪs/","meet":"/miːt/",
+  "name":"/neɪm/","introduce":"/ˌɪntrəˈdjuːs/",
+  "classmate":"/ˈklɑːsmeɪt/","colleague":"/ˈkɒliːɡ/",
+  "congratulations":"/kənˌɡrætʃʊˈleɪʃənz/",
+  /* ── Động từ to be, đại từ ── */
+  "student":"/ˈstjuːdənt/","teacher":"/ˈtiːtʃər/",
+  "engineer":"/ˌendʒɪˈnɪər/","nationality":"/ˌnæʃəˈnælɪti/",
+  /* ── Tính cách ── */
+  "funny":"/ˈfʌni/","kind":"/kaɪnd/","reliable":"/rɪˈlaɪəbl/",
+  "honest":"/ˈɒnɪst/","generous":"/ˈdʒenərəs/",
+  "outgoing":"/ˌaʊtˈɡəʊɪŋ/","shy":"/ʃaɪ/","talkative":"/ˈtɔːkətɪv/",
+  /* ── Cảm xúc & cảm giác ── */
+  "tired":"/ˈtaɪərd/","sleepy":"/ˈsliːpi/",
+  "hungry":"/ˈhʌŋɡri/","thirsty":"/ˈθɜːrsti/",
+  "happy":"/ˈhæpi/","excited":"/ɪkˈsaɪtɪd/",
+  "relaxed":"/rɪˈlækst/","surprised":"/səˈpraɪzd/",
+  "sad":"/sæd/","bored":"/bɔːrd/","angry":"/ˈæŋɡri/",
+  "nervous":"/ˈnɜːrvəs/","worried":"/ˈwɜːrid/",
+  "scared":"/skɛrd/","lonely":"/ˈloʊnli/","sick":"/sɪk/",
+  "dizzy":"/ˈdɪzi/","nauseous":"/ˈnɔːziəs/",
+  /* ── Gia đình ── */
+  "parents":"/ˈpeərənts/","father":"/ˈfɑːðər/",
+  "mother":"/ˈmʌðər/","brother":"/ˈbrʌðər/",
+  "sister":"/ˈsɪstər/","husband":"/ˈhʌzbənd/",
+  "wife":"/waɪf/","son":"/sʌn/","daughter":"/ˈdɔːtər/",
+  "grandparents":"/ˈɡrændpeərənts/",
+  "uncle":"/ˈʌŋkl/","aunt":"/ɑːnt/","cousin":"/ˈkʌzn/",
+  "eldest":"/ˈeldɪst/","youngest":"/ˈjʌŋɡɪst/",
+  /* ── Cảm ơn & xin lỗi ── */
+  "apologize":"/əˈpɒlədʒaɪz/","appreciate":"/əˈpriːʃieɪt/",
+  /* ── Thời gian & ngày tháng ── */
+  "morning":"/ˈmɔːrnɪŋ/","afternoon":"/ˌɑːftərˈnuːn/",
+  "evening":"/ˈiːvnɪŋ/","night":"/naɪt/",
+  "yesterday":"/ˈjestərdeɪ/","today":"/təˈdeɪ/",
+  "tomorrow":"/təˈmɒrəʊ/","schedule":"/ˈʃedjuːl/",
+  "appointment":"/əˈpɔɪntmənt/","meeting":"/ˈmiːtɪŋ/",
+  "monday":"/ˈmʌndeɪ/","tuesday":"/ˈtjuːzdeɪ/",
+  "wednesday":"/ˈwenzdeɪ/","thursday":"/ˈθɜːrzdeɪ/",
+  "friday":"/ˈfraɪdeɪ/","saturday":"/ˈsætərdeɪ/",
+  "sunday":"/ˈsʌndeɪ/","january":"/ˈdʒænjueri/",
+  "february":"/ˈfebrueri/","march":"/mɑːrtʃ/",
+  "april":"/ˈeɪprəl/","may":"/meɪ/","june":"/dʒuːn/",
+  "july":"/dʒuˈlaɪ/","august":"/ˈɔːɡəst/",
+  "september":"/sepˈtembər/","october":"/ɒkˈtoʊbər/",
+  "november":"/noʊˈvembər/","december":"/dɪˈsembər/",
+  /* ── Sinh nhật & lễ tết ── */
+  "birthday":"/ˈbɜːrθdeɪ/","candles":"/ˈkændlz/",
+  "cake":"/keɪk/","gift":"/ɡɪft/","present":"/ˈpreznt/",
+  "celebration":"/ˌselɪˈbreɪʃn/","party":"/ˈpɑːrti/",
+  "holiday":"/ˈhɒlɪdeɪ/","national":"/ˈnæʃənl/",
+  /* ── Thời tiết & mùa ── */
+  "sunny":"/ˈsʌni/","cloudy":"/ˈklaʊdi/","rainy":"/ˈreɪni/",
+  "windy":"/ˈwɪndi/","foggy":"/ˈfɒɡi/","stormy":"/ˈstɔːrmi/",
+  "temperature":"/ˈtemprɪtʃər/","forecast":"/ˈfɔːrkɑːst/",
+  "spring":"/sprɪŋ/","summer":"/ˈsʌmər/",
+  "autumn":"/ˈɔːtəm/","winter":"/ˈwɪntər/",
+  "freezing":"/ˈfriːzɪŋ/","boiling":"/ˈbɔɪlɪŋ/",
+  "hot":"/hɒt/","warm":"/wɔːrm/","cool":"/kuːl/",
+  "cold":"/koʊld/","drizzle":"/ˈdrɪzl/","degree":"/dɪˈɡriː/",
+  /* ── Nhà cửa & nội thất ── */
+  "kitchen":"/ˈkɪtʃɪn/","bathroom":"/ˈbɑːθruːm/",
+  "bedroom":"/ˈbedruːm/","balcony":"/ˈbælkəni/",
+  "garden":"/ˈɡɑːrdn/","sofa":"/ˈsoʊfə/",
+  "armchair":"/ˈɑːrmtʃeər/","wardrobe":"/ˈwɔːrdroʊb/",
+  "bookshelf":"/ˈbʊkʃelf/","fridge":"/frɪdʒ/",
+  "refrigerator":"/rɪˈfrɪdʒəreɪtər/",
+  "microwave":"/ˈmaɪkrəweɪv/","oven":"/ˈʌvn/",
+  "curtains":"/ˈkɜːrtnz/","carpet":"/ˈkɑːrpɪt/",
+  "sink":"/sɪŋk/","tap":"/tæp/",
+  "washing":"/ˈwɒʃɪŋ/","machine":"/məˈʃiːn/",
+  /* ── Quần áo & trang phục ── */
+  "jacket":"/ˈdʒækɪt/","coat":"/koʊt/","hoodie":"/ˈhʊdi/",
+  "dress":"/dres/","skirt":"/skɜːrt/","shirt":"/ʃɜːrt/",
+  "blouse":"/blaʊz/","jeans":"/dʒiːnz/",
+  "trousers":"/ˈtraʊzərz/","shorts":"/ʃɔːrts/",
+  "sneakers":"/ˈsniːkərz/","boots":"/buːts/",
+  "sandals":"/ˈsændlz/","hat":"/hæt/","cap":"/kæp/",
+  "scarf":"/skɑːrf/","cotton":"/ˈkɒtn/","wool":"/wʊl/",
+  "denim":"/ˈdenɪm/","leather":"/ˈleðər/","silk":"/sɪlk/",
+  "linen":"/ˈlɪnɪn/","striped":"/straɪpt/",
+  "floral":"/ˈflɔːrəl/","checked":"/tʃekt/",
+  "plain":"/pleɪn/","casual":"/ˈkæʒuəl/",
+  "formal":"/ˈfɔːrml/","sporty":"/ˈspɔːrti/",
+  /* ── Nghề nghiệp & công việc ── */
+  "doctor":"/ˈdɒktər/","nurse":"/nɜːrs/",
+  "lawyer":"/ˈlɔːjər/","accountant":"/əˈkaʊntənt/",
+  "manager":"/ˈmænɪdʒər/","designer":"/dɪˈzaɪnər/",
+  "programmer":"/ˈproʊɡræmər/","photographer":"/fəˈtɒɡrəfər/",
+  "chef":"/ʃef/","waiter":"/ˈweɪtər/",
+  "waitress":"/ˈweɪtrɪs/","freelancer":"/ˈfriːlɑːnsər/",
+  "salary":"/ˈsæləri/","deadline":"/ˈdedlaɪn/",
+  "colleague":"/ˈkɒliːɡ/","ceo":"/ˌsiːiːˈoʊ/",
+  "lecturer":"/ˈlektʃərər/",
+  /* ── Học tập & trường học ── */
+  "university":"/ˌjuːnɪˈvɜːrsɪti/","subject":"/ˈsʌbdʒɪkt/",
+  "major":"/ˈmeɪdʒər/","homework":"/ˈhoʊmwɜːrk/",
+  "assignment":"/əˈsaɪnmənt/","exam":"/ɪɡˈzæm/",
+  "quiz":"/kwɪz/","grade":"/ɡreɪd/",
+  "scholarship":"/ˈskɒlərʃɪp/","tuition":"/tjuːˈɪʃn/",
+  "professor":"/prəˈfesər/","primary":"/ˈpraɪmeri/",
+  "secondary":"/ˈsekənderi/",
+  /* ── Kế hoạch tương lai ── */
+  "intention":"/ɪnˈtenʃn/","plan":"/plæn/",
+  /* ── Đồ ăn & đồ uống ── */
+  "rice":"/raɪs/","bread":"/bred/","sandwich":"/ˈsænwɪdʒ/",
+  "noodle":"/ˈnuːdl/","chicken":"/ˈtʃɪkɪn/",
+  "beef":"/biːf/","pork":"/pɔːrk/","fish":"/fɪʃ/",
+  "seafood":"/ˈsiːfuːd/","egg":"/eɡ/","dairy":"/ˈdeəri/",
+  "vegetables":"/ˈvedʒtəblz/","fruit":"/fruːt/",
+  "dessert":"/dɪˈzɜːrt/","snacks":"/snæks/",
+  "coffee":"/ˈkɒfi/","tea":"/tiː/","milk":"/mɪlk/",
+  "juice":"/dʒuːs/","smoothie":"/ˈsmuːði/",
+  "beer":"/bɪər/","water":"/ˈwɔːtər/",
+  "sweet":"/swiːt/","salty":"/ˈsɔːlti/","spicy":"/ˈspaɪsi/",
+  "sour":"/ˈsaʊər/","bitter":"/ˈbɪtər/",
+  "delicious":"/dɪˈlɪʃəs/","tasty":"/ˈteɪsti/",
+  /* ── Nhà hàng ── */
+  "menu":"/ˈmenjuː/","order":"/ˈɔːrdər/",
+  "starter":"/ˈstɑːrtər/","reservation":"/ˌrezəˈveɪʃn/",
+  "bill":"/bɪl/","tip":"/tɪp/","waiter":"/ˈweɪtər/",
+  /* ── Mua sắm ── */
+  "receipt":"/rɪˈsiːt/","discount":"/ˈdɪskaʊnt/",
+  "refund":"/ˈriːfʌnd/","exchange":"/ɪksˈtʃeɪndʒ/",
+  "price":"/praɪs/","cost":"/kɒst/",
+  /* ── Hỏi đường ── */
+  "straight":"/streɪt/","corner":"/ˈkɔːrnər/",
+  "junction":"/ˈdʒʌŋkʃn/","opposite":"/ˈɒpəzɪt/",
+  "entrance":"/ˈentrəns/",
+  /* ── Nhờ giúp đỡ ── */
+  "understand":"/ˌʌndəˈstænd/","repeat":"/rɪˈpiːt/",
+  "slowly":"/ˈsloʊli/","clearly":"/ˈklɪərli/",
+  /* ── Sức khoẻ & bác sĩ ── */
+  "headache":"/ˈhedeɪk/","stomachache":"/ˈstʌməkeɪk/",
+  "backache":"/ˈbækeɪk/","toothache":"/ˈtuːθeɪk/",
+  "fever":"/ˈfiːvər/","cough":"/kɒf/",
+  "throat":"/θroʊt/","stomach":"/ˈstʌmək/",
+  "shoulder":"/ˈʃoʊldər/","chest":"/tʃest/",
+  "knee":"/niː/","ankle":"/ˈæŋkl/",
+  "head":"/hed/","eye":"/aɪ/","ear":"/ɪər/",
+  "nose":"/noʊz/","mouth":"/maʊθ/",
+  "tooth":"/tuːθ/","teeth":"/tiːθ/",
+  "back":"/bæk/","arm":"/ɑːrm/","leg":"/leɡ/",
+  "foot":"/fʊt/","feet":"/fiːt/",
+  "allergy":"/ˈælərdʒi/","prescription":"/prɪˈskrɪpʃn/",
+  "runny":"/ˈrʌni/","diarrhea":"/ˌdaɪəˈriːə/",
+  "sore":"/sɔːr/","sickness":"/ˈsɪknəs/",
+  /* ── Phương tiện đi lại ── */
+  "bus":"/bʌs/","train":"/treɪn/","metro":"/ˈmetroʊ/",
+  "taxi":"/ˈtæksi/","motorbike":"/ˈmoʊtərbaɪk/",
+  "bicycle":"/ˈbaɪsɪkl/","platform":"/ˈplætfɔːrm/",
+  "station":"/ˈsteɪʃn/","ticket":"/ˈtɪkɪt/",
+  "fare":"/feər/","timetable":"/ˈtaɪmteɪbl/",
+  "delayed":"/dɪˈleɪd/","traffic":"/ˈtræfɪk/",
+  /* ── Du lịch & khách sạn ── */
+  "passport":"/ˈpɑːspɔːrt/","visa":"/ˈviːzə/",
+  "luggage":"/ˈlʌɡɪdʒ/","suitcase":"/ˈsuːtkeɪs/",
+  "flight":"/flaɪt/","gate":"/ɡeɪt/",
+  "boarding":"/ˈbɔːrdɪŋ/","departure":"/dɪˈpɑːrtʃər/",
+  "arrival":"/əˈraɪvl/","sightseeing":"/ˈsaɪtsiːɪŋ/",
+  "entrance":"/ˈentrəns/","guided":"/ˈɡaɪdɪd/",
+  "tour":"/tʊər/","single":"/ˈsɪŋɡl/",
+  "double":"/ˈdʌbl/","twin":"/twɪn/",
+  /* ── Điện thoại ── */
+  "message":"/ˈmesɪdʒ/","number":"/ˈnʌmbər/",
+  /* ── Sở thích & hobbies ── */
+  "reading":"/ˈriːdɪŋ/","drawing":"/ˈdrɔːɪŋ/",
+  "painting":"/ˈpeɪntɪŋ/","cooking":"/ˈkʊkɪŋ/",
+  "baking":"/ˈbeɪkɪŋ/","photography":"/fəˈtɒɡrəfi/",
+  "gardening":"/ˈɡɑːrdnɪŋ/","hiking":"/ˈhaɪkɪŋ/",
+  "camping":"/ˈkæmpɪŋ/","fishing":"/ˈfɪʃɪŋ/",
+  "chess":"/tʃes/","knitting":"/ˈnɪtɪŋ/",
+  /* ── Cuối tuần ── */
+  "relax":"/rɪˈlæks/","market":"/ˈmɑːrkɪt/",
+  /* ── Lời mời ── */
+  "invitation":"/ˌɪnvɪˈteɪʃn/","celebrate":"/ˈselɪbreɪt/",
+  /* ── Thể thao ── */
+  "football":"/ˈfʊtbɔːl/","badminton":"/ˈbædmɪntən/",
+  "volleyball":"/ˈvɒlibɔːl/","basketball":"/ˈbɑːskɪtbɔːl/",
+  "tennis":"/ˈtenɪs/","swimming":"/ˈswɪmɪŋ/",
+  "running":"/ˈrʌnɪŋ/","jogging":"/ˈdʒɒɡɪŋ/",
+  "cycling":"/ˈsaɪklɪŋ/","yoga":"/ˈjoʊɡə/",
+  "karate":"/kəˈrɑːti/","martial":"/ˈmɑːrʃl/",
+  "stadium":"/ˈsteɪdiəm/","tournament":"/ˈtʊənəmənt/",
+  "score":"/skɔːr/","goal":"/ɡoʊl/","match":"/mætʃ/",
+  "win":"/wɪn/","lose":"/luːz/","draw":"/drɔː/",
+  "beat":"/biːt/","stretch":"/stretʃ/","injured":"/ˈɪndʒərd/",
+  /* ── Phim ảnh ── */
+  "comedy":"/ˈkɒmədi/","horror":"/ˈhɒrər/",
+  "thriller":"/ˈθrɪlər/","romance":"/ˈroʊmæns/",
+  "drama":"/ˈdrɑːmə/","action":"/ˈækʃn/",
+  "director":"/dɪˈrektər/","actor":"/ˈæktər/",
+  "actress":"/ˈæktrɪs/","subtitles":"/ˈsʌbtaɪtlz/",
+  "dubbed":"/dʌbd/","gripping":"/ˈɡrɪpɪŋ/",
+  "touching":"/ˈtʌtʃɪŋ/","hilarious":"/hɪˈleəriəs/",
+  "spoiler":"/ˈspɔɪlər/",
+  /* ── Âm nhạc ── */
+  "pop":"/pɒp/","rock":"/rɒk/","jazz":"/dʒæz/",
+  "classical":"/ˈklæsɪkl/","ballad":"/ˈbæləd/",
+  "singer":"/ˈsɪŋər/","band":"/bænd/","musician":"/mjuːˈzɪʃn/",
+  "guitar":"/ɡɪˈtɑːr/","piano":"/piˈænoʊ/",
+  "violin":"/ˌvaɪəˈlɪn/","drums":"/drʌmz/",
+  "flute":"/fluːt/","song":"/sɒŋ/","album":"/ˈælbəm/",
+  "playlist":"/ˈpleɪlɪst/","lyrics":"/ˈlɪrɪks/",
+  "melody":"/ˈmelədi/","beat":"/biːt/","chorus":"/ˈkɔːrəs/",
+  "concert":"/ˈkɒnsət/","catchy":"/ˈkætʃi/",
+  "upbeat":"/ˈʌpbiːt/","relaxing":"/rɪˈlæksɪŋ/",
+  "energetic":"/ˌenərˈdʒetɪk/","romantic":"/roʊˈmæntɪk/",
+  /* ── Ngữ pháp – từ kỹ thuật ── */
+  "adjective":"/ˈædʒɪktɪv/","adverb":"/ˈædvɜːrb/",
+  "preposition":"/ˌprepəˈzɪʃn/","grammar":"/ˈɡræmər/",
+  "pronunciation":"/prəˌnʌnsiˈeɪʃn/",
+  "vocabulary":"/vəˈkæbjʊlri/","sentence":"/ˈsentəns/"
+};
+
+/* ─────────────────────────────────────────────────
+   Phiên âm cho cụm từ hiển thị trong .ve
+   (key = toàn bộ text của .ve, chữ thường, chuẩn hoá)
+   Dùng khi một cụm hay từ ghép cần phiên âm riêng
+   ───────────────────────────────────────────────── */
+var IPA_PHRASE = {
+  "t-shirt":"/ˈtiːʃɜːrt/","t-shirt / shirt / blouse":"/ˈtiːʃɜːrt/ ʃɜːrt blaʊz/",
+  "air conditioner":"/er kənˈdɪʃənər/",
+  "air conditioner (a/c)":"/er kənˈdɪʃənər/",
+  "washing machine":"/ˈwɒʃɪŋ məˈʃiːn/",
+  "noodle soup":"/ˈnuːdl suːp/",
+  "soft drink":"/ˈsɒft drɪŋk/",
+  "coconut water":"/ˈkoʊkənʌt ˈwɔːtər/",
+  "traffic light":"/ˈtræfɪk laɪt/",
+  "traffic jam":"/ˈtræfɪk dʒæm/",
+  "traffic light / corner / junction":"/ˈtræfɪk laɪt/",
+  "boarding pass":"/ˈbɔːrdɪŋ pæs/",
+  "credit card":"/ˈkredɪt kɑːrd/",
+  "fitting room":"/ˈfɪtɪŋ ruːm/",
+  "try on":"/traɪ ɒn/","try on / fitting room":"/traɪ ɒn/",
+  "get on":"/ɡet ɒn/","get off":"/ɡet ɒf/",
+  "get in":"/ɡet ɪn/","get out of":"/ɡet aʊt əv/",
+  "get on / get off":"/ɡet ɒn · ɡet ɒf/",
+  "get in / get out of":"/ɡet ɪn · ɡet aʊt əv/",
+  "go straight":"/ɡoʊ streɪt/",
+  "turn left":"/tɜːrn left/","turn right":"/tɜːrn raɪt/",
+  "go straight / turn left / turn right":"/ɡoʊ streɪt/",
+  "cross the street":"/krɒs ðə striːt/",
+  "on the left / right":"/ɒn ðə left/",
+  "next to / opposite / between":"/nekst tuː/",
+  "single / return ticket":"/ˈsɪŋɡl · rɪˈtɜːrn ˈtɪkɪt/",
+  "single / double / twin room":"/ˈsɪŋɡl · ˈdʌbl · twɪn ruːm/",
+  "check in / check out":"/tʃek ɪn · tʃek aʊt/",
+  "good morning":"/ɡʊd ˈmɔːrnɪŋ/",
+  "good afternoon":"/ɡʊd ˌɑːftərˈnuːn/",
+  "good evening":"/ɡʊd ˈiːvnɪŋ/",
+  "warm up":"/wɔːrm ʌp/","warm up / stretch / get injured":"/wɔːrm ʌp/",
+  "win (won) / lose (lost)":"/wɪn · luːz/",
+  "draw (drew) / beat (beat)":"/drɔː · biːt/",
+  "score / goal / match":"/skɔːr · ɡoʊl · mætʃ/",
+  "football / badminton":"/ˈfʊtbɔːl · ˈbædmɪntən/",
+  "basketball / volleyball / tennis":"/ˈbɑːskɪtbɔːl · ˈvɒlibɔːl · ˈtenɪs/",
+  "swimming / running / cycling":"/ˈswɪmɪŋ · ˈrʌnɪŋ · ˈsaɪklɪŋ/",
+  "yoga / martial arts / karate":"/ˈjoʊɡə · ˈmɑːrʃl ɑːrts · kəˈrɑːti/",
+  "play the guitar / piano / violin":"/pleɪ ðə ɡɪˈtɑːr/",
+  "pop / rock / jazz / classical":"/pɒp · rɒk · dʒæz · ˈklæsɪkl/",
+  "k-pop / ballad / edm":"/ˈkeɪpɒp · ˈbæləd/",
+  "lyrics / melody / beat / chorus":"/ˈlɪrɪks · ˈmelədi · biːt · ˈkɔːrəs/",
+  "song / album / playlist":"/sɒŋ · ˈælbəm · ˈpleɪlɪst/",
+  "singer / band / musician":"/ˈsɪŋər · bænd · mjuːˈzɪʃn/",
+  "catchy / upbeat / relaxing":"/ˈkætʃi · ˈʌpbiːt · rɪˈlæksɪŋ/",
+  "concert / live music":"/ˈkɒnsət · laɪv ˈmjuːzɪk/",
+  "action / comedy / drama":"/ˈækʃn · ˈkɒmədi · ˈdrɑːmə/",
+  "horror / romance / thriller":"/ˈhɒrər · ˈroʊmæns · ˈθrɪlər/",
+  "director / actor / actress":"/dɪˈrektər · ˈæktər · ˈæktrɪs/",
+  "subtitles / dubbed":"/ˈsʌbtaɪtlz · dʌbd/",
+  "gripping / touching / hilarious":"/ˈɡrɪpɪŋ · ˈtʌtʃɪŋ · hɪˈleəriəs/",
+  "great acting / spoiler":"/ɡreɪt ˈæktɪŋ · ˈspɔɪlər/",
+  "reading / drawing / painting":"/ˈriːdɪŋ · ˈdrɔːɪŋ · ˈpeɪntɪŋ/",
+  "cooking / baking":"/ˈkʊkɪŋ · ˈbeɪkɪŋ/",
+  "taking photos / gardening":"/ˈteɪkɪŋ ˈfoʊtoʊz · ˈɡɑːrdnɪŋ/",
+  "playing chess / video games":"/ˈpleɪɪŋ tʃes · ˈvɪdioʊ ɡeɪmz/",
+  "go hiking / camping / fishing":"/ɡoʊ ˈhaɪkɪŋ · ˈkæmpɪŋ · ˈfɪʃɪŋ/",
+  "watching dramas":"/ˈwɒtʃɪŋ ˈdrɑːməz/",
+  "learning languages":"/ˈlɜːrnɪŋ ˈlæŋɡwɪdʒɪz/",
+  "hang out with friends":"/hæŋ aʊt wɪð frendz/",
+  "go for a walk / drive":"/ɡoʊ fər ə wɔːk/",
+  "visit family":"/ˈvɪzɪt ˈfæməli/",
+  "go to the market":"/ɡoʊ tə ðə ˈmɑːrkɪt/",
+  "sleep in / relax":"/sliːp ɪn · rɪˈlæks/",
+  "wake up / get up":"/weɪk ʌp · ɡet ʌp/",
+  "go to work / school":"/ɡoʊ tə wɜːrk/",
+  "come home":"/kʌm hoʊm/",
+  "go to bed":"/ɡoʊ tə bed/",
+  "take a shower / bath":"/teɪk ə ˈʃaʊər/",
+  "cook / clean":"/kʊk · kliːn/",
+  "exercise / work out":"/ˈeksərsaɪz · wɜːrk aʊt/",
+  "have breakfast / lunch / dinner":"/hæv ˈbrekfəst · lʌntʃ · ˈdɪnər/",
+  "always / usually / often":"/ˈɔːlweɪz · ˈjuːʒuəli · ˈɒfn/",
+  "sometimes / rarely / never":"/ˈsʌmtaɪmz · ˈreərli · ˈnevər/",
+  "on time / early / late":"/ɒn taɪm · ˈɜːrli · leɪt/",
+  "yesterday / today / tomorrow":"/ˈjestərdeɪ · təˈdeɪ · təˈmɒrəʊ/",
+  "last week / next month":"/lɑːst wiːk · nekst mʌnθ/",
+  "this weekend / next week":"/ðɪs ˈwiːkend · nekst wiːk/",
+  "monday – sunday":"/ˈmʌndeɪ – ˈsʌndeɪ/",
+  "january – december":"/ˈdʒænjueri – dɪˈsembər/",
+  "morning / afternoon / evening / night":"/ˈmɔːrnɪŋ · ˌɑːftərˈnuːn · ˈiːvnɪŋ · naɪt/",
+  "spring / summer / autumn / winter":"/sprɪŋ · ˈsʌmər · ˈɔːtəm · ˈwɪntər/",
+  "dry season / rainy season":"/draɪ ˈsiːzn · ˈreɪni ˈsiːzn/",
+  "hot / warm / cool / cold":"/hɒt · wɔːrm · kuːl · koʊld/",
+  "freezing / boiling":"/ˈfriːzɪŋ · ˈbɔɪlɪŋ/",
+  "sunny / cloudy / rainy":"/ˈsʌni · ˈklaʊdi · ˈreɪni/",
+  "windy / foggy / stormy":"/ˈwɪndi · ˈfɒɡi · ˈstɔːrmi/",
+  "forecast / drizzle":"/ˈfɔːrkɑːst · ˈdrɪzl/",
+  "happy / excited":"/ˈhæpi · ɪkˈsaɪtɪd/",
+  "relaxed / surprised":"/rɪˈlækst · səˈpraɪzd/",
+  "sad / bored":"/sæd · bɔːrd/",
+  "angry / nervous":"/ˈæŋɡri · ˈnɜːrvəs/",
+  "worried / scared":"/ˈwɜːrid · skɛrd/",
+  "lonely / sick":"/ˈloʊnli · sɪk/",
+  "tired / sleepy":"/ˈtaɪərd · ˈsliːpi/",
+  "hungry / thirsty":"/ˈhʌŋɡri · ˈθɜːrsti/",
+  "feel dizzy / nauseous":"/fiːl ˈdɪzi · ˈnɔːziəs/",
+  "father / mother":"/ˈfɑːðər · ˈmʌðər/",
+  "brother / sister":"/ˈbrʌðər · ˈsɪstər/",
+  "husband / wife":"/ˈhʌzbənd · waɪf/",
+  "son / daughter":"/sʌn · ˈdɔːtər/",
+  "uncle / aunt":"/ˈʌŋkl · ɑːnt/",
+  "eldest / youngest":"/ˈeldɪst · ˈjʌŋɡɪst/",
+  "doctor / nurse":"/ˈdɒktər · nɜːrs/",
+  "accountant / lawyer":"/əˈkaʊntənt · ˈlɔːjər/",
+  "manager / ceo":"/ˈmænɪdʒər · ˌsiːiːˈoʊ/",
+  "designer / photographer":"/dɪˈzaɪnər · fəˈtɒɡrəfər/",
+  "chef / waiter":"/ʃef · ˈweɪtər/",
+  "freelancer / self-employed":"/ˈfriːlɑːnsər · self ɪmˈplɔɪd/",
+  "full-time / part-time":"/ˈfʊltaɪm · ˈpɑːrttaɪm/",
+  "salary / deadline / meeting":"/ˈsæləri · ˈdedlaɪn · ˈmiːtɪŋ/",
+  "teacher / lecturer":"/ˈtiːtʃər · ˈlektʃərər/",
+  "engineer / programmer":"/ˌendʒɪˈnɪər · ˈproʊɡræmər/",
+  "primary / secondary school":"/ˈpraɪmeri · ˈsekənderi skuːl/",
+  "high school / university":"/haɪ skuːl · ˌjuːnɪˈvɜːrsɪti/",
+  "classmate / professor":"/ˈklɑːsmeɪt · prəˈfesər/",
+  "homework / assignment":"/ˈhoʊmwɜːrk · əˈsaɪnmənt/",
+  "exam / test / quiz":"/ɪɡˈzæm · test · kwɪz/",
+  "pass / fail / grade":"/pɑːs · feɪl · ɡreɪd/",
+  "scholarship / tuition fee":"/ˈskɒlərʃɪp · tjuːˈɪʃn fiː/",
+  "rice / noodle soup":"/raɪs · ˈnuːdl suːp/",
+  "bread / sandwich":"/bred · ˈsænwɪdʒ/",
+  "chicken / beef / pork":"/ˈtʃɪkɪn · biːf · pɔːrk/",
+  "fish / seafood":"/fɪʃ · ˈsiːfuːd/",
+  "egg / dairy":"/eɡ · ˈdeəri/",
+  "fruit / vegetables":"/fruːt · ˈvedʒtəblz/",
+  "snacks / dessert":"/snæks · dɪˈzɜːrt/",
+  "water / coffee / tea":"/ˈwɔːtər · ˈkɒfi · tiː/",
+  "juice / smoothie":"/dʒuːs · ˈsmuːði/",
+  "soft drink / beer":"/ˈsɒft drɪŋk · bɪər/",
+  "sweet / salty / spicy":"/swiːt · ˈsɔːlti · ˈspaɪsi/",
+  "sour / bitter":"/ˈsaʊər · ˈbɪtər/",
+  "delicious / tasty":"/dɪˈlɪʃəs · ˈteɪsti/",
+  "menu / order":"/ˈmenjuː · ˈɔːrdər/",
+  "starter / main course":"/ˈstɑːrtər · meɪn kɔːrs/",
+  "bill (anh) / check (mỹ)":"/bɪl · tʃek/",
+  "reservation / book a table":"/ˌrezəˈveɪʃn · bʊk ə ˈteɪbl/",
+  "waiter / waitress":"/ˈweɪtər · ˈweɪtrɪs/",
+  "price / cost / discount":"/praɪs · kɒst · ˈdɪskaʊnt/",
+  "cash / card / receipt":"/kæʃ · kɑːrd · rɪˈsiːt/",
+  "refund / exchange":"/ˈriːfʌnd · ɪksˈtʃeɪndʒ/",
+  "passport / visa / boarding pass":"/ˈpɑːspɔːrt · ˈviːzə · ˈbɔːrdɪŋ pæs/",
+  "luggage / suitcase / carry-on":"/ˈlʌɡɪdʒ · ˈsuːtkeɪs · ˈkæriɒn/",
+  "flight / gate / delayed":"/flaɪt · ɡeɪt · dɪˈleɪd/",
+  "sightseeing / guided tour":"/ˈsaɪtsiːɪŋ · ˈɡaɪdɪd tʊər/",
+  "bus / train / metro":"/bʌs · treɪn · ˈmetroʊ/",
+  "taxi / motorbike / bicycle":"/ˈtæksi · ˈmoʊtərbaɪk · ˈbaɪsɪkl/",
+  "platform / bus stop / station":"/ˈplætfɔːrm · bʌs stɒp · ˈsteɪʃn/",
+  "fare / timetable":"/feər · ˈtaɪmteɪbl/",
+  "passport / visa":"/ˈpɑːspɔːrt · ˈviːzə/",
+  "head / eye / ear":"/hed · aɪ · ɪər/",
+  "nose / mouth / throat":"/noʊz · maʊθ · θroʊt/",
+  "shoulder / chest / back":"/ˈʃoʊldər · tʃest · bæk/",
+  "stomach / arm / leg":"/ˈstʌmək · ɑːrm · leɡ/",
+  "knee / ankle / foot → feet":"/niː · ˈæŋkl · fʊt → fiːt/",
+  "tooth → teeth":"/tuːθ → tiːθ/",
+  "a headache / stomachache":"/ə ˈhedeɪk · ˈstʌməkeɪk/",
+  "a sore throat / backache":"/ə sɔːr θroʊt · ˈbækeɪk/",
+  "a cold / the flu":"/ə koʊld · ðə fluː/",
+  "a fever / a cough":"/ə ˈfiːvər · ə kɒf/",
+  "a runny nose / diarrhea":"/ə ˈrʌni noʊz · ˌdaɪəˈriːə/",
+  "cotton / wool / denim / silk":"/ˈkɒtn · wʊl · ˈdenɪm · sɪlk/",
+  "plain / striped / floral / checked":"/pleɪn · straɪpt · ˈflɔːrəl · tʃekt/",
+  "casual / smart / formal / sporty":"/ˈkæʒuəl · smɑːrt · ˈfɔːrml · ˈspɔːrti/",
+  "sneakers / boots / sandals":"/ˈsniːkərz · buːts · ˈsændlz/",
+  "hat / cap / scarf":"/hæt · kæp · skɑːrf/",
+  "jeans / trousers / shorts":"/dʒiːnz · ˈtraʊzərz · ʃɔːrts/",
+  "jacket / coat / hoodie":"/ˈdʒækɪt · koʊt · ˈhʊdi/",
+  "dress / skirt":"/dres · skɜːrt/",
+  "living room / bedroom":"/ˈlɪvɪŋ ruːm · ˈbedruːm/",
+  "kitchen / bathroom":"/ˈkɪtʃɪn · ˈbɑːθruːm/",
+  "balcony / garden":"/ˈbælkəni · ˈɡɑːrdn/",
+  "sofa / armchair":"/ˈsoʊfə · ˈɑːrmtʃeər/",
+  "wardrobe / bookshelf":"/ˈwɔːrdroʊb · ˈbʊkʃelf/",
+  "fridge / washing machine":"/frɪdʒ · ˈwɒʃɪŋ məˈʃiːn/",
+  "microwave / oven":"/ˈmaɪkrəweɪv · ˈʌvn/",
+  "curtains / carpet":"/ˈkɜːrtnz · ˈkɑːrpɪt/",
+  "sink / tap":"/sɪŋk · tæp/",
+  "plan / intention":"/plæn · ɪnˈtenʃn/",
+  "appointment / meeting":"/əˈpɔɪntmənt · ˈmiːtɪŋ/",
+  "candles / cake":"/ˈkændlz · keɪk/",
+  "gift / present / card":"/ɡɪft · ˈpreznt · kɑːrd/",
+  "party / celebration":"/ˈpɑːrti · ˌselɪˈbreɪʃn/",
+  "national holiday":"/ˈnæʃənl ˈhɒlɪdeɪ/",
+  "five minutes on foot / by car":"/faɪv ˈmɪnɪts ɒn fʊt/",
+  "size: s / m / l / xl":"/saɪz/",
+  "too big / small / tight":"/tuː bɪɡ · smɔːl · taɪt/",
+  "entrance fee":"/ˈentrəns fiː/",
+  "twice a week / every day":"/twaɪs ə wiːk · ˈevri deɪ/",
+
+  /* ── Các mẫu câu ngắn dùng làm vocab entry ── */
+  "my name is…":"/maɪ neɪm ɪz/",
+  "i'm from vietnam":"/aɪm frəm viˌetnˈɑːm/",
+  "i live in hanoi":"/aɪ lɪv ɪn hæˈnɔɪ/",
+  "i'm 25 years old":"/aɪm ˌtwenti ˈfaɪv jɪərz oʊld/",
+  "how are you? / how's it going?":"/haʊ ɑːr juː · haʊz ɪt ˈɡoʊɪŋ/",
+  "not bad, thanks!":"/nɒt bæd θæŋks/",
+  "where are you from?":"/weər ɑːr juː frɒm/",
+  "what do you do?":"/wɒt duː juː duː/",
+  "what are you studying?":"/wɒt ɑːr juː ˈstʌdiɪŋ/",
+  "this is my friend tom.":"/ðɪs ɪz maɪ frend tɒm/",
+  "have you met before?":"/hæv juː met bɪˈfɔːr/",
+  "me too! / me neither.":"/miː tuː · miː ˈnaɪðər/",
+  "only child":"/ˈoʊnli tʃaɪld/",
+  "what time is it?":"/wɒt taɪm ɪz ɪt/",
+  "tết / lunar new year":"/tet · ˈluːnər njuː jɪər/",
+  "are you free…?":"/ɑːr juː friː/",
+  "how much is it?":"/haʊ mʌtʃ ɪz ɪt/",
+  "i'll take it. / i'm just looking.":"/aɪl teɪk ɪt · aɪm dʒʌst ˈlʊkɪŋ/",
+  "how long does it take?":"/haʊ lɒŋ dʌz ɪt teɪk/",
+  "how far is it?":"/haʊ fɑːr ɪz ɪt/",
+  "my wallet was stolen":"/maɪ ˈwɒlɪt wəz ˈstoʊlən/",
+  "i prefer a to b.":"/aɪ prɪˈfɜːr eɪ tə biː/",
+  "i'd rather + v.":"/aɪd ˈrɑːðər/",
+  "what did you do last weekend?":"/wɒt dɪd juː duː lɑːst ˈwiːkend/",
+  /* ── Thêm các cụm go to / come / take ── */
+  "go to work / school":"/ɡoʊ tə wɜːrk · skuːl/",
+  "go to work":"/ɡoʊ tə wɜːrk/","school":"/skuːl/",
+  "come home":"/kʌm hoʊm/",
+  "go to bed":"/ɡoʊ tə bed/",
+  "go to the market":"/ɡoʊ tə ðə ˈmɑːrkɪt/",
+  "go for a walk / drive":"/ɡoʊ fər ə wɔːk · draɪv/",
+  "sleep in / relax":"/sliːp ɪn · rɪˈlæks/",
+  "take a shower / bath":"/teɪk ə ˈʃaʊər · bɑːθ/",
+  "cook / clean":"/kʊk · kliːn/",
+  "exercise / work out":"/ˈeksərsaɪz · wɜːrk aʊt/",
+  "wake up / get up":"/weɪk ʌp · ɡet ʌp/"
+};
+
+/* ═══════════════════════════════════════════════
+   IPA bổ sung + sửa lỗi (ghi đè bảng gốc)
+   ═══════════════════════════════════════════════ */
+var IPA_EXTRA = {
+  "my":"/maɪ/","i'm":"/aɪm/","i'll":"/aɪl/","to":"/tuː/","see":"/siː/","how":"/haʊ/","how's":"/haʊz/","me":"/miː/",
+  "wake":"/weɪk/","get":"/ɡet/","have":"/hæv/","go":"/ɡoʊ/","take":"/teɪk/","taking":"/ˈteɪkɪŋ/","cook":"/kʊk/","clean":"/kliːn/",
+  "exercise":"/ˈeksərsaɪz/","work":"/wɜːrk/","always":"/ˈɔːlweɪz/","usually":"/ˈjuːʒuəli/","often":"/ˈɔːfn/",
+  "sometimes":"/ˈsʌmtaɪmz/","rarely":"/ˈrerli/","never":"/ˈnevər/","last":"/læst/","next":"/nekst/","on":"/ɑːn/",
+  "early":"/ˈɜːrli/","late":"/leɪt/","new":"/nuː/","card":"/kɑːrd/","tết":"/tet/","lunar":"/ˈluːnər/","dry":"/draɪ/",
+  "season":"/ˈsiːzn/","living":"/ˈlɪvɪŋ/","smart":"/smɑːrt/","self":"/self/","employed":"/ɪmˈplɔɪd/","full":"/fʊl/",
+  "time":"/taɪm/","part":"/pɑːrt/","school":"/skuːl/","high":"/haɪ/","test":"/test/","pass":"/pæs/","fail":"/feɪl/",
+  "fee":"/fiː/","this":"/ðɪs/","are":"/ɑːr/","main":"/meɪn/","check":"/tʃek/","book":"/bʊk/","size":"/saɪz/","too":"/tuː/",
+  "cash":"/kæʃ/","between":"/bɪˈtwiːn/","five":"/faɪv/","a":"/ə/","the":"/ðə/","feel":"/fiːl/","return":"/rɪˈtɜːrn/",
+  "stop":"/stɑːp/","room":"/ruːm/","carry":"/ˈkæri/","playing":"/ˈpleɪɪŋ/","video":"/ˈvɪdioʊ/","sleep":"/sliːp/",
+  "arts":"/ɑːrts/","twice":"/twaɪs/","every":"/ˈevri/","great":"/ɡreɪt/","k":"/keɪ/","play":"/pleɪ/","live":"/laɪv/"
+ ,"is":"/ɪz/","you":"/juː/","it":"/ɪt/","neither":"/ˈniːðər/","up":"/ʌp/","breakfast":"/ˈbrekfəst/","lunch":"/lʌntʃ/",
+  "dinner":"/ˈdɪnər/","shower":"/ˈʃaʊər/","bath":"/bæθ/","out":"/aʊt/","week":"/wiːk/","month":"/mʌnθ/","year":"/jɪr/",
+  "weekend":"/ˈwiːkend/","course":"/kɔːrs/","table":"/ˈteɪbl/","big":"/bɪɡ/","small":"/smɔːl/","tight":"/taɪt/","just":"/dʒʌst/",
+  "left":"/left/","right":"/raɪt/","minutes":"/ˈmɪnɪts/","flu":"/fluː/","in":"/ɪn/","photos":"/ˈfoʊtoʊz/","games":"/ɡeɪmz/",
+  "for":"/fɔːr/","day":"/deɪ/","acting":"/ˈæktɪŋ/","music":"/ˈmjuːzɪk/"
+ ,"later":"/ˈleɪtər/","going":"/ˈɡoʊɪŋ/","free":"/friː/","looking":"/ˈlʊkɪŋ/","by":"/baɪ/","walk":"/wɔːk/","drive":"/draɪv/"
+ ,"car":"/kɑːr/"
+
+};
+for(var k in IPA_EXTRA){ if(!IPA[k]) IPA[k] = IPA_EXTRA[k]; }
+var IPA_FIX = {
+  "i'm from vietnam":"/aɪm frʌm ˌviːetˈnɑːm/",
+  "i live in hanoi":"/aɪ lɪv ɪn hɑːˈnɔɪ/"
+};
+for(var k2 in IPA_FIX){ IPA_PHRASE[k2] = IPA_FIX[k2]; }
+
+var LETTER = {a:'eɪ',b:'biː',c:'siː',d:'diː',e:'iː',f:'ef',g:'dʒiː',h:'eɪtʃ',i:'aɪ',j:'dʒeɪ',k:'keɪ',l:'el',m:'em',n:'en',o:'oʊ',p:'piː',q:'kjuː',r:'ɑːr',s:'es',t:'tiː',u:'juː',v:'viː',w:'ˈdʌbljuː',x:'eks',y:'waɪ',z:'ziː'};
+
+/* ═══════════════════════════════════════════════
+   2. Tra phiên âm theo từng cụm (không chứa dấu /)
+   ═══════════════════════════════════════════════ */
+function ipaInner(v){ return v.replace(/^\s*\/|\/\s*$/g,''); }
+
+function ipaToken(tok, missing){
+  if(/^[A-Z]$/.test(tok) && tok !== 'I') return LETTER[tok.toLowerCase()];
+  var low = tok.toLowerCase();
+  if(IPA[low]) return ipaInner(IPA[low]);
+  if(/^[A-Z]{2,4}$/.test(tok)) return tok.toLowerCase().split('').map(function(c){return LETTER[c];}).join(' ');
+  if(low.indexOf('-') > 0){
+    var segs = low.split('-'), out = [];
+    for(var i=0;i<segs.length;i++){
+      if(!IPA[segs[i]]){ if(missing) missing.push(tok); return null; }
+      out.push(ipaInner(IPA[segs[i]]));
+    }
+    return out.join('');
+  }
+  if(missing) missing.push(tok);
+  return null;
+}
+
+function ipaOne(text, missing){
+  var t = text.replace(/[’]/g,"'").replace(/\([^)]*\)/g,' ').replace(/…/g,' ').replace(/\s+/g,' ').trim();
+  if(!t) return null;
+  var low = t.toLowerCase();
+  if(IPA_PHRASE[low]) return ipaInner(IPA_PHRASE[low]);
+  var toks = t.replace(/[?!.,:;"“”+–]/g,' ').split(/\s+/).filter(Boolean);
+  var out = [];
+  for(var i=0;i<toks.length;i++){
+    var p = ipaToken(toks[i], missing);
+    if(p === null || p === undefined) return null;
+    out.push(p);
+  }
+  return out.join(' ');
+}
+
+function ipaPart(text, missing){
+  var forms = text.split('→'), res = [];
+  for(var i=0;i<forms.length;i++){
+    var r = ipaOne(forms[i], missing);
+    if(!r) return null;
+    res.push('/' + r + '/');
+  }
+  return res.join(' → ');
+}
+
+/* ═══════════════════════════════════════════════
+   3. TTS – Web Speech API
+   ═══════════════════════════════════════════════ */
+var synth = window.speechSynthesis;
+var curRow = null, curId = 0;
+var prefs = {slow:false, ipa:true, hide:false};
+try{ var saved = JSON.parse(localStorage.getItem('a1-vocab-prefs')||'{}'); for(var pk in saved){ prefs[pk] = saved[pk]; } }catch(e){}
+
+var abBar  = document.getElementById('audio-bar');
+var abWord = document.getElementById('ab-word');
+var abStop = document.getElementById('ab-stop');
+
+function clearPlaying(){
+  if(curRow){ curRow.classList.remove('playing'); curRow = null; }
+  abBar.classList.remove('show');
+}
+function stopAll(){ curId++; if(synth) synth.cancel(); clearPlaying(); }
+
+function pickVoice(){
+  var voices = synth.getVoices();
+  return voices.find(function(v){ return /en[-_]US/i.test(v.lang) && !/compact/i.test(v.name); })
+      || voices.find(function(v){ return /en[-_]/i.test(v.lang); });
+}
+
+function speak(text, row){
+  if(!synth || !text) return;
+  if(row && row === curRow){ stopAll(); return; }     /* bấm lại = dừng */
+  var id = ++curId;
+  synth.cancel();
+  clearPlaying();
+  var utt = new SpeechSynthesisUtterance(text);
+  utt.lang = 'en-US';
+  utt.rate = prefs.slow ? 0.6 : 0.9;
+  var v = pickVoice(); if(v) utt.voice = v;
+  curRow = row || null;
+  if(row) row.classList.add('playing');
+  abWord.textContent = text;
+  abBar.classList.add('show');
+  utt.onend = utt.onerror = function(){ if(id === curId) clearPlaying(); };
+  synth.speak(utt);
+}
+abStop.addEventListener('click', stopAll);
+
+function cleanSpeak(s){
+  return s.normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/đ/g,'d').replace(/Đ/g,'D')
+          .replace(/[’]/g,"'").replace(/\([^)]*\)/g,' ').replace(/→/g,', ')
+          .replace(/[…+]/g,' ').replace(/[^a-zA-Z0-9\s'\-,.?!:]/g,' ')
+          .replace(/\s+/g,' ').trim();
+}
+
+/* ═══════════════════════════════════════════════
+   4. Dựng lại mọi .vc: mỗi từ một dòng
+   ═══════════════════════════════════════════════ */
+var ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5z" fill="currentColor"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>';
+
+function splitParts(s){ return s.split(/\s+\/\s+/).map(function(x){return x.trim();}).filter(Boolean); }
+
+function el(tag, cls, text){
+  var e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(text != null) e.textContent = text;
+  return e;
+}
+
+/* "win (won)" → win + <small>(won)</small> */
+function fillEnglish(node, text){
+  var re = /\([^)]*\)/g, last = 0, m;
+  while((m = re.exec(text))){
+    if(m.index > last) node.appendChild(document.createTextNode(text.slice(last, m.index).trim()));
+    node.appendChild(el('small', null, m[0]));
+    last = m.index + m[0].length;
+  }
+  if(last < text.length) node.appendChild(document.createTextNode(text.slice(last).trim()));
+}
+
+function buildRow(text, meaning, card){
+  var say = cleanSpeak(text);
+  var row = el('div', 'vr');
+  row.tabIndex = 0;
+  row.setAttribute('role', 'button');
+  row.setAttribute('aria-label', 'Nghe phát âm: ' + say);
+
+  var btn = el('span', 'vb'); btn.innerHTML = ICON;
+  var txt = el('div', 'vr-txt');
+  var en = el('div', 'vr-en'); fillEnglish(en, text);
+  txt.appendChild(en);
+  var ipa = ipaPart(text);
+  if(ipa) txt.appendChild(el('div', 'vr-ipa', ipa));
+  if(meaning) txt.appendChild(el('div', 'vr-vi', meaning));
+  row.appendChild(btn); row.appendChild(txt);
+
+  function go(){ row.classList.add('show'); card.classList.add('show'); speak(say, row); }
+  row.addEventListener('click', function(e){ e.stopPropagation(); go(); });
+  row.addEventListener('keydown', function(e){
+    if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); go(); }
+  });
+  return row;
+}
+
+function enhanceCards(){
+  document.querySelectorAll('.vc').forEach(function(card){
+    if(card.dataset.enhanced) return;
+    var enEl = card.querySelector('.ve');
+    if(!enEl) return;
+    card.dataset.enhanced = '1';
+    var viEl = card.querySelector('.vv'), xEl = card.querySelector('.vx');
+    var enParts = splitParts(enEl.textContent);
+    var viFull  = viEl ? viEl.textContent.trim() : '';
+    var viParts = viFull ? splitParts(viFull) : [];
+    var xText   = xEl ? xEl.textContent.trim() : '';
+    var single  = enParts.length === 1;
+    var paired  = !single && viParts.length === enParts.length;
+
+    card.textContent = '';
+    enParts.forEach(function(p, i){
+      card.appendChild(buildRow(p, single ? viFull : (paired ? viParts[i] : ''), card));
+    });
+    if(!single && !paired && viFull) card.appendChild(el('div', 'vc-mean', viFull));
+    if(xText) card.appendChild(el('div', 'vc-tag', '💡 ' + xText));
+  });
+}
+
+/* ═══════════════════════════════════════════════
+   5. Thanh công cụ: đọc chậm · phiên âm · che nghĩa
+   ═══════════════════════════════════════════════ */
+function applyPrefs(){
+  document.body.classList.toggle('no-ipa', !prefs.ipa);
+  document.body.classList.toggle('hide-vi', prefs.hide);
+  document.querySelectorAll('#vtools button').forEach(function(b){
+    var key = b.dataset.k;
+    b.setAttribute('aria-pressed', String(!!prefs[key]));
+  });
+  try{ localStorage.setItem('a1-vocab-prefs', JSON.stringify(prefs)); }catch(e){}
+}
+(function buildTools(){
+  var bar = el('div'); bar.id = 'vtools';
+  [
+    ['slow','🐢','Đọc chậm','Đọc chậm hơn để nghe rõ từng âm'],
+    ['ipa','🔤','Phiên âm','Hiện / ẩn phiên âm IPA'],
+    ['hide','🙈','Che nghĩa','Che nghĩa tiếng Việt để tự kiểm tra (chạm vào từ để hiện)']
+  ].forEach(function(d){
+    var b = el('button'); b.type = 'button'; b.dataset.k = d[0]; b.title = d[3];
+    b.appendChild(el('span', null, d[1])); b.appendChild(el('span', 'lbl', d[2]));
+    b.addEventListener('click', function(){
+      prefs[d[0]] = !prefs[d[0]];
+      if(d[0] === 'hide'){ document.querySelectorAll('.vr.show,.vc.show').forEach(function(n){ n.classList.remove('show'); }); }
+      applyPrefs();
+    });
+    bar.appendChild(b);
+  });
+  document.body.appendChild(bar);
+  applyPrefs();
+})();
+
+/* ═══════════════════════════════════════════════
+   4. Click vào mẫu câu (.pe) cũng phát âm
+   ═══════════════════════════════════════════════ */
+document.addEventListener('click', function(e){
+  var el = e.target.closest('.pe');
+  if(!el) return;
+  speak(el.textContent.trim(), null);
+});
+
+/* ═══════════════════════════════════════════════
+   5. Active nav + progress bar
+   ═══════════════════════════════════════════════ */
+var sections = document.querySelectorAll('.ts');
+var links = document.querySelectorAll('.nav-link, .topnav a');
+var pbar = document.getElementById('pbar');
+function update(){
+  var active = null;
+  sections.forEach(function(s){
+    if(s.getBoundingClientRect().top <= 90) active = s.id;
+  });
+  links.forEach(function(a){
+    a.classList.toggle('active', a.getAttribute('href')==='#'+active);
+  });
+  var t = document.documentElement.scrollTop || document.body.scrollTop;
+  var h = document.body.scrollHeight - window.innerHeight;
+  pbar.style.width = (Math.min(t/h,1)*100)+'%';
+}
+window.addEventListener('scroll', update, {passive:true});
+update();
+
+/* Chạy sau khi DOM sẵn sàng (và sau khi voices load) */
+enhanceCards();
+if(synth){
+  synth.addEventListener('voiceschanged', function(){ enhanceCards(); });
+}
+</script>
+<script src="nav.js" defer></script>
+</body>
+</html>
