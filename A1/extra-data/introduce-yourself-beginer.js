@@ -30,7 +30,19 @@ window.A1_EXTRA = {
     "curious": ["/ˈkjʊə.ri.əs/", "tính từ"],
     "cheerful": ["/ˈtʃɪə.fəl/", "tính từ"],
     "calm": ["/kɑːm/", "tính từ"],
-    "spell": ["/spel/", "động từ"]
+    "spell": ["/spel/", "động từ"],
+    "originally from": ["/əˈrɪdʒ.ən.əl.i frɒm/", "cụm từ cố định"],
+    "be based in": ["/bi ˈbeɪst ɪn/", "cụm động từ"],
+    "work as": ["/ˈwɜːk æz/", "cụm động từ"],
+    "work for": ["/ˈwɜːk fɔː/", "cụm động từ"],
+    "in my free time": ["/ɪn maɪ ˈfriː taɪm/", "cụm từ cố định"],
+    "fresh graduate": ["/ˌfreʃ ˈɡrædʒ.u.ət/", "cụm danh từ"],
+    "currently": ["/ˈkʌr.ənt.li/", "trạng từ"],
+    "easygoing": ["/ˌiː.ziˈɡəʊ.ɪŋ/", "tính từ"],
+    "ambitious": ["/æmˈbɪʃ.əs/", "tính từ"],
+    "passionate about": ["/ˈpæʃ.ən.ət əˈbaʊt/", "cụm tính từ"],
+    "aim to": ["/ˈeɪm tuː/", "cụm động từ"],
+    "look forward to": ["/ˌlʊk ˈfɔː.wəd tuː/", "cụm động từ"]
   },
   grammar: [
     { title: "Đại từ, sở hữu và dạng rút gọn",

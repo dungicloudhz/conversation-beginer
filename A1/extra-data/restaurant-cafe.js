@@ -25,7 +25,18 @@ window.A1_EXTRA = {
     "crispy": ["/ˈkrɪs.pi/", "tính từ"],
     "tender": ["/ˈten.də/", "tính từ"],
     "bland": ["/blænd/", "tính từ"],
-    "on the house": ["/ˌɒn ðə ˈhaʊs/", "cụm từ cố định"]
+    "on the house": ["/ˌɒn ðə ˈhaʊs/", "cụm từ cố định"],
+    "savory": ["/ˈseɪ.vər.i/", "tính từ"],
+    "rich": ["/rɪtʃ/", "tính từ"],
+    "greasy": ["/ˈɡriː.si/", "tính từ"],
+    "refreshing": ["/rɪˈfreʃ.ɪŋ/", "tính từ"],
+    "mouth-watering": ["/ˈmaʊθˌwɔː.tər.ɪŋ/", "tính từ"],
+    "appetizer / entrée": ["/ˈæp.ɪ.taɪ.zə/ · /ˈɒn.treɪ/", "danh từ"],
+    "cozy": ["/ˈkəʊ.zi/", "tính từ"],
+    "ambiance": ["/ˈæm.bi.əns/", "danh từ"],
+    "leftovers": ["/ˈleftˌəʊ.vəz/", "danh từ"],
+    "gratuity / tip": ["/ɡrəˈtʃuː.ə.ti/ · /tɪp/", "danh từ"],
+    "a la carte": ["/ˌɑː lɑː ˈkɑːt/", "cụm từ cố định"]
   },
   grammar: [
     { title: "Cụm rút gọn và How many / How long",

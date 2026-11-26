@@ -500,7 +500,8 @@ window.A1_CHEAT = {
     ["I am interested on music. / I listen music.", "I am interested in music. / I listen to music.", "Học thuộc cả cụm giới từ cố định: **interested in**, **listen to**."],
     ["See you in Monday. / I will go on tomorrow.", "See you on Monday. / I will go tomorrow.", "Thứ trong tuần đi với **on**; không dùng giới từ trước tomorrow."],
     ["Although it was cold, but we went out.", "Although it was cold, we went out.", "Tiếng Anh chỉ dùng **although** hoặc **but**, không dùng cả hai."],
-    ["Turn off it.", "Turn it off.", "Cụm tách được mà tân ngữ là **đại từ** thì đại từ phải đứng giữa."]
+    ["Turn off it.", "Turn it off.", "Cụm tách được mà tân ngữ là **đại từ** thì đại từ phải đứng giữa."],
+    ["No. You are wrong. I don’t agree.", "Good point, but to be honest, I see it a bit differently.", "Mở bằng **Good point** rồi làm mềm ý bằng **to be honest** thì nghe lịch sự hơn khi không đồng ý."]
   ],
   vocab: [
     ["next to", "bên cạnh"], ["between", "ở giữa"], ["opposite", "đối diện"], ["in front of", "phía trước"],
@@ -508,7 +509,9 @@ window.A1_CHEAT = {
     ["unless", "trừ khi"], ["while", "trong khi"], ["wake up", "thức giấc"], ["turn on / turn off", "bật / tắt"],
     ["put on / take off", "mặc vào / cởi ra"], ["hang out", "đi chơi, tụ tập"], ["catch up", "hàn huyên, cập nhật tin tức"], ["pick up", "đón ai, nhặt lên"],
     ["look after", "chăm sóc, trông nom"], ["look for", "tìm kiếm"], ["look forward to", "mong chờ"], ["figure out", "tìm ra, hiểu ra"],
-    ["hand in", "nộp bài"], ["run out of", "hết (thời gian, tiền)"], ["give up", "bỏ cuộc"], ["deal with", "xử lý, giải quyết"]
+    ["hand in", "nộp bài"], ["run out of", "hết (thời gian, tiền)"], ["give up", "bỏ cuộc"], ["deal with", "xử lý, giải quyết"],
+    ["to be honest", "thành thật mà nói"], ["actually", "thật ra"], ["I guess", "tôi đoán là"],
+    ["as far as I know", "theo như tôi biết"], ["it depends", "tùy tình hình"], ["fair enough", "được thôi, có lý"]
   ],
   tips: [
     "Nâng cấp câu theo công thức: **câu đơn → thêm giới từ (nơi, giờ) → thêm liên từ và ý thứ hai → thay động từ đơn bằng cụm động từ**.",
@@ -516,6 +519,7 @@ window.A1_CHEAT = {
     "Mỗi ngày chỉ học ba cụm động từ, mỗi cụm đặt hai câu về chính cuộc sống của bạn rồi đọc to năm lần.",
     "Khi bí từ, đừng im lặng: dùng **How can I put it?**, **What I mean is…** hoặc **How do you say… in English?** để có thêm thời gian.",
     "Kể bài “Một ngày của tôi” trong 40 giây, cố dùng đủ bốn loại mảnh ghép: cụm từ giao tiếp, giới từ, liên từ và cụm động từ.",
-    "Đừng học thuộc danh sách; câu nào gắn với chuyện thật của chính bạn sẽ nhớ lâu hơn rất nhiều."
+    "Đừng học thuộc danh sách; câu nào gắn với chuyện thật của chính bạn sẽ nhớ lâu hơn rất nhiều.",
+    "Học **một cụm nâng cao mỗi ngày** như **to be honest**, **fair enough**, **speaking of** và dùng ngay trong một cuộc trò chuyện thật để câu nghe mềm mại hơn."
   ]
 };

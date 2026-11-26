@@ -392,7 +392,8 @@ window.A1_CHEAT = {
     ["I am a accountant.", "I am an accountant.", "Accountant bắt đầu bằng âm nguyên âm nên dùng **an**."],
     ["She work in a bank.", "She works in a bank.", "Chủ ngữ she ở thì hiện tại đơn thì động từ phải thêm **-s**."],
     ["I like read books.", "I like reading books.", "Sau like, love, enjoy dùng **động từ thêm -ing** khi nói sở thích."],
-    ["Where you live?", "Where do you live?", "Câu hỏi với động từ thường cần trợ động từ **do / does** trước chủ ngữ."]
+    ["Where you live?", "Where do you live?", "Câu hỏi với động từ thường cần trợ động từ **do / does** trước chủ ngữ."],
+    ["My name Lan. I 24. I from Hanoi. I like read.", "Hi, I’m Lan. I’m twenty-four and I’m originally from Hue, but I’m based in Hanoi now. In my free time, I like reading.", "Đủ chủ ngữ và **be**, dùng **originally from / be based in** cho quê và nơi ở, và **like + V-ing** cho sở thích."]
   ],
   vocab: [
     ["name", "tên"], ["age", "tuổi"], ["hometown", "quê quán"], ["Vietnamese", "người Việt, tiếng Việt"],
@@ -400,7 +401,9 @@ window.A1_CHEAT = {
     ["company", "công ty"], ["job", "công việc"], ["family", "gia đình"], ["older brother", "anh trai"],
     ["married", "đã kết hôn"], ["single", "độc thân"], ["free time", "thời gian rảnh"], ["hobby", "sở thích"],
     ["photography", "nhiếp ảnh"], ["friendly", "thân thiện"], ["shy", "nhút nhát"], ["hard-working", "chăm chỉ"],
-    ["curious", "tò mò"], ["cheerful", "vui vẻ"], ["calm", "điềm tĩnh"], ["spell", "đánh vần"]
+    ["curious", "tò mò"], ["cheerful", "vui vẻ"], ["calm", "điềm tĩnh"], ["spell", "đánh vần"],
+    ["originally from", "gốc ở, quê gốc ở"], ["be based in", "đang sống và làm việc ở"], ["work as", "làm nghề gì"],
+    ["fresh graduate", "sinh viên mới tốt nghiệp"], ["ambitious", "có hoài bão"], ["look forward to", "mong chờ"]
   ],
   tips: [
     "Học thuộc trình tự của bài 30 giây: **Chào → Tên → Quê → Công việc → Sở thích → Kết**. Có khung sẵn thì bạn không bị bí ý.",
@@ -408,6 +411,7 @@ window.A1_CHEAT = {
     "Ghi âm bài tự giới thiệu, nghe lại và kiểm tra xem bạn có quên **am / is / are** hoặc chữ **-s** ở she works không.",
     "Sau khi trả lời, luôn hỏi lại **How about you?** để cuộc trò chuyện không dừng lại.",
     "Nếu không hiểu, đừng im lặng: nói **Sorry, could you say that again?** hoặc **Could you speak more slowly, please?**",
-    "Nói chậm, rõ và mỉm cười quan trọng hơn nói nhanh; người nghe sẽ hiểu bạn dễ hơn."
+    "Nói chậm, rõ và mỉm cười quan trọng hơn nói nhanh; người nghe sẽ hiểu bạn dễ hơn.",
+    "Thêm **2 cụm nâng cao** vào bài 30 giây, ví dụ **originally from** và **in my free time**; thêm quá nhiều từ mới cùng lúc sẽ làm bạn vấp."
   ]
 };

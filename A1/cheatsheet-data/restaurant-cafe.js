@@ -455,7 +455,8 @@ window.A1_CHEAT = {
     ["I am allergic with peanuts.", "I am allergic to peanuts.", "Allergic luôn đi với **to**."],
     ["How many is this salad?", "How much is this salad?", "Hỏi giá luôn dùng **How much**."],
     ["This soup is very salty, I cannot eat it.", "This soup is too salty.", "Muốn phàn nàn là quá mức thì dùng **too**; very chỉ là “rất”."],
-    ["Can you bring some water? (với người lạ)", "Could you bring some water, please?", "**Could you…, please?** lịch sự hơn khi nhờ nhân viên."]
+    ["Can you bring some water? (với người lạ)", "Could you bring some water, please?", "**Could you…, please?** lịch sự hơn khi nhờ nhân viên."],
+    ["This food not good. I want pay.", "The soup is a bit bland. Could we have the bill, please?", "Đủ chủ ngữ và động từ; dùng **bland** để tả đúng món và **Could we have the bill, please?** để xin hóa đơn lịch sự."]
   ],
   vocab: [
     ["reservation", "sự đặt bàn trước"], ["menu", "thực đơn"], ["starter", "món khai vị"], ["main course", "món chính"],
@@ -463,7 +464,9 @@ window.A1_CHEAT = {
     ["size", "cỡ ly"], ["iced", "có đá"], ["oat milk", "sữa yến mạch"], ["for here / to go", "dùng tại quán / mang đi"],
     ["allergic to", "bị dị ứng với"], ["vegetarian", "người ăn chay, món chay"], ["refill", "rót thêm, thêm một ly"], ["box", "hộp mang đồ ăn về"],
     ["bill", "hóa đơn (người Mỹ nói check)"], ["split the bill", "chia hóa đơn"], ["service", "phí phục vụ"], ["cash or card", "tiền mặt hay thẻ"],
-    ["crispy", "giòn"], ["tender", "mềm (thịt)"], ["bland", "nhạt nhẽo"], ["on the house", "quán tặng, miễn phí"]
+    ["crispy", "giòn"], ["tender", "mềm (thịt)"], ["bland", "nhạt nhẽo"], ["on the house", "quán tặng, miễn phí"],
+    ["savory", "mặn, đậm vị (không ngọt)"], ["greasy", "nhiều dầu mỡ"], ["refreshing", "sảng khoái, mát"],
+    ["mouth-watering", "ngon đến thèm"], ["cozy", "ấm cúng"], ["leftovers", "đồ ăn thừa mang về"]
   ],
   tips: [
     "Bắt đầu bằng câu ngắn nhất có thể: **Table for two, please** hoặc **A large iced coffee, please**; thêm please là đủ lịch sự.",

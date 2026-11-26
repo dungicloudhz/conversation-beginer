@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Từ vựng nâng cao theo chủ đề – Luyện đặt câu giao tiếp</title>
+<style>
+:root{color-scheme:dark;--bg:#080810;--s1:#0e0e1c;--s2:#131326;--s3:#18182e;--border:#222240;--border2:#2c2c50;--text:#e6e6f2;--muted:#8a8ab8;--acc:#ffd060;--acc-dim:rgba(255,208,96,.11);--oc:#38bdf8;--oc-dim:rgba(56,189,248,.13);--ins:#40d88e;--ins-dim:rgba(64,216,142,.12);--sk:#a07af4;--sk-dim:rgba(160,122,244,.12);--au:#ff6584;--au-dim:rgba(255,101,132,.12);--teal:#30d8c0;--faint:#4a4a78;--line:rgba(255,255,255,.05);--code-bg:#05050e;--font:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:ui-monospace,Menlo,Consolas,monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.65;font-size:15px;overflow-x:hidden}
+a{color:var(--oc)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.sidebar{position:fixed;left:0;top:0;width:260px;height:100%;background:var(--s1);border-right:1px solid var(--border);overflow-y:auto;z-index:400}
+.sb-logo{padding:20px 18px 16px;border-bottom:1px solid var(--border)}
+.sb-brand{display:flex;align-items:center;gap:11px;margin-bottom:12px}
+.logo-icon{width:44px;height:44px;border-radius:11px;background:linear-gradient(135deg,var(--acc),var(--sk));display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 0 26px rgba(255,208,96,.28)}
+.logo-text h2{font-size:15px;font-weight:800}.logo-text p{font-size:10.5px;color:var(--muted)}
+.prog-wrap{height:3px;background:var(--border);border-radius:2px;overflow:hidden}
+.prog-bar{height:100%;width:0;background:linear-gradient(90deg,var(--acc),var(--ins),var(--oc),var(--sk),var(--au))}
+.nav-label{padding:14px 18px 4px;font-size:9.5px;font-weight:700;letter-spacing:1.6px;color:var(--faint);text-transform:uppercase}
+.nav-link{display:flex;align-items:center;gap:9px;padding:7px 18px;color:var(--muted);text-decoration:none;font-size:12.5px;font-weight:600;border-left:2px solid transparent}
+.nav-link:hover,.nav-link.active{color:var(--text);background:rgba(255,208,96,.07);border-left-color:var(--acc)}
+.main{margin-left:260px}
+.topnav{display:none}
+.gm{font-size:12px;line-height:1.55;color:#9fe9dc;background:rgba(48,216,192,.07);border-left:2px solid var(--teal);padding:6px 10px;border-radius:0 6px 6px 0}
+.gm b{color:var(--teal);font-family:var(--mono);font-size:10.5px;letter-spacing:.4px;margin-right:4px}
+.gm.hid{display:none}
+.hero{padding:64px 0 36px;border-bottom:1px solid var(--border);background:radial-gradient(ellipse 65% 55% at 75% 22%,rgba(255,208,96,.09),transparent 60%),radial-gradient(ellipse 50% 55% at 10% 82%,rgba(160,122,244,.08),transparent 55%),var(--bg)}
+.eyebrow{display:inline-block;background:var(--acc-dim);border:1px solid rgba(255,208,96,.38);color:var(--acc);padding:5px 16px;border-radius:100px;font-size:12px;font-weight:700;margin-bottom:20px}
+h1{font-size:44px;font-weight:900;letter-spacing:-2px;line-height:1.1;margin-bottom:16px}
+.grad{background:linear-gradient(135deg,var(--acc),var(--sk));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{color:var(--muted);max-width:680px;font-size:15.5px}
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.stat{background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:8px 16px;font-size:12px;color:var(--muted)}
+.stat b{display:block;font-size:20px;color:var(--acc);line-height:1.2}
+h2.st{font-size:22px;font-weight:800;letter-spacing:-.5px;margin:44px 0 6px}
+.lead{color:var(--muted);font-size:13.5px;margin-bottom:16px;max-width:72ch}
+.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.how .c{background:var(--s1);border:1px solid var(--border);border-radius:12px;padding:16px}
+.how .n{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--acc)}
+.how h3{font-size:14.5px;margin:2px 0 6px}
+.how p{font-size:12.5px;color:var(--muted);margin-bottom:8px}
+.fm{display:inline-block;font-family:var(--mono);font-size:12px;background:var(--code-bg);color:var(--teal);padding:3px 9px;border-radius:6px;margin:2px 0}
+.how .eg{font-size:13px;font-weight:600;color:var(--text)}
+.bar{position:sticky;top:0;z-index:50;background:rgba(8,8,16,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:10px 0;margin-top:30px}
+.bar .wrap{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+input[type=search],select,textarea{background:var(--code-bg);border:1px solid var(--border2);border-radius:8px;padding:8px 12px;color:var(--text);font:inherit;font-size:13px}
+input[type=search]{flex:1 1 200px;min-width:160px}
+.seg{display:flex;border:1px solid var(--border2);border-radius:8px;overflow:hidden}
+.seg button{background:var(--s2);color:var(--muted);border:0;padding:8px 12px;font:inherit;font-size:12.5px;font-weight:700;cursor:pointer;border-right:1px solid var(--border2)}
+.seg button:last-child{border-right:0}
+.seg button.on{background:var(--acc-dim);color:var(--acc)}
+button:focus-visible,.say:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.prog{font-size:12px;color:var(--muted);margin-left:auto;white-space:nowrap}
+.prog b{color:var(--ins)}
+.btn{background:var(--acc-dim);color:var(--acc);border:1px solid var(--acc);border-radius:8px;padding:8px 16px;font:inherit;font-weight:700;font-size:13px;cursor:pointer}
+.btn.alt{background:var(--ins-dim);color:var(--ins);border-color:var(--ins)}
+.btn.sm{padding:4px 10px;font-size:11.5px}
+details.tp{background:var(--s1);border:1px solid var(--border);border-radius:14px;margin:12px 0;overflow:hidden}
+details.tp[open]{border-color:var(--border2)}
+details.tp>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;padding:14px 18px}
+details.tp>summary::-webkit-details-marker{display:none}
+.ti{font-size:26px}.tn{font-weight:800;font-size:16px}.ts{font-size:12px;color:var(--muted)}
+.tc{margin-left:auto;font-size:11.5px;color:var(--muted);font-family:var(--mono);white-space:nowrap}
+.tb{padding:0 18px 18px}
+.sub{font-size:13.5px;font-weight:700;margin:18px 0 10px;display:flex;align-items:center;gap:10px}
+.sub::before{content:'';width:14px;height:3px;background:var(--acc);border-radius:2px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px}
+.w{background:var(--s2);border:1px solid var(--border);border-radius:11px;padding:12px 14px;display:flex;flex-direction:column;gap:6px}
+.w.done{border-color:rgba(64,216,142,.5);background:linear-gradient(180deg,var(--ins-dim),var(--s2))}
+.w .top{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.w .wd{font-size:16px;font-weight:800;color:var(--acc)}
+.w .vi{font-size:12.5px;color:var(--muted)}
+.w .ex{font-size:13.5px;font-weight:600}
+.w .ex mark{background:var(--acc-dim);color:var(--acc);border-radius:4px;padding:0 3px}
+.w .ex input{width:150px;max-width:100%;background:var(--code-bg);border:1px solid var(--border2);border-radius:6px;padding:2px 8px;color:var(--text);font:inherit;font-size:13px;text-align:center}
+.w .ex input.ok{border-color:var(--ins);color:var(--ins)}.w .ex input.no{border-color:var(--au);color:var(--au)}
+.w .act{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto}
+.w .own{display:none;flex-direction:column;gap:6px}
+.w.open .own{display:flex}
+.w textarea{width:100%;min-height:54px;resize:vertical;font-size:13px}
+.w .hint{font-size:11.5px;color:var(--muted)}
+.hide-vi .w .vi.h{visibility:hidden}
+.hide-vi .w .vi.h.show{visibility:visible}
+.say{cursor:pointer;border-bottom:1px dotted var(--oc)}
+.say:hover{color:var(--acc)}
+.say::after{content:"🔊";font-size:.68em;margin-left:3px;opacity:.5}
+.say.playing{color:var(--ins)}.say.playing::after{opacity:1}
+.phr{background:var(--s2);border:1px solid var(--border);border-radius:11px;padding:6px 16px}
+.pr{display:flex;flex-wrap:wrap;gap:3px 14px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:13.5px}
+.pr:last-child{border-bottom:0}.pr .en{font-weight:600;min-width:260px}.pr .vi{color:var(--muted)}
+.cmp{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);border-radius:11px;overflow:hidden;margin:14px 0}
+.bad{background:rgba(255,101,132,.07);padding:12px 16px;border-right:1px solid var(--border)}.good{background:rgba(64,216,142,.07);padding:12px 16px}
+.cmp b{display:block;font-size:10px;margin-bottom:4px;letter-spacing:.5px}.bad b{color:var(--au)}.good b{color:var(--ins)}
+.cmp div div{font-size:13.5px}
+.tip{background:rgba(91,168,255,.10);border:1px solid rgba(91,168,255,.25);color:#8ab8f0;border-radius:9px;padding:10px 14px;font-size:12.5px;margin:10px 0}
+.src{font-size:12px;margin-top:10px}
+.lab{background:var(--s1);border:1px solid var(--border2);border-radius:14px;padding:20px}
+.lab .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+.q{background:var(--s2);border:1px dashed var(--border2);border-radius:10px;padding:16px;min-height:90px}
+.q .big{font-size:22px;font-weight:800;color:var(--acc)}
+.q .m{color:var(--muted);font-size:13px}
+.q ol{margin:10px 0 0 20px;font-size:13.5px;color:var(--muted)}
+.q li{margin-bottom:4px}.q li b{color:var(--text)}
+.q .model{margin-top:10px;padding:10px 12px;background:var(--ins-dim);border-radius:8px;font-size:14px;font-weight:600}
+.empty{color:var(--muted);text-align:center;padding:30px}
+.foot{border-top:1px solid var(--border);margin-top:60px;padding:26px 0 100px;font-size:12px;color:var(--muted)}
+.audio{position:fixed;right:16px;bottom:16px;z-index:60;display:flex;gap:8px;align-items:center;background:var(--s2);border:1px solid var(--border2);border-radius:12px;padding:8px 12px;font-size:12px;color:var(--muted);box-shadow:0 8px 28px rgba(0,0,0,.5)}
+.audio b{color:var(--acc)}
+.audio button{background:var(--s3);color:var(--muted);border:1px solid var(--border);border-radius:7px;padding:4px 10px;font:inherit;font-weight:700;cursor:pointer}
+.audio button.on{background:var(--acc-dim);color:var(--acc);border-color:var(--acc)}
+@media(max-width:900px){.sidebar{display:none}.main{margin-left:0}
+.topnav{display:flex;overflow-x:auto;position:sticky;top:0;z-index:500;background:var(--s1);border-bottom:2px solid var(--border2);scrollbar-width:none}
+.topnav a{flex-shrink:0;padding:10px 14px;color:var(--muted);text-decoration:none;font-size:12px;font-weight:700;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-2px}
+.topnav a.active{color:var(--acc);border-bottom-color:var(--acc);background:var(--acc-dim)}
+.bar{top:41px}html{scroll-padding-top:110px}}
+@media(max-width:700px){h1{font-size:30px}.cmp{grid-template-columns:1fr}.bad{border-right:0;border-bottom:1px solid var(--border)}.tc{display:none}.cards{grid-template-columns:1fr}.pr .en{min-width:0}.prog{margin-left:0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sb-logo">
+    <div class="sb-brand"><div class="logo-icon">🚀</div><div class="logo-text"><h2>Từ vựng nâng cao</h2><p>Tiếng Anh A1 · theo chủ đề</p></div></div>
+    <div class="prog-wrap"><div class="prog-bar" id="pbar"></div></div>
+  </div>
+  <div class="nav-label">HƯỚNG DẪN</div>
+  <a class="nav-link" href="#how">📘 Cách dùng từ</a>
+  <a class="nav-link" href="#lab-h">🎯 Thử thách nói</a>
+  <div id="sbTopics"></div>
+</aside>
+<div class="main">
+<nav class="topnav" id="topnav"></nav>
+<header class="hero"><div class="wrap">
+  <span class="eyebrow">🚀 TỪ VỰNG NÂNG CAO · TỔNG HỢP THEO CHỦ ĐỀ</span>
+  <h1>Từ vựng nâng cao<br><span class="grad">và cách dùng trong câu giao tiếp</span></h1>
+  <p>Trang này gom toàn bộ phần “Từ vựng nâng cao” của các bài chủ đề vào một chỗ. Mỗi từ có nghĩa, câu ví dụ để nghe, ô điền từ và ô tự đặt câu của bạn. Học xong, dùng phần Thử thách nói để biến từ thành câu của chính mình.</p>
+  <div class="stats" id="stats"></div>
+</div></header>
+
+<main class="wrap">
+
+<h2 class="st" id="how">Dùng từ nâng cao trong câu như thế nào?</h2>
+<p class="lead">Biết nghĩa chưa đủ để nói được. Hãy áp dụng bốn cách dưới đây cho mỗi từ mới. Mỗi cách là một cấp độ, đi từ dễ đến khó.</p>
+<div class="how">
+  <div class="c"><div class="n">CÁCH 1</div><h3>Thay từ cơ bản</h3><p>Giữ nguyên khung câu quen thuộc, chỉ đổi từ đơn giản bằng từ mạnh hơn.</p><span class="fm">I’m very tired → I’m worn out.</span></div>
+  <div class="c"><div class="n">CÁCH 2</div><h3>Từ + lý do</h3><p>Sau từ nâng cao, thêm <em>because / when / after</em> để câu nghe tự nhiên và đủ ý.</p><span class="fm">S + be + adj + because …</span><div class="eg">I’m relieved because the test is over.</div></div>
+  <div class="c"><div class="n">CÁCH 3</div><h3>Cụm cố định dùng nguyên khối</h3><p>Thành ngữ và cụm động từ học theo cả cụm, không dịch từng chữ. Chỉ chia động từ cho đúng thì.</p><span class="fm">give up / gave up · take up / took up</span><div class="eg">I gave up the piano when I was ten.</div></div>
+  <div class="c"><div class="n">CÁCH 4</div><h3>Chuỗi 3 câu</h3><p>Ý kiến, rồi từ nâng cao, rồi lý do hoặc kết quả. Ba câu ngắn đã đủ giữ một cuộc trò chuyện.</p><span class="fm">Ý kiến → Từ mới → Lý do</span><div class="eg">I loved it. The plot twist was amazing. I didn’t see it coming.</div></div>
+</div>
+<div class="tip" style="margin-top:14px">💡 <strong>Quy trình luyện mỗi từ (1 phút):</strong> nghe câu mẫu 2 lần, nói theo, rồi bấm <strong>“Câu của tôi”</strong> và viết một câu về chính bạn. Từ nào tự đặt được câu thì bấm <strong>“Đã thuộc”</strong>.</div>
+
+<div class="bar"><div class="wrap">
+  <input type="search" id="q" placeholder="Tìm từ, nghĩa hoặc chủ đề…" aria-label="Tìm kiếm">
+  <select id="grp" aria-label="Nhóm chủ đề"></select>
+  <div class="seg" role="group" aria-label="Chế độ học">
+    <button data-m="learn" class="on">📖 Học</button>
+    <button data-m="cloze">✏️ Điền từ</button>
+    <button data-m="recall">🙈 Che nghĩa</button>
+  </div>
+  <div class="prog" id="prog"></div>
+</div></div>
+
+<h2 class="st" id="lab-h">🎯 Thử thách nói</h2>
+<p class="lead">Chọn chủ đề, bấm “Cho tôi một từ”. Bạn nhận một từ cần dùng, tự nói thành câu, rồi so với câu mẫu.</p>
+<div class="lab" id="lab">
+  <div class="row"><select id="labTopic" aria-label="Chủ đề thử thách"></select>
+  <button class="btn" id="labGo">🎲 Cho tôi một từ</button>
+  <button class="btn alt" id="labShow" disabled>👀 Xem câu mẫu</button></div>
+  <div class="q" id="labOut"><span class="m">Bấm nút để bắt đầu.</span></div>
+</div>
+
+<h2 class="st" id="topics-h">Từ vựng nâng cao theo chủ đề</h2>
+<p class="lead">Bấm vào tên chủ đề để mở. Bấm vào từ hoặc câu có biểu tượng loa để nghe.</p>
+<div class="row" style="display:flex;gap:8px;margin-bottom:8px"><button class="btn sm" id="openAll">Mở tất cả</button><button class="btn sm" id="closeAll">Đóng tất cả</button></div>
+<div id="list"></div>
+
+</main>
+
+<footer class="foot"><div class="wrap">Dữ liệu lấy từ mục “Từ vựng nâng cao” (#s8) trong từng bài chủ đề. Tiến độ “Đã thuộc” và câu bạn viết được lưu trong trình duyệt này.</div></footer>
+</div>
+
+<div class="audio" role="group" aria-label="Giọng đọc"><b>🔊</b>
+  <button data-a="en-GB" class="on">UK</button><button data-a="en-US">US</button>
+  <span>Tốc độ</span><button data-r=".7">Chậm</button><button data-r=".85" class="on">Vừa</button><button data-r="1">Nhanh</button>
+</div>
+
+<script src="vocab-data/advanced-vocabulary.js" defer></script>
+<script src="advanced-vocabulary.js" defer></script>
+
+<script src="nav.js" defer></script>
+</body>
+</html>

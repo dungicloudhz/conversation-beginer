@@ -69,6 +69,8 @@
     ]},
     { group: "Tổng hợp & Luyện viết", items: [
       ["Master-Cheat-Sheet.html", "🗂️", "Master Cheat Sheet – Tổng hợp A1"],
+      ["Master-Vocabulary.html", "📖", "Từ vựng A1 theo chủ đề"],
+      ["Advanced-Vocabulary.html", "🚀", "Từ vựng nâng cao theo chủ đề"],
       ["Cheat-Sheet.html", "📋", "Cheat sheet toàn khóa"],
       ["Writing-Paragraphs.html", "✍️", "Viết đoạn văn theo chủ đề"],
     ]},

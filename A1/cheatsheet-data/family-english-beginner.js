@@ -451,7 +451,8 @@ window.A1_CHEAT = {
     ["She have two brothers.", "She has two brothers.", "Chủ ngữ she đi với **has**."],
     ["This is my parent.", "These are my parents.", "Bố mẹ là hai người nên dùng **These are** và **parents**."],
     ["Your father does what? / Does he works?", "What does your father do? / Does he work?", "Từ để hỏi đứng đầu câu; sau **does** động từ ở **nguyên mẫu**."],
-    ["I play football with he. / We eat at the evening.", "I play football with him. / We eat in the evening.", "Sau **with** dùng tân ngữ (him); buổi trong ngày đi với **in**."]
+    ["I play football with he. / We eat at the evening.", "I play football with him. / We eat in the evening.", "Sau **with** dùng tân ngữ (him); buổi trong ngày đi với **in**."],
+    ["My family is very happy and good. I like my family.", "We’re a close-knit family, and we get along well with each other.", "Dùng cụm tự nhiên như **close-knit** và **get along well** thay cho happy và good; tránh lặp lại “my family”."]
   ],
   vocab: [
     ["grandfather", "ông"], ["grandmother", "bà"], ["parents", "bố mẹ"], ["father / mother", "bố / mẹ"],
@@ -459,13 +460,16 @@ window.A1_CHEAT = {
     ["cousin", "anh chị em họ"], ["husband / wife", "chồng / vợ"], ["son / daughter", "con trai / con gái"], ["children", "các con (số nhiều của child)"],
     ["niece / nephew", "cháu gái / cháu trai"], ["only child", "con một"], ["older / younger", "lớn tuổi hơn / nhỏ tuổi hơn"], ["single / married", "độc thân / đã kết hôn"],
     ["retired", "đã nghỉ hưu"], ["kind", "tốt bụng"], ["hard-working", "chăm chỉ"], ["caring", "biết quan tâm"],
-    ["cheerful", "vui vẻ"], ["helpful", "hay giúp đỡ"], ["do housework", "làm việc nhà"], ["countryside", "nông thôn, quê"]
+    ["cheerful", "vui vẻ"], ["helpful", "hay giúp đỡ"], ["do housework", "làm việc nhà"], ["countryside", "nông thôn, quê"],
+    ["sibling", "anh chị em ruột"], ["relatives", "họ hàng"], ["in-laws", "họ hàng bên chồng, bên vợ"],
+    ["strict", "nghiêm khắc"], ["stubborn", "bướng bỉnh"], ["look up to", "kính trọng, ngưỡng mộ"]
   ],
   tips: [
     "Dùng ảnh gia đình thật khi luyện nói: chỉ vào từng người và nói **This is my…** hoặc **These are my…**",
     "Mỗi khi nói về một người thân, tự kiểm tra hai thứ: **has** thay cho have và động từ có **-s** (She works, He teaches).",
     "Học thuộc trình tự bài nói 40 giây: **Số người → Thành viên → Mô tả → Sinh hoạt → Kết** (I love my family very much).",
     "Khi người khác kể về gia đình, phản hồi bằng **Oh, really?** hoặc **What a lovely family!** rồi hỏi thêm một câu ngắn như Do you see them often?",
-    "Viết bốn câu về sinh hoạt gia đình, mỗi câu có một trạng từ tần suất (always, usually, sometimes) và một giới từ thời gian (on, at, in)."
+    "Viết bốn câu về sinh hoạt gia đình, mỗi câu có một trạng từ tần suất (always, usually, sometimes) và một giới từ thời gian (on, at, in).",
+    "Mỗi bài kể về gia đình chỉ cần thêm **1 cụm nâng cao** là đủ tự nhiên, ví dụ **I look up to my father.** sau câu tả nghề nghiệp của bố."
   ]
 };

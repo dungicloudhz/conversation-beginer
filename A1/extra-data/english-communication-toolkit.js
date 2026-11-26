@@ -24,7 +24,21 @@ window.A1_EXTRA = {
     "hand in": ["/ˌhænd ˈɪn/", "cụm động từ"],
     "run out of": ["/ˌrʌn ˈaʊt əv/", "cụm động từ"],
     "give up": ["/ˌɡɪv ˈʌp/", "cụm động từ"],
-    "deal with": ["/ˈdiːl wɪð/", "cụm động từ"]
+    "deal with": ["/ˈdiːl wɪð/", "cụm động từ"],
+    "to be honest": ["/tə bi ˈɒn.ɪst/", "cụm từ cố định"],
+    "actually": ["/ˈæk.tʃu.ə.li/", "trạng từ"],
+    "I guess": ["/aɪ ˈɡes/", "cụm từ cố định"],
+    "kind of": ["/ˈkaɪnd əv/", "cụm trạng từ"],
+    "probably": ["/ˈprɒb.ə.bli/", "trạng từ"],
+    "as far as I know": ["/əz ˌfɑːr əz aɪ ˈnəʊ/", "cụm từ cố định"],
+    "it depends": ["/ɪt dɪˈpendz/", "cụm từ cố định"],
+    "speaking of": ["/ˈspiː.kɪŋ əv/", "cụm từ cố định"],
+    "anyway": ["/ˈen.i.weɪ/", "trạng từ"],
+    "that makes sense": ["/ðæt ˌmeɪks ˈsens/", "cụm từ cố định"],
+    "fair enough": ["/ˌfeər ɪˈnʌf/", "cụm từ cố định"],
+    "good point": ["/ˌɡʊd ˈpɔɪnt/", "cụm từ cố định"],
+    "no worries": ["/ˌnəʊ ˈwʌr.iz/", "cụm từ cố định"],
+    "in the end": ["/ɪn ði ˈend/", "cụm trạng từ"]
   },
   grammar: [
     { title: "Thì hiện tại đơn, hiện tại tiếp diễn và quá khứ đơn",
