@@ -111,13 +111,13 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 ════════════════════════════════════════════════════ */
 .vg{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px;margin:12px 0;align-items:start}
 .two-col .vg{grid-template-columns:repeat(auto-fill,minmax(230px,1fr))!important}
-.vc{background:linear-gradient(180deg,var(--s2),var(--s1));border:1px solid var(--border);border-radius:14px;padding:3px;display:flex;flex-direction:column;min-width:0;transition:border-color .15s,box-shadow .15s}
+.vc{background:linear-gradient(180deg,var(--s2),var(--s1));border:1px solid var(--border);border-radius:14px;padding:0;overflow:hidden;display:flex;flex-direction:column;min-width:0;transition:border-color .15s,box-shadow .15s}
 .vc:hover{border-color:rgba(255,208,96,.45);box-shadow:0 0 0 3px rgba(255,208,96,.06)}
 
-.vr{display:flex;gap:11px;align-items:flex-start;padding:10px 10px 10px 9px;border-radius:11px;cursor:pointer;outline:none;-webkit-tap-highlight-color:transparent;transition:background .12s}
-.vr+.vr{border-top:1px solid rgba(255,255,255,.06);border-top-left-radius:0;border-top-right-radius:0}
-.vr:hover{background:var(--acc-dim)}
-.vr:focus-visible{box-shadow:inset 0 0 0 2px rgba(255,208,96,.6)}
+.vr{display:flex;gap:11px;align-items:flex-start;padding:11px 12px;border-radius:0;cursor:pointer;outline:none;-webkit-tap-highlight-color:transparent;transition:background .12s}
+.vr+.vr{border-top:1px solid rgba(255,255,255,.06)}
+.vr:hover{background:var(--acc-dim);box-shadow:inset 3px 0 0 var(--acc)}
+.vr:focus-visible{background:var(--acc-dim);box-shadow:inset 3px 0 0 var(--acc)}
 
 .vb{flex:0 0 32px;width:32px;height:32px;margin-top:1px;border-radius:50%;display:grid;place-items:center;background:var(--s3);border:1px solid var(--border2);color:var(--acc);transition:background .12s,color .12s,border-color .12s}
 .vb svg{width:15px;height:15px;display:block}
@@ -133,7 +133,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .vr-vi{margin-top:4px;padding-left:8px;border-left:2px solid rgba(255,208,96,.55);font-size:13px;line-height:1.45;color:#ecd9a4;word-break:break-word}
 
 /* nghĩa chung cho card có nhiều từ nhưng số nghĩa không khớp */
-.vc-mean{margin:2px 7px 8px;padding:7px 10px;border-radius:9px;background:rgba(255,208,96,.07);border-left:2px solid rgba(255,208,96,.55);font-size:13px;line-height:1.45;color:#ecd9a4}
+.vc-mean{margin:2px 10px 10px;padding:7px 10px;border-radius:9px;background:rgba(255,208,96,.07);border-left:2px solid rgba(255,208,96,.55);font-size:13px;line-height:1.45;color:#ecd9a4}
 /* ghi chú dùng với play/go/do ... */
 .vc-tag{align-self:flex-start;margin:0 10px 9px;padding:2px 10px;border-radius:99px;background:var(--sk-dim);color:var(--sk);font-size:10.5px;font-weight:700}
 
